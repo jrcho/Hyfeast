@@ -1,77 +1,98 @@
-- 🇰🇷 [한국어 (Korean)](./README.ko.md)
-
 # Hyfeast
 
-**Hyfeast** is a high-performance finite element analysis (FEA) framework freely available for structural analysis and design applications.
+**Hyfeast** is a high-performance finite element analysis (FEA) framework  
+developed by the Korea Institute of Civil Engineering and Building Technology (KICT).  
+It is freely available for structural analysis and design applications.
 
-This repository provides a distribution package including binaries, manuals, and example input files.
+- Download: [Latest release](https://github.com/jrcho/Hyfeast/releases/latest)  
+- Help: [Online documentation](https://jrcho.github.io/Hyfeast/index.html)  
+- Korean version: [README.ko.md](./README.ko.md)
 
-> 🔗 Download the latest version from the [Releases](https://github.com/jrcho/Hyfeast/releases/latest) page.
-
-To view the Hyfeast help documentation in your browser, visit:
-
-👉 [https://jrcho.github.io/Hyfeast/index.html](https://jrcho.github.io/Hyfeast/index.html)
+---
 
 ## System Requirements
 
 - Windows 10 or higher
 - 64-bit system
-- (Optional) Python 3.8 or higher
+- (Optional) Python 3.8 or higher (for DXF export)
 
-## How to Use
+---
+
+## Installation and Usage
 
 1. Download the latest release from the [Releases](https://github.com/jrcho/Hyfeast/releases/latest) page.
-2. Extract the ZIP file.
-3. Run `bin/hyfeast.exe`.
-4. Refer to `docs/manual.pdf` for instructions or run the example cases.
+2. Extract the ZIP file to any location (e.g., `Hyfeast/`).
+3. Open the `Hyfeast` folder and double-click:
+   ```
+   setpath.bat
+   ```
+   This sets the PATH environment variable and opens a command prompt.
+
+4. In the command prompt, you can run:
+   ```
+   Hyfeast> hfVisualizer
+   Hyfeast> hfAnalyzer input.inp
+   Hyfeast> hfSectionVisualizer
+   Hyfeast> hfSectionAnalyzer input.sec
+   ```
+
+Refer to the manual or examples for usage details.
+
+---
 
 ## Documentation
 
-- `docs/manual.pdf`: Full feature manual
-- `docs/help.html`: GUI Help (optional)
-- `examples/`: Sample input files for various cases
+- `docs/manual.pdf`: Full user manual
+- `docs/help.html`: GUI help (optional)
+- `examples/`: Sample input files for various analysis cases
+
+---
 
 ## Third-Party Libraries Used in Hyfeast
 
-Hyfeast leverages a variety of open-source and third-party libraries to support its high-performance finite element analysis and visualization capabilities.
+Hyfeast incorporates the following open-source and third-party libraries:
 
 ### Math Kernel & Solvers
 
-- **Intel OneAPI MKL** – Math kernel library with BLAS, LAPACK, and fast vector/matrix operations  
-- **PARDISO** – Direct sparse solver (included in MKL)  
-- **ARPACK** – Eigenvalue solver for large sparse systems  
-- **EIGEN** – Lightweight C++ template library for linear algebra and QR solver  
-- **HDF5** – High-performance data format for storing large scientific datasets
+- Intel OneAPI MKL – BLAS, LAPACK, vector operations  
+- PARDISO – Direct sparse solver (part of MKL)  
+- ARPACK – Eigenvalue solver for sparse systems  
+- Eigen – C++ linear algebra library  
+- HDF5 – Scientific data storage format
 
-### C++ Libraries and Core Framework
+### Core Framework and Utilities
 
-- **HFC** – In-house finite element class library used across Hyfeast modules
+- HFC – In-house finite element class library
+- xlnt – Excel `.xlsx` I/O library for C++  
+- RapidJSON – JSON parser for C++  
+- JKQtPlotter – Qt-based scientific plotting
 
 ### GUI & Visualization
 
-- **Qt** – GUI toolkit for user interface  
-- **VTK (Visualization Toolkit)** – 3D graphics and visualization engine  
-- **NETGEN** – 2D mesh generator
-
-### Misc. External Libraries
-
-- **xlnt** – C++ library for Excel .xlsx file I/O  
-- **RapidJSON** – Fast JSON parser/generator for C++  
-- **JKQtPlotter** – Qt-based scientific plotting widget
+- Qt – GUI framework  
+- VTK – 3D visualization engine  
+- NETGEN – 2D mesh generator
 
 ### External Tools (Optional)
 
-- **Pandoc** – Document converter used for generating formatted output  
-- **ezdxf (Python)** – Python library for DXF export used in `hfVisualizer`  
-  - Installation: `pip install ezdxf`
+- Pandoc – Document converter  
+- ezdxf (Python) – DXF export for `hfVisualizer`  
+  Install with:
+  ```
+  pip install ezdxf
+  ```
 
-For licensing and attribution details, refer to the `LICENSE.txt` file.
+See `LICENSE.txt` for full licensing and attribution details.
+
+---
 
 ## License
 
 This software is provided under a custom license.  
-See the [LICENSE.txt](LICENSE.txt) file in this repository for full terms.
+Refer to the `LICENSE.txt` file for full terms and conditions.
+
+---
 
 ## Contact
 
-Official contact and technical support: jrcho2012@gmail.com
+For questions or technical support: jrcho2012@gmail.com
