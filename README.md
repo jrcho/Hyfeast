@@ -8,26 +8,17 @@ It is freely available for structural analysis and design applications.
 - Help: [Online documentation](https://jrcho.github.io/Hyfeast/index.html)  
 - Korean version: [README.ko.md](./README.ko.md)
 
----
-
 ## System Requirements
 
 - Windows 10 or higher
 - 64-bit system
 - (Optional) Python 3.8 or higher (for DXF export)
 
----
-
 ## Installation and Usage
 
 1. Download the latest release from the [Releases](https://github.com/jrcho/Hyfeast/releases/latest) page.
 2. Extract the ZIP file to any location (e.g., `Hyfeast/`).
-3. Open the `Hyfeast` folder and double-click:
-   ```
-   setpath.bat
-   ```
-   This sets the PATH environment variable and opens a command prompt.
-
+3. Open the `Hyfeast` folder and double-click `setpath.bat`, which sets the PATH environment variable and opens a command prompt.
 4. In the command prompt, you can run:
    ```
    Hyfeast> hfVisualizer
@@ -37,16 +28,6 @@ It is freely available for structural analysis and design applications.
    ```
 
 Refer to the manual or examples for usage details.
-
----
-
-## Documentation
-
-- `docs/manual.pdf`: Full user manual
-- `docs/help.html`: GUI help (optional)
-- `examples/`: Sample input files for various analysis cases
-
----
 
 ## Third-Party Libraries Used in Hyfeast
 
@@ -60,18 +41,17 @@ Hyfeast incorporates the following open-source and third-party libraries:
 - Eigen – C++ linear algebra library  
 - HDF5 – Scientific data storage format
 
-### Core Framework and Utilities
-
-- HFC – In-house finite element class library
-- xlnt – Excel `.xlsx` I/O library for C++  
-- RapidJSON – JSON parser for C++  
-- JKQtPlotter – Qt-based scientific plotting
-
 ### GUI & Visualization
 
 - Qt – GUI framework  
 - VTK – 3D visualization engine  
 - NETGEN – 2D mesh generator
+
+### Utilities
+
+- xlnt – Excel `.xlsx` I/O library for C++  
+- RapidJSON – JSON parser for C++  
+- JKQtPlotter – Qt-based scientific plotting
 
 ### External Tools (Optional)
 
@@ -84,7 +64,6 @@ Hyfeast incorporates the following open-source and third-party libraries:
 
 See `LICENSE.txt` for full licensing and attribution details.
 
----
 
 ## License
 
