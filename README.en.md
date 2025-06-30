@@ -5,7 +5,13 @@ freely available for structural analysis and design applications.
 
 This repository provides a distribution package including binaries, manuals, and example input files.
 
-> 🔗 Download the latest version from the [Releases](https://github.com/jrcho/Hyfeast/releases/latest) page.
+> 🔗 Download the latest version from the [Releases](https://github.com/your-username/Hyfeast/releases) page.
+
+
+To view the Hyfeast help documentation in your browser, visit:
+
+👉 [https://jrcho.github.io/Hyfeast/index.html](https://jrcho.github.io/Hyfeast/index.html)
+
 
 ##  Package Contents
 

@@ -5,7 +5,14 @@
 
 이 저장소는 실행 파일, 매뉴얼, 예제 입력 파일 등을 포함한 배포 패키지를 제공합니다.
 
->  최신 버전은 [Releases](https://github.com/jrcho/Hyfeast/releases/latest) 탭에서 다운로드하세요.
+>  최신 버전은 [Releases](https://github.com/your-username/Hyfeast/releases) 탭에서 다운로드하세요.
+
+## 온라인 도움말 / Online Help
+
+웹 브라우저에서 Hyfeast 도움말을 바로 보시려면 아래 링크를 이용하세요:
+
+👉 [https://jrcho.github.io/Hyfeast/index.html](https://jrcho.github.io/Hyfeast/index.html)
+
 
 ##  구성
 
@@ -25,7 +32,7 @@ HYFEAST_v1.0.zip
 
 ## 사용 방법
 
-1. [Releases](https://github.com/your-username/Hyfeast/releases)에서 최신 버전을 다운로드합니다.
+1. [Releases](https://github.com/jrcho/Hyfeast/releases/latest)에서 최신 버전을 다운로드합니다.
 2. ZIP 파일을 압축 해제합니다.
 3. `bin/hyfeast.exe`를 실행합니다.
 4. `docs/manual.pdf` 문서를 참조하여 해석을 수행하거나 예제를 실행합니다.
