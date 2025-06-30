@@ -5,7 +5,7 @@
 
 이 저장소는 실행 파일, 매뉴얼, 예제 입력 파일 등을 포함한 배포 패키지를 제공합니다.
 
->  최신 버전은 [Releases](https://github.com/your-username/Hyfeast/releases) 탭에서 다운로드하세요.
+>  최신 버전은 [Releases](https://github.com/jrcho/Hyfeast/releases/latest) 탭에서 다운로드하세요.
 
 ##  구성
 
