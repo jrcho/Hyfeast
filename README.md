@@ -13,16 +13,6 @@ To view the Hyfeast help documentation in your browser, visit:
 
 👉 [https://jrcho.github.io/Hyfeast/index.html](https://jrcho.github.io/Hyfeast/index.html)
 
-## Package Contents
-
-```
-HYFEAST_v1.0.zip
-├── bin/          # Executables and DLLs
-├── docs/         # Manuals and Help Files
-├── examples/     # Example Input Files
-├── LICENSE.txt   # License Terms
-```
-
 ## System Requirements
 
 - Windows 10 or higher
