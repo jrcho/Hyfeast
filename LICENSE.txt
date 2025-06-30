@@ -1,0 +1,43 @@
+HYFEAST License Agreement
+=========================
+
+Copyright (C) 2025 HYFEAST Developers
+
+1. Users are free to use this program for both commercial and non-commercial purposes.
+
+2. The executable files, documentation, and example files may be freely copied and distributed.
+
+3. However, the following actions require prior written permission:
+   - Analyzing, decompiling, modifying, or integrating the program into other systems as a solver engine.
+   - Modifying and redistributing the program in any form other than the official release.
+   - Commercial use of the DigitalTwin feature integrated into hfVisualizer.
+
+4. This software is provided "as-is" without any warranty, express or implied.
+   The developers assume no responsibility for any issues arising from its use or performance.
+
+For inquiries or commercial licensing, contact:
+📧 jrcho2012@gmail.com
+
+
+----------------------------
+
+
+HYFEAST 라이선스 이용 약관
+===========================
+
+Copyright (C) 2025 HYFEAST Developers
+
+1. 사용자는 본 프로그램을 상업적 및 비상업적 목적으로 자유롭게 사용할 수 있습니다.
+
+2. 본 프로그램의 실행 파일, 문서, 예제 파일은 자유롭게 복사 및 배포할 수 있습니다.
+
+3. 단, 다음의 행위를 위해서는 사전에 별도의 허가를 받아야 합니다:
+   - 본 프로그램을 분석, 분해, 변형하거나, 타 시스템에서 해석 엔진으로 통합하여 사용하는 행위
+   - 본 프로그램을 변조하거나 수정하여, 공식 배포본이 아닌 형태로 재배포하는 행위
+   - hfVisualizer에 통합된 DigitalTwin 기능의 상업적 사용
+
+4. 본 소프트웨어는 "있는 그대로(as-is)" 제공되며,
+   개발자는 사용 또는 성능에 대해 어떠한 책임도 지지 않습니다.
+
+문의 및 상업적 라이선스 관련 연락처:
+📧 jrcho2012@gmail.com
