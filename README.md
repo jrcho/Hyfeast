@@ -10,4 +10,4 @@ Available documentation languages:
 Please select your preferred language to view detailed usage instructions.
 
 
-Your site is live at https://jrcho.github.io/Hyfeast/
+Your site is live at [https://jrcho.github.io/Hyfeast/](https://jrcho.github.io/Hyfeast/index.html)
