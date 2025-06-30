@@ -17,8 +17,44 @@ Copyright (C) 2025 HYFEAST Developers
 
 For inquiries or commercial licensing, contact: jrcho2012@gmail.com
 
+-------------------------------------------------------------------------------
+Third-Party Libraries and Licenses
+-------------------------------------------------------------------------------
 
-----------------------------
+Hyfeast incorporates the following open-source and third-party libraries:
+
+Math Kernel & Solvers
+- Intel OneAPI MKL – BLAS, LAPACK, vector operations (Intel License)
+- PARDISO – Direct sparse solver (included in MKL)
+- ARPACK – Eigenvalue solver for sparse systems (BSD-style License)
+- Eigen – C++ linear algebra library (MPL2)
+- HDF5 – Scientific data storage format (BSD-style License)
+
+GUI & Visualization
+- Qt – GUI framework (LGPL 3.0 or commercial license)
+- VTK – 3D visualization engine (BSD License)
+- NETGEN – 2D mesh generator (LGPL License)
+
+Utilities
+- xlnt – Excel .xlsx I/O library for C++ (MIT License)
+- RapidJSON – JSON parser for C++ (MIT License)
+- JKQtPlotter – Qt-based scientific plotting widget (MIT License)
+
+-------------------------------------------------------------------------------
+Optional External Tools (Not Bundled)
+-------------------------------------------------------------------------------
+
+The following tools are not included in this software package but may be used
+to enable additional features in Hyfeast. Users must install them separately.
+
+- Python – Used for DXF export (via ezdxf) and modal identification scripts
+- ezdxf (Python) – Python library for DXF export in hfVisualizer (MIT License)
+- Pandoc – Document converter for report generation (GPL/MIT License)
+
+-------------------------------------------------------------------------------
+For detailed license terms of each library, please consult the corresponding
+project websites. All trademarks are the property of their respective owners.
+-------------------------------------------------------------------------------
 
 
 HYFEAST 라이선스 이용 약관
