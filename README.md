@@ -31,6 +31,42 @@ To view the Hyfeast help documentation in your browser, visit:
 - `docs/help.html`: GUI Help (optional)
 - `examples/`: Sample input files for various cases
 
+## Third-Party Libraries Used in Hyfeast
+
+Hyfeast leverages a variety of open-source and third-party libraries to support its high-performance finite element analysis and visualization capabilities.
+
+### Math Kernel & Solvers
+
+- **Intel OneAPI MKL** – Math kernel library with BLAS, LAPACK, and fast vector/matrix operations  
+- **PARDISO** – Direct sparse solver (included in MKL)  
+- **ARPACK** – Eigenvalue solver for large sparse systems  
+- **EIGEN** – Lightweight C++ template library for linear algebra and QR solver  
+- **HDF5** – High-performance data format for storing large scientific datasets
+
+### C++ Libraries and Core Framework
+
+- **HFC** – In-house finite element class library used across Hyfeast modules
+
+### GUI & Visualization
+
+- **Qt** – GUI toolkit for user interface  
+- **VTK (Visualization Toolkit)** – 3D graphics and visualization engine  
+- **NETGEN** – 2D mesh generator
+
+### Misc. External Libraries
+
+- **xlnt** – C++ library for Excel .xlsx file I/O  
+- **RapidJSON** – Fast JSON parser/generator for C++  
+- **JKQtPlotter** – Qt-based scientific plotting widget
+
+### External Tools (Optional)
+
+- **Pandoc** – Document converter used for generating formatted output  
+- **ezdxf (Python)** – Python library for DXF export used in `hfVisualizer`  
+  - Installation: `pip install ezdxf`
+
+For licensing and attribution details, refer to the `LICENSE.txt` file.
+
 ## License
 
 This software is provided under a custom license.  
