@@ -2,8 +2,7 @@
 
 **Hyfeast** is a high-performance finite element analysis (FEA) framework developed by the Korea Institute of Civil Engineering and Building Technology (KICT).  It is freely available for structural analysis and design applications. 
 
-Hyfeast supports shell, beam, and solid elements, fast parallelized solving, 3D visualization, and batch-mode analysis.  
-It is designed for researchers, engineers, and developers working in structural mechanics and design automation.
+Hyfeast supports shell, beam, and solid elements, fast parallelized solving, 3D visualization, and batch-mode analysis. It is designed for researchers, engineers, and developers working in structural mechanics and design automation.
 
 - Download: [Latest release](https://github.com/jrcho/Hyfeast/releases/latest)  
 - Help: [Online documentation](https://jrcho.github.io/Hyfeast/index.html)  
