@@ -15,8 +15,7 @@ Copyright (C) 2025 HYFEAST Developers
 4. This software is provided "as-is" without any warranty, express or implied.
    The developers assume no responsibility for any issues arising from its use or performance.
 
-For inquiries or commercial licensing, contact:
-📧 jrcho2012@gmail.com
+For inquiries or commercial licensing, contact: jrcho2012@gmail.com
 
 
 ----------------------------
@@ -39,5 +38,4 @@ Copyright (C) 2025 HYFEAST Developers
 4. 본 소프트웨어는 "있는 그대로(as-is)" 제공되며,
    개발자는 사용 또는 성능에 대해 어떠한 책임도 지지 않습니다.
 
-문의 및 상업적 라이선스 관련 연락처:
-📧 jrcho2012@gmail.com
+문의 및 상업적 라이선스 관련 연락처: jrcho2012@gmail.com
