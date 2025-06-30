@@ -14,16 +14,6 @@
 👉 [https://jrcho.github.io/Hyfeast/index.html](https://jrcho.github.io/Hyfeast/index.html)
 
 
-##  구성
-
-```
-HYFEAST_v1.0.zip
-├── bin/          # 실행 파일 및 라이브러리
-├── docs/         # 매뉴얼 및 도움말 문서
-├── examples/     # 예제 입력 파일
-├── LICENSE.txt   # 사용자 라이선스
-```
-
 ## 시스템 요구 사항
 
 - Windows 10 이상
@@ -50,5 +40,4 @@ HYFEAST_v1.0.zip
 
 ## 문의
 
-공식 문의 및 기술 지원:  
-📧 hyfeast-support@example.com
+공식 문의 및 기술 지원:  jrcho2012@gmail.com
