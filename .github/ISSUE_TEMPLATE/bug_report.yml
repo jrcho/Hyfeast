@@ -1,0 +1,40 @@
+name: Bug Report
+description: Report a reproducible bug or error
+title: "[Bug] "
+labels: [bug]
+assignees: []
+
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the problem
+      description: A clear and concise description of what the bug is.
+      placeholder: e.g., Program crashes when opening a specific file...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Open the program
+        2. Load input.inp
+        3. Click 'Analyze'
+        4. Crash happens
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Hyfeast version
+      placeholder: e.g., v1.0.0-alpha
+
+  - type: textarea
+    id: system
+    attributes:
+      label: System Info (OS, Python version, etc.)
+      placeholder: Windows 10, Python 3.11, no ezdxf
