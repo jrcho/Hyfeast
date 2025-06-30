@@ -1,15 +1,53 @@
+- 🇰🇷 [한국어 (Korean)](./README.ko.md)
+
 # Hyfeast
 
-Welcome to the Hyfeast repository.
+**Hyfeast** is a high-performance finite element analysis (FEA) framework  
+freely available for structural analysis and design applications.
 
-Available documentation languages:
+This repository provides a distribution package including binaries, manuals, and example input files.
 
-- 🇰🇷 [한국어 (Korean)](./README.ko.md)
-- 🇺🇸 [English](./README.en.md)
+> 🔗 Download the latest version from the [Releases](https://github.com/jrcho/Hyfeast/releases/latest) page.
 
-Please select your preferred language to view detailed usage instructions.
+To view the Hyfeast help documentation in your browser, visit:
 
+👉 [https://jrcho.github.io/Hyfeast/index.html](https://jrcho.github.io/Hyfeast/index.html)
 
-##  Online Help
+## Package Contents
 
-- [https://jrcho.github.io/Hyfeast/index.html](https://jrcho.github.io/Hyfeast/index.html)
+```
+HYFEAST_v1.0.zip
+├── bin/          # Executables and DLLs
+├── docs/         # Manuals and Help Files
+├── examples/     # Example Input Files
+├── LICENSE.txt   # License Terms
+```
+
+## System Requirements
+
+- Windows 10 or higher
+- 64-bit system
+- (Optional) Python 3.8 or higher
+
+## How to Use
+
+1. Download the latest release from the [Releases](https://github.com/jrcho/Hyfeast/releases/latest) page.
+2. Extract the ZIP file.
+3. Run `bin/hyfeast.exe`.
+4. Refer to `docs/manual.pdf` for instructions or run the example cases.
+
+## Documentation
+
+- `docs/manual.pdf`: Full feature manual
+- `docs/help.html`: GUI Help (optional)
+- `examples/`: Sample input files for various cases
+
+## License
+
+This software is provided under a custom license.  
+See the [LICENSE.txt](LICENSE.txt) file in this repository for full terms.
+
+## Contact
+
+Official contact and technical support:  
+ jrcho2012@gmail.com
