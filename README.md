@@ -55,12 +55,11 @@ Hyfeast incorporates the following open-source and third-party libraries:
 
 ### External Tools (Optional)
 
+- Python – Use for running ezdxf, and modal identification code
+- ezdxf (Python) – DXF export for `hfVisualizer`
 - Pandoc – Document converter  
-- ezdxf (Python) – DXF export for `hfVisualizer`  
-  Install with:
-  ```
-  pip install ezdxf
-  ```
+
+
 
 See `LICENSE.txt` for full licensing and attribution details.
 
