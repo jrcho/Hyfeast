@@ -1,0 +1,2610 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="3.%20Commands.html">
+      
+      
+        <link rel="next" href="../ko/1.%20Overview.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>4. Example - Hyfeast 5.0 Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sectional-constant-calculation-example" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Hyfeast 5.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast 5.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast 5.0 Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. Example
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Hyfeast 5.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast 5.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hyfeast 5.0 Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Command(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/1.%20Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/2.%20Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/3.%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element libraries
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/4.%20Element%20Specification/4.1%20Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/4.%20Element%20Specification/4.2%20Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/4.%20Element%20Specification/4.3%20Truss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/4.%20Element%20Specification/4.4%20Cable.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/4.%20Element%20Specification/4.5%20Shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/4.%20Element%20Specification/4.6%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/4.%20Element%20Specification/4.7%20Acoustic%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/4.%20Element%20Specification/4.8%20MCK.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/4.%20Element%20Specification/4.9%20Moving%20Spring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/4.%20Element%20Specification/4.10%20Tendon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/5.%20Constraint.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/6.%20Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/7.%20Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/8.%20Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/9.%20Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/10.%20Construction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/11.%20CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate system
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/12.%20Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/13.%20Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/14.%20Step%20result.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/15.%20Modelling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling convenience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/16.%20Etc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/17.%20Special%20step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/en/18.%20HDB%20file%20structure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB file structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Command(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/1.%20Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/2.%20Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 절점
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/3.%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. 요소 상세
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. 요소 상세
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/4.%20Element%20Specification/4.1%20Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/4.%20Element%20Specification/4.2%20Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/4.%20Element%20Specification/4.3%20Truss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/4.%20Element%20Specification/4.4%20Cable.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/4.%20Element%20Specification/4.5%20Shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/4.%20Element%20Specification/4.6%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/4.%20Element%20Specification/4.7%20Acoustic%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/4.%20Element%20Specification/4.8%20MCK.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/4.%20Element%20Specification/4.9%20Moving%20Spring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/4.%20Element%20Specification/4.10%20Tendon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/5.%20Constraint.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. 구속조건
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/6.%20Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. 하중
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/7.%20Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. 재료
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/8.%20Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. 함수
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/9.%20Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/10.%20Construction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/11.%20CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. 좌표계
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/12.%20Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. 센서
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/13.%20Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/14.%20Step%20result.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. 해석 결과 관리
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/15.%20Modelling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. 모델링 편의
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/16.%20Etc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. 기타
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/17.%20Special%20step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. 특수 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Command/ko/18.%20HDB%20file%20structure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB 파일 구조
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.%20Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.%20Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Command
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4. Example
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="4.%20Examples.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    4. Example
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sectional-constant-calculation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sectional Constant Calculation Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sectional Constant Calculation Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#h-beam-hbeam-400x200x8x13sec" class="md-nav__link">
+    <span class="md-ellipsis">
+      H-Beam (HBeam-400x200x8x13.sec)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rectangular-section-with-a-hole-holesec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rectangular Section with a Hole (Hole.sec)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tapered-section-igridersec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tapered Section (IGrider.sec)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-section-rcbeamsec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composite Section (RCBeam.sec)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#singly-reinforced-rc-beam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singly Reinforced RC Beam
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rc-column-with-seismic-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC Column with Seismic Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uhpc-beam" class="md-nav__link">
+    <span class="md-ellipsis">
+      UHPC Beam
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rc-beams-and-prestressed-beams-under-axial-force" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC Beams and Prestressed Beams under Axial Force
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phc-pile" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHC Pile
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/2.%20Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 이론
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/3.%20Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 명령매뉴얼
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sectional-constant-calculation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sectional Constant Calculation Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sectional Constant Calculation Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#h-beam-hbeam-400x200x8x13sec" class="md-nav__link">
+    <span class="md-ellipsis">
+      H-Beam (HBeam-400x200x8x13.sec)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rectangular-section-with-a-hole-holesec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rectangular Section with a Hole (Hole.sec)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tapered-section-igridersec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tapered Section (IGrider.sec)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-section-rcbeamsec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composite Section (RCBeam.sec)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#singly-reinforced-rc-beam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singly Reinforced RC Beam
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rc-column-with-seismic-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC Column with Seismic Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uhpc-beam" class="md-nav__link">
+    <span class="md-ellipsis">
+      UHPC Beam
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rc-beams-and-prestressed-beams-under-axial-force" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC Beams and Prestressed Beams under Axial Force
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phc-pile" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHC Pile
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="examples">Examples</h1>
+<h2 id="sectional-constant-calculation-example">Sectional Constant Calculation Example</h2>
+<h3 id="h-beam-hbeam-400x200x8x13sec">H-Beam (HBeam-400x200x8x13.sec)</h3>
+<p>Separate calculation depending on whether there is a fillet or not.</p>
+<p><img alt="Fig. 11. Sectional Constant Calculation for H-Beam" src="../image/Fig.11.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 11.</span></strong> Sectional Constant Calculation for H-Beam</p>
+
+<h3 id="rectangular-section-with-a-hole-holesec">Rectangular Section with a Hole (Hole.sec)</h3>
+<p><img alt="Fig. 12. Rectangular Section with a Hole" src="../image/Fig.12.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 12.</span></strong> Rectangular Section with a Hole</p>
+
+<h3 id="tapered-section-igridersec">Tapered Section (IGrider.sec)</h3>
+<p><img alt="Fig. 13. Tapered Section" src="../image/Fig.13.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 13.</span></strong> Tapered Section</p>
+
+<h3 id="composite-section-rcbeamsec">Composite Section (RCBeam.sec)</h3>
+<p><img alt="Fig. 14. Composite Section" src="../image/Fig.14.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 14.</span></strong> Composite Section</p>
+
+<h2 id="singly-reinforced-rc-beam">Singly Reinforced RC Beam</h2>
+<p>Performed flexural analysis of a rectangular singly reinforced beam with B=280, H=550. The compressive strength of the concrete is 24 MPa, and SD400, 3-D25 rebars were used. For the tensile zone of the concrete, the tensile strength was assumed to be 1/10 of the compressive strength, and a cut-off model was used, which neglects the strength after reaching the tensile strength. The secondary stiffness of the rebar was also ignored.</p>
+<p><img alt="Fig. 15. Singly Reinforced RC Beam (from Udongyun et al., Reinforced Concrete, 3rd edition, Example 5-10)" src="../image/Fig.15.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.</span></strong> Singly Reinforced RC Beam (from Udongyun et al., Reinforced Concrete, 3rd edition, Example 5-10)</p>
+
+<p><img alt="Fig. 16. Execution Overview" src="../image/Fig.16.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 16.</span></strong> Execution Overview</p>
+
+<p><strong><span style="color: blue;">List. 3.</span></strong> RectRC.sec</p>
+
+<div class="highlight"><pre><span></span><code>*Function, TYPE=MPPCEnv, Name=MPP
+ 24, 23025, 0.002, 0.004, 24, 0.004
+
+*Function, TYPE=MPPCIE, Name=MPPIE
+ MPP, 0.002
+
+*Function, TYPE=MultiLinear, Name=CutOff
+ 0, 0
+ 0.0001042, 2.4
+ 0.0001042, 0
+
+*Material, TYPE=UConcrete, Name=conc
+ MPP, MPPIE, 0, 0
+ CutOff, Secant
+
+*Material, TYPE=vonMises, Name=rebarByMises
+ 200000, 0, 0, 0  # E, nu, alpha, density
+ 400, 0, 0   # yield, H, theta 
+
+*Material, TYPE=USteel, Name=rebar
+ 200000, 400, 0, 20,18.5,0.15, 0.01,7, 0.08, 0, 0
+ # E0, yield, E1, R0, a1, a2, a3, a4, eu, alpha, density
+
+*Section, Type=Beam, Name=RectRC-2D
+*Cell, TYPE=Layer,Stack, Mat=conc
+ -550/2, 280
+ 550/2, 280, 55
+*Cell, TYPE=Point, Mat=rebar
+ 1, -225, 0, 1520
+
+*SectionSignal
+ conc, 0.0001042, &quot;Concrete Tesile Failure&quot;
+ rebar, 0.002, &quot;Rebar Yield&quot;
+
+*SectionAnalysis, Name=RectRC-2D, Section=RectRC-2D, Output=Preselect
+ *SectionStep, ExtLoad=0,4e-05,NK, Inc=100
+
+*SectionAnalysis, Name=RectRC-3D, Section=RectRC-3D, Ref=90,0,0, Output=Preselect
+ *SectionStep, ExtLoad=0,4e-05,NK, Inc=100
+</code></pre></div>
+<p><img alt="Fig. 17. Moment-Curvature Curve (Unit: N-mm)" src="../image/Fig.17.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 17.</span></strong> Moment-Curvature Curve (Unit: N-mm)</p>
+
+<p><img alt="Fig. 18. Stress-Strain Curve of the Outer Rebar (Unit: N-mm)" src="../image/Fig.18.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 18.</span></strong> Stress-Strain Curve of the Outer Rebar (Unit: N-mm)</p>
+
+<p><img alt="Fig. 19. Stress-Strain Curve of Concrete at the Compressed Edge (Unit: N-mm)" src="../image/Fig.19.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 19.</span></strong> Stress-Strain Curve of Concrete at the Compressed Edge (Unit: N-mm)</p>
+
+<h2 id="rc-column-with-seismic-details">RC Column with Seismic Details</h2>
+<p>This axial force and flexural analysis was performed for a column cross-section with seismic details. The concrete strength is 24 MPa, and 36-D25 SD300 rebars were used. The confinement pressure of the confined concrete was assumed to be 1.5 MPa, from which the maximum strength (fccp) is calculated to be 30 MPa, and the maximum strain is assumed to be 0.01. The tensile zone of the concrete assumed a strength of 1.826 MPa and a tension cut-off. The secondary stiffness of the rebar was assumed to be 0.01282 of the initial stiffness. The axial force for the analysis was 2000 kN.</p>
+<p><img alt="Fig. 20. Cross-Section of a Column with Seismic Details (Lee Jaehun, &quot;Seismic Design of Reinforced Concrete Piers&quot;, 2000.)" src="../image/Fig.20.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 20.</span></strong> Cross-Section of a Column with Seismic Details (Lee Jaehun, "Seismic Design of Reinforced Concrete Piers", 2000.)</p>
+
+<p><img alt="Fig. 21. Execution Overview" src="../image/Fig.21.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 21.</span></strong> Execution Overview</p>
+
+<p><strong><span style="color: blue;">List. 4.</span></strong> RCColumn.sec</p>
+
+<div class="highlight"><pre><span></span><code>*Function, TYPE=MPPCEnv, Name=MPPCore
+ 24, 23025, 0.002, 0.01, 33.07, 0.01
+
+*Function, TYPE=MPPCIE, Name=MPPIECore
+ MPPCore, 0.00577917
+
+*Function, TYPE=MultiLinear, Name=CutOffCore
+ 0, 0
+ 0.0007926, 1.825
+ 0.0007926, 0
+
+*Function, TYPE=MPPCEnv, Name=MPPCover
+ 24, 23025, 0.002, 0.003, 24, 0.006
+
+*Function, TYPE=MPPCIE, Name=MPPIECover
+ MPPCover, 0.002
+
+*Function, TYPE=MultiLinear, Name=CutOffCover
+ 0, 0
+ 0.0007926, 1.825
+ 0.0007926, 0
+
+*Material, TYPE=UConcrete, Name=CoreConc
+ MPPCore, MPPIECore, 0, 0
+ CutOffCore, Secant
+
+*Material, TYPE=UConcrete, Name=CoverConc
+ MPPCover, MPPIECover, 0, 0
+ CutOffCover, Secant
+
+*Material, TYPE=USteel, Name=Rebar
+ 200000, 400, 2564, 20,18.5,0.15, 0.01,7, 0.08, 0, 0
+ # E0, yield, E1, R0, a1, a2, a3, a4, eu, alpha, density
+
+*Section, Type=Beam, Name=ColSec
+*Cell, TYPE=Layer,Circle, Mat=CoreConc
+ 500, 0, 0, 20
+*Cell, TYPE=Layer,Circle, Mat=CoverConc
+ 600, 500, 0, 4, 20
+*Cell, TYPE=Point,Circle, Mat=Rebar
+ 500, 506.7, 0, 0, 0, 36
+
+
+*SectionStop
+ CoreConc,-0.01,
+ Rebar,,0.08
+
+*SectionSignal
+ CoreConc, 0.0007926, &quot;Core concrete tensile failure&quot;
+ CoverConc, 0.0007926, &quot;Cover concrete tensile failure&quot;
+ CoverConc, -0.003, &quot;Cover concrete compressive failure&quot;
+ Rebar, 0.002, &quot;Rebar Yield&quot;
+
+*SectionAnalysis, Name=E2, Section=ColSec, Output=Preselect
+ *SectionStep, ExtLoad=-2e+06,0,NM, Inc=1
+ *SectionStep, ExtLoad=-2e+06,5e-05,NK, Inc=100
+
+*SectionAnalysis, Name=E2-PM, Section=ColSec, Output=Preselect
+ *SectionStepPM, MaxDeform=-0.01,3.33333e-05  Inc=1000  PMPoints=50
+
+
+ *SectionStepPM, MaxDeform=-0.01,0.02/600, Inc=1000, PMPoints=50
+</code></pre></div>
+<p><img alt="Fig. 22. Moment-Curvature Curve from Analysis E2" src="../image/Fig.22.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 22.</span></strong> Moment-Curvature Curve from Analysis E2</p>
+
+<p><img alt="Fig. 23. Stress-Strain Curves at Key Material Points" src="../image/Fig.23.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 23.</span></strong> Stress-Strain Curves at Key Material Points</p>
+
+<p><img alt="Fig. 24. PM Diagram" src="../image/Fig.24.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 24.</span></strong> PM Diagram</p>
+
+<h2 id="uhpc-beam">UHPC Beam</h2>
+<p>Flexural analysis was performed for a UHPC beam member with the shape shown in Fig. 25.</p>
+<p><img alt="Fig. 25. SC120f Beam Member" src="../image/Fig.25.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 25.</span></strong> SC120f Beam Member</p>
+
+<p>The material model for UHPC is as shown in Fig. 22, and the various material constants are as follows:</p>
+<ul>
+<li>Design Strength: <span class="arithmatex">\(\small f_{ck}\)</span> = 120 MPa</li>
+<li>Allowable Tensile Strength: <span class="arithmatex">\(\small f_{tk}\)</span> = 7 MPa</li>
+<li>Modulus of Elasticity: <span class="arithmatex">\(\small E_c\)</span> = 40,000 MPa</li>
+<li>Characteristic Length: <span class="arithmatex">\(\small \frac{L_{eq}}{h_{beam}} = 0.8 \left[ 1 - \frac{1}{(1.05 + 6 \frac{h_{beam}}{l_{ch}})^3} \right]\)</span></li>
+</ul>
+<p><img alt="Fig. 26. Stress-Strain Curve of UHPC" src="../image/Fig.26.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 26.</span></strong> Stress-Strain Curve of UHPC</p>
+
+<p><img alt="Fig. 27. Execution Overview" src="../image/Fig.27.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 27.</span></strong> Execution Overview</p>
+
+<p><strong><span style="color: blue;">List. 5.</span></strong> UL.sec</p>
+
+<div class="highlight"><pre><span></span><code># UHPC beam
+#
+# Unit : N-mm
+#
+# fck = 120 MPa,  fcrk = 5 MPa, ftk = 7 MPa
+# phic= 0.91(Compression), 0.8(Tension)
+# Ec = 40000 MPa
+# wu = 0.3 mm
+# Leq = 465.8786 mm
+
+*Function, TYPE=MultiLinear, Name=SC120f-C
+ 0., 0.
+ 0.85*0.91*120/40000, 0.85*0.91*120
+ 0.004, 0.85*0.91*120
+
+*Function, TYPE=MultiLinear, Name=SC120f-T
+ 0., 0.
+ 0.8*5/40E3, 0.8*5
+ 0.8*5/40E3+0.3/465.8786, 0.8*7
+ 0.8*5/40E3+5.3/465.8786, 0.
+
+*Material, Type=UConcrete, Name=SC120f   
+ SC120f-C
+ SC120f-T,Secant
+
+
+# Yield = 400 MPa , zero 2nd moduls, 
+*Material, Type=USteel, Name=rebar
+ 200E3, 400*0.9, 0, 20,18.5,0.15
+
+*SectionStop
+ SC120f,-0.004, 
+ rebar,-0.12,0.12
+
+# Et = 0. steel   assumed
+*Section, TYPE=Beam, Name=section
+*Cell, TYPE=Layer,Stack, Mat=SC120f
+ -550, 220, ToDirectForm
+    0, 220, 55
+    0, 120, 0
+  450, 120, 45
+*Cell, TYPE=Point, Mat=rebar
+ 1, 450-860, 0, 3421.194 
+
+
+*SectionAnalysis, Name=UL, Section=section
+ *SectionOutput, TYPE=All   
+ *SectionStep, ExtLoad=0.,0.00005,NK, Inc=100
+</code></pre></div>
+<p><img alt="Fig. 28. Moment-Curvature Curve of UHPC" src="../image/Fig.28.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 28.</span></strong> Moment-Curvature Curve of UHPC</p>
+
+<h2 id="rc-beams-and-prestressed-beams-under-axial-force">RC Beams and Prestressed Beams under Axial Force</h2>
+<p>For program verification, the analysis of a prestressed beam under axial force, as presented in the textbook by Michael P. Collins et al. (1991), was performed.</p>
+<p><img alt="Fig. 29. RC Beams and Prestressed Beams under Axial Force (Figure 4-4 from Collins et al.'s 1991 textbook)" src="../image/Fig.29.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 29.</span></strong> RC Beams and Prestressed Beams under Axial Force (Figure 4-4 from Collins et al.'s 1991 textbook)</p>
+
+<p><strong>Reference</strong></p>
+<p>Michael P. Collins, Denis Mitchell (1991), “Prestressed Concrete Structures,” Prentice Hall.</p>
+<p><strong><span style="color: blue;">List. 6.</span></strong> P1.sec</p>
+
+<div class="highlight"><pre><span></span><code># Unit: N-mm
+
+# Verification sample: 
+# Prestressed Concrete Structures by Michael P. Collins, and Denis Mitchell, Figure 4-4
+
+## Concrete model
+*Function, TYPE=MultiLinear, Name=concC
+0.,     0
+0.0005, 15.09375
+0.001,  25.875
+0.0015, 32.34375
+0.002,  34.5
+0.0025, 32.34375
+0.003,  25.875
+0.003,    0.
+
+*Function, TYPE=MultiLinear, Name=concT
+ 0., 0.
+ 2*0.0005/15.09375, 2.
+ 2*0.0005/15.09375, 0.
+
+*Material, Type=UConcrete, Name=conc   
+ concC
+ concT, Secant
+
+## Rebar model   
+*Material, Type=vonMises, Name=rebar
+ 200000. 
+ 400  # TYPE=Value, yield, H, theta, Kinf, K0, delta
+
+## Tendon model 
+*Material, Type=vonMises, Name=tendon
+ 200000. 
+ 1655  # TYPE=Value, yield, H, theta, Kinf, K0, delta
+
+## Section A
+*Section, TYPE=Beam, Name=memberA
+*Cell, TYPE=Layer,Stack Mat=conc
+ -254/2, 254
+  254/2, 254, 2 
+*Cell, TYPE=Point, Mat=rebar
+ 1, 0., 0., 1600.
+
+## Section B
+*Section, TYPE=Beam, Name=memberB
+*Cell, TYPE=Layer,Stack, Mat=conc
+ -254/2, 254
+  254/2, 254, 2 
+*Cell, TYPE=Point, Mat=tendon
+ 1, 0, 0, 395  # id, z, z, A
+
+## Set stop strain 
+*SectionStop
+ conc,-0.003,
+ rebar,-0.12,0.12
+ tendon,-0.2,0.2
+
+*SectionSignal
+ conc, 0.0001042, &quot;Concrete Tensile Failure&quot;
+ rebar, 0.002, &quot;Rebar Yield&quot;
+
+*SectionAnalysis, Name=P1-A-T, Section=memberA
+ *SectionStep, ExtLoad=0.003, 0., EM, Inc=100
+
+*SectionAnalysis, Name=P1-A-C, Section=memberA
+ *SectionStep, ExtLoad=-0.003, 0., EM, Inc=100
+
+*SectionAnalysis, Name=P1-B-T, Section=memberB
+ *SectionStep, ExtLoad=0., 0., NM, Inc=10
+   InitialStress, 2, 1240  # pretension
+ *SectionStep, ExtLoad=0.003, 0., EM, Inc=50
+
+*SectionAnalysis, Name=P1-B-C, Section=memberB
+ *SectionStep, ExtLoad=0., 0., NM, Inc=1
+   InitialStress, 2, 1240  # pretension
+ *SectionStep, ExtLoad=-0.003, 0., EM, Inc=50
+
+## Section B - post 
+#*SectionAnalysis, Name=P1-B-TPost, Section=memberB
+# *SectionStep, ExtLoad=0., 0., NM, Inc=10
+#   Stress, 2, 1240  # posttension
+# *SectionStep, ExtLoad=0.003, 0., EM, Inc=50
+</code></pre></div>
+<h2 id="phc-pile">PHC Pile</h2>
+<p>The PHC pile is a prestressed hollow circular member. In this case, an analysis was conducted on a member of type A with a diameter of 500 mm. According to the KS standard, it is required that the crack and failure moments must exceed a certain level through bending tests under no axial force and under three stages of applied axial force. Here, an analysis of the failure moment was conducted.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Axial Force (kN)</th>
+<th>Failure Moment (KS Standard, kN·m)</th>
+<th>Failure Moment (Analysis, kN·m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N0</td>
+<td>0</td>
+<td>155</td>
+<td><strong>169.4</strong></td>
+</tr>
+<tr>
+<td>N1</td>
+<td>882.9</td>
+<td>304.1</td>
+<td>328</td>
+</tr>
+<tr>
+<td>N2</td>
+<td>1766</td>
+<td>421.8</td>
+<td>454.4</td>
+</tr>
+<tr>
+<td>N3</td>
+<td>2649</td>
+<td>496.4</td>
+<td>536.8</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Fig. 31. PHC500A" src="../image/Fig.31.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 31.</span></strong> PHC500A </p>
+
+<p><img alt="Fig. 32. PM Analysis Result of PHC500A" src="../image/Fig.32.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 32.</span></strong> PM Analysis Result of PHC500A</p>
+
+<p><strong><span style="color: blue;">List. 7.</span></strong> PHC500A.sec</p>
+
+<div class="highlight"><pre><span></span><code># K500E
+# Unit : N-mm
+
+
+#################################################
+# Material model data (UNIT = N-mm)
+#################################################
+# KDS-C80        : KDS&#39;s 80 MPa concrete model for nonlinear analysis
+# KDS-C80-LST-EX : KDS&#39;s 80 MPa concrete model for sectional analysis on extreme event state (phi=1., no tension)
+# KDS-C80-LST-UL : KDS&#39;s 80 MPa concrete model for sectional analysis on ultimate state (phi=0.65, no tension)
+# SD600L    : SD600 Rebar less than D22 for nonlinear analysis or extreme event state  (phi = 1.)
+# SD600L-0.9 : SD600 Rebar less than D22 for nonlinear analysis or ultimate event state (phi = 0.9)
+#################################################
+
+
+#################################################
+# KDS-C80N : KDS&#39;s 80 MPa concrete model for nonlinear analysis
+*Function, Type=FIBCEnv, Name=KDS-C80-C
+ 86., 41270.9464, 0.00279  # fcm, Ec, eco
+
+*Function, TYPE=MultiLinear, Name=KDS-C80-T
+ 0., 0.
+ 5.845031943/41270.9464, 5.845031943
+ 5.845031943/41270.9464, 0.
+
+*Material, Type=UConcrete, Name=KDS-C80    
+ KDS-C80-C,PlasticUnloading, ,KDS-C80-T,SecantUnloading
+
+
+#################################################
+# KDS-C80-LST-EX : KDS&#39;s 80 MPa concrete model for sectional analysis on extreme event state (phi=1., no tension)
+*Function, TYPE=ParabolaCEnv, Name=KDS-C80-LST-EX-C
+ 0.85*80., 1.22, 0.0024, 0.0029  # fco, n, eco, ecu
+
+*Material, Type=UConcrete, Name=KDS-C80-LST-EX
+ KDS-C80-LST-EX-C,PlasticUnloading 
+
+
+#################################################
+# KDS-C80U : KDS&#39;s 80 MPa concrete model for sectional analysis on ultimate state (phi=0.65)
+*Function, TYPE=ParabolaCEnv, Name=KDS-C80-LST-UL-C
+ 0.65*0.85*80., 1.22, 0.0024, 0.0029  # fco, n, eco, ecu
+
+*Material, Type=UConcrete, Name=KDS-C80-LST-UL
+ KDS-C80-LST-UL-C,PlasticUnloading
+
+
+#################################################
+# SD600H16E : SD600H16 Rebar for nonlinear analysis or extreme event state  (phi = 1.)
+*Material, TYPE=vonMises, Name=SD600L
+ 200000. 
+ 600., 496.0727573,  # TYPE=Value, yield, H, theta, Kinf, K0, delta
+
+#################################################
+# SD600H16U : SD600H16 Rebar for nonlinear analysis or ultimate event state (phi = 0.9)
+*Material, TYPE=vonMises, Name=SD600L-0.9
+ 200000. 
+ 600.*0.9, 496.0727573,  # TYPE=Value, yield, H, theta, Kinf, K0, delta
+
+
+#################################################
+# Ulbon
+*Material, Type=vonMises, Name=ulbon74
+ 200000. 
+ 1335., 1391.373484,  # TYPE=Value, yield, H, theta, Kinf, K0, delta
+
+*Material, Type=vonMises, Name=ulbon92
+ 200000. 
+ 1325., 1540.372671,  # TYPE=Value, yield, H, theta, Kinf, K0, delta
+
+*Material, Type=vonMises, Name=ulbon110
+ 200000. 
+ 1325., 1540.372671,  # TYPE=Value, yield, H, theta, Kinf, K0, delta
+
+*Material, Type=vonMises, Name=neturen71
+ 200000. 
+ 1275., 4407.294833,  # TYPE=Value, yield, H, theta, Kinf, K0, delta
+
+#################################################
+# Stop and signal strains
+*SectionStop
+ KDS-C80, -0.0029
+ KDS-C80-LST-EX, -0.0029
+ KDS-C80-LST-UL, -0.0029
+ SD600L,-0.1,0.1
+ SD600L-0.9,-0.1,0.1
+ ulbon74,-0.04,0.04
+ ulbon92,-0.04,0.04
+ ulbon110,-0.04,0.04
+ neturen71,-0.04,0.04
+
+*SectionSignal
+  KDS-C80, 5.845031943/41270.9464, &quot;Concrete tensile failure&quot;
+  SD600L,-600/200000, &quot;Rebar compressive yield&quot;
+  SD600L, 600/200000, &quot;Rebar tesile yield&quot;
+  SD600L-0.9,-600*0.9/200000, &quot;Rebar compressive yield&quot;
+  SD600L-0.9, 600*0.9/200000, &quot;Rebar tensile yield&quot;
+  ulbon74, -1335/200000, &quot;PS compressive yield&quot;
+  ulbon74, 1335/200000, &quot;PS tensile yield&quot;
+  ulbon92, -1325/200000, &quot;PS compressive yield&quot;
+  ulbon92, 1325/200000, &quot;PS tensile yield&quot;
+  ulbon110, -1318.9/200000, &quot;PS compressive yield&quot;
+  ulbon110,  1318.9/200000, &quot;PS tensile yield&quot;
+  neturen71, -1275/200000, &quot;PS compressive yield&quot;
+  neturen71,  1275/200000, &quot;PS tensile yield&quot;
+
+
+### PHC500A section
+*Section, TYPE=Beam, Name=PHC500A
+*Cell, TYPE=Layer,Circle, Mat=KDS-C80, StartId=1, N=250,160
+ 250,170
+*Cell, Type=Point,Circle, Mat=ulbon92, StartId=1001, N=9 
+ 220-9.2/2, 64
+
+### Prention + N0 axial force flexure
+*SectionAnalysis, Name=PHC500A-N0 Section=PHC500A
+ *SectionStep, ExtLoad=0.,0.,NM, Inc=1
+   InitialStress, 2, 994.625  # 0.7*fpu
+ *SectionStep, ExtLoad=0,0.02/250,NK, Inc=1000  
+
+### Prention + N1 axial force flexure
+*SectionAnalysis, Name=PHC500A-N1 Section=PHC500A
+ *SectionStep, ExtLoad=0.,0.,NM, Inc=1
+   InitialStress, 2, 994.625  # 0.7*fpu
+ *SectionStep, ExtLoad=-882900,0,NM, Inc=1  
+ *SectionStep, ExtLoad=-882900,0.02/250,NK, Inc=1000   
+
+### Prention + N2 axial force flexure
+*SectionAnalysis, Name=PHC500A-N2 Section=PHC500A
+ *SectionStep, ExtLoad=0.,0.,NM, Inc=1
+   InitialStress, 2, 994.625  # 0.7*fpu
+ *SectionStep, ExtLoad=-1766000,0,NM, Inc=1  
+ *SectionStep, ExtLoad=-1766000,0.02/250,NK, Inc=1000   
+
+### Prention + N3 axial force flexure
+*SectionAnalysis, Name=PHC500A-N3 Section=PHC500A
+ *SectionStep, ExtLoad=0.,0.,NM, Inc=1
+   InitialStress, 2, 994.625  # 0.7*fpu
+ *SectionStep, ExtLoad=-2649000,0,NM, Inc=1  
+ *SectionStep, ExtLoad=-2649000,0.02/250,NK, Inc=1000   
+
+### PM diaggram 
+*SectionAnalysis, Name=PHC500A Section=PHC500A
+ *SectionStep, ExtLoad=0.,0.,NM, Inc=1
+   InitialStress, 2, 994.625  # 0.7*fpu
+ *SectionStepPM, MaxDeform=-0.005,0.02/250, Inc=1000, PMPoints=20
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

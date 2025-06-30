@@ -1,0 +1,150 @@
+.md-typeset {
+    font-size: .7rem;
+}
+
+/*
+.md-typeset h1{
+	font-size: 1.8em;
+    font-weight: 700;
+    color: #1a0a938a;
+    margin: 0 0 0.64em;
+    border-bottom: 2px solid #1a0a938a;
+}
+*/
+
+.md-typeset h1 {
+    display: none;
+    margin: -0.6em;
+    padding: -0.6em;
+}
+
+/*
+.md-typeset h3 {
+    font-size: 1.1em;
+}
+
+
+h3{
+    color: blue;
+}
+*/
+
+
+
+
+.md-typeset :not(pre)>code {
+    color: #8f08088a;
+}
+
+
+.md-typeset h2 {
+/*    text-transform: uppercase; */
+    color: #8f08088a;
+    font-size: 1.25em;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    margin: 1.1em 0 0.8em;
+	border-bottom: 2px solid red;
+}
+
+/*
+.md-typeset h3 {
+    text-transform: uppercase; 
+    color: #8f08088a;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    margin: 1.1em 0 0.8em;
+	border-bottom: 1px solid red; 
+}
+*/
+
+
+.md-typeset h3 {
+    color: #04743c;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    margin: 1.1em 0 0.8em;
+    position: relative; /* 블록이 글자 앞에 위치하도록 설정 */
+}
+
+.md-typeset h3::before {
+    content: ""; /* 블록을 추가하기 위해 content 속성을 빈 문자열로 설정 */
+    display: inline-block;
+    width: 10px; /* 사각형 블록의 너비 */
+    height: 10px; /* 사각형 블록의 높이 */
+    background-color: #04743c; /* 블록의 색상 */
+    margin-right: 10px; /* 블록과 글자 사이의 간격 */
+    vertical-align: middle; /* 텍스트와 블록의 수직 정렬 */
+}
+
+
+.md-typeset h4, .md-typeset h5 {
+    text-transform: uppercase;
+    color: #1a0a938a;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    margin: 1.1em 0 0.1em;
+}
+
+.md-typeset .admonition, .md-typeset details {
+    margin: 0.2em 0;
+}
+
+/* inline code like `*Node` */
+.md-typeset code {
+  background-color: #f5f5f5;  /* Light background for better visibility */
+  color: #333333;             /* Darker text color */
+  border-radius: 4px;         /* Rounded edges */
+  font-weight: bold;          /* Make it bold */
+}
+
+/* Target blocks of code for better presentation */
+.md-typeset pre {
+  background-color: #f0f0f0;  /* Background for code blocks */
+  border: 1px solid #ddd;     /* Subtle border */
+  border-radius: 6px;         /* Rounded edges for a softer look */
+}
+
+/*
+.md-typeset pre{
+	margin: 0.1em 0px;
+}
+*/
+
+/* 왼쪽 사이드바 내비게이션의 폰트 크기 */
+.md-sidebar--primary .md-nav__item a {
+    font-size: 0.7rem; /* 원하는 크기로 조정 */
+}
+
+/* 오른쪽 페이지 목차(TOC) 내비게이션의 폰트 크기 */
+.md-sidebar--secondary .md-nav__link {
+    font-size: 0.7rem; /* 원하는 크기로 조정 */
+}
+
+/* 표의 테두리를 둥글게 만들기 */
+.md-typeset table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-top: 1px solid #ddd; /* 상단 테두리 유지 */
+  border-bottom: 1px solid #ddd; /* 하단 테두리 유지 */
+  border-left: none; /* 표의 왼쪽 테두리 제거 */
+  border-right: none; /* 표의 오른쪽 테두리 제거 */
+  border-radius: 10px 10px 0 0; /* 상단 좌우 둥근 모서리 */
+  font-size: .5rem;
+}
+
+/* 표의 각 셀 테두리 및 스타일링 */
+.md-typeset table th, .md-typeset table td {
+  border: 1px solid #ddd; /* 셀 간 경계선 유지 */
+  padding: 8px;
+  text-align: center;
+}
+
+/* 헤더 스타일링 (연한 파란색) */
+.md-typeset table th {
+  background-color: #90caf9; /* 헤더 색상 (밝은 파란색) */
+  color: white;
+}

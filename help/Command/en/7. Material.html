@@ -1,0 +1,2779 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="6.%20Load.html">
+      
+      
+        <link rel="next" href="8.%20Function.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>7. Material - Hyfeast 5.0 Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#material" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Hyfeast 5.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast 5.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast 5.0 Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. Material
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Hyfeast 5.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast 5.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hyfeast 5.0 Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Command(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.%20Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.%20Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element libraries
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.1%20Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.2%20Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.3%20Truss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.4%20Cable.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.5%20Shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.6%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.7%20Acoustic%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.8%20MCK.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.9%20Moving%20Spring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.10%20Tendon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5.%20Constraint.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6.%20Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="7.%20Material.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*Material">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material-typeisoelasticity" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=IsoElasticity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeorthoelasticity" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=OrthoElasticity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typevonmises" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=vonMises
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typetresca" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=Tresca
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typemohrcoulomb" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=MohrCoulomb
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typedruckerprager" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=DruckerPrager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeconcretedamage" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=ConcreteDamage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeuconcrete" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=UConcrete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeusteel" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=USteel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typegaphook" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=GapHook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeacoustic" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=Acoustic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeporous" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=Porous
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8.%20Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9.%20Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10.%20Construction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11.%20CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate system
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12.%20Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="13.%20Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14.%20Step%20result.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="15.%20Modelling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling convenience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="16.%20Etc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17.%20Special%20step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="18.%20HDB%20file%20structure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB file structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Command(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/1.%20Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/2.%20Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 절점
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/3.%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. 요소 상세
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. 요소 상세
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Element%20Specification/4.1%20Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Element%20Specification/4.2%20Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Element%20Specification/4.3%20Truss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Element%20Specification/4.4%20Cable.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Element%20Specification/4.5%20Shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Element%20Specification/4.6%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Element%20Specification/4.7%20Acoustic%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Element%20Specification/4.8%20MCK.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Element%20Specification/4.9%20Moving%20Spring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/4.%20Element%20Specification/4.10%20Tendon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/5.%20Constraint.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. 구속조건
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/6.%20Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. 하중
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/7.%20Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. 재료
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/8.%20Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. 함수
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/9.%20Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/10.%20Construction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/11.%20CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. 좌표계
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/12.%20Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. 센서
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/13.%20Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/14.%20Step%20result.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. 해석 결과 관리
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/15.%20Modelling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. 모델링 편의
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/16.%20Etc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. 기타
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/17.%20Special%20step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. 특수 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ko/18.%20HDB%20file%20structure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB 파일 구조
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/en/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/en/2.%20Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/en/3.%20Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Command
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/en/4.%20Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Example
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/ko/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/ko/2.%20Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 이론
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/ko/3.%20Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 명령매뉴얼
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/ko/4.%20Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*Material">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material-typeisoelasticity" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=IsoElasticity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeorthoelasticity" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=OrthoElasticity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typevonmises" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=vonMises
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typetresca" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=Tresca
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typemohrcoulomb" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=MohrCoulomb
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typedruckerprager" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=DruckerPrager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeconcretedamage" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=ConcreteDamage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeuconcrete" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=UConcrete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeusteel" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=USteel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typegaphook" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=GapHook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeacoustic" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=Acoustic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-typeporous" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Material Type=Porous
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>7. Material</h1>
+
+<p>The material model is specified using *Material. It must have a unique name, and duplicate names cannot be assigned.</p>
+<h2 id="material">*Material</h2>
+<p>Define material</p>
+<div class="highlight"><pre><span></span><code>*Material, TYPE=type, Name=name
+ ...datalines depdending type
+</code></pre></div>
+<h5 id="keyword-line">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>TYPE=type:</strong> type of materis. </p>
+<ul>
+<li>__IsoElasticity:__Isotropic Linear Elastic Material</li>
+<li><strong>OrthoElasticity:</strong> Orthotropic Linear Elastic Material</li>
+<li><strong>vonMises:</strong> von Mises plasticity</li>
+<li><strong>Tresca:</strong> Tresca plasticity</li>
+<li><strong>MohrCoulomb:</strong> Mohr-Coulomb plasticity</li>
+<li><strong>DruckerPrager:</strong> Drucker-Prager plasticity</li>
+<li><strong>ConcreteDamage:</strong> Concrete damage plasticity</li>
+</ul>
+</li>
+<li>
+<p><strong>Name=name:</strong> material name</p>
+</li>
+</ul>
+</div>
+<h3 id="material-typeisoelasticity">*Material Type=IsoElasticity</h3>
+<p>Define isotropic elasticity material</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=name
+ E, nu, alpha, density
+</code></pre></div>
+<h5 id="first-dataline">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E:</strong> elastic modulus (required)</li>
+<li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
+<li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
+<li><strong>density:</strong> density (optional, default 0.)</li>
+</ul>
+</div>
+<h5 id="example">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity Name=iso
+ 200., 0.2        # E, nu, alpha, density
+</code></pre></div>
+<h3 id="material-typeorthoelasticity">*Material Type=OrthoElasticity</h3>
+<p>Define orthotropic elasticity </p>
+<div class="highlight"><pre><span></span><code>*Material, Type=OrthoElasticity, Name=name
+  E1,E2,E3, G12,G23,G31, nu12,nu23,nu31, a1,a2,a3, density, angle, cs
+</code></pre></div>
+<h5 id="first-dataline_1">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E1, E2, E3:</strong> Elastic moduli(required)</li>
+<li><strong>G12, G23, G31:</strong> Shear moduli (required)</li>
+<li><strong>nu12, nu23, nu31:</strong> Poison's ratios(required)</li>
+<li><strong>a1,a2,a3:</strong> thermal expansion coefficient (optional, default 0)</li>
+<li><strong>density:</strong> density(optional, default 0.)</li>
+<li><strong>angle:</strong> angle in laminar condition for *Section, TYPE=CompositeShell (optional, default 0.)</li>
+<li><strong>cs:</strong> material coodinate system(optional). If not given, global coordinate system is used for material coordinates</li>
+</ul>
+</div>
+<p>Angle is the angle used to define the local coordinate system in the laminar stress condition when defining <code>*Section, TYPE=CompositeShell</code>. CS is used for all other stress conditions.</p>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, Type=OrthoElasticity Name=ortho
+ 200.,100.,100., 50.,30.,30., 0.12, 0.12, 0.12, 1E-6, 1.2E-6, 1.4E-4, 7810., 0, cs
+# E1, E2, E3, G12, G23, G31, nu12, nu23, nu31, a1, a2, a3, density, angle, cs
+
+*Material, Type=OrthoElasticity Name=ortho
+ 200.,100.,100., 50.,30.,30., 0.12, 0.12, 0.12, 1E-6, 1.2E-6, 1.4E-4, 7810., 90
+# E1, E2, E3, G12, G23, G31, nu12, nu23, nu31, a1, a2, a3, density, angle, cs
+</code></pre></div>
+<h3 id="material-typevonmises">*Material Type=vonMises</h3>
+<p>Define von Mises plasticity(J2 plasticity)</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=vonMises, Name=name
+ E, nu, alpha, density
+ yield, H, theta, Kinf, K0, delta
+
+*Material, Type=vonMises, Name=name
+ E, nu, alpha, density
+ isoHardFunc, kinHardFunc|H
+</code></pre></div>
+<h5 id="first-dataline_2">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E:</strong> elastic modulus (required)</li>
+<li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
+<li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
+<li><strong>density:</strong> density (optional, default 0.)</li>
+</ul>
+</div>
+<h5 id="second-dataline-for-value-when-the-first-entry-is-not-a-function-name">Second dataline for value (when the first entry is not a function name)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>yield:</strong> Initial yield value (required)</li>
+<li><strong>H:</strong> slope after initial yield (optional, default 0)</li>
+<li><strong>theta:</strong> Mixed hardening parameter (optional, default 0)</li>
+<li><strong>Kinf:</strong> Saturation hardening시의 파라미터(optional, default 0)</li>
+<li><strong>K0:</strong> Saturation hardening시의 파라미터(optional, default 0)</li>
+<li><strong>delta:</strong> Saturation hardening시의 파라미터(optional, default 0)</li>
+</ul>
+</div>
+<h5 id="second-dataline-for-function-when-the-first-entry-is-a-function-name">Second dataline for function (when the first entry is a function name)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>isoHardFunc:</strong> Isotropic hardening function. (required)</li>
+<li><strong>kinHardFunc</strong> or <strong>H:</strong> Kinematic hardening function or modulus(optional, default 0)</li>
+</ul>
+</div>
+<p><strong>Value로 지정하는 경우</strong></p>
+<p>When specified as <code>Value</code>, the following equation is applied.</p>
+<ul>
+<li>Linear mixed hardening model</li>
+</ul>
+<div class="arithmatex">\[
+\small
+\begin{aligned} 
+&amp;K(\kappa) = \sigma_Y + \theta \bar{H} \kappa  \\
+&amp;H'(\kappa) = (1-\theta) \bar{H}, ~ {\rm where,~} 0 \le \theta \le 1  \\
+\end{aligned}
+\]</div>
+<ul>
+<li>Saturation isotropic hardening and linear kinematic hardening model</li>
+</ul>
+<div class="arithmatex">\[
+\small
+\begin{aligned} 
+&amp;K(\kappa) = \sigma_Y + \theta \bar{H} \kappa + ( \bar{K}_\infty- \bar{K}_0 )(1-exp(-\delta \kappa)) \\
+&amp;H'(\kappa) = (1-\theta) \bar{H}, ~ {\rm where,~} 0 \le \theta \le 1  \\
+\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(\small\bar{H}\)</span> is a constant, and when <span class="arithmatex">\(\small\theta = 0\)</span>, only kinematic hardening is applied, while when <span class="arithmatex">\(\small\theta = 1\)</span>, only isotropic hardening is applied. The condition <span class="arithmatex">\(\small 0 \le \theta \le 1\)</span> must be satisfied. In the linear mixed hardening model, <span class="arithmatex">\(\small dK/d \kappa = (1-\theta)\bar{H}\)</span> represents the isotropic hardening modulus, and <span class="arithmatex">\(\small (1-\theta) \bar{H}\)</span> is the kinematic hardening modulus.</p>
+<p>If the conditions <span class="arithmatex">\(\small\bar{K}_\infty = \bar{K}_0\)</span> or <span class="arithmatex">\(\small\delta = 0\)</span> are satisfied, it corresponds to linear mixed hardening. In linear mixed hardening, <span class="arithmatex">\(\bar{H}\)</span> can take negative values; however, in the saturation isotropic hardening and linear kinematic hardening model, the conditions <span class="arithmatex">\(\small\bar{H} \ge 0\)</span>, <span class="arithmatex">\(\small\bar{K}_\infty \ge \bar{K}_0 \gt 0\)</span>, and <span class="arithmatex">\(\small\delta \ge 0\)</span> must be satisfied.</p>
+<p><img alt="Fig. 7.2-1. Linear hardening" src="../image/7.2-1.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-1.</span></strong> Linear hardening</p>
+
+<p><strong>Function으로 지정하는 경우</strong></p>
+<p>If uniaxial tensile test results for the material are available, proper calibration can be performed using them. In this case, the appropriate use of <code>Type=Function</code> can be applied. One important point to note is that when both isotropic hardening and kinematic hardening are present, the second elastic modulus must be configured to satisfy the equation as shown in Figure 7.2-2.</p>
+<p><img alt="Fig. 7.2-2. Nonlinear hardening" src="../image/7.2-2.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-2.</span></strong> Nonlinear hardening</p>
+
+<h5 id="example_2">Example</h5>
+<div class="highlight"><pre><span></span><code># Linear isotropic hardening case
+*Material, Type=vonMises, Name=steel1
+ 2000000.          # E, nu, alpha, density
+ 3000., 300.,1.    # yield, H, theta, Kinf, K0, delta
+
+# Linear kinematic hardening case
+*Material, Type=vonMises, Name=steel2
+ 2000000.        # E, nu, alpha, density
+ 3000., 300.,    # yield, H, theta, Kinf, K0, delta
+
+# Nonlinear isotropic hardening case
+*Function, Type=MultiLinear, Name=isoFunc 
+ 0. 200.
+ 0.01 210.
+
+*Material, Type=vonMises, Name=steel3
+ 200000.    # E, nu, alpha, density
+ isoFunc    # isoHardFunc, kinHardFunc|H
+
+# Nonlinear isotropic hardening, linear kinematic hardneing case
+*Material, Type=vonMises, Name=steel4
+ 200000.    # E, nu, alpha, density
+ isoFunc, 20.      # isoHardFunc, kinHardFunc|H
+
+# Nonlinear isotropic/kinematic hardneing case
+*Material, Type=vonMises, Name=steel5
+ 200000.    # E, nu, alpha, density
+ isoFunc, kinFunc     # isoHardFunc, kinHardFunc|H
+</code></pre></div>
+<h3 id="material-typetresca">*Material Type=Tresca</h3>
+<p>Define Tresca plasticity material model</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=Tresca, Name=name
+ E, nu, alpha, density, StrainHardening|IsotropicHardening
+ {yield,dyield}|yieldFunc
+</code></pre></div>
+<h5 id="first-dataline_3">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E:</strong> elastic modulus (required)</li>
+<li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
+<li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
+<li><strong>density:</strong> density (optional, default 0.)</li>
+<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+</ul>
+</div>
+<h5 id="second-dataline">Second dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>yield,dyield:</strong> initial yield value(required), and the derivative after initial yielding(optional, default 0.)</li>
+<li><strong>yieldFunc:</strong> yield function(required)</li>
+</ul>
+</div>
+<p>The Tresca material model has the following yield function and flow potential:</p>
+<div class="arithmatex">\[
+\small
+F({\sigma}, \kappa) = | \sigma_1 - \sigma_3 | - \sigma_Y (\kappa)
+\]</div>
+<p>The hardening rule can apply strain hardening, work hardening, or the isotropic associative hardening rule. In the Tresca model, work hardening and associative isotropic hardening are identical.</p>
+<p><img alt="Fig. 7.2-3. Tresca yield criteria" src="../image/7.2-3.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-3.</span></strong> Tresca yield criteria</p>
+
+<h5 id="example_3">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=MultiLinear, Name=trYield
+ 0. 0.
+ 0.01 10.
+ 0.02  15
+
+# no hardening case with sy = 20. 
+*Material, Type=Tresca, Name=steelT1
+ 2E6, 0.18, 1E-5, 7850   # E, nu, alpha, density
+ 20                      # yield, dyield
+
+# linear hardening case with strain hardening 
+*Material, Type=Tresca, Name=steelT2
+ 2E6, 0.18, 1E-5, 7850   # E, nu, alpha, density
+ 20, 0.1                 # yield, dyield
+
+# linear hardening case with work hardening
+*Material, Type=Tresca, Name=steelT3
+ 2E6, 0.18, 1E-5, 7850                    # E, nu, alpha, density
+ 20, 0.1, StrainHardening|WorkHardening   # yield, dyield, StrainHardening|WorkHardening
+
+# nonlinear hardening case with work hardening
+*Material, Type=Tresca, Name=steelT4
+ 2E6, 0.18, 1E-5, 7850   # E, nu, alpha, density
+ trYield                 # yieldFunc
+</code></pre></div>
+<h3 id="material-typemohrcoulomb">*Material Type=MohrCoulomb</h3>
+<p>Define Mohr-Coulomb material</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=MohrCoulomb, Name=name
+ E, nu, alpha, density, StrainHardening|IsotropicHardening
+ {coh,dcoh}|cohFunc
+ {fric,dfric}|fricFunc 
+ {dila,ddila}|dilaFunc   
+</code></pre></div>
+<h5 id="first-dataline_4">First dataline</h5>
+<div class="admonition note"></div>
+<ul>
+<li><strong>E:</strong> elastic modulus (required)</li>
+<li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
+<li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
+<li><strong>density:</strong> density (optional, default 0.)</li>
+<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+</ul>
+<h5 id="second-dataline_1">Second dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>coh,dcoh:</strong> initial value (required) and derivative of cohesion (optional, default 0.)</li>
+<li><strong>cohFunc:</strong> function name of cohesion function (required)</li>
+</ul>
+</div>
+<h5 id="third-dataline-frictional-quatities">Third dataline (frictional quatities)</h5>
+<div class="admonition note">
+<ul>
+<li>fric,dfric: initial value(required) and derivative of friction angle. (optional, default 0.)</li>
+<li>fricFunc: function name of friction angle function  (required)</li>
+</ul>
+</div>
+<h5 id="forth-dataline-dilatent-quanties">Forth dataline (dilatent quanties)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>dila,ddila:</strong> initial value and derivative of dilatent angle (default 0., 0.)</li>
+<li><strong>dilaFunc:</strong> function name of dilatent function (optional)</li>
+</ul>
+</div>
+<p>The units for the frictional angle and dilatant angle are in degrees, not radians. If the value of the dilatant angle is equal to the frictional angle, the associative flow rule is applied. Otherwise, the non-associative flow rule is applied. The initial cohesion (cohesion0) must be specified as a non-zero value. When using the associative isotropic hardening (i.e., IsotropicHardening) as the hardening rule, constant frictional and dilatant angles must be used. </p>
+<p>The Mohr-Coulomb material model uses the following yield function and plastic potential.</p>
+<div class="arithmatex">\[
+\small
+F( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \phi - 2 c(\kappa) \cos(\phi(\kappa))
+\]</div>
+<div class="arithmatex">\[
+\small
+G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(\kappa) \cos(\psi(\kappa))
+\]</div>
+<p><img alt="Fig. 7.2-4. Mohr-Coulomb yield criteria" src="../image/7.2-4.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-4.</span></strong> Mohr-Coulomb yield criteria</p>
+
+<p>경화법칙은 strain hardening과 isotropic hardening이 존재한다. Mohr-Coulomb 모델에서는 work hardening이 존재하지 않는다. </p>
+<h5 id="example_4">Example</h5>
+<div class="highlight"><pre><span></span><code># associative flow rule, no hardening
+*Material, TYPE=MohrCoulomb, Name=soil1
+ 2E6, 0.18, 1E-5, 7850
+ 20    # coh, dcoh 
+ 35    # fric, dfric
+ 35    # dila, ddila
+
+# associative flow rule, strain hardening
+# linear hardening of cohesion, constant friction and dilatency
+*Material, TYPE=MohrCoulomb, Name=soil2
+ 2E6, 0.18, 1E-5, 7850
+ 20,3. 
+ 35, 
+ 30. 
+
+# associative flow rule, associative isotropic hardening
+# linear hardening of cohesion, constant friction and dilatency
+*Material, TYPE=MohrCoulomb, Name=soil3
+ 2E6, 0.18, 1E-5, 7850, IsotropicHardening
+ 20,3. 
+ 35, 
+ 30. 
+
+# associative flow rule, associative isotropic hardening,
+# linear hardening of cohesion, friction
+*Material, TYPE=MohrCoulomb, Name=soil4
+ 2E6, 0.18, 1E-5, 7850
+ 20,3. 
+ 35, 0.2 
+ 35, 0.2 
+
+# non-associative flow rule, strain hardening, 
+# nonlinear hardening of cohesion, friction, dilatency
+*Function, Name=cohFunc
+ 0., 20.
+ 0.001, 25.
+ 0.002, 25.
+
+*Function, Name=fricFunc
+ 0. 35.
+ 0.001, 40.
+ 0.002, 45.
+
+*Function, Name=dilaFunc
+ 0. 30.
+ 0.001 35.
+ 0.002 40.
+
+*Material, TYPE=MohrCoulomb, Name=soil5
+ 2E6, 0.18, 1E-5, 7850
+ cohFunc 
+ fricFunc
+ dilaFunc
+</code></pre></div>
+<h3 id="material-typedruckerprager">*Material Type=DruckerPrager</h3>
+<p>Define Isotropic elasticity material</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=DruckerPrager, Name=name
+ E, nu, alpha, density, StrainHardening|IsotropicHardening
+ beta
+ coh,dcoh|cohFunc, 
+ af,daf|afFunc 
+ ap,dap|apFunc  
+</code></pre></div>
+<h5 id="first-dataline_5">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E:</strong> elastic modulus (required)</li>
+<li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
+<li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
+<li><strong>density:</strong> density (optional, default 0.)</li>
+<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+</ul>
+</div>
+<h5 id="second-dataline_2">Second dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>beta:</strong> beta (required)</li>
+</ul>
+</div>
+<h5 id="3rd-dataline">3rd dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>coh, dcoh:</strong> initial value(required) and derivative of cohesion (optional, default 0.,0.)</li>
+<li><strong>cohFunc:</strong> function name of cohesion(required)</li>
+</ul>
+</div>
+<h5 id="4th-dataline-frictional-quantity">4th dataline (frictional quantity)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>af, daf:</strong> initial value and derivative of alpha. ( default 0., 0.)</li>
+<li><strong>afFunc:</strong> function name of alpha (required)</li>
+</ul>
+</div>
+<h5 id="5th-dataline-dilatent-quantity">5th  dataline (dilatent quantity)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ap, dap:</strong> initial value(required) and derivative of alphaP (dilatency) (optional, default 0.)</li>
+<li><strong>apFunc:</strong> function name of alphaP (required)</li>
+</ul>
+</div>
+<p>The units for the frictional angle and dilatant angle are in degrees, not radians. If the value of the dilatant angle is equal to the frictional angle, the associative flow rule is applied. Otherwise, the non-associative flow rule is applied. The initial cohesion (cohesion0) must be specified as a non-zero value. When using the associative isotropic hardening (i.e., IsotropicHardening) as the hardening rule, constant frictional and dilatant angles must be used.</p>
+<p>In the Drucker-Prager material model, the yield function and plastic potential are as follows.</p>
+<div class="arithmatex">\[
+\small
+F( \sigma, \kappa) = ||  s || + \alpha (\kappa) I_1 - \beta c(\kappa)
+\]</div>
+<p>▪ Flow potential : same to yield function</p>
+<div class="arithmatex">\[
+\small
+G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1 
+\]</div>
+<p>경화법칙은 strain hardening과 isotropic hardening이 존재한다. Drucker-Prager  모델에서는 work hardening이 존재하지 않는다. </p>
+<p><img alt="Fig. 7.2-5. Flow rule of Drucker-Prager model" src="../image/7.2-5.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-5.</span></strong> Flow rule of Drucker-Prager model</p>
+
+<h5 id="example_5">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, TYPE=DruckerPrager, Name=concreteDP
+ 2E6, 0.18, 1E-5, 7850, StrainHardening   # E, nu, alpha, density, StrainHardening|IsotropicHardening
+ 4        # beta
+ 12.3     # coh,dcoh|cohFunc, 
+ 20       # af,daf|afFunc 
+ 20       # ap,dap|apFunc  
+</code></pre></div>
+<h3 id="material-typeconcretedamage">*Material Type=ConcreteDamage</h3>
+<p>Define concrete damage plasticity</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=ConcreteDamage, Name=name
+ E, nu, alpha, density
+ fc, Dc, wc, 
+ ft, Dt, wt, 
+ a, Kc, ap,ecc 
+</code></pre></div>
+<h5 id="first-dataline_6">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E:</strong> elastic modulus (required)</li>
+<li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
+<li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
+<li><strong>density:</strong> density (optional, default 0.)</li>
+</ul>
+</div>
+<h6 id="second-dataline_3">Second dataline</h6>
+<div class="admonition note">
+<ul>
+<li><strong>fc,Dc,wc:</strong> compressive uniaxial yield function(required), damage function(option, default none), and recovery(optional, default 0.)</li>
+</ul>
+</div>
+<h5 id="3rd-dataline_1">3rd dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ft,Dt,wt:</strong> tensile uniaxial yield function(required), damage function(option, default none), and recovery(optional, default 0.)</li>
+</ul>
+</div>
+<h5 id="4th-dataline-if-necessary-parameters-for-yield-surface-and-flow-potential">4th dataline if necessary (parameters for yield surface and flow potential)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>a:</strong>  parameter for yield surface related to biaxial stress condition (optional, default 0.14), </li>
+<li><strong>Kc:</strong> parameter for yield surface related to triaxial stress condition (optional, default 2/3), </li>
+<li><strong>ap:</strong> parameter for flow potential related to dilatency(optional, default 0.2)</li>
+<li><strong>ecc:</strong> parameter for flow potential, the eccentricity(optional, default 0.1)</li>
+</ul>
+</div>
+<h5 id="example_6">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Name=chard
+ 0., 20.
+ 0.001, 25.
+ 0.002, 25.
+
+*Function, Name=thard
+ 0., 2.
+ 0.001, 1.
+ 0.002, 0.2. 
+
+*Material, TYPE=ConcreteDamage, Name=concreteCD
+ 29188.6, 0.18, 2300, 1e-05  #  E, nu, alpha, density
+ chard,  , 1  # fc, Dc, wc n thard,  , 1  # ft, Dt, wt
+ 0.12 , 0.666667, 0.2, 0.1  # a, Kc, ap, ecc
+</code></pre></div>
+<h3 id="material-typeuconcrete">*Material Type=UConcrete</h3>
+<p>Define uniaxial concrete </p>
+<div class="highlight"><pre><span></span><code>*Material, Type=UConrete, Name=name 
+  CEnvFunc, Plastic|Secant|CIEFunc, alpha, density, timeProp
+  TEnvFunc, Plastic|Secant|TIEFunc 
+</code></pre></div>
+<h5 id="first-dataline_7">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>CEnvFunc:</strong> Compressive envelope function (required)</li>
+<li><strong>Plastic|Secant|CIEFunc:</strong> - Plastic unloading, Secant unloading, 또는 damage plastic unloading 시의 함수를 지정 (optional, default Plastic)</li>
+<li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
+<li><strong>density:</strong> density (optional, default 0.)</li>
+<li><strong>timeProp:</strong> Combined viscosity material given by *Material, Type=UConcreteTime. (optional)</li>
+</ul>
+</div>
+<h5 id="2rd-dataline-if-necessary">2rd dataline if necessary</h5>
+<div class="admonition note">
+<ul>
+<li><strong>TEnvFunc:</strong> Tensile envelope function (optional)</li>
+<li><strong>Plastic|Secant|TIEFunc:</strong> - Plastic unloading, Secant unloading, 또는 damage plastic unloading 시의 함수를 지정 (optional, default Secant)</li>
+<li><strong>TIEFunc:</strong> Tensile unloading function iff Plasticity (optional)</li>
+</ul>
+</div>
+<p>The UConcrete model is a simplified plastic-damage model that neglects energy dissipation during unloading and reloading in the compressive side of concrete. Independent failure envelopes must be defined for both compression and tension sides, and during unloading/reloading, one can choose between a plastic model without damage (hereafter referred to as plastic), a plastic-damage model (hereafter referred to as damage plastic), or a plastic-elastic model (hereafter referred to as damage elastic). If applying the plastic-damage model, unloading and reloading are carried out along the segment connecting the point corresponding to the most recent strain (<span class="arithmatex">\(\small\epsilon_{cun}\)</span> or <span class="arithmatex">\(\epsilon_{tun}\)</span> at point <span class="arithmatex">\(\small(\epsilon_{cun},\sigma_{cun})\)</span> or  <span class="arithmatex">\(\small(\epsilon_{tun},\sigma_{tun})\)</span>) and the plastic strain specified by the plastic strain function (corresponding to <span class="arithmatex">\(\small\epsilon_{cpl}\)</span> or <span class="arithmatex">\(\epsilon_{tpl}\)</span>). Therefore, it is necessary to specify the function in the form of <span class="arithmatex">\(\small(\epsilon_{cpl},\sigma_{cun})\)</span> or <span class="arithmatex">\(\small(\epsilon_{tpl},\sigma_{tun})\)</span>.</p>
+<p><img alt="Fig. 7.2-6. Failure envelope, unloading/reloading of UConcrete" src="../image/7.2-6.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-6.</span></strong> Failure envelope, unloading/reloading of UConcrete</p>
+
+<p><img alt="ig. 7.2-7. Secant unloading/unloading of UConcrete" src="../image/7.2-7.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-7.</span></strong> Secant unloading/unloading of UConcrete</p>
+
+<p>Under cyclic loading conditions, elastic behavior continues until the yield value corresponding to the plastic strain is reached, after which yielding follows the failure envelope. When secant loading/unloading is specified, there is no corresponding inelastic strain.</p>
+<p><img alt="Fig. 7.2-8. Cyclic loading of UConcrete" src="../image/7.2-8.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-8.</span></strong> Cyclic loading of UConcrete</p>
+
+<p><img alt="Fig. 7.2-9. Cyclic loading of Unconcret for tensile secant unloading" src="../image/7.2-9.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-9.</span></strong> Cyclic loading of Unconcret for tensile secant unloading</p>
+
+<h5 id="example_7">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, Name=MPP
+ 27, 25000, 0.002   # fco, Ec, eco, ecu, fcc, esp
+
+*Function, Type=MPPCIE, Name=MPPIE
+ MPP   # compressiveEnv, epeak 
+
+*Function, Type=MaekawaTEnv, Name=Maekawa
+ MPP, 3, 0.4  # compressiveEnv,ft, c
+
+*Material, Type=UConcrete, Name=Mander
+ MPP, MPPIE
+ Maekawa,Secant   
+
+*Material, Type=UConcrete, Name=Mander
+ MPP
+ Maekawa, Secant
+</code></pre></div>
+<h3 id="material-typeusteel">*Material Type=USteel</h3>
+<p>Define uniaxial steel model based on Menegotto-Pinto model</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=USteel, Name=name 
+  E0, yield, E1,  R0,a1,a2, a3,a4, eu, alpha, density
+</code></pre></div>
+<h5 id="first-dataline_8">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E0:</strong> Initial tangent modulus (required)</li>
+<li><strong>yield:</strong> yield stress ( required )</li>
+<li><strong>E1:</strong> Second tangent modulus (optional, default 0.)</li>
+<li>__R0,a1,a2:__curvature parameters (optional, default 20, 0, 0)</li>
+<li><strong>a3,a3:</strong> isotropic hardening parameters (optional, default 0, 1.)</li>
+<li><strong>eu:</strong> ultimate strain (optional, default 0). If eu = 0., then ultimate strain is not checked.</li>
+<li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
+<li><strong>density:</strong> density (optional, default 0.)</li>
+</ul>
+</div>
+<p>USteel uses Menegotto-Pinto model with some modifications of partial reloading problem. It can be used for modeling rebar or prestressing steel. </p>
+<p><img alt="Fig. 7.2-10 Menegotto-Pinto Model" src="../image/7.2-10.png" /></p>
+<p>Fig. 7.2-10 Menegotto-Pinto Model</p>
+<p>The recommended values of modeling rebar and 7-wire strand is given in the example.</p>
+<p><img alt="Fig. 7.2-11 Stress-strain curve of a weldable rebar with 400 MPa yield strength" src="../image/7.2-11.png" /></p>
+<p>Fig. 7.2-11 Stress-strain curve of a weldable rebar with 400 MPa yield strength</p>
+<p><img alt="Fig. 7.2-12 Stress-strain curve of 7-wire strand with ultimate strength 1860 MPa" src="../image/7.2-12.png" /></p>
+<p>Fig. 7.2-12 Stress-strain curve of 7-wire strand with ultimate strength 1860 MPa</p>
+<h5 id="example_8">Example</h5>
+<div class="highlight"><pre><span></span><code># 400 MPa rebar without hardening
+*Material, Type=USteel, Name=SD40
+ 200000,400, 0, 20,18.5,0.15, 0.01, 7, 0.08
+#  E0, yield, E1, R0,a1,a2, a3,a4, eu, alpha, density
+
+# 400 MPa weldable rebar without hardening
+*Material, Type=USteel, Name=SD40W
+ 200000, 400, 0, 20,18.5,0.15, 0.01, 7, 0.13
+#  E0, yield, E1, R0,a1,a2, a3,a4, eu, alpha, density
+
+# 400 MPa rebar with hardening
+*Material, Type=USteel, Name=SD40-U
+ 200000, 400, 0.01282*200000, 20,18.5,0.15, 0.01, 7, 0.08
+
+# 400 MPa weldable rebar with hardening
+*Material, Type=USteel, Name=SD40W-U
+ 200000, 400, 0.0586*200000, 20,18.5,0.15, 0.01, 7, 0.13
+
+# Stress-relieved 7-wire strand with ultimate strength 1860 MPa 
+*Material, Type=USteel, Name=STendon
+ 200000,  1652.891, 200000*0.03, 6, 0., 0., 0, 1, 0.0428
+
+# Low relaxation 7-wire strand with ultimate strength 1860 MPa 
+*Material, Type=USteel, Name=RTendon
+ 200000,  1694.915, 200000*0.025, 10,0.,0., 0, 1, 0.0415
+</code></pre></div>
+<h3 id="material-typegaphook">*Material Type=GapHook</h3>
+<p>Specify uniaxial gap-hook material.</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=GapHook, Name=name 
+  kg,g, kh,h
+</code></pre></div>
+<h5 id="first-dataline_9">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>kg,g:</strong> tangent and gap in compression part (optional, default 0.,0.)</li>
+<li>__kh,h:__tangent and hook tension part (optional,default 0.,0.)</li>
+</ul>
+</div>
+<p>Using the GapHook command, you can model tension-only or compression-only behavior. Both kg and kh cannot be zero at the same time.</p>
+<p><img alt="Fig. 7.2-13. GapHook Model" src="../image/7.2-13.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-135.</span></strong>GapHook Model</p>
+
+<h5 id="example_9">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, Type=GapHook, Name=gaphook
+ 5E5, 0.1, 4E5, 0.2   # kg, g, kh, h
+
+# tension only
+*Material, Type=GapHook, Name=cable
+ 0, 0, 5E5   # kg, g, kh, h
+
+# compression only
+*Material, Type=GapHook, Name=contactSpring
+ 5E5   # kg, g, kh, h
+</code></pre></div>
+<h3 id="material-typeacoustic">*Material Type=Acoustic</h3>
+<p>Acoustic solid 요소용 acoustic material을 지정</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=name 
+  bulk, density
+</code></pre></div>
+<h5 id="first-dataline_10">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>bulk:</strong> Bulk modulus (required). If zero bulk moduls is given, the acoustic medium is assumed to be incompressible (Laplace equation is used)</li>
+<li>__density:__density (required)</li>
+</ul>
+</div>
+<h5 id="example_10">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=water
+ 2190E6, 1000
+</code></pre></div>
+<h3 id="material-typeporous">*Material Type=Porous</h3>
+<p>Specify porous material for porous solid elements.</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=name 
+  solidMat, wBulk, wDen, porosity, perm
+</code></pre></div>
+<h5 id="first-dataline_11">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>solidMat:</strong> normal material for solid</li>
+<li><strong>wBulk:</strong> bulk modulus of water (required)</li>
+<li><strong>wDensity:</strong> water density(required)</li>
+<li><strong>porosity:</strong> porosity (required)</li>
+<li><strong>perm:</strong> permeability (required)</li>
+</ul>
+</div>
+<h5 id="example_11">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, Type=Porous, Name=water
+ mat, 1000, 100, 0.1, 1000
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
