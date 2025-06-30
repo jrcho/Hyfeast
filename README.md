@@ -2,8 +2,7 @@
 
 # Hyfeast
 
-**Hyfeast** is a high-performance finite element analysis (FEA) framework  
-freely available for structural analysis and design applications.
+**Hyfeast** is a high-performance finite element analysis (FEA) framework freely available for structural analysis and design applications.
 
 This repository provides a distribution package including binaries, manuals, and example input files.
 
@@ -39,5 +38,4 @@ See the [LICENSE.txt](LICENSE.txt) file in this repository for full terms.
 
 ## Contact
 
-Official contact and technical support:  
- jrcho2012@gmail.com
+Official contact and technical support: jrcho2012@gmail.com
