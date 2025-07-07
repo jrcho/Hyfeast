@@ -10,8 +10,9 @@ Hyfeast는 셸, 보, 솔리드 요소를 지원하며, 빠른 병렬 해석, 3D 
 
 ## 시스템 요구사항
 
-- Windows 10 이상
-- 64비트 시스템
+- 64비트 Windows 10 이상
+- [Microsoft Visual C++ Redistributable for Visual Studio 2015–2022 (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)  
+  (Hyfeast는 Visual Studio로 빌드되었으며, 실행을 위해 해당 런타임이 필요합니다.)
 - (선택 사항) Python 3.8 이상 (DXF 내보내기 기능에 필요)
 
 ## 설치 및 사용법
