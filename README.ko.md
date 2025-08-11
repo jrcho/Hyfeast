@@ -58,7 +58,7 @@ Hyfeast는 다음과 같은 오픈소스 및 서드파티 라이브러리를 포
 ### 외부 도구 (선택 사항)
 
 - Python – ezdxf 및 모드 해석 스크립트 실행에 사용
-- ezdxf (Python) – `hfVisualizer`의 DXF 내보내기 기능에 사용됨
+- ezdxf (Python) – `hfVisualizer`의 DXF 임포트 기능에 사용됨
 - Pandoc – 문서 변환기
 
 자세한 라이선스 및 출처 정보는 `LICENSE.txt`를 참고하세요.
