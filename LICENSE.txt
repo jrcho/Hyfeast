@@ -68,7 +68,7 @@ The following tools are not included in this software package but may be used
 to enable additional features in Hyfeast. Users must install them separately.
 
 - Python – Used for DXF export (via ezdxf) and modal identification scripts
-- ezdxf (Python) – Python library for DXF export in hfVisualizer (MIT License)
+- ezdxf (Python) – Python library for DXF import in hfVisualizer (MIT License)
 - Pandoc – Document converter for report generation (GPL/MIT License)
 
 -------------------------------------------------------------------------------
