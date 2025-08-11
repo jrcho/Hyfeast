@@ -1,0 +1,4008 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>2. Beam Element - Hyfeast-v1.0.0 Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cantilever" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast-v1.0.0 Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Beam Element
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hyfeast-v1.0.0 Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Command(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/1.%20Introduction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/2.%20Node.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/3.%20Element.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element libraries
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.1%20Introduction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.2%20Beam.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.3%20Truss.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.4%20Cable.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.5%20Shell.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.6%20Solid.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.7%20Acoustic%20Solid.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.8%20MCK.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.9%20Moving%20Spring.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.10%20Interface.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.11%20Tendon.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/5.%20Constraint.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/6.%20Load.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/7.%20Material.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/8.%20Function.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/9.%20Surface.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/10.%20Construction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/11.%20CoordinateSystem.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate system
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/12.%20Sensor.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/13.%20Step.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/14.%20Step%20result.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/15.%20Modelling.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling convenience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/16.%20Etc.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/17.%20Special%20step.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/18.%20HDB%20file%20structure.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB file structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/1.%20Overview.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.%20Theory.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.%20Commands.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Command
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/4.%20Examples.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Example
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Command(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/1.%20Introduction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/2.%20Node.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 절점
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/3.%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. 요소 상세
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. 요소 상세
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.1%20Introduction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.2%20Beam.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.3%20Truss.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.4%20Cable.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.5%20Shell.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.6%20Solid.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.7%20Acoustic%20Solid.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.8%20MCK.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.9%20Moving%20Spring.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.10%20Interface.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.11%20Tendon.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/5.%20Constraint.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. 구속조건
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/6.%20Load.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. 하중
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/7.%20Material.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. 재료
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/8.%20Function.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. 함수
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/9.%20Surface.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/10.%20Construction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/11.%20CoordinateSystem.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. 좌표계
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/12.%20Sensor.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. 센서
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/13.%20Step.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/14.%20Step%20result.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. 해석 결과 관리
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/15.%20Modelling.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. 모델링 편의
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/16.%20Etc.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. 기타
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/17.%20Special%20step.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. 특수 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/18.%20HDB%20file%20structure.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB 파일 구조
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/1.%20Overview.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.%20Theory.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 이론
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.%20Commands.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 명령매뉴얼
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/4.%20Examples.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Example(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Example(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.1%20Beam%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.1 Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.2%20Material%20Nonlinear%20Beam%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.2 Material Nonlinear Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.3 Solid Element and In-Plane Behavior of Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.4%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.4 Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.5%20Material%20Nonlinear%20Solid%20and%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.5 Material Nonlinear Solid and Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.6%20Acoustic%20Solid%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.6 Acoustic Solid Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.7 Dynamic Analysis using Spring and Mass Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.8%20Interface%20Modeling%20using%20Spring%20and%20Interface%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.8 Interface Modeling using Spring and Interface Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.9%20Truss%2C%20Cable%20and%20Tendon%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.9 Truss, Cable and Tendon Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.10%20Simple%20Constraints.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.10 Simple Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.11%20Advanced%20Constraints.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.11 Advanced Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.12%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.12 Moving Load Analysis in Simply Supported Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.13%20Stability%20of%20Rail%20Track.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.13 Stability of Rail Track
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.14%20Temperature%20Load%20by%20Bimetal.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.14 Temperature Load by Bimetal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.15%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.15 ModelUpdating and ShapeEstimation Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cantilever" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cantilever
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portal-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Portal Frame
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#space-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Space Frame
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effect-of-mass-formulation-on-beam-natural-frequencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Effect of Mass Formulation on Beam Natural Frequencies
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="2-beam-element">2. Beam Element</h1>
+<h2 id="cantilever">Cantilever</h2>
+<p>Hyfeast에서 제공하는 B2D2H, B2D2MH, B3D2H, B3D2MH 요소를 검증하기 위해 그림과 같은 캔틸레버보를 대상으로 끝단하중, 등분포하중, 삼각분포하중, 온도하중을 가력한 경우에 대해 그 결과를 검증하였다. 또한 경계조건을 단순지지로 변경하여 고유진동수를 검토하였다. 재료는 강재로 탄성계수 200 GPa, 포아송비 0.3, 밀도 7800 kg/m<sup>3</sup>이고, 부재를 1개 또는 4개로 이산화하고 그 결과를 비교하였다.</p>
+<p><img src="media/media/image1.png" style="width:5.28677in;height:1.80982in" /></p>
+<p>Figure E.1.1 해석모델</p>
+<p><img src="media/media/image2.png" style="width:4.80103in;height:3.89519in" /></p>
+<p>Figure E.1.2 해석해 (Friedman and Kosmatka (1993))</p>
+<p>끝단하중, 등분포하중, 삼각분포하중에 대한 해는 Figure E.1.1에 제시되어 있다. Bernoulli 보이면</p>
+<p>계수 <span class="arithmatex">\(<code>\phi</code>\)</span>가 0 이고, Timoshenko 보이면 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+\phi = \frac{12EI}{kGAL^{2}}\tag{6.1b}
+\end{array}
+</code></pre></div>
+<p>단면전단계수는 사각형인 경우 1/1.2=0.83333이 보통 사용되나 포아송비를 고려할 경우 다음과 같다(Friedman and Kosmatka (1993)).</p>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+k = \frac{10(1 + \nu)}{12 + 11\nu}\tag{E.1.2}
+\end{array}
+</code></pre></div>
+<p>Table E.1.1 해석 결과</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Analytic solution</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Result</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Load</td>
+<td style="text-align: center;">Bernoulli</td>
+<td style="text-align: center;">Timoshenko</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1 element</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4 elements</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Convential <em>k</em></td>
+<td style="text-align: center;">Exact <em>k</em></td>
+<td style="text-align: center;">Bernoulli</td>
+<td style="text-align: center;">Timoshenko</td>
+<td style="text-align: center;">Bernoulli</td>
+<td style="text-align: center;">Timoshenko</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tip Loading</td>
+<td style="text-align: center;">1.25E-05</td>
+<td style="text-align: center;">1.29E-05</td>
+<td style="text-align: center;">1.29E-05</td>
+<td style="text-align: center;">1.2500E-05</td>
+<td style="text-align: center;">1.2890E-05</td>
+<td style="text-align: center;">1.2500E-05</td>
+<td style="text-align: center;">1.2890E-05</td>
+</tr>
+<tr>
+<td style="text-align: center;">Uniform Loading</td>
+<td style="text-align: center;">4.69E-05</td>
+<td style="text-align: center;">4.88E-05</td>
+<td style="text-align: center;">4.88E-05</td>
+<td style="text-align: center;">4.6875E-05</td>
+<td style="text-align: center;">4.8825E-05</td>
+<td style="text-align: center;">4.6875E-05</td>
+<td style="text-align: center;">4.8825E-05</td>
+</tr>
+<tr>
+<td style="text-align: center;">Triagular Loading</td>
+<td style="text-align: center;">1.25E-05</td>
+<td style="text-align: center;">1.32E-05</td>
+<td style="text-align: center;">1.31E-05</td>
+<td style="text-align: center;">1.2153E-05</td>
+<td style="text-align: center;">1.2803E-05</td>
+<td style="text-align: center;">1.2499E-05</td>
+<td style="text-align: center;">1.3149E-05</td>
+</tr>
+</tbody>
+</table>
+<p>온도하중을 가력한 결과는 요소 정식화와 무관하게 축방향 0.001, 수직방향 0.05가 계산된다.</p>
+<p>단순보를 대상으로 Bernoulli 보와 Timoshenko 보의 고유진동수를 비교하였다. 전단변형을 고려한 Timoshenko 보에 대해서는 Friedman and Kosmatka (1993)에 제시된 해와 비교한다.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th colspan="2" style="text-align: center;"><p>Analytic solution,</p>
+<p>Natual frequency (Hz)</p></th>
+<th rowspan="2" style="text-align: center;">4 Timoshenko elements in F&amp;K(1993). Ratio to analytic solution</th>
+<th colspan="2" style="text-align: center;">4 Bernoulli elements</th>
+<th colspan="2" style="text-align: center;">4 Timoshenko elements in Hyfeast</th>
+</tr>
+<tr>
+<th style="text-align: center;">모드</th>
+<th style="text-align: center;">Bernoulli(Hz)</th>
+<th style="text-align: center;">Timoshenko(Hz)</th>
+<th style="text-align: center;">Frequency(Hz)</th>
+<th style="text-align: center;">Ratio to analystic solution</th>
+<th style="text-align: center;">Frequency(Hz)</th>
+<th style="text-align: center;">Ratio to analystic solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">45.9226505</td>
+<td style="text-align: center;">43.1856605</td>
+<td style="text-align: center;">1.0024</td>
+<td style="text-align: center;">45.1971</td>
+<td style="text-align: center;">0.984201</td>
+<td style="text-align: center;">43.2589</td>
+<td style="text-align: center;">1.001695921</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">183.690602</td>
+<td style="text-align: center;">150.038484</td>
+<td style="text-align: center;">1.0281</td>
+<td style="text-align: center;">173.358</td>
+<td style="text-align: center;">0.94375</td>
+<td style="text-align: center;">153.927</td>
+<td style="text-align: center;">1.025916793</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">413.303855</td>
+<td style="text-align: center;">287.080857</td>
+<td style="text-align: center;">1.0952</td>
+<td style="text-align: center;">369.538</td>
+<td style="text-align: center;">0.894107</td>
+<td style="text-align: center;">313.461</td>
+<td style="text-align: center;">1.091890985</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">734.762408</td>
+<td style="text-align: center;">436.127412</td>
+<td style="text-align: center;">1.5101</td>
+<td style="text-align: center;">658.597</td>
+<td style="text-align: center;">0.89634</td>
+<td style="text-align: center;">658.597</td>
+<td style="text-align: center;">1.510102282</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1148.06626</td>
+<td style="text-align: center;">589.449365</td>
+<td style="text-align: center;">1.4682</td>
+<td style="text-align: center;">955.606</td>
+<td style="text-align: center;">0.832361</td>
+<td style="text-align: center;">863.391</td>
+<td style="text-align: center;">1.46474159</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1653.21542</td>
+<td style="text-align: center;">743.859685</td>
+<td style="text-align: center;">1.2714</td>
+<td style="text-align: center;">1364.58</td>
+<td style="text-align: center;">0.82541</td>
+<td style="text-align: center;">934.81</td>
+<td style="text-align: center;">1.256702062</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong><span class="smallcaps">Input File</span></strong></p>
+<ul>
+<li>
+<p>E1.inp: B2D2H, B2D2MH, B3D2H, B3D2MH 요소를 각각 1개 사용한 입력</p>
+</li>
+<li>
+<p>E4.inp : B2D2H, B2D2MH, B3D2H, B3D2MH 요소를 각각 4개 사용한 입력</p>
+</li>
+</ul>
+<p><strong><span class="smallcaps">References</span></strong></p>
+<ol>
+<li>Friedman, Z., &amp; Kosmatka, J. B. (1993). An improved two-node Timoshenko beam finite element. Computers &amp; structures, 47(3), 473-481.</li>
+</ol>
+<h2 id="portal-frame">Portal Frame</h2>
+<p>그림과 같은 portal frame과 3가지 하중조건을 대상으로 5가지의 해석을 수행하였다. CASE 4와 CASE 5는 동일한 하중 LC4를 BeamDistributedLoad와 BeamTractionLoad로 각각 해석한 것이다. CASE 6는 단계별 해석을 검토하기 위해 CASE 1 수행된 후(자중해석) 그 상태를 유지하면서 LC1의 하중을 가력한 것이다. 현 시스템은 선형이므로 Case 6의 해는 Case 1와 Case 2의 결과를 중첩한 것과 동일하다. 해석에 도입된 요소는 B2D2H, B3D2H이고, 단면물성치로 Rectangle 또는 Mesh를 단면셀로 사용하였다. 전단변형은 모두 무시되었다.</p>
+<p><img src="media/media/image3.png" style="width:6.26806in;height:3.47014in" /></p>
+<p>Figure E.1.3 해석모델</p>
+<p>Table E.1.2 재료의 응력조건에 따른 유한요소</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">해석유형</th>
+<th style="text-align: center;">하중조건</th>
+<th style="text-align: center;">비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">CASE 1</td>
+<td style="text-align: center;">자중해석, LC1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">CASE 2</td>
+<td style="text-align: center;">절점하중, LC2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">CASE 3</td>
+<td style="text-align: center;">요소내 집중하중 LC3</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">CASE 4</td>
+<td style="text-align: center;">요소내 분포하중(LC4)</td>
+<td style="text-align: center;">BeamDistributedLoad</td>
+</tr>
+<tr>
+<td style="text-align: center;">CASE 5</td>
+<td style="text-align: center;">요소내 분포하중(LC4)</td>
+<td style="text-align: center;">BeamTractionLoad</td>
+</tr>
+<tr>
+<td style="text-align: center;">CASE 6</td>
+<td style="text-align: center;">LC 1 → LC 2</td>
+<td style="text-align: center;">단계별 해석(자중해석 후 수평력)</td>
+</tr>
+<tr>
+<td style="text-align: center;">CASE 7</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">주파수 해석</td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.3 자중해석 결과(Case 1)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">구분</th>
+<th style="text-align: center;">절점</th>
+<th style="text-align: center;">DOF</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">RZ</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">변위(m)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.49815E-6</td>
+<td style="text-align: center;">-3.597E-5</td>
+<td style="text-align: center;">-0.000374837</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.49815E-6</td>
+<td style="text-align: center;">-3.597E-5</td>
+<td style="text-align: center;">0.000374837</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">반력(N)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2516.89</td>
+<td style="text-align: center;">45322.2</td>
+<td style="text-align: center;">-8386.29</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-2516.89</td>
+<td style="text-align: center;">45322.2</td>
+<td style="text-align: center;">8386.29</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.4 2번 절점 가력 해석 결과(Case 2)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">구분</th>
+<th style="text-align: center;">절점</th>
+<th style="text-align: center;">DOF</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">RZ</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">변위(m)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.0532197</td>
+<td style="text-align: center;">5.09971E-5</td>
+<td style="text-align: center;">-0.00320049</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.0531602</td>
+<td style="text-align: center;">-5.09971E-5</td>
+<td style="text-align: center;">-0.00319454</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">반력(N)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-50020</td>
+<td style="text-align: center;">-42837.6</td>
+<td style="text-align: center;">285945</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-49980</td>
+<td style="text-align: center;">42837.6</td>
+<td style="text-align: center;">285679</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.5 Case 3 해석 결과</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">구분</th>
+<th style="text-align: center;">절점</th>
+<th style="text-align: center;">DOF</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">RZ</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">변위(m)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">7.4375E-06</td>
+<td style="text-align: center;">-5.95238E-5</td>
+<td style="text-align: center;">-0.00186086</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">-7.4375E-06</td>
+<td style="text-align: center;">-5.95238E-5</td>
+<td style="text-align: center;">0.00186086</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">반력(N)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">12495</td>
+<td style="text-align: center;">50000</td>
+<td style="text-align: center;">-41633.3</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-12495</td>
+<td style="text-align: center;">50000</td>
+<td style="text-align: center;">41633.3</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.6 Case 4와 Case 5 해석 결과</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">구분</th>
+<th style="text-align: center;">절점</th>
+<th style="text-align: center;">DOF</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">RZ</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">변위(m)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4.95833E-6</td>
+<td style="text-align: center;">-5.95238E-5</td>
+<td style="text-align: center;">-0.00124058</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">-4.95833E-6</td>
+<td style="text-align: center;">-5.95238E-5</td>
+<td style="text-align: center;">0.00124058</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">반력(N)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">8330</td>
+<td style="text-align: center;">50000</td>
+<td style="text-align: center;">-27755.6</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-8330</td>
+<td style="text-align: center;">50000</td>
+<td style="text-align: center;">27755.6</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.7 Case 6 해석 결과</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">구분</th>
+<th style="text-align: center;">절점</th>
+<th style="text-align: center;">DOF</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">RZ</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">변위(m)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.0532212</td>
+<td style="text-align: center;">1.50271E-5</td>
+<td style="text-align: center;">-0.00357533</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.0531587</td>
+<td style="text-align: center;">-8.69671E-5</td>
+<td style="text-align: center;">-0.00281971</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">반력(N)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-47503.1</td>
+<td style="text-align: center;">2484.64</td>
+<td style="text-align: center;">277559</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-52496.9</td>
+<td style="text-align: center;">88159.8</td>
+<td style="text-align: center;">294065</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.8 Case 7 해석(주파수해석) 결과</p>
+<table>
+<thead>
+<tr>
+<th>1차</th>
+<th>2차</th>
+<th>3차</th>
+<th>4차</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.78045Hz</td>
+<td>83.116Hz</td>
+<td>83.1692Hz</td>
+<td>117.567Hz</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="smallcaps">Input File</span></strong></p>
+<ul>
+<li>
+<p><a href="file:///D:\DevProg\Hyfeast-v1.0.0\Example\E1\potalEB2.inp">portalEB2.inp</a> : : B2D2H + Rectangular Cell</p>
+</li>
+<li>
+<p>portalEB3.inp : : B3D2H + Rectangular Cell</p>
+</li>
+<li>
+<p>portalDB2.inp : B2D2H + Meshed Cell</p>
+</li>
+<li>
+<p>portalDB3.inp : B3D2H + Meshed Cell</p>
+</li>
+</ul>
+<h2 id="space-frame">Space Frame</h2>
+<p>3차원 보요소(B3D2H와 B3D2HM)와 보 요소하중을 검증한다. 그림과 같이 space frame에 3가지 하중조건이 부과된 경우에 대한 해와 고유진동수를 계산하였다.</p>
+<p><img src="media/media/image4.png" style="width:6.26806in;height:2.44722in" /></p>
+<p>Figure E.1.4 Analysis model</p>
+<p><img src="media/media/image5.png" style="width:2.17014in;height:2.11319in" /><img src="media/media/image6.png" style="width:1.97153in;height:2.00972in" /><img src="media/media/image7.png" style="width:2.04722in;height:2.15069in" /></p>
+<p>Figure E.1.5 Analysis model viewed in hfVisualzier</p>
+<p>Table E.1.9 Case 1 해석 결과</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">구분</th>
+<th style="text-align: center;">절점</th>
+<th style="text-align: center;">B3D2H</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">B3D2MH</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">Z</td>
+<td style="text-align: center;">RX</td>
+<td style="text-align: center;">RY</td>
+<td style="text-align: center;">RZ</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">Z</td>
+<td style="text-align: center;">RX</td>
+<td style="text-align: center;">RY</td>
+<td style="text-align: center;">RZ</td>
+</tr>
+<tr>
+<td style="text-align: center;">변위</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.514842</td>
+<td style="text-align: center;">-0.10838</td>
+<td style="text-align: center;">0.000479</td>
+<td style="text-align: center;">0.000592</td>
+<td style="text-align: center;">0.030721</td>
+<td style="text-align: center;">0.032236</td>
+<td style="text-align: center;">0.517226</td>
+<td style="text-align: center;">-0.10887</td>
+<td style="text-align: center;">0.000479</td>
+<td style="text-align: center;">0.000598</td>
+<td style="text-align: center;">0.030847</td>
+<td style="text-align: center;">0.03238</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.514247</td>
+<td style="text-align: center;">0.108377</td>
+<td style="text-align: center;">-0.00048</td>
+<td style="text-align: center;">-0.00059</td>
+<td style="text-align: center;">0.030663</td>
+<td style="text-align: center;">0.032198</td>
+<td style="text-align: center;">0.516631</td>
+<td style="text-align: center;">0.108865</td>
+<td style="text-align: center;">-0.00048</td>
+<td style="text-align: center;">-0.0006</td>
+<td style="text-align: center;">0.030788</td>
+<td style="text-align: center;">0.032342</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.017355</td>
+<td style="text-align: center;">-0.10838</td>
+<td style="text-align: center;">3.06E-05</td>
+<td style="text-align: center;">0.000592</td>
+<td style="text-align: center;">0.001284</td>
+<td style="text-align: center;">0.032236</td>
+<td style="text-align: center;">0.01751</td>
+<td style="text-align: center;">-0.10887</td>
+<td style="text-align: center;">3.07E-05</td>
+<td style="text-align: center;">0.000598</td>
+<td style="text-align: center;">0.001294</td>
+<td style="text-align: center;">0.03238</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0.017355</td>
+<td style="text-align: center;">0.108377</td>
+<td style="text-align: center;">-3.1E-05</td>
+<td style="text-align: center;">-0.00059</td>
+<td style="text-align: center;">0.001283</td>
+<td style="text-align: center;">0.032198</td>
+<td style="text-align: center;">0.01751</td>
+<td style="text-align: center;">0.108865</td>
+<td style="text-align: center;">-3.1E-05</td>
+<td style="text-align: center;">-0.0006</td>
+<td style="text-align: center;">0.001294</td>
+<td style="text-align: center;">0.032342</td>
+</tr>
+<tr>
+<td style="text-align: center;">반력</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-48.5501</td>
+<td style="text-align: center;">0.885508</td>
+<td style="text-align: center;">-40.2654</td>
+<td style="text-align: center;">-4.46897</td>
+<td style="text-align: center;">-277.158</td>
+<td style="text-align: center;">-2.925</td>
+<td style="text-align: center;">-48.5438</td>
+<td style="text-align: center;">0.889093</td>
+<td style="text-align: center;">-40.2257</td>
+<td style="text-align: center;">-4.48729</td>
+<td style="text-align: center;">-277.268</td>
+<td style="text-align: center;">-2.93804</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">-48.5096</td>
+<td style="text-align: center;">-0.88551</td>
+<td style="text-align: center;">40.2654</td>
+<td style="text-align: center;">4.46897</td>
+<td style="text-align: center;">-276.89</td>
+<td style="text-align: center;">-2.92152</td>
+<td style="text-align: center;">-48.5034</td>
+<td style="text-align: center;">-0.88909</td>
+<td style="text-align: center;">40.2257</td>
+<td style="text-align: center;">4.48729</td>
+<td style="text-align: center;">-277</td>
+<td style="text-align: center;">-2.93455</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">-1.4699</td>
+<td style="text-align: center;">0.885508</td>
+<td style="text-align: center;">-2.57215</td>
+<td style="text-align: center;">-4.46897</td>
+<td style="text-align: center;">-8.78713</td>
+<td style="text-align: center;">-2.925</td>
+<td style="text-align: center;">-1.47609</td>
+<td style="text-align: center;">0.889093</td>
+<td style="text-align: center;">-2.58131</td>
+<td style="text-align: center;">-4.48729</td>
+<td style="text-align: center;">-8.83017</td>
+<td style="text-align: center;">-2.93804</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">-1.47042</td>
+<td style="text-align: center;">-0.88551</td>
+<td style="text-align: center;">2.57215</td>
+<td style="text-align: center;">4.46897</td>
+<td style="text-align: center;">-8.78887</td>
+<td style="text-align: center;">-2.92152</td>
+<td style="text-align: center;">-1.47661</td>
+<td style="text-align: center;">-0.88909</td>
+<td style="text-align: center;">2.58131</td>
+<td style="text-align: center;">4.48729</td>
+<td style="text-align: center;">-8.8319</td>
+<td style="text-align: center;">-2.93455</td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.10 Case 2 해석 결과</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">구분</th>
+<th style="text-align: center;">절점</th>
+<th style="text-align: center;">B3D2H</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">B3D2MH</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">Z</td>
+<td style="text-align: center;">RX</td>
+<td style="text-align: center;">RY</td>
+<td style="text-align: center;">RZ</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">Z</td>
+<td style="text-align: center;">RX</td>
+<td style="text-align: center;">RY</td>
+<td style="text-align: center;">RZ</td>
+</tr>
+<tr>
+<td style="text-align: center;">변위</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.266099</td>
+<td style="text-align: center;">3.2E-05</td>
+<td style="text-align: center;">0.000255</td>
+<td style="text-align: center;">-5E-07</td>
+<td style="text-align: center;">0.016003</td>
+<td style="text-align: center;">-0.17642</td>
+<td style="text-align: center;">0.267368</td>
+<td style="text-align: center;">3.2E-05</td>
+<td style="text-align: center;">0.000255</td>
+<td style="text-align: center;">-5E-07</td>
+<td style="text-align: center;">0.016071</td>
+<td style="text-align: center;">-0.17644</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.265801</td>
+<td style="text-align: center;">-3.2E-05</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">4.98E-07</td>
+<td style="text-align: center;">0.015973</td>
+<td style="text-align: center;">0.048355</td>
+<td style="text-align: center;">0.26707</td>
+<td style="text-align: center;">-3.2E-05</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">4.98E-07</td>
+<td style="text-align: center;">0.016041</td>
+<td style="text-align: center;">0.048342</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.266099</td>
+<td style="text-align: center;">-3.2E-05</td>
+<td style="text-align: center;">0.000255</td>
+<td style="text-align: center;">4.98E-07</td>
+<td style="text-align: center;">0.016003</td>
+<td style="text-align: center;">0.176423</td>
+<td style="text-align: center;">0.267368</td>
+<td style="text-align: center;">-3.2E-05</td>
+<td style="text-align: center;">0.000255</td>
+<td style="text-align: center;">4.98E-07</td>
+<td style="text-align: center;">0.016071</td>
+<td style="text-align: center;">0.176436</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0.265801</td>
+<td style="text-align: center;">3.2E-05</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">-5E-07</td>
+<td style="text-align: center;">0.015973</td>
+<td style="text-align: center;">-0.04835</td>
+<td style="text-align: center;">0.26707</td>
+<td style="text-align: center;">3.2E-05</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">-5E-07</td>
+<td style="text-align: center;">0.016041</td>
+<td style="text-align: center;">-0.04834</td>
+</tr>
+<tr>
+<td style="text-align: center;">반력</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-25.01</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">-21.4188</td>
+<td style="text-align: center;">0.001275</td>
+<td style="text-align: center;">-142.973</td>
+<td style="text-align: center;">16.008</td>
+<td style="text-align: center;">-25.01</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">-21.4035</td>
+<td style="text-align: center;">0.001274</td>
+<td style="text-align: center;">-143.049</td>
+<td style="text-align: center;">16.0091</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">-24.99</td>
+<td style="text-align: center;">0.000248</td>
+<td style="text-align: center;">21.4188</td>
+<td style="text-align: center;">-0.00127</td>
+<td style="text-align: center;">-142.839</td>
+<td style="text-align: center;">-4.38753</td>
+<td style="text-align: center;">-24.99</td>
+<td style="text-align: center;">0.000248</td>
+<td style="text-align: center;">21.4035</td>
+<td style="text-align: center;">-0.00127</td>
+<td style="text-align: center;">-142.916</td>
+<td style="text-align: center;">-4.38636</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">-25.01</td>
+<td style="text-align: center;">0.000248</td>
+<td style="text-align: center;">-21.4188</td>
+<td style="text-align: center;">-0.00127</td>
+<td style="text-align: center;">-142.973</td>
+<td style="text-align: center;">-16.008</td>
+<td style="text-align: center;">-25.01</td>
+<td style="text-align: center;">0.000248</td>
+<td style="text-align: center;">-21.4035</td>
+<td style="text-align: center;">-0.00127</td>
+<td style="text-align: center;">-143.049</td>
+<td style="text-align: center;">-16.0091</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">-24.99</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">21.4188</td>
+<td style="text-align: center;">0.001275</td>
+<td style="text-align: center;">-142.839</td>
+<td style="text-align: center;">4.38753</td>
+<td style="text-align: center;">-24.99</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">21.4035</td>
+<td style="text-align: center;">0.001274</td>
+<td style="text-align: center;">-142.916</td>
+<td style="text-align: center;">4.38636</td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.11 Case 3 해석 결과</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">구분</th>
+<th style="text-align: center;">절점</th>
+<th style="text-align: center;">B3D2H</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">B3D2MH</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">Z</td>
+<td style="text-align: center;">RX</td>
+<td style="text-align: center;">RY</td>
+<td style="text-align: center;">RZ</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">Z</td>
+<td style="text-align: center;">RX</td>
+<td style="text-align: center;">RY</td>
+<td style="text-align: center;">RZ</td>
+</tr>
+<tr>
+<td style="text-align: center;">변위</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.266099</td>
+<td style="text-align: center;">4.8E-05</td>
+<td style="text-align: center;">0.000255</td>
+<td style="text-align: center;">-7.5E-07</td>
+<td style="text-align: center;">0.016003</td>
+<td style="text-align: center;">-0.26464</td>
+<td style="text-align: center;">0.267368</td>
+<td style="text-align: center;">4.8E-05</td>
+<td style="text-align: center;">0.000255</td>
+<td style="text-align: center;">-7.5E-07</td>
+<td style="text-align: center;">0.016071</td>
+<td style="text-align: center;">-0.26465</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.265801</td>
+<td style="text-align: center;">-4.8E-05</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">7.47E-07</td>
+<td style="text-align: center;">0.015973</td>
+<td style="text-align: center;">0.072532</td>
+<td style="text-align: center;">0.26707</td>
+<td style="text-align: center;">-4.8E-05</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">7.46E-07</td>
+<td style="text-align: center;">0.016041</td>
+<td style="text-align: center;">0.072513</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.266099</td>
+<td style="text-align: center;">-4.8E-05</td>
+<td style="text-align: center;">0.000255</td>
+<td style="text-align: center;">7.47E-07</td>
+<td style="text-align: center;">0.016003</td>
+<td style="text-align: center;">0.264635</td>
+<td style="text-align: center;">0.267368</td>
+<td style="text-align: center;">-4.8E-05</td>
+<td style="text-align: center;">0.000255</td>
+<td style="text-align: center;">7.46E-07</td>
+<td style="text-align: center;">0.016071</td>
+<td style="text-align: center;">0.264654</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0.265801</td>
+<td style="text-align: center;">4.8E-05</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">-7.5E-07</td>
+<td style="text-align: center;">0.015973</td>
+<td style="text-align: center;">-0.07253</td>
+<td style="text-align: center;">0.26707</td>
+<td style="text-align: center;">4.8E-05</td>
+<td style="text-align: center;">-0.00025</td>
+<td style="text-align: center;">-7.5E-07</td>
+<td style="text-align: center;">0.016041</td>
+<td style="text-align: center;">-0.07251</td>
+</tr>
+<tr>
+<td style="text-align: center;">반력</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-25.01</td>
+<td style="text-align: center;">-0.00037</td>
+<td style="text-align: center;">-21.4188</td>
+<td style="text-align: center;">0.001912</td>
+<td style="text-align: center;">-142.973</td>
+<td style="text-align: center;">24.012</td>
+<td style="text-align: center;">-25.01</td>
+<td style="text-align: center;">-0.00037</td>
+<td style="text-align: center;">-21.4035</td>
+<td style="text-align: center;">0.001912</td>
+<td style="text-align: center;">-143.049</td>
+<td style="text-align: center;">24.0137</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">-24.99</td>
+<td style="text-align: center;">0.000372</td>
+<td style="text-align: center;">21.4188</td>
+<td style="text-align: center;">-0.00191</td>
+<td style="text-align: center;">-142.839</td>
+<td style="text-align: center;">-6.5813</td>
+<td style="text-align: center;">-24.99</td>
+<td style="text-align: center;">0.000372</td>
+<td style="text-align: center;">21.4035</td>
+<td style="text-align: center;">-0.00191</td>
+<td style="text-align: center;">-142.916</td>
+<td style="text-align: center;">-6.57955</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">-25.01</td>
+<td style="text-align: center;">0.000372</td>
+<td style="text-align: center;">-21.4188</td>
+<td style="text-align: center;">-0.00191</td>
+<td style="text-align: center;">-142.973</td>
+<td style="text-align: center;">-24.012</td>
+<td style="text-align: center;">-25.01</td>
+<td style="text-align: center;">0.000372</td>
+<td style="text-align: center;">-21.4035</td>
+<td style="text-align: center;">-0.00191</td>
+<td style="text-align: center;">-143.049</td>
+<td style="text-align: center;">-24.0137</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">-24.99</td>
+<td style="text-align: center;">-0.00037</td>
+<td style="text-align: center;">21.4188</td>
+<td style="text-align: center;">0.001912</td>
+<td style="text-align: center;">-142.839</td>
+<td style="text-align: center;">6.5813</td>
+<td style="text-align: center;">-24.99</td>
+<td style="text-align: center;">-0.00037</td>
+<td style="text-align: center;">21.4035</td>
+<td style="text-align: center;">0.001912</td>
+<td style="text-align: center;">-142.916</td>
+<td style="text-align: center;">6.57955</td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.12 Case 3 해석 결과</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mode number</th>
+<th style="text-align: center;">B3D2H</th>
+<th style="text-align: center;">B3D2MH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.685552</td>
+<td style="text-align: center;">0.685408</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.11262</td>
+<td style="text-align: center;">1.11236</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2.30255</td>
+<td style="text-align: center;">2.29755</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2.83181</td>
+<td style="text-align: center;">2.82592</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2.96413</td>
+<td style="text-align: center;">2.96413</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6.06135</td>
+<td style="text-align: center;">6.06101</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">6.29894</td>
+<td style="text-align: center;">6.29773</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">8.69497</td>
+<td style="text-align: center;">8.69498</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">9.00954</td>
+<td style="text-align: center;">9.00956</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">13.1401</td>
+<td style="text-align: center;">13.1419</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="smallcaps">Input File</span></strong></p>
+<ul>
+<li>
+<p>SpaceFrame.inp : B3D2H elements are used for the model</p>
+</li>
+<li>
+<p>SpaceFrameS.inp : B3D2MH elements are used for the model</p>
+</li>
+</ul>
+<h2 id="effect-of-mass-formulation-on-beam-natural-frequencies">Effect of Mass Formulation on Beam Natural Frequencies</h2>
+<p>그림 E.4.1과 같이 단순 지지된 3차원 보요소의 고유진동수를 해석하여 이론해와 비교하였다. 단순지지된 보의 진동모드는 강축 및 약축에 대한 휨모드와 축방향 모드, 비틂 모드 등 총 4 종류의 진동모드가 존재한다. 그림에서 각각에 대한 이론해를 기술하였다. 질량행렬의 구성방식(consistent mass 또는 lumped mass)과 요소 개수을 1, 4, 10개로 변경하며 해석을 수행한 후 각 진동 모드에 대해 이론해와 비교하였다. 표 E.4.1 - 표 E.4.4는 각각의 진동모드에 대해 해석 결과를 비교한 것이다.</p>
+<p><img src="media/media/image8.png" style="width:6.26806in;height:2.33125in" /></p>
+<p>Figure E.1.6 Natural frequencies of simply supported beam</p>
+<p>Table E.1.13 강축 휨 모드 (Global XZ plane, Local XY plane)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">mode</th>
+<th style="text-align: center;">이론해</th>
+<th style="text-align: center;">요소 1개</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">요소 4개</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">요소 10개</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2.8771071</td>
+<td style="text-align: center;">3.18589</td>
+<td style="text-align: center;">19.0415</td>
+<td style="text-align: center;">2.87122</td>
+<td style="text-align: center;">2.87623</td>
+<td style="text-align: center;">2.87049</td>
+<td style="text-align: center;">2.87709</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">11.508428</td>
+<td style="text-align: center;">14.4918</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">11.4484</td>
+<td style="text-align: center;">11.4249</td>
+<td style="text-align: center;">11.4046</td>
+<td style="text-align: center;">11.5071</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">25.893964</td>
+<td style="text-align: center;">23.321</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">21.2859</td>
+<td style="text-align: center;">21.0141</td>
+<td style="text-align: center;">21.1715</td>
+<td style="text-align: center;">21.128</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">46.033713</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">25.8331</td>
+<td style="text-align: center;">24.2575</td>
+<td style="text-align: center;">25.3847</td>
+<td style="text-align: center;">25.8765</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">71.927677</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">49.2791</td>
+<td style="text-align: center;">59.8432</td>
+<td style="text-align: center;">44.4925</td>
+<td style="text-align: center;">45.9199</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">103.57585</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">67.1494</td>
+<td style="text-align: center;">89.5616</td>
+<td style="text-align: center;">64.0379</td>
+<td style="text-align: center;">62.8638</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">140.97825</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">76.8024</td>
+<td style="text-align: center;">105.645</td>
+<td style="text-align: center;">68.3648</td>
+<td style="text-align: center;">71.4055</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">184.13485</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">118.392</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">96.6521</td>
+<td style="text-align: center;">101.654</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">233.04567</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">121.979</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">108.483</td>
+<td style="text-align: center;">103.052</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">287.71071</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">171.617</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">129.065</td>
+<td style="text-align: center;">134.924</td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.14 약축 휨 모드 (Global XY plane, Local XZ plane)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">mode</th>
+<th style="text-align: center;">이론해</th>
+<th style="text-align: center;">요소 1개</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">요소 4개</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">요소 10개</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.9590357</td>
+<td style="text-align: center;">1.06417</td>
+<td style="text-align: center;">19.0415</td>
+<td style="text-align: center;">0.959038</td>
+<td style="text-align: center;">0.958743</td>
+<td style="text-align: center;">0.958796</td>
+<td style="text-align: center;">0.959029</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3.8361428</td>
+<td style="text-align: center;">4.8726</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">3.84733</td>
+<td style="text-align: center;">3.8083</td>
+<td style="text-align: center;">3.83262</td>
+<td style="text-align: center;">3.83569</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">8.6313212</td>
+<td style="text-align: center;">23.321</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">8.76871</td>
+<td style="text-align: center;">8.08584</td>
+<td style="text-align: center;">8.61603</td>
+<td style="text-align: center;">8.62552</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">15.344571</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">16.9607</td>
+<td style="text-align: center;">21.0141</td>
+<td style="text-align: center;">15.3072</td>
+<td style="text-align: center;">15.3066</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">23.975892</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">21.2859</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">21.1715</td>
+<td style="text-align: center;">21.128</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">34.525285</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">26.8951</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">23.9173</td>
+<td style="text-align: center;">23.8018</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">46.992749</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">42.3952</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">34.4816</td>
+<td style="text-align: center;">33.8845</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">61.378284</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">63.2384</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">47.0686</td>
+<td style="text-align: center;">44.9746</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">77.681891</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">67.1494</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">61.7799</td>
+<td style="text-align: center;">55.7976</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">95.903569</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">76.7159</td>
+<td style="text-align: center;">　</td>
+<td style="text-align: center;">64.0379</td>
+<td style="text-align: center;">62.8638</td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.15 축변형 모드</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">mode</th>
+<th style="text-align: center;">이론해</th>
+<th style="text-align: center;">요소 1개</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">요소 4개</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">요소 10개</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">21.149764</td>
+<td style="text-align: center;">23.321</td>
+<td style="text-align: center;">19.0415</td>
+<td style="text-align: center;">21.2859</td>
+<td style="text-align: center;">21.0141</td>
+<td style="text-align: center;">21.1715</td>
+<td style="text-align: center;">21.128</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">63.449291</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">67.1494</td>
+<td style="text-align: center;">59.8432</td>
+<td style="text-align: center;">64.0379</td>
+<td style="text-align: center;">62.8638</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">105.74882</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">121.979</td>
+<td style="text-align: center;">89.5616</td>
+<td style="text-align: center;">108.483</td>
+<td style="text-align: center;">103.052</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">148.04835</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">176.392</td>
+<td style="text-align: center;">105.645</td>
+<td style="text-align: center;">155.57</td>
+<td style="text-align: center;">140.702</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">190.34787</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">206.278</td>
+<td style="text-align: center;">174.888</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">232.6474</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">261.212</td>
+<td style="text-align: center;">204.768</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">274.94693</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">319.842</td>
+<td style="text-align: center;">229.605</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">317.24645</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">378.975</td>
+<td style="text-align: center;">248.789</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">359.54598</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">430.669</td>
+<td style="text-align: center;">261.847</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">401.84551</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">462.145</td>
+<td style="text-align: center;">268.457</td>
+</tr>
+</tbody>
+</table>
+<p>Table E.1.16 비틂 모드</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">mode</th>
+<th style="text-align: center;">이론해</th>
+<th style="text-align: center;">요소 1개</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">요소 4개</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">요소 10개</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+<td style="text-align: center;">Consitent</td>
+<td style="text-align: center;">Lumped</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">7.6754318</td>
+<td style="text-align: center;">8.4634</td>
+<td style="text-align: center;">6.91034</td>
+<td style="text-align: center;">7.72487</td>
+<td style="text-align: center;">7.62623</td>
+<td style="text-align: center;">7.68335</td>
+<td style="text-align: center;">7.66757</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">23.026295</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">24.3692</td>
+<td style="text-align: center;">21.7177</td>
+<td style="text-align: center;">23.24</td>
+<td style="text-align: center;">22.8139</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">38.377159</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">44.2674</td>
+<td style="text-align: center;">32.5028</td>
+<td style="text-align: center;">39.3697</td>
+<td style="text-align: center;">37.3985</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">53.728022</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">64.0145</td>
+<td style="text-align: center;">38.3397</td>
+<td style="text-align: center;">56.4578</td>
+<td style="text-align: center;">51.0622</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">69.078886</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">74.8603</td>
+<td style="text-align: center;">63.4686</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">84.429749</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">94.7963</td>
+<td style="text-align: center;">74.3122</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">99.780613</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">116.074</td>
+<td style="text-align: center;">83.3259</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">115.13148</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">137.534</td>
+<td style="text-align: center;">90.288</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">130.48234</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">156.294</td>
+<td style="text-align: center;">95.0268</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">145.8332</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">167.717</td>
+<td style="text-align: center;">97.4257</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="smallcaps">□ Remark : Derivation of natural frequency</span></strong></p>
+<p>외력이 없는 상태에서 단순지지된 보에 대한 휨, 축변형, 비틂 에 대한 지배방정식 및 경계조건은 각각 다음과 같다.</p>
+<p>휨 모드</p>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+m\frac{\partial^{2}v}{\partial t^{2}} + EI\frac{\partial^{4}v}{\partial x^{4}}0;\ \ v = v(x,t)\tag{E.1.3a}
+\end{array}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+v(0,t) = 0,\ \ \ \frac{\partial v}{\partial x}(0,t) = 0,\ \ \ v(L,t) = 0,\ \ \ \frac{\partial v}{\partial x}(L,t) = 0\tag{E.1.3b}
+\end{array}
+</code></pre></div>
+<p>-축변형 모드</p>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+m\frac{\partial^{2}u}{\partial t^{2}} - EA\frac{\partial^{2}u}{\partial x^{2}}0;\ \ u = u(x,t)\tag{E.1.4a}
+\end{array}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+u(0,t) = 0,\ \ \ \frac{\partial u}{\partial x}(L,t) = 0\tag{E.1.4b}
+\end{array}
+</code></pre></div>
+<p>-비틂 모드</p>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+m_{r}\frac{\partial^{2}\theta}{\partial t^{2}} - GJ\frac{\partial^{2}\theta}{\partial x^{2}}0;\ \ \theta = \theta(x,t)\tag{E.1.5a}
+\end{array}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+\theta(0,t) = 0,\ \ \ \frac{\partial\theta}{\partial x}(L,t) = 0\tag{E.1.5b}
+\end{array}
+</code></pre></div>
+<p>위에서 <span class="arithmatex">\(<code>m</code>\)</span>은 단위길이당 질량(<span class="arithmatex">\(<code>m = \rho A</code>\)</span>)이고, <span class="arithmatex">\(<code>m_{r}</code>\)</span>은 단위길이당 회전질량(<span class="arithmatex">\(<code>m_{r} = \rho I_{p}</code>\)</span> ; <span class="arithmatex">\(<code>I_{p}</code>\)</span>는 극관성모멘트(polar moment of inertia), <span class="arithmatex">\(<code>I_{p} = I_{x} + I_{y}</code>\)</span>)이다. <span class="arithmatex">\(<code>u(x,t) = \phi(x)q(t)</code>\)</span> 형태의 변수분리를 적용하고, 경계조건을 부과하면 다음과 같이 각각의 고유진동수 및 고유진동 모드를 유도할 수 있다;</p>
+<p>-휨 모드</p>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+\omega_{n} = \frac{n^{2}\pi^{2}}{L^{2}}\sqrt{\frac{EI}{m}},\ \ \ \phi_{n}(x) = \sin\frac{n\pi x}{L}\tag{E.1.6}
+\end{array}
+</code></pre></div>
+<p>-축변형 모드</p>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+\omega_{n} = \frac{(2n - 1)}{2}\frac{\pi}{L}\sqrt{\frac{EA}{m}},\ \ \ \phi_{n}(x) = \sin\frac{2(n - 1)\pi x}{2L}\tag{E.1.7}
+\end{array}
+</code></pre></div>
+<p>-비틂 모드</p>
+<div class="highlight"><pre><span></span><code>\begin{array}{r}
+\omega_{n} = \frac{(2n - 1)}{2}\frac{\pi}{L}\sqrt{\frac{GJ}{m_{r}}},\ \ \ \phi_{n}(x) = \sin\frac{2(n - 1)\pi x}{2L}\tag{E.1.8}
+\end{array}
+</code></pre></div>
+<p><strong><span class="smallcaps">Input file</span></strong></p>
+<ul>
+<li>
+<p>frqbeam1c.inp : 요소 1개, consistent mass 사용</p>
+</li>
+<li>
+<p>frqbeam4c.inp : 요소 4개, consistent mass 사용</p>
+</li>
+<li>
+<p>frqbeam10c.inp : 요소 10개, consistent mass 사용</p>
+</li>
+<li>
+<p>frqbeam1l.inp : 요소 1개, lumped mass 사용</p>
+</li>
+<li>
+<p>frqbeam4l.inp : 요소 4개, lumped mass 사용</p>
+</li>
+<li>
+<p>frqbeam10l.inp : 요소 10개, lumped mass 사용</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

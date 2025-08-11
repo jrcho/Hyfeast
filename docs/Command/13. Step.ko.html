@@ -1,0 +1,3194 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="12.%20Sensor.ko.html">
+      
+      
+        <link rel="next" href="14.%20Step%20result.ko.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>13. 해석 - Hyfeast-v1.0.0 Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#step" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast-v1.0.0 Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              13. 해석
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hyfeast-v1.0.0 Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Command(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.%20Introduction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.%20Node.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.%20Element.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element libraries
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.1%20Introduction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.2%20Beam.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.3%20Truss.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.4%20Cable.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.5%20Shell.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.6%20Solid.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.7%20Acoustic%20Solid.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.8%20MCK.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.9%20Moving%20Spring.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.10%20Interface.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.11%20Tendon.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5.%20Constraint.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6.%20Load.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7.%20Material.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8.%20Function.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9.%20Surface.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10.%20Construction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11.%20CoordinateSystem.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate system
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12.%20Sensor.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="13.%20Step.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14.%20Step%20result.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="15.%20Modelling.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling convenience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="16.%20Etc.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17.%20Special%20step.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="18.%20HDB%20file%20structure.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB file structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/1.%20Overview.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.%20Theory.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.%20Commands.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Command
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/4.%20Examples.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Example
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Command(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.%20Introduction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.%20Node.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 절점
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. 요소 상세
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. 요소 상세
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.1%20Introduction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.2%20Beam.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.3%20Truss.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.4%20Cable.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.5%20Shell.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.6%20Solid.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.7%20Acoustic%20Solid.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.8%20MCK.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.9%20Moving%20Spring.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.10%20Interface.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.11%20Tendon.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5.%20Constraint.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. 구속조건
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6.%20Load.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. 하중
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7.%20Material.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. 재료
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8.%20Function.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. 함수
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9.%20Surface.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10.%20Construction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11.%20CoordinateSystem.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. 좌표계
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12.%20Sensor.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. 센서
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    13. 해석
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="13.%20Step.ko.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    13. 해석
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Step
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-typestatic" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Step, Type=Static
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-typedynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Step, Type=Dynamic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-typefrequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Step, Type=Frequency
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activate" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Activate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inactivate" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Inactivate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Solver
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergency" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Convergency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutioncontrol" class="md-nav__link">
+    <span class="md-ellipsis">
+      *SolutionControl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeintegration" class="md-nav__link">
+    <span class="md-ellipsis">
+      *TimeIntegration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rayleighdamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      *RayleighDamping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modal" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Modal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Field
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Print
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14.%20Step%20result.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. 해석 결과 관리
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="15.%20Modelling.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. 모델링 편의
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="16.%20Etc.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. 기타
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17.%20Special%20step.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. 특수 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="18.%20HDB%20file%20structure.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB 파일 구조
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/1.%20Overview.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.%20Theory.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 이론
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.%20Commands.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 명령매뉴얼
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/4.%20Examples.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Example(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Example(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.1%20Beam%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.1 Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.2%20Material%20Nonlinear%20Beam%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.2 Material Nonlinear Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.3 Solid Element and In-Plane Behavior of Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.4%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.4 Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.5%20Material%20Nonlinear%20Solid%20and%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.5 Material Nonlinear Solid and Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.6%20Acoustic%20Solid%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.6 Acoustic Solid Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.7 Dynamic Analysis using Spring and Mass Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.8%20Interface%20Modeling%20using%20Spring%20and%20Interface%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.8 Interface Modeling using Spring and Interface Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.9%20Truss%2C%20Cable%20and%20Tendon%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.9 Truss, Cable and Tendon Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.10%20Simple%20Constraints.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.10 Simple Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.11%20Advanced%20Constraints.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.11 Advanced Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.12%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.12 Moving Load Analysis in Simply Supported Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.13%20Stability%20of%20Rail%20Track.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.13 Stability of Rail Track
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.14%20Temperature%20Load%20by%20Bimetal.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.14 Temperature Load by Bimetal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.15%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.15 ModelUpdating and ShapeEstimation Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Step
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-typestatic" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Step, Type=Static
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-typedynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Step, Type=Dynamic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-typefrequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Step, Type=Frequency
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activate" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Activate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inactivate" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Inactivate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Solver
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergency" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Convergency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutioncontrol" class="md-nav__link">
+    <span class="md-ellipsis">
+      *SolutionControl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeintegration" class="md-nav__link">
+    <span class="md-ellipsis">
+      *TimeIntegration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rayleighdamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      *RayleighDamping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modal" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Modal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Field
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Print
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>13. 해석</h1>
+
+<p>해석 관련 명령은 크게 <code>*Step</code>과 <code>*PostStep</code>이 있다. <code>*Step</code>은 실제 해석을 수행할 단계를 지정하며, <code>*PostStep</code>은 해석된 결과를 정리하는 데 사용한다. </p>
+<p><code>*Step</code> 명령에서 Static, Dynamic, Frequency, Buckling 등의 해석 유형을 지정할 수 있으며, <code>*Step</code>의 사전 단계를 지정하는 방식으로 여러 해석 단계로 구성된 시뮬레이션을 수행할 수 있다.   <code>*Step</code>의 하위명령어로는 요소, 하중, 구속조건을 지정하거나 변경하는  <code>*Activate</code>, <code>*Inactivate</code> 명령, 해석옵션을 지정하는 <code>*Solver</code>, <code>*SolutionAlgorithm</code>, <code>*Convergency</code>, <code>*RayleighDamping</code>, <code>*Modal</code> 명령, 출력을 지정하는 <code>*Output</code>, <code>*Print</code>, <code>*History</code>, <code>*Check</code> 등이 있다. </p>
+<p><code>*Step</code> 명령이 수행되면 HDB 파일(<code>.hdb</code>)에 ResultStep이라는 출력 스텝이 생성되며 <code>*Output</code>에서 지정한 결과가 저장되게 된다. <code>*PostStep</code>은 이미 존재하는 ResultStep을 대상으로 결과값의 일부를 발췌하거나 최대/최소, 결과의 조합 등을 수행하여 새로운 ResultStep을 만드는 명령이다. </p>
+<p><code>*Step</code>과 <code>*PostStep</code>에 사용되는 이름은 자신만의 중복되지 않는 이름을 지정해야 한다. </p>
+<h2 id="step">*Step</h2>
+<p>해석 단계(analysis step)을 정의한다. </p>
+<div class="highlight"><pre><span></span><code>*Step, Type=type,...  Name=name[, PREV=prevStep, ...]
+ ...
+</code></pre></div>
+<h5 id="keyword-line">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=step_type,...:</strong> 해석유형 및 부가옵션<ul>
+<li><strong>Static:</strong> 정적해석</li>
+<li><strong>Dynamic:</strong> 동해석</li>
+<li><strong>Frequency:</strong> 주파수해석</li>
+</ul>
+</li>
+<li><strong>Name=name:</strong> 해석의 이름</li>
+<li><strong>PREV=prevStep:</strong> 이전 해석단계. 지정하지 않는 경우 초기상태에서 해석이 시작됨</li>
+</ul>
+</div>
+<p>다음 해석 유형에 따른 분류이다. </p>
+<p>▪표준 해석 단계(Standard analysis step)</p>
+<ul>
+<li>
+<p>정적 해석 단계(Static analysis step) </p>
+<ul>
+<li>표준 정적 해석(Standard load-displacement controlled static analysis step)</li>
+<li>Arclength 정적 해석(Arclength-controlled static analysis step)   </li>
+<li>시간 의존 정적 해석(Quasi-static analysis step)</li>
+</ul>
+</li>
+<li>
+<p>동적 해석 단계(Dynamic analysis step) </p>
+<ul>
+<li>시간 영역 동적 해석(Time-domain analysis step)</li>
+</ul>
+</li>
+</ul>
+<p>▪고유치 해석 단계(Eigen analysis step)</p>
+<ul>
+<li>고유진동수 추출 해석(Frequecny extraction analysis step)</li>
+</ul>
+<p>해석 단계 유형에 따라 시간을 다른 방식이 된다. </p>
+<p>▪ 표준 정적 해석(Standard load-displacement controlled static analysis step)</p>
+<p>주어진 시간이 하중계수(load factor)인 유사시간(pseudo-time)이다. </p>
+<p>▪ Arclength 정적 해석(Arclength-controlled static analysis step)   </p>
+<p>주어진 시간은 arclength를 선형거동시 하중계수가 1일 때 발생하는 arclength로 정규화된 유사시간(peudo-time)이다. 따라서 Arclength control을 선형해석에 적용하면 표준 방법과 동일한 시간 증분을 주는 것과 같다. </p>
+<p>▪ 시간 의존 정적 해석(Quasi-static analysis step)</p>
+<p>질량효과를 고려하지 않지만 시간의존성을 고려하는 정적해석을 의미하며, 주어진 시간은 실제 시간이다. 시간의존성은 시간함수를 부여한 하중과 시간의존 재료모델 등에서 발생하는데 정적 해석시 시간 의존 해석을 수행해야 시간의존성을 반영할 수 있다. </p>
+<p>▪ 동적 해석 단계(Dynamic analysis step) </p>
+<p>질량효과와 시간의존성을 모두 고려하는 동해석을 의미하며, 주어진 시간은 실제시간이다. 시간 적분을 수행하는 방법으로는 Newmark 법과 Hilbert-Hughes-Taylor 법(이하 HHT 법)을 지원하며, <code>*TimeIntegration</code>에서 지정할 수 있다. 디폴트 수치적분법은 <span class="arithmatex">\(\small\gamma=0.5\)</span>, <span class="arithmatex">\(\small\beta=0.25\)</span>의 계수를 갖는 Newmark 법(또는 평균가속도법)이다. HHT법은 적용할 경우 <span class="arithmatex">\(\small\alpha=-0.05\)</span>의 디폴트 값을 가진다. </p>
+<h5 id="example">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=Case2
+ EquiTime, 0.1, 10
+*Activate, Type=Element
+ ALL
+*Activate, Type=Constraint
+ BC
+*Activate, Type=Load
+ LC2, SelfWeight
+*Output
+ D,FN,BSF,SSF
+
+
+*Step, Type=Frequency, Name=Case7
+ 10
+*Activate, Type=Element
+ ALL 
+*Activate, Type=Constraint
+ BC 
+</code></pre></div>
+<h3 id="step-typestatic">*Step, Type=Static</h3>
+<p>정적 해석 단계를 지정</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static,Standard|Arclength|Quasi,  Name=name, PREV=prevStep, NLGeom=ON|OFF
+ {EquiTime, dtime,ntime}|{GivenTime, t1,t2,...}|{AutoTime, t0,tmax,dtmin,dtmax,maxInc}
+</code></pre></div>
+<h5 id="keyword-line_1">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Standard:</strong> 표준 정적 해석(Standard load-displacement controlled static analysis step). Standard는 생략 가능</li>
+<li><strong>Arclength:</strong> Arclength 정적 해석(Arclength-controlled static analysis step) </li>
+<li><strong>Quasi:</strong> 시간 의존 정적 해석(Quasi-static analysis step) </li>
+<li><strong>NLGeom=On|Off:</strong> 기하비선형 지정(optional, default Off).  [Reserved. Currently Unused]</li>
+</ul>
+</div>
+<h5 id="first-dataline">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>EquiTime,dtime,ntime:</strong> 등간격의 해석시간간격(time increment)을 지정한다. <code>dtime,2*dtime, ..., ntime*dtime</code>의 시간을 지정하는 것과 같다. </li>
+<li><strong>GivenTime,t1,t2,...:</strong> 주어진 시간으로 해석시간을 지정한다. </li>
+<li><strong>AutoTime,t0,tmax,dtmin, dtmax,maxInc:</strong> 자동증분(automatic increment)으로 시간간격을 정의한다. maxInc는 최대 increment(디폴트값은, 1,1,1,1,1000)</li>
+</ul>
+</div>
+<h3 id="step-typedynamic">*Step, Type=Dynamic</h3>
+<p>동해석을 지정</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=Dynamic, Name=name, PREV=prevStep, NLGeom=ON|OFF
+ EquiTime, dtime,ntime
+</code></pre></div>
+<h5 id="keyword-line_2">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>NLGeom=On|Off:</strong> 기하비선형 지정(optional, default Off).  [Reserved. Currently Unused]</li>
+</ul>
+</div>
+<h5 id="first-dataline_1">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>EquiTime,dtime,ntime:</strong> 등간격의 해석시간간격(time increment)을 지정한다. <code>dtime,2*dtime, ..., ntime*dtime</code>의 시간을 지정하는 것과 같다. </li>
+</ul>
+</div>
+<p>현재는 시간간격으로 EquiTime을 사용해야 한다.</p>
+<h3 id="step-typefrequency">*Step, Type=Frequency</h3>
+<p>주파수 해석을 지정</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=Frequency, Name=name[, PREV=prevStep]
+ nmode, shift
+</code></pre></div>
+<h5 id="first-dataline_2">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>nmode:</strong> number of mode to be extracted (Default 10)</li>
+<li><strong>shift:</strong> shifting frquency (Hz). (Default 0.). 만약 지정되어 있으면 이 값에 대응하는 고유치(<code>4*pi*pi*frq*frq</code>)에 근접하는 고유치에 대응하는 고유진동수를 계산함. 고유치솔버가 Arpack 일때만 적용 가능.</li>
+</ul>
+</div>
+<h2 id="activate">*Activate</h2>
+<p>Step의 대상이 되는 요소, 하중, 구속조건을 활성화한다. </p>
+<div class="highlight"><pre><span></span><code>*Activate, Typ={Element|Load|Constraint}
+ target, ...
+ ...
+</code></pre></div>
+<h5 id="keyword-line-for-activate">Keyword line for *Activate</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=type</strong><ul>
+<li><strong>Element:</strong> 활성화 대상이 요소  </li>
+<li><strong>Load:</strong> 활성화 대상이 하중</li>
+<li><strong>Constraint:</strong> 활성화 대상이 구속조건</li>
+</ul>
+</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target:</strong> type에 따라 결정되는 대상. Elset, Load, Constraint</li>
+</ul>
+</div>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*STEP, TYPE=Static, Name=stage2 Prev=stage1
+*Inativate, TYPE=ELEMENT
+ slab
+*Activate, TYPE=Element
+ 10, new_slab
+*Inativate, TYPE=Load
+ pointLoad
+*Activate, TYPE=Load
+ lineload
+</code></pre></div>
+<h2 id="inactivate">*Inactivate</h2>
+<p>Step의 대상이 되는 요소, 하중, 구속조건을 비활성화한다. </p>
+<div class="highlight"><pre><span></span><code>*Inactivate, Type={Element|Load[,Ramp]|Constraint}
+ target, ...
+ ...             
+</code></pre></div>
+<h5 id="keyword-line_3">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=type</strong><ul>
+<li><strong>Element:</strong> 비활성화 대상 요소  </li>
+<li><strong>Load[, Ramp]:</strong> 비활성화 대상이 되는 요소. __Ramp__가 지정하면 Step 초기에 즉시 없어짐.</li>
+<li><strong>Constraint:</strong> 비활성화 대상이 구속조건</li>
+</ul>
+</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines_1">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target:</strong> type에 따라 결정되는 대상. Elset, Load, Constraint</li>
+</ul>
+</div>
+<h2 id="solver">*Solver</h2>
+<p>해석 단계에 적용할 디폴트 솔버를 변경</p>
+<div class="highlight"><pre><span></span><code>*Solver, TYPE=LinearSolver
+ Pardiso|BiCG|BiCGStab|CGS, solverOption
+
+*Solver, TYPE=EigenSolver
+ Arpack|Subspace
+</code></pre></div>
+<h5 id="keyword-line_4">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=LinearSolver:</strong> 선형 솔버를 지정. 디폴트 솔버는 Pardiso</li>
+<li><strong>Type=EigenSolver:</strong> 고유치솔버를 지정, 디폴트 솔버는 Arpack</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-typelinearsolver">First dataline for TYPE=LinearSolver</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Pardiso|BiCG|BiCGStab|CGS:</strong> 적용할 솔버</li>
+<li><strong>solverOption:</strong> 솔버에 따른 옵션, 문자열로 지정(optional)</li>
+</ul>
+<p>▪ Pardiso인 경우 옵션 </p>
+<p>IteractiveOff|IteractiveOn-TryPositiveDefinite|PositiveDefinite|Indefinite</p>
+<ul>
+<li>IteractiveOff|IteractiveOn : Iterative solver combination을 on/off (default IterativeOff)</li>
+<li>TryPositiveDefinite|PositiveDefinite|Indefinite : Positive definite, indefinite 행렬 처리 방식을 지정(default TryPositiveDefinite)</li>
+</ul>
+<p>▪ BiCG, BiCGStab,CGS인 경우 옵션 </p>
+<p>None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardioD|PardioDC-TryPositiveDefinite|PositiveDefinite|Indefinite</p>
+<ul>
+<li>None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardioD|PardioDC : Preconditioner를 지정(default None)</li>
+<li>TryPositiveDefinite|PositiveDefinite|Indefinite : Positive definite, indefinite 행렬 처리 방식을 지정(default TryPositiveDefinite)</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-typeeigensolver">First dataline for TYPE=EigenSolver</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ARPACK|Subspace:</strong> 적용할 솔버</li>
+</ul>
+</div>
+<p>Linear solver는 <span class="arithmatex">\(\small Kx = f\)</span> 형태의 선형계에 대한 해를 구하는 데 사용되며, 이때 <span class="arithmatex">\(K\)</span>는 희소행렬이다. 직접 희소 솔버(direct sparse solver)인 Pardiso 솔버가 디폴트이고, BiCG, BiCGStab, CGS 등과 같은 반복 희소 솔버(iterative sparse solver)를 사용할 수 있다. </p>
+<p>Eigen solver는 표준 고유치 문제 또는 일반 고유치 문제에 대한 해를 구하는 데 사용된다. 디폴트는 ARPACK 이고, Subspace iteration solver를 적용할 수 있다. 두 솔버 모두 선형 희소솔버를 이용하는데 PARDISO를 내부적으로 사용한다. 유한요소법에 사용되는 고유치 솔버들은 모든 고유치를 계산하는 것이 아니라 일부 낮은 저차모드만을 계산하도록 특화되어 있다. 고유치솔버로는 subspace iteration 솔버와 ARPACK 솔버를 선택할 수 있으며, ARPACK 솔버가 디폴트이다.  Subspace iteration solver는 대칭 행렬에 대해서만 적용 가능한 반면 ARPACK solver는 대칭, 비대칭 행렬에 모두 적용할 수 있습니다. Subspace iteration 솔버는 <span class="arithmatex">\(\small ncv = min( min(2*nev,nev+8), n)\)</span>의 식에 따라 subspace의 크기를 결정한다. 반면에 ARPACK은 대칭행렬의 경우 <span class="arithmatex">\(\small nev &lt; ncv &lt;= n\)</span> 의 조건을 만족해야 하고 <span class="arithmatex">\(\small ncv = 2*nev\)</span>를 추천하고 있다. 따라서 <span class="arithmatex">\(\small nev\)</span>를 <span class="arithmatex">\(\small n/2\)</span>보다 작게 값을 지정하는 것이 좋다. 최대 가능한 <span class="arithmatex">\(\small nev\)</span>는 <span class="arithmatex">\(nev = n-1\)</span>이다. 여기에서 <span class="arithmatex">\(\small n\)</span>은 질량행렬의 실제 자유도 수이고, <span class="arithmatex">\(\small ncv\)</span>는 계산을 위해 필요한 subspace나 Lacoz 벡터의 크기, <span class="arithmatex">\(\small nev\)</span>는 필요한 고유치 개수이다. </p>
+<h2 id="convergency">*Convergency</h2>
+<p>표준 해석 단계(standard analysis step)에 대한 수렴 조건 부과</p>
+<div class="highlight"><pre><span></span><code>*Convergency, Monitor={ON|OFF}
+ Force, ftol1, ftol2, fmin
+ or Displacement, dtol1, dtol2, dmin
+ ...
+</code></pre></div>
+<h5 id="keyword-line_5">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>monitor:</strong> monitoring option. ON or OFF. Default OFF.</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-force-criteria">First dataline for FORCE criteria</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ftol1, ftol2:</strong> primary and seconary tolerances for force criteria (default 1E-4, 0.01)</li>
+<li><strong>fmin:</strong> minimum allowable unbalanced force (default 0.01)</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-displacement-criteria">First dataline for Displacement criteria</h5>
+<div class="admonition note">
+<ul>
+<li><strong>dtol1, dtol2:</strong> primary and secondary tolerances for displacement criteria (default 0.01,0.01)</li>
+<li><strong>dmin:</strong> mimimum allowable displacement  (default 1E-4)</li>
+</ul>
+</div>
+<p>비선형 해석에서의 수렴 조건(convergency criteria)을 지정한다. 선형해석이나 고유치해석(FrequencyStep과 BucklingStep)에서는 무시된다. 에너지, 하중, 변위에 대한 수렴조건을 선택적으로 중첩하여 적용할 수 있다. 수렴 허용치에는 1차 허용치(primary tolerance)와 2차 허용치(secondary tolerance)가 있다. 1차허용치는 반복단계가 작을 때 적용하는 허용치이고 2차 허용치는 비선형성이 커서 반복단계가 클 때 적용하는 허용치이다. 1차, 2차 허용치를 구분하는 반복단계회수(<span class="arithmatex">\(\small I_p\)</span>)는 9이다. 다시말하면 반복단계 8까지는 1차허용치를 적용하고, 그 이상은 2차허용치를 적용한다. 다음은 디폴트 값을 나열한 것이다. </p>
+<ul>
+<li>Force/Moment criteria      </li>
+</ul>
+<div class="arithmatex">\[\small 
+|| { R}_{n+1} ^i || &lt;= \epsilon_F ~ \max (|| { R}_{n+1} ^1 || ,R_{min} ) 
+\]</div>
+<ul>
+<li>Displacement/Rotation criteria (두번째 iteration부터 적용)</li>
+</ul>
+<div class="arithmatex">\[\small 
+|| \delta U_{n+1}^i || \le \epsilon_D \max(||U_{n+1} ^{i+1} ||, D_{min} )
+\]</div>
+<p>하중 조건에 대해서 <span class="arithmatex">\(\small \epsilon_F\)</span>는 반복회수가 <span class="arithmatex">\(\small I_p\)</span> 보다 작을 때는 1E-4를, 그 이상은 1E-2를 적용하며, <span class="arithmatex">\(\small R_{min}\)</span> = 0.01 이다. 변위 조건에 대해서는 <span class="arithmatex">\(\small \epsilon_D\)</span>는 0.01, <span class="arithmatex">\(\small D_{min}\)</span>은 1E-4를 적용한다. </p>
+<h5 id="example_2">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static Name=1
+...
+*Convergency, Monitor=ON
+
+*Step, Type=Static, Name=2
+...
+*Convergency
+ Force,1E-5
+*SolutionControl, Type=SolutionAlgorithm
+ BFGS, 8
+*SolutionControl, Type=LineSearch
+ Bracketed
+*SolutionControl, Type=MaxIteration
+ 20
+</code></pre></div>
+<h2 id="solutioncontrol">*SolutionControl</h2>
+<p>비선형 해석 관련 옵션을 지정</p>
+<div class="highlight"><pre><span></span><code>*SolutionControl, Type=MaxIteration
+ maxIteration
+
+*SolutionControl, Type=SolutionAlgorithm
+ Newton|BFGS|Secant|MNewton, kernelUpdateIter
+
+*SolutionControl, Type=LineSearch
+ Bracketed, N, tol, amp, smax | Backtracking, N, tol
+</code></pre></div>
+<h5 id="keyword-line_6">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=MaxIteration|Algorithm|LineSearch:</strong> 최대 반복 회수, 적용 알고리즘, 선탬색 기법 등을 적용</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-maxiter">First dataline for MaxIter</h5>
+<div class="admonition note">
+<ul>
+<li><strong>maxIter:</strong> maximum iteration number</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-algorithm">First dataline for Algorithm</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Newton|BFGS|Secant|MNewton:</strong>  반복 단계시 적용하는 비선형 해석 알고리즘</li>
+<li><strong>kernelUpdate:</strong> MNewton, Secant, BFGS 등 quasi-Newton법에서 kernel matrix가 rebuild되는 iteration number(optional, default 8). Newton 법에서는 무시</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-linesearch-barcketed">First dataline for LineSearch, Barcketed</h5>
+<div class="admonition note">
+<ul>
+<li><strong>N:</strong> No. of maximum allowable line search iteration(Default 6)</li>
+<li><strong>tol:</strong> tolerance of line search (Default 0.8)</li>
+<li><strong>amp:</strong> amplification factor preventing dangerous extrapolation(Default 5.)</li>
+<li><strong>smax:</strong> Maximum allowable scaling factor(Default 25.)</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-linesearch-bactracking">First dataline for LineSearch, Bactracking</h5>
+<div class="admonition note">
+<ul>
+<li><strong>N:</strong> No. of maximum allowable line search iteration(Default 6)</li>
+<li><strong>tol:</strong> tolerance of line search (Default 0.5)</li>
+</ul>
+</div>
+<p>Solution algorithm은 비선형해석에서 반복단계의 평형방정식을 구할 때 적용되는 알고리즘을 지정한다. Newton, BFGS 등과 같은 알고리즘을 지정할 수 있으며, 수렴성을 보장하는 선탐색을 지정한다. </p>
+<h5 id="example_3">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=step2
+...
+*SolutionControl, Type=SolutionAlgorithm
+ BFGS, 8
+*SolutionControl, Type=LineSearch
+ Bracketed
+*SolutionControl, Type=MaxIteration
+ 20
+</code></pre></div>
+<h2 id="timeintegration">*TimeIntegration</h2>
+<p>동해석시 시간적분 방법을 정의 </p>
+<div class="highlight"><pre><span></span><code>*TimeIntegration, Type=Newmark,gamma,beta
+
+*TimeIntegration, Type=HHT,alpha
+</code></pre></div>
+<h5 id="keyword-line-for-typenewmark">Keyword line for Type=Newmark</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=Newmark, gamma, beta:</strong> Newmark 시간 적분을 적용. gamma와 beta는 optional이며 디폴트는 0.5, 0.25.</li>
+</ul>
+</div>
+<h5 id="keyword-line-for-typehht">Keyword line for Type=HHT</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=HHT, alpha:</strong> HHT 시간 적분을 적용. alpha는 optional이며 디폴트는 –0.05</li>
+</ul>
+</div>
+<p><code>*TimeIntegration</code>을 별도로 지정하지 않을 경우 디폴트는 Newmark, 0.5, 0.25로 지정되어 있다. </p>
+<p>Newmark 법에서 <span class="arithmatex">\(\small\beta\)</span>, <span class="arithmatex">\(\small\gamma\)</span>는 수치안정성과 정확성에 따라 결정되는 계수이다.  <span class="arithmatex">\(\small\gamma=1/2\)</span>이면 수치감쇠를 도입하지 않으며, <span class="arithmatex">\(\small\gamma&gt;1/2\)</span>이면 수치감쇠를 도입한다. 보통 <span class="arithmatex">\(\small\gamma=1/2\)</span>, <span class="arithmatex">\(\small 1/6 \le \beta \le 1/4\)</span> 를 선택하는데, <span class="arithmatex">\(\small\gamma=1/2\)</span>, <span class="arithmatex">\(\small\beta=1/4\)</span>인 경우는 시간간격내 가속도가 일정하다고 가정하는 것으로 평균가속도법 (average acceleration method)이라 하고,<span class="arithmatex">\(\small\gamma=1/2\)</span>, <span class="arithmatex">\(\small\beta=1/6\)</span>인 경우는 시간간격내 가속도가 선형적으로 변화한다고 가정하는 것으로 선형가속도법 (linear acceleration method)이라 한다. 다음 조건을 만족해야 수치적으로 안정이다. </p>
+<div class="arithmatex">\[\small
+\frac{\Delta t}{T_n} &lt;= \frac{1}{\pi \sqrt 2} \frac{1}{\sqrt {\gamma-2\beta}}, ~~   \rm , where, T_n is natural frequency
+\]</div>
+<p>즉, 평균가속도법을 사용하면 무조건적으로 안정(unconditionally stable)이고, 선형가속도법을 사용하면 <span class="arithmatex">\(\frac{\Delta t}{T_n}\)</span>을 만족해야 안정하다. 다자유도로 구성되는 유한요소문제에서 고차의 낮은 고유주기(높은 고유진동수)까지 이러한 안정조건을 만족하도록 를 선택하는 것은 쉽지 않기 때문에 정밀도가 떨어지더라도 평균가속도법을 사용하는 것이 일반적이다.
+  Hibert-Hughes-Taylor 법(HHT 법, <span class="arithmatex">\(\small\alpha\)</span>-method)은 Newmark 법을 확장한 방법으로 해의 정확도를 유지하면서 제어가능한(controllable) 수치감쇠(numerical damping)을 도입한다. <span class="arithmatex">\(\small -1/3 \le \alpha \le 0\)</span>이고, 무조건적으로 안정(unconditionally stable)한 방법이다. <span class="arithmatex">\(\alpha=0\)</span>이면 평균가속도법을 적용한 Newmark 법과 동일하다. 일반적으로 <span class="arithmatex">\(\small\alpha=-0.05\)</span>를 사용하며, <span class="arithmatex">\(\small\alpha=0\)</span>는 수치감쇠가 없는 것을, <span class="arithmatex">\(\small\alpha=-1/3\)</span>은 수치감쇠가 가장 큰 것을 의미한다.  수치감쇠는 low-frequency 모델에서는 그 영향이 작고, high-frequency 모델에서는 영향이 크다. </p>
+<h5 id="example_4">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Dynamic, Name==analysis1
+ EquiTime, 0.02, 24 
+*TimeIntegration, Type=HHT, -0.05
+...
+</code></pre></div>
+<h2 id="rayleighdamping">*RayleighDamping</h2>
+<p>동해석(DynamicStep) 시 Rayleigh damping 값을 지정</p>
+<div class="highlight"><pre><span></span><code>*RayleighDamping
+ Direct, alpha,beta, targetElset
+ Equivalent, fm, fn, xim, xin, targetElset
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_2">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Direct, alpha, beta:</strong> Rayleigh 감쇠상수 alpha, beta를 지정. alpha and beta represent mass and stiffness proportional damping, respectively. (alpha, beta는 option, default 0,0)</li>
+<li><strong>Equivalent, fm, fn, xim, xin:</strong> 등가감쇠비 xim, xin와 이에 대응하는 구조물의 고유진동수 fm, fn(Hz), 보통 1차 및 2차 고유진동수를 지정. 보통 xim과 xin을 동일하게 설정(모두 required)</li>
+<li><strong>targetElset:</strong> 지정대상이 되는 요소집합으로 현 해석단계에서 활성화된 요소집합(optional). 생략하면 현 해석 단계의 활성화된 모든 요소집합에 지정됨.</li>
+</ul>
+</div>
+<p>등가감쇠비를 지정할 경우 Rayleigh damping coeficient alpha, beta를 다음과 같은 관계식을 통해 계산해서 설정한다. </p>
+<div class="arithmatex">\[
+\small
+\left[ \begin{matrix}
+\xi_m \\
+\xi_n \\
+\end{matrix} \right] = 
+\frac{1}{2}
+\left[ \begin{matrix}
+1/\omega_m &amp; \omega_m\\
+1/\omega_n &amp; \omega_n\\
+\end{matrix} \right]  
+\left[ \begin{matrix}
+\alpha \\
+\beta \\
+\end{matrix} \right]
+\]</div>
+<p>위에서, <span class="arithmatex">\(\small \omega_m = 2\pi f_m\)</span>,  <span class="arithmatex">\(\small\omega_n = 2\pi f_n\)</span>이고, 결정된 <span class="arithmatex">\(\small\alpha\)</span>, <span class="arithmatex">\(\small\beta\)</span>는 다음과 같이 구성되는 Rayleigh damping matrix(<span class="arithmatex">\(\small C^R = \alpha M + \beta K\)</span>)에  대한 상수들이다.</p>
+<h5 id="example_5">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Dynamic, Name=1
+*Activate, Type=Element
+ ELSET1, ELSET2
+*RayleighDamping
+ Direct, 0.5, 0.1    # ELSET1, ELSET2 등 Step 1에 포함된 모든 요소집합에 지정
+
+*Step, Type=Dynamic, Name=2
+*Activate, Type=Element
+ ELSET1, ELSET2
+*RayleighDamping
+ Direct, 0.5, 0.1, ELSET2    # ELSET2에 0.5,0.1을 감쇠비로 설정
+ Equivalent,2.3, 5.7, 0.05, 0.05, ELSET2  # ELSET2를 대상으로 등가감쇠비 0.5 지정
+</code></pre></div>
+<h2 id="modal">*Modal</h2>
+<p>동해석(DynamicStep) 시 모달 해석 방법을 지정하고 그 감쇠비를 지정</p>
+<div class="highlight"><pre><span></span><code>*MODAL, [ELSet=targetElset]
+ imode,dampingRatio
+ fromMode, toMode, dampingRatio
+ ... 
+</code></pre></div>
+<h5 id="keyword-line_7">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ELSET=targetElset:</strong> 모달해석에 참여하는 요소집합을 지정합니다(optional). 디폴트는 해석단계에 참여하는 모든 요소</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines_3">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>imode, dampingRatio:</strong> 모드와 감쇠비</li>
+<li><strong>fromMode, toMode, dampingRatio:</strong> 모드 범위와 감쇠비</li>
+</ul>
+</div>
+<p>모달 해석은 선형계를 대상으로 동해석을 수행하는 특수 기법이다. </p>
+<ol>
+<li><code>*Modal</code>로 지정할 경우 <code>*RayleighDamping</code>은 무시된다.</li>
+<li><code>*Modal</code>로 지정할 경우 적분방법으로 Newmark 법만 적용가능하다. 적분방법을 HHT, Frequency로 지정한 경우 오류를 발생시킨다.</li>
+<li>지정하는 모드만 모드해석에 참여한다. 만약 지정한 모드를 고유치해석으로 계산할 수 없을 때는 에러가 발생한다.</li>
+<li>모달해석에서는 <code>*Load, Type=Displacement</code>을 적용할 수 없다.</li>
+<li>모달해석에서 반력은 모달감쇠로 인한 영향을 고려하지 않는다. </li>
+<li>모달해석은 대상 요소집합이 선형일때만 적용할 수 있습니다. </li>
+<li>targetElset이 없는 경우, 전제 모델을 대상으로 모달 해석이 수행된다. 전체 모델이 선형계이어야 한다. </li>
+<li>targetElset을 지정하는 경우, targetElset에 대해서만 주어진 모드로 분해하는 부분 모달 해석(partial modal analysis)가 수행된다. 모드 분해가 이루어지는 targetElset만 선형 조건을 만족하면 된다. 이 기능은 요소가 접촉점의 변경으로 인해 비선형성이 발생하는 차량-교량 상호작용해석에서 유용하게 사용될 수 있다. </li>
+</ol>
+<h5 id="example_6">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=DYNAMIC, Name=1
+ EquiTime=0.1, 2.5
+*Activate, Type=Element
+ Bridge
+*Activate, Type=Constraint
+ Boundary
+*Activate, Type=Load
+ ConcentricLoad
+*MODAL
+ 1,0.001     # 1번 모드 0.001
+ 2,5,0.0005  # 2,3,4,5모드는 0.0005
+ 6,0.007     # 6번 모드는 0.007
+ 10,15,0.001  # 10,11,12,13,14,15 모드는 0.001  ( 7,8,9 모드는 사용되지 않음)
+
+*Step, Type=DYNAMIC, Name=2
+ EquiTime=0.1, 2.5
+*Activate, Type=Element
+ Bridge, Truck
+*Activate, Type=Constraint
+ Boundary
+*MODAL, ELSet=Bridge   # Bridge에 대해서만 모달해석을 적용
+ 1,10,0.01
+</code></pre></div>
+<h2 id="field">*Field</h2>
+<p>요소의 상태 필드를 지정</p>
+<div class="highlight"><pre><span></span><code>*Field, Type={TendonStress|TendonStressHold|CableLength|MovingSpringSpeed}
+ target, value
+ ... 
+</code></pre></div>
+<h5 id="keyword-line_8">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Type=type:</strong> 지정할 필드의 유형(required)</p>
+<ul>
+<li><strong>TendonStress:</strong> 텐던 응력</li>
+<li><strong>TendonStressHold:</strong> 텐선 응력</li>
+<li><strong>CableLength:</strong> 케이블 길이</li>
+<li><strong>MovingSpringSpeed:</strong> 이동스프링의 속도</li>
+</ul>
+</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines_4">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target:</strong> 요소 또는 요소집합(required). TendoStress, TendonStressHold는 Tendon 요소, CableLEngth는 Cable 요소, MovingSpringSpeed는 MovingSpring 요소에 적용하다.</li>
+<li><strong>value:</strong> 지정할 값(required)</li>
+</ul>
+</div>
+<h5 id="example_7">Example</h5>
+<div class="highlight"><pre><span></span><code>*STEP, TYPE=STATIC, NAME=step1
+*Activate,TYPE=ELEMENT
+ tendon, conc
+*Activate,TYPE=Constraint
+ BC
+*Field, TYPE=TendonStress
+ 1001 200E6
+*OUTPUT
+ D, FN, FK, FE, BSF
+*History, Name=rebarPretension1
+ step1
+ BSE.Ex@1-1 BSF.Nx@1-1  BSE.Ex@1-2 BSF.Nx@1-2
+ E.11@1001-1 S.11@1001-1 
+</code></pre></div>
+<h2 id="output">*Output</h2>
+<p>HDB 파일(<code>'hdb</code>)로 출력되는 결과값을 지정한다. </p>
+<div class="highlight"><pre><span></span><code>*Output[, ELSET=elset1, elset2, ..., Constraint=constraint1, constraint2, ..., Frequency=freqeuncy]
+ field|sensorName,...
+ ...
+</code></pre></div>
+<h5 id="keyword-line_9">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ELSET=elset1, elset2, ...:</strong> HDB 파일(<code>'hdb</code>)의 결과값을 출력할 대상 요소집합. 없으면 <code>*Activate, TYPE=Element</code>에서 지정한 요소집합이 사용됨</li>
+<li><strong>Constraint=constraint1, constraint2, ...:</strong> HDB 파일(<code>'hdb</code>)의 결과값을 출력할 대상 구속조건, 없으면 <code>*Activate, TYPE=Constraint</code>에서 지정한 구속조건이 사용됩.</li>
+<li><strong>Frequency=frequency:</strong> 출력간격, 디폴트값을 1, 예를 들어 3이고 100개의 increment가 존재할 때, increment number가 3,6,...,99인 경우와 마지막 increment 100이 출력된다. 마지막 increment는 항상 출력이 된다. frequency가 0인 경우는 마지막 increment만 출력한다.(optional)</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines-optional-for-frequencystep">First dataline and subsequent datalines (optional for FrequencyStep)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>field, ...:</strong> Name of field</li>
+<li><strong>sensorName:</strong> 출력한 센서 명칭</li>
+</ul>
+</div>
+<p><code>*Output</code>은 HDB 파일(<code>'hdb</code>)에 출력할 절점이나 요소의 필드값, 또는 센서값을 지정하는 명령이다. Element나 Constraint로 출력할 요소집합이나 구속조건을 지정할 수 있다. 만약이 대상 요소집합이나 구속조건을 지정하지 않으면 <code>*Activate, TYPE=Element/Constraint</code>에서 지정한 요소집합이나 구속조건이 사용된다. 대상 요소집합과 구속조건으로 대상 절점들이 결정되게 된다. 다시 말하면 대상 요소집합은 지정한 요소집합으로 결정하고, 대상 절점집합은 지정한 요소집합과 구속조건으로 결정된다. 데이터라인에 출력할 센서을 지정하는 것은 Element나 Constraint로 지정하는 출력대상에 무관하다. </p>
+<p>HDB 파일(<code>'hdb</code>)에서는 <code>*Step</code>에 대응하는 <code>*ResultStep</code>를 생성하며 <code>*TargetElements</code>, <code>*TargetConstraints</code>, <code>*TargetLoads</code> 등을 출력한다. 이때 <code>*TargetElements</code>, <code>*TargetConstraints</code>가 <code>*Output</code>에서 지정한 대상 요소집합과 구속조건이다. 만약 <code>*Output</code>에 대상 요소집합과 구속조건을 지정하지 않으면 이들은 <code>*Activate, TYPE=Element/Constraint</code>에서 지정한 요소집합이나 구속조건과 같다. <code>*TargetLoads</code>는 <code>*Activate, TYPE=Load</code>와 항상 같다. </p>
+<p>필드값은 절점 단위의 요소 단위로 필드값으로 구분할 수 있다. </p>
+<p>▪ 절점 단위 필드</p>
+<ul>
+<li><code>FN</code>, <code>FE</code>: Equivalent nodal loads for applied loads and element loads at nodes</li>
+<li><code>FK</code>, <code>FC</code>, <code>FM</code>: Internal forces including elastic, damping, and inertial forces</li>
+<li><code>D</code>: Degree of freedom field (displacements, temperature, etc., at nodes; represents modes in frequency analysis)</li>
+<li><code>V</code>: First time derivative of the degree of freedom field (e.g., velocity for displacement, temperature rate, etc.)</li>
+<li><code>A</code>: Second time derivative of the degree of freedom field (e.g., acceleration for displacement, temperature acceleration, etc.)</li>
+</ul>
+<p>절점의 하중은 FN+FE=FK+FC+FM의 관계를 만족하게 된다 </p>
+<p>▪ 요소 단위 필드</p>
+<ul>
+<li><code>BSF</code>, <code>BSE</code>, <code>BST</code>: Cross-sectional force, strain, and temperature for beam elements (including truss/cable elements)</li>
+<li><code>SSF</code>, <code>SSE</code>, <code>SST</code>: Cross-sectional force, strain, and temperature for shell elements</li>
+<li><code>SF</code>, <code>SE</code>, <code>DF</code>, <code>DE</code>: Cross-sectional force and strain for spring elements, and force and strain for damper sections</li>
+<li><code>S</code>, <code>E</code>, <code>PE</code>: Stress, strain, and plastic strain</li>
+<li><code>SB</code>: Back stress</li>
+<li><code>IEC</code>, <code>IET</code>: Compressive and tensile inelastic strain</li>
+<li><code>ECUN</code>, <code>ETUN</code>: Last committed compressive/tensile unloading strain</li>
+<li><code>PEEQ</code>, <code>PEEQT</code>, <code>PEEQC</code>: Equivalent plastic strain, and tensile/compressive equivalent plastic strain</li>
+<li><code>T</code>: Temperature</li>
+<li><code>ITR</code>, <code>IRD</code> : interfacial traction and relative displacement</li>
+<li><code>TIME</code>: Material time</li>
+<li><code>ECR</code>, ESH: Creep strain and shrinkage strain</li>
+<li><code>EP</code>: Element pressure</li>
+<li><code>EW</code>: Volumetric strain</li>
+</ul>
+<p>요소 단위 필드는 요소점(element point)[요소 중심점, 요소 절점, 적분점 등 요소의 특성에 따라 정의되는 결과값이 정의되는 점]에 따라 순차적으로 출력된다. 예를 들어 8개의 적분점이 있는 C3D8에 대해 S를 출력하는 경우 다음과 같이 출력된다. </p>
+<p>(요소번호), (첫번째 적분점의 S), (두번째 적분점의 S), ... (8번째 적분점의 S)</p>
+<p>보요소, 스프링/댐퍼 요소, 경계면 요소 등에는 셀(cell)이라는 개념이 존재한다. 예를 들어 보요소의 단면을 2개의 서로 다른 재료를 갖는 셀(cell)로 구성하고, 각 셀은 재료점이 10개, 2개 라고 가정하기로 한다. 이때 S의 출력을 요청하면 다음과 같은 순서로 출력된다. </p>
+<p>(요소번호), [첫번째 셀 - 첫 번째 적분점 S[재료점 10개] -... - 4번째 적분점 S[재료점 10개] ] , 
+           [두번째 셀 - 첫 번째 적분점 S[재료점 2개] -... - 4번째 적분점 S[재료점 2개] ] </p>
+<p>이와 같은 출력 순서는 텍스트 HDB로 출력하거나 *Print 문으로 출력하면 확인가능하다. 바이너리나 hdf5 형태의 HDB 역시 내부적으로 이 순서에 따라 저장하게 된다. </p>
+<p>▪ 주의 
+1. 주파수 해석 단계(<code>*Step, Type=Frequency</code>)에서는 HDB 파일(<code>'hdb</code>)에서 모드 별로 프레임이 출력된다. 이때 각 프레임은 하나의 모드에 대응하며, 모드 형상이 D에 출력된다.  나머지 필드값은 이때의 D에 의해 유발되는 값이다. 
+2. 필드는 하위 성분을 가질 수 있다. 예를 들어 D는 D.X, D.Y, D.Z, .... 등의 하위 성분으로 구성된다. 자세한 하위 성분은 <code>*History</code>를 참조한다. </p>
+<h5 id="example_8">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=Case1
+*Activate, TYPE=Element
+ dam, water, farField
+*Output
+ D, SF, S, mySensor
+*Print File=Case1.prn 
+ D@Left, SF@Bearing
+
+*Step, Type=Frequency, Name=FRQ
+ 10
+*Output
+ D, SSF
+*Print, File=FRQMode.prn 
+</code></pre></div>
+<h2 id="print">*Print</h2>
+<p>별도 파일로 출력되는 결과값을 지정한다. </p>
+<div class="highlight"><pre><span></span><code>*Print[, Frequency=frequency, File=file 
+ field@target|sensorName...
+ ...
+</code></pre></div>
+<h5 id="keyword-line_10">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Frequency=frequency:</strong> 출력간격, 디폴트값을 1, 예를 들어 3이고 100개의 increment가 존재할 때, increment number가 3,6,...,99인 경우와 마지막 increment 100이 출력된다. 마지막 increment는 항상 출력이 된다. frequency가 0인 경우는 마지막 increment만 출력한다.(optional)</li>
+<li><strong>File=file:</strong> <code>*Print</code> 명령에서 출력 대상 파일 이름((optional). 지정하지 않는 경우 filename-stepname-P#.csv 형태로 자동 지정됨(filename은 확장자를 제외한 파일 이름, #은 연번). 파일이름에 <DB>, <STEP>이 포함되는 경우 현재의 DB 이름(입력파일에서 확장자를 뺀 이름)과 현재의 스텝 명칭으로 치환됨.</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines_5">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>field@target:</strong> 출력할 필드와 대상. 절점에서 정의되는 필드의 경우 target에는 절점번호, 절점번호패턴, 절점집합이 가능하며, 요소에서 정의되는 필드의 경우  target에는 요소번호, 요소번호패턴, 요소집합이 가능하다</li>
+<li><strong>sensorName:</strong> 출력한 센서 명칭</li>
+</ul>
+</div>
+<p><code>*Print</code> 명령은 <code>*Output</code>과 유사하나 지정한 절점 집합이나 요소 집합을 대상으로 그 결과값을 텍스트 값으로 출력한다. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

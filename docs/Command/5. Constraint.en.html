@@ -1,0 +1,2889 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="4.%20Element%20Specification/4.11%20Tendon.en.html">
+      
+      
+        <link rel="next" href="6.%20Load.en.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>5. Constraint - Hyfeast-v1.0.0 Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#constraint" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast-v1.0.0 Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Constraint
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hyfeast-v1.0.0 Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Command(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.%20Introduction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.%20Node.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.%20Element.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element libraries
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.1%20Introduction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.2%20Beam.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.3%20Truss.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.4%20Cable.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.5%20Shell.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.6%20Solid.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.7%20Acoustic%20Solid.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.8%20MCK.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.9%20Moving%20Spring.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.10%20Interface.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.11%20Tendon.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="5.%20Constraint.en.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*Constraint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typesupport" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typerigidlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=RigidLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typebeamlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=BeamLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typenodetosurface" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=NodeToSurface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typempc" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=MPC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typeembedded" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=Embedded
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typespring" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=Spring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typeearthspring" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=EarthSpring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typespringboundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=SpringBoundary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typeviscousboundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=ViscousBoundary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typeacousticimpedance" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=AcousticImpedance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typeacousticsolidinterface" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=AcousticSolidInterface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6.%20Load.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7.%20Material.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8.%20Function.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9.%20Surface.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10.%20Construction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11.%20CoordinateSystem.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate system
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12.%20Sensor.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="13.%20Step.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14.%20Step%20result.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="15.%20Modelling.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling convenience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="16.%20Etc.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17.%20Special%20step.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="18.%20HDB%20file%20structure.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB file structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/1.%20Overview.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.%20Theory.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.%20Commands.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Command
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/4.%20Examples.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Example
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Command(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.%20Introduction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.%20Node.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 절점
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. 요소 상세
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. 요소 상세
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.1%20Introduction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.2%20Beam.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.3%20Truss.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.4%20Cable.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.5%20Shell.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.6%20Solid.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.7%20Acoustic%20Solid.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.8%20MCK.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.9%20Moving%20Spring.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.10%20Interface.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.11%20Tendon.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5.%20Constraint.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. 구속조건
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6.%20Load.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. 하중
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7.%20Material.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. 재료
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8.%20Function.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. 함수
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9.%20Surface.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10.%20Construction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11.%20CoordinateSystem.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. 좌표계
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12.%20Sensor.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. 센서
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="13.%20Step.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14.%20Step%20result.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. 해석 결과 관리
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="15.%20Modelling.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. 모델링 편의
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="16.%20Etc.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. 기타
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17.%20Special%20step.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. 특수 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="18.%20HDB%20file%20structure.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB 파일 구조
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/1.%20Overview.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.%20Theory.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 이론
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.%20Commands.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 명령매뉴얼
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/4.%20Examples.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Example(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Example(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.1%20Beam%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.1 Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.2%20Material%20Nonlinear%20Beam%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.2 Material Nonlinear Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.3 Solid Element and In-Plane Behavior of Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.4%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.4 Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.5%20Material%20Nonlinear%20Solid%20and%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.5 Material Nonlinear Solid and Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.6%20Acoustic%20Solid%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.6 Acoustic Solid Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.7 Dynamic Analysis using Spring and Mass Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.8%20Interface%20Modeling%20using%20Spring%20and%20Interface%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.8 Interface Modeling using Spring and Interface Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.9%20Truss%2C%20Cable%20and%20Tendon%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.9 Truss, Cable and Tendon Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.10%20Simple%20Constraints.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.10 Simple Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.11%20Advanced%20Constraints.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.11 Advanced Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.12%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.12 Moving Load Analysis in Simply Supported Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.13%20Stability%20of%20Rail%20Track.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.13 Stability of Rail Track
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.14%20Temperature%20Load%20by%20Bimetal.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.14 Temperature Load by Bimetal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.15%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.15 ModelUpdating and ShapeEstimation Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*Constraint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typesupport" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typerigidlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=RigidLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typebeamlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=BeamLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typenodetosurface" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=NodeToSurface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typempc" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=MPC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typeembedded" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=Embedded
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typespring" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=Spring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typeearthspring" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=EarthSpring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typespringboundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=SpringBoundary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typeviscousboundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=ViscousBoundary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typeacousticimpedance" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=AcousticImpedance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-typeacousticsolidinterface" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Constraint, Type=AcousticSolidInterface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="constraint-commands">Constraint Commands</h1>
+<p>Constraints are defined using <code>*Constraint</code>. Each constraint has a unique name, and duplicate names are not allowed. Constraints include both narrow definitions such as single-point constraints (e.g., support conditions) and multi-point constraints, as well as broader concepts that apply limitations to finite element objects like boundaries or connections. Examples include viscous boundaries or linear springs acting on surfaces without material property changes during the analysis step. Unlike <code>*Load</code>, constraints are immediately applied and removed within a <code>*Step</code> and do not change characteristics within that step.</p>
+<p>Hyfeast uses an automatic selection of slave DOF and over-constraint handling, so common issues in other finite element programs, such as over-constraint problems or the inability to use slave DOFs in multiple constraints, do not occur.</p>
+<h2 id="constraint">*Constraint</h2>
+<p>Define constraints based on the given type.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=type, Name=name
+  ...
+</code></pre></div>
+<h5 id="keyword-line">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Type=type:</strong> Specifies the type of constraint. Options include RigidLink, BeamLink, MPC, NodeToSurface, etc.</p>
+<ul>
+<li><strong>Support:</strong> Fixed boundary condition (always zero displacement).</li>
+<li><strong>RigidLink:</strong> Constrains corresponding DOFs between two nodes.</li>
+<li><strong>BeamLink:</strong> Constrains DOFs considering rotation between two nodes.</li>
+<li><strong>NodeToSurface:</strong> Constrains nodes, nsets, or surface nodes to another surface.</li>
+<li><strong>MPC:</strong> User-defined linear multi-point constraint.</li>
+<li><strong>Embedded:</strong> Embeds nodes in the host elements.</li>
+<li><strong>Spring:</strong> Connects nodes with springs or dampers.</li>
+<li><strong>EarthSpring:</strong> Connects nodes with ground springs or dampers.</li>
+<li><strong>SpringBoundary:</strong> Applies springs/dampers to a surface or line (beam or truss elements).</li>
+<li><strong>ViscousBoundary:</strong> Models a viscous boundary.</li>
+<li><strong>AcousticImpedance:</strong> Models an impedance boundary for acoustic elements.</li>
+<li><strong>AcousticSolidLink:</strong> Models an linkage between acoustic and solid elements.</li>
+</ul>
+</li>
+<li>
+<p><strong>Name=name:</strong> Unique name of the constraint.</p>
+</li>
+</ul>
+</div>
+<h3 id="constraint-typesupport">*Constraint, Type=Support</h3>
+<p>Defines fixed boundary conditions (zero displacement).</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=Support, Name=name
+  targetNode, dof, CS=orientation
+  targetNset, dof, CS=orientation
+  targetSurface, dof, CS=orientation
+  ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>targetNode:</strong> Target node (required).</li>
+<li><strong>targetNset:</strong> Target nset (required).</li>
+<li><strong>targetSurface:</strong> Target surface (required).</li>
+<li><strong>dof:</strong> The DOF to constrain. Can be X, Y, Z, RX, RY, RZ, or combinations like X|Y (required).</li>
+<li><strong>CS=orientation:</strong> Coordinate system in which the support condition is applied. Specify the name defined via <code>*CoordinateSystem, TYPE=Orientation</code>. If omitted, the global coordinate system (GCS) is used. (optional)</li>
+</ul>
+</div>
+<p>The command first looks for targetNset, targetSurface, and then targetNode in that order. Nsets and surfaces are case-sensitive and should be carefully named. If the same DOF is specified multiple times, only one constraint is applied without error.</p>
+<p>A local coordinate system can be specified to define inclined boundary conditions. Internally, this is handled by imposing a multi-point constraint (MPC). Output results are provided in the GCS by default. If results are needed in the local coordinate system, this must be explicitly specified in the <code>*Print</code> or <code>*History</code> commands. The <code>*Output</code> command does not support specifying a local coordinate system, but <code>hfVisualizer</code> allows postprocessing and conversion of results into a local coordinate system.</p>
+<h5 id="example">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=Support, Name=initialBC
+ 1, X|Y
+ all, Z|RX|RY
+
+*Constraint, Type=Support, Name=C
+ 101, X
+ 101, X   # OK, but neglected
+
+*CoordinateSystem, TYPE=Orientation, Name=inc
+ 1,1,0, 0,1,0
+
+*Constraint, Type=Support, Name=initialBC
+ 1, X|Y
+ 5, X, CS=inc
+</code></pre></div>
+<h3 id="constraint-typerigidlink">*Constraint, Type=RigidLink</h3>
+<p>Constrains corresponding DOFs between two nodes.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=RigidLink, Name=name
+  slaveNode, masterNode, dof
+  slaveNset, masterNode, dof
+  slaveNset, masterNset, dof
+  ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_1">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>slaveNode, masterNode:</strong> The two nodes to be connected (required).</li>
+<li><strong>slaveNset, masterNode:</strong> Connect all nodes in slaveNset to masterNode (required).</li>
+<li><strong>slaveNset, masterNset:</strong> Connect the closest node pairs between the two sets (1:1). Both sets must have the same number of nodes unless masterNset has only one node, in which case it behaves like slaveNset, masterNode (required).</li>
+<li><strong>dof:</strong> DOF to constrain (required). The DOF can be X, Y, Z, RX, RY, RZ, P, etc. Can be combinations like X|RX, Y|RZ, etc.</li>
+</ul>
+</div>
+<p>The <code>*Constraint, TYPE=RigidLink</code> command simply constrains the corresponding DOFs between two nodes.</p>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=RigidLink, Name=c1
+ 1, 2, X|Y|Z
+ left, right, X
+</code></pre></div>
+<h3 id="constraint-typebeamlink">*Constraint, Type=BeamLink</h3>
+<p>Constrains DOFs between two nodes considering rotation.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=BeamLink, Name=name
+ slaveNode, masterNode, plane
+ slaveNset, masterNode, plane
+ slaveNset, masterNset, plane
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_2">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>slaveNode, masterNode:</strong> The two nodes to be connected.</li>
+<li><strong>slaveNset, masterNode:</strong> Connect all nodes in slaveNset to masterNode.</li>
+<li><strong>slaveNset, masterNset:</strong> Connect the closest node pairs between the two sets (1:1). Both sets must have the same number of nodes unless masterNset has only one node.</li>
+<li><strong>plane:</strong> Plane to constrain (XY, YZ, ZX, or NOPLANE). Default is NOPLANE.</li>
+</ul>
+</div>
+<p>The <code>*Constraint, TYPE=BeamLink</code> command constrains the DOFs between two nodes considering rotational freedom to simulate rigid body motion. As shown in the figure, it can be used to connect the nodes of a shell to the nodes of a beam when modeling a shell reinforced with beams, or to connect beams that are aligned in parallel.</p>
+<h5 id="example_2">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=BeamLink, Name=c1
+ 1001, 1002, XY
+ left, right
+</code></pre></div>
+<h3 id="constraint-typenodetosurface">*Constraint, Type=NodeToSurface</h3>
+<p>Constrains nodes, nsets, or surface nodes to another surface.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=NodeToSurface, Name=name
+ slaveNode, masterSurface, dof, radius, searchFlag, springCoef
+ slaveNset, masterSurface, dof, radius, searchFlag, springCoef
+ slaveSurface, masterSurface, dof, radius, searchFlag, springCoef
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_3">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>slaveNode:</strong> Slave node (required).</li>
+<li><strong>slaveNset:</strong> Slave nset (required).</li>
+<li><strong>slaveSurface:</strong> Surface formed by slave nodes (required).</li>
+<li><strong>masterSurface:</strong> Master surface (required).</li>
+<li><strong>dof:</strong> DOF to constrain (required).</li>
+<li><strong>radius:</strong> Effective search radius. Default is 0 (unlimited).</li>
+<li><strong>searchFlag:</strong> Search option (One, OneF, All, AllF). Default is One.</li>
+<li><strong>springCoef:</strong> Spring coefficient. Default is 0 (no spring).</li>
+</ul>
+</div>
+<p>This constraint finds a projection from the slave nodes to the master surface and applies the constraint. The search method can be fine-tuned using <code>radius</code> and <code>searchFlag</code>. This constraint currently only works with translational DOFs.</p>
+<h5 id="example_3">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=NodeToSurface, Name=C
+ slabLine, slab, X|Y|Z                  
+ slaveSurface, slab, X|Y|Z, 0.3, AllF  
+ mygirder, slab, X|Y|Z, 0.3, OneF
+</code></pre></div>
+<h3 id="constraint-typempc">*Constraint, Type=MPC</h3>
+<p>Defines user-defined linear multi-point constraints.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=MPC, Name=name
+  nodal_expression
+  ...
+  nset1, nset2, matching_expression
+  ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_4">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>nodal_expression:</strong> Define one multi-point constraint condition as a string (required).</li>
+<li><strong>nset1, nset2, matching_expression:</strong> Generate constraints for each node pair in the two nsets (required).</li>
+</ul>
+</div>
+<p>Nodal expressions define relationships between node DOFs as a linear combination. Matching expressions apply to node pairs in two sets.</p>
+<h5 id="example_4">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=MPC, Name=Y-Lock
+ left, right, Y1-Y2  # matching expression
+ Y3-4*Y4             # nodal expression
+</code></pre></div>
+<h3 id="constraint-typeembedded">*Constraint, Type=Embedded</h3>
+<p>Embeds nodes into host elements.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=Embedded, Name=name
+ node, hostElset
+ nset, hostElset
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_5">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>node, hostElset:</strong> Node and host elset to connect.</li>
+<li><strong>nset, hostElset:</strong> Nset and host elset to connect.</li>
+</ul>
+</div>
+<p>The <code>*Constraint, TYPE=Embedded</code> command embeds nodes into host elements by finding the host element that contains the node and constraining the node based on the host element's shape function. This is often used to model reinforcement bars within solid elements.</p>
+<h5 id="example_5">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=Embedded, Name=embed
+ LineNodes, beam
+</code></pre></div>
+<h3 id="constraint-typespring">*Constraint, Type=Spring</h3>
+<p>Connects nodes with springs or dampers.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=Spring, Name=name
+ slaveNode, masterNode, K=kx, ky, kz, C=cx, cy, cz, CS=cs
+ slaveNset, masterNode, K=kx, ky, kz, C=cx, cy, cz, CS=cs
+ slaveNset, masterNset, K=kx, ky, kz, C=cx, cy, cz, CS=cs
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_6">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>slaveNode, masterNode:</strong> The two nodes to be connected by springs (required).</li>
+<li><strong>slaveNset, masterNode:</strong> Connect all nodes in slaveNset to masterNode with springs (required).</li>
+<li><strong>slaveNset, masterNset:</strong> Connect closest node pairs between the two sets with springs (1:1).</li>
+<li><strong>K=kx, ky, kz:</strong> Spring constants in each direction. Default is 0.</li>
+<li><strong>C=cx, cy, cz:</strong> Damping coefficients in each direction. Default is 0.</li>
+<li><strong>CS=cs:</strong> Coordinate system for the springs(<code>*CoordinateSystem, TYPE=Orientation</code>). If not specified, GCS is used.</li>
+</ul>
+</div>
+<p>Unlike <code>*Element, TYPE=Spring</code>, no element IDs are required. However, only linear springs/dampers are supported.</p>
+<h5 id="example_6">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, TYPE=Spring, Name=connection1
+ L1, L2, K=0,100,100
+ L3, L4, K=0,100,100
+
+*CoordinateSystem, Type=Orientation, Name=cs1
+  2,1,0
+  3,0,1  
+
+*Constraint, TYPE=Spring, Name=connection2
+ bottomNodes, topNodes, K=0,100,100, CS=cs1
+</code></pre></div>
+<h3 id="constraint-typeearthspring">*Constraint, Type=EarthSpring</h3>
+<p>Connect ground springs or dampers to a node.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=Spring, Name=name
+ node, K=kx,ky,kz, C=cx,cy,cz, CS=cs
+ nset, K=kx,ky,kz, C=cx,cy,cz, CS=cs
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_7">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>node:</strong> The node to which the ground spring is connected (required).</li>
+<li><strong>nset:</strong> The nset to which the ground spring is connected (required).</li>
+<li><strong>K=kx,ky,kz:</strong> Spring constants in each direction. Default is 0.</li>
+<li><strong>C=cx,cy,cz:</strong> Damping coefficients in each direction. Default is 0.</li>
+<li><strong>CS=cs:</strong> Coordinate system for the springs(<code>*CoordinateSystem, TYPE=Orientation</code>). If not specified, GCS is used.</li>
+</ul>
+</div>
+<p>Using <code>*Constraint, TYPE=EarthSpring</code> allows spring connections between nodes without the need for element IDs, unlike <code>*Element, TYPE=EarthSpring</code>. However, it only supports linear springs/dampers and does not provide rigid arms or allow calculation of internal forces in the springs/dampers.</p>
+<h5 id="example_7">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, TYPE=EarthSpring, Name=connection1
+ L1, K=0,100,100, C=0,20,30
+ L3, L4, K=0,100,100
+
+*CoordinateSystem, Type=Orientation, Name=cs1
+  2,1,0
+  3,0,1  
+
+*Constraint, TYPE=EarthSpring, Name=connection2
+ bottomNodes, topNodes, K=0,100,100, CS=cs1
+</code></pre></div>
+<h3 id="constraint-typespringboundary">*Constraint, Type=SpringBoundary</h3>
+<p>Springs or dampers distributed along the surface of elements, beam elements, or truss elements.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=SpringBoundary, Name=name
+ surface|line, K=kx, ky, kz, C=cx, cy, cz, CS=GCS|ECS|cs
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_8">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>surface|line:</strong> Target surface or line made up of beam or truss elements.</li>
+<li><strong>K=kx,ky,kz:</strong> Spring constants in each direction. Default is 0.</li>
+<li><strong>C=cx,cy,cz:</strong> Damping coefficients in each direction. Default is 0.</li>
+<li><strong>CS=GCS|ECS|cs:</strong> Coordinate system to be used. GCS is the global coordinate system, ECS is the local coordinate system of the target surface or line element, and <code>cs</code> is a user-defined coordinate system specified by <code>*Coordinate, TYPE=Orientation</code>. Default is GCS.</li>
+</ul>
+</div>
+<p><code>SpringBoundary</code> is used to model distributed springs or dampers on boundary surfaces. Unlike <code>EarthSpring</code>, which is used for individual springs/dampers, <code>SpringBoundary</code> can be easily applied to surfaces or lines composed of beam or truss elements. In 3D, spring constants and damping coefficients in all three directions are used, while in 2D, only kx, ky or cx, cy are applied. ECS refers to the local coordinate system for the surface or line, and GCS refers to the global coordinate system. You can also define a custom coordinate system using <code>*CoordinateSystem, TYPE=Orientation</code>.</p>
+<h5 id="example_8">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, TYPE=SpringBoundary, Name=farBC1
+ bottom, K=0,0,100
+ wall, K=100,0,0, CS=ECS
+</code></pre></div>
+<h3 id="constraint-typeviscousboundary">*Constraint, Type=ViscousBoundary</h3>
+<p>Viscous boundary</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=ViscousBoundary, Name=name
+ surface, density, cp, cs
+ surface
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_9">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>density, cp, cs:</strong> The target surface, density, P-wave velocity (cp), and S-wave velocity (cs).</li>
+<li><strong>surface:</strong> The target surface. Density, cp, and cs are automatically calculated from the elements connected to the surface, which must be solid elements using IsoElasticity as their material property.</li>
+</ul>
+</div>
+<p><code>ViscousBoundary</code> is used to model viscous boundaries applied to surfaces during dynamic analysis. Although damping can be specified with <code>*Load, TYPE=DistributedSpring</code>, this command allows for more convenient specification of density and velocity, or automatic calculation from the connected elements. The viscous boundary works in the surface's normal direction and applies damping coefficients per unit area. It operates in three directions (normal and two shear directions) for 3D solid element surfaces, and in the normal and shear directions for 2D or axisymmetric solid elements. <code>ViscousBoundary</code> can only be applied to surfaces composed of solid elements and cannot be applied to surfaces composed of shell elements or lines composed of beam or truss elements. It cannot be used redundantly on the same surface.</p>
+<p>If density, cp, and cs are not directly provided, they will be calculated from the material properties of the elements forming the surface, which must use IsoElasticity.</p>
+<h5 id="example_9">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, TYPE=ViscousBoundary, Name=farBC1
+ side1
+ side2
+
+*Constraint, TYPE=ViscousBoundary, Name=farBC2
+ side1                    # Calculating density, Vp, and Vs from the material model of the elements forming side1.
+ side2, 1800, 300, 40      # Manually specifying density, cp, and cs.
+</code></pre></div>
+<h3 id="constraint-typeacousticimpedance">*Constraint, Type=AcousticImpedance</h3>
+<p>Impedance boundary for acoustic elements.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=AcousticImpedance, Name=name
+ surface, a, b
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_10">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>surface:</strong> The target surface.</li>
+<li><strong>a, b:</strong> Impedance coefficients.</li>
+</ul>
+</div>
+<p><code>AcousticImpedance</code> is used to apply impedance boundaries for acoustic elements when modeling fluid, such as sloshing conditions at free surfaces or radiation damping in an infinite domain. The surface must be defined as the outward normal of the acoustic region. This command is only available in <code>*Step, TYPE=Dynamic</code> and <code>*Step, TYPE=Frequency</code>. For more details, refer to the "Acoustic Solid Elements" section.</p>
+<h5 id="example_10">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, TYPE=AcousticImpedance, Name=sloshing
+ freeSurface, 1/9.81, 0   # surface, a, b
+
+*Constraint, TYPE=AcousticImpedance, Name=farBC
+ radiationBoundary, 0, 1.2/1480   # surface, a, b
+</code></pre></div>
+<h3 id="constraint-typeacousticsolidinterface">*Constraint, Type=AcousticSolidInterface</h3>
+<p>Linkage between acoustic and solid elements.</p>
+<div class="highlight"><pre><span></span><code>*Constraint, Type=AcousticSolidLink, Name=name
+ surface, density 
+ acousticSurface, solidSurface, density, radius, formulation
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_11">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>surface:</strong> The target surface.</li>
+<li><strong>acousticSurface, solidSurface:</strong> Shared surface between acoustic media and solid.</li>
+<li><strong>density:</strong> The density of the acoustic media.</li>
+<li><strong>radius:</strong> The effective radius for the normal vector from the acoustic surface nodes/material points to the solid surface. A value of 0 indicates an infinite radius, meaning no radius is applied. Default is 0.</li>
+<li><strong>formulation:</strong> The method for handling unaligned mesh. Either <code>UseConstraint</code> or <code>UseIntegration</code>. <code>UseConstraint</code> generates normal direction DOFs at nodes of the acoustic surface, while <code>UseIntegration</code> increases the integration order. The default is <code>UseConstraint</code>.</li>
+</ul>
+</div>
+<p><code>AcousticSolidLink</code> is used when considering the interaction between acoustic and solid elements, adding effects to both the mass and stiffness matrices. It also calculates external forces in cases such as earthquakes. This constraint is used for fluid-structure interaction analysis or to input seismic loads for fluids. It is only available in <code>*Step, TYPE=Dynamic</code> and <code>*Step, TYPE=Frequency</code>.</p>
+<ul>
+<li><strong>Aligned Mesh:</strong> For aligned meshes where the acoustic and solid surfaces are the same, use surface and density.</li>
+<li><strong>Unaligned Mesh:</strong> For unaligned meshes, use acousticSurface, solidSurface, density, radius, and formulation.</li>
+</ul>
+<h5 id="example_11">Example</h5>
+<div class="highlight"><pre><span></span><code>*Constraint, TYPE=AcousticSolidLink, Name=acousticSolidLink
+ damUpstream, 1000    
+ damBottom, 1000
+ leftWater, tankRight, 1000
+ water, tank, 1000, 5
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

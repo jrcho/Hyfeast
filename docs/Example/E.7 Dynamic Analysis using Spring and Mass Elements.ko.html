@@ -1,0 +1,2974 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="E.6%20Acoustic%20Solid%20Element.ko.html">
+      
+      
+        <link rel="next" href="E.8%20Interface%20Modeling%20using%20Spring%20and%20Interface%20Elements.ko.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>E.7 Dynamic Analysis using Spring and Mass Elements - Hyfeast-v1.0.0 Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#e71-sdf-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast-v1.0.0 Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              E.7 Dynamic Analysis using Spring and Mass Elements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hyfeast-v1.0.0 Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Command(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/1.%20Introduction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/2.%20Node.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/3.%20Element.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element libraries
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.1%20Introduction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.2%20Beam.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.3%20Truss.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.4%20Cable.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.5%20Shell.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.6%20Solid.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.7%20Acoustic%20Solid.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.8%20MCK.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.9%20Moving%20Spring.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.10%20Interface.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.11%20Tendon.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/5.%20Constraint.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/6.%20Load.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/7.%20Material.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/8.%20Function.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/9.%20Surface.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/10.%20Construction.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/11.%20CoordinateSystem.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate system
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/12.%20Sensor.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/13.%20Step.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/14.%20Step%20result.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/15.%20Modelling.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling convenience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/16.%20Etc.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/17.%20Special%20step.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/18.%20HDB%20file%20structure.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB file structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(en)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(en)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/1.%20Overview.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.%20Theory.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.%20Commands.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Command
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/4.%20Examples.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Example
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Command(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/1.%20Introduction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/2.%20Node.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 절점
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/3.%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. 요소 상세
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. 요소 상세
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.1%20Introduction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.2%20Beam.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.3%20Truss.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.4%20Cable.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.5%20Shell.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.6%20Solid.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.7%20Acoustic%20Solid.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic Solid 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.8%20MCK.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.9%20Moving%20Spring.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moving Spring 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.10%20Interface.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/4.%20Element%20Specification/4.11%20Tendon.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tendon 요소
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/5.%20Constraint.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. 구속조건
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/6.%20Load.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. 하중
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/7.%20Material.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. 재료
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/8.%20Function.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. 함수
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/9.%20Surface.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/10.%20Construction.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/11.%20CoordinateSystem.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. 좌표계
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/12.%20Sensor.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. 센서
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/13.%20Step.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/14.%20Step%20result.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. 해석 결과 관리
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/15.%20Modelling.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. 모델링 편의
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/16.%20Etc.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. 기타
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/17.%20Special%20step.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. 특수 해석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command/18.%20HDB%20file%20structure.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB 파일 구조
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Section(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Section(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/1.%20Overview.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. 개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.%20Theory.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 이론
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.%20Commands.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. 명령매뉴얼
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/4.%20Examples.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hyfeast Example(ko)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Hyfeast Example(ko)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.1%20Beam%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.1 Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.2%20Material%20Nonlinear%20Beam%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.2 Material Nonlinear Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.3 Solid Element and In-Plane Behavior of Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.4%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.4 Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.5%20Material%20Nonlinear%20Solid%20and%20Shell%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.5 Material Nonlinear Solid and Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.6%20Acoustic%20Solid%20Element.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.6 Acoustic Solid Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    E.7 Dynamic Analysis using Spring and Mass Elements
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.ko.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    E.7 Dynamic Analysis using Spring and Mass Elements
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#e71-sdf-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.7.1 SDF System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e72-total-and-relative-motion-in-eartqhuake" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.7.2 Total and Relative Motion in Eartqhuake
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e73-dynamic-analysis-of-mdf-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.7.3 Dynamic Analysis of MDF System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e74-five-story-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.7.4 Five Story Building
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.8%20Interface%20Modeling%20using%20Spring%20and%20Interface%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.8 Interface Modeling using Spring and Interface Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.9%20Truss%2C%20Cable%20and%20Tendon%20Elements.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.9 Truss, Cable and Tendon Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.10%20Simple%20Constraints.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.10 Simple Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.11%20Advanced%20Constraints.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.11 Advanced Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.12%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.12 Moving Load Analysis in Simply Supported Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.13%20Stability%20of%20Rail%20Track.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.13 Stability of Rail Track
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.14%20Temperature%20Load%20by%20Bimetal.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.14 Temperature Load by Bimetal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="E.15%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.15 ModelUpdating and ShapeEstimation Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#e71-sdf-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.7.1 SDF System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e72-total-and-relative-motion-in-eartqhuake" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.7.2 Total and Relative Motion in Eartqhuake
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e73-dynamic-analysis-of-mdf-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.7.3 Dynamic Analysis of MDF System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e74-five-story-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.7.4 Five Story Building
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="e7-dynamic-analysis-using-spring-and-mass-elements">E.7 Dynamic Analysis using Spring and Mass Elements</h1>
+<h2 id="e71-sdf-system">E.7.1 SDF System</h2>
+<p>외력으로 반주기 사인 펄스 입력이 주어질 때, 선형 및 비선형 단자유도계의 해석을 수행한다. 선형계의 물성치는 m = 0.2533 kip-sec2/in. k = 10 kips/in., ζ = 0.05(c = 0.159154 kip-sec/in)이고, 비선형계의 물성치는 그림 E3.1 과 같이 스프링상수가 탄소성 bilinear 모델로 주어져 있다. 그림과 같이 Spring, PointMass, Damper 요소 조합으로 모델링하였고, Truss 요소를 이용해서 모델링하여 서로 동등한지 비교하였다.</p>
+<p><img src="./media/image34.png" style="width:6.26806in;height:3.14097in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.7.1</span></strong> Analysis Model</p>
+<p align="left"><strong><span style="color: blue;">Table E.7.1</span></strong> Linear SDF system ($\small \Delta t$ = 0.1 sec)</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Time</th>
+<th style="text-align: center;">force</th>
+<th style="text-align: center;">disp.</th>
+<th style="text-align: center;">vel.</th>
+<th style="text-align: center;">acc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0.043667</td>
+<td style="text-align: center;">0.87334</td>
+<td style="text-align: center;">17.467</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">8.6603</td>
+<td style="text-align: center;">0.23262</td>
+<td style="text-align: center;">2.9057</td>
+<td style="text-align: center;">23.18</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0.61207</td>
+<td style="text-align: center;">4.6833</td>
+<td style="text-align: center;">12.372</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: center;">8.6603</td>
+<td style="text-align: center;">1.0825</td>
+<td style="text-align: center;">4.7261</td>
+<td style="text-align: center;">-11.517</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1.431</td>
+<td style="text-align: center;">2.2421</td>
+<td style="text-align: center;">-38.162</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1.4231</td>
+<td style="text-align: center;">-2.3996</td>
+<td style="text-align: center;">-54.674</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.96218</td>
+<td style="text-align: center;">-6.8184</td>
+<td style="text-align: center;">-33.701</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.19078</td>
+<td style="text-align: center;">-8.6096</td>
+<td style="text-align: center;">-2.122</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-0.60438</td>
+<td style="text-align: center;">-7.2935</td>
+<td style="text-align: center;">28.443</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-1.1442</td>
+<td style="text-align: center;">-3.5028</td>
+<td style="text-align: center;">47.372</td>
+</tr>
+</tbody>
+</table>
+<p align="left"><strong><span style="color: blue;">Table E.7.2</span></strong> Nonlinear SDF system ($\small \Delta t$ = 0.1 sec)</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Time</th>
+<th style="text-align: center;">force</th>
+<th style="text-align: center;">disp.</th>
+<th style="text-align: center;">vel.</th>
+<th style="text-align: center;">acc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0.043667</td>
+<td style="text-align: center;">0.87334</td>
+<td style="text-align: center;">17.467</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">8.6603</td>
+<td style="text-align: center;">0.23262</td>
+<td style="text-align: center;">2.9057</td>
+<td style="text-align: center;">23.18</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0.61207</td>
+<td style="text-align: center;">4.6833</td>
+<td style="text-align: center;">12.372</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: center;">8.6603</td>
+<td style="text-align: center;">1.1144</td>
+<td style="text-align: center;">5.3625</td>
+<td style="text-align: center;">1.2112</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1.6215</td>
+<td style="text-align: center;">4.7794</td>
+<td style="text-align: center;">-12.873</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1.9892</td>
+<td style="text-align: center;">2.5745</td>
+<td style="text-align: center;">-31.227</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2.0952</td>
+<td style="text-align: center;">-0.4531</td>
+<td style="text-align: center;">-29.324</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1.9241</td>
+<td style="text-align: center;">-2.9688</td>
+<td style="text-align: center;">-20.989</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1.5603</td>
+<td style="text-align: center;">-4.3075</td>
+<td style="text-align: center;">-5.7851</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1.1416</td>
+<td style="text-align: center;">-4.067</td>
+<td style="text-align: center;">10.595</td>
+</tr>
+</tbody>
+</table>
+<p><img src="./media/image35.png" style="width:6.26806in;height:4.44653in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.7.2</span></strong> Analysis Results</p>
+
+<p><strong><span class="smallcaps">Input file</span></strong></p>
+<ul>
+<li>
+<p>mck1.inp : Linear SDF System Modeled with Mass, Damper, and Spring</p>
+</li>
+<li>
+<p>mck1n.inp : Nonlinear SDF System Modeled with Mass, Damper, and Spring</p>
+</li>
+<li>
+<p>mck2.inp : Linear SDF System Modeled with Mass, Truss, and Rayleigh Damping</p>
+</li>
+<li>
+<p>mck1modal.inp : Modal Analysis of Linear SDF System Modeled with Mass, Damper, and Spring</p>
+</li>
+</ul>
+<h2 id="e72-total-and-relative-motion-in-eartqhuake">E.7.2 Total and Relative Motion in Eartqhuake</h2>
+<p>지진 해석시 입력되는 지반운동에 따라 상대운동 및 전체운동으로 정식화가 가능하다. 다음은 전체운동으로 정식화된 지진입력시 지배방정식이다.</p>
+<div class="arithmatex">\[
+\small
+\begin{array}{r}
+\mathbf{M}\ddot{\mathbf{u}} + \mathbf{C}\dot{\mathbf{u}} + \mathbf{Ku} = \mathbf{0\#}(E.7.1)
+\end{array}
+\]</div>
+<p>지반운동이 방향벡터과 시간운동의 곱으로 가정하면 운동은 다음과 같이 상대운동과 지반운동의 합으로 표현할 수 있다.</p>
+<div class="arithmatex">\[
+\small
+\begin{array}{r}
+\mathbf{u}(t) = \mathbf{u}_{r}(t) + \mathbf{r}u_{g}(t)\mathbf{\#}(E.7.2)
+\end{array}
+\]</div>
+<p>여기에서 방향벡터 r은 지반운동의 방향을 나타낸다. 지배방정식을 상대운동 정리하면 다음과 같다.</p>
+<div class="arithmatex">\[
+\small
+\begin{array}{r}
+\mathbf{M}{\ddot{\mathbf{u}}}_{r}\mathbf{+}\mathbf{C}{\dot{\mathbf{u}}}_{r}\mathbf{+}\mathbf{K}\mathbf{u}_{r} = - \mathbf{Mr}{\ddot{u}}_{g}(t) - \mathbf{Cr}{\dot{u}}_{g}(t) - \mathbf{Kr}u_{g}(t)\mathbf{\#}(E.7.3)
+\end{array}
+\]</div>
+<p>위에서 <span class="arithmatex">\(\small \mathbf{Kr} = \mathbf{0}\)</span>은 만족하는데 이는 강체운동에 의미한다. 하지만 질량행렬에 대해서는 <span class="arithmatex">\(\small \mathbf{Mr} \neq \mathbf{0}\)</span>이다. 감쇠행렬은 국부댐퍼로 구성되는 경우에는 <span class="arithmatex">\(\small \mathbf{Cr} = \mathbf{0}\)</span>을 만족한다. Rayleigh damping을 적용하는 경우에는 <span class="arithmatex">\(\small \mathbf{C} = \alpha\mathbf{M} + \beta\mathbf{K}\)</span>이므로 mass proportional damping에 대해서는 <span class="arithmatex">\(\small \mathbf{Cr} \neq \mathbf{0}\)</span>이다. 일반적으로 상대운동에 대한 지배방정식은 다음과 같이 <span class="arithmatex">\(\small - \mathbf{Mr}{\ddot{u}}_{g}(t)\)</span>만을 고려한다.</p>
+<div class="arithmatex">\[
+\small
+\begin{array}{r}
+\mathbf{M}{\ddot{\mathbf{u}}}_{r}\mathbf{+}\mathbf{C}{\dot{\mathbf{u}}}_{r}\mathbf{+}\mathbf{K}\mathbf{u}_{r} = - \mathbf{Mr}{\ddot{u}}_{g}(t)\mathbf{\#}(E.7.4)
+\end{array}
+\]</div>
+<p>하는데 이는 mass proportional damping이 존재하지 않을 때 전체운동에 대한 지배방정식과 동등한 식이다.</p>
+<p>그림은 단자유도 시스템에 대한 예를 나타낸 것이다. 이 예제에서는 단자유도 시스템을 대상으로 정식화에 따른 결과차이를 검토하였다. 입력되는 지진동은 기저선 보정(baseline correction)이 수행된 지진동과 그렇지 못한 지진동을 대상으로 수행되었다.</p>
+<p><img src="./media/image36.png" style="width:5.97917in;height:0.9375in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.7.3</span></strong> SDF system with ground input</p>
+
+<p>기저선 보정이 수행된 지진인 Loma Prieta 지진(RSN765_LOMAP_G01090) 사용시 정식화에 따른 응답값을 차이가 없음을 확인할 수 있다. 또한 기저선 보정이 되지않은 El Centro 지진(Caltech version)을 적용할 경우에도 상대변위를 비교할 때 응답값은 동일함을 알 수 있다. 하지만 지점별로 지진동 입력이 다른 경우는 기저선 보정을 적용하지 않는 지진동의 입력은 문제를 유발할 수도 있다. 입력 예제에서는 *Load, TYPE=Earthquake이 상대운동 정식화에서 우항의 <span class="arithmatex">\(\small - \mathbf{Mr}{\ddot{u}}_{g}(t)\)</span>를 외부하중으로 가력한다. 반면에 *Load, TYPE=Displacement는 지점에 변위이력을 가력하므로 전체운동 정식화를 사용한다. *Load, TYPE=Displacement를 사용할 때 가속도, 속도, 변위 이력이 필요하다. 만약 이중 1개 이력만 가지고 있다면 Hyfeast에 내장된 수치적분 및 수치미분으로 생성해 낼 수 있다. 예제에서는 이들 모두를 검증하고 있다.</p>
+<p><img src="./media/image37.png" style="width:6.26806in;height:3.83819in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.7.4</span></strong> Loma Prieta Earthquake (RSN765_LOMAP_G01090)</p>
+
+<p><img src="./media/image38.png" style="width:6.26806in;height:3.81597in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.7.5</span></strong> Response by Loma Prieta Earthquake (RSN765_LOMAP_G01090)</p>
+
+<p><img src="./media/image39.png" style="width:6.26806in;height:3.86319in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.7.6</span></strong> El Centro Earthquake (Caltech version)</p>
+
+<p><img src="./media/image40.png" style="width:6.26806in;height:3.87153in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.7.7</span></strong> Reponse by El Centro Earthquaek (Caltech version)</p>
+
+<p><strong><span class="smallcaps">Input file</span></strong></p>
+<ul>
+<li>
+<p>gLOMAP.inp: Exmaple using the Loma Priata Earthquaek (RSN765_LOMAP_G01090)</p>
+</li>
+<li>
+<p>gELCEN.inp : Exmaple using the El Centro Earthquake(Caltech version)</p>
+</li>
+</ul>
+<h2 id="e73-dynamic-analysis-of-mdf-system">E.7.3 Dynamic Analysis of MDF System</h2>
+<p>AK Chopra (2005)에 소개된 외력으로 계단함수가 주어진 다자유도계의 해석을 수행한다.</p>
+<p><img src="./media/image41.png" style="width:6.26806in;height:2.79722in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.7.8</span></strong> MDF System with Load Input</p>
+<p align="left"><strong><span style="color: blue;">Table E.7.3</span></strong> Time History Analysis of a MDF system (△t = 0.1 sec)</p>
+
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr>
+<th rowspan="2" style="text-align: center;"><p>TIME</p>
+<p>(sec)</p></th>
+<th colspan="2" style="text-align: center;">u1</th>
+<th colspan="2" style="text-align: center;">u2</th>
+<th colspan="2" style="text-align: center;">u3</th>
+<th colspan="2" style="text-align: center;">u4</th>
+<th colspan="2" style="text-align: center;">u5</th>
+</tr>
+<tr>
+<th style="text-align: center;">hyFeast</th>
+<th style="text-align: center;">Chopra</th>
+<th style="text-align: center;">hyFeast</th>
+<th style="text-align: center;">Chopra</th>
+<th style="text-align: center;">hyFeast</th>
+<th style="text-align: center;">Chopra</th>
+<th style="text-align: center;">hyFeast</th>
+<th style="text-align: center;">Chopra</th>
+<th style="text-align: center;">hyFeast</th>
+<th style="text-align: center;">Chopra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">-0.0003</td>
+<td style="text-align: center;">-0.0003</td>
+<td style="text-align: center;">-0.0009</td>
+<td style="text-align: center;">-0.0009</td>
+<td style="text-align: center;">-0.0003</td>
+<td style="text-align: center;">-0.0003</td>
+<td style="text-align: center;">0.0051</td>
+<td style="text-align: center;">0.0051</td>
+<td style="text-align: center;">0.0172</td>
+<td style="text-align: center;">0.0172</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">-0.0024</td>
+<td style="text-align: center;">-0.0024</td>
+<td style="text-align: center;">-0.0046</td>
+<td style="text-align: center;">-0.0046</td>
+<td style="text-align: center;">0.0028</td>
+<td style="text-align: center;">0.0028</td>
+<td style="text-align: center;">0.0296</td>
+<td style="text-align: center;">0.0297</td>
+<td style="text-align: center;">0.0753</td>
+<td style="text-align: center;">0.0753</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">-0.0057</td>
+<td style="text-align: center;">-0.0057</td>
+<td style="text-align: center;">-0.0056</td>
+<td style="text-align: center;">-0.0056</td>
+<td style="text-align: center;">0.0214</td>
+<td style="text-align: center;">0.0214</td>
+<td style="text-align: center;">0.0830</td>
+<td style="text-align: center;">0.0830</td>
+<td style="text-align: center;">0.1682</td>
+<td style="text-align: center;">0.1682</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: center;">-0.0025</td>
+<td style="text-align: center;">-0.0025</td>
+<td style="text-align: center;">0.0122</td>
+<td style="text-align: center;">0.0122</td>
+<td style="text-align: center;">0.0660</td>
+<td style="text-align: center;">0.0660</td>
+<td style="text-align: center;">0.1602</td>
+<td style="text-align: center;">0.1602</td>
+<td style="text-align: center;">0.2798</td>
+<td style="text-align: center;">0.2799</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.0123</td>
+<td style="text-align: center;">0.0123</td>
+<td style="text-align: center;">0.0553</td>
+<td style="text-align: center;">0.0553</td>
+<td style="text-align: center;">0.1366</td>
+<td style="text-align: center;">0.1367</td>
+<td style="text-align: center;">0.2573</td>
+<td style="text-align: center;">0.2574</td>
+<td style="text-align: center;">0.4043</td>
+<td style="text-align: center;">0.4044</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: center;">0.0301</td>
+<td style="text-align: center;">0.0301</td>
+<td style="text-align: center;">0.1095</td>
+<td style="text-align: center;">0.1095</td>
+<td style="text-align: center;">0.2270</td>
+<td style="text-align: center;">0.2270</td>
+<td style="text-align: center;">0.3754</td>
+<td style="text-align: center;">0.3755</td>
+<td style="text-align: center;">0.5435</td>
+<td style="text-align: center;">0.5436</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.7</td>
+<td style="text-align: center;">0.0440</td>
+<td style="text-align: center;">0.0440</td>
+<td style="text-align: center;">0.1598</td>
+<td style="text-align: center;">0.1598</td>
+<td style="text-align: center;">0.3221</td>
+<td style="text-align: center;">0.3222</td>
+<td style="text-align: center;">0.5104</td>
+<td style="text-align: center;">0.5105</td>
+<td style="text-align: center;">0.7125</td>
+<td style="text-align: center;">0.7127</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: center;">0.0557</td>
+<td style="text-align: center;">0.0557</td>
+<td style="text-align: center;">0.2013</td>
+<td style="text-align: center;">0.2013</td>
+<td style="text-align: center;">0.4084</td>
+<td style="text-align: center;">0.4085</td>
+<td style="text-align: center;">0.6552</td>
+<td style="text-align: center;">0.6553</td>
+<td style="text-align: center;">0.9226</td>
+<td style="text-align: center;">0.9228</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: center;">0.0631</td>
+<td style="text-align: center;">0.0631</td>
+<td style="text-align: center;">0.2343</td>
+<td style="text-align: center;">0.2343</td>
+<td style="text-align: center;">0.4900</td>
+<td style="text-align: center;">0.4900</td>
+<td style="text-align: center;">0.8073</td>
+<td style="text-align: center;">0.8075</td>
+<td style="text-align: center;">1.1586</td>
+<td style="text-align: center;">1.1588</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.0689</td>
+<td style="text-align: center;">0.0690</td>
+<td style="text-align: center;">0.2683</td>
+<td style="text-align: center;">0.2683</td>
+<td style="text-align: center;">0.5779</td>
+<td style="text-align: center;">0.5780</td>
+<td style="text-align: center;">0.9655</td>
+<td style="text-align: center;">0.9657</td>
+<td style="text-align: center;">1.3919</td>
+<td style="text-align: center;">1.3921</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">0.0831</td>
+<td style="text-align: center;">0.0831</td>
+<td style="text-align: center;">0.3176</td>
+<td style="text-align: center;">0.3177</td>
+<td style="text-align: center;">0.6767</td>
+<td style="text-align: center;">0.6769</td>
+<td style="text-align: center;">1.1214</td>
+<td style="text-align: center;">1.1216</td>
+<td style="text-align: center;">1.6065</td>
+<td style="text-align: center;">1.6068</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">0.1037</td>
+<td style="text-align: center;">0.1037</td>
+<td style="text-align: center;">0.3810</td>
+<td style="text-align: center;">0.3811</td>
+<td style="text-align: center;">0.7839</td>
+<td style="text-align: center;">0.7841</td>
+<td style="text-align: center;">1.2698</td>
+<td style="text-align: center;">1.2700</td>
+<td style="text-align: center;">1.7972</td>
+<td style="text-align: center;">1.7974</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.3</td>
+<td style="text-align: center;">0.1219</td>
+<td style="text-align: center;">0.1220</td>
+<td style="text-align: center;">0.4402</td>
+<td style="text-align: center;">0.4403</td>
+<td style="text-align: center;">0.8883</td>
+<td style="text-align: center;">0.8885</td>
+<td style="text-align: center;">1.4114</td>
+<td style="text-align: center;">1.4115</td>
+<td style="text-align: center;">1.9674</td>
+<td style="text-align: center;">1.9676</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.4</td>
+<td style="text-align: center;">0.1341</td>
+<td style="text-align: center;">0.1341</td>
+<td style="text-align: center;">0.4838</td>
+<td style="text-align: center;">0.4838</td>
+<td style="text-align: center;">0.9735</td>
+<td style="text-align: center;">0.9736</td>
+<td style="text-align: center;">1.5388</td>
+<td style="text-align: center;">1.5389</td>
+<td style="text-align: center;">2.1339</td>
+<td style="text-align: center;">2.1341</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">0.1406</td>
+<td style="text-align: center;">0.1406</td>
+<td style="text-align: center;">0.5095</td>
+<td style="text-align: center;">0.5095</td>
+<td style="text-align: center;">1.0319</td>
+<td style="text-align: center;">1.0319</td>
+<td style="text-align: center;">1.6456</td>
+<td style="text-align: center;">1.6457</td>
+<td style="text-align: center;">2.3011</td>
+<td style="text-align: center;">2.3012</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.6</td>
+<td style="text-align: center;">0.1413</td>
+<td style="text-align: center;">0.1412</td>
+<td style="text-align: center;">0.5200</td>
+<td style="text-align: center;">0.5199</td>
+<td style="text-align: center;">1.0718</td>
+<td style="text-align: center;">1.0718</td>
+<td style="text-align: center;">1.7338</td>
+<td style="text-align: center;">1.7339</td>
+<td style="text-align: center;">2.4461</td>
+<td style="text-align: center;">2.4462</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.7</td>
+<td style="text-align: center;">0.1408</td>
+<td style="text-align: center;">0.1408</td>
+<td style="text-align: center;">0.5291</td>
+<td style="text-align: center;">0.5290</td>
+<td style="text-align: center;">1.1053</td>
+<td style="text-align: center;">1.1053</td>
+<td style="text-align: center;">1.8001</td>
+<td style="text-align: center;">1.8000</td>
+<td style="text-align: center;">2.5469</td>
+<td style="text-align: center;">2.5469</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.8</td>
+<td style="text-align: center;">0.1479</td>
+<td style="text-align: center;">0.1479</td>
+<td style="text-align: center;">0.5486</td>
+<td style="text-align: center;">0.5486</td>
+<td style="text-align: center;">1.1352</td>
+<td style="text-align: center;">1.1352</td>
+<td style="text-align: center;">1.8389</td>
+<td style="text-align: center;">1.8388</td>
+<td style="text-align: center;">2.5954</td>
+<td style="text-align: center;">2.5953</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.9</td>
+<td style="text-align: center;">0.1575</td>
+<td style="text-align: center;">0.1575</td>
+<td style="text-align: center;">0.5705</td>
+<td style="text-align: center;">0.5705</td>
+<td style="text-align: center;">1.1582</td>
+<td style="text-align: center;">1.1582</td>
+<td style="text-align: center;">1.8519</td>
+<td style="text-align: center;">1.8518</td>
+<td style="text-align: center;">2.5929</td>
+<td style="text-align: center;">2.5926</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.1600</td>
+<td style="text-align: center;">0.1600</td>
+<td style="text-align: center;">0.5781</td>
+<td style="text-align: center;">0.5781</td>
+<td style="text-align: center;">1.1637</td>
+<td style="text-align: center;">1.1636</td>
+<td style="text-align: center;">1.8404</td>
+<td style="text-align: center;">1.8402</td>
+<td style="text-align: center;">2.5544</td>
+<td style="text-align: center;">2.5540</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong><span class="smallcaps">Input file</span></strong></p>
+<ul>
+<li>mdf.inp</li>
+</ul>
+<h2 id="e74-five-story-building">E.7.4 Five Story Building</h2>
+<p>AK Chopra (2009)에 소개된 5층 건물에 대한 시간이력 해석 결과를 비교한다. 층 중량은 100 kips, 층간 스프링 계수는 31.54 kips/in 이고, 지반입력은 AK Chopra(2009)에서 제공하는 E.l Centro(1940) 지진동이다. 전체 행렬을 대상으로 5%의 Ralyeigh감쇠를 적용한 경우(Direct)와 5%의 모달감쇠를 적용한 모달해석을 비교하였고, 1차 및 2차 모드 만을 고려할 때의 결과를 그림으로 표현하였다. 주어진 시스템은 5개의 자유도만을 갖기 때문에 모달해석과 Direct 해석이 서로 같은 해를 가져야 하지만, 감쇠를 고려하는 방식의 차이로 인해 해의 편차가 발생함을 알 수 있다.</p>
+<p><img src="./media/image42.png" style="width:6.26806in;height:3.00764in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.2.9</span></strong> Five Story Building(Example from AK Chopra (2009) Section 13.2.6)</p>
+
+<p><img src="./media/image43.png" style="width:6.26806in;height:4.67847in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.7.10</span></strong> Analysis Result</p>
+
+<p><strong><span class="smallcaps">Input file</span></strong></p>
+<ul>
+<li>fivestory.inp</li>
+</ul>
+<p><strong><span class="smallcaps">References</span></strong></p>
+<ol>
+<li>
+<p>Example 5.3(pp. 178), Example 5.5 (pp. 188) in Chopra, A. K. (2009). Dynamics of structures: Theory and applications to earthquake engineering (4th ed.). Prentice Hall.</p>
+</li>
+<li>
+<p>Example 5.3 (pp. 168), Example 5.5 (pp.179) in Chopra, A. K. (1995). Dynamics of structures: Theory and applications to earthquake engineering. Prentice Hall.</p>
+</li>
+<li>
+<p>Example 15.2 (p.577) in Chopra, A. K. (1995). Dynamics of structures: Theory and applications to earthquake engineering. Prentice Hall.</p>
+</li>
+<li>
+<p>Section 13.2.6 Exmaple: Five-Story Shear Frame (p.531) in Chopra, A. K. (2009). Dynamics of structures: Theory and applications to earthquake engineering (4th ed.). Prentice Hall.</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
