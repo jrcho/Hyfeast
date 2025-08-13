@@ -12,8 +12,7 @@ Hyfeast는 셸, 보, 솔리드 요소를 지원하며, 빠른 병렬 해석, 3D 
 
 - 64비트 Windows 10 이상
 - **[Microsoft Visual C++ Redistributable for Visual Studio 2015–2022 (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)**  
-  ⚠️ **반드시 설치해야 합니다!**. 제어판에서 설치여부를 확인할 수 있습니다. 
-  많은 사용자가 *hfVisualizer*가 실행되지 않는다고 불평하는데, 대부분 이 런타임이 없어서 발생하는 문제입니다.
+  ⚠️ **반드시 설치해야 합니다!**. 많은 사용자가 *hfVisualizer*가 실행되지 않는다고 불평하는데, 대부분 이 런타임이 없어서 발생하는 문제입니다.
 - (선택 사항) Python 3.8 이상 (DXF 내보내기 기능에 필요)
 
 ## 설치 및 사용법
