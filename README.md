@@ -12,7 +12,7 @@ Hyfeast supports shell, beam, and solid elements, fast parallelized solving, 3D 
 
 - 64-bit Windows 10 or higher
 - [Microsoft Visual C++ Redistributable for Visual Studio 2015–2022 (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)  
-  (Required to run Hyfeast programs built with Visual Studio)
+   ⚠️ **You must install this!** Many users report that *hfVisualizer* does not run, and in most cases this is because the runtime is missing.
 - (Optional) Python 3.8 or higher (for DXF import)
 
 ## Installation and Usage
