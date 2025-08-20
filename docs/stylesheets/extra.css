@@ -102,6 +102,7 @@
     padding: 2px 8px !important;
     line-height: 1.0 !important;
     text-align: center !important;
+    vertical-align: middle !important; 
     font-size: 0.56rem !important;
 }
 
