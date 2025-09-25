@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="4.6%20Solid.en.html">
+        <link rel="prev" href="4.10%20Interface.ko.html">
       
       
-        <link rel="next" href="4.8%20MCK.en.html">
+        <link rel="next" href="../5.%20Constraint.ko.html">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Acoustic Solid - Hyfeast-v1.0.0 Manual</title>
+        <title>EmbeddedLine 요소 - Hyfeast-v1.0.0 Manual</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#acoustic-continuum-element" class="md-skip">
+        <a href="#element-typeembeddedline" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Acoustic Solid
+              EmbeddedLine 요소
             
           </span>
         </div>
@@ -210,19 +210,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -236,7 +234,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Command(en)
@@ -310,19 +308,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -336,7 +332,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             4. Element libraries
@@ -473,162 +469,18 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Acoustic Solid
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="4.7%20Acoustic%20Solid.en.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="4.7%20AcousticSolid.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acoustic Solid
+    AcousticSolid
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#acoustic-continuum-element" class="md-nav__link">
-    <span class="md-ellipsis">
-      Acoustic Continuum Element
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#constraint" class="md-nav__link">
-    <span class="md-ellipsis">
-      Constraint
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#section" class="md-nav__link">
-    <span class="md-ellipsis">
-      Section
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#material" class="md-nav__link">
-    <span class="md-ellipsis">
-      Material
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac2d3" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC2D3
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac2d4" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC2D4
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac3d4" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC3D4
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac3d6" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC3D6
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac3d8" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC3D8
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac2d4pmdl" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC2D4PMDL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac3d8mpmdl" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC3D8MPMDL
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -662,11 +514,11 @@
   
   
     <li class="md-nav__item">
-      <a href="4.9%20Moving%20Spring.en.html" class="md-nav__link">
+      <a href="4.9%20MovingSpring.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Moving Spring
+    MovingSpring
   </span>
   
 
@@ -704,11 +556,11 @@
   
   
     <li class="md-nav__item">
-      <a href="4.11%20Tendon.en.html" class="md-nav__link">
+      <a href="4.11%20EmbeddedLine.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tendon
+    EmbeddedLine
   </span>
   
 
@@ -1031,17 +883,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -1055,7 +909,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Command(ko)
@@ -1129,17 +983,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
         
           
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
@@ -1153,7 +1009,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             4. 요소 상세
@@ -1293,11 +1149,11 @@
   
   
     <li class="md-nav__item">
-      <a href="4.7%20Acoustic%20Solid.ko.html" class="md-nav__link">
+      <a href="4.7%20AcousticSolid.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acoustic Solid 요소
+    AcousticSolid 요소
   </span>
   
 
@@ -1335,11 +1191,11 @@
   
   
     <li class="md-nav__item">
-      <a href="4.9%20Moving%20Spring.ko.html" class="md-nav__link">
+      <a href="4.9%20MovingSpring.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Moving Spring 요소
+    MovingSpring 요소
   </span>
   
 
@@ -1374,18 +1230,72 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="4.11%20Tendon.ko.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    EmbeddedLine 요소
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="4.11%20EmbeddedLine.ko.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Tendon 요소
+    EmbeddedLine 요소
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#element-typeembeddedline" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Element, Type=EmbeddedLine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-typeembeddedline" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Section, Type=EmbeddedLine
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2162,11 +2072,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.9%20Truss%2C%20Cable%20and%20Tendon%20Elements.en.html" class="md-nav__link">
+      <a href="../../Example/E.9%20Truss%20and%20Cable%20Elements.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.9 Truss, Cable and Tendon Elements
+    E.9 Truss and Cable Elements
   </span>
   
 
@@ -2225,11 +2135,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.12%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.en.html" class="md-nav__link">
+      <a href="../../Example/E.12%20Rebar%20and%20Tendon%20Modeling.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.12 Moving Load Analysis in Simply Supported Beam
+    E.12 Rebar and Tendon Modeling
   </span>
   
 
@@ -2246,11 +2156,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.13%20Stability%20of%20Rail%20Track.en.html" class="md-nav__link">
+      <a href="../../Example/E.13%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.13 Stability of Rail Track
+    E.13 Moving Load Analysis in Simply Supported Beam
   </span>
   
 
@@ -2267,11 +2177,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.14%20Temperature%20Load%20by%20Bimetal.en.html" class="md-nav__link">
+      <a href="../../Example/E.14%20Stability%20of%20Rail%20Track.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.14 Temperature Load by Bimetal
+    E.14 Stability of Rail Track
   </span>
   
 
@@ -2288,11 +2198,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.15%20ModelUpdating%20and%20ShapeEstimation%20Steps.en.html" class="md-nav__link">
+      <a href="../../Example/E.15%20Temperature%20Load%20by%20Bimetal.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.15 ModelUpdating and ShapeEstimation Steps
+    E.15 Temperature Load by Bimetal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Example/E.16%20ModelUpdating%20and%20ShapeEstimation%20Steps.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.16 ModelUpdating and ShapeEstimation Steps
   </span>
   
 
@@ -2519,11 +2450,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.9%20Truss%2C%20Cable%20and%20Tendon%20Elements.ko.html" class="md-nav__link">
+      <a href="../../Example/E.9%20Truss%20and%20Cable%20Elements.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.9 Truss, Cable and Tendon Elements
+    E.9 Truss and Cable Elements
   </span>
   
 
@@ -2582,11 +2513,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.12%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.ko.html" class="md-nav__link">
+      <a href="../../Example/E.12%20Rebar%20and%20Tendon%20Modeling.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.12 Moving Load Analysis in Simply Supported Beam
+    E.12 Rebar and Tendon Modeling
   </span>
   
 
@@ -2603,11 +2534,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.13%20Stability%20of%20Rail%20Track.ko.html" class="md-nav__link">
+      <a href="../../Example/E.13%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.13 Stability of Rail Track
+    E.13 Moving Load Analysis in Simply Supported Beam
   </span>
   
 
@@ -2624,11 +2555,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.14%20Temperature%20Load%20by%20Bimetal.ko.html" class="md-nav__link">
+      <a href="../../Example/E.14%20Stability%20of%20Rail%20Track.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.14 Temperature Load by Bimetal
+    E.14 Stability of Rail Track
   </span>
   
 
@@ -2645,11 +2576,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.15%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html" class="md-nav__link">
+      <a href="../../Example/E.15%20Temperature%20Load%20by%20Bimetal.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.15 ModelUpdating and ShapeEstimation Steps
+    E.15 Temperature Load by Bimetal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Example/E.16%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.16 ModelUpdating and ShapeEstimation Steps
   </span>
   
 
@@ -2691,108 +2643,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#acoustic-continuum-element" class="md-nav__link">
+  <a href="#element-typeembeddedline" class="md-nav__link">
     <span class="md-ellipsis">
-      Acoustic Continuum Element
+      *Element, Type=EmbeddedLine
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#load" class="md-nav__link">
+  <a href="#section-typeembeddedline" class="md-nav__link">
     <span class="md-ellipsis">
-      Load
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#constraint" class="md-nav__link">
-    <span class="md-ellipsis">
-      Constraint
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#section" class="md-nav__link">
-    <span class="md-ellipsis">
-      Section
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#material" class="md-nav__link">
-    <span class="md-ellipsis">
-      Material
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac2d3" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC2D3
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac2d4" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC2D4
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac3d4" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC3D4
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac3d6" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC3D6
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac3d8" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC3D8
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac2d4pmdl" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC2D4PMDL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeac3d8mpmdl" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=AC3D8MPMDL
+      *Section, Type=EmbeddedLine
     </span>
   </a>
   
@@ -2813,277 +2675,101 @@
                   
 
 
-  <h1>Acoustic Solid</h1>
+  <h1>EmbeddedLine 요소</h1>
 
-<p>The Acoustic solid element is used to analyze media that follow the wave equation for dynamic pressure fields. Therefore, it is only valid for <code>*Step, TYPE=Dynamic</code> or <code>*Step, TYPE=Frequency</code>. The related elements, sections, materials, and boundary conditions are as follows.</p>
-<h3 id="acoustic-continuum-element">Acoustic Continuum Element</h3>
+<p>The <code>EmbeddedLine</code> element is used to model embedded tendons or reinforcing bars, and is defined through the <code>EmbeddedLine</code> element type and the <code>EmbeddedLine</code> section type. When defining an EmbeddedLine section, the element profile is specified by a spline geometry.
+For each element, a host element set must be assigned. The applicable host element families are as follows:</p>
 <ul>
-<li><strong>AC2D3</strong>: 2D triangular 3-node element</li>
-<li><strong>AC2D4</strong>: 2D quadrilateral 4-node element</li>
-<li><strong>AC3D4</strong>: 3D tetrahedral 4-node element</li>
-<li><strong>AC3D6</strong>: 3D prismatic 6-node element</li>
-<li><strong>AC3D8</strong>: 3D hexahedral 8-node element</li>
-<li><strong>AC2D4PMDL</strong>: 2D 4-node PMDL element</li>
-<li><strong>AC3D8PMDL</strong>: 3D 8-node PMDL element</li>
+<li>2D Beam elements: B2D2H, B2D2MH</li>
+<li>3D Beam elements: B3D2H, B3D2MH</li>
+<li>Shell elements: S3F, S4F, S3, S4</li>
+<li>Solid-shell elements: CS6, CS8</li>
+<li>2D Solid elements: CPE4, CPS4, CAX4, CPS3, CPE3, CAX3</li>
+<li>3D Solid elements: C3D8, C3D8I, C3D6</li>
 </ul>
-<h3 id="load">Load</h3>
+<p>The host element set assigned to an EmbeddedLine element must consist of elements from the same family. For tendon analysis, prestressing loads can be applied using the <code>*State</code> command.</p>
+<p>▪ 주의 </p>
 <ul>
-<li><strong>Concentric</strong>: Applies concentric flux to the nodes.</li>
-<li><strong>DisplacementLoad</strong>: Non-zero pressure condition.</li>
-<li><strong>SurfaceDistributed</strong>: Applies flux to the element surface.</li>
+<li>The <code>EmbeddedLine</code> element does not compute a mass matrix (it contributes only to stiffness).</li>
+<li>Reinforcement modeling can alternatively be performed using truss elements(<code>T3D2</code>) combined with <code>Embedded</code> constraints. In this case, only straight bars can be represented and prestressing cannot be applied.</li>
+<li>The EmbeddedLine element uses a single node, but only as a reference point for the spline geometry. No degrees of freedom are defined at that node.</li>
 </ul>
-<h3 id="constraint">Constraint</h3>
-<ul>
-<li><strong>Support</strong>: Sets the pressure to zero.</li>
-<li><strong>AcousticImpedance</strong>: Applies the impedance boundary condition.</li>
-<li><strong>AcousticSolidInterface</strong>: Sets the interface between solid elements and fluid, or transforms seismic loads.</li>
-</ul>
-<h3 id="section">Section</h3>
-<ul>
-<li>Uses the <code>SolidSection</code>, but the material must be defined as <code>AcousticMaterial</code>.</li>
-</ul>
-<h3 id="material">Material</h3>
-<ul>
-<li><strong>AcousticMaterial</strong>: Defines the bulk modulus and density.</li>
-</ul>
-<p>The following figure shows a seismic analysis model considering fluid-structure interaction for a dam. The dam and the fluid are modeled using solid and acoustic elements, respectively. The free surface is defined using <code>AcousticImpedance</code> with <span class="arithmatex">\(a=1/g, b=0\)</span> to account for sloshing, and the far field is defined with <span class="arithmatex">\(a=0, b=\beta/c\)</span> for <code>AcousticImpedance</code>. The fluid-solid interface is defined using <code>AcousticSolidInterface</code>.</p>
-<p><img alt="Fig. 4.7-1 Seismic Analysis of a Dam Considering Fluid-Structure Interaction" src="../image/4.7-1.png" /></p>
-<p align="center"><strong><span style="color: blue;">Fig. 4.7-1.</span></strong> Seismic Analysis of a Dam Considering Fluid-Structure Interaction</p>
+<p><img alt="Fig. 4.11-1 EmbeddedLine element" src="../image/4.11-1.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 4.11-1.</span></strong> EmbeddedLine element</p>
 
-<p>If the meshes of the fluid and structure do not match, an <code>AcousticSolidInterface</code> can be set at the fluid surface, and constraints can be applied to the corresponding structural surface to model the interaction. In cases where the dam is assumed to be a rigid body, even if no solid elements are present, <code>AcousticSolidInterface</code> must be applied at the fluid surface in contact with the structure for seismic loads to be applied.</p>
-<p><img alt="Fig. 4.7-2 Handling Mismatched Meshes in Fluid-Structure Interaction" src="../image/4.7-2.png" /></p>
-<p align="center"><strong><span style="color: blue;">Fig. 4.7-2.</span></strong> Handling Mismatched Meshes in Fluid-Structure Interaction</p>
-
-<p><img alt="Fig. 4.7-3 Seismic Analysis of a Dam Without Fluid-Structure Interaction (Rigid Dam Assumption)" src="../image/4.7-3.png" /></p>
-<p align="center"><strong><span style="color: blue;">Fig. 4.7-3.</span></strong> Seismic Analysis of a Dam Without Fluid-Structure Interaction (Rigid Dam Assumption)</p>
-
-<p>For PMDL elements such as AC3D8PMDL, it is necessary to specify which formulation (PMDL or SimplePMDL) to use and which direction to apply the wave propagation direction in <code>*Section, TYPE=Solid</code>. The SimplePMDL formulation uses the <strong>Midpoint Integrated Element Formulation</strong>, which integrates only at the central point in the specified direction in a standard finite element formulation. This method is used for economically analyzing infinite domains during wave propagation analysis.</p>
-<ul>
-<li><strong>R direction in AC2D4</strong>: 1x2 for stiffness matrix calculation, 1x3 for mass matrix calculation.</li>
-<li><strong>S direction in AC2D4</strong>: 2x1 for stiffness matrix calculation, 3x1 for mass matrix calculation.</li>
-<li><strong>RS direction in AC2D4</strong>: 1x1 for stiffness matrix calculation, 1x1 for mass matrix calculation.</li>
-<li><strong>R direction in AC3D8PMDL</strong>: 1x2x2 for stiffness matrix calculation, 1x3x3 for mass matrix calculation.</li>
-<li><strong>S direction in AC3D8PMDL</strong>: 2x1x2 for stiffness matrix calculation, 3x1x3 for mass matrix calculation.</li>
-<li><strong>T direction in AC3D8PMDL</strong>: 2x2x1 for stiffness matrix calculation, 3x3x1 for mass matrix calculation.</li>
-<li><strong>RS direction in AC3D8PMDL</strong>: 1x1x2 for stiffness matrix calculation, 1x1x3 for mass matrix calculation.</li>
-<li><strong>TR direction in AC3D8PMDL</strong>: 1x2x1 for stiffness matrix calculation, 1x3x1 for mass matrix calculation.</li>
-<li><strong>ST direction in AC3D8PMDL</strong>: 2x1x1 for stiffness matrix calculation, 3x1x1 for mass matrix calculation.</li>
-<li><strong>RST direction in AC3D8PMDL</strong>: 1x1x1 for stiffness matrix calculation, 1x1x1 for mass matrix calculation.</li>
-</ul>
 <h5 id="example">Example</h5>
-<div class="highlight"><pre><span></span><code>#########################
-# Mesh
-#########################
-*Node
-   1, -96.80,  0
-  11,      0,  0
-  21,    100,  0
-1301,   -9.8,  111.534
-1311,      0,  111.534
-1321,    100,  111.534
-1701,   -9.8,  122
-1711,      0,  122
-1721,    100,  122
+<div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity Name=tendon  
+ E=200E9
 
-*NGen, NSET=bottom
- 1, 11, 1
-11, 21, 1
+*Construction, Type=Spline, Name=curve
+ 0.,  0., 0.
+ 15, -0.8 0.
+ 30., 0., 0.
 
-*NGen, NSET=middle
- 1301, 1311, 1
- 1311, 1321, 1
+*Section, Type=EmbeddedLine, Name=tendon
+  tendon, 0.01, 3
+  0.4, 0.2
 
-*NGen, NSET=top
- 1701, 1711, 1
- 1711, 1721, 1
+*Element, Type=EmbeddedLine, ELSet=tendon
+ 1001, 1, S=tendon, L=curve, H=conc
 
-*NFill
- bottom, middle, 100, 0.2
- middle, top, 100, 9.8/9.8
+*Step, Type=STATIC, Name=1
+...
 
-*Element, TYPE=CPE4
- 1, 1, 2, 102, 101
-
-*ELGEN, ELSET=dam
- 1,10,1,1, 17, 100, 100
-
-*Element, TYPE=AC2D4
- 11, 11, 12, 112, 111
-
-*ELGEN, ELSET=water
- 11,10,1,1, 17, 100, 100
-
-#########################
-# Material/Section
-#########################
-*Material, Type=Acoustic, Name=water
-# 2190.4E+6, 1000   # bulkModulus, density
- 0, 1000   # bulkModulus, density
-
-*Section, Type=Solid, Name=water
- water, 1   # thickness
-
-*Material, Type=IsoElasticity, Name=dam
- 25E9, 0.2, 0, 2300   # E, nu, alpha, density
-
-*Section, Type=Solid, Name=dam
- dam, 1   # thickness
-
-*Distribution, Type=Section
- dam, dam
- water, water
-
-#########################
-# Surface and NSET for Load
-#########################
-
-*Surface, Name=FreeSurface
- 3@1611:1620
-
-*Surface, Name=FarField
- 2@20:1620:100
-
-*Surface, Name=DamInterface
- 4@11:1611:100
-
-*NSET, Name=DamBottom
- 1:11
-
-#########################
-# Constraint &amp; Load
-#########################
-*Constraint, Type=AcousticImpedance, Name=FreeSurface
- FreeSurface, 1/9.81,0
-
-*Constraint, Type=AcousticImpedance, Name=FarField
- FarField, 0, 1/1480
-
-*Constraint, Type=AcousticSolidInterface, Name=DamInterface
- DamInterface, 1000
-
-*Constraint, Type=Support, Name=DamBottom
- DamBottom, X|Y
-
-*Function Type=File Name=acc
-# ELC270-AT2, 0.01, 32.2*12    # scaled by G 
- ELCchopra.dat, 0.02, 32.2*12   # file, xstep, scale, comment : scaled by G 
-
-*LOAD, TYPE=Earthquake, Name=Earthquake, Func=acc
- 1,0,0
-
-*STEP, TYPE=Dynamic, Name=Coupled
- EquiTime,0.02,40. 
-*Activate, TYPE=Element
- dam, water
-*Activate, TYPE=Constraint
- DamBottom, FreeSurface, FarField, DamInterface 
-*Activate, TYPE=Load
- Earthquake
-*RayleighDamping
- Equivalent,3.54542, 8.00412, 0.05, 0.05, dam
-*History File=Coupled.csv
- D.X@1701 
+*State, Type=TendonForce
+ 1001, 200E6, Left
 </code></pre></div>
-<h3 id="element-typeac2d3">*Element, TYPE=AC2D3</h3>
-<div class="highlight"><pre><span></span><code>*Element, Type=AC2D3, ELSet=elset
- id, n1, n2, n3{, S=section }
- ...
+<h3 id="element-typeembeddedline">*Element, Type=EmbeddedLine</h3>
+<p>EmbeddedLine 요소를 정의</p>
+<div class="highlight"><pre><span></span><code>*Element, Type=EmbeddedLine, ELSet=elset
+  id, n1, S=sec, L=spline, H=hostElset
 </code></pre></div>
+<h5 id="first-dataline-and-subsequent-lines">First dataline and subsequent lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>L=spline:</strong> 형상을 정의하는 spline</li>
+<li><strong>H=hostElset:</strong> 호스트요소집합</li>
+</ul>
+</div>
 <h5 id="specifications">Specifications</h5>
-<div class="admonition note"></div>
+<div class="admonition note">
 <ul>
-<li>No. of nodes : 3</li>
-<li>No. of integration pts. : 1</li>
-<li>Fields : Material model at each Gauss points</li>
-<li>Compatible section : SolidSection</li>
-<li>Active DOFs : P</li>
+<li>No. of nodes: 1</li>
+<li>Fields: ED=[ED.X ED.Y ED.Z] and uniaxial material field at Gauss point</li>
+<li>Compatible section: EmbeddedLine</li>
+<li>Active DOFs:  None</li>
 </ul>
-<h3 id="element-typeac2d4">*Element, TYPE=AC2D4</h3>
-<div class="highlight"><pre><span></span><code>*Element, Type=AC2D4, ELSet=elset
- id n1 n2 n3 n4{, S=section}
- ...
+</div>
+<p>▪ 주의 
+n1 절점은 형상을 정의하는 기준점으로만 사용되면, 요소에서 어떠한 강성행렬이나 질량행렬의 기여분이 없다. </p>
+<h3 id="section-typeembeddedline">*Section, Type=EmbeddedLine</h3>
+<p>EmbeddedLine 요소 단면을 정의</p>
+<div class="highlight"><pre><span></span><code>*Section, Type=EmbeddedLine, Name=name
+ material, area, ngauss, maxDiscretizationLength
+ mu, kappa
 </code></pre></div>
-<h5 id="specifications_1">Specifications</h5>
-<div class="admonition note"></div>
+<h5 id="keyword-line">Keyword line</h5>
+<div class="admonition note">
 <ul>
-<li>No. of nodes: 4</li>
-<li>No. of integration pts.: 2-by-2</li>
-<li>Fields: Material model at each Gauss points</li>
-<li>Compatible section: SolidSection</li>
-<li>Active DOFs: P</li>
+<li><strong>Name=name:</strong> 단면 이름. 단면 이름은 중복될 수 없음</li>
 </ul>
-<h3 id="element-typeac3d4">*Element, TYPE=AC3D4</h3>
-<div class="highlight"><pre><span></span><code>*Element, Type=AC3D4, ELSet=elset
- id n1 n2 n3 n4 {, S=section}
- ...
-</code></pre></div>
-<h5 id="specifications_2">Specifications</h5>
-<div class="admonition note"></div>
+</div>
+<h5 id="first-dataline">First dataline</h5>
+<div class="admonition note">
 <ul>
-<li>No. of nodes : 4</li>
-<li>No. of integration pts. : 1</li>
-<li>Fields : Material model at each Gauss points</li>
-<li>Compatible section : SolidSection</li>
-<li>Active DOFs : P</li>
+<li><strong>material:</strong> material (required)</li>
+<li><strong>area:</strong> area (required)</li>
+<li><strong>ngauss:</strong> No. of integration points for spline subdivision (optional, default is 4).</li>
+<li><strong>maxDiscretizationLength:</strong> Maximum allowed discretization length between Gauss points (optional, </li>
 </ul>
-<h3 id="element-typeac3d6">*Element, TYPE=AC3D6</h3>
-<div class="highlight"><pre><span></span><code>*Element, Type=AC3D6, ELSet=elset
- id n1 n2 n3 n4 n5 n6{, S=section}
- ...
-</code></pre></div>
-<h5 id="specifications_3">Specifications</h5>
-<div class="admonition note"></div>
+</div>
+<h5 id="second-dataline-optional">Second dataline (optional)</h5>
+<div class="admonition note">
 <ul>
-<li>No. of nodes : 6</li>
-<li>No. of integration pts. : 2</li>
-<li>Fields : Material model at each Gauss points</li>
-<li>Compatible section : SolidSection</li>
-<li>Active DOFs : P</li>
+<li><strong>mu, kappa:</strong> Curvature and wobble friction coefficients (optional, default 0., 0.).</li>
 </ul>
-<h3 id="element-typeac3d8">*Element, TYPE=AC3D8</h3>
-<div class="highlight"><pre><span></span><code>*Element, Type=AC3D8, ELSet=elset
- id n1 n2 n3 n4 n5 n6 n7 n8{, S=section}
- ...
-</code></pre></div>
-<h5 id="specifications_4">Specifications</h5>
-<div class="admonition note"></div>
-<ul>
-<li>No. of nodes : 8</li>
-<li>No. of integration pts. : 2-by-2-by-2</li>
-<li>Fields : Material model at each Gauss points</li>
-<li>Compatible section : SolidSection</li>
-<li>Active DOFs : P</li>
-</ul>
-<h3 id="element-typeac2d4pmdl">*Element, TYPE=AC2D4PMDL</h3>
-<div class="highlight"><pre><span></span><code>*Element, Type=AC2D4PMDL, ELSet=elset
- id n1 n2 n3 n4{, S=section}
- ...
-</code></pre></div>
-<h5 id="specifications_5">Specifications</h5>
-<div class="admonition note"></div>
-<ul>
-<li>No. of nodes: 4</li>
-<li>No. of integration pts.: formulation depependent*</li>
-<li>Fields: Material model at each Gauss points</li>
-<li>Compatible section: SolidSection</li>
-<li>Active DOFs: P</li>
-</ul>
-<p>2-by-2 integration is used for PMDL formuation, but 1-by-2 or 2-by-1 integration is used for SimplePMDL formuation</p>
-<h3 id="element-typeac3d8mpmdl">*Element, TYPE=AC3D8MPMDL</h3>
-<div class="highlight"><pre><span></span><code>*Element, Type=AC3D8PMDL, ELSet=elset
- id n1 n2 n3 n4 n5 n6 n7 n8{, S=section}
- ...
-</code></pre></div>
-<h5 id="specifications_6">Specifications</h5>
-<div class="admonition note"></div>
-<ul>
-<li>No. of nodes : 8</li>
-<li>No. of integration pts.: formulation depependent*</li>
-<li>Fields : Material model at each Gauss points</li>
-<li>Compatible section : SolidSection</li>
-<li>Active DOFs : P</li>
-</ul>
-<p>2-by-2-by-2 integration is used for PMDL formuation, but 1-by-2-by-2, 2-by-1-by-2, or 2-by-2-by-1 integration is used for SimplePMDL formuation</p>
+</div>
+<p>스플라인(<code>*Construction, TYPE=Spline</code>)은 샘플링 점 사이의 segment를 세분하여 subdivision으로 분리한다. 이 subdivision은 ngauss 적분점을 갖는 Gauss Lobato 적분을 수행한다. 정확한 적분이 될 수 있도록 충분한 적분점이 필요하며 이를 제어하는 변수가 <code>maxDiscretizatonLength</code>이다. <code>maxDiscretizationLength</code>는 적분점 사이 간격의 최대값이다. 적분점 간격은 <code>maxDiscretizationLength</code>보다 작게 설정된다. 이 값이 주어지지 않으면(0이면), 가장 작은 부모요소의 모서리 길이의 1/4로 자동으로 설정된다. </p>
 
 
 

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="E.2%20Material%20Nonlinear%20Beam%20Element.ko.html">
+        <link rel="prev" href="E.13%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.ko.html">
       
       
-        <link rel="next" href="E.4%20Shell%20Element.ko.html">
+        <link rel="next" href="E.15%20Temperature%20Load%20by%20Bimetal.ko.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>E.3 Solid Element and In-Plane Behavior of Shell Element - Hyfeast-v1.0.0 Manual</title>
+        <title>E.14 Stability of Rail Track - Hyfeast-v1.0.0 Manual</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              E.3 Solid Element and In-Plane Behavior of Shell Element
+              E.14 Stability of Rail Track
             
           </span>
         </div>
@@ -2260,17 +2260,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.ko.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2279,7 +2272,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2499,10 +2491,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="E.14%20Stability%20of%20Rail%20Track.ko.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="E.14%20Stability%20of%20Rail%20Track.ko.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2511,6 +2510,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2596,883 +2596,41 @@
                   
 
 
-<h1 id="e3-solid-element-and-in-plane-behavior-of-shell-element">E.3 Solid Element and In-Plane Behavior of Shell Element</h1>
-<p>캔틸러버에 대한 정적해석 및 고유치 해석을 통해 메쉬 크기에 따라 검증하였다.</p>
-<p><img src="./media/image21.png" style="width:6in;height:8.40278in" /></p>
-<p align="center"><strong><span style="color: blue;">Figure E.3.1</span></strong> Analysis Model and Analytic Solutions</p>
-<p align="left"><strong><span style="color: blue;">Table E.3.1</span></strong> Tip Load Results (Reference : 200mm)</p>
+<h1 id="e14-stability-of-rail-track">E.14 Stability of Rail Track</h1>
+<p>Figure E.14.1과 같은 레일-지반-교량 시스템에서 그림 E.17.2와 같은 온도하중, 레일 축방향 제동하중, 수직 하중이 가력될 때 비선형 해석을 수행한후 M. A. Van (1997)에서 제시한 결과와 비교하였다. 적용 시스템의 비선형성은 balast 부분으로 한정되며, 레일 및 교량은 선형탄성 조건이다. 그림 E.17.2는 해석 모델을 나타내고 있다. 레일과 교량을 연결하는데 rigid arm을 갖는 2절점 스프링과 수직방향 구속조건을 사용하여 그림 E.17.3와 같이 교량 상단에 스프링이 연결된 것을 모사하였다. 레일 축방향 하중이 가력되는 경우(Case1과 Case2)에는 rigid arm이 없는 2절점 스프링으로 모델링한 것과 결과 차이가 없으나 수직방향 하중이 가력될 경우(Case 3) rigid arm을 부과하여 교량 상단에 스프링이 연결되는 조건을 반드시 고려해야 한다. 그 이유는 레일과 교량이 도심을 연결하는 2절점 스프링을 사용할 경우 수직 방향 하중에 대해 레일의 축방향 변형이 발생하지 않게 되기 때문이다. </p>
+<p><img src="./media/image86.png" style="width:6.26806in;height:2.28681in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.14.1</span></strong> Rail Track Stability Analysis</p>
 
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Mesh</th>
-<th style="text-align: center;">CPS3</th>
-<th style="text-align: center;">CPS4</th>
-<th style="text-align: center;">S3F</th>
-<th style="text-align: center;">S4F</th>
-<th style="text-align: center;">S3</th>
-<th style="text-align: center;">S4</th>
-<th style="text-align: center;">CS6</th>
-<th style="text-align: center;">CS8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">10×1</td>
-<td style="text-align: center;">46.8761</td>
-<td style="text-align: center;">138</td>
-<td style="text-align: center;">46.8761</td>
-<td style="text-align: center;">138</td>
-<td style="text-align: center;">46.8761</td>
-<td style="text-align: center;">138</td>
-<td style="text-align: center;">45.3629</td>
-<td style="text-align: center;">137.217</td>
-</tr>
-<tr>
-<td style="text-align: center;">20×2</td>
-<td style="text-align: center;">109.486</td>
-<td style="text-align: center;">180.285</td>
-<td style="text-align: center;">109.486</td>
-<td style="text-align: center;">180.285</td>
-<td style="text-align: center;">109.486</td>
-<td style="text-align: center;">180.285</td>
-<td style="text-align: center;">107.166</td>
-<td style="text-align: center;">179.425</td>
-</tr>
-<tr>
-<td style="text-align: center;">30×3</td>
-<td style="text-align: center;">146.461</td>
-<td style="text-align: center;">191.318</td>
-<td style="text-align: center;">146.461</td>
-<td style="text-align: center;">191.318</td>
-<td style="text-align: center;">146.461</td>
-<td style="text-align: center;">191.318</td>
-<td style="text-align: center;">144.409</td>
-<td style="text-align: center;">190.569</td>
-</tr>
-<tr>
-<td style="text-align: center;">40×4</td>
-<td style="text-align: center;">166.208</td>
-<td style="text-align: center;">195.531</td>
-<td style="text-align: center;">166.208</td>
-<td style="text-align: center;">195.531</td>
-<td style="text-align: center;">166.208</td>
-<td style="text-align: center;">195.531</td>
-<td style="text-align: center;">164.543</td>
-<td style="text-align: center;">194.856</td>
-</tr>
-<tr>
-<td style="text-align: center;">50×5</td>
-<td style="text-align: center;">177.3</td>
-<td style="text-align: center;">197.553</td>
-<td style="text-align: center;">177.3</td>
-<td style="text-align: center;">197.553</td>
-<td style="text-align: center;">177.3</td>
-<td style="text-align: center;">197.553</td>
-<td style="text-align: center;">175.932</td>
-<td style="text-align: center;">196.924</td>
-</tr>
-<tr>
-<td style="text-align: center;">60×6</td>
-<td style="text-align: center;">183.98</td>
-<td style="text-align: center;">198.673</td>
-<td style="text-align: center;">183.98</td>
-<td style="text-align: center;">198.673</td>
-<td style="text-align: center;">183.98</td>
-<td style="text-align: center;">198.673</td>
-<td style="text-align: center;">182.821</td>
-<td style="text-align: center;">198.074</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Mesh</th>
-<th style="text-align: center;">C3D4</th>
-<th style="text-align: center;">C3D6</th>
-<th style="text-align: center;">C3D8</th>
-<th style="text-align: center;">C3D8I</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">30×3×1</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">190.569</td>
-<td style="text-align: center;">200.695</td>
-</tr>
-<tr>
-<td style="text-align: center;">60×6×2</td>
-<td style="text-align: center;">184.347</td>
-<td style="text-align: center;">183.208</td>
-<td style="text-align: center;">198.33</td>
-<td style="text-align: center;">200.989</td>
-</tr>
-</tbody>
-</table>
-<p align="left"><strong><span style="color: blue;">Table E.3.2</span></strong> Gravity Load Results (Reference : 0.51981mm)</p>
+<p><img src="./media/image87.png" style="width:6.26806in;height:2.70208in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.14.2</span></strong> Modeling</p>
 
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>CPS3</th>
-<th>CPS4</th>
-<th>S3F</th>
-<th>S4F</th>
-<th>S3</th>
-<th>S4</th>
-<th>CS6</th>
-<th>CS8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10×1</td>
-<td>0.123254</td>
-<td>0.360598</td>
-<td>0.123254</td>
-<td>0.360598</td>
-<td>0.123254</td>
-<td>0.360598</td>
-<td>0.119257</td>
-<td>0.35816</td>
-</tr>
-<tr>
-<td>20×2</td>
-<td>0.285687</td>
-<td>0.469677</td>
-<td>0.285687</td>
-<td>0.469677</td>
-<td>0.285687</td>
-<td>0.469677</td>
-<td>0.279514</td>
-<td>0.467071</td>
-</tr>
-<tr>
-<td>30×3</td>
-<td>0.381671</td>
-<td>0.498273</td>
-<td>0.381671</td>
-<td>0.498273</td>
-<td>0.381671</td>
-<td>0.498273</td>
-<td>0.37616</td>
-<td>0.496027</td>
-</tr>
-<tr>
-<td>40×4</td>
-<td>0.432967</td>
-<td>0.509214</td>
-<td>0.432967</td>
-<td>0.509214</td>
-<td>0.432967</td>
-<td>0.509214</td>
-<td>0.428454</td>
-<td>0.507205</td>
-</tr>
-<tr>
-<td>50×5</td>
-<td>0.461797</td>
-<td>0.514472</td>
-<td>0.461797</td>
-<td>0.514472</td>
-<td>0.461797</td>
-<td>0.514472</td>
-<td>0.458056</td>
-<td>0.512612</td>
-</tr>
-<tr>
-<td>60×6</td>
-<td>0.479166</td>
-<td>0.517386</td>
-<td>0.479166</td>
-<td>0.517386</td>
-<td>0.479166</td>
-<td>0.517386</td>
-<td>0.475971</td>
-<td>0.515624</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>C3D4</th>
-<th>C3D6</th>
-<th>C3D8</th>
-<th>C3D8I</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>30×3×1</td>
-<td>-</td>
-<td>-</td>
-<td>0.496027</td>
-<td>0.522385</td>
-</tr>
-<tr>
-<td>60×6×2</td>
-<td>0.479903</td>
-<td>0.478154</td>
-<td>0.516267</td>
-<td>0.523201</td>
-</tr>
-</tbody>
-</table>
-<p align="left"><strong><span style="color: blue;">Table E.3.3</span></strong> Surface Load Results (Reference : 0.51981mm)</p>
+<p><img src="./media/image88.png" style="width:6.26806in;height:3.50903in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.14.3</span></strong> Loading Condition</p>
 
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>CPS3</th>
-<th>CPS4</th>
-<th>S3F</th>
-<th>S4F</th>
-<th>S3</th>
-<th>S4</th>
-<th>CS6</th>
-<th>CS8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10×1</td>
-<td>0.123314</td>
-<td>0.360589</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.119319</td>
-<td>0.358151</td>
-</tr>
-<tr>
-<td>20×2</td>
-<td>0.285855</td>
-<td>0.469896</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.27968</td>
-<td>0.467288</td>
-</tr>
-<tr>
-<td>30×3</td>
-<td>0.381905</td>
-<td>0.498553</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.376394</td>
-<td>0.496307</td>
-</tr>
-<tr>
-<td>40×4</td>
-<td>0.433238</td>
-<td>0.509518</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.428725</td>
-<td>0.507509</td>
-</tr>
-<tr>
-<td>50×5</td>
-<td>0.462088</td>
-<td>0.514787</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.458348</td>
-<td>0.512928</td>
-</tr>
-<tr>
-<td>60×6</td>
-<td>0.47947</td>
-<td>0.517708</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.476276</td>
-<td>0.515948</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>C3D4</th>
-<th>C3D6</th>
-<th>C3D8</th>
-<th>C3D8I</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>30×3×1</td>
-<td>-</td>
-<td>-</td>
-<td>0.496307</td>
-<td>0.522681</td>
-</tr>
-<tr>
-<td>60×6×2</td>
-<td>0.48021</td>
-<td>0.47728</td>
-<td>0.516588</td>
-<td>0.523527</td>
-</tr>
-</tbody>
-</table>
-<p align="left"><strong><span style="color: blue;">Table E.3.4</span></strong> TemperatureLoad 결과 (Reference : 1.5 mm)</p>
+<p>Figure E.14.4 - Figure E.14.8 은 해석 결과를 나타낸 것이다. Figure E.14.6 - Figure E.14.8에서 수직하중이 가력된 경우(Case 3)의 경우 수직력에 의해 레일에 발생하는 축 변위 및 내력, 도상의 전단력 등이 추가로 발생함을 확인할 수 있다. 특히 교량의 시점과 종점 부에서 축력과 모멘트가 집중되는 현상을 알 수 있다.</p>
+<p><img src="./media/image89.png" style="width:6.26806in;height:3.79583in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.14.4</span></strong> Case 1 Analysis Results</p>
 
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>CPS3</th>
-<th>CPS4</th>
-<th>S3F</th>
-<th>S4F</th>
-<th>S3</th>
-<th>S4</th>
-<th>CS6</th>
-<th>CS8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10×1</td>
-<td>1.54851</td>
-<td>1.51046</td>
-<td>1.54851</td>
-<td>1.51046</td>
-<td>1.54851</td>
-<td>1.51046</td>
-<td>1.56504</td>
-<td>1.52459</td>
-</tr>
-<tr>
-<td>20×2</td>
-<td>1.52875</td>
-<td>1.50676</td>
-<td>1.52875</td>
-<td>1.50676</td>
-<td>1.52875</td>
-<td>1.50676</td>
-<td>1.53841</td>
-<td>1.51409</td>
-</tr>
-<tr>
-<td>30×3</td>
-<td>1.51903</td>
-<td>1.50572</td>
-<td>1.51903</td>
-<td>1.50572</td>
-<td>1.51903</td>
-<td>1.50572</td>
-<td>1.52584</td>
-<td>1.51094</td>
-</tr>
-<tr>
-<td>40×4</td>
-<td>1.51398</td>
-<td>1.50525</td>
-<td>1.51398</td>
-<td>1.50525</td>
-<td>1.51398</td>
-<td>1.50525</td>
-<td>1.51933</td>
-<td>1.50948</td>
-</tr>
-<tr>
-<td>50×5</td>
-<td>1.51112</td>
-<td>1.50498</td>
-<td>1.51112</td>
-<td>1.50498</td>
-<td>1.51112</td>
-<td>1.50498</td>
-<td>1.51564</td>
-<td>1.50869</td>
-</tr>
-<tr>
-<td>60×6</td>
-<td>1.50937</td>
-<td>1.50481</td>
-<td>1.50937</td>
-<td>1.50481</td>
-<td>1.50937</td>
-<td>1.50481</td>
-<td>1.51337</td>
-<td>1.50819</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>C3D4</th>
-<th>C3D6</th>
-<th>C3D8</th>
-<th>C3D8I</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>30×3×1</td>
-<td>-</td>
-<td>-</td>
-<td>1.51094</td>
-<td>1.50967</td>
-</tr>
-<tr>
-<td>60×6×2</td>
-<td>1.51613</td>
-<td>1.5127</td>
-<td>1.50807</td>
-<td>1.50756</td>
-</tr>
-</tbody>
-</table>
-<p>*(끝단변위) = alpha*temperatue*length = 1E-5*50*3000 = 1.5 mm</p>
-<p align="left"><strong><span style="color: blue;">Table E.3.5</span></strong> Frequency Analysis Results (Strong-Axis Bending Modes 1 and 2: 27.1792 Hz, 170.295 Hz)</p>
+<p><img src="./media/image90.png" style="width:6.26806in;height:3.85278in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.14.5</span></strong> Case 2 Analysis Results</p>
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-</colgroup>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>CPS3</th>
-<th>CPS4</th>
-<th>S3F</th>
-<th>S4F</th>
-<th>S3</th>
-<th>S4</th>
-<th>CS6</th>
-<th>CS8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10x1</td>
-<td><p>55.6152</p>
-<p>315.154</p></td>
-<td><p>32.5794</p>
-<p>198.74</p></td>
-<td><p>55.6152</p>
-<p>315.154</p></td>
-<td><p>32.5794</p>
-<p>198.74</p></td>
-<td><p>55.6152</p>
-<p>315.154</p></td>
-<td><p>32.5794</p>
-<p>198.74</p></td>
-<td><p>9.09644(W.B.1)</p>
-<p>56.5352(S.B.1)</p>
-<p>57.5109(W.B.2)</p>
-<p>160.604(T.B.1)</p>
-<p>165.464(W.B.3)</p>
-<p>319.16(S.B.2)</p></td>
-<td><p>9.08809(W.B.1)</p>
-<p>32.691(S.B.1)</p>
-<p>58.0442(W.B.2)</p>
-<p>166.157(T.B.1)</p>
-<p>169.013(W.B.3)</p>
-<p>199.374(S.B.2)</p></td>
-</tr>
-<tr>
-<td>20x2</td>
-<td><p>36.5603</p>
-<p>217.139</p></td>
-<td><p>28.5272</p>
-<p>172.686</p></td>
-<td><p>36.5603</p>
-<p>217.139</p></td>
-<td><p>28.5272</p>
-<p>172.686</p></td>
-<td><p>36.5603</p>
-<p>217.139</p></td>
-<td><p>28.5272</p>
-<p>172.686</p></td>
-<td><p>9.08135(W.B.1)</p>
-<p>36.9611(S.B.1)</p>
-<p>56.8575(W.B.2)</p>
-<p>159.245(W.B.3)</p>
-<p>163.649(T.B.1)</p>
-<p>219.275(S.B.2)</p></td>
-<td><p>9.07819(W.B.1)</p>
-<p>28.6069(S.B.1)</p>
-<p>56.9748(W.B.2)</p>
-<p>160.281(W.B.3)</p>
-<p>165.604(T.B.1)</p>
-<p>173.138(S.B.2)</p></td>
-</tr>
-<tr>
-<td>30x3</td>
-<td><p>31.6341</p>
-<p>189.365</p></td>
-<td><p>27.6917</p>
-<p>167.066</p></td>
-<td><p>31.6341</p>
-<p>189.365</p></td>
-<td><p>27.6917</p>
-<p>167.066</p></td>
-<td><p>31.6341</p>
-<p>189.365</p></td>
-<td><p>27.6917</p>
-<p>167.066</p></td>
-<td><p>9.07693(W.B.1)</p>
-<p>31.8647(S.B.1)</p>
-<p>56.7231(W.B.2)</p>
-<p>158.282(W.B.3)</p>
-<p>162.156(T.B.1)</p>
-<p>190.643(S.B.2)</p></td>
-<td><p>9.07524(W.B.1)</p>
-<p>27.7543(S.B.1)</p>
-<p>56.7725(W.B.2)</p>
-<p>158.708(W.B.3)</p>
-<p>162.228(T.B.1)</p>
-<p>167.42(S.B.2)</p></td>
-</tr>
-<tr>
-<td>40×4</td>
-<td><p>29.7018</p>
-<p>178.204</p></td>
-<td><p>27.3907</p>
-<p>165.019</p></td>
-<td><p>29.7018</p>
-<p>178.204</p></td>
-<td><p>27.3907</p>
-<p>165.019</p></td>
-<td><p>29.7018</p>
-<p>178.204</p></td>
-<td><p>27.3907</p>
-<p>165.019</p></td>
-<td><p>9.07492(W.B.1)</p>
-<p>29.8577(S.B.1)</p>
-<p>56.6727(W.B.2)</p>
-<p>157.922(W.B.3)</p>
-<p>160.927(T.B.1)</p>
-<p>179.079(S.B.2)</p></td>
-<td><p>9.07368(W.B.1)</p>
-<p>27.4449(S.B.1)</p>
-<p>56.6984(W.B.2)</p>
-<p>158.15(W.B.3)</p>
-<p>160.582(T.B.1)</p>
-<p>165.326(S.B.2)</p></td>
-</tr>
-<tr>
-<td>50×5</td>
-<td><p>28.7599</p>
-<p>172.709</p></td>
-<td><p>27.2495</p>
-<p>164.054</p></td>
-<td><p>28.7599</p>
-<p>172.709</p></td>
-<td><p>27.2495</p>
-<p>164.054</p></td>
-<td><p>28.7599</p>
-<p>172.709</p></td>
-<td><p>27.2495</p>
-<p>164.054</p></td>
-<td><p>9.07379(W.B.1)</p>
-<p>28.877(S.B.1)</p>
-<p>56.648(W.B.2)</p>
-<p>157.748(W.B.3)</p>
-<p>160.003(T.B.1)</p>
-<p>173.37(S.B.2)</p></td>
-<td><p>9.07281(W.B.1)</p>
-<p>27.2989(S.B.1)</p>
-<p>56.6631(W.B.2)</p>
-<p>157.889(W.B.3)</p>
-<p>159.543(T.B.1)</p>
-<p>164.334(S.B.2)</p></td>
-</tr>
-<tr>
-<td>60×6</td>
-<td><p>28.2339</p>
-<p>169.623</p></td>
-<td><p>27.1722</p>
-<p>163.524</p></td>
-<td><p>28.2339</p>
-<p>169.623</p></td>
-<td><p>27.1722</p>
-<p>163.524</p></td>
-<td><p>28.2339</p>
-<p>169.623</p></td>
-<td><p>27.1722</p>
-<p>163.524</p></td>
-<td><p>9.07307(W.B.1)</p>
-<p>28.3285(S.B.1)</p>
-<p>56.6338(W.B.2)</p>
-<p>157.651(W.B.3)</p>
-<p>159.329(T.B.1)</p>
-<p>170.159(S.B.2)</p></td>
-<td><p>9.07226(W.B.1)</p>
-<p>27.2186(S.B.1)</p>
-<p>56.6435(W.B.2)</p>
-<p>157.745(W.B.3)</p>
-<p>158.873(T.B.1)</p>
-<p>163.787(S.B.2)</p></td>
-</tr>
-</tbody>
-</table>
+<p><img src="./media/image91.png" style="width:6.26806in;height:3.90417in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.14.6</span></strong> Case 3 Analysis Results (Rail Displacement)</p>
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 26%" />
-</colgroup>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>C3D4</th>
-<th>C3D6</th>
-<th>C3D8</th>
-<th>C3D8I</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>30×2×1</td>
-<td>-</td>
-<td>-</td>
-<td><p>11.0201(W.B.1)</p>
-<p>27.7543(S.B.1)</p>
-<p>68.8381(W.B.2)</p>
-<p>162.816(T.B.1)</p>
-<p>167.42(S.B.2)</p>
-<p>191.968(W.B.3)</p></td>
-<td><p>9.07515(W.B.1)</p>
-<p>27.0458(S.B.1)</p>
-<p>56.772(W.B.2)</p>
-<p>158.706(W.B.3)</p>
-<p>162.218(T.B.1)</p>
-<p>163.344(S.B.2)</p></td>
-</tr>
-<tr>
-<td>60×6×2</td>
-<td><p>13.5954(W.B.1)</p>
-<p>28.389(S.B.1)</p>
-<p>84.5334(W.B.2)</p>
-<p>170.494(S.B.2)</p>
-<p>233.86(W.B.3)</p>
-<p>243.065(T.B.1)</p></td>
-<td><p>9.26158(W.B.1)</p>
-<p>28.247(S.B.1)</p>
-<p>57.8122(W.B.2)</p>
-<p>160.965(W.B.3)</p>
-<p>169.7(S.B.2)</p>
-<p>175.881(T.B.1)</p></td>
-<td><p>9.60045(W.B.1)</p>
-<p>27.2017(S.B.1)</p>
-<p>59.9194(W.B.2)</p>
-<p>159.056(T.B.1)</p>
-<p>163.688(S.B.2)</p>
-<p>166.767(W.B.3)</p></td>
-<td><p>9.07605(W.B.1)</p>
-<p>27.021(S.B.1)</p>
-<p>56.6671(W.B.2)</p>
-<p>157.812(W.B.3)</p>
-<p>158.878(T.B.1)</p>
-<p>162.645(S.B.2)</p></td>
-</tr>
-</tbody>
-</table>
+<p><img src="./media/image92.png" style="width:6.26806in;height:3.82708in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.14.7</span></strong> Case 2 Case 3 Analysis Results (Interal Force of Rail and Track)</p>
 
-<p>W.B.: Weak-Axis Bending, S.B.: Strong-Axis Bending, T.B.: Torsional Bendin</p>
-<p><strong><span class="smallcaps">Input File</span></strong></p>
+<p><img src="./media/image93.png" style="width:6.26806in;height:2.00694in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.14.8</span></strong> Case 3 Analysis Results (Rotation and Moment of Rail- Enlarged View)</p>
+
+<p><strong><span class="smallcaps">Input file</span></strong></p>
 <ul>
-<li>
-<p>CantS4F-10x1.inp : 10x1 elements, S4F</p>
-</li>
-<li>
-<p>CantS4F-20x2.inp : 20x2 elements, S4F</p>
-</li>
-<li>
-<p>CantS4F-30x3.inp : 30x3 elements, S4F</p>
-</li>
-<li>
-<p>CantS4F-40x4.inp : 40x4 elements, S4F</p>
-</li>
-<li>
-<p>CantS4F-50x5.inp : 50x5 elements, S4F</p>
-</li>
-<li>
-<p>CantS4F-60x6.inp : 60x6 elements, S4F</p>
-</li>
-<li>
-<p>CantS4-10x1.inp : 10x1 elements, S4</p>
-</li>
-<li>
-<p>CantS4-20x2.inp : 20x2 elements, S4</p>
-</li>
-<li>
-<p>CantS4-30x3.inp : 30x3 elements, S4</p>
-</li>
-<li>
-<p>CantS4-40x4.inp : 40x4 elements, S4</p>
-</li>
-<li>
-<p>CantS4-50x5.inp : 50x5 elements, S4</p>
-</li>
-<li>
-<p>CantS4-60x6.inp : 60x6 elements, S4</p>
-</li>
-<li>
-<p>CantS3F-10x1.inp : 10x1x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3F-20x2.inp : 20x2x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3F-30x3.inp : 30x3x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3F-40x4.inp : 40x4x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3F-50x5.inp : 50x5x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3F-60x6.inp : 60x6x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3-10x1.inp : 10x1x2 elements, S3</p>
-</li>
-<li>
-<p>CantS3-20x2.inp : 20x2x2 elements, S3</p>
-</li>
-<li>
-<p>CantS3-30x3.inp : 30x3x2 elements, S3</p>
-</li>
-<li>
-<p>CantS3-40x4.inp : 40x4x2 elements, S3</p>
-</li>
-<li>
-<p>CantS3-50x5.inp : 50x5x2 elements, S3</p>
-</li>
-<li>
-<p>CantS3-60x6.inp : 60x6x2 elements, S3</p>
-</li>
-<li>
-<p>CantCS8-10x1.inp : 10x1 elements, CS8</p>
-</li>
-<li>
-<p>CantCS8-20x2.inp : 20x2 elements, CS8</p>
-</li>
-<li>
-<p>CantCS8-30x3.inp : 30x3 elements, CS8</p>
-</li>
-<li>
-<p>CantCS8-40x4.inp : 40x4 elements, CS8</p>
-</li>
-<li>
-<p>CantCS8-50x5.inp : 50x5 elements, CS8</p>
-</li>
-<li>
-<p>CantCS8-60x6.inp : 60x6 elements, CS8</p>
-</li>
-<li>
-<p>CantCS6-10x1.inp : 10x1x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCS6-20x2.inp : 20x2x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCS6-30x3.inp : 30x3x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCS6-40x4.inp : 40x4x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCS6-50x5.inp : 50x5x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCS6-60x6.inp : 60x6x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCPS4-10x1.inp : 10x1 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS4-20x2.inp : 20x2 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS4-30x3.inp : 30x3 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS4-40x4.inp : 40x4 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS4-50x5.inp : 50x5 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS4-60x6.inp : 60x6 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS3-10x1.inp : 10x1x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantCPS3-20x2.inp : 20x2x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantCPS3-30x3.inp : 30x3x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantCPS3-40x4.inp : 40x4x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantCPS3-50x5.inp : 50x5x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantCPS3-60x6.inp : 60x6x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantC3D8-30x3x1.inp : 30x3x1 elements, C3D8</p>
-</li>
-<li>
-<p>CantC3D8-60x6x2.inp : 60x6x2 elements, C3D8</p>
-</li>
-<li>
-<p>CantC3D8I-30x3x1.inp : 30x3x1 elements, C3D8I</p>
-</li>
-<li>
-<p>CantC3D8I-60x6x2.inp : 60x6x2 elements, C3D8I</p>
-</li>
-<li>
-<p>CantC3D4-60x6x2.inp : 60x6x2x6 elements, C3D4</p>
-</li>
-<li>
-<p>CantC3D6-60x6x2.inp : 60x6x2x2 elements, C3D6</p>
-</li>
+<li>Rail.inp</li>
 </ul>
+<p><strong><span class="smallcaps">References</span></strong></p>
+<ol>
+<li>M. A. Van (1997) Stability of Constinuous Welded Rail Track, Delft Universsity Press</li>
+</ol>
 
 
 

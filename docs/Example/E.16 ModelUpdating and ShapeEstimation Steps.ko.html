@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="E.2%20Material%20Nonlinear%20Beam%20Element.ko.html">
+        <link rel="prev" href="E.15%20Temperature%20Load%20by%20Bimetal.ko.html">
       
-      
-        <link rel="next" href="E.4%20Shell%20Element.ko.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>E.3 Solid Element and In-Plane Behavior of Shell Element - Hyfeast-v1.0.0 Manual</title>
+        <title>E.16 ModelUpdating and ShapeEstimation Steps - Hyfeast-v1.0.0 Manual</title>
       
     
     
@@ -63,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#e161-model-updating-step" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              E.3 Solid Element and In-Plane Behavior of Shell Element
+              E.16 ModelUpdating and ShapeEstimation Steps
             
           </span>
         </div>
@@ -2260,17 +2263,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.ko.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2279,7 +2275,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2541,10 +2536,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="E.16%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    E.16 ModelUpdating and ShapeEstimation Steps
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="E.16%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2553,6 +2566,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#e161-model-updating-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.16.1 Model Updating Step
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e162-shapeestimation-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.16.2 ShapeEstimation Step
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2583,6 +2632,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#e161-model-updating-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.16.1 Model Updating Step
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e162-shapeestimation-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      E.16.2 ShapeEstimation Step
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2596,882 +2671,172 @@
                   
 
 
-<h1 id="e3-solid-element-and-in-plane-behavior-of-shell-element">E.3 Solid Element and In-Plane Behavior of Shell Element</h1>
-<p>캔틸러버에 대한 정적해석 및 고유치 해석을 통해 메쉬 크기에 따라 검증하였다.</p>
-<p><img src="./media/image21.png" style="width:6in;height:8.40278in" /></p>
-<p align="center"><strong><span style="color: blue;">Figure E.3.1</span></strong> Analysis Model and Analytic Solutions</p>
-<p align="left"><strong><span style="color: blue;">Table E.3.1</span></strong> Tip Load Results (Reference : 200mm)</p>
+<h1 id="e16-modelupdating-and-shapeestimation-steps">E.16 ModelUpdating and ShapeEstimation Steps</h1>
+<h2 id="e161-model-updating-step">E.16.1 Model Updating Step</h2>
+<p>두께가 1.0 m인 20m*10m의 단순지지된 슬래브를 대상으로 쉘요소(S4F)와 솔리드요소(C3D8)로 모델링한 경우에 대한 정적 및 모달 모델업데이팅을 검증한다. 그림과 같이 4개 영역에 대한 물성치를 적용하여 고유치해석 및 자중에 대한 해석을 수행하여 인공 측정 결과를 생성하였다. 단일 물성치를 적용하여 인공 측정 결과 생성시 사용된 4개 영역에 대한 물성치를 잘 추정하는지 검증하였다. 9개의 strain sensor를 적용하였다.</p>
+<p><img src="./media/image95.png" style="width:6.26806in;height:5.21736in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.16.1</span></strong> Application of Material Models (by Color) and Sensor Placement Status</p>
 
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Mesh</th>
-<th style="text-align: center;">CPS3</th>
-<th style="text-align: center;">CPS4</th>
-<th style="text-align: center;">S3F</th>
-<th style="text-align: center;">S4F</th>
-<th style="text-align: center;">S3</th>
-<th style="text-align: center;">S4</th>
-<th style="text-align: center;">CS6</th>
-<th style="text-align: center;">CS8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">10×1</td>
-<td style="text-align: center;">46.8761</td>
-<td style="text-align: center;">138</td>
-<td style="text-align: center;">46.8761</td>
-<td style="text-align: center;">138</td>
-<td style="text-align: center;">46.8761</td>
-<td style="text-align: center;">138</td>
-<td style="text-align: center;">45.3629</td>
-<td style="text-align: center;">137.217</td>
-</tr>
-<tr>
-<td style="text-align: center;">20×2</td>
-<td style="text-align: center;">109.486</td>
-<td style="text-align: center;">180.285</td>
-<td style="text-align: center;">109.486</td>
-<td style="text-align: center;">180.285</td>
-<td style="text-align: center;">109.486</td>
-<td style="text-align: center;">180.285</td>
-<td style="text-align: center;">107.166</td>
-<td style="text-align: center;">179.425</td>
-</tr>
-<tr>
-<td style="text-align: center;">30×3</td>
-<td style="text-align: center;">146.461</td>
-<td style="text-align: center;">191.318</td>
-<td style="text-align: center;">146.461</td>
-<td style="text-align: center;">191.318</td>
-<td style="text-align: center;">146.461</td>
-<td style="text-align: center;">191.318</td>
-<td style="text-align: center;">144.409</td>
-<td style="text-align: center;">190.569</td>
-</tr>
-<tr>
-<td style="text-align: center;">40×4</td>
-<td style="text-align: center;">166.208</td>
-<td style="text-align: center;">195.531</td>
-<td style="text-align: center;">166.208</td>
-<td style="text-align: center;">195.531</td>
-<td style="text-align: center;">166.208</td>
-<td style="text-align: center;">195.531</td>
-<td style="text-align: center;">164.543</td>
-<td style="text-align: center;">194.856</td>
-</tr>
-<tr>
-<td style="text-align: center;">50×5</td>
-<td style="text-align: center;">177.3</td>
-<td style="text-align: center;">197.553</td>
-<td style="text-align: center;">177.3</td>
-<td style="text-align: center;">197.553</td>
-<td style="text-align: center;">177.3</td>
-<td style="text-align: center;">197.553</td>
-<td style="text-align: center;">175.932</td>
-<td style="text-align: center;">196.924</td>
-</tr>
-<tr>
-<td style="text-align: center;">60×6</td>
-<td style="text-align: center;">183.98</td>
-<td style="text-align: center;">198.673</td>
-<td style="text-align: center;">183.98</td>
-<td style="text-align: center;">198.673</td>
-<td style="text-align: center;">183.98</td>
-<td style="text-align: center;">198.673</td>
-<td style="text-align: center;">182.821</td>
-<td style="text-align: center;">198.074</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Mesh</th>
-<th style="text-align: center;">C3D4</th>
-<th style="text-align: center;">C3D6</th>
-<th style="text-align: center;">C3D8</th>
-<th style="text-align: center;">C3D8I</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">30×3×1</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">190.569</td>
-<td style="text-align: center;">200.695</td>
-</tr>
-<tr>
-<td style="text-align: center;">60×6×2</td>
-<td style="text-align: center;">184.347</td>
-<td style="text-align: center;">183.208</td>
-<td style="text-align: center;">198.33</td>
-<td style="text-align: center;">200.989</td>
-</tr>
-</tbody>
-</table>
-<p align="left"><strong><span style="color: blue;">Table E.3.2</span></strong> Gravity Load Results (Reference : 0.51981mm)</p>
+<p><strong>DesignVariable 설정 및 초기값</strong></p>
+<div class="highlight"><pre><span></span><code>*DesignVariable
+stiff, slab1
+stiff, slab2
+stiff, slab3
+stiff, slab4
 
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>CPS3</th>
-<th>CPS4</th>
-<th>S3F</th>
-<th>S4F</th>
-<th>S3</th>
-<th>S4</th>
-<th>CS6</th>
-<th>CS8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10×1</td>
-<td>0.123254</td>
-<td>0.360598</td>
-<td>0.123254</td>
-<td>0.360598</td>
-<td>0.123254</td>
-<td>0.360598</td>
-<td>0.119257</td>
-<td>0.35816</td>
-</tr>
-<tr>
-<td>20×2</td>
-<td>0.285687</td>
-<td>0.469677</td>
-<td>0.285687</td>
-<td>0.469677</td>
-<td>0.285687</td>
-<td>0.469677</td>
-<td>0.279514</td>
-<td>0.467071</td>
-</tr>
-<tr>
-<td>30×3</td>
-<td>0.381671</td>
-<td>0.498273</td>
-<td>0.381671</td>
-<td>0.498273</td>
-<td>0.381671</td>
-<td>0.498273</td>
-<td>0.37616</td>
-<td>0.496027</td>
-</tr>
-<tr>
-<td>40×4</td>
-<td>0.432967</td>
-<td>0.509214</td>
-<td>0.432967</td>
-<td>0.509214</td>
-<td>0.432967</td>
-<td>0.509214</td>
-<td>0.428454</td>
-<td>0.507205</td>
-</tr>
-<tr>
-<td>50×5</td>
-<td>0.461797</td>
-<td>0.514472</td>
-<td>0.461797</td>
-<td>0.514472</td>
-<td>0.461797</td>
-<td>0.514472</td>
-<td>0.458056</td>
-<td>0.512612</td>
-</tr>
-<tr>
-<td>60×6</td>
-<td>0.479166</td>
-<td>0.517386</td>
-<td>0.479166</td>
-<td>0.517386</td>
-<td>0.479166</td>
-<td>0.517386</td>
-<td>0.475971</td>
-<td>0.515624</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>C3D4</th>
-<th>C3D6</th>
-<th>C3D8</th>
-<th>C3D8I</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>30×3×1</td>
-<td>-</td>
-<td>-</td>
-<td>0.496027</td>
-<td>0.522385</td>
-</tr>
-<tr>
-<td>60×6×2</td>
-<td>0.479903</td>
-<td>0.478154</td>
-<td>0.516267</td>
-<td>0.523201</td>
-</tr>
-</tbody>
-</table>
-<p align="left"><strong><span style="color: blue;">Table E.3.3</span></strong> Surface Load Results (Reference : 0.51981mm)</p>
+*Material, TYPE=IsoElasticity, Name=conc
+2.5e+10, 0.2, 0, 2500 
+</code></pre></div>
+<p><strong>정적 모델 업데이트 결과[반복계산회수=4]</strong></p>
+<div class="highlight"><pre><span></span><code>################################################
+# * Automatic generated file from ModelUpdating
+# * Design variables
+# stiff, slab1, 0.919989
+# stiff, slab2, 0.800017
+# stiff, slab3, 1.08001
+# stiff, slab4, 1.11997
+################################################
 
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>CPS3</th>
-<th>CPS4</th>
-<th>S3F</th>
-<th>S4F</th>
-<th>S3</th>
-<th>S4</th>
-<th>CS6</th>
-<th>CS8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10×1</td>
-<td>0.123314</td>
-<td>0.360589</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.119319</td>
-<td>0.358151</td>
-</tr>
-<tr>
-<td>20×2</td>
-<td>0.285855</td>
-<td>0.469896</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.27968</td>
-<td>0.467288</td>
-</tr>
-<tr>
-<td>30×3</td>
-<td>0.381905</td>
-<td>0.498553</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.376394</td>
-<td>0.496307</td>
-</tr>
-<tr>
-<td>40×4</td>
-<td>0.433238</td>
-<td>0.509518</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.428725</td>
-<td>0.507509</td>
-</tr>
-<tr>
-<td>50×5</td>
-<td>0.462088</td>
-<td>0.514787</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.458348</td>
-<td>0.512928</td>
-</tr>
-<tr>
-<td>60×6</td>
-<td>0.47947</td>
-<td>0.517708</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.476276</td>
-<td>0.515948</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>C3D4</th>
-<th>C3D6</th>
-<th>C3D8</th>
-<th>C3D8I</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>30×3×1</td>
-<td>-</td>
-<td>-</td>
-<td>0.496307</td>
-<td>0.522681</td>
-</tr>
-<tr>
-<td>60×6×2</td>
-<td>0.48021</td>
-<td>0.47728</td>
-<td>0.516588</td>
-<td>0.523527</td>
-</tr>
-</tbody>
-</table>
-<p align="left"><strong><span style="color: blue;">Table E.3.4</span></strong> TemperatureLoad 결과 (Reference : 1.5 mm)</p>
+*Material, TYPE=IsoElasticity, Name=conc-1
+2.29997e+10, 0.2, 0, 2500 
 
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>CPS3</th>
-<th>CPS4</th>
-<th>S3F</th>
-<th>S4F</th>
-<th>S3</th>
-<th>S4</th>
-<th>CS6</th>
-<th>CS8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10×1</td>
-<td>1.54851</td>
-<td>1.51046</td>
-<td>1.54851</td>
-<td>1.51046</td>
-<td>1.54851</td>
-<td>1.51046</td>
-<td>1.56504</td>
-<td>1.52459</td>
-</tr>
-<tr>
-<td>20×2</td>
-<td>1.52875</td>
-<td>1.50676</td>
-<td>1.52875</td>
-<td>1.50676</td>
-<td>1.52875</td>
-<td>1.50676</td>
-<td>1.53841</td>
-<td>1.51409</td>
-</tr>
-<tr>
-<td>30×3</td>
-<td>1.51903</td>
-<td>1.50572</td>
-<td>1.51903</td>
-<td>1.50572</td>
-<td>1.51903</td>
-<td>1.50572</td>
-<td>1.52584</td>
-<td>1.51094</td>
-</tr>
-<tr>
-<td>40×4</td>
-<td>1.51398</td>
-<td>1.50525</td>
-<td>1.51398</td>
-<td>1.50525</td>
-<td>1.51398</td>
-<td>1.50525</td>
-<td>1.51933</td>
-<td>1.50948</td>
-</tr>
-<tr>
-<td>50×5</td>
-<td>1.51112</td>
-<td>1.50498</td>
-<td>1.51112</td>
-<td>1.50498</td>
-<td>1.51112</td>
-<td>1.50498</td>
-<td>1.51564</td>
-<td>1.50869</td>
-</tr>
-<tr>
-<td>60×6</td>
-<td>1.50937</td>
-<td>1.50481</td>
-<td>1.50937</td>
-<td>1.50481</td>
-<td>1.50937</td>
-<td>1.50481</td>
-<td>1.51337</td>
-<td>1.50819</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>C3D4</th>
-<th>C3D6</th>
-<th>C3D8</th>
-<th>C3D8I</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>30×3×1</td>
-<td>-</td>
-<td>-</td>
-<td>1.51094</td>
-<td>1.50967</td>
-</tr>
-<tr>
-<td>60×6×2</td>
-<td>1.51613</td>
-<td>1.5127</td>
-<td>1.50807</td>
-<td>1.50756</td>
-</tr>
-</tbody>
-</table>
-<p>*(끝단변위) = alpha*temperatue*length = 1E-5*50*3000 = 1.5 mm</p>
-<p align="left"><strong><span style="color: blue;">Table E.3.5</span></strong> Frequency Analysis Results (Strong-Axis Bending Modes 1 and 2: 27.1792 Hz, 170.295 Hz)</p>
+*Material, TYPE=IsoElasticity, Name=conc-2
+2.00004e+10, 0.2, 0, 2500 
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-</colgroup>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>CPS3</th>
-<th>CPS4</th>
-<th>S3F</th>
-<th>S4F</th>
-<th>S3</th>
-<th>S4</th>
-<th>CS6</th>
-<th>CS8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10x1</td>
-<td><p>55.6152</p>
-<p>315.154</p></td>
-<td><p>32.5794</p>
-<p>198.74</p></td>
-<td><p>55.6152</p>
-<p>315.154</p></td>
-<td><p>32.5794</p>
-<p>198.74</p></td>
-<td><p>55.6152</p>
-<p>315.154</p></td>
-<td><p>32.5794</p>
-<p>198.74</p></td>
-<td><p>9.09644(W.B.1)</p>
-<p>56.5352(S.B.1)</p>
-<p>57.5109(W.B.2)</p>
-<p>160.604(T.B.1)</p>
-<p>165.464(W.B.3)</p>
-<p>319.16(S.B.2)</p></td>
-<td><p>9.08809(W.B.1)</p>
-<p>32.691(S.B.1)</p>
-<p>58.0442(W.B.2)</p>
-<p>166.157(T.B.1)</p>
-<p>169.013(W.B.3)</p>
-<p>199.374(S.B.2)</p></td>
-</tr>
-<tr>
-<td>20x2</td>
-<td><p>36.5603</p>
-<p>217.139</p></td>
-<td><p>28.5272</p>
-<p>172.686</p></td>
-<td><p>36.5603</p>
-<p>217.139</p></td>
-<td><p>28.5272</p>
-<p>172.686</p></td>
-<td><p>36.5603</p>
-<p>217.139</p></td>
-<td><p>28.5272</p>
-<p>172.686</p></td>
-<td><p>9.08135(W.B.1)</p>
-<p>36.9611(S.B.1)</p>
-<p>56.8575(W.B.2)</p>
-<p>159.245(W.B.3)</p>
-<p>163.649(T.B.1)</p>
-<p>219.275(S.B.2)</p></td>
-<td><p>9.07819(W.B.1)</p>
-<p>28.6069(S.B.1)</p>
-<p>56.9748(W.B.2)</p>
-<p>160.281(W.B.3)</p>
-<p>165.604(T.B.1)</p>
-<p>173.138(S.B.2)</p></td>
-</tr>
-<tr>
-<td>30x3</td>
-<td><p>31.6341</p>
-<p>189.365</p></td>
-<td><p>27.6917</p>
-<p>167.066</p></td>
-<td><p>31.6341</p>
-<p>189.365</p></td>
-<td><p>27.6917</p>
-<p>167.066</p></td>
-<td><p>31.6341</p>
-<p>189.365</p></td>
-<td><p>27.6917</p>
-<p>167.066</p></td>
-<td><p>9.07693(W.B.1)</p>
-<p>31.8647(S.B.1)</p>
-<p>56.7231(W.B.2)</p>
-<p>158.282(W.B.3)</p>
-<p>162.156(T.B.1)</p>
-<p>190.643(S.B.2)</p></td>
-<td><p>9.07524(W.B.1)</p>
-<p>27.7543(S.B.1)</p>
-<p>56.7725(W.B.2)</p>
-<p>158.708(W.B.3)</p>
-<p>162.228(T.B.1)</p>
-<p>167.42(S.B.2)</p></td>
-</tr>
-<tr>
-<td>40×4</td>
-<td><p>29.7018</p>
-<p>178.204</p></td>
-<td><p>27.3907</p>
-<p>165.019</p></td>
-<td><p>29.7018</p>
-<p>178.204</p></td>
-<td><p>27.3907</p>
-<p>165.019</p></td>
-<td><p>29.7018</p>
-<p>178.204</p></td>
-<td><p>27.3907</p>
-<p>165.019</p></td>
-<td><p>9.07492(W.B.1)</p>
-<p>29.8577(S.B.1)</p>
-<p>56.6727(W.B.2)</p>
-<p>157.922(W.B.3)</p>
-<p>160.927(T.B.1)</p>
-<p>179.079(S.B.2)</p></td>
-<td><p>9.07368(W.B.1)</p>
-<p>27.4449(S.B.1)</p>
-<p>56.6984(W.B.2)</p>
-<p>158.15(W.B.3)</p>
-<p>160.582(T.B.1)</p>
-<p>165.326(S.B.2)</p></td>
-</tr>
-<tr>
-<td>50×5</td>
-<td><p>28.7599</p>
-<p>172.709</p></td>
-<td><p>27.2495</p>
-<p>164.054</p></td>
-<td><p>28.7599</p>
-<p>172.709</p></td>
-<td><p>27.2495</p>
-<p>164.054</p></td>
-<td><p>28.7599</p>
-<p>172.709</p></td>
-<td><p>27.2495</p>
-<p>164.054</p></td>
-<td><p>9.07379(W.B.1)</p>
-<p>28.877(S.B.1)</p>
-<p>56.648(W.B.2)</p>
-<p>157.748(W.B.3)</p>
-<p>160.003(T.B.1)</p>
-<p>173.37(S.B.2)</p></td>
-<td><p>9.07281(W.B.1)</p>
-<p>27.2989(S.B.1)</p>
-<p>56.6631(W.B.2)</p>
-<p>157.889(W.B.3)</p>
-<p>159.543(T.B.1)</p>
-<p>164.334(S.B.2)</p></td>
-</tr>
-<tr>
-<td>60×6</td>
-<td><p>28.2339</p>
-<p>169.623</p></td>
-<td><p>27.1722</p>
-<p>163.524</p></td>
-<td><p>28.2339</p>
-<p>169.623</p></td>
-<td><p>27.1722</p>
-<p>163.524</p></td>
-<td><p>28.2339</p>
-<p>169.623</p></td>
-<td><p>27.1722</p>
-<p>163.524</p></td>
-<td><p>9.07307(W.B.1)</p>
-<p>28.3285(S.B.1)</p>
-<p>56.6338(W.B.2)</p>
-<p>157.651(W.B.3)</p>
-<p>159.329(T.B.1)</p>
-<p>170.159(S.B.2)</p></td>
-<td><p>9.07226(W.B.1)</p>
-<p>27.2186(S.B.1)</p>
-<p>56.6435(W.B.2)</p>
-<p>157.745(W.B.3)</p>
-<p>158.873(T.B.1)</p>
-<p>163.787(S.B.2)</p></td>
-</tr>
-</tbody>
-</table>
+*Material, TYPE=IsoElasticity, Name=conc-3
+2.70003e+10, 0.2, 0, 2500 
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 26%" />
-</colgroup>
-<thead>
-<tr>
-<th>Mesh</th>
-<th>C3D4</th>
-<th>C3D6</th>
-<th>C3D8</th>
-<th>C3D8I</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>30×2×1</td>
-<td>-</td>
-<td>-</td>
-<td><p>11.0201(W.B.1)</p>
-<p>27.7543(S.B.1)</p>
-<p>68.8381(W.B.2)</p>
-<p>162.816(T.B.1)</p>
-<p>167.42(S.B.2)</p>
-<p>191.968(W.B.3)</p></td>
-<td><p>9.07515(W.B.1)</p>
-<p>27.0458(S.B.1)</p>
-<p>56.772(W.B.2)</p>
-<p>158.706(W.B.3)</p>
-<p>162.218(T.B.1)</p>
-<p>163.344(S.B.2)</p></td>
-</tr>
-<tr>
-<td>60×6×2</td>
-<td><p>13.5954(W.B.1)</p>
-<p>28.389(S.B.1)</p>
-<p>84.5334(W.B.2)</p>
-<p>170.494(S.B.2)</p>
-<p>233.86(W.B.3)</p>
-<p>243.065(T.B.1)</p></td>
-<td><p>9.26158(W.B.1)</p>
-<p>28.247(S.B.1)</p>
-<p>57.8122(W.B.2)</p>
-<p>160.965(W.B.3)</p>
-<p>169.7(S.B.2)</p>
-<p>175.881(T.B.1)</p></td>
-<td><p>9.60045(W.B.1)</p>
-<p>27.2017(S.B.1)</p>
-<p>59.9194(W.B.2)</p>
-<p>159.056(T.B.1)</p>
-<p>163.688(S.B.2)</p>
-<p>166.767(W.B.3)</p></td>
-<td><p>9.07605(W.B.1)</p>
-<p>27.021(S.B.1)</p>
-<p>56.6671(W.B.2)</p>
-<p>157.812(W.B.3)</p>
-<p>158.878(T.B.1)</p>
-<p>162.645(S.B.2)</p></td>
-</tr>
-</tbody>
-</table>
+*Material, TYPE=IsoElasticity, Name=conc-4
+2.79992e+10, 0.2, 0, 2500
+</code></pre></div>
+<ul>
+<li>Very good agreement!!!</li>
+</ul>
+<p><strong>모달 모델 업데이트 결과(stiffness만 fitting한 경우) [반복계산회수=12]</strong>
+<div class="highlight"><pre><span></span><code>################################################
+# * Automatic generated file from ModelUpdating
+# * Design variables
+# stiff, slab1, 0.915975
+# stiff, slab2, 0.795228
+# stiff, slab3, 1.09126
+# stiff, slab4, 1.12278
+################################################
 
-<p>W.B.: Weak-Axis Bending, S.B.: Strong-Axis Bending, T.B.: Torsional Bendin</p>
+*Material, TYPE=IsoElasticity, Name=conc-1
+2.28994e+10, 0.2, 0, 2500 
+
+*Material, TYPE=IsoElasticity, Name=conc-2
+1.98807e+10, 0.2, 0, 2500 
+
+*Material, TYPE=IsoElasticity, Name=conc-3
+2.72815e+10, 0.2, 0, 2500 
+
+*Material, TYPE=IsoElasticity, Name=conc-4
+2.80696e+10, 0.2, 0, 2500 
+</code></pre></div></p>
+<ul>
+<li>Very good agreement!!!</li>
+</ul>
+<p><strong>모달 모델 업데이트 결과(stiffness 및 mass 동시 fitting한 경우) [반복계산회수=69]</strong>
+<div class="highlight"><pre><span></span><code>################################################
+# * Automatic generated file from ModelUpdating
+# * Design variables
+# stiff, slab1, 0.946149
+# stiff, slab2, 0.822749
+# stiff, slab3, 1.11071
+# stiff, slab4, 1.15184
+# mass, slab, 1.02843
+################################################
+
+*Material, TYPE=IsoElasticity, Name=conc-1
+2.36537e+10, 0.2, 0, 2571.08 
+
+*Material, TYPE=IsoElasticity, Name=conc-2
+2.05687e+10, 0.2, 0, 2571.08 
+
+*Material, TYPE=IsoElasticity, Name=conc-3
+2.77677e+10, 0.2, 0, 2571.08 
+
+*Material, TYPE=IsoElasticity, Name=conc-4
+2.87959e+10, 0.2, 0, 2571.08 
+</code></pre></div></p>
+<ul>
+<li>Not bad</li>
+</ul>
+<p><strong>베이지안 모달 모델 업데이트 결과(stiffness만 fitting한 경우) [반복계산회수=300, 수렴안됨]</strong>
+<div class="highlight"><pre><span></span><code>################################################
+# * Automatic generated file from ModelUpdating
+# * Design variables
+# stiff, slab1, 0.917861
+# stiff, slab2, 0.804127
+# stiff, slab3, 1.08549
+# stiff, slab4, 1.10184
+################################################
+
+*Material, TYPE=IsoElasticity, Name=conc-1
+2.29465e+10, 0.2, 0, 2500 
+
+*Material, TYPE=IsoElasticity, Name=conc-2
+2.01032e+10, 0.2, 0, 2500 
+
+*Material, TYPE=IsoElasticity, Name=conc-3
+2.71373e+10, 0.2, 0, 2500 
+
+*Material, TYPE=IsoElasticity, Name=conc-4
+2.75461e+10, 0.2, 0, 2500 
+</code></pre></div></p>
+<ul>
+<li>Good agreement. </li>
+<li>But maximum iteration number and tolerance should be calibrated,</li>
+<li>Computationally expensive, but robust</li>
+</ul>
+<p><strong>베이지안 모달 모델 업데이트 결과(stiffness 및 mass 동시 fitting한 경우) [반복계산회수=300, 수렴안됨]</strong>
+<div class="highlight"><pre><span></span><code>################################################
+# * Automatic generated file from ModelUpdating
+# * Design variables
+# stiff, slab1, 1.00128
+# stiff, slab2, 0.870686
+# stiff, slab3, 1.17542
+# stiff, slab4, 1.21895
+# mass, slab, 1.08835
+################################################
+
+*Material, TYPE=IsoElasticity, Name=conc-1
+2.50319e+10, 0.2, 0, 2720.88 
+
+*Material, TYPE=IsoElasticity, Name=conc-2
+2.17672e+10, 0.2, 0, 2720.88 
+
+*Material, TYPE=IsoElasticity, Name=conc-3
+2.93856e+10, 0.2, 0, 2720.88 
+
+*Material, TYPE=IsoElasticity, Name=conc-4
+3.04737e+10, 0.2, 0, 2720.88 
+</code></pre></div></p>
+<ul>
+<li>Good agreement. But maximum iteration number and tolerance should be calibrated,</li>
+<li>But maximum iteration number and tolerance should be calibrated,</li>
+<li>Computationally expensive, but robust</li>
+</ul>
 <p><strong><span class="smallcaps">Input File</span></strong></p>
 <ul>
-<li>
-<p>CantS4F-10x1.inp : 10x1 elements, S4F</p>
-</li>
-<li>
-<p>CantS4F-20x2.inp : 20x2 elements, S4F</p>
-</li>
-<li>
-<p>CantS4F-30x3.inp : 30x3 elements, S4F</p>
-</li>
-<li>
-<p>CantS4F-40x4.inp : 40x4 elements, S4F</p>
-</li>
-<li>
-<p>CantS4F-50x5.inp : 50x5 elements, S4F</p>
-</li>
-<li>
-<p>CantS4F-60x6.inp : 60x6 elements, S4F</p>
-</li>
-<li>
-<p>CantS4-10x1.inp : 10x1 elements, S4</p>
-</li>
-<li>
-<p>CantS4-20x2.inp : 20x2 elements, S4</p>
-</li>
-<li>
-<p>CantS4-30x3.inp : 30x3 elements, S4</p>
-</li>
-<li>
-<p>CantS4-40x4.inp : 40x4 elements, S4</p>
-</li>
-<li>
-<p>CantS4-50x5.inp : 50x5 elements, S4</p>
-</li>
-<li>
-<p>CantS4-60x6.inp : 60x6 elements, S4</p>
-</li>
-<li>
-<p>CantS3F-10x1.inp : 10x1x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3F-20x2.inp : 20x2x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3F-30x3.inp : 30x3x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3F-40x4.inp : 40x4x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3F-50x5.inp : 50x5x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3F-60x6.inp : 60x6x2 elements, S3F</p>
-</li>
-<li>
-<p>CantS3-10x1.inp : 10x1x2 elements, S3</p>
-</li>
-<li>
-<p>CantS3-20x2.inp : 20x2x2 elements, S3</p>
-</li>
-<li>
-<p>CantS3-30x3.inp : 30x3x2 elements, S3</p>
-</li>
-<li>
-<p>CantS3-40x4.inp : 40x4x2 elements, S3</p>
-</li>
-<li>
-<p>CantS3-50x5.inp : 50x5x2 elements, S3</p>
-</li>
-<li>
-<p>CantS3-60x6.inp : 60x6x2 elements, S3</p>
-</li>
-<li>
-<p>CantCS8-10x1.inp : 10x1 elements, CS8</p>
-</li>
-<li>
-<p>CantCS8-20x2.inp : 20x2 elements, CS8</p>
-</li>
-<li>
-<p>CantCS8-30x3.inp : 30x3 elements, CS8</p>
-</li>
-<li>
-<p>CantCS8-40x4.inp : 40x4 elements, CS8</p>
-</li>
-<li>
-<p>CantCS8-50x5.inp : 50x5 elements, CS8</p>
-</li>
-<li>
-<p>CantCS8-60x6.inp : 60x6 elements, CS8</p>
-</li>
-<li>
-<p>CantCS6-10x1.inp : 10x1x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCS6-20x2.inp : 20x2x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCS6-30x3.inp : 30x3x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCS6-40x4.inp : 40x4x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCS6-50x5.inp : 50x5x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCS6-60x6.inp : 60x6x2 elements, CS6</p>
-</li>
-<li>
-<p>CantCPS4-10x1.inp : 10x1 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS4-20x2.inp : 20x2 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS4-30x3.inp : 30x3 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS4-40x4.inp : 40x4 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS4-50x5.inp : 50x5 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS4-60x6.inp : 60x6 elements, CPS4</p>
-</li>
-<li>
-<p>CantCPS3-10x1.inp : 10x1x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantCPS3-20x2.inp : 20x2x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantCPS3-30x3.inp : 30x3x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantCPS3-40x4.inp : 40x4x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantCPS3-50x5.inp : 50x5x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantCPS3-60x6.inp : 60x6x2 elements, CPS3</p>
-</li>
-<li>
-<p>CantC3D8-30x3x1.inp : 30x3x1 elements, C3D8</p>
-</li>
-<li>
-<p>CantC3D8-60x6x2.inp : 60x6x2 elements, C3D8</p>
-</li>
-<li>
-<p>CantC3D8I-30x3x1.inp : 30x3x1 elements, C3D8I</p>
-</li>
-<li>
-<p>CantC3D8I-60x6x2.inp : 60x6x2 elements, C3D8I</p>
-</li>
-<li>
-<p>CantC3D4-60x6x2.inp : 60x6x2x6 elements, C3D4</p>
-</li>
-<li>
-<p>CantC3D6-60x6x2.inp : 60x6x2x2 elements, C3D6</p>
-</li>
+<li>S4F.inp </li>
+<li>S4F-Update.inp </li>
+</ul>
+<h2 id="e162-shapeestimation-step">E.16.2 ShapeEstimation Step</h2>
+<p>E.16.1에 사용된 슬래브(두께가 1.0 m인 20 m*10 m의 단순지지된 슬래브)를 대상으로 ShapeEstimation을 수행하였다.</p>
+<p>입력 데이터 : updown.dat</p>
+<div class="highlight"><pre><span></span><code># sensorPoint1, sensorPoint2, ...
+0.00023509,0.00032888,0.00021655,0.00023181,0.00033321,0.00020855,0.00024429,0.00035479,0.00021098
+0.00023509,0,-0.00021655,0.00023181,0,-0.00020855,0.00024429,0.,-0.00021098
+</code></pre></div>
+<p><img src="./media/image96.png" style="width:6.26806in;height:2.27292in" /></p>
+<p><img src="./media/image97.png" style="width:6.26806in;height:2.70556in" /></p>
+<p align="center"><strong><span style="color: blue;">Figure E.16.2</span></strong> Illustrative Example of ShapeEstimation</p>
+
+<p><strong><span class="smallcaps">Input File</span></strong></p>
+<ul>
+<li>S4F-ShapeEstimation.inp</li>
 </ul>
 
 

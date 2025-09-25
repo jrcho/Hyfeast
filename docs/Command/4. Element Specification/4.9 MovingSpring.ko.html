@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="E.13%20Stability%20of%20Rail%20Track.ko.html">
+        <link rel="prev" href="4.8%20MCK.ko.html">
       
       
-        <link rel="next" href="E.15%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html">
+        <link rel="next" href="4.10%20Interface.ko.html">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
     
     
       
-        <title>E.14 Temperature Load by Bimetal - Hyfeast-v1.0.0 Manual</title>
+        <title>MovingSpring 요소 - Hyfeast-v1.0.0 Manual</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
       
 
@@ -43,9 +43,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#element-typemovingspring" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -75,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+    <a href="../../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -95,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              E.14 Temperature Load by Bimetal
+              MovingSpring 요소
             
           </span>
         </div>
@@ -170,7 +175,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+    <a href="../../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -188,7 +193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -243,7 +248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/1.%20Introduction.en.html" class="md-nav__link">
+      <a href="../1.%20Introduction.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -264,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/2.%20Node.en.html" class="md-nav__link">
+      <a href="../2.%20Node.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -285,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/3.%20Element.en.html" class="md-nav__link">
+      <a href="../3.%20Element.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -341,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.1%20Introduction.en.html" class="md-nav__link">
+      <a href="4.1%20Introduction.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -362,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.2%20Beam.en.html" class="md-nav__link">
+      <a href="4.2%20Beam.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -383,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.3%20Truss.en.html" class="md-nav__link">
+      <a href="4.3%20Truss.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -404,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.4%20Cable.en.html" class="md-nav__link">
+      <a href="4.4%20Cable.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -425,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.5%20Shell.en.html" class="md-nav__link">
+      <a href="4.5%20Shell.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -446,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.6%20Solid.en.html" class="md-nav__link">
+      <a href="4.6%20Solid.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -467,11 +472,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.7%20Acoustic%20Solid.en.html" class="md-nav__link">
+      <a href="4.7%20AcousticSolid.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acoustic Solid
+    AcousticSolid
   </span>
   
 
@@ -488,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.8%20MCK.en.html" class="md-nav__link">
+      <a href="4.8%20MCK.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -509,11 +514,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.9%20Moving%20Spring.en.html" class="md-nav__link">
+      <a href="4.9%20MovingSpring.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Moving Spring
+    MovingSpring
   </span>
   
 
@@ -530,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.10%20Interface.en.html" class="md-nav__link">
+      <a href="4.10%20Interface.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,11 +556,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.11%20Tendon.en.html" class="md-nav__link">
+      <a href="4.11%20EmbeddedLine.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tendon
+    EmbeddedLine
   </span>
   
 
@@ -580,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/5.%20Constraint.en.html" class="md-nav__link">
+      <a href="../5.%20Constraint.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -601,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/6.%20Load.en.html" class="md-nav__link">
+      <a href="../6.%20Load.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -622,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/7.%20Material.en.html" class="md-nav__link">
+      <a href="../7.%20Material.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -643,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/8.%20Function.en.html" class="md-nav__link">
+      <a href="../8.%20Function.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -664,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/9.%20Surface.en.html" class="md-nav__link">
+      <a href="../9.%20Surface.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -685,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/10.%20Construction.en.html" class="md-nav__link">
+      <a href="../10.%20Construction.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -706,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/11.%20CoordinateSystem.en.html" class="md-nav__link">
+      <a href="../11.%20CoordinateSystem.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -727,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/12.%20Sensor.en.html" class="md-nav__link">
+      <a href="../12.%20Sensor.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -748,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/13.%20Step.en.html" class="md-nav__link">
+      <a href="../13.%20Step.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -769,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/14.%20Step%20result.en.html" class="md-nav__link">
+      <a href="../14.%20Step%20result.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -790,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/15.%20Modelling.en.html" class="md-nav__link">
+      <a href="../15.%20Modelling.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -811,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/16.%20Etc.en.html" class="md-nav__link">
+      <a href="../16.%20Etc.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -832,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/17.%20Special%20step.en.html" class="md-nav__link">
+      <a href="../17.%20Special%20step.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -853,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/18.%20HDB%20file%20structure.en.html" class="md-nav__link">
+      <a href="../18.%20HDB%20file%20structure.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -878,17 +883,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -902,7 +909,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Command(ko)
@@ -916,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/1.%20Introduction.ko.html" class="md-nav__link">
+      <a href="../1.%20Introduction.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/2.%20Node.ko.html" class="md-nav__link">
+      <a href="../2.%20Node.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -958,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/3.%20Element.ko.html" class="md-nav__link">
+      <a href="../3.%20Element.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -976,17 +983,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
         
           
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
@@ -1000,7 +1009,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             4. 요소 상세
@@ -1014,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.1%20Introduction.ko.html" class="md-nav__link">
+      <a href="4.1%20Introduction.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1035,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.2%20Beam.ko.html" class="md-nav__link">
+      <a href="4.2%20Beam.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1056,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.3%20Truss.ko.html" class="md-nav__link">
+      <a href="4.3%20Truss.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1077,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.4%20Cable.ko.html" class="md-nav__link">
+      <a href="4.4%20Cable.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1098,7 +1107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.5%20Shell.ko.html" class="md-nav__link">
+      <a href="4.5%20Shell.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1119,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.6%20Solid.ko.html" class="md-nav__link">
+      <a href="4.6%20Solid.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1140,11 +1149,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.7%20Acoustic%20Solid.ko.html" class="md-nav__link">
+      <a href="4.7%20AcousticSolid.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acoustic Solid 요소
+    AcousticSolid 요소
   </span>
   
 
@@ -1161,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.8%20MCK.ko.html" class="md-nav__link">
+      <a href="4.8%20MCK.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1179,18 +1188,72 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.9%20Moving%20Spring.ko.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    MovingSpring 요소
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="4.9%20MovingSpring.ko.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Moving Spring 요소
+    MovingSpring 요소
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#element-typemovingspring" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Element, Type=MovingSpring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-typemovingspring" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Section, Type=MovingSpring
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1203,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.10%20Interface.ko.html" class="md-nav__link">
+      <a href="4.10%20Interface.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1224,11 +1287,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/4.%20Element%20Specification/4.11%20Tendon.ko.html" class="md-nav__link">
+      <a href="4.11%20EmbeddedLine.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tendon 요소
+    EmbeddedLine 요소
   </span>
   
 
@@ -1253,7 +1316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/5.%20Constraint.ko.html" class="md-nav__link">
+      <a href="../5.%20Constraint.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1274,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/6.%20Load.ko.html" class="md-nav__link">
+      <a href="../6.%20Load.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1295,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/7.%20Material.ko.html" class="md-nav__link">
+      <a href="../7.%20Material.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1316,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/8.%20Function.ko.html" class="md-nav__link">
+      <a href="../8.%20Function.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1337,7 +1400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/9.%20Surface.ko.html" class="md-nav__link">
+      <a href="../9.%20Surface.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1358,7 +1421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/10.%20Construction.ko.html" class="md-nav__link">
+      <a href="../10.%20Construction.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1379,7 +1442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/11.%20CoordinateSystem.ko.html" class="md-nav__link">
+      <a href="../11.%20CoordinateSystem.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1400,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/12.%20Sensor.ko.html" class="md-nav__link">
+      <a href="../12.%20Sensor.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1421,7 +1484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/13.%20Step.ko.html" class="md-nav__link">
+      <a href="../13.%20Step.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1442,7 +1505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/14.%20Step%20result.ko.html" class="md-nav__link">
+      <a href="../14.%20Step%20result.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1463,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/15.%20Modelling.ko.html" class="md-nav__link">
+      <a href="../15.%20Modelling.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1484,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/16.%20Etc.ko.html" class="md-nav__link">
+      <a href="../16.%20Etc.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1505,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/17.%20Special%20step.ko.html" class="md-nav__link">
+      <a href="../17.%20Special%20step.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1526,7 +1589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Command/18.%20HDB%20file%20structure.ko.html" class="md-nav__link">
+      <a href="../18.%20HDB%20file%20structure.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1589,7 +1652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/1.%20Overview.en.html" class="md-nav__link">
+      <a href="../../Section/1.%20Overview.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1610,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/2.%20Theory.en.html" class="md-nav__link">
+      <a href="../../Section/2.%20Theory.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1631,7 +1694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/3.%20Commands.en.html" class="md-nav__link">
+      <a href="../../Section/3.%20Commands.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1652,7 +1715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/4.%20Examples.en.html" class="md-nav__link">
+      <a href="../../Section/4.%20Examples.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1715,7 +1778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/1.%20Overview.ko.html" class="md-nav__link">
+      <a href="../../Section/1.%20Overview.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1736,7 +1799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/2.%20Theory.ko.html" class="md-nav__link">
+      <a href="../../Section/2.%20Theory.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1757,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/3.%20Commands.ko.html" class="md-nav__link">
+      <a href="../../Section/3.%20Commands.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1778,7 +1841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/4.%20Examples.ko.html" class="md-nav__link">
+      <a href="../../Section/4.%20Examples.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1841,7 +1904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.1%20Beam%20Element.en.html" class="md-nav__link">
+      <a href="../../Example/E.1%20Beam%20Element.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1862,7 +1925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.2%20Material%20Nonlinear%20Beam%20Element.en.html" class="md-nav__link">
+      <a href="../../Example/E.2%20Material%20Nonlinear%20Beam%20Element.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1883,7 +1946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.en.html" class="md-nav__link">
+      <a href="../../Example/E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1904,7 +1967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.4%20Shell%20Element.en.html" class="md-nav__link">
+      <a href="../../Example/E.4%20Shell%20Element.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1925,7 +1988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.5%20Material%20Nonlinear%20Solid%20and%20Shell%20Element.en.html" class="md-nav__link">
+      <a href="../../Example/E.5%20Material%20Nonlinear%20Solid%20and%20Shell%20Element.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1946,7 +2009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.6%20Acoustic%20Solid%20Element.en.html" class="md-nav__link">
+      <a href="../../Example/E.6%20Acoustic%20Solid%20Element.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1967,7 +2030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.en.html" class="md-nav__link">
+      <a href="../../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1988,7 +2051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.8%20Interface%20Modeling%20using%20Spring%20and%20Interface%20Elements.en.html" class="md-nav__link">
+      <a href="../../Example/E.8%20Interface%20Modeling%20using%20Spring%20and%20Interface%20Elements.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2009,11 +2072,11 @@
   
   
     <li class="md-nav__item">
-      <a href="E.9%20Truss%2C%20Cable%20and%20Tendon%20Elements.en.html" class="md-nav__link">
+      <a href="../../Example/E.9%20Truss%20and%20Cable%20Elements.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.9 Truss, Cable and Tendon Elements
+    E.9 Truss and Cable Elements
   </span>
   
 
@@ -2030,7 +2093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.10%20Simple%20Constraints.en.html" class="md-nav__link">
+      <a href="../../Example/E.10%20Simple%20Constraints.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2051,7 +2114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.11%20Advanced%20Constraints.en.html" class="md-nav__link">
+      <a href="../../Example/E.11%20Advanced%20Constraints.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2072,11 +2135,11 @@
   
   
     <li class="md-nav__item">
-      <a href="E.12%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.en.html" class="md-nav__link">
+      <a href="../../Example/E.12%20Rebar%20and%20Tendon%20Modeling.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.12 Moving Load Analysis in Simply Supported Beam
+    E.12 Rebar and Tendon Modeling
   </span>
   
 
@@ -2093,11 +2156,11 @@
   
   
     <li class="md-nav__item">
-      <a href="E.13%20Stability%20of%20Rail%20Track.en.html" class="md-nav__link">
+      <a href="../../Example/E.13%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.13 Stability of Rail Track
+    E.13 Moving Load Analysis in Simply Supported Beam
   </span>
   
 
@@ -2114,11 +2177,11 @@
   
   
     <li class="md-nav__item">
-      <a href="E.14%20Temperature%20Load%20by%20Bimetal.en.html" class="md-nav__link">
+      <a href="../../Example/E.14%20Stability%20of%20Rail%20Track.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.14 Temperature Load by Bimetal
+    E.14 Stability of Rail Track
   </span>
   
 
@@ -2135,11 +2198,32 @@
   
   
     <li class="md-nav__item">
-      <a href="E.15%20ModelUpdating%20and%20ShapeEstimation%20Steps.en.html" class="md-nav__link">
+      <a href="../../Example/E.15%20Temperature%20Load%20by%20Bimetal.en.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.15 ModelUpdating and ShapeEstimation Steps
+    E.15 Temperature Load by Bimetal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Example/E.16%20ModelUpdating%20and%20ShapeEstimation%20Steps.en.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.16 ModelUpdating and ShapeEstimation Steps
   </span>
   
 
@@ -2160,19 +2244,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -2186,7 +2268,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Hyfeast Example(ko)
@@ -2200,7 +2282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.1%20Beam%20Element.ko.html" class="md-nav__link">
+      <a href="../../Example/E.1%20Beam%20Element.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2221,7 +2303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.2%20Material%20Nonlinear%20Beam%20Element.ko.html" class="md-nav__link">
+      <a href="../../Example/E.2%20Material%20Nonlinear%20Beam%20Element.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2242,7 +2324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.ko.html" class="md-nav__link">
+      <a href="../../Example/E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2263,7 +2345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.4%20Shell%20Element.ko.html" class="md-nav__link">
+      <a href="../../Example/E.4%20Shell%20Element.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2284,7 +2366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.5%20Material%20Nonlinear%20Solid%20and%20Shell%20Element.ko.html" class="md-nav__link">
+      <a href="../../Example/E.5%20Material%20Nonlinear%20Solid%20and%20Shell%20Element.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2305,7 +2387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.6%20Acoustic%20Solid%20Element.ko.html" class="md-nav__link">
+      <a href="../../Example/E.6%20Acoustic%20Solid%20Element.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2326,7 +2408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.ko.html" class="md-nav__link">
+      <a href="../../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2347,7 +2429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.8%20Interface%20Modeling%20using%20Spring%20and%20Interface%20Elements.ko.html" class="md-nav__link">
+      <a href="../../Example/E.8%20Interface%20Modeling%20using%20Spring%20and%20Interface%20Elements.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2368,11 +2450,11 @@
   
   
     <li class="md-nav__item">
-      <a href="E.9%20Truss%2C%20Cable%20and%20Tendon%20Elements.ko.html" class="md-nav__link">
+      <a href="../../Example/E.9%20Truss%20and%20Cable%20Elements.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.9 Truss, Cable and Tendon Elements
+    E.9 Truss and Cable Elements
   </span>
   
 
@@ -2389,7 +2471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.10%20Simple%20Constraints.ko.html" class="md-nav__link">
+      <a href="../../Example/E.10%20Simple%20Constraints.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2410,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="E.11%20Advanced%20Constraints.ko.html" class="md-nav__link">
+      <a href="../../Example/E.11%20Advanced%20Constraints.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2431,11 +2513,11 @@
   
   
     <li class="md-nav__item">
-      <a href="E.12%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.ko.html" class="md-nav__link">
+      <a href="../../Example/E.12%20Rebar%20and%20Tendon%20Modeling.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.12 Moving Load Analysis in Simply Supported Beam
+    E.12 Rebar and Tendon Modeling
   </span>
   
 
@@ -2452,44 +2534,15 @@
   
   
     <li class="md-nav__item">
-      <a href="E.13%20Stability%20of%20Rail%20Track.ko.html" class="md-nav__link">
+      <a href="../../Example/E.13%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.13 Stability of Rail Track
+    E.13 Moving Load Analysis in Simply Supported Beam
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="E.14%20Temperature%20Load%20by%20Bimetal.ko.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    E.14 Temperature Load by Bimetal
-  </span>
-  
-
-      </a>
-      
     </li>
   
 
@@ -2502,11 +2555,53 @@
   
   
     <li class="md-nav__item">
-      <a href="E.15%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html" class="md-nav__link">
+      <a href="../../Example/E.14%20Stability%20of%20Rail%20Track.ko.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.15 ModelUpdating and ShapeEstimation Steps
+    E.14 Stability of Rail Track
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Example/E.15%20Temperature%20Load%20by%20Bimetal.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.15 Temperature Load by Bimetal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Example/E.16%20ModelUpdating%20and%20ShapeEstimation%20Steps.ko.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.16 ModelUpdating and ShapeEstimation Steps
   </span>
   
 
@@ -2541,6 +2636,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#element-typemovingspring" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Element, Type=MovingSpring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-typemovingspring" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Section, Type=MovingSpring
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2554,22 +2675,128 @@
                   
 
 
-<h1 id="e14-temperature-load-by-bimetal">E.14 Temperature Load by Bimetal</h1>
-<p>온도하중에 가력된 경우 Bimetal 구조을 검증하였다. 두 층의 두께가 같고(전체 두께는 h), 탄성계수가 동일하고, 온도팽창계수만 다를 경우 끝단 변위는 다음과 같다.</p>
-<div class="arithmatex">\[
-\small
-\begin{array}{r}
-\Delta = \frac{3L^{2}}{4h}\left( \alpha_{1} - \alpha_{2} \right)\Delta T\tag{E.14.1}
-\end{array}
-\]</div>
-<p>사용된 예제는 L = 3000 mm, h = 300 mm, <span class="arithmatex">\(\small \alpha_{1} = \alpha_{upper} =\)</span> 5E-6, <span class="arithmatex">\(\small \alpha_{1} = \alpha_{lower} =\)</span> 10E-6, <span class="arithmatex">\(\small \Delta T\)</span>= 50 K이다. 해석해는 5.625 m이고 수치해석결과 : 5.67551 mm (절점 1361) 이다.</p>
-<p><img src="./media/image94.png" style="width:6.26806in;height:1.86181in" /></p>
-<p align="center"><strong><span style="color: blue;">Figure E.14.1</span></strong> Analsyis Model</p>
+  <h1>MovingSpring 요소</h1>
 
-<p><strong><span class="smallcaps">Input file</span></strong></p>
+<p>MovingSpring 요소는 보요소로 구선된 선 또는 면 위를 구르는 이동 스프링(스프링과 댐퍼의 조합)을 모사한다. </p>
+<p><img alt="Fig. 4.9-1 Beam으로 구성된 선위의 MovingSpring 요소" src="../image/4.9-1.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 4.9-1.</span></strong> Beam으로 구성된 선위의 MovingSpring 요소</p>
+
+<p><img alt="Fig. 4.9-2 3차원 surface 상의 MovingSpring 요소" src="../image/4.9-2.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 4.9-2.</span></strong> 3차원 surface 상의 MovingSpring 요소</p>
+
+<p><img alt="Fig. 4.9-3 2차원 Surface 상의 MovingSpring 요소" src="../image/4.9-3.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 4.9-3.</span></strong> 2차원 Surface 상의 MovingSpring 요소</p>
+
+<p>▪ 주의 </p>
 <ul>
-<li>bimetal..inp</li>
+<li>동해석을 수행할 경우 먼저 자중을 고려한 정해석을 수행해야 한다</li>
+<li>이동스프링 요소를 구동하기 위해서는 <code>*State, Type=MovingSpringSpeed</code>를 이용해 속도를 지정해야 한다.  </li>
+<li>감쇠를 고려할 경우 전체 강성 행렬은 비대칭행렬이 된다. </li>
 </ul>
+<h5 id="example">Example</h5>
+<div class="highlight"><pre><span></span><code>*ELSET, Name=rail
+ Beam
+
+*SECTION, TYPE=MCK, Name=PM
+ Mass, 5750
+
+*SECTION, TYPE=MovingSpring, Name=MS
+ rail
+ Spring, Y, 1595E3
+ Damper, Y, 1000E3 
+
+*Element, TYPE=PointMass, ELSET=PM
+ 1000, 1000, S=PM 
+
+*Element, TYPE=MovingSpring, ELSET=MS
+ 1001, 1000, S=MS
+
+*Distribution, TYPE=MovingSpringInitialPosition
+ 1001, 0.0
+
+*Load, TYPE=Gravity, Name=SelfWeight
+ 1000,0,-9.81, 0.
+
+*STEP, TYPE=Static Name=S
+*Activate, TYPE=Element
+ Beam, PM, MS
+*Activate, TYPE=Constraint
+ BC
+*Activate, TYPE=Load
+ SelfWeight
+
+*STEP, TYPE=Dynamic Name=Dyn, Prev=S
+ EquiTime, 0.02, 2.
+*State, Type=MovingSpringSpeed
+ MS, 27.78 
+</code></pre></div>
+<h3 id="element-typemovingspring">*Element, Type=MovingSpring</h3>
+<div class="highlight"><pre><span></span><code>*Element, Type=MovingSpring, ELSet=elset
+ id, n1{, S=section, P=x,y}
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>P=x,y:</strong> Reference point에 대한 초기 위치. ECS상에 정의되며, 보요소를 대상으로 할 때는 y는 무시됨</li>
+</ul>
+</div>
+<h5 id="specifications">Specifications</h5>
+<div class="admonition note">
+<ul>
+<li>No. of nodes: 1</li>
+<li>No. of integration pts.: 1</li>
+<li>Fields: SF=[...], SE=[...], DF=[...], DE=[...] at element center. </li>
+<li>Compatible section: MovingSpring</li>
+<li>Active DOFs: 정의에 따라 Y, Z 가 가능</li>
+</ul>
+</div>
+<p><code>SF</code>, <code>SE</code>, <code>DF</code>, <code>DE</code> 등에 대한 설명은 <code>*Element, TYPE=Spring</code> 참조</p>
+<h3 id="section-typemovingspring">*Section, Type=MovingSpring</h3>
+<p>MovigSpring의 단면을 정의</p>
+<div class="highlight"><pre><span></span><code>*Section, Type=MovingSpring, Name=name 
+  surface, refx, refy, refz, g1x, g1y, g1z, xRigid, yRigid, zRigid
+  Spring|Damper, oneDof, coef|material, referenceUnitSystem
+  ... 
+
+*Section, Type=MovingSpring, Name=name
+  line, xRigid, yRigid, zRigid
+  Spring|Damper, oneDof, coef|material, referenceUnitSystem
+  ... 
+</code></pre></div>
+<h5 id="first-dataline-for-line">First dataline for Line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>line:</strong> target beam elset ... The beams should be connected</li>
+<li><strong>xRigid,yRigid,zRigid:</strong> position vector from ref. node (rigid arm vector) (x1 is required, other optional)</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-surface">First dataline  for Surface</h5>
+<div class="admonition note">
+<ul>
+<li><strong>surface:</strong> target surface (required)</li>
+<li><strong>refx, refy, refz:</strong> 기준점(optional, default 0,0,0)</li>
+<li><strong>g1x, g1y, g1z:</strong> 진행방향 (1,0,0)</li>
+<li><strong>xRigid,yRigid,zRigid:</strong> position vector from ref. node (rigid arm vector) (optional, default 0,0,0)</li>
+</ul>
+</div>
+<h5 id="second-and-subsequent-dataline-if-necessary">Second and subsequent dataline if necessary</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Spring|Damper:</strong> 스프링 또는 댐퍼</li>
+<li><strong>oneDof:</strong> 스프링/댐퍼를 적용할 자유도, X, Y, Z, RX, RY, RZ 중 하나</li>
+<li><strong>coef:</strong> 스프링 또는 감쇠 계수</li>
+<li><strong>material:</strong> 스프링 또는 감쇠계수 대신 사용한 참조 재료 모델. 1축 재료 모델을 지원하는 재료여야 함.</li>
+<li><strong>referenceUnitSysem:</strong> 참조 재료 모델을 사용할 때 재료의 기준 단위계. 옵션이며 기본값을 현재 단위계. Spring|Damper로 시작하는 첫 번째 데이터라인에 명기</li>
+</ul>
+</div>
+<p>스프링계수 또는 감쇠계수를 보통 숫자로 정의된다. 만약 비선형 거동을 보일 경우 1축 재료모델을 지원하는 재료를 참조하는 형태로 적용할 수 있다. 예를 들어 X방향 스프링의 경우 1축 재료모델의 응력-변형률 관계를 빌려 올 경우 하중-변위 관계로 취급한다. 만약 referenceUnitSystem고 <code>*Environment, TYPE=UnitSystem</code>에서 지정된 현재의 단위계가 같다면 응력과 하중, 변형률과 변위는 물리적인 의미없이 1:1로 변환된다. 만약 단위계가 다르다면 내부적으로 적절하게 스케일링을 하게 된다. 자세한 설명은 재료명령 해설을 참조하도록 한다. </p>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*SECTION, TYPE=MovingSpring, Name=MS
+ rail
+ Spring, Y, 1595E3
+ Damper, Y, 1000E3 
+</code></pre></div>
 
 
 
@@ -2616,18 +2843,18 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../javascripts/extra.js"></script>
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>
