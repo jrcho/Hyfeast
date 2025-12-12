@@ -2920,26 +2920,27 @@
 <p>Defines fixed boundary conditions (zero displacement).</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=Support, Name=name
   targetNode, dof, CS=orientation
-  targetNset, dof, CS=orientation
-  targetSurface, dof, CS=orientation
+  targetNGroup, dof, CS=orientation
   ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>targetNode:</strong> Target node (required).</li>
-<li><strong>targetNset:</strong> Target nset (required).</li>
-<li><strong>targetSurface:</strong> Target surface (required).</li>
+<li><strong>targetNode:</strong> Node for support boundary condition (required).</li>
+<li><strong>targetNGroup:</strong> Node group for support boundary condition(required). The targetNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
 <li><strong>dof:</strong> The DOF to constrain. Can be X, Y, Z, RX, RY, RZ, or combinations like X|Y (required).</li>
 <li><strong>CS=orientation:</strong> Coordinate system in which the support condition is applied. Specify the name defined via <code>*CoordinateSystem, TYPE=Orientation</code>. If omitted, the global coordinate system (GCS) is used. (optional)</li>
 </ul>
 </div>
-<p>The command first looks for targetNset, targetSurface, and then targetNode in that order. Nsets and surfaces are case-sensitive and should be carefully named. If the same DOF is specified multiple times, only one constraint is applied without error.</p>
+<p>The first entry in the dataline searches for possible targets in the order of nset, surface, node number pattern, or node number. Note that predefined nset or surface names may consist of numbers, so caution is required.</p>
+<p>If the same DOF is specified multiple times, only one constraint is applied without error.</p>
 <p>A local coordinate system can be specified to define inclined boundary conditions. Internally, this is handled by imposing a multi-point constraint (MPC). Output results are provided in the GCS by default. If results are needed in the local coordinate system, this must be explicitly specified in the <code>*Print</code> or <code>*History</code> commands. The <code>*Output</code> command does not support specifying a local coordinate system, but <code>hfVisualizer</code> allows postprocessing and conversion of results into a local coordinate system.</p>
 <h5 id="example">Example</h5>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=Support, Name=initialBC
  1, X|Y
- all, Z|RX|RY
+ all, Z|RX|RY      # all is NSET
+ topTopSurface, Z  # topTopSurface is Surface
+ 201:207:3, Y      # 201:207:3 is a pattern with 201, 204, 207
 
 *Constraint, Type=Support, Name=C
  101, X
@@ -2955,83 +2956,102 @@
 <h3 id="constraint-typerigidlink">*Constraint, Type=RigidLink</h3>
 <p>Constrains corresponding DOFs between two nodes.</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=RigidLink, Name=name
-  slaveNode, masterNode, dof
-  slaveNset, masterNode, dof
-  slaveNset, masterNset, dof
-  ...
+ slaveNode, masterNode, dof
+ slaveNGroup, masterNode, dof
+ slaveNGroup, masterNGroup, dof 
+ ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_1">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>slaveNode, masterNode:</strong> The two nodes to be connected (required).</li>
-<li><strong>slaveNset, masterNode:</strong> Connect all nodes in slaveNset to masterNode (required).</li>
-<li><strong>slaveNset, masterNset:</strong> Connect the closest node pairs between the two sets (1:1). Both sets must have the same number of nodes unless masterNset has only one node, in which case it behaves like slaveNset, masterNode (required).</li>
+<li><strong>slaveNode, masterNode:</strong> the two nodes to be linked (required)  </li>
+<li><strong>slaveNGroup, masterNode:</strong> connects all nodes in the slaveNGroup to the masterNode (required). The slaveNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
+<li><strong>slaveNGroup, masterNGroup:</strong> the two node groups to be linked (required). The closest nodes in each group are matched in a 1:1 manner, so the number of nodes in both groups must be identical. As an exception, if the masterNGroup contains only a single node, this is equivalent to specifying <code>slaveNGroup, masterNode</code>, where all nodes in the slaveNGroup are matched to the sole node in the masterNGroup. Both slaveNGroup and masterNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
 <li><strong>dof:</strong> DOF to constrain (required). The DOF can be X, Y, Z, RX, RY, RZ, P, etc. Can be combinations like X|RX, Y|RZ, etc.</li>
 </ul>
 </div>
 <p>The <code>*Constraint, TYPE=RigidLink</code> command simply constrains the corresponding DOFs between two nodes.</p>
+<p>When using node groups such as slaveNGroup or masterNGroup, each group searches for possible targets in the order of nset, surface, node number pattern, or node number. Note that predefined nset or surface names may consist of numbers, so caution is required.</p>
 <h5 id="example_1">Example</h5>
-<div class="highlight"><pre><span></span><code>*Constraint, Type=RigidLink, Name=c1
+<div class="highlight"><pre><span></span><code>*Constraint, Type=RigidLink Name=c1
  1, 2, X|Y|Z
  left, right, X
+ 1:10:2, 101:110:2, Y|RX
 </code></pre></div>
 <h3 id="constraint-typebeamlink">*Constraint, Type=BeamLink</h3>
 <p>Constrains DOFs between two nodes considering rotation.</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=BeamLink, Name=name
  slaveNode, masterNode, plane
- slaveNset, masterNode, plane
- slaveNset, masterNset, plane
+ slaveNGroup, masterNode, plane
+ slaveNGroup, masterNGroup, plane
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_2">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>slaveNode, masterNode:</strong> The two nodes to be connected.</li>
-<li><strong>slaveNset, masterNode:</strong> Connect all nodes in slaveNset to masterNode.</li>
-<li><strong>slaveNset, masterNset:</strong> Connect the closest node pairs between the two sets (1:1). Both sets must have the same number of nodes unless masterNset has only one node.</li>
+<li><strong>slaveNode, masterNode:</strong> the two nodes to be linked (required)  </li>
+<li><strong>slaveNGroup, masterNode:</strong> connects all nodes in the slaveNGroup to the masterNode (required). The slaveNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
+<li><strong>slaveNGroup, masterNGroup:</strong> the two node groups to be linked (required). The closest nodes in each group are matched in a 1:1 manner, so the number of nodes in both groups must be identical. As an exception, if the masterNGroup contains only a single node, this is equivalent to specifying <code>slaveNGroup, masterNode</code>, where all nodes in the slaveNGroup are matched to the sole node in the masterNGroup. Both slaveNGroup and masterNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
 <li><strong>plane:</strong> Plane to constrain (XY, YZ, ZX, or NOPLANE). Default is NOPLANE.</li>
 </ul>
 </div>
 <p>The <code>*Constraint, TYPE=BeamLink</code> command constrains the DOFs between two nodes considering rotational freedom to simulate rigid body motion. As shown in the figure, it can be used to connect the nodes of a shell to the nodes of a beam when modeling a shell reinforced with beams, or to connect beams that are aligned in parallel.</p>
+<p>When using node groups such as slaveNGroup or masterNGroup, each group searches for possible targets in the order of nset, surface, node number pattern, or node number. Note that predefined nset or surface names may consist of numbers, so caution is required.</p>
 <h5 id="example_2">Example</h5>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=BeamLink, Name=c1
  1001, 1002, XY
- left, right
+ left, right 
+ 1:10:2, 101:110:2
 </code></pre></div>
 <h3 id="constraint-typenodetosurface">*Constraint, Type=NodeToSurface</h3>
 <p>Constrains nodes, nsets, or surface nodes to another surface.</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=NodeToSurface, Name=name
  slaveNode, masterSurface, dof, radius, searchFlag, springCoef
- slaveNset, masterSurface, dof, radius, searchFlag, springCoef
- slaveSurface, masterSurface, dof, radius, searchFlag, springCoef
+ slaveNGroup, masterSurface, dof, radius, searchFlag, springCoef
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_3">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
 <li><strong>slaveNode:</strong> Slave node (required).</li>
-<li><strong>slaveNset:</strong> Slave nset (required).</li>
-<li><strong>slaveSurface:</strong> Surface formed by slave nodes (required).</li>
+<li><strong>slaveNGroup:</strong> node group used as slave node(required). The slaveNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
 <li><strong>masterSurface:</strong> Master surface (required).</li>
-<li><strong>dof:</strong> DOF to constrain (required).</li>
-<li><strong>radius:</strong> Effective search radius. Default is 0 (unlimited).</li>
-<li><strong>searchFlag:</strong> Search option (One, OneF, All, AllF). Default is One.</li>
-<li><strong>springCoef:</strong> Spring coefficient. Default is 0 (no spring).</li>
+<li><strong>dof:</strong> Degrees of freedom to be constrained (required), using combinations such as X, Y, Z. For example, X|Y.  </li>
+<li><strong>radius:</strong> Effective perpendicular radius from the slave node to the master surface. A value of 0 means infinite radius, implying that no effective perpendicular radius is applied. Default is 0.  </li>
+<li><strong>searchFlag:</strong> Option for finding perpendiculars, one of One, OneF, All, AllF. Default is One. One applies the constraint to the closest perpendicular found, while All applies the constraint to all found perpendiculars. OneF and AllF correspond to One and All, respectively, but if no perpendicular is found, the constraint is applied to the line segment connecting to the nearest node (F indicates failure handling).  </li>
+<li><strong>springCoef:</strong> Spring coefficient between the slave node and the perpendicular. A value of 0 means no spring is applied and the constraint is directly imposed. Default is 0.  </li>
 </ul>
 </div>
-<p>This constraint finds a projection from the slave nodes to the master surface and applies the constraint. The search method can be fine-tuned using <code>radius</code> and <code>searchFlag</code>. This constraint currently only works with translational DOFs.</p>
+<p><code>*Constraint, TYPE=NodeToSurface</code> searches for perpendiculars from the slave node to the master surface and imposes constraints accordingly. When specifying <code>slaveNset</code> or <code>slaveSurface</code>, each individual node belonging to them is treated as a slave node. The first entry in the dataline is checked in the order of <code>slaveNset</code>, <code>slaveSurface</code>, and <code>slaveNode</code>. Since nset and surface are provided as strings, be careful when defining their names. Currently, this works only for translational DOFs.  </p>
+<p>Through <code>radius</code> and <code>searchFlag</code>, the method of searching for perpendiculars and applying constraints can be finely controlled. A <code>radius</code> of 0 means that no effective perpendicular radius is specified, so perpendiculars are searched for against all faces composing the master surface. If <code>radius</code> has a value, only perpendiculars within that distance are considered valid. If exactly one perpendicular is found, the constraint is applied regardless of the <code>searchFlag</code>. If multiple perpendiculars are found, <code>One</code> and <code>OneF</code> select only the closest one, while <code>All</code> and <code>AllF</code> apply the constraint to all of them. If no perpendicular is found, <code>OneF</code> and <code>AllF</code> treat the nearest node as the footprint. If no valid connection can be established, the constraint is not applied, and a warning message is written to the log file.  </p>
+<p>Perpendicular searching is performed via the Newton method on each face composing the master surface, which can be computationally expensive. To improve efficiency, if <code>radius</code> is specified, the search is performed only on faces where at least one of their nodes lies within <code>2*radius</code>.  </p>
+<p>When <code>springCoef</code> is specified, a spring is placed between the slave DOF and the perpendicular. If a sufficiently large spring coefficient is used, constraints can be treated using a penalty method. However, the spring constant applied must be chosen by the user based on eigenfrequency analysis or other suitable methods.  </p>
 <h5 id="example_3">Example</h5>
-<div class="highlight"><pre><span></span><code>*Constraint, Type=NodeToSurface, Name=C
+<div class="highlight"><pre><span></span><code>*NSet, Name=slabLine
+ ...
+
+*NSet, Name=mygirder
+ ...
+
+*Geometry, Type=Surface, Name=slaveSurce
+ ...
+
+*Geometry, Type=Surface, Name=slab
+ ...
+
+
+*Constraint, Type=NodeToSurface, Name=C
  slabLine, slab, X|Y|Z                  
  slaveSurface, slab, X|Y|Z, 0.3, AllF  
  mygirder, slab, X|Y|Z, 0.3, OneF
+ 1:10, slab, X|Y|Z
 </code></pre></div>
 <h3 id="constraint-typempc">*Constraint, Type=MPC</h3>
 <p>Defines user-defined linear multi-point constraints.</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=MPC, Name=name
   nodal_expression
   ...
-  nset1, nset2, matching_expression
+  NGroup1, NGroup2, matching_expression
   ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_4">First dataline and subsequent datalines</h5>
@@ -3039,53 +3059,73 @@
 <ul>
 <li><strong>nodal_expression:</strong> Define one multi-point constraint condition as a string (required).</li>
 <li><strong>nset1, nset2, matching_expression:</strong> Generate constraints for each node pair in the two nsets (required).</li>
+<li><strong>NGroup1, NGroup2, matching_expression:</strong> Generate multi-point constraint conditions of each node pair given by two NGroup1 and NGroup2(required). Both NGroup1 and NGroup2 can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
 </ul>
 </div>
-<p>Nodal expressions define relationships between node DOFs as a linear combination. Matching expressions apply to node pairs in two sets.</p>
+<p>When specifying <strong>nodal_expression</strong></p>
+<p>The relationship between nodal degrees of freedom is defined as a linear combination.
+For example, in the expression 2<em>X2-3</em>Y3-5*X4, X2 refers to the X degree of freedom of node 2, Y3 refers to the Y degree of freedom of node 3, and X4 refers to the X degree of freedom of node 4. A constraint is imposed so that this expression equals zero.</p>
+<p>When specifying <strong>matching_expression</strong></p>
+<p>This option can be applied only when the two node sets have the same size.
+The closest pairs of nodes from the two sets are selected, and the specified constraint is imposed.
+For example, in the expression 2<em>X1-3</em>Y2-5*X1, X1 refers to the X degree of freedom of a node in the first node set, and Y2 refers to the Y degree of freedom of a node in the second node set.
+The number following the degree-of-freedom symbols (X, Y, Z, RX, RY, RZ, etc.) must be either 1 or 2.</p>
+<p>When using node groups such as NGroup1 or NGroup2, each group searches for possible targets in the order of nset, surface, node number pattern, or node number. Note that predefined nset or surface names may consist of numbers, so caution is required.</p>
 <h5 id="example_4">Example</h5>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=MPC, Name=Y-Lock
- left, right, Y1-Y2  # matching expression
- Y3-4*Y4             # nodal expression
+ Y3 - 4*Y4 – 3*RX2              # nodal expression
+ left, right, Y1-Y2             # matching expression
+ 1:3, 101:103, 2*X1-3*Y2-5*X1   # matching expression
 </code></pre></div>
 <h3 id="constraint-typeembedded">*Constraint, Type=Embedded</h3>
 <p>Embeds nodes into host elements.</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=Embedded, Name=name
- node, hostElset
- nset, hostElset
+ targetNode, hostElset
+ targetNGroup, hostElset
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_5">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>node, hostElset:</strong> Node and host elset to connect.</li>
-<li><strong>nset, hostElset:</strong> Nset and host elset to connect.</li>
+<li><strong>targetNode:</strong> Node for support boundary condition (required).</li>
+<li><strong>targetNGroup:</strong> Node group for support boundary condition(required). The targetNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
+<li><strong>hostElset:</strong> Host elset</li>
 </ul>
 </div>
 <p>The <code>*Constraint, TYPE=Embedded</code> command embeds nodes into host elements by finding the host element that contains the node and constraining the node based on the host element's shape function. This is often used to model reinforcement bars within solid elements.</p>
+<p>The first entry in the dataline searches for possible targets in the order of nset, surface, node number pattern, or node number. Note that predefined nset or surface names may consist of numbers, so caution is required.</p>
 <h5 id="example_5">Example</h5>
-<div class="highlight"><pre><span></span><code>*Constraint, Type=Embedded, Name=embed
+<div class="highlight"><pre><span></span><code>*Element, TYPE=T3D2
+ 1, 1,2
+ 2, 2,3
+
+*NSET, Name=LineNodes
+ 1,2,3
+
+*Constraint, TYPE=Embedded, Name=embed
  LineNodes, beam
 </code></pre></div>
 <h3 id="constraint-typespring">*Constraint, Type=Spring</h3>
 <p>Connects nodes with springs or dampers.</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=Spring, Name=name
- slaveNode, masterNode, K=kx, ky, kz, C=cx, cy, cz, CS=cs
- slaveNset, masterNode, K=kx, ky, kz, C=cx, cy, cz, CS=cs
- slaveNset, masterNset, K=kx, ky, kz, C=cx, cy, cz, CS=cs
+ slaveNode, masterNode, K=kx,ky,kz, C=cx,cy,cz, CS=cs
+ slaveNGroup, masterNode, K=kx,ky,kz, C=cx,cy,cz, CS=cs
+ slaveNGroup, masterNGroup, K=kx,ky,kz, C=cx,cy,cz, CS=cs
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_6">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>slaveNode, masterNode:</strong> The two nodes to be connected by springs (required).</li>
-<li><strong>slaveNset, masterNode:</strong> Connect all nodes in slaveNset to masterNode with springs (required).</li>
-<li><strong>slaveNset, masterNset:</strong> Connect closest node pairs between the two sets with springs (1:1).</li>
+<li><strong>slaveNode, masterNode:</strong> the two nodes to be connected by spring/damper (required)  </li>
+<li><strong>slaveNGroup, masterNode:</strong> connects all nodes in the slaveNGroup to the masterNode by spring/damper (required). The slaveNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
+<li><strong>slaveNGroup, masterNGroup:</strong> the two node groups to be connected by spring/damper (required). The closest nodes in each group are matched in a 1:1 manner, so the number of nodes in both groups must be identical. As an exception, if the masterNGroup contains only a single node, this is equivalent to specifying <code>slaveNGroup, masterNode</code>, where all nodes in the slaveNGroup are matched to the sole node in the masterNGroup. Both slaveNGroup and masterNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
 <li><strong>K=kx, ky, kz:</strong> Spring constants in each direction. Default is 0.</li>
 <li><strong>C=cx, cy, cz:</strong> Damping coefficients in each direction. Default is 0.</li>
 <li><strong>CS=cs:</strong> Coordinate system for the springs(<code>*CoordinateSystem, TYPE=Orientation</code>). If not specified, GCS is used.</li>
 </ul>
 </div>
 <p>Unlike <code>*Element, TYPE=Spring</code>, no element IDs are required. However, only linear springs/dampers are supported.</p>
+<p>When using node groups such as slaveNGroup or masterNGroup, each group searches for possible targets in the order of nset, surface, node number pattern, or node number. Note that predefined nset or surface names may consist of numbers, so caution is required.</p>
 <h5 id="example_6">Example</h5>
 <div class="highlight"><pre><span></span><code>*Constraint, TYPE=Spring, Name=connection1
  L1, L2, K=0,100,100
@@ -3097,36 +3137,38 @@
 
 *Constraint, TYPE=Spring, Name=connection2
  bottomNodes, topNodes, K=0,100,100, CS=cs1
+ 1:10:2, 101:110:2, K=0,100,100, CS=cs1
 </code></pre></div>
 <h3 id="constraint-typeearthspring">*Constraint, Type=EarthSpring</h3>
 <p>Connect ground springs or dampers to a node.</p>
-<div class="highlight"><pre><span></span><code>*Constraint, Type=Spring, Name=name
- node, K=kx,ky,kz, C=cx,cy,cz, CS=cs
- nset, K=kx,ky,kz, C=cx,cy,cz, CS=cs
+<div class="highlight"><pre><span></span><code>*Constraint, Type=EarthSpring, Name=name
+ targetNode, K=kx,ky,kz, C=cx,cy,cz, CS=cs
+ targetNGroup, K=kx,ky,kz, C=cx,cy,cz, CS=cs
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_7">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>node:</strong> The node to which the ground spring is connected (required).</li>
-<li><strong>nset:</strong> The nset to which the ground spring is connected (required).</li>
+<li><strong>targetNode:</strong> Node for support boundary condition (required).</li>
+<li><strong>targetNGroup:</strong> Node group for support boundary condition(required). The targetNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
 <li><strong>K=kx,ky,kz:</strong> Spring constants in each direction. Default is 0.</li>
 <li><strong>C=cx,cy,cz:</strong> Damping coefficients in each direction. Default is 0.</li>
 <li><strong>CS=cs:</strong> Coordinate system for the springs(<code>*CoordinateSystem, TYPE=Orientation</code>). If not specified, GCS is used.</li>
 </ul>
 </div>
 <p>Using <code>*Constraint, TYPE=EarthSpring</code> allows spring connections between nodes without the need for element IDs, unlike <code>*Element, TYPE=EarthSpring</code>. However, it only supports linear springs/dampers and does not provide rigid arms or allow calculation of internal forces in the springs/dampers.</p>
+<p>The first entry in the dataline searches for possible targets in the order of nset, surface, node number pattern, or node number. Note that predefined nset or surface names may consist of numbers, so caution is required.</p>
 <h5 id="example_7">Example</h5>
 <div class="highlight"><pre><span></span><code>*Constraint, TYPE=EarthSpring, Name=connection1
  L1, K=0,100,100, C=0,20,30
- L3, L4, K=0,100,100
+ 1:10, K=0,100,100
 
 *CoordinateSystem, Type=Orientation, Name=cs1
   2,1,0
   3,0,1  
 
 *Constraint, TYPE=EarthSpring, Name=connection2
- bottomNodes, topNodes, K=0,100,100, CS=cs1
+ bottomNodes, K=0,100,100, CS=cs1
 </code></pre></div>
 <h3 id="constraint-typespringboundary">*Constraint, Type=SpringBoundary</h3>
 <p>Springs or dampers distributed along the surface of elements, beam elements, or truss elements.</p>

@@ -3039,13 +3039,12 @@
 <h3 id="step-typefrequency">*Step, Type=Frequency</h3>
 <p>Specifies a frequency analysis.</p>
 <div class="highlight"><pre><span></span><code>*Step, Type=Frequency, Name=name[, PREV=prevStep]
- nmode, shift
+ nmode
 </code></pre></div>
 <h5 id="first-dataline_2">First dataline</h5>
 <div class="admonition note">
 <ul>
 <li><strong>nmode:</strong> Number of modes to be extracted (default is 10)</li>
-<li><strong>shift:</strong> Shifting frequency (Hz). (default is 0). If specified, calculates the natural frequency corresponding to the eigenvalue closest to <code>4 * π² * shift²</code>. Applicable only when the eigenvalue solver is Arpack.</li>
 </ul>
 </div>
 <h2 id="activate">*Activate</h2>
@@ -3106,48 +3105,96 @@
 </ul>
 </div>
 <h2 id="solver">*Solver</h2>
-<p>Changes the default solver to be applied in the analysis step.</p>
-<div class="highlight"><pre><span></span><code>*Solver, TYPE=LinearSolver
- Pardiso|BiCG|BiCGStab|CGS, solverOption
+<p>Specify the solver to be used in the analysis step.</p>
+<div class="highlight"><pre><span></span><code>*Solver, TYPE=Linear, Pardiso
+ IterativeOff|IterativeOn, TryPositiveDefinite|PositiveDefinite|Indefinite
 
-*Solver, TYPE=EigenSolver
- Arpack|Subspace
+*Solver, TYPE=Linear, BiCG|BiCGStab|CGS
+ None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardioD|PardioDC, TryPositiveDefinite|PositiveDefinite|Indefinite 
+
+*Solver, TYPE=Eigen, General
+ Range=cutFreq|lowFreq,highFreq, EMMRThreshold=thresh, ZeroEigTol=tol, OneSideOverSampling=factor 
+
+*Solver, TYPE=Eigen, LDR
+ Dof, Dof@centerFreq, Load, Load@centerFreq, ...
 </code></pre></div>
 <h5 id="keyword-line_4">Keyword line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>Type=LinearSolver:</strong> Specifies the linear solver. The default solver is Pardiso.</li>
-<li><strong>Type=EigenSolver:</strong> Specifies the eigenvalue solver, with Arpack as the default.</li>
+<li><strong>Type=Linear, Pardiso|BiCG|BiCGStab|CGS:</strong> Specifies the linear solver. The default solver is Pardiso</li>
+<li><strong>Type=Eigen, General|LDR:</strong> Specifies the eigenvalue solver. The default solver is General.</li>
 </ul>
 </div>
-<h5 id="first-dataline-for-typelinearsolver">First dataline for TYPE=LinearSolver</h5>
+<h5 id="first-dataline-for-typelinear-pardiso">First dataline for TYPE=Linear, Pardiso</h5>
 <div class="admonition note">
 <ul>
-<li><strong>Pardiso|BiCG|BiCGStab|CGS:</strong> Solver to be applied</li>
-<li><strong>solverOption:</strong> Options for the solver, specified as a string (optional)</li>
-</ul>
-<p>▪ For Pardiso:</p>
-<ul>
-<li><strong>IteractiveOff|IteractiveOn-TryPositiveDefinite|PositiveDefinite|Indefinite</strong></li>
-<li>IteractiveOff|IteractiveOn: Toggle iterative solver combination (default is IterativeOff)</li>
-<li>TryPositiveDefinite|PositiveDefinite|Indefinite: Specifies matrix handling for positive definite or indefinite matrices (default is TryPositiveDefinite)</li>
-</ul>
-<p>▪ For BiCG, BiCGStab, CGS:</p>
-<ul>
-<li><strong>None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardioD|PardioDC-TryPositiveDefinite|PositiveDefinite|Indefinite</strong></li>
-<li>None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardioD|PardioDC: Specifies the preconditioner (default is None)</li>
-<li>TryPositiveDefinite|PositiveDefinite|Indefinite: Specifies matrix handling for positive definite or indefinite matrices (default is TryPositiveDefinite)</li>
+<li><strong>IterativeOff|IterativeOn:</strong> Turn the iterative-solver combination off/on (default: IterativeOff).</li>
+<li><strong>TryPositiveDefinite|PositiveDefinite|Indefinite:</strong> Specify the matrix definiteness handling strategy (default: TryPositiveDefinite).</li>
 </ul>
 </div>
-<h5 id="first-dataline-for-typeeigensolver">First dataline for TYPE=EigenSolver</h5>
+<h5 id="first-dataline-for-typelinear-bicgbicgstabcgs">First dataline for TYPE=Linear, BiCG|BiCGStab|CGS</h5>
 <div class="admonition note">
 <ul>
-<li><strong>ARPACK|Subspace:</strong> Solver to be applied</li>
+<li><strong>None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardioD|PardioDC:</strong> Select the preconditioner (default: None).</li>
+<li><strong>TryPositiveDefinite|PositiveDefinite|Indefinite:</strong> Specify the matrix definiteness handling strategy (default: TryPositiveDefinite).</li>
 </ul>
 </div>
-<p>The linear solver is used to solve a linear system of the form <span class="arithmatex">\(\small Kx = f\)</span>, where <span class="arithmatex">\(K\)</span> is a sparse matrix. The default solver is the direct sparse solver Pardiso, but iterative sparse solvers such as BiCG, BiCGStab, and CGS are also available.</p>
-<p>The eigenvalue solver is used to solve standard or generalized eigenvalue problems. The default is ARPACK, with Subspace iteration solver as an alternative. Both solvers use the linear sparse solver Pardiso internally. Eigenvalue solvers used in finite element methods are optimized to calculate only a few low-order modes rather than all eigenvalues. Available eigenvalue solvers include subspace iteration and ARPACK, with ARPACK as the default. The Subspace iteration solver is applicable only to symmetric matrices, while ARPACK can handle both symmetric and asymmetric matrices.</p>
-<p>The subspace size for the Subspace iteration solver is determined by <span class="arithmatex">\(\small ncv = \text{min}(\text{min}(2 \times nev, nev + 8), n)\)</span>. For ARPACK, in the case of symmetric matrices, <span class="arithmatex">\(\small nev &lt; ncv \leq n\)</span> must be satisfied, and <span class="arithmatex">\(\small ncv = 2 \times nev\)</span> is recommended. Therefore, it is advisable to set <span class="arithmatex">\(\small nev\)</span> to be less than <span class="arithmatex">\(\small n/2\)</span>. The maximum allowable <span class="arithmatex">\(\small nev\)</span> is <span class="arithmatex">\(\small nev = n - 1\)</span>. Here, <span class="arithmatex">\(\small n\)</span> is the actual degree of freedom of the mass matrix, <span class="arithmatex">\(\small ncv\)</span> is the size of the required subspace or Lanczos vectors for computation, and <span class="arithmatex">\(\small nev\)</span> is the number of required eigenvalues.</p>
+<h5 id="first-dataline-for-typeeigen-general">First dataline for TYPE=Eigen, General</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Range=cutFreq|lowFreq,highFreq:</strong> Mode selection range. Extract modes with frequencies ≥ cutFreq, or within the interval [lowFreq, highFreq]. (optional)</li>
+<li><strong>EMMRThreshold=thresh:</strong> Accept modes whose EMMR (Effective Modal Mass Ratio) ≥ thresh. (optional)</li>
+<li><strong>ZeroEigTol=tol:</strong> Treat eigenvalues ≤ tol as zero eigenvalues. Default: 1E-8. (optional)</li>
+<li><strong>OneSideOverSampling=factor:</strong> Oversampling factor when searching without a frequency range. Default: 3. (optional)</li>
+</ul>
+</div>
+<p>Linear solvers are used to obtain solutions of linear systems of the form <span class="arithmatex">\(\small Kx = f\)</span> where K is a sparse matrix. The default solver is the direct sparse solver Pardiso, but iterative sparse solvers such as BiCG, BiCGStab, and CGS can also be used.</p>
+<p>Eigen solvers are used to compute solutions of the generalized eigenvalue problem <span class="arithmatex">\(\small Kx = \lambda Mx\)</span>. The default solver is General, and specialized solvers such as the LDR (Load-Dependent Ritz) solver can also be applied. The General eigenvalue solver uses LAPACK or ARPACK, depending on the matrix size. When using the General eigenvalue solver, users may specify the desired eigenvalue range or impose an EMMR (Effective Modal Mass Ratio) threshold to extract only the targeted eigenmodes.</p>
+<p>In asymmetric systems, eigenvalues can generally become complex, and therefore any method that restricts eigenvalues based on a real-valued range does not work. In symmetric systems, eigenvalues are guaranteed to be real, but they can still become negative, which again makes the eigenvalue-range restriction approach invalid. Thus, for both symmetric and asymmetric systems, the technique of extracting eigenvalues by restricting them to a specified range is effective only when the eigenvalues are real and non-negative.</p>
+<h5 id="example_2">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=1
+...
+*Solver, TYPE=Linear, Pardiso
+ IterativeOn
+...
+
+# Basic Frequency Extraction (maximum 20 eigenvalues)
+# Extract up to 20 eigenvalues without applying any additional filtering or sampling conditions.
+*Step, Type=Frequency, Name=name
+ 20
+
+# Frequency Extraction with General Eigen-solver (Range = 10 Hz)
+# From oneSideSampling × 20 trial eigenvalues, extract up to 20 eigenvalues 
+# whose natural frequencies are higher than 10 Hz.
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, TYPE=Eigen,General
+ Range=10
+
+# Frequency Extraction with Increasing Trial Eigenvalues (Range = 10–20 Hz)
+# Increase the number of trial eigenvalues (e.g., 40, 60, 80, 100, …) and 
+# extract up to 20 eigenvalues whose natural frequencies fall within the range 10 Hz – 20 Hz.
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, TYPE=Eigen,General
+ Range=10, 20
+
+# Frequency Extraction with Range = 10–20 Hz and EMMR Filtering
+# Increase the number of trial eigenvalues (e.g., 40, 60, 80, 100, …) and 
+# extract up to 20 eigenvalues that satisfy both conditions of Range and EMMRThreshold
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, TYPE=Eigen,General
+ Range=10, 20,  EMMRThreshold = 1E-4,3
+
+# Frequency Extraction with EMMR Filtering (Range ≥ 10 Hz)
+# From oneSideSampling × 20 trial eigenvalues, extract up to 20 eigenvalues
+# that satisfy both  conditions of Range and EMMRThreshold
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, TYPE=Eigen,General
+ Range=10,  EMMRThreshold = 1E-4
+</code></pre></div>
 <h2 id="convergency">*Convergency</h2>
 <p>Imposing convergence criteria for the standard analysis step</p>
 <div class="highlight"><pre><span></span><code>*Convergency, Monitor={ON|OFF}
@@ -3189,7 +3236,7 @@
 || \delta U_{n+1}^i || \le \epsilon_D \max(||U_{n+1} ^{i+1} ||, D_{min} )
 \]</div>
 <p>For the load criterion, <span class="arithmatex">\(\small \epsilon_F\)</span> is 1E-4 for iteration counts less than <span class="arithmatex">\(\small I_p\)</span> and 1E-2 otherwise, with <span class="arithmatex">\(\small R_{min} = 0.01\)</span>. For the displacement criterion, <span class="arithmatex">\(\small \epsilon_D\)</span> is set to 0.01, and <span class="arithmatex">\(\small D_{min}\)</span> is set to 1E-4. </p>
-<h5 id="example_2">Example</h5>
+<h5 id="example_3">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=Static Name=1
 ...
 *Convergency, Monitor=ON
@@ -3252,7 +3299,7 @@
 </ul>
 </div>
 <p>The solution algorithm specifies the method applied to determine the equilibrium equation during iterations in nonlinear analysis. Algorithms such as Newton and BFGS can be specified, and line search techniques can be applied to ensure convergence.</p>
-<h5 id="example_3">Example</h5>
+<h5 id="example_4">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=step2
 ...
 *SolutionControl, Type=SolutionAlgorithm
@@ -3287,7 +3334,7 @@
 \]</div>
 <p>Thus, using the average acceleration method ensures unconditional stability, while the linear acceleration method requires satisfying <span class="arithmatex">\(\frac{\Delta t}{T_n}\)</span> for stability. In finite element problems involving multiple degrees of freedom, it is challenging to meet this stability condition up to higher modes with shorter natural periods (higher natural frequencies). Consequently, the average acceleration method is generally used for its unconditional stability, even if it sacrifices some precision.</p>
 <p>The Hilbert-Hughes-Taylor (HHT or <span class="arithmatex">\(\small\alpha\)</span>-method) extends the Newmark method by introducing controllable numerical damping while maintaining solution accuracy. It is unconditionally stable for values within <span class="arithmatex">\(\small -1/3 \le \alpha \le 0\)</span>. When <span class="arithmatex">\(\small \alpha = 0\)</span>, it is equivalent to the Newmark method with the average</p>
-<h5 id="example_4">Example</h5>
+<h5 id="example_5">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=Dynamic, Name==analysis1
  EquiTime, 0.02, 24 
 *TimeIntegration, Type=HHT, -0.05
@@ -3326,7 +3373,7 @@
 \end{matrix} \right]
 \]</div>
 <p>In the above, <span class="arithmatex">\(\small \omega_m = 2\pi f_m\)</span> and <span class="arithmatex">\(\small \omega_n = 2\pi f_n\)</span>, and the determined values of <span class="arithmatex">\(\small \alpha\)</span> and <span class="arithmatex">\(\small \beta\)</span> are constants in the Rayleigh damping matrix, defined as <span class="arithmatex">\(\small C^R = \alpha M + \beta K\)</span>.</p>
-<h5 id="example_5">Example</h5>
+<h5 id="example_6">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=Dynamic, Name=1
 *Activate, Type=Element
  ELSET1, ELSET2
@@ -3371,7 +3418,7 @@
 <li>If <code>targetElset</code> is not specified, modal analysis is conducted on the entire model, which must be a linear system.</li>
 <li>When <code>targetElset</code> is specified, a partial modal analysis is performed on that specific elset using the given modes. Only the specified <code>targetElset</code> needs to satisfy linear conditions. This feature is especially useful in vehicle-bridge interaction analyses where nonlinearities arise due to contact point changes.</li>
 </ol>
-<h5 id="example_6">Example</h5>
+<h5 id="example_7">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=DYNAMIC, Name=1
  EquiTime=0.1, 2.5
 *Activate, Type=Element
@@ -3437,13 +3484,19 @@
 <li><strong>value:</strong> The specified value (required).</li>
 </ul>
 </div>
-<p><code>Pretension</code> assigns the initial tendon stress distribution in the given analysis step (<code>*Step</code>). At the end of the step, the tendon stress distribution evolves to satisfy equilibrium. <code>Posttension</code> keeps the initial tendon stress distribution constant within the analysis step. Both <code>Pretension</code> and <code>Posttension</code> can assign a constant tendon stress. In the case of <code>Posttension</code>, additional options (<code>ByStartForce</code>, <code>ByStartIncrementalDelta</code>, <code>ByEndForce</code>, <code>ByEndIncrementalDelta</code>) allow jacking at the start or both ends to apply the initial tendon stress. In this process, the curvature friction coefficient and wobble friction coefficient of the tendon are used to calculate the initial distribution.</p>
-<p>In addition, the <code>*State</code> command can also be used for other element types:</p>
+<p><code>Pretension</code> assigns the initial tendon stress distribution in the given analysis step (<code>*Step</code>). At the end of the step, the tendon stress distribution evolves to satisfy equilibrium. <code>Posttension</code> keeps the initial tendon stress distribution constant within the analysis step. Both <code>Pretension</code> and <code>Posttension</code> can assign a constant tendon stress. In the case of <code>Posttension</code>, additional jacking options (<code>ByStartForce</code>, <code>ByStartIncrementalDelta</code>, <code>ByEndForce</code>, <code>ByEndIncrementalDelta</code>) allow jacking at the start or both ends to apply the initial tendon stress. In this process, the curvature friction coefficient and wobble friction coefficient of the tendon are used to calculate the initial distribution. The following rules must be observed:</p>
+<ul>
+<li>An element to which <strong>Pretension</strong> is applied <strong>cannot be assigned any additional Pretension or Posttension</strong>.</li>
+<li>An element to which <strong>Posttension is applied using the <code>Value</code> option</strong> <strong>cannot be assigned any additional Pretension or Posttension</strong>.</li>
+<li>When applying <strong>Posttension using a Jacking option</strong> (<code>ByStartForce</code>, <code>ByStartIncrementalDelta</code>, <code>ByEndForce</code>, <code>ByEndIncrementalDelta</code>), <strong>both the curvature friction coefficient and wobble friction coefficient of the tendon must not be zero</strong>.</li>
+<li>If <strong>Posttension with Jacking options</strong> is applied multiple times to the same element, <strong>the prestress is introduced sequentially in the order of definition</strong>.</li>
+</ul>
+<p>n addition, the <code>*State</code> command can also be used for other element types:</p>
 <ul>
 <li><code>CableLength</code> specifies the initial length of Cable elements.</li>
 <li><code>MovingSpringSpeed</code> specifies the moving speed of MovingSpring elements.</li>
 </ul>
-<h5 id="example_7">Example</h5>
+<h5 id="example_8">Example</h5>
 <div class="highlight"><pre><span></span><code>*STEP, TYPE=Static, NAME=step1
 *Activate,TYPE=Element
  tendon, conc
@@ -3517,7 +3570,7 @@
 <p>▪ Notes
 1. In frequency analysis steps (<code>*Step, Type=Frequency</code>), frames are output for each mode in the HDB file(<code>.hdb</code>). Each frame corresponds to one mode, with the mode shape output in D. The remaining field values represent values induced by this D.
 2. Fields may have subcomponents. For example, D includes subcomponents such as D.X, D.Y, D.Z, etc. For details on subcomponents, refer to <code>*History</code>.</p>
-<h5 id="example_8">Example</h5>
+<h5 id="example_9">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=Case1
 *Activate, TYPE=Element
  dam, water, farField

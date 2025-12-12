@@ -982,6 +982,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      파라미터 입력 제어
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="파라미터 입력 제어">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      기본사용법
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      고급사용법
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2658,6 +2691,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      파라미터 입력 제어
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="파라미터 입력 제어">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      기본사용법
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      고급사용법
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2829,10 +2895,10 @@
 </ul>
 <h5 id="_9">모델링 편의 명령</h5>
 <ul>
-<li><code>*Include</code>: Include external file.</li>
-<li><code>*DefaultParameter</code> : Assign default parameter expression</li>
-<li><code>*Distribution</code>: Assign nodal and element properties</li>
-<li><code>*Model</code>:  Generate template model</li>
+<li><code>*Include</code>: Include an external file.</li>
+<li><code>*Parameter</code>: Assign a preset of parameter expression.</li>
+<li><code>*Distribution</code>: Assign nodal and element properties.</li>
+<li><code>*Model</code>: Generate a template model.</li>
 </ul>
 <h5 id="_10">기타 명령</h5>
 <ul>
@@ -2841,52 +2907,155 @@
 <li><code>*TestMaterial</code>: Test material model for given strain history</li>
 </ul>
 <h2 id="_11">해석실행</h2>
-<p>hfAnalyzer는 다음과 같이 command-line에서 <code>inp</code> 파일을 대상으로 해석을 수행한다. </p>
+<p>hfAnalyzer는 CLI(Command-Line Interface)에 구동되는 프로그램이다. 명령령에 hfAnalyzer와 이후 입력파일을 타이핑하면 해석이 가능하다. </p>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp
 </code></pre></div>
-<p>위 실행을 통해 hfAnalyzer은 <code>inp</code> 파일로부터 해석결과를 담고 있는 <code>hdb</code> 파일 생성한다. <code>hdb</code> 파일은 hfVisualizer 전용파일로서, </p>
+<p>명령행 실행시의 입력파일 외에 다양한 추가 옵션이 있는데 이는 –h 옵션으로 알 수 있다. </p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer –h
+</code></pre></div>
+<p>단순히 hfAnalyzer를 타이핑하여 실행하면 interative하게 구동할 수 있다. </p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer
+  ... Input file 등 필요한 정보를 interactive하게 타이핑
+</code></pre></div>
+<p>해석을 실행하면 다양한 결과 파일이 만들어진다. 예를 들어 입력파일이 frame.inp라고 가정하면(즉, <code>&gt; hfAnalyzer frame.inp</code> 실행) 해석결과를 담고 있는 <code>hdb</code> 파일 생성한다. <code>hdb</code> 파일은 hfVisualizer 전용파일로서, </p>
 <ul>
 <li>hfVisualizer를 프리포로세싱모드에서는 해석결과가 없이 입력파일 정보만 담고 있지만 </li>
 <li>포스트포로세싱모드에서는 입력파일 정보와 더불어 해석결과를 담고 있다. </li>
 </ul>
 <p><code>hdb</code> 파일은 hdf5(디폴트), text, binary의 세가지 형식으로 생성할 수 있다. 다음은 각각에서 생성되는 파일을 정리한 것이다. </p>
-<h5 id="hdf5">[hdf5]</h5>
+<h5 id="hdf5">hdf5인 경우</h5>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp
-or
-&gt; hfAnalyzer frame.inp -f hdf5
+
+- frame.h5.hdb     : hdb file with hdf5 format 
+- frame.log        : log file
+- frame.chk        : chk file (reproduced inp file)
+- frame-step1.rst  : restart file for step
+- frame-step2.rst
+- ...
 </code></pre></div>
-<ul>
-<li>frame.h5.hdb     : hdb file with hdf5 format </li>
-<li>frame.log        : log file</li>
-<li>frame.chk        : chk file (reproduced inp file)</li>
-<li>frame-step1.rst  : restart file for step</li>
-<li>frame-step2.rst</li>
-<li>...</li>
-</ul>
-<h5 id="text">[text]</h5>
-<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp -f text
+<h5 id="text">text 인 경우</h5>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp –f text
+
+- frame.text.hdb      : hdb file with text format (containing result)
+- frame.text.hdb.info : hdb file with text format (containing info)
+- frame.text.hdb.inp  : hdb file with text format (containing inp file)
+- frame.log
+- frame.chk
+- frame-step1.rst
+- frame-step2.rst
+- ...
 </code></pre></div>
-<ul>
-<li>frame.text.hdb      : hdb file with text format (containing result)</li>
-<li>frame.text.hdb.info : hdb file with text format (containing info)</li>
-<li>frame.text.hdb.inp  : hdb file with text format (containing inp file)</li>
-<li>frame.log</li>
-<li>frame.chk</li>
-<li>frame-step1.rst</li>
-<li>frame-step2.rst</li>
-<li>...</li>
-</ul>
-<h5 id="binary">[binary]</h5>
-<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp -f binary
+<h5 id="binary">binary 인 경우</h5>
+<div class="highlight"><pre><span></span><code>&gt;hfAnalyzer frame.inp –f binary
+
+- frame.bin.hdb     : hdb file with binary format 
+- frame.log
+- frame.chk
+- frame-step1.rst
+- frame-step2.rst
+- ...
 </code></pre></div>
-<ul>
-<li>frame.bin.hdb     : hdb file with binary format </li>
-<li>frame.log</li>
-<li>frame.chk</li>
-<li>frame-step1.rst</li>
-<li>frame-step2.rst</li>
-<li>...</li>
-</ul>
+<h2 id="_12">파라미터 입력 제어</h2>
+<h3 id="_13">기본사용법</h3>
+<p>hfAnalyzer를 명령행에서 실행할 때 <code>–p</code> 옵션을 통해 파라미터 입력을 제어할 수 있다. 입력파일은 이 <code>–p</code> 옵션에서 주어지는 표현을 사용하여 미리 작성되어 있으면 된다. </p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+*Material. Type=IsoElasticity, Name=concrete
+ &lt;E&gt;, 0.18
+
+*Node, Offset=&lt;BaseN&gt;
+ 1, 10, 0, 1
+...
+</code></pre></div></p>
+<p>일 때</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –p &quot;&lt;E&gt;=20E9, &lt;BaseN&gt;=1000&quot;
+</code></pre></div>
+<p>을 실행하면 입력파일에서 <code>&lt;E&gt;</code>와 <code>&lt;BaseN&gt;</code>이 주어진 값으로 치환되고, 출력 파일의 기본 이름(base name)도 example-20E9-1000으로 설정된다(출력 파일이 example-20E9-1000.h5.hdb, example-20E9-1000.log 등). <code>-p</code> 이후의 표현식은 <code>"key=value, ..."</code> 형태이고 <code>""</code>로 둘러쌓여야 하며, 입력 파일에서 <code>key</code>는 <code>value</code>로 치환되게 된다. 이때 <code>key</code>는 다른 문자열과 구분되어야 하기 때문에 <code>&lt;A&gt;</code>, <code>$A$</code> 등과 같이 일반적으로 잘 사용하지 않는 기호로 둘러싸는 것이 좋다. 예를 들어 예를 들어 <code>"&lt;E&gt;=20E9, &lt;B&gt;=7.3"</code> 와 같이 쓰면 <code>&lt;K&gt;</code>는 20E9로, <code>&lt;B&gt;</code>는 7.3으로 치환하게 된다. 한편 파라미터 표현식내부에서 토큰은 <code>{}</code>로 묶을 수 있다. 예를 들어 <code>"&lt;K&gt;={R,12.3}, &lt;B&gt;=7.3"</code> 등과 같이 쓰면  <code>&lt;K&gt;</code>는 <code>R,12.3</code>로 치환된다. </p>
+<p>이러한 파라미터 표현식은 입력 파일내에서 <code>*Include</code> 문을 사용할 때도 쓸 수 있다. 예를 들어</p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+*Include, File=Mat, P=&quot;&lt;E&gt;=20E9, &lt;DEN&gt;=2300&quot;
+...
+</code></pre></div></p>
+<p>mat.inp
+<div class="highlight"><pre><span></span><code>*Material. Type=IsoElasticity, Name=concrete
+ &lt;E&gt;, 0.18, ,&lt;DEN&gt;
+</code></pre></div></p>
+<h3 id="_14">고급사용법</h3>
+<p>최상위 입력파일(<code>*Include</code> 문으로 포함되는 입력파일이 아닌 입력파일)에서는 <code>*Parameter</code> 문을 적용하여 보다 세밀하게 파라미터 문을 쓸 수 있다. </p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+
+*Parameter, Name=Concrete, &quot;&lt;E&gt;=25E9, &lt;nu&gt;=0.16, &lt;den&gt;=2450&quot;, Default
+*Parameter, Name=Steel, &quot;&lt;E&gt;=200E9, &lt;nu&gt;=0.3, &lt;den&gt;=7850&quot;
+
+*Material. Type=IsoElasticity, Name=Wall
+ &lt;E&gt;, &lt;nu&gt;, 0., &lt;den&gt;
+...
+</code></pre></div></p>
+<p><code>*Parameter</code>는 미리 정의된 파라미터 표현식으로 이해할 수 있다. 따라서 <code>*Parameter</code> 표현식의 이름은 중복하여 지정할 수 없다. <code>Default</code>는 hfAnalyzer 실행시 <code>–p</code> 옵션을 사용하지 않을 때 사용하는 표현식을 의미한다. 따라서 여러개의 <code>*Parameter</code> 문이 있는 경우 <code>Default</code> 한번만 사용할 수 있다. 다음은 hfAnalyzer에서 사용한 예이다. </p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp    
+  → Default 속성이 있는 파라미터 표현식이 적용(여기서는 Concrete)
+  → 출력 파일 기본 이름(file base name)은 ex (example-Concrete.h5.hdb, ...)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –p &quot;Concrete&quot;  
+  → Concrete로 명명된 파라미터 표현식이 적용
+  → 출력 파일 기본 이름(file base name)은 example-Concrete (example-Concrete.h5.hdb, ...)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –p &quot;Steel&quot;     
+  → Steel로 명명된 파라미터 표현식이 적용
+  → 출력 파일 기본 이름(file base name)은 example-Steel (example-Concrete.h5.hdb, ...)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp  -p &quot;&lt;E&gt;=20E9, &lt;nu&gt;=0.16, &lt;den&gt;=2300&quot;
+  → *Paramter 문을 사용하지 않음. 
+  → 출력 파일 기본 이름(file base name)은 example-20E9-0.16-2300 (example-20E9-0.16-2300.h5.hdb, ...)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalzyer example.inp –p &quot;Concrete:&lt;E&gt;=30E9&quot;
+  → Concrete로 명명된 파라미터 표현식이 적용하돼, &lt;E&gt;는 30E9를 사용
+  → 출력 파일 기본 이름(file base name)은 example-Concrete (example-Concrete.h5.hdb, ...)
+</code></pre></div>
+<p>한편 <code>&lt;PARAMTER&gt;</code>라는 특수문자열을 입력파일에 사용가능하다. </p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+
+*Parameter, Name=Concrete, &quot;&lt;E&gt;=25E9, &lt;nu&gt;=0.16, &lt;den&gt;=2450&quot;, Default
+*Parameter, Name=Steel, &quot;&lt;E&gt;=200E9, &lt;nu&gt;=0.3, &lt;den&gt;=7850&quot;
+
+*Material. Type=IsoElasticity, Name=Wall
+ &lt;E&gt;, &lt;nu&gt;, 0., &lt;den&gt;
+...
+
+*Step, TYPE=Static, Name=SelfWeight
+...
+*Print, File=&lt;DB&gt;-&lt;PARAMETER&gt;-&lt;STEP&gt;.prn 
+...
+</code></pre></div></p>
+<p><code>&lt;DB&gt;</code>는 입력파일, <code>&lt;PARAMTER&gt;</code>는 파라미터문의 이믈, <code>&lt;STEP&gt;</code>은 현재 해석스텝 명이다. 따라서 위 해석에서 디폴트 파라미터문이 작동하도록 실행했다면, exmaple-Concrete-SelfWeight.prn 이 <code>*Print</code> 문의 대상 파일이 된다. 주의할 점은  hfAnalyzer 실행에서 <code>–p</code> 문을 적용하지 않고 <code>Default</code> 파라미터문이 사용되는 경우에도 <code>&lt;PARAMTER&gt;</code>가 치환된다는 점이다. </p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp    
+  → Default 속성이 있는 파라미터 표현식이 적용(여기서는 Concrete)
+  → 출력 파일 기본 이름(file base name)은 input (example-Concrete.h5.hdb, ...)이나 
+  → Print 파일명은 example-Concrete-SelfWeight.prn
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –p &quot;Concrete&quot;  
+  → Concrete로 명명된 파라미터 표현식이 적용
+  → 출력 파일 기본 이름(file base name)은 input-Concrete (example-Concrete.h5.hdb, ...)
+  → Print 파일명은 example-Concrete-SelfWeight.prn
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –p &quot;Steel&quot;     
+  → Steel로 명명된 파라미터 표현식이 적용
+  → 출력 파일 기본 이름(file base name)은 example-Steel (example-Concrete.h5.hdb, ...)
+  → Print 파일명은 example-Steel-SelfWeight.prn
+</code></pre></div>
+<p>hfAnalyzer 실행시 <code>–o</code> 옵션으로 출력파일을 재지정할 수 있따. 다음은 재지정된 출력파일명의 예이다. </p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –o output –p &quot;&lt;C&gt;=I, &lt;K&gt;=12.3, &lt;P&gt;=7&quot; 
+  → output.h5.hdb, ...
+&gt; hfAnalyzer example.inp –o &quot;output-&lt;PARAMETER&gt;&quot; –p &quot;WT&quot;  
+  → output-WT.hdb, ...
+&gt; hfAnalyzer example.inp –o &quot;output-&lt;PARAMETER&gt;-&lt;K&gt;&quot; –p &quot;WT:&lt;K&gt;=12.3&quot;
+  → output-WT-12.3.h5.odb, ...
+&gt; hfAnalyzer example.inp –o &quot;output-&lt;K&gt;&quot; –p &quot;WT:&lt;K&gt;=12.3&quot;
+  → output-12.3.h5.odb
+</code></pre></div>
 
 
 

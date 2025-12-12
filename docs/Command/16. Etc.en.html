@@ -2768,7 +2768,7 @@
 <div class="admonition note">
 <ul>
 <li>
-<p><strong>TYPE=type:</strong> Type of environment</p>
+<p><strong>Type=type:</strong> Type of environment</p>
 <ul>
 <li><strong>UnitSystem:</strong> Set unit system</li>
 <li><strong>Info:</strong> Input string information</li>
@@ -2779,7 +2779,7 @@
 </div>
 <h3 id="environment-typeunitsystem">*Environment, Type=UnitSystem</h3>
 <p>Set unit system</p>
-<div class="highlight"><pre><span></span><code>*Environment, TYPE=UnitSystem
+<div class="highlight"><pre><span></span><code>*Environment, Type=UnitSystem
  force-length[-time][-temperature]
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
@@ -2793,16 +2793,16 @@
 </div>
 <p>The unit system can be defined only once. If it is not defined, the model is considered unit-free. When specified, the force-length units must be provided, while time and temperature units are optional.</p>
 <h5 id="example">Example</h5>
-<div class="highlight"><pre><span></span><code>*Environment, TYPE=UnitSystem
+<div class="highlight"><pre><span></span><code>*Environment, Type=UnitSystem
  kN-mm
 
-*Environment, TYPE=UnitSystem
+*Environment, Type=UnitSystem
  kN-mm-s
 
-*Environment, TYPE=UnitSystem
+*Environment, Type=UnitSystem
  kN-mm-none-K
 
-*Environment, TYPE=UnitSystem
+*Environment, Type=UnitSystem
  kN-mm-s-K
 </code></pre></div>
 <h3 id="environment-typeinfo">*Environment, Type=Info</h3>

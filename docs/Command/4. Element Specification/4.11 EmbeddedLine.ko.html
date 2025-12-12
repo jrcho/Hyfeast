@@ -2677,22 +2677,21 @@
 
   <h1>EmbeddedLine 요소</h1>
 
-<p>The <code>EmbeddedLine</code> element is used to model embedded tendons or reinforcing bars, and is defined through the <code>EmbeddedLine</code> element type and the <code>EmbeddedLine</code> section type. When defining an EmbeddedLine section, the element profile is specified by a spline geometry.
-For each element, a host element set must be assigned. The applicable host element families are as follows:</p>
+<p><code>EmbeddedLine</code> 요소는 매립된 텐던 또는 철근을 모사할 수 있는 요소로서, <code>EmbeddedLine</code> 요소 타입, <code>EmbeddedLine</code> 단면 타입으로 정의할 수 있다. <code>EmbeddedLine</code> 단면을 정의할 때 요소의 프로파일을 스프라인 기하형상으로 정의한다. 요소의 개별적인 특성치로 호스트 요소집합을 정의해야 한다.  적용 가능한 호스트 요소는 다음과 같다. </p>
 <ul>
-<li>2D Beam elements: B2D2H, B2D2MH</li>
-<li>3D Beam elements: B3D2H, B3D2MH</li>
-<li>Shell elements: S3F, S4F, S3, S4</li>
-<li>Solid-shell elements: CS6, CS8</li>
-<li>2D Solid elements: CPE4, CPS4, CAX4, CPS3, CPE3, CAX3</li>
-<li>3D Solid elements: C3D8, C3D8I, C3D6</li>
+<li>2차원 보 요소군(Beam2D) : B2D2H, B2D2MH</li>
+<li>3차원 보 요소군(Beam3D) : B3D2H, B3D2MH</li>
+<li>쉘 요소군(Shell) : S3F, S4F, S3, S4</li>
+<li>솔리드쉘 요소군(CShell) : CS6, CS8</li>
+<li>2차원 평면 솔리드 요소군(Plane) : CPE4, CPS4, CAX4, CPS3, CPE3, CAX3</li>
+<li>3차원 솔리드 요소군(Solid) : C3D8, C3D8I, C3D6</li>
 </ul>
-<p>The host element set assigned to an EmbeddedLine element must consist of elements from the same family. For tendon analysis, prestressing loads can be applied using the <code>*State</code> command.</p>
+<p><code>EmbeddedLine</code> 요소에 적용하는 호스트 요소집합은 동일한 요소군으로 구성되어야 한다. 텐던 해석시에는 *State 명령으로 텐던의 프리스트레스 하중을 부과할 수 있다. </p>
 <p>▪ 주의 </p>
 <ul>
-<li>The <code>EmbeddedLine</code> element does not compute a mass matrix (it contributes only to stiffness).</li>
-<li>Reinforcement modeling can alternatively be performed using truss elements(<code>T3D2</code>) combined with <code>Embedded</code> constraints. In this case, only straight bars can be represented and prestressing cannot be applied.</li>
-<li>The EmbeddedLine element uses a single node, but only as a reference point for the spline geometry. No degrees of freedom are defined at that node.</li>
+<li>EmbeddedLine 요소는 질량행렬을 계산하지 않는다(강성에만 기여)</li>
+<li>철근 모델링은 Truss 요소와 Embedded 구속조건으로도 가능하다. 이 경우 직선 형태이고, 프리스트레스 등은 부과할 수 없다. </li>
+<li>EmbeddedLine 요소는 1개의 절점을 사용하지만, 스프라인 형상의 기준점으로만 사용한다. 그 절점에서 자유도를 정의하지 않는다. </li>
 </ul>
 <p><img alt="Fig. 4.11-1 EmbeddedLine element" src="../image/4.11-1.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 4.11-1.</span></strong> EmbeddedLine element</p>
@@ -2707,7 +2706,7 @@ For each element, a host element set must be assigned. The applicable host eleme
  30., 0., 0.
 
 *Section, Type=EmbeddedLine, Name=tendon
-  tendon, 0.01, 3
+  tendon, 0.01
   0.4, 0.2
 
 *Element, Type=EmbeddedLine, ELSet=tendon
@@ -2740,13 +2739,16 @@ For each element, a host element set must be assigned. The applicable host eleme
 <li>Active DOFs:  None</li>
 </ul>
 </div>
-<p>▪ 주의 
-n1 절점은 형상을 정의하는 기준점으로만 사용되면, 요소에서 어떠한 강성행렬이나 질량행렬의 기여분이 없다. </p>
+<p>▪ 주의 </p>
+<ul>
+<li>n1 절점은 형상을 정의하는 기준점으로만 사용되면, 요소에서 어떠한 강성행렬이나 질량행렬의 기여분이 없다. </li>
+<li>적분점의 개수는 단면에서 주어지는 적분 방식(<code>Aligned</code>, <code>Unaligned</code>)에 따라 달라진다. </li>
+</ul>
 <h3 id="section-typeembeddedline">*Section, Type=EmbeddedLine</h3>
 <p>EmbeddedLine 요소 단면을 정의</p>
 <div class="highlight"><pre><span></span><code>*Section, Type=EmbeddedLine, Name=name
- material, area, ngauss, maxDiscretizationLength
- mu, kappa
+  material, area, { Aligned, ngauss | Unaligned, nsegement }
+  mu, kappa
 </code></pre></div>
 <h5 id="keyword-line">Keyword line</h5>
 <div class="admonition note">
@@ -2759,8 +2761,8 @@ n1 절점은 형상을 정의하는 기준점으로만 사용되면, 요소에�
 <ul>
 <li><strong>material:</strong> material (required)</li>
 <li><strong>area:</strong> area (required)</li>
-<li><strong>ngauss:</strong> No. of integration points for spline subdivision (optional, default is 4).</li>
-<li><strong>maxDiscretizationLength:</strong> Maximum allowed discretization length between Gauss points (optional, </li>
+<li><strong>Aigned, ngauss:</strong> 호스트 요소로 spline을 분할하여 적분하고, 이때 각 구간 적분점 개수를 Legendre 적분 ngauss를 적용. (optional, default Aligned, 3)</li>
+<li><strong>Unaligned, nsegment:</strong> Spline을 nsegment롤 분할하고 Trapezoidal rule로 적분 적용. 이때 호스트 요소와 메쉬는 일치시키지 않음. nsegment를 지정하지 않으며 자동으로 분할 개수가 결정됨. 자동분할은 스플라인 통과하는 요소의 개수의 2배로 지정(optional). 전체 적분점 개수는 nsegment + 1. </li>
 </ul>
 </div>
 <h5 id="second-dataline-optional">Second dataline (optional)</h5>
@@ -2769,7 +2771,24 @@ n1 절점은 형상을 정의하는 기준점으로만 사용되면, 요소에�
 <li><strong>mu, kappa:</strong> Curvature and wobble friction coefficients (optional, default 0., 0.).</li>
 </ul>
 </div>
-<p>스플라인(<code>*Construction, TYPE=Spline</code>)은 샘플링 점 사이의 segment를 세분하여 subdivision으로 분리한다. 이 subdivision은 ngauss 적분점을 갖는 Gauss Lobato 적분을 수행한다. 정확한 적분이 될 수 있도록 충분한 적분점이 필요하며 이를 제어하는 변수가 <code>maxDiscretizatonLength</code>이다. <code>maxDiscretizationLength</code>는 적분점 사이 간격의 최대값이다. 적분점 간격은 <code>maxDiscretizationLength</code>보다 작게 설정된다. 이 값이 주어지지 않으면(0이면), 가장 작은 부모요소의 모서리 길이의 1/4로 자동으로 설정된다. </p>
+<p>Curvature friction coefficient의 단위는 1/rad이고, wobble firction coefficient 는 1/length이다. 일반적은 범위는 0.15~0.3 /rad, 0.00021~0.007 /m 이다.</p>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*SECTION, TYPE=EmbeddedLine, Name=case1
+  steel,  0.1
+
+*SECTION, TYPE=EmbeddedLine, Name=case2
+  steel,  0.1, Aligned, 4
+
+*SECTION, TYPE=EmbeddedLine, Name=case3
+  steel,  0.1, Unaligned
+
+*SECTION, TYPE=EmbeddedLine, Name=case4
+  steel,  0.1, Unaligned, 10
+
+*SECTION, TYPE=EmbeddedLine, Name=case5
+  steel,  0.1
+  0.4, 0.2
+</code></pre></div>
 
 
 

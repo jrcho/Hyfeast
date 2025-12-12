@@ -309,6 +309,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parameter-input-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter Input Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Input Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2658,6 +2691,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parameter-input-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter Input Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Input Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2830,7 +2896,7 @@
 <h5 id="modeling-convenience-commands">Modeling Convenience Commands</h5>
 <ul>
 <li><code>*Include</code>: Include an external file.</li>
-<li><code>*DefaultParameter</code>: Assign a default parameter expression.</li>
+<li><code>*Parameter</code>: Assign a preset of parameter expression.</li>
 <li><code>*Distribution</code>: Assign nodal and element properties.</li>
 <li><code>*Model</code>: Generate a template model.</li>
 </ul>
@@ -2841,53 +2907,159 @@
 <li><code>*TestMaterial</code>: Test the material model for a given strain history.</li>
 </ul>
 <h2 id="execution-of-analysis">Execution of Analysis</h2>
-<p>hfAnalyzer performs analysis on an <code>inp</code> file from the command line as follows:</p>
+<p>hfAnalyzer is a program that runs on the Command-Line Interface (CLI). You can perform an analysis by typing hfAnalyzer followed by the input file name in the command line.</p>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp
 </code></pre></div>
-<p>Through this execution, hfAnalyzer generates an <code>hdb</code> file containing the analysis results. The <code>hdb</code> file is a dedicated file type for hfVisualizer:</p>
+<p>There are various additional options available besides specifying the input file; these can be viewed using the <code>-h</code> option.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer –h
+</code></pre></div>
+<p>If you simply type hfAnalyzer without any arguments, the program will start in interactive mode, where you can manually enter the required information such as the input file name.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer
+  ... Type the required information interactively (e.g., input file)
+</code></pre></div>
+<p>When the analysis is executed, several output files are generated. For example, assuming the input file is frame.inp (i.e., you run <code>&gt; hfAnalyzer frame.inp</code>), the program creates an <code>.hdb</code> file that stores the analysis results. The <code>.hdb</code> file is a hfVisualizer-specific file and has two roles:</p>
 <ul>
-<li>In pre-processing mode, it contains only the input file information without analysis results.</li>
-<li>In post-processing mode, it contains both the input file information and the analysis results.</li>
+<li>In pre-processing mode, it contains only the input file information (no analysis results).</li>
+<li>In post-processing mode, it includes both the input file data and the analysis results.</li>
 </ul>
-<p>The .hdb file can be generated in three formats: HDF5 (default), text, and binary.</p>
-<p>The following summarizes the files produced in each case.</p>
-<h5 id="hdf5">[hdf5]</h5>
+<p>The <code>.hdb</code> file can be generated in three different formats: HDF5 (default), text, and binary. The following sections summarize the files produced for each format.</p>
+<h5 id="when-using-hdf5-format-default">When using HDF5 format (default)</h5>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp
-or
-&gt; hfAnalyzer frame.inp -f hdf5
+
+- frame.h5.hdb     : hdb file with hdf5 format 
+- frame.log        : log file
+- frame.chk        : chk file (reproduced inp file)
+- frame-step1.rst  : restart file for step
+- frame-step2.rst
+- ...
 </code></pre></div>
-<ul>
-<li>frame.h5.hdb     : hdb file with hdf5 format </li>
-<li>frame.log        : log file</li>
-<li>frame.chk        : chk file (reproduced inp file)</li>
-<li>frame-step1.rst  : restart file for step</li>
-<li>frame-step2.rst</li>
-<li>...</li>
-</ul>
-<h5 id="text">[text]</h5>
-<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp -f text
+<h5 id="when-using-text-format">When using text format</h5>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp –f text
+
+- frame.text.hdb      : hdb file with text format (containing result)
+- frame.text.hdb.info : hdb file with text format (containing info)
+- frame.text.hdb.inp  : hdb file with text format (containing inp file)
+- frame.log
+- frame.chk
+- frame-step1.rst
+- frame-step2.rst
+- ...
 </code></pre></div>
-<ul>
-<li>frame.text.hdb      : hdb file with text format (containing result)</li>
-<li>frame.text.hdb.info : hdb file with text format (containing info)</li>
-<li>frame.text.hdb.inp  : hdb file with text format (containing inp file)</li>
-<li>frame.log</li>
-<li>frame.chk</li>
-<li>frame-step1.rst</li>
-<li>frame-step2.rst</li>
-<li>...</li>
-</ul>
-<h5 id="binary">[binary]</h5>
-<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp -f binary
+<h5 id="when-using-binary-format">When using binary format</h5>
+<div class="highlight"><pre><span></span><code>&gt;hfAnalyzer frame.inp –f binary
+
+- frame.bin.hdb     : hdb file with binary format 
+- frame.log
+- frame.chk
+- frame-step1.rst
+- frame-step2.rst
+- ...
 </code></pre></div>
-<ul>
-<li>frame.bin.hdb     : hdb file with binary format </li>
-<li>frame.log</li>
-<li>frame.chk</li>
-<li>frame-step1.rst</li>
-<li>frame-step2.rst</li>
-<li>...</li>
-</ul>
+<h2 id="parameter-input-control">Parameter Input Control</h2>
+<h3 id="basic-usage">Basic Usage</h3>
+<p>When running <code>hfAnalyzer</code> from the command line, parameter input can be controlled using the <code>-p</code> option.<br />
+The input file should be prepared in advance to use the expressions provided through this <code>-p</code> option.</p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+*Material. Type=IsoElasticity, Name=concrete
+ &lt;E&gt;, 0.18
+
+*Node, Offset=&lt;BaseN&gt;
+ 1, 10, 0, 1
+...
+</code></pre></div></p>
+<p>In this case</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –p &quot;&lt;E&gt;=20E9, &lt;BaseN&gt;=1000&quot;
+</code></pre></div>
+<p>When executed, <code>&lt;E&gt;</code> and <code>&lt;BaseN&gt;</code> in the input file are replaced with the specified values,  and the base name of the output files is set to <code>example-20E9-1000</code>  (e.g., <code>example-20E9-1000.h5.hdb</code>, <code>example-20E9-1000.log</code>, etc.).  </p>
+<p>The expression following <code>-p</code> must be written in the form <code>"key=value, ..."</code> and enclosed in double quotation marks (<code>""</code>).  In the input file, each <code>key</code> is replaced with its corresponding <code>value</code>.  To ensure that parameter keys are distinct from other text, it is recommended to surround them with uncommon symbols such as <code>&lt;A&gt;</code> or <code>$A$</code>.  For example, if you write <code>"&lt;E&gt;=20E9, &lt;B&gt;=7.3"</code>, then <code>&lt;E&gt;</code> will be replaced by <code>20E9</code> and <code>&lt;B&gt;</code> by <code>7.3</code>.  Tokens within a parameter expression can also be grouped using curly braces <code>{}</code>.  For instance, in <code>"&lt;K&gt;={R,12.3}, &lt;B&gt;=7.3"</code>, <code>&lt;K&gt;</code> is replaced by <code>R,12.3</code>.</p>
+<p>Parameter expressions can also be used in the <code>*Include</code> command within the input file. For example:</p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+*Include, File=Mat, P=&quot;&lt;E&gt;=20E9, &lt;DEN&gt;=2300&quot;
+...
+</code></pre></div></p>
+<p>mat.inp
+<div class="highlight"><pre><span></span><code>*Material. Type=IsoElasticity, Name=concrete
+ &lt;E&gt;, 0.18, ,&lt;DEN&gt;
+</code></pre></div></p>
+<h3 id="advanced-usage">Advanced Usage</h3>
+<p>In the top-level input file (not those included via <code>*Include</code>),  the <code>*Parameter</code> command allows for more advanced parameter handling.</p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+
+*Parameter, Name=Concrete, &quot;&lt;E&gt;=25E9, &lt;nu&gt;=0.16, &lt;den&gt;=2450&quot;, Default
+*Parameter, Name=Steel, &quot;&lt;E&gt;=200E9, &lt;nu&gt;=0.3, &lt;den&gt;=7850&quot;
+
+*Material. Type=IsoElasticity, Name=Wall
+ &lt;E&gt;, &lt;nu&gt;, 0., &lt;den&gt;
+...
+</code></pre></div></p>
+<p><code>*Parameter</code> can be understood as a predefined parameter expression.  The name of a <code>*Parameter</code> expression must be unique and cannot be duplicated.  The <code>Default</code> option specifies the expression used when <code>hfAnalyzer</code> is run without the <code>-p</code> option.  Therefore, if multiple <code>*Parameter</code> statements exist, only one may use <code>Default</code>. Example command executions:</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp    
+  → The parameter expression with the Default attribute is applied (here: Concrete)
+  → The output file base name is example (e.g., example-Concrete.h5.hdb, ...)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –p &quot;Concrete&quot;  
+  → The parameter expression named &quot;Steel&quot; is applied
+  → The output file base name is example-Steel (e.g., example-Steel.h5.hdb, ...)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –p &quot;Steel&quot;     
+  → The parameter expression named &quot;Steel&quot; is applied
+  → The output file base name is example-Steel (e.g., example-Steel.h5.hdb, ...)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp  -p “&lt;E&gt;=20E9, &lt;nu&gt;=0.16, &lt;den&gt;=2300&quot;
+  → *Parameter statements are not used
+  → The output file base name is example-20E9-0.16-2300 (e.g., example-20E9-0.16-2300.h5.hdb, ...)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalzyer example.inp –p &quot;Concrete:&lt;E&gt;=30E9&quot; 
+  → The parameter expression named &quot;Concrete&quot; is applied, but &lt;E&gt; is overridden with 30E9
+  → The output file base name is example-Concrete (e.g., example-Concrete.h5.hdb, ...)
+</code></pre></div>
+<p>A special placeholder <code>&lt;PARAMETER&gt;</code> can also be used within the input file.</p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+
+*Parameter, Name=Concrete, &quot;&lt;E&gt;=25E9, &lt;nu&gt;=0.16, &lt;den&gt;=2450&quot;, Default
+*Parameter, Name=Steel, &quot;&lt;E&gt;=200E9, &lt;nu&gt;=0.3, &lt;den&gt;=7850&quot;
+
+*Material. Type=IsoElasticity, Name=Wall
+ &lt;E&gt;, &lt;nu&gt;, 0., &lt;den&gt;
+...
+
+*Step, TYPE=Static, Name=SelfWeight
+...
+*Print, File=&lt;DB&gt;-&lt;PARAMETER&gt;-&lt;STEP&gt;.prn 
+...
+</code></pre></div></p>
+<p>Here, <code>&lt;DB&gt;</code> represents the input file name, <code>&lt;PARAMETER&gt;</code> represents the name of the parameter expression, and <code>&lt;STEP&gt;</code> represents the current analysis step name.  If the analysis is run with the Default parameter expression, the generated print file will be named <code>example-Concrete-SelfWeight.prn</code>.  </p>
+<p>Note that even when the Default parameter expression is used (i.e., when <code>-p</code> is not specified), <code>&lt;PARAMETER&gt;</code> is still replaced accordingly.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp    
+  → The Default parameter expression is applied (here: Concrete)
+  → The output file base name is example (e.g., example-Concrete.h5.hdb, ...)
+  → The print file name is example-Concrete-SelfWeight.prn
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –p &quot;Concrete&quot;  
+  → The parameter expression named &quot;Concrete&quot; is applied
+  → The output file base name is example-Concrete (e.g., example-Concrete.h5.hdb, ...)
+  → The print file name is example-Concrete-SelfWeight.prn
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –p &quot;Steel&quot;     
+  → The parameter expression named &quot;Steel&quot; is applied
+  → The output file base name is example-Steel (e.g., example-Steel.h5.hdb, ...)
+  → The print file name is example-Steel-SelfWeight.prn
+</code></pre></div>
+<p>When running <code>hfAnalyzer</code>, the output file name can also be overridden using the <code>-o</code> option.<br />
+The following examples show how the output file name can be redefined:</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp –o output –p “&lt;C&gt;=I, &lt;K&gt;=12.3, &lt;P&gt;=7&quot;  
+  → output.h5.hdb, ...
+&gt; hfAnalyzer example.inp –o &quot;output-&lt;PARAMETER&gt;&quot; –p &quot;WT&quot;
+  → output-WT.hdb, ...
+&gt; hfAnalyzer example.inp –o &quot;output-&lt;PARAMETER&gt;-&lt;K&gt;&quot; –p &quot;WT:&lt;K&gt;=12.3&quot; 
+  → output-WT-12.3.h5.odb, ...
+&gt; hfAnalyzer example.inp –o &quot;output-&lt;K&gt;&quot; –p &quot;WT:&lt;K&gt;=12.3&quot;
+  → output-12.3.h5.odb
+</code></pre></div>
 
 
 

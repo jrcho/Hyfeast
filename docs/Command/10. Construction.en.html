@@ -2725,26 +2725,16 @@
 <h3 id="construction-typespline">*Construction, Type=Spline</h3>
 <p>Define spline</p>
 <div class="highlight"><pre><span></span><code>*Construction, Type=Spline, Name=name
- x,y,z[,pointType]
+ x,y,z
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
 <li><strong>x,y,z:</strong> Coordinates of sampling points (required)</li>
-<li><strong>pointType:</strong> Connection condition for intermediate sampling points (optional); CC, FF, FC, and CF are applicable. CC is default. Ignored at the start and end points.</li>
 </ul>
 </div>
-<p>A parametric spline is constructed using the given coordinates. Splines are used to define the shape of embedded line elements or when defining shapes in <code>*Report, TYPE=LineSensor</code>. At least two sampling points must be defined. The spline is constructed as a parametric cubic spline of the form (x(t), y(t), z(t)) using the provided sampling points. <code>t</code> is generated from the accumulated secant length of the given coordinates. The conditions imposed on the spline according to the pointType are as follows:</p>
-<ul>
-<li>End points: Always curvature free</li>
-<li>Intermediate points:</li>
-<li>CC: No conditions imposed: slope and curvature continuity</li>
-<li>FF: Curvature free + curvature free</li>
-<li>CF: Slope continuity + right curvature free</li>
-<li>FC: Left curvature free + slope continuity</li>
-</ul>
-<p>The curve segment between sampling points is internally subdivided repeatedly until the segment length converges.</p>
+<p>A parametric spline is constructed using the given coordinates. Splines are used to define the shape of embedded line elements or when defining shapes in <code>*Report, TYPE=LineSensor</code>. At least two sampling points must be defined. The spline is constructed as a parametric cubic spline of the form (x(t), y(t), z(t)) using the provided sampling points. <code>t</code> is generated from the accumulated secant length of the given coordinates. The range of <code>t</code> is [0,1].</p>
 <h5 id="example">Example</h5>
 <div class="highlight"><pre><span></span><code>*Construction, Type=Spline, Name=2spanTendon
   0,  0.         , 0.
@@ -2754,20 +2744,6 @@
  34,  0.19411765 , 0.
  47, -0.8        , 0.
  60,  0          , 0.
-
-*Construction, Type=Spline, Name=curve
- 20,  0,  0
- 11,  0,  0,  FC
- 10,  1,  0,  CF
- 10, 19,  0,  FC
-  9, 20,  0,  CF
-  1, 20,  0,  FC
-  0, 19,  0,  CF
-  0, 11,  0,  FC
-  1, 10,  0,  CF
- 19, 10,  0,  FC
- 20,  9,  0,  CF
- 20,  0,  0, 
 </code></pre></div>
 <h3 id="construction-typeline">*Construction, Type=Line</h3>
 <p>Define a construction line.</p>

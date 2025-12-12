@@ -2897,28 +2897,28 @@
 <p>절점에 가력되는 집중하중</p>
 <div class="highlight"><pre><span></span><code>*Load, Type=Concentric, Name=name, Func=timeFunction
  targetNode, oneDof, value, fnIdx, CS=orientation
- targetNset, oneDof, value, fnIdx, CS=orientation
- targetSurface, oneDof, value, fnIdx, CS=orientation
+ targetNGroup, oneDof, value, fnIdx, CS=orientation
  ...
 </code></pre></div>
 <h5 id="keyword-line_1">Keyword line</h5>
-<div class="admonition note"></div>
+<div class="admonition note">
 <ul>
-<li>Func=timeFunction : 시간의존해석(<code>*Step, Type=Static, Quasi</code>와 <code>*Step, Type=Dynamic</code>)시 사용할 시간 함수(optional).</li>
+<li><strong>Func=timeFunction:</strong> 시간의존해석(<code>*Step, Type=Static, Quasi</code>와 <code>*Step, Type=Dynamic</code>)시 사용할 시간 함수(optional).</li>
 </ul>
+</div>
 <h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
 <li><strong>targetNode:</strong> target node (required)</li>
-<li><strong>targetNset:</strong> target nset(required). 절점집합내 절점이 대상이 됨.</li>
-<li><strong>targetSurface:</strong> target surface(required). Surface내의 절점이 대상이 됨.</li>
+<li><strong>targetNGroup:</strong> 절점 하중을 부과할 node group(required). targetNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정하며, surface로 지정하는 경우 surface 내의 절점들을 의미.   </li>
 <li><strong>oneDof:</strong> 대상이 되는 DOF. DOF는 X, Y, Z, RX, RY, RZ, P 등이 될 수 있다. X|Y 등과 같은 조합은 불가.(required)</li>
 <li><strong>value:</strong> value(required)</li>
 <li><strong>fnIdx:</strong> timeFunction 내의 적용하는 시계열 함수 인덱스(1-based index) (optional, default는 1). </li>
 <li><strong>CS=orientation:</strong> 집중하중이 적용될 좌표계. <code>*CoordinateSystem, TYPE=Orientation</code>으로 정의된 이름을 지정. 생략 시 GCS 적용 (optional)</li>
 </ul>
 </div>
-<p>데이터라인의 첫항은 targetNset, targetSurface, targetNode의 순으로 가능한 대상을 찾는다. 문자열로 제공하는 nset과 surface는 문자열로 지정되므로 이름을 정의할 때 주의한다. 또한 중복해서 특정 절점 자유도를 지정한 경우 오류없이 적용된다. 즉 그 자유도의 하중은 합산하여 적용된다. </p>
+<p>데이터라인의 첫항은 nset, surfce, 절점번호패턴/절점번호 순으로 가능한 대상을 찾는다. 미리 정의한 nset, surface의 이름이 숫자로 이루어질 수 있으므로 주의한다. </p>
+<p>중복해서 특정 절점 자유도를 지정한 경우 오류없이 적용된다. 즉 그 자유도의 하중은 합산하여 적용된다. </p>
 <p>국부좌표계를 지정하면, 주어진 좌표계를 기준으로 하중을 가력한다. 내부적으로 주어진 입력값 하중은 변환하여 GCS 상에서 가력된다. 해석 결과는 GCS 기준이다. 만약 주어진 국부좌표계를 기준으로 결과가 필요한 경우 <code>*Print</code>, <code>*History</code>에서는 별도로 지정해야 한다. <code>*Output</code>에서는 국부좌표계를 지정할 기능을 없으나 <code>hfVisualizer</code>로 포스트프로세싱시 국부좌표계상의 결과를 구할 수 있다. </p>
 <h5 id="example">Example</h5>
 <div class="highlight"><pre><span></span><code>*Load, Type=Concentric, Name=A
@@ -2954,8 +2954,7 @@
 <p>0이 아닌 값을 가지는 변위하중</p>
 <div class="highlight"><pre><span></span><code>*Load, Type=Displacement, Name=name, Func=timeFunction
  targetNode, oneDof, value, {fnIdxD, fnIdxV, fnIdxA}|D=fnIdxD|V=fnIndxV|A=fnIndxA, CS=orientation
- targetNset, oneDof, value, {fnIdxD, fnIdxV, fnIdxA}|D=fnIdxD|V=fnIndxV|A=fnIndxA, CS=orientation
- targetSurface, oneDof, value, {fnIdxD, fnIdxV, fnIdxA}|D=fnIdxD|V=fnIndxV|A=fnIndxA, CS=orientation
+ targetNGroup, oneDof, value, {fnIdxD, fnIdxV, fnIdxA}|D=fnIdxD|V=fnIndxV|A=fnIndxA, CS=orientation
  ...
 </code></pre></div>
 <h5 id="keyword-line_2">Keyword line</h5>
@@ -2968,8 +2967,7 @@
 <div class="admonition note">
 <ul>
 <li><strong>targetNode:</strong> target node (required)</li>
-<li><strong>targetNset:</strong> target nset(required). 절점집합내 절점이 대상이 됨.</li>
-<li><strong>targetSurface:</strong> target surface(required). Surface내의 절점이 대상이 됨.</li>
+<li><strong>targetNGroup:</strong> 절점 변위를 부과할 node group(required). targetNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정하며, surface로 지정하는 경우 surface 내의 절점들을 의미.   </li>
 <li><strong>oneDof:</strong> 대상이 되는 DOF. DOF는 X, Y, Z, RX, RY, RZ, P 등이 될 수 있다. X|Y 등과 같은 조합은 불가.(required)</li>
 <li><strong>value:</strong> value(required)</li>
 <li><strong>fnIdxD, fnIdxV, fnIdxA:</strong>  변위 , 속도, 가속도 시간 함수의 timeFunction 내의 시계열 함수 인덱스(1-based index) (optional, default는 1). 만약 0을 지정하면 대응하는 이력값이 항상 0으로 취급. <code>*Step, Type=Static, Quasi</code>에서는 변위를, <code>*Step, Type=Dynamic</code>에서는 변위, 속도, 가속도를 사용</li>
@@ -2979,7 +2977,8 @@
 <li><strong>CS=orientation:</strong> 변위하중이 적용될 좌표계. <code>*CoordinateSystem, TYPE=Orientation</code>으로 정의된 이름을 지정. 생략 시 GCS 적용 (optional)</li>
 </ul>
 </div>
-<p>데이터라인의 첫항은 <code>targetNset</code>, <code>targetSurface</code>, <code>targetNode</code>의 순으로 가능한 대상을 찾는다. 문자열로 제공하는 nset과 surface는 문자열로 지정되므로 이름을 정의할 때 주의한다. 또한 중복해서 특정 절점 자유도를 지정한 경우 변위 크기가 같으면 잘못된 해석 결과를 도출할 수 있다. </p>
+<p>데이터라인의 첫항은 nset, surfce, 절점번호패턴/절점번호 순으로 가능한 대상을 찾는다. 미리 정의한 nset, surface의 이름이 숫자로 이루어질 수 있으므로 주의한다. </p>
+<p>중복해서 특정 절점 자유도를 지정한 경우 변위 크기가 같으면 잘못된 해석 결과를 도출할 수 있다. </p>
 <p><code>A=fnIdxA</code>, <code>V=fnIdxV</code>, <code>D=fnIdxD</code> 등을 통해 미분, 적분한 시간이력은 <code>name-generated.csv</code>에 출력된다. </p>
 <p>국부좌표계를 지정하면, 주어진 좌표계를 기준으로 변위를 가력한다. 내부적으로 MPC(multi-point constraint)가 부가되는 방식으로 처리된다. 해석 결과는 GCS 기준이다. 만약 주어진 국부좌표계를 기준으로 결과가 필요한 경우 <code>*Print</code>, <code>*History</code>에서는 별도로 지정해야 한다. <code>*Output</code>에서는 국부좌표계를 지정할 기능을 없으나 <code>hfVisualizer</code>로 포스트프로세싱시 국부좌표계상의 결과를 구할 수 있다. </p>
 <h5 id="example_1">Example</h5>

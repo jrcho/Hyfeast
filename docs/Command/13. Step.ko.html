@@ -3037,13 +3037,12 @@
 <h3 id="step-typefrequency">*Step, Type=Frequency</h3>
 <p>주파수 해석을 지정</p>
 <div class="highlight"><pre><span></span><code>*Step, Type=Frequency, Name=name[, PREV=prevStep]
- nmode, shift
+ nmode
 </code></pre></div>
 <h5 id="first-dataline_2">First dataline</h5>
 <div class="admonition note">
 <ul>
 <li><strong>nmode:</strong> number of mode to be extracted (Default 10)</li>
-<li><strong>shift:</strong> shifting frquency (Hz). (Default 0.). 만약 지정되어 있으면 이 값에 대응하는 고유치(<code>4*pi*pi*frq*frq</code>)에 근접하는 고유치에 대응하는 고유진동수를 계산함. 고유치솔버가 Arpack 일때만 적용 가능.</li>
 </ul>
 </div>
 <h2 id="activate">*Activate</h2>
@@ -3104,47 +3103,96 @@
 </ul>
 </div>
 <h2 id="solver">*Solver</h2>
-<p>해석 단계에 적용할 디폴트 솔버를 변경</p>
-<div class="highlight"><pre><span></span><code>*Solver, TYPE=LinearSolver
- Pardiso|BiCG|BiCGStab|CGS, solverOption
+<p>해석 단계에 적용할 솔버를 지정</p>
+<div class="highlight"><pre><span></span><code>*Solver, TYPE=Linear, Pardiso
+ IterativeOff|IterativeOn, TryPositiveDefinite|PositiveDefinite|Indefinite
 
-*Solver, TYPE=EigenSolver
- Arpack|Subspace
+*Solver, TYPE=Linear, BiCG|BiCGStab|CGS
+ None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardioD|PardioDC, TryPositiveDefinite|PositiveDefinite|Indefinite 
+
+*Solver, TYPE=Eigen, General
+ Range=cutFreq|lowFreq,highFreq, EMMRThreshold=thresh, ZeroEigTol=tol, OneSideOverSampling=factor 
+
+*Solver, TYPE=Eigen, LDR
+ Dof, Dof@centerFreq, Load, Load@centerFreq, ...
 </code></pre></div>
 <h5 id="keyword-line_4">Keyword line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>Type=LinearSolver:</strong> 선형 솔버를 지정. 디폴트 솔버는 Pardiso</li>
-<li><strong>Type=EigenSolver:</strong> 고유치솔버를 지정, 디폴트 솔버는 Arpack</li>
+<li><strong>Type=Linear, Pardiso|BiCG|BiCGStab|CGS:</strong> 선형 솔버를 지정. 디폴트 솔버는 Pardiso</li>
+<li><strong>Type=Eigen, General|LDR:</strong> 고유치솔버를 지정. 디폴트 솔버는 General</li>
 </ul>
 </div>
-<h5 id="first-dataline-for-typelinearsolver">First dataline for TYPE=LinearSolver</h5>
+<h5 id="first-dataline-for-typelinear-pardiso">First dataline for TYPE=Linear, Pardiso</h5>
 <div class="admonition note">
 <ul>
-<li><strong>Pardiso|BiCG|BiCGStab|CGS:</strong> 적용할 솔버</li>
-<li><strong>solverOption:</strong> 솔버에 따른 옵션, 문자열로 지정(optional)</li>
-</ul>
-<p>▪ Pardiso인 경우 옵션 </p>
-<p>IteractiveOff|IteractiveOn-TryPositiveDefinite|PositiveDefinite|Indefinite</p>
-<ul>
-<li>IteractiveOff|IteractiveOn : Iterative solver combination을 on/off (default IterativeOff)</li>
-<li>TryPositiveDefinite|PositiveDefinite|Indefinite : Positive definite, indefinite 행렬 처리 방식을 지정(default TryPositiveDefinite)</li>
-</ul>
-<p>▪ BiCG, BiCGStab,CGS인 경우 옵션 </p>
-<p>None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardioD|PardioDC-TryPositiveDefinite|PositiveDefinite|Indefinite</p>
-<ul>
-<li>None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardioD|PardioDC : Preconditioner를 지정(default None)</li>
-<li>TryPositiveDefinite|PositiveDefinite|Indefinite : Positive definite, indefinite 행렬 처리 방식을 지정(default TryPositiveDefinite)</li>
+<li><strong>IterativeOff|IterativeOn:</strong> Iterative solver combination을 on/off (default IterativeOff)</li>
+<li><strong>TryPositiveDefinite|PositiveDefinite|Indefinite:</strong> Positive definite, indefinite 행렬 처리 방식을 지정(default TryPositiveDefinite)</li>
 </ul>
 </div>
-<h5 id="first-dataline-for-typeeigensolver">First dataline for TYPE=EigenSolver</h5>
+<h5 id="first-dataline-for-typelinear-bicgbicgstabcgs">First dataline for TYPE=Linear, BiCG|BiCGStab|CGS</h5>
 <div class="admonition note">
 <ul>
-<li><strong>ARPACK|Subspace:</strong> 적용할 솔버</li>
+<li><strong>None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardioD|PardioDC:</strong> Preconditioner를 지정(default None)</li>
+<li><strong>TryPositiveDefinite|PositiveDefinite|Indefinite:</strong> Positive definite, indefinite 행렬 처리 방식을 지정(default TryPositiveDefinite)</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-typeeigen-general">First dataline for TYPE=Eigen, General</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Range=cutFreq|lowFreq,highFreq:</strong> 고유치 선별 범위. cutFreq 이상 또는 [lowFreq, highFreq] 구간의 모드만 채택. (optional)</li>
+<li><strong>EMMRThreshold=thresh:</strong> EMMR(Effective Modal Mass Ratio) ≥ thresh일 때 모드 채택. (optional)</li>
+<li><strong>ZeroEigTol=tol:</strong> 고유치가 tol 이하이면 zero 고유치로 간주. 디폴트는 1E-8. (optional)</li>
+<li><strong>OneSideOverSampling=factor:</strong> 주파수 범위 제한 없이 검색할때의 oversampling 비율. 디폴트는 3. (optional)</li>
 </ul>
 </div>
 <p>Linear solver는 <span class="arithmatex">\(\small Kx = f\)</span> 형태의 선형계에 대한 해를 구하는 데 사용되며, 이때 <span class="arithmatex">\(K\)</span>는 희소행렬이다. 직접 희소 솔버(direct sparse solver)인 Pardiso 솔버가 디폴트이고, BiCG, BiCGStab, CGS 등과 같은 반복 희소 솔버(iterative sparse solver)를 사용할 수 있다. </p>
-<p>Eigen solver는 표준 고유치 문제 또는 일반 고유치 문제에 대한 해를 구하는 데 사용된다. 디폴트는 ARPACK 이고, Subspace iteration solver를 적용할 수 있다. 두 솔버 모두 선형 희소솔버를 이용하는데 PARDISO를 내부적으로 사용한다. 유한요소법에 사용되는 고유치 솔버들은 모든 고유치를 계산하는 것이 아니라 일부 낮은 저차모드만을 계산하도록 특화되어 있다. 고유치솔버로는 subspace iteration 솔버와 ARPACK 솔버를 선택할 수 있으며, ARPACK 솔버가 디폴트이다.  Subspace iteration solver는 대칭 행렬에 대해서만 적용 가능한 반면 ARPACK solver는 대칭, 비대칭 행렬에 모두 적용할 수 있습니다. Subspace iteration 솔버는 <span class="arithmatex">\(\small ncv = min( min(2*nev,nev+8), n)\)</span>의 식에 따라 subspace의 크기를 결정한다. 반면에 ARPACK은 대칭행렬의 경우 <span class="arithmatex">\(\small nev &lt; ncv &lt;= n\)</span> 의 조건을 만족해야 하고 <span class="arithmatex">\(\small ncv = 2*nev\)</span>를 추천하고 있다. 따라서 <span class="arithmatex">\(\small nev\)</span>를 <span class="arithmatex">\(\small n/2\)</span>보다 작게 값을 지정하는 것이 좋다. 최대 가능한 <span class="arithmatex">\(\small nev\)</span>는 <span class="arithmatex">\(nev = n-1\)</span>이다. 여기에서 <span class="arithmatex">\(\small n\)</span>은 질량행렬의 실제 자유도 수이고, <span class="arithmatex">\(\small ncv\)</span>는 계산을 위해 필요한 subspace나 Lacoz 벡터의 크기, <span class="arithmatex">\(\small nev\)</span>는 필요한 고유치 개수이다. </p>
+<p>Eigen solver는 <span class="arithmatex">\(\small Kx = λMx\)</span> 형태의 일반 고유치 문제에 대한 해를 구하는 데 사용된다. 디폴트는 General 이고, LDR(Load-Dependent Ritz) 솔버 같은 특수 솔버를 적용할 수 있다. General 고유치 솔버는 행렬크기에 따라 Lapack 또는 Arpack을 사용한다. General 고유치 솔버를 사용할 때는 계산할 고유치의 범위나 EMMR(Effective Modal Mass Ratio)에 대한 제한치를 주어 원하는 고유치를 채택하도록 할 수 있다. </p>
+<p>비대칭계의 경우 고유치는 일반적으로 복소수가 될 수 있으므로, 특정 실수 구간을 기준으로 고유치를 제한하는 방식은 제대로 작동하지 않는다. 한편 대칭계에서는 고유치가 항상 실수이긴 하지만, 음수로 계산될 수 있으므로 이 경우에도 고유치 범위 제한 기법은 유효하지 않다. 따라서 대칭계와 비대칭계 모두, 고유치가 0 이상인 실수로 계산되는 특별한 상황에만, 고유치 범위를 제한하여 원하는 고유치를 추출하는 접근법이 유효하게 작동한다.</p>
+<h5 id="example_2">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=1
+...
+*Solver, TYPE=Linear, Pardiso
+ IterativeOn
+...
+
+# Basic Frequency Extraction (maximum 20 eigenvalues)
+# Extract up to 20 eigenvalues without applying any additional filtering or sampling conditions.
+*Step, Type=Frequency, Name=name
+ 20
+
+# Frequency Extraction with General Eigen-solver (Range = 10 Hz)
+# From oneSideSampling × 20 trial eigenvalues, extract up to 20 eigenvalues 
+# whose natural frequencies are higher than 10 Hz.
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, TYPE=Eigen,General
+ Range=10
+
+# Frequency Extraction with Increasing Trial Eigenvalues (Range = 10–20 Hz)
+# Increase the number of trial eigenvalues (e.g., 40, 60, 80, 100, …) and 
+# extract up to 20 eigenvalues whose natural frequencies fall within the range 10 Hz – 20 Hz.
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, TYPE=Eigen,General
+ Range=10, 20
+
+# Frequency Extraction with Range = 10–20 Hz and EMMR Filtering
+# Increase the number of trial eigenvalues (e.g., 40, 60, 80, 100, …) and 
+# extract up to 20 eigenvalues that satisfy both conditions of Range and EMMRThreshold
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, TYPE=Eigen,General
+ Range=10, 20,  EMMRThreshold = 1E-4,3
+
+# Frequency Extraction with EMMR Filtering (Range ≥ 10 Hz)
+# From oneSideSampling × 20 trial eigenvalues, extract up to 20 eigenvalues
+# that satisfy both  conditions of Range and EMMRThreshold
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, TYPE=Eigen,General
+ Range=10,  EMMRThreshold = 1E-4
+</code></pre></div>
 <h2 id="convergency">*Convergency</h2>
 <p>표준 해석 단계(standard analysis step)에 대한 수렴 조건 부과</p>
 <div class="highlight"><pre><span></span><code>*Convergency, Monitor={ON|OFF}
@@ -3186,7 +3234,7 @@
 || \delta U_{n+1}^i || \le \epsilon_D \max(||U_{n+1} ^{i+1} ||, D_{min} )
 \]</div>
 <p>하중 조건에 대해서 <span class="arithmatex">\(\small \epsilon_F\)</span>는 반복회수가 <span class="arithmatex">\(\small I_p\)</span> 보다 작을 때는 1E-4를, 그 이상은 1E-2를 적용하며, <span class="arithmatex">\(\small R_{min}\)</span> = 0.01 이다. 변위 조건에 대해서는 <span class="arithmatex">\(\small \epsilon_D\)</span>는 0.01, <span class="arithmatex">\(\small D_{min}\)</span>은 1E-4를 적용한다. </p>
-<h5 id="example_2">Example</h5>
+<h5 id="example_3">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=Static Name=1
 ...
 *Convergency, Monitor=ON
@@ -3249,7 +3297,7 @@
 </ul>
 </div>
 <p>Solution algorithm은 비선형해석에서 반복단계의 평형방정식을 구할 때 적용되는 알고리즘을 지정한다. Newton, BFGS 등과 같은 알고리즘을 지정할 수 있으며, 수렴성을 보장하는 선탐색을 지정한다. </p>
-<h5 id="example_3">Example</h5>
+<h5 id="example_4">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=step2
 ...
 *SolutionControl, Type=SolutionAlgorithm
@@ -3284,7 +3332,7 @@
 \]</div>
 <p>즉, 평균가속도법을 사용하면 무조건적으로 안정(unconditionally stable)이고, 선형가속도법을 사용하면 <span class="arithmatex">\(\frac{\Delta t}{T_n}\)</span>을 만족해야 안정하다. 다자유도로 구성되는 유한요소문제에서 고차의 낮은 고유주기(높은 고유진동수)까지 이러한 안정조건을 만족하도록 를 선택하는 것은 쉽지 않기 때문에 정밀도가 떨어지더라도 평균가속도법을 사용하는 것이 일반적이다.
   Hibert-Hughes-Taylor 법(HHT 법, <span class="arithmatex">\(\small\alpha\)</span>-method)은 Newmark 법을 확장한 방법으로 해의 정확도를 유지하면서 제어가능한(controllable) 수치감쇠(numerical damping)을 도입한다. <span class="arithmatex">\(\small -1/3 \le \alpha \le 0\)</span>이고, 무조건적으로 안정(unconditionally stable)한 방법이다. <span class="arithmatex">\(\alpha=0\)</span>이면 평균가속도법을 적용한 Newmark 법과 동일하다. 일반적으로 <span class="arithmatex">\(\small\alpha=-0.05\)</span>를 사용하며, <span class="arithmatex">\(\small\alpha=0\)</span>는 수치감쇠가 없는 것을, <span class="arithmatex">\(\small\alpha=-1/3\)</span>은 수치감쇠가 가장 큰 것을 의미한다.  수치감쇠는 low-frequency 모델에서는 그 영향이 작고, high-frequency 모델에서는 영향이 크다. </p>
-<h5 id="example_4">Example</h5>
+<h5 id="example_5">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=Dynamic, Name==analysis1
  EquiTime, 0.02, 24 
 *TimeIntegration, Type=HHT, -0.05
@@ -3323,7 +3371,7 @@
 \end{matrix} \right]
 \]</div>
 <p>위에서, <span class="arithmatex">\(\small \omega_m = 2\pi f_m\)</span>,  <span class="arithmatex">\(\small\omega_n = 2\pi f_n\)</span>이고, 결정된 <span class="arithmatex">\(\small\alpha\)</span>, <span class="arithmatex">\(\small\beta\)</span>는 다음과 같이 구성되는 Rayleigh damping matrix(<span class="arithmatex">\(\small C^R = \alpha M + \beta K\)</span>)에  대한 상수들이다.</p>
-<h5 id="example_5">Example</h5>
+<h5 id="example_6">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=Dynamic, Name=1
 *Activate, Type=Element
  ELSET1, ELSET2
@@ -3368,7 +3416,7 @@
 <li>targetElset이 없는 경우, 전제 모델을 대상으로 모달 해석이 수행된다. 전체 모델이 선형계이어야 한다. </li>
 <li>targetElset을 지정하는 경우, targetElset에 대해서만 주어진 모드로 분해하는 부분 모달 해석(partial modal analysis)가 수행된다. 모드 분해가 이루어지는 targetElset만 선형 조건을 만족하면 된다. 이 기능은 요소가 접촉점의 변경으로 인해 비선형성이 발생하는 차량-교량 상호작용해석에서 유용하게 사용될 수 있다. </li>
 </ol>
-<h5 id="example_6">Example</h5>
+<h5 id="example_7">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=DYNAMIC, Name=1
  EquiTime=0.1, 2.5
 *Activate, Type=Element
@@ -3436,9 +3484,15 @@
 <li><strong>value:</strong> 지정할 값(required)</li>
 </ul>
 </div>
-<p><code>Pretension</code>는 해당 해석 단계(<code>*Step</code>)에서 초기 긴장력 분포를 부여한다. 해석이 종료될 때 긴장력 분포는 평형상태를 만족되도록 변화된다. <code>Posttension</code>는 초기 긴장력 분포가 해석 단계내 일정하게 유지하는 것을 의한다. <code>Pretension</code>와 <code>Posttension</code> 모두 일정한 긴장력을 부여할 수 있다. <code>Posttension</code>의 경우 추가로 <code>ByStartForce</code>, <code>ByStartIncrementalDelta</code>, <code>ByEndForce</code>, <code>ByEndIncrementalDelta</code> 옵션으로 시작단 및 양단을 jacking하여 초기긴장력을 부여할 수 있다. 이때 텐던의 곡률마찰계수(curvature fricition coefficient)롸 파상마찰계수(wobble friction coefficient)를 이용하여 초기 분포를 계산하게 된다. </p>
+<p><code>Pretension</code>는 해당 해석 단계(<code>*Step</code>)에서 초기 긴장력 분포를 부여한다. 해석이 종료될 때 긴장력 분포는 평형상태를 만족되도록 변화된다. <code>Posttension</code>는 초기 긴장력 분포가 해석 단계내 일정하게 유지하는 것을 의한다. <code>Pretension</code>와 <code>Posttension</code> 모두 일정한 긴장력을 부여할 수 있다. <code>Posttension</code>의 경우 추가로 Jacking 옵션(<code>ByStartForce</code>, <code>ByStartIncrementalDelta</code>, <code>ByEndForce</code>, <code>ByEndIncrementalDelta</code> 옵션)으로 시작단 및 양단을 jacking하여 초기긴장력을 부여할 수 있다. 이때 텐던의 곡률마찰계수(curvature fricition coefficient)롸 파상마찰계수(wobble friction coefficient)를 이용하여 초기 분포를 계산하게 된다. 다음에 주의한다. </p>
+<ul>
+<li>Pretention을 가력한 요소에는 또 다른 Pretension이나 Posttension을 가력할 수 없다. </li>
+<li>Postension을 Value로 가력한 요소에는 또 다른 Pretension이나 Posttension을 가력할 수 없다. </li>
+<li>Postension을 Jacking 옵션(<code>ByStartForce</code>, <code>ByStartIncrementalDelta</code>, <code>ByEndForce</code>, <code>ByEndIncrementalDelta</code> 옵션)으로 가력하기 위해서는 그 요소의 물성치인 곡률마찰계수와 파상마찰계수가 둘다 0이어서는 안된다. </li>
+<li>Postension을 Jacking 옵션(<code>ByStartForce</code>, <code>ByStartIncrementalDelta</code>, <code>ByEndForce</code>, <code>ByEndIncrementalDelta</code> 옵션)으로 같은 요소에 가력하면 순차적으로 프리스트트레스가 가력된다. </li>
+</ul>
 <p>이외에도 <code>CableLength</code>와 <code>MovingSpringSpeed</code>는 각각 Cable 요소의 초기 길이, MovingSpring 요소의 이동속도를 지정한다.  </p>
-<h5 id="example_7">Example</h5>
+<h5 id="example_8">Example</h5>
 <div class="highlight"><pre><span></span><code>*STEP, TYPE=Static, NAME=step1
 *Activate,TYPE=Element
  tendon, conc
@@ -3512,7 +3566,7 @@
 <p>▪ 주의 
 1. 주파수 해석 단계(<code>*Step, Type=Frequency</code>)에서는 HDB 파일(<code>'hdb</code>)에서 모드 별로 프레임이 출력된다. 이때 각 프레임은 하나의 모드에 대응하며, 모드 형상이 D에 출력된다.  나머지 필드값은 이때의 D에 의해 유발되는 값이다. 
 2. 필드는 하위 성분을 가질 수 있다. 예를 들어 D는 D.X, D.Y, D.Z, .... 등의 하위 성분으로 구성된다. 자세한 하위 성분은 <code>*History</code>를 참조한다. </p>
-<h5 id="example_8">Example</h5>
+<h5 id="example_9">Example</h5>
 <div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=Case1
 *Activate, TYPE=Element
  dam, water, farField

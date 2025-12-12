@@ -2920,26 +2920,27 @@ Hyfeast는 구속조건 처리를 위해 automatic selection of slave Dof and ov
 <p>고정된 경계조건(항상 변위가 0인)</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=Support, Name=name
   targetNode, dof, CS=orientation
-  targetNset, dof, CS=orientation
-  targetSurface, dof, CS=orientation
+  targetNGroup, dof, CS=orientation
   ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>targetNode:</strong> target node (required)</li>
-<li><strong>targetNset:</strong> target nset(required). 절점집합내 절점이 대상이 됨.</li>
-<li><strong>targetSurface:</strong> target surface(required). Surface내의 절점이 대상이 됨.</li>
+<li><strong>targetNode:</strong> 경계조건을 부과할 node (required)</li>
+<li><strong>targetNGroup:</strong> 경계조건을 부과할 node group(required). targetNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정하며, surface로 지정하는 경우 surface 내의 절점들을 의미.    </li>
 <li><strong>dof:</strong> 대상이 되는 DOF. DOF는 X, Y, Z, RX, RY, RZ, P 등이 될 수 있으며, X|Y 등과 같은 조합 가능 (required)</li>
 <li><strong>CS=orientation:</strong> 고정경계조건이 적용될 좌표계. <code>*CoordinateSystem, TYPE=Orientation</code>으로 정의된 이름을 지정. 생략 시 GCS 적용 (optional)</li>
 </ul>
 </div>
-<p>데이터라인의 첫항은 targetNset, targetSurface, targetNode의 순으로 가능한 대상을 찾는다. 문자열로 제공하는 nset과 surface는 문자열로 지정되므로 이름을 정의할 때 주의한다. 또한 중복해서 특정 절점 자유도를 지정한 경우 오류없이 그 자유도에 한번만 경계조건이 부과된다. </p>
+<p>데이터라인의 첫항은 nset, surfce, 절점번호패턴/절점번호 순으로 가능한 대상을 찾는다. 미리 정의한 nset, surface의 이름이 숫자로 이루어질 수 있으므로 주의한다.  </p>
+<p>중복해서 특정 절점 자유도를 지정한 경우 오류없이 그 자유도에 한번만 경계조건이 부과된다. </p>
 <p>기울어진 경계조건를 위해 국부좌표계를 지정할 수 있다. 내부적으로 MPC(multi-point constraint)가 부가되는 방식으로 처리된다. 출력값은 GCS 기준이다. 만약 주어진 국부좌표계를 기준으로 결과가 필요한 경우 <code>*Print</code>, <code>*History</code>에서는 별도로 지정해야 한다. <code>*Output</code>에서는 국부좌표계를 지정할 기능을 없으나 <code>hfVisualizer</code>로 포스트프로세싱시 국부좌표계상의 결과를 구할 수 있다. </p>
 <h5 id="example">Example</h5>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=Support, Name=initialBC
  1, X|Y
- all, Z|RX|RY
+ all, Z|RX|RY      # all is NSET
+ topTopSurface, Z  # topTopSurface is Surface
+ 201:207:3, Y      # 201:207:3 is a pattern with 201, 204, 207
 
 *Constraint, Type=Support, Name=C
  101, X
@@ -2954,66 +2955,69 @@ Hyfeast는 구속조건 처리를 위해 automatic selection of slave Dof and ov
 </code></pre></div>
 <h3 id="constraint-typerigidlink">*Constraint, Type=RigidLink</h3>
 <p>두 절점의 대응하는 자유도를 구속.</p>
-<div class="highlight"><pre><span></span><code>*Constraint, Type=RigidLink Name=name
+<div class="highlight"><pre><span></span><code>*Constraint, Type=RigidLink, Name=name
  slaveNode, masterNode, dof
- slaveNset, masterNode, dof
- slaveNset, masterNset, dof 
+ slaveNGroup, masterNode, dof
+ slaveNGroup, masterNGroup, dof 
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_1">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
 <li><strong>slaveNode, masterNode:</strong> 연결한 두 절점(required)</li>
-<li><strong>slaveNset, masterNode:</strong> slaveNset 내 모든 절점을 masterNode로 연결(required)</li>
-<li><strong>slaveNset, masterNset:</strong> 연결한 두 절점집합(required). 두 절점집합내의 가장 가까운 두 절점끼리 1:1로 매칭되므로 절점집합내 절점의 개수가 동일해야 함. 예외적으로 masterNset에서 절점수가 1개인 경우는 slaveNset, masterNode를 지정한 것과 동일하게 매칭됨</li>
-<li><strong>dof:</strong> 부과할 자유도 조건(required), X, Y, Z, RX, RY, RZ 등을 이용한 조합. 예를 들어 X|RX 등.</li>
+<li><strong>slaveNGroup, masterNode:</strong> slaveNGroup 내 모든 절점을 masterNode로 연결(required), slaveNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정하며, surface로 지정하는 경우 surface 내의 절점들을 의미.</li>
+<li><strong>slaveNGroup, masterNGroup:</strong> 연결한 두 절점그룹(required). 두 절점그룹내의 가장 가까운 두 절점끼리 1:1로 매칭되므로 절점집합내 절점의 개수가 동일해야 함. 예외적으로 masterNGroup에 속한 절점수가 1개인 경우는 slaveNGroup, masterNode를 지정한 것과 동일하게 slaveNGroup내의 모든 절점이 masterNGroup내 유일한 절점에 매칭됨. slaveNGroup과 masterNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정함. surface로 지정하면, 해당 surface를 구성하는 모든 절점을 의미함.</li>
+<li><strong>dof:</strong> 부과할 자유도 조건(required), X, Y, Z, RX, RY, RZ, P, T 등을 | 기호로 조합 가능(예: X|RX)</li>
 </ul>
 </div>
-<p><code>*Constraint, TYPE=RigidLink</code>는 단순히 두 절점의 대응하는 자유도를 서로 구속한다. </p>
+<p><code>*Constraint, TYPE=RigidLink</code>는 두 절점에서 서로 대응하는 절점 자유도를 서로 구속한다. </p>
+<p>slaveNGroup, masterNGroup 등과 같이 절점그룹을 사용하는 경우 각 그룹은 nset, surfce, 절점번호패턴/절점번호 순으로 가능한 대상을 찾는다. 미리 정의한 nset, surface의 이름이 숫자로 이루어질 수 있으므로 주의한다. </p>
 <h5 id="example_1">Example</h5>
-<div class="highlight"><pre><span></span><code>*Constraint, Type=RigidLink Name=c1
+<div class="highlight"><pre><span></span><code>*Constraint, Type=RigidLink, Name=c1
  1, 2, X|Y|Z
  left, right, X
+ 1:10:2, 101:110:2, Y|RX
 </code></pre></div>
 <h3 id="constraint-typebeamlink">*Constraint, Type=BeamLink</h3>
 <p>두 절점의 회전을 고려하여 자유도를 구속</p>
-<div class="highlight"><pre><span></span><code>*Constraint, Type=BeamLink Name=name
+<div class="highlight"><pre><span></span><code>*Constraint, Type=BeamLink, Name=name
  slaveNode, masterNode, plane
- slaveNset, masterNode, plane
- slaveNset, masterNset, plane
+ slaveNGroup, masterNode, plane
+ slaveNGroup, masterNGroup, plane
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_2">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>slaveNode, masterNode:</strong> 연결한 두 절점</li>
-<li><strong>slaveNset, masterNode:</strong> slaveNset 내 모든 절점을 masterNode로 연결</li>
-<li><strong>slaveNset, masterNset:</strong> 연결한 두 절점집합. 두 절점집합내의 가장 가까운 두 절점끼리 1:1로 매칭되므로 절점집합내 절점의 개수가 동일해야 함. 예외적으로 masterNset에서 절점수가 1개인 경우는 slaveNset, masterNode를 지정한 것과 동일하게 매칭됨</li>
+<li><strong>slaveNode, masterNode:</strong> 연결한 두 절점(required)</li>
+<li><strong>slaveNGroup, masterNode:</strong> slaveNGroup 내 모든 절점을 masterNode로 연결(required), slaveNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정하며, surface로 지정하는 경우 surface 내의 절점들을 의미.</li>
+<li><strong>slaveNGroup, masterNGroup:</strong> 연결한 두 절점그룹(required). 두 절점그룹내의 가장 가까운 두 절점끼리 1:1로 매칭되므로 절점집합내 절점의 개수가 동일해야 함. 예외적으로 masterNGroup에 속한 절점수가 1개인 경우는 slaveNGroup, masterNode를 지정한 것과 동일하게 slaveNGroup내의 모든 절점이 masterNGroup내 유일한 절점에 매칭됨. slaveNGroup과 masterNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정함. surface로 지정하면, 해당 surface를 구성하는 모든 절점을 의미함.</li>
 <li><strong>plane:</strong> 구속조건을 부과할 평면, XY, YZ,  ZX, NOPLANE 중 하나이며 디폴트는 NOPLANE</li>
 </ul>
 </div>
 <p><code>*Constraint,TYPE=BeamLink</code>는 연결하는 두 절점이 강체운동이 될 수 있도록 회전자유도를 고려하여 구속한다. 그림과 같이 보로 보강쉘을 모델링할 때 쉘의 절점과 보의 절점을 연결하거나, 평행하게 연결된 보를 연결할 때 사용할 수 있다. </p>
+<p>slaveNGroup, masterNGroup 등과 같이 절점그룹을 사용하는 경우 각 그룹은 nset, surfce, 절점번호패턴/절점번호 순으로 가능한 대상을 찾는다. 미리 정의한 nset, surface의 이름이 숫자로 이루어질 수 있으므로 주의한다. </p>
 <p><img alt="Fig. 5.2-1. BeamLink" src="image/5.2-1.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 5.2-1.</span></strong> BeamLink</p>
 
 <h5 id="example_2">Example</h5>
-<div class="highlight"><pre><span></span><code>*Constraint, Type=BeamLink Name=c1
+<div class="highlight"><pre><span></span><code>*Constraint, Type=BeamLink, Name=c1
  1001, 1002, XY
- left right 
+ left, right 
+ 1:10:2, 101:110:2
 </code></pre></div>
 <h3 id="constraint-typenodetosurface">*Constraint, Type=NodeToSurface</h3>
 <p>절점 또는 절점집합, surface내의 절점들을 또 다른 surface에 구속</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=NodeToSurface, Name=name
  slaveNode, masterSurface, dof, radius, searchFlag, springCoef
- slaveNset, masterSurface, dof, radius, searchFlag, springCoef
- slaveSurface, masterSurface, dof, radius, searchFlag, springCoef ...
+ slaveNGroup, masterSurface, dof, radius, searchFlag, springCoef
+ ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_3">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
 <li><strong>slaveNode:</strong> slave로 사용되는 절점(required)</li>
-<li><strong>slaveNset:</strong> slave로 사용되는 절점 집합(required)</li>
-<li><strong>slaveSurface:</strong> slave 절점을 구성하는 surface (required)</li>
+<li><strong>slaveNGroup:</strong> slave 절점으로 사용할 절점 그룹(required), slaveNGroup은 nset, surface, 절점번호패턴(start<img alt="🔚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f51a.svg" title=":end:" />spacing 형태, spacing은 1일 때 생략 가능) 형식으로 지정하며, surface로 지정하는 경우 surface 내의 절점들을 의미.    </li>
 <li><strong>masterSurface:</strong> master로 사용되는 surface(required)</li>
 <li><strong>dof:</strong> 부과할 자유도 조건(required), X, Y, Z 등을 이용한 조합. 예를 들어 X|Y 등.</li>
 <li><strong>radius:</strong> slave node에서 master surface로의 유효 수선 반경. 0이면 무한대 반경을 의미하며, 유효 수선 반경을 적용하지 않는다는 의미. 디폴트는 0. </li>
@@ -3023,7 +3027,7 @@ Hyfeast는 구속조건 처리를 위해 automatic selection of slave Dof and ov
 </div>
 <p><code>*Constraint, TYPE=NodeToSurface</code>는 slave node로부터 master surface로 수선을 찾고 이로부터 구속조건을 부과한다. slaveNset, slaveSurface를 지정하는 경우 이를 구성하는 개별적인 절점을 slave node로 지정한 것과 같다. 데이터라인의 첫항은 slaveNset, slaveSurface, slaveNode의 순으로 가능한 대상을 찾는다. 문자열로 제공하는 nset과 surface는 문자열로 지정되므로 이름을 정의할 때 주의한다. 현재는 Translational DOF에 대해서만 작동한다. </p>
 <p>radius, searchFlag을 통해 수선을 찾는 방식과 구속조건에 적용하는 방식을 세밀하게 지정한다. radius가 0인 경우는 유효수선반경을 지정하지 않는다는 의미로 masterSurface를 구성하는 모든 face를 대상으로 수선을 찾는다. radius가 어떤 값을 가지는 경우는 찾은 수선 중 그 거리가 radius 안에 있어야 한다. 찾은 수선의 수가 1개이면 searchFlag과 무관하게 그 수선에 구속조건을 부과한다. 만약 수선의 수가 여러개이면 One, OneF는 그중 가장까자운 수선만을 선택하고, All, AllF는 모든 수선에 구속조건을 적용한다. 만약 찾은 수선 수가 0개면 OneF, AllF는 가장가까운 절점을 수선점(footprint)으로 취급한다. 만약 어떠한 연결점도 찾지  못하는 경우에는 구속조건을 부과하지 않으며, 로그 파일에 경고 메시지를 출력한다. </p>
-<p>수선 찾기는 masterSurface를 구성하는 개별 face를 대상으로 Newton법을 통해 구동되기 때문에,  계산시간이 많이 소요된다. 효율을 높이기 위해서 radius가 있는 경우에는 masterSurface를 구성하는 face의 절점 중 최소 1개의 절점이 2*radius 내에 존재하면 그 face를 대상으로 수선 찾기를 실행하게 된다. </p>
+<p>수선 찾기는 masterSurface를 구성하는 개별 face를 대상으로 Newton법을 통해 구동되기 때문에,  계산시간이 많이 소요된다. 효율을 높이기 위해서 radius가 있는 경우에는 masterSurface를 구성하는 face의 절점 중 최소 1개의 절점이 <code>2*radius</code> 내에 존재하면 그 face를 대상으로 수선 찾기를 실행하게 된다. </p>
 <p>springCoef를 지정하면 slave 자유도와 수선 사이에 스프링이 설치된다. 만약 springCoef를 적당히 큰 값들 사용하면 일종의 penalty method에 의한 구속조건 처리가 가능하다. 다만 적용하는 스프링 상수는 사용자가 고유진동수 해석이나 기타의 방법을 통해 사용해야 한다. </p>
 <h5 id="example_3">Example</h5>
 <div class="highlight"><pre><span></span><code>*NSet, Name=slabLine
@@ -3032,10 +3036,10 @@ Hyfeast는 구속조건 처리를 위해 automatic selection of slave Dof and ov
 *NSet, Name=mygirder
  ...
 
-*Surface, Name=slaveSurce
+*Geometry, Type=Surface, Name=slaveSurce
  ...
 
-*Surface, Name=slab
+*Geometry, Type=Surface, Name=slab
  ...
 
 
@@ -3043,53 +3047,58 @@ Hyfeast는 구속조건 처리를 위해 automatic selection of slave Dof and ov
  slabLine, slab, X|Y|Z                  
  slaveSurface, slab, X|Y|Z, 0.3, AllF  
  mygirder, slab, X|Y|Z, 0.3, OneF
+ 1:10, slab, X|Y|Z
 </code></pre></div>
 <h3 id="constraint-typempc">*Constraint, Type=MPC</h3>
 <p>사용자 정의 선형 구속조건을 정의</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=MPC, Name=name
   nodal_expression
   ...
-  nset1, nset2, matching_expression
+  NGroup1, NGroup2, matching_expression
   ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_4">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
 <li><strong>nodal_expression:</strong> Define one multi-point constraint condition as string. (required)</li>
-<li><strong>nset1, nset2, matching_expression:</strong> Generate multi-point constraint conditions of each node pair given by two nsets nset1 and nset2.(required) </li>
+<li><strong>NGroup1, NGroup2, matching_expression:</strong> Generate multi-point constraint conditions of each node pair given by two NGroup1 and NGroup2(required). NGroup1과 NGroup2은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정함. surface로 지정하면, 해당 surface를 구성하는 모든 절점을 의미함.</li>
 </ul>
 </div>
-<p><strong>nodal_expression을 지정하는 경우</strong></p>
+<p><strong>nodal_expression</strong>을 지정하는 경우</p>
 <p>절점 자유도 간의 관계를 선형조합으로 지정한다. 예를 들어  <code>2*X2-3*Y3-5*X4</code>이 경우 <code>X2</code>는 2번 절점의 <code>X</code> 자유도를, <code>Y3</code>는 3번 절점의 <code>Y</code>자유도, <code>X4</code>는 4번 절점의 자유도를 의미하며 이 수식이 0이 되는 구속조건을 부과하는 것이다. </p>
-<p><strong>matching_expression"을 지정하는 경우</strong></p>
+<p><strong>matching_expression</strong>을 지정하는 경우</p>
 <p>두 절점집합의 크기가 동일할 때 적용가능하다. 두 절점집합에서 가장 가까운 두쌍의 절점이 선택되어 주어진 구속조건이 부과된다. 예를 들어 <code>2*X1-3*Y2-5*X1</code>에서 <code>X1</code>은 첫 번째 절점집합에 있는 절점의 <code>X</code> 자유도를, <code>Y2</code>는 두 번째 절점집합 내의 절점의 <code>Y</code>자유도를 의미한다. 자유도 표시 기호(<code>X</code>,<code>Y</code>,<code>Z</code>,<code>RX</code>,<code>RY</code>,<code>RZ</code> 등) 뒤의 숫자는 1또는 2여야 한다. </p>
+<p>NGroup1, NGroup2 등과 같이 절점그룹을 사용하는 경우 각 그룹은 nset, surfce, 절점번호패턴/절점번호 순으로 가능한 대상을 찾는다. 미리 정의한 nset, surface의 이름이 숫자로 이루어질 수 있으므로 주의한다. </p>
 <h5 id="example_4">Example</h5>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=MPC, Name=Y-Lock
- left, right, Y1-Y2    # matching expression
- Y3-4*Y4               # nodal expression
+ Y3 - 4*Y4 – 3*RX2              # nodal expression
+ left, right, Y1-Y2             # matching expression
+ 1:3, 101:103, 2*X1-3*Y2-5*X1   # matching expression
 </code></pre></div>
 <h3 id="constraint-typeembedded">*Constraint, Type=Embedded</h3>
 <p>절점을 자신을 포함하는 요소에 연결</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=Embedded, Name=name
- node, hostElset
- nset, hostElset
+ targetNode, hostElset
+ targetNGroup, hostElset
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_5">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>node, hostElset:</strong> 연결할 절점과 대상 요소 집합</li>
-<li><strong>nset, hostElset:</strong> 연결할 절점집합과 대상 요소 집합</li>
+<li><strong>targetNode:</strong> 경계조건을 부과할 node (required)</li>
+<li><strong>targetNGroup:</strong> 경계조건을 부과할 node group(required). targetNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정하며, surface로 지정하는 경우 surface 내의 절점들을 의미.    </li>
+<li><strong>hostElset:</strong> 대상 요소 집합</li>
 </ul>
 </div>
 <p><code>*Constraint, TYPE=Embedded</code>는 절점을 대상 요소 집합(호스트 요소집합)을 대상으로 포함되는 요소(호스트 요소)를 찾고, 호스트 요소의 연결절점과 형상함수 정보를 이용해 구속한다. 대표적인 사용예는 솔리드 요소 내에 철근을 모델링하는 경우이다. 트러스 요소로 철근을 모델링한 후 이 요소를 구성하는 절점들에 <code>*Constraint, TYPE=Embedded</code>로 호스트요소집합을 솔리드 요소군으로 적용하면 된다. 또는 두 구조체 사이를 dowel 바 등으로 연결하고자할 때에도 dowel 바의 위치를 메쉬와 무관하게 설정하는데도 사용된다. </p>
+<p>데이터라인의 첫항은 nset, surfce, 절점번호패턴/절점번호 순으로 가능한 대상을 찾는다. 미리 정의한 nset, surface의 이름이 숫자로 이루어질 수 있으므로 주의한다.  </p>
 <h5 id="example_5">Example</h5>
-<div class="highlight"><pre><span></span><code>*Element, TYPE=Truss
+<div class="highlight"><pre><span></span><code>*Element, TYPE=T3D2
  1, 1,2
- 2, 3,4
+ 2, 2,3
 
-*NSET, Name=ineNodes
- 1,2,3 
+*NSET, Name=LineNodes
+ 1,2,3
 
 *Constraint, TYPE=Embedded, Name=embed
  LineNodes, beam
@@ -3097,23 +3106,24 @@ Hyfeast는 구속조건 처리를 위해 automatic selection of slave Dof and ov
 <h3 id="constraint-typespring">*Constraint, Type=Spring</h3>
 <p>절점간의 스프링 또는 댐퍼 연결</p>
 <div class="highlight"><pre><span></span><code>*Constraint, Type=Spring, Name=name
- slaveNode, masterNode, K=kx,ky,kz, C=cx,cy,cz, CS=ucs
- slaveNset, masterNode, K=kx,ky,kz, C=cx,cy,cz, CS=ucs
- slaveNset, masterNset, K=kx,ky,kz, C=cx,cy,cz, CS=ucs
+ slaveNode, masterNode, K=kx,ky,kz, C=cx,cy,cz, CS=cs
+ slaveNGroup, masterNode, K=kx,ky,kz, C=cx,cy,cz, CS=cs
+ slaveNGroup, masterNGroup, K=kx,ky,kz, C=cx,cy,cz, CS=cs
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_6">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>slaveNode, masterNode:</strong> 스프링 연결할 두 절점(required)</li>
-<li><strong>slaveNset, masterNode:</strong> slaveNset 내 모든 절점을 masterNode로 스프링 연결(required)</li>
-<li><strong>slaveNset, masterNset:</strong> 스프링 연결할 두 절점집합(required). 두 절점집합내의 가장 가까운 두 절점끼리 1:1로 매칭되므로 절점집합내 절점의 개수가 동일해야 함. </li>
+<li><strong>slaveNode, masterNode:</strong> 연결한 두 절점(required)</li>
+<li><strong>slaveNGroup, masterNode:</strong> slaveNGroup 내 모든 절점을 masterNode로 연결(required), slaveNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정하며, surface로 지정하는 경우 surface 내의 절점들을 의미.</li>
+<li><strong>slaveNGroup, masterNGroup:</strong> 연결한 두 절점그룹(required). 두 절점그룹내의 가장 가까운 두 절점끼리 1:1로 매칭되므로 절점집합내 절점의 개수가 동일해야 함. 예외적으로 masterNGroup에 속한 절점수가 1개인 경우는 slaveNGroup, masterNode를 지정한 것과 동일하게 slaveNGroup내의 모든 절점이 masterNGroup내 유일한 절점에 매칭됨. slaveNGroup과 masterNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정함. surface로 지정하면, 해당 surface를 구성하는 모든 절점을 의미함.</li>
 <li><strong>K=kx,ky,kz:</strong> 방향별 스프링값. 디폴트는 0</li>
 <li><strong>C=cx,cy,cz:</strong> 방향별 감쇠기값. 디폴트는 0</li>
 <li><strong>CS=cs:</strong> 사용할 좌표계(<code>*CoordinateSystem, TYPE=Orientation</code>). 지정하지 않으면 GCS가 적용됨</li>
 </ul>
 </div>
 <p><code>*Constraint, TYPE=Spring</code>을 이용하면 <code>*Element, TYPE=Spring</code>과 달리 요소번호가 필요없으므로 간단하게 절점간의 스프링 연결을 부과할 수 있다. 하지만 <code>*Constraint, TYPE=Spring</code>은 선형스프링/댐퍼만 연결할 수 있고, 강체팔 기능을 제공하지 않으며 스프링/댐퍼에 작용하는 내력을 구할 수 없다. </p>
+<p>slaveNGroup, masterNGroup 등과 같이 절점그룹을 사용하는 경우 각 그룹은 nset, surfce, 절점번호패턴/절점번호 순으로 가능한 대상을 찾는다. 미리 정의한 nset, surface의 이름이 숫자로 이루어질 수 있으므로 주의한다. </p>
 <h5 id="example_6">Example</h5>
 <div class="highlight"><pre><span></span><code>*Constraint, TYPE=Spring, Name=connection1
  L1, L2, K=0,100,100
@@ -3125,36 +3135,38 @@ Hyfeast는 구속조건 처리를 위해 automatic selection of slave Dof and ov
 
 *Constraint, TYPE=Spring, Name=connection2
  bottomNodes, topNodes, K=0,100,100, CS=cs1
+ 1:10:2, 101:110:2, K=0,100,100, CS=cs1
 </code></pre></div>
 <h3 id="constraint-typeearthspring">*Constraint, Type=EarthSpring</h3>
 <p>절점에 지반스프링 또는 댐퍼 연결</p>
-<div class="highlight"><pre><span></span><code>*Constraint, Type=Spring, Name=name
- node, K=kx,ky,kz, C=cx,cy,cz, CS=ucs
- nset, K=kx,ky,kz, C=cx,cy,cz, CS=ucs
+<div class="highlight"><pre><span></span><code>*Constraint, Type=EarthSpring, Name=name
+ targetNode, K=kx,ky,kz, C=cx,cy,cz, CS=ucs
+ targetNGroup, K=kx,ky,kz, C=cx,cy,cz, CS=ucs
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines_7">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>node:</strong> 지반 스프링이 연결되는 절점(required)</li>
-<li><strong>nset:</strong> 지반 스프링이 연결되는 절점집합(required). </li>
+<li><strong>targetNode:</strong> 경계조건을 부과할 node (required)</li>
+<li><strong>targetNGroup:</strong> 경계조건을 부과할 node group(required). targetNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정하며, surface로 지정하는 경우 surface 내의 절점들을 의미.    </li>
 <li><strong>K=kx,ky,kz:</strong> 방향별 스프링값. 디폴트는 0</li>
 <li><strong>C=cx,cy,cz:</strong> 방향별 감쇠기값. 디폴트는 0</li>
 <li><strong>CS=cs:</strong> 사용할 좌표계(<code>*CoordinateSystem, TYPE=Orientation</code>). 지정하지 않으면 GCS가 적용됨</li>
 </ul>
 </div>
 <p><code>*Constraint, TYPE=EarthSpring</code>을 이용하면 <code>*Element, TYPE=EarthSpring</code>과 달리 요소번호가 필요없으므로 간단하게 절점간의 스프링 연결을 부과할 수 있다. 하지만 <code>*Constraint, TYPE=EarthSpring</code>은 선형스프링/댐퍼만 연결할 수 있고, 강체팔 기능을 제공하지 않으며 스프링/댐퍼에 작용하는 내력을 구할 수 없다. </p>
+<p>데이터라인의 첫항은 nset, surfce, 절점번호패턴/절점번호 순으로 가능한 대상을 찾는다. 미리 정의한 nset, surface의 이름이 숫자로 이루어질 수 있으므로 주의한다. </p>
 <h5 id="example_7">Example</h5>
 <div class="highlight"><pre><span></span><code>*Constraint, TYPE=EarthSpring, Name=connection1
  L1, K=0,100,100, C=0,20,30
- L3, L4, K=0,100,100
+ 1:10, K=0,100,100
 
 *CoordinateSystem, Type=Orientation, Name=cs1
   2,1,0
   3,0,1  
 
 *Constraint, TYPE=EarthSpring, Name=connection2
- bottomNodes, topNodes, K=0,100,100, CS=cs1
+ bottomNodes, K=0,100,100, CS=cs1
 </code></pre></div>
 <h3 id="constraint-typespringboundary">*Constraint, Type=SpringBoundary</h3>
 <p>요소의 표면 또는 보 요소 또는 트러스 요소로 구성된 라인에 분포하는 스프링 또는 댐퍼</p>

@@ -2677,20 +2677,23 @@
 
   <h1>EmbeddedLine</h1>
 
-<p><code>EmbeddedLine</code> 요소는 매립된 텐던 또는 철근을 모사할 수 있는 요소로서, <code>EmbeddedLine</code> 요소 타입, <code>EmbeddedLine</code> 단면 타입으로 정의할 수 있다. <code>EmbeddedLine</code> 단면을 정의할 때 요소의 프로파일을 스프라인 기하형상으로 정의한다. 요소의 개별적인 특성치로 호스트 요소집합을 정의해야 한다.  적용 가능한 호스트 요소는 다음과 같다. </p>
+<p>The <code>EmbeddedLine</code> element is used to model embedded tendons or reinforcing bars, and is defined through the <code>EmbeddedLine</code> element type and the <code>EmbeddedLine</code> section type. When defining an EmbeddedLine section, the element profile is specified by a spline geometry.
+For each element, a host element set must be assigned. The applicable host element families are as follows:</p>
 <ul>
-<li>2차원 보 요소군(Beam2D) : B2D2H, B2D2MH</li>
-<li>3차원 보 요소군(Beam3D) : B3D2H, B3D2MH</li>
-<li>쉘 요소군(Shell) : S3F, S4F, S3, S4</li>
-<li>솔리드쉘 요소군(CShell) : CS6, CS8</li>
-<li>2차원 평면 솔리드 요소군(Plane) : CPE4, CPS4, CAX4, CPS3, CPE3, CAX3</li>
-<li>3차원 솔리드 요소군(Solid) : C3D8, C3D8I, C3D6</li>
+<li>2D Beam elements: B2D2H, B2D2MH</li>
+<li>3D Beam elements: B3D2H, B3D2MH</li>
+<li>Shell elements: S3F, S4F, S3, S4</li>
+<li>Solid-shell elements: CS6, CS8</li>
+<li>2D Solid elements: CPE4, CPS4, CAX4, CPS3, CPE3, CAX3</li>
+<li>3D Solid elements: C3D8, C3D8I, C3D6</li>
 </ul>
-<p><code>EmbeddedLine</code> 요소에 적용하는 호스트 요소집합은 동일한 요소군으로 구성되어야 한다. 텐던 해석시에는 <code>*State</code> 명령으로 텐던의 프리스트레스 하중을 부과할 수 있다. </p>
-<p>▪ 주의 
-- <code>EmbeddedLine</code> 요소는 질량행렬을 계산하지 않는다(강성에만 기여)
-- 철근 모델링은 Truss 요소(<code>T3D2</code>)와 <code>Embedded</code> 구속조건으로도 가능하다. 이 경우 직선 형태이고, 프리스트레스 등은 부과할 수 없다. 
-- EmbeddedLine 요소는 1개의 절점을 사용하지만, 스프라인 형상의 기준점으로만 사용한다. 그 절점에서 자유도를 정의하지 않는다. </p>
+<p>The host element set assigned to an EmbeddedLine element must consist of elements from the same family. For tendon analysis, prestressing loads can be applied using the <code>*State</code> command.</p>
+<p>▪ Note</p>
+<ul>
+<li>The <code>EmbeddedLine</code> element does not compute a mass matrix (it contributes only to stiffness).</li>
+<li>Reinforcement modeling can alternatively be performed using truss elements(<code>T3D2</code>) combined with <code>Embedded</code> constraints. In this case, only straight bars can be represented and prestressing cannot be applied.</li>
+<li>The EmbeddedLine element uses a single node, but only as a reference point for the spline geometry. No degrees of freedom are defined at that node.</li>
+</ul>
 <p><img alt="Fig. 4.11-1 EmbeddedLine element" src="../image/4.11-1.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 4.11-1.</span></strong> EmbeddedLine element</p>
 
@@ -2704,7 +2707,7 @@
  30., 0., 0.
 
 *Section, Type=EmbeddedLine, Name=tendon
-  tendon, 0.01, 3
+  tendon, 0.01
   0.4, 0.2
 
 *Element, Type=EmbeddedLine, ELSet=tendon
@@ -2737,13 +2740,16 @@
 <li><strong>Active DOFs</strong>: None</li>
 </ul>
 </div>
-<p>▪ Notes
-The <code>n1</code> node is used only as a reference point for defining the geometry and does not contribute to the stiffness or mass matrix of the element.</p>
+<p>▪ Notes</p>
+<ul>
+<li>The <code>n1</code> node is used only as a reference point for defining the geometry and does not contribute to the stiffness or mass matrix of the element.</li>
+<li>The number of integration points depends on the integration scheme specified in the cross-section (<code>Aligned</code> or <code>Unaligned</code>).</li>
+</ul>
 <h3 id="section-typeembeddedline">*Section, Type=EmbeddedLine</h3>
 <p>Define the properties for EmbeddedLine element</p>
 <div class="highlight"><pre><span></span><code>*Section, Type=EmbeddedLine, Name=name
- material, area, ngauss, maxDiscretizationLength
- mu, kappa
+  material, area, { Aligned, ngauss | Unaligned, nsegment }
+  mu, kappa
 </code></pre></div>
 <h5 id="keyword-line">Keyword line</h5>
 <div class="admonition note">
@@ -2756,8 +2762,8 @@ The <code>n1</code> node is used only as a reference point for defining the geom
 <ul>
 <li><strong>material:</strong> material (required)</li>
 <li><strong>area:</strong> area (required)</li>
-<li><strong>ngauss:</strong> No. of integration points for spline subdivision (optional, default is 4).</li>
-<li><strong>maxDiscretizationLength:</strong> Maximum allowed discretization length between Gauss points (optional, </li>
+<li><strong>Aigned, ngauss:</strong> The spline is divided according to the host element for integration, and the Legendre integration with ngauss points is applied to each segment. (optional, default: Aligned, 3)</li>
+<li><strong>Unaligned, nsegment:</strong> The spline is divided into nsegment parts, and the Trapezoidal rule is applied for integration. In this mode, the subdivision does not match the host element mesh. If nsegment is not specified, it is determined automatically as twice the number of elements that the spline passes through. (optional) Total number of integration points are nsegment + 1. </li>
 </ul>
 </div>
 <h5 id="second-dataline-optional">Second dataline (optional)</h5>
@@ -2766,9 +2772,24 @@ The <code>n1</code> node is used only as a reference point for defining the geom
 <li><strong>mu, kappa:</strong> Curvature and wobble friction coefficients (optional, default 0., 0.).</li>
 </ul>
 </div>
-<p>The spline (<code>*Construction, TYPE=Spline</code>) is subdivided into segments between sampling points. Each subdivision is integrated using Gauss–Lobatto quadrature with ngauss integration points. To ensure accurate integration, a sufficient number of points is required, and this is controlled by the variable <code>maxDiscretizationLength</code>.
-<code>maxDiscretizationLength</code> specifies the maximum spacing allowed between adjacent integration points, and the actual spacing is set smaller than this value.
-If the parameter is not specified (i.e., set to 0), it is automatically assigned as one quarter of the smallest edge length of the host element.</p>
+<p>The curvature friction coefficient has a unit of 1/rad, and the wobble friction coefficient has a unit of 1/length. Their typical ranges are 0.15–0.3 /rad and 0.00021–0.007 /m, respectively.</p>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*SECTION, TYPE=EmbeddedLine, Name=case1
+  steel,  0.1
+
+*SECTION, TYPE=EmbeddedLine, Name=case2
+  steel,  0.1, Aligned, 4
+
+*SECTION, TYPE=EmbeddedLine, Name=case3
+  steel,  0.1, Unaligned
+
+*SECTION, TYPE=EmbeddedLine, Name=case4
+  steel,  0.1, Unaligned, 10
+
+*SECTION, TYPE=EmbeddedLine, Name=case5
+  steel,  0.1
+  0.4, 0.2
+</code></pre></div>
 
 
 

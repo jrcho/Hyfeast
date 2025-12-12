@@ -1521,9 +1521,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#defaultparameter" class="md-nav__link">
+  <a href="#parameter" class="md-nav__link">
     <span class="md-ellipsis">
-      *DefaultParameter
+      *Parameter
     </span>
   </a>
   
@@ -1684,6 +1684,15 @@
   <a href="#model-typefarfield2d" class="md-nav__link">
     <span class="md-ellipsis">
       *Model, TYPE=FarField2D
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typecurveextrusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=CurveExtrusion
     </span>
   </a>
   
@@ -2824,9 +2833,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#defaultparameter" class="md-nav__link">
+  <a href="#parameter" class="md-nav__link">
     <span class="md-ellipsis">
-      *DefaultParameter
+      *Parameter
     </span>
   </a>
   
@@ -2993,6 +3002,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#model-typecurveextrusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=CurveExtrusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#model-typefarfield3d" class="md-nav__link">
     <span class="md-ellipsis">
       *Model, TYPE=FarField3D
@@ -3039,37 +3057,33 @@
 
 *INCLUDE, File=model.inp, P=&quot;&lt;S&gt;=100. &lt;T&gt;=15.3, &lt;Solver&gt;={A,10}&quot;
 </code></pre></div>
-<h2 id="defaultparameter">*DefaultParameter</h2>
-<p>파라미터 표현 사용시, 파라미터가 지정되지 않는 경우 사용되는 디폴트 파라미터 표현식을 지정</p>
-<div class="highlight"><pre><span></span><code>*DefaultParameter, parameters
+<h2 id="parameter">*Parameter</h2>
+<p>파라미터 표현식을 정의한다. </p>
+<div class="highlight"><pre><span></span><code>*Parameter, Name=name, &quot;key=val, ...&quot; [,Default]
 </code></pre></div>
 <h5 id="keyword-line_1">Keyword line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>parameters:</strong> parameter expression. 이중따옴표(")로 둘러쌓여야 함. </li>
+<li>
+<p><strong>parameters:</strong> parameter expression. 이중따옴표(")로 둘러쌓여야 함. </p>
+</li>
+<li>
+<p><strong>Name=name:</strong> 파라미터 표현식 이름</p>
+</li>
+<li><strong>"key=value, ...":</strong> 파라미터 표현식, ""로 둘러쌓여야 함. </li>
+<li><strong>Default:</strong> 지정하는 경우 Default 파라미터 표현식으로 지정 (optional)</li>
 </ul>
 </div>
-<p>파라미터 표현식은 hfAnalyzer를 커맨트라인에 실행하거나 <code>*Include</code> 문에서 지정하여 사용가능하다. 지정하지 않는 파라미터 표현식에 대한 디폴트 표현식을 지정한다. 예를 들어 아래와 같은 입력파일이 있다고 가정한다. </p>
-<ul>
-<li><code>model.inp</code></li>
-</ul>
-<div class="highlight"><pre><span></span><code>*DefaultParameter, &quot;&lt;E&gt;=2E9, &lt;nu&gt;=0.18&quot;
+<p><code>*Parameter</code> 표현식의 이름은 중복하여 지정할 수 없다. 여러개의 <code>*Parameter</code> 문이 있는 경우 <code>Default</code>는 한번만 사용할 수 있다. 또한 <code>*Parameter</code> 문은 최상위 입력파일에서만 사용가능하다(<code>*Include</code> 등으로 포함되는 경우 사용불가).  </p>
+<p>파라미터 표현식은 반드시 <code>""</code>로 둘러쌓여야 하며, <code>key=value, ...</code> 형태로, 적용될 경우 <code>key</code>가 <code>value</code>로 치환되게 된다. 이때 <code>key</code>는 다른 문자열과 구분되어야 하기 때문에 <code>&lt;A&gt;</code>, <code>$A$</code> 등과 같이 일반적으로 잘 사용하지 않는 기호로 둘러싸는 것이 좋다. 예를 들어 예를 들어 <code>"&lt;E&gt;=20E9, &lt;B&gt;=7.3"</code> 와 같이 쓰면 <code>&lt;K&gt;</code>는 <code>20E9</code>로, <code>&lt;B&gt;</code>는 <code>7.3</code>으로 치환하게 된다. 한편 파라미터 표현식 내부에서 토큰은 <code>{}</code>로 묶을 수 있다. 예를 들어 <code>"&lt;K&gt;={R,12.3}, &lt;B&gt;=7.3"</code> 등과 같이 쓰면  <code>&lt;K&gt;</code>는 <code>R,12.3</code>로 치환된다. </p>
+<p>파라미터 표현식 사용에 대한 자세한 사용법은 개요 부분을 참조한다. </p>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*Parameter, Name=VM, &quot;&lt;E&gt;=2E9, &lt;nu&gt;=0.18&quot;, Default
+*Parameter, Name=CM, &quot;&lt;E&gt;=2E9, &lt;nu&gt;=0.18&quot;
 
 *Material, TYPE=IsoElasticity, Name=myMat
  &lt;E&gt;, &lt;nu&gt;
-
-...
 </code></pre></div>
-<p>만약 명령행에서 다음과 같이 실행했다고 가정할 때는 다음과 같이 인식된다. </p>
-<div class="highlight"><pre><span></span><code>&gt; hfAnalzyer model.inp
-→ &lt;E&gt;와 &lt;nu&gt;가 DefaultParamter에서 지정한 2E9, 0.18로 각각 치환된다. 
-
-&gt; hfAnalzyer model.inp –p &quot;&lt;E&gt;=5E9&quot;
-→ &lt;E&gt;를 상위에서 지정하고 있으므로 그 값(5E9)를 사용하고 DefaultParamter 구문에서 지정한 값 &lt;E&gt; 값은 무시된다. 하지만 &lt;nu&gt;는 0.18을 적용한다. 
-</code></pre></div>
-<p>만약 <code>*Include, File=model.inp, P="&lt;E&gt;=5E9""</code> 등과 같이 사용하더로 위와 같은 개념으로 적용할 수 있다. </p>
-<p>▪ 주의 </p>
-<p><code>*DefaultParameter</code> 구문은 파일내에서 여러번 사용할 수 있으나 그 파일 전체에 대해 적용된다. 즉, 파일의 뒤쪽에서 지정하더라도 그 파일의 처음에 정의한 것과 같다. </p>
 <h2 id="distribution">*Distribution</h2>
 <p>절점 또는 요소에 지정하는 특성치를 부과</p>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=type
@@ -3110,7 +3124,7 @@
 <p>요소에 단면물성은 <code>*Element</code>에서 지정가능하지만, 생략할 경우 <code>*Distribution, TYPE=Section</code>으로 지정가능하다. 이 명령으로 이미 지정된 단면을 삭제하는 것도 가능하다. </p>
 <p>프로그램에서는 라인내에서 2개 이상의 토큰이 있는 경우 먼저 제일 뒤에 제시된 토큰이 section인지를 검토하고 그렇지 않은 경우에는 주어진 section이 없는 것으로 인식한다. section이 없는 경우 대상 요소에 이미 지정되어 있는 section이 해제된다. 단면을 삭제하고자 하는 요소집합과 단면 명칭이 동일한 경우 한 라인에 요소집합만을 기입하도록 한다. </p>
 <p>요소번호패턴으로 대상을 지정하는 경우 존재하지 않는 요소는 오류를 유발하지 않고 단순히 무시한다.    </p>
-<h5 id="example_1">Example</h5>
+<h5 id="example_2">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, TYPE=Section
  left, section1    # 요소집합 &quot;left&quot;에 단면 &quot;section1&quot;를 지정
  right, middle, section2 # 요소집합 &quot;right&quot;, “middle”에 단면 &quot;section2&quot;를 지정
@@ -3132,7 +3146,7 @@
 </div>
 <p>대상 요소가 3차원 보요소일 때만 유효하다. 프로그램에서는 라인내에서 2개 이상의 토큰이 있는 경우 먼저 제일 뒤에 제시된 토큰이 BeamCS인지를 검토하고 그렇지 않은 경우에는 주어진 beamcs이 없는 것으로 인식한다. beamcs가 없는 경우 대상 요소에 이미 지정되어 있는  beamcs이 해제된다. BeamCS를 삭제하고자 하는 요소집합과 BeamCS 명칭이 동일한 경우 한 라인에 요소집합만을 기입하도록 한다. </p>
 <p>요소번호패턴으로 대상을 지정하는 경우 존재하지 않는 요소는 오류를 유발하지 않고 단순히 무시한다. </p>
-<h5 id="example_2">Example</h5>
+<h5 id="example_3">Example</h5>
 <div class="highlight"><pre><span></span><code>*CoordinateSystem, Type=BeamCS, Name=beamcs
  90
 
@@ -3157,7 +3171,7 @@
 </div>
 <p>대상 요소가 2차원 보요소일 경우 Rz1, Rz2만 유효하다. releaseCode를 쓰지 않는 경우 미리지정되어 있는 end release code가 해제된다. </p>
 <p>요소번호패턴으로 대상을 지정하는 경우 존재하지 않는 요소는 오류를 유발하지 않고 단순히 무시한다. </p>
-<h5 id="example_3">Example</h5>
+<h5 id="example_4">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=BeamEndRelease
  1, 2, 3, Rz1|Rz2
  beamSet, Rx1|Ry1|Rz1
@@ -3178,7 +3192,7 @@
 </div>
 <p>Spline이 주어지지 않는 경우, 지정된 요소에서 spline를 해제한다. 프로그램에서는 라인내에서 2개 이상의 토큰이 있는 경우 먼저 제일 뒤에 제시된 토큰이 spline인지를 검토하고(즉, EmbeddedLine 요소 여부에 따라) 그렇지 않은 경우에는 주어진 host가 없는 것으로 인식한다. spline이 없는 경우 대상 요소에 이미 지정되어 있는 spline이 해제된다. </p>
 <p>요소번호패턴으로 대상을 지정하는 경우 존재하지 않는 요소는 오류를 유발하지 않고 단순히 무시한다. </p>
-<h5 id="example_4">Example</h5>
+<h5 id="example_5">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=EmbeddedLineSpline
  1,2,3, curve1
  tendonSet, curve2
@@ -3200,7 +3214,7 @@
 </div>
 <p>호스트요소집합(hostElset)이 주어지지 않는 경우, 지정된 요소에서 호스트를 해제한다. 프로그램에서는 라인내에서 2개 이상의 토큰이 있는 경우 먼저 제일 뒤에 제시된 토큰이 hostElset인지를 검토하고(즉, EmbeddedLine 요소 여부에 따라) 그렇지 않은 경우에는 주어진 host가 없는 것으로 인식한다. hostElset이 없는 경우 대상 요소에 이미 지정되어 있는 hostElset이 해제된다. </p>
 <p>요소번호패턴으로 대상을 지정하는 경우 존재하지 않는 요소는 오류를 유발하지 않고 단순히 무시한다. </p>
-<h5 id="example_5">Example</h5>
+<h5 id="example_6">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=EmbeddedLineHostElset
  1,2,3, girder
  tendonSet, crossbeam
@@ -3221,7 +3235,7 @@
 </ul>
 </div>
 <p>Spring, EarthSpring, PointMass에서 추가적인 scale factor를 지정한다. 대상 요소가 존재하지 않거나 Spring, EarthSpring, PointMass 요소가 아닌 경우 오류를 유발하지 않고 단순히 무시한다. </p>
-<h5 id="example_6">Example</h5>
+<h5 id="example_7">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=MCKElementScaleFactor
  1, 2, 3, 2.5     # 1,2,3 요소에 scale factor 2.5
  wall, 2.5        # wall 요소집합(모두 spring 요소로 구성되어야)에 대해 scale factor 2.5 지정
@@ -3240,7 +3254,7 @@
 </ul>
 </div>
 <p>대상 요소가 Spring, EarthSparing, PointMass인 경우만 유효하다. 프로그램에서는 라인내에서 2개 이상의 토큰이 있는 경우 먼저 제일 뒤에 제시된 토큰이 CS인지를 검토하고 그렇지 않은 경우에는 주어진 cs이 없는 것으로 인식한다. cs가 없는 경우 대상 요소에 이미 지정되어 있는  cs이 해제된다. CS를 삭제하고자 하는 요소집합과 CS 명칭이 동일한 경우 한 라인에 요소집합만을 기입하도록 한다. 대상 요소가 존재하지 않거나 Spring, EarthSpring, PointMass 요소가 아닌 경우 오류를 유발하지 않고 단순히 무시한다. </p>
-<h5 id="example_7">Example</h5>
+<h5 id="example_8">Example</h5>
 <div class="highlight"><pre><span></span><code>*CoordinateSystem, Type=UCS, Name=springCS
  1, 1, 0, 0, 1, 0
 
@@ -3264,7 +3278,7 @@
 </ul>
 </div>
 <p>이동스프링요소(<code>*Element, Type=MovingSpring</code>)는 초기위치를 지정한다(지정하지 않으면 0,0). 대상 요소가 존재하지 않거나 MovingSpring 요소가 아닌 경우 오류를 유발하지 않고 단순히 무시한다. </p>
-<h5 id="example_8">Example</h5>
+<h5 id="example_9">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=MovingSpringIntialPosition
  100, -5, 0.     # 100번 요소에 (-5,0) 적용
 </code></pre></div>
@@ -3285,6 +3299,7 @@
 <li><strong>Wall:</strong> 쉘 요소로 직사각 메쉬를 생성</li>
 <li><strong>RectangularTank:</strong> 쉘 요소로 직사각 탱크 메쉬를 생성</li>
 <li><strong>CylindericalTank:</strong> 쉘 요소로 원통 탱크 메쉬를 생성</li>
+<li><strong>CurveExtrusion:</strong> 스플라인 경로를 따라 2차원 단면 곡선을 Extrusion하여 쉘 요소 메쉬를 생성</li>
 <li><strong>FarField2D:</strong> SSI 해석을 위한 2차원 메쉬 생성과 자유장해석 수행후 그 결과를 유효하중으로 생성</li>
 <li><strong>FarField3D:</strong> SSI 해석을 위한 3차원 메쉬 생성과 자유장해석 수행후 그 결과를 유효하중으로 생성</li>
 </ul>
@@ -3330,7 +3345,7 @@
 <p><img alt="Fig. 15.5-1. Block2D mesh generation" src="image/15.5-1.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-1.</span></strong> Block2D mesh generation</p>
 
-<h5 id="example_9">Example</h5>
+<h5 id="example_10">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=steel
  2E6, 0.2
 
@@ -3388,7 +3403,7 @@
 <p><img alt="Fig. 15.5-1. Block3D mesh generation" src="image/15.5-2.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-2.</span></strong> Block3D mesh generation</p>
 
-<h5 id="example_10">Example</h5>
+<h5 id="example_11">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=steel
  2E6, 0.2
 
@@ -3445,7 +3460,7 @@
 <li>요소집합 : name (모든 요소)</li>
 <li>면 : name (모든 외곽 면), name-Top(상부 표면), name-Bottom(하부 표면), name-Side(측면)</li>
 </ul>
-<h5 id="example_11">Example</h5>
+<h5 id="example_12">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=Water
  2190.4E+6, 1000   # bulkModulus, density  ... compressible
 
@@ -3496,7 +3511,7 @@
 <li>요소집합 : name (모든 요소)</li>
 </ul>
 <p>CS8 요소를 적용하면 쉘 두께를 기준으로 1개 층의 솔리드쉘을 만든다. 만약 쉘 단면이 주어지지 않으면 두께는 1을 적용한다. </p>
-<h5 id="example_12">Example</h5>
+<h5 id="example_13">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=steel
  2E6, 0.2
 
@@ -3543,7 +3558,7 @@
 <p><img alt="Fig. 15.5-3 RectangularTank mesh generation" src="image/15.5-3.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-3.</span></strong> RectangularTank mesh generation</p>
 
-<h5 id="example_13">Example</h5>
+<h5 id="example_14">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material,Type=IsoElasticity,Name=mat
  30E9, 0.18, 0, 2000.    # E, nu, alpha, density
 
@@ -3601,7 +3616,7 @@
 <li>요소집합 : name (모든 요소)</li>
 <li>면 : name (모든 외곽 면), name-Bottom(하부 표면), name-Side(측면)</li>
 </ul>
-<h5 id="example_14">Example</h5>
+<h5 id="example_15">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=Tank
  2.0776E+10, 0.17, 0, 2300   # E(MPa), nu, alpha, density
 
@@ -3700,7 +3715,7 @@
 <p><img alt="Fig. 15.5-6. Acceleration history input" src="image/15.5-6.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-6.</span></strong> Acceleration history input</p>
 
-<h5 id="example_15">Example</h5>
+<h5 id="example_16">Example</h5>
 <div class="highlight"><pre><span></span><code>*Function, TYPE=TimeSignal, Name=acc
  0.02, 4096
  ELCchopra.dat, 1, 0.31*9.81
@@ -3730,6 +3745,89 @@
  25E9,0.2, 2000, 0.02, 20, 10      # E, nu, density, xi, h, nz
  30E9, 0.2, 2000, 0.02, 16, 10     # E, nu, density, xi, farMeshSizeZ, farMeshCountZ
 </code></pre></div>
+<h3 id="model-typecurveextrusion">*Model, Type=CurveExtrusion</h3>
+<p>스플라인 경로를 따라 2차원 단면 곡선을 Extrusion하여 쉘 요소 메쉬를 생성</p>
+<div class="highlight"><pre><span></span><code>*Model, Type=CurveExtrusion
+ name, spline, nseg, startNodeId, startElementId, elementType, section
+ x1,y1
+ x2,x2
+ ...
+</code></pre></div>
+<h5 id="first-dataline_8">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>name:</strong>  대표 이름. 이 명령을 통해 생성하는 절점집합, 요소집합, 면, 하중 등의 이름의 기초로 사용 </li>
+<li><strong>spline:</strong> Extrusion 기준이 되는 스플라인</li>
+<li><strong>nseg:</strong> Extrusion 방향의 생성할 요소 개수 </li>
+<li><strong>startNodeId,</strong> startElementId: 시작 절점 및 요소 번호. Auto이면 자동 계산</li>
+<li><strong>elementType:</strong> 적용 요소 타입, S4F와 같은 사각형 쉘요소 타입</li>
+<li><strong>section:</strong> 생성할 요소의 단면(optional, 없으면 요소에 단면을 적용하지 않음)</li>
+</ul>
+</div>
+<h5 id="second-dataline-and-subsequent-datalines">Second dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>xi, yi:</strong> 2차원 단면 상의 좌표</li>
+</ul>
+</div>
+<p>입력된 2차원 단면 좌표들 (xi, yi)을 순서대로 연결하여 단면 형상을 만든 뒤, 이를 spline 경로를 따라 그대로 이동(Extrusion)시키면서 S4/S4F 쉘 요소로 메쉬를 생성한다. 마지막 단면 점이 첫 번째 점과 동일하면 단면을 폐곡선으로 판단하여, 곡선 경로를 따라 이어지는 원통형 또는 곡면 튜브 형태의 쉘 메쉬가 생성된다.</p>
+<p>각 단면 좌표 (xi, yi)는 스플라인 경로상의 각 지점에서 정의되는 국부 좌표계로 변환되어 3차원 위치를 가지게 된다. 이 국부 좌표계는 스플라인 접선 ex를 기준으로 하여, up 벡터와의 외적을 통해 ey를 만들고, 이어서 ez = ex × ey 를 통해 완전한 직교 좌표계를 형성한다. (ey, ez) 평면이 바로 단면이 배치되는 2차원 좌표계이다. 기본 up 벡터는 (0, 0, 1)이지만, 접선 벡터 ex가 z축과 거의 평행해지는 경우에는 외적이 0이 되는 특이점을 방지하기 위해 up 벡터를 자동으로 (0, 1, 0)으로 전환하여  안정적인 단면 좌표계를  지한다.</p>
+<h5 id="example_17">Example</h5>
+<div class="highlight"><pre><span></span><code>*Construction, Type=Spline, Name=tunnelLine
+  0,   0,  0
+ 10,   2,  1
+ 20,   3,  2
+ 30,   5,  3
+ 40,   4,  2
+ 50,   1,  1
+ 60,   0,  0
+
+*Material, TYPE=IsoElasticity, Name=mat
+ 20E9
+
+*Section, Type=Shell, Name=wall
+ mat, 0.3
+
+*Model, Type=CurveExtrusion
+ testTunnel, tunnelLine, 100, Auto, Auto, S4F, wall
+-4.800, 0.000
+-4.900, 1.000
+-5.000, 2.000
+-5.000, 3.000
+-5.000, 4.000
+-4.924, 4.868
+-4.698, 5.710
+-4.330, 6.500
+-3.830, 7.214
+-3.213, 7.826
+-2.500, 8.320
+-1.710, 8.689
+-0.868, 8.915
+ 0.000, 9.000
+ 0.868, 8.915
+ 1.710, 8.689
+ 2.500, 8.320
+ 3.213, 7.826
+ 3.830, 7.214
+ 4.330, 6.500
+ 4.698, 5.710
+ 4.924, 4.868
+ 5.000, 4.000
+ 5.000, 3.000
+ 5.000, 2.000
+ 4.900, 1.000
+ 4.800, 0.000
+ 4.000,-0.100
+ 3.000,-0.200
+ 2.000,-0.300
+ 1.000,-0.400
+ 0.000,-0.500
+-1.000,-0.400
+-2.000,-0.300
+-3.000,-0.200
+-4.000,-0.100
+-4.800, 0.000
+</code></pre></div>
 <h3 id="model-typefarfield3d">*Model, TYPE=FarField3D</h3>
 <p>SSI 해석을 위한 3차원 메쉬 생성, 자유장해석, 유효하중 계산 등을 수행</p>
 <div class="highlight"><pre><span></span><code>*Model, TYPE=FarField3D
@@ -3744,7 +3842,7 @@
  En, nun, densityn, xin, hn, nzn
  {bottomNSet} | {EHalf, nuHalf, densityHalf, xiHalf, farMeshSizeZ, farMeshCountZ}
 </code></pre></div>
-<h5 id="first-dataline_8">First dataline</h5>
+<h5 id="first-dataline_9">First dataline</h5>
 <div class="admonition note">
 <ul>
 <li><strong>name:</strong>  대표 이름. 이 명령을 통해 생성하는 절점집합, 요소집합, 면, 하중 등의 이름의 기초로 사용 </li>
@@ -3808,7 +3906,7 @@
 <li><DB>-bottomNset-Motion.csv|npy : Rigid 조건에서 prescribed motion을 저장하는 시간이력 파일</li>
 </ul>
 <p>위에서 <DB>는 확장자를 제외한 입력파일이름을 의미한다. </p>
-<h5 id="example_16">Example</h5>
+<h5 id="example_18">Example</h5>
 <div class="highlight"><pre><span></span><code>*Function, TYPE=TimeSignal, Name=acc
  0.02, 1024
  ELCchopra.dat, 1, 0.31*9.81

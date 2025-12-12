@@ -2725,25 +2725,16 @@
 <h3 id="construction-typespline">*Construction, Type=Spline</h3>
 <p>Define spline</p>
 <div class="highlight"><pre><span></span><code>*Construction, Type=Spline, Name=name
- x,y,z[,pointType] 또는 t,x,y,z [, pointType]
+ x,y,z
  ...
 </code></pre></div>
 <h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
 <li><strong>x,y,z:</strong> 샘플링 점 좌표(required)</li>
-<li><strong>pointType:</strong> 중간 샘플링에서의 연결조건(optional), CC, FF, FC, CF 적용가능. CC가 디폴트, 시작점과 끝점에서는 무시.</li>
 </ul>
 </div>
-<p>주어진 좌표로 파라매트릭 스플라인을 구성한다. 스플라인은 임베디드 라인요소의 형상을 정의하거나, <code>*Sensor, TYPE=LineSensor</code>에서 형상을 정의할 때 사용된다. 두 개 이상의 샘플링 포인트가 정의되어야 하다. 스플라인은 주어진 샘플링 포인트를 이용해 <span class="arithmatex">\((x(t), y(t), z(t))\)</span> 형태의 parametric cubic spline으로 구성한다. 주어진 좌표의 누적 할선 길이(accumulated secant length)로 t를 생성한다. pointType에 따라 스플라인 구성에 부과되는 조건은 다음과 같다. </p>
-<ul>
-<li>양단점 : 항상 curvature free 적용</li>
-<li>중간점 </li>
-<li>CC : 조건부과가 없는 경우 : slope, curvature 연속</li>
-<li>FF : curvature free + curvature free</li>
-<li>CF : slope 연속 + 우측 curvature free</li>
-<li>FC : 좌측 curvature free + slope 연속</li>
-</ul>
+<p>주어진 좌표로 파라매트릭 스플라인을 구성한다. 스플라인은 임베디드 라인요소의 형상을 정의하거나, <code>*Sensor, TYPE=LineSensor</code>에서 형상을 정의할 때 사용된다. 두 개 이상의 샘플링 포인트가 정의되어야 하다. 스플라인은 주어진 샘플링 포인트를 이용해 <span class="arithmatex">\((x(t), y(t), z(t))\)</span> 형태의 parametric cubic spline으로 구성한다. 주어진 좌표의 누적 할선 길이(accumulated secant length)로 t를 생성한다. t의 범위는 [0, 1]이다.  </p>
 <p>내부적으로 샘플링 포인트 사이의 곡선 선분은 반복적인 분할을 통해 선분길이가 수렴할 때 까지 수행된다. </p>
 <h5 id="example">Example</h5>
 <div class="highlight"><pre><span></span><code>*Construction, Type=Spline, Name=2spanTendon
@@ -2754,20 +2745,6 @@
  34,  0.19411765 , 0.
  47, -0.8        , 0.
  60,  0          , 0.
-
-*Construction, Type=Spline, Name=curve
- 20,  0,  0
- 11,  0,  0,  FC
- 10,  1,  0,  CF
- 10, 19,  0,  FC
-  9, 20,  0,  CF
-  1, 20,  0,  FC
-  0, 19,  0,  CF
-  0, 11,  0,  FC
-  1, 10,  0,  CF
- 19, 10,  0,  FC
- 20,  9,  0,  CF
- 20,  0,  0, 
 </code></pre></div>
 <h3 id="construction-typeline">*Construction, Type=Line</h3>
 <p>보조선(Construction Line)을 정의</p>

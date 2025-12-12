@@ -2897,28 +2897,28 @@
 <p>Concentrated load applied to a node</p>
 <div class="highlight"><pre><span></span><code>*Load, Type=Concentric, Name=name, Func=timeFunction
  targetNode, oneDof, value, fnIdx, CS=orientation
- targetNset, oneDof, value, fnIdx, CS=orientation
- targetSurface, oneDof, value, fnIdx, CS=orientation
+ targetNGroup, oneDof, value, fnIdx, CS=orientation
  ...
 </code></pre></div>
 <h5 id="keyword-line_1">Keyword line</h5>
-<div class="admonition note"></div>
+<div class="admonition note">
 <ul>
 <li><strong>Func=timeFunction:</strong> Time function to be used for time-dependent analysis (<code>*Step, Type=Static, Quasi</code> and <code>*Step, Type=Dynamic</code>) (optional).</li>
 </ul>
+</div>
 <h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
 <div class="admonition note">
 <ul>
 <li><strong>targetNode:</strong> Target node (required)  </li>
-<li><strong>targetNset:</strong> Target nset (required). Nodes within the nset are the target.  </li>
-<li><strong>targetSurface:</strong> Target surface (required). Nodes within the surface are the target.  </li>
+<li><strong>targetNGroup:</strong> Node group for nodal load(required). The targetNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
 <li><strong>oneDof:</strong> Degree of Freedom (DOF) to be targeted. The DOF can be X, Y, Z, RX, RY, RZ, P, etc. Combinations like X|Y are not allowed. (required)  </li>
 <li><strong>value:</strong> Value (required)  </li>
 <li><strong>fnIdx:</strong> Index of the time series function within <code>timeFunction</code> (1-based index) (optional, default is 1).  </li>
 <li><strong>CS=orientation:</strong> Coordinate system in which the concentric load is applied. Specify the name defined via <code>*CoordinateSystem, TYPE=Orientation</code>. If omitted, the global coordinate system (GCS) is used. (optional)</li>
 </ul>
 </div>
-<p>In each data line, the first entry is interpreted in the order: <code>targetNset</code>, <code>targetSurface</code>, then <code>targetNode</code>. Since both nset and surface are specified as strings, care should be taken when naming them. If the same nodal degree of freedom is specified multiple times, no error is raised; the corresponding loads are combined and applied cumulatively.</p>
+<p>The first entry in the dataline searches for possible targets in the order of nset, surface, node number pattern, or node number. Note that predefined nset or surface names may consist of numbers, so caution is required.</p>
+<p>If the same nodal degree of freedom is specified multiple times, no error is raised; the corresponding loads are combined and applied cumulatively.</p>
 <p>When a local coordinate system is specified, the given load is interpreted relative to that coordinate system. Internally, the load is transformed and applied in the global coordinate system (GCS).  Output results are provided in the GCS by default. If results are needed in the local coordinate system, this must be explicitly specified in the <code>*Print</code> or <code>*History</code> commands. The <code>*Output</code> command does not support specifying a local coordinate system, but <code>hfVisualizer</code> allows postprocessing and conversion of results into a local coordinate system.</p>
 <h5 id="example">Example</h5>
 <div class="highlight"><pre><span></span><code>*Load, Type=Concentric, Name=A
@@ -2954,8 +2954,7 @@
 <p>Nodal displacement </p>
 <div class="highlight"><pre><span></span><code>*Load, Type=Displacement, Name=name, Func=timeFunction, CS=orientation
  targetNode, oneDof, value, {fnIdxD, fnIdxV, fnIdxA}|D=fnIdxD|V=fnIndxV|A=fnIndxA, CS=orientation
- targetNset, oneDof, value, {fnIdxD, fnIdxV, fnIdxA}|D=fnIdxD|V=fnIndxV|A=fnIndxA, CS=orientation
- targetSurface, oneDof, value, {fnIdxD, fnIdxV, fnIdxA}|D=fnIdxD|V=fnIndxV|A=fnIndxA, CS=orientation
+ targetNGroup, oneDof, value, {fnIdxD, fnIdxV, fnIdxA}|D=fnIdxD|V=fnIndxV|A=fnIndxA, CS=orientation
  ...
 </code></pre></div>
 <h5 id="keyword-line_2">Keyword line</h5>
@@ -2968,8 +2967,7 @@
 <div class="admonition note">
 <ul>
 <li><strong>targetNode:</strong> Target node (required)  </li>
-<li><strong>targetNset:</strong> Target nset (required). Nodes within the nset are the target.  </li>
-<li><strong>targetSurface:</strong> Target surface (required). Nodes within the surface are the target.  </li>
+<li><strong>targetNGroup:</strong> Node group for nodal displacement(required). The targetNGroup can be specified as an nset, a surface, or a node number pattern (<code>start:end:spacing</code>, with <code>spacing=1</code> being optional). If a surface is specified, it refers to all nodes that belong to that surface.  </li>
 <li><strong>oneDof:</strong> Degree of Freedom (DOF) to be targeted. The DOF can be X, Y, Z, RX, RY, RZ, P etc. Combinations like X|Y are not allowed. (required)  </li>
 <li><strong>value:</strong> Value (required)  </li>
 <li><strong>fnIdxD, fnIdxV, fnIdxA:</strong> Index of the time series function within <code>timeFunction</code> for displacement, velocity, and acceleration respectively (1-based index) (optional, default is 1). If 0 is specified, the values of the corresponding history is always treated as 0. Displacement is used for <code>*Step, Type=Static, Quasi</code>, and displacement, velocity, and acceleration are used for <code>*Step, Type=Dynamic</code>.  </li>
@@ -2979,7 +2977,8 @@
 <li><strong>CS=orientation:</strong> Coordinate system in which the displacement load is applied. Specify the name defined via <code>*CoordinateSystem, TYPE=Orientation</code>. If omitted, the global coordinate system (GCS) is used. (optional)</li>
 </ul>
 </div>
-<p>In each data line, the first entry is interpreted in the order: <code>targetNset</code>, <code>targetSurface</code>, then <code>targetNode</code>. Since both nset and surface are specified as strings, care should be taken when naming them. If the same nodal degree of freedom is specified multiple times, no error is raised; the corresponding loads are combined and applied cumulatively.</p>
+<p>The first entry in the dataline searches for possible targets in the order of nset, surface, node number pattern, or node number. Note that predefined nset or surface names may consist of numbers, so caution is required.</p>
+<p>If the same nodal degree of freedom is specified multiple times, no error is raised; the corresponding loads are combined and applied cumulatively.</p>
 <p>Time histories obtained by differentiation or integration using <code>A=fnIdxA</code>, <code>V=fnIdxV</code>, or <code>D=fnIdxD</code> are output to a file named <code>name-generated.csv</code>.</p>
 <p>When a local coordinate system is specified, the given load is interpreted relative to that coordinate system.  Internally, this is handled by imposing a multi-point constraint (MPC). Output results are provided in the GCS by default. If results are needed in the local coordinate system, this must be explicitly specified in the <code>*Print</code> or <code>*History</code> commands. The <code>*Output</code> command does not support specifying a local coordinate system, but <code>hfVisualizer</code> allows postprocessing and conversion of results into a local coordinate system.</p>
 <h5 id="example_1">Example</h5>

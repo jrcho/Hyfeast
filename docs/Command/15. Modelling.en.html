@@ -848,9 +848,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#defaultparameter" class="md-nav__link">
+  <a href="#parameter" class="md-nav__link">
     <span class="md-ellipsis">
-      *DefaultParameter
+      *Parameter
     </span>
   </a>
   
@@ -1002,6 +1002,15 @@
   <a href="#model-typecylindericaltank" class="md-nav__link">
     <span class="md-ellipsis">
       *Model, Type=CylindericalTank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typecurveextrusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=CurveExtrusion
     </span>
   </a>
   
@@ -2824,9 +2833,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#defaultparameter" class="md-nav__link">
+  <a href="#parameter" class="md-nav__link">
     <span class="md-ellipsis">
-      *DefaultParameter
+      *Parameter
     </span>
   </a>
   
@@ -2984,6 +2993,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#model-typecurveextrusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=CurveExtrusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#model-typefarfield2d" class="md-nav__link">
     <span class="md-ellipsis">
       *Model, TYPE=FarField2D
@@ -3039,37 +3057,32 @@
 
 *INCLUDE, File=model.inp, P=&quot;&lt;S&gt;=100. &lt;T&gt;=15.3, &lt;Solver&gt;={A,10}&quot;
 </code></pre></div>
-<h2 id="defaultparameter">*DefaultParameter</h2>
-<p>Specifies the default parameter expression to be used when a parameter is not defined in a parameter expression.</p>
-<div class="highlight"><pre><span></span><code>*DefaultParameter, parameters
+<h2 id="parameter">*Parameter</h2>
+<p>Defines a parameter expression.</p>
+<div class="highlight"><pre><span></span><code>*Parameter, Name=name, &quot;key=val, ...&quot; [,Default]
 </code></pre></div>
 <h5 id="keyword-line_1">Keyword line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>parameters:</strong> parameter expression. Must be enclosed in double quotes (<code>"</code>), but this is optional.</li>
+<li><strong>Name=name:</strong> Name of the parameter expression</li>
+<li><strong>"key=value, ...":</strong> Parameter expression, enclosed in double quotation marks (" ").</li>
+<li><strong>Default:</strong> If specified, designates this parameter expression as the default (optional).</li>
 </ul>
 </div>
-<p>Parameter expressions can be used when running <code>hfAnalyzer</code> from the command line or specified within an <code>*Include</code> statement. A default expression can be set for any unspecified parameter expressions. For example, consider an input file as shown below.</p>
-<ul>
-<li><code>model.inp</code></li>
-</ul>
-<div class="highlight"><pre><span></span><code>*DefaultParameter, &quot;&lt;E&gt;=2E9, &lt;nu&gt;=0.18&quot;
+<p>The name of a <code>*Parameter</code> expression must be unique and cannot be duplicated.
+When multiple <code>*Parameter</code> statements are present, <code>Default</code> can be used only once.
+Additionally, the <code>*Parameter</code> statement can only appear in the top-level input file
+—it is not allowed within included files (e.g., those added via <code>*Include</code>).</p>
+<p>The parameter expression must be enclosed in double quotation marks ("") and written in the form <code>key=value, ....</code>. When applied, each key is replaced with the corresponding value.</p>
+<p>To avoid accidental replacement of unintended substrings, it is recommended to enclose the parameter key using characters that are not commonly used in normal text—such as <code>&lt;A&gt;</code> or <code>$A$</code>. For example, in <code>"&lt;E&gt;=20E9, &lt;B&gt;=7.3"</code>, <code>&lt;E&gt;</code> is replaced with <code>20E9</code>, and <code>&lt;B&gt;</code> with <code>7.3</code>. Also, tokens inside a parameter expression may be grouped using braces <code>{}</code>. For example, in <code>"&lt;K&gt;={R,12.3}, &lt;B&gt;=7.3"</code>, <code>&lt;K&gt;</code> is replaced with <code>R,12.3</code>.</p>
+<p>For more details on the use of parameter expressions, refer to the overview section.</p>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*Parameter, Name=VM, &quot;&lt;E&gt;=2E9, &lt;nu&gt;=0.18&quot;, Default
+*Parameter, Name=CM, &quot;&lt;E&gt;=2E9, &lt;nu&gt;=0.18&quot;
 
 *Material, TYPE=IsoElasticity, Name=myMat
  &lt;E&gt;, &lt;nu&gt;
-
-...
 </code></pre></div>
-<p>If executed from the command line as shown below, it will be interpreted as follows.</p>
-<div class="highlight"><pre><span></span><code>&gt; hfAnalzyer model.inp
-→ &lt;E&gt; and &lt;nu&gt; are replaced with the values specified in `DefaultParameter`, which are 2E9 and 0.18, respectively.
-
-&gt; hfAnalzyer model.inp –p &quot;&lt;E&gt;=5E9&quot;
-→ Since &lt;E&gt; is specified at a higher level, its value 5E9 is used, and the &lt;E&gt; value specified in the `DefaultParameter` statement is ignored. However, `&lt;nu&gt;` will apply the value 0.18.
-</code></pre></div>
-<p>If used as <code>*Include, File=model.inp, P="&lt;E&gt;=5E9"</code>, the same concept can be applied.</p>
-<p>▪ Note</p>
-<p>The <code>*DefaultParameter</code> statement can be used multiple times within a file, but it applies to the entire file. This means that even if specified later in the file, it is treated as if it were defined at the beginning of the file.</p>
 <h2 id="distribution">*Distribution</h2>
 <p>Assigns properties to nodes or elements.</p>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=type
@@ -3110,7 +3123,7 @@
 <p>Cross-sectional properties can be specified in <code>*Element</code>, but if omitted, they can also be specified using <code>*Distribution, TYPE=Section</code>. This command also allows for the deletion of already specified sections.</p>
 <p>In the program, if there are two or more tokens in a line, it first checks whether the last token is a section; if not, it recognizes that the given section does not exist. If a section does not exist, the section already assigned to the target elements will be released. If you want to delete a section for an elset with the same name, only the elset should be listed on one line.</p>
 <p>When specifying the target using element number patterns, non-existent elements are simply ignored and do not trigger an error.</p>
-<h5 id="example_1">Example</h5>
+<h5 id="example_2">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, TYPE=Section
  left, section1    # 요소집합 &quot;left&quot;에 단면 &quot;section1&quot;를 지정
  right, middle, section2 # 요소집합 &quot;right&quot;, “middle”에 단면 &quot;section2&quot;를 지정
@@ -3132,7 +3145,7 @@
 </div>
 <p>This command is only valid when the target elements are three-dimensional beam elements. In the program, if there are two or more tokens in a line, it first checks whether the last token is BeamCS. If it is not, the given beamcs is recognized as non-existent. If a beamcs does not exist, the beamcs already assigned to the target elements will be released. If you want to delete a beamcs for an elset with the same name, only the elset should be listed on one line.</p>
 <p>When specifying the target using element number patterns, non-existent elements are simply ignored and do not trigger an error.</p>
-<h5 id="example_2">Example</h5>
+<h5 id="example_3">Example</h5>
 <div class="highlight"><pre><span></span><code>*CoordinateSystem, Type=BeamCS, Name=beamcs
  90
 
@@ -3157,7 +3170,7 @@
 </div>
 <p>For two-dimensional beam elements, only Rz1 and Rz2 are valid. If no releaseCode is provided, any previously specified end release code will be released.</p>
 <p>When specifying the target using element number patterns, non-existent elements are simply ignored and do not trigger an error.</p>
-<h5 id="example_3">Example</h5>
+<h5 id="example_4">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=BeamEndRelease
  1, 2, 3, Rz1|Rz2
  beamSet, Rx1|Ry1|Rz1
@@ -3178,7 +3191,7 @@
 </div>
 <p>If no spline is provided, the host is removed from the specified elements. In the program, if there are two or more tokens in a line, it first checks whether the last token is a spline. If it is not (i.e., based on whether it is an EmbeddedLine element), the given hostElset is recognized as non-existent. If no spline exists, any spline already assigned to the target elements will be released.</p>
 <p>When specifying the target using element number patterns, non-existent elements are simply ignored and do not trigger an error.</p>
-<h5 id="example_4">Example</h5>
+<h5 id="example_5">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=EmbeddedLineSpline
  1,2,3, curve1
  tendonSet, curve2
@@ -3200,7 +3213,7 @@
 </div>
 <p>If no hostElset is provided, the host is removed from the specified elements. In the program, if there are two or more tokens in a line, it first checks whether the last token is a hostElset. If it is not (i.e., based on whether it is an EmbeddedLine element), the given hostElset is recognized as non-existent. If no hostElset exists, any hostElset already assigned to the target elements will be released.</p>
 <p>When specifying the target using element number patterns, non-existent elements are simply ignored and do not trigger an error.</p>
-<h5 id="example_5">Example</h5>
+<h5 id="example_6">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=EmbeddedLineHostElset
  1,2,3, girder
  tendonSet, crossbeam
@@ -3221,7 +3234,7 @@
 </ul>
 </div>
 <p>Specifies an additional scale factor for Spring, EarthSpring, and PointMass elements. If the target elements do not exist or are not of type Spring, EarthSpring, or PointMass, they are simply ignored and do not trigger an error.</p>
-<h5 id="example_6">Example</h5>
+<h5 id="example_7">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=MCKElementScaleFactor
  1, 2, 3, 2.5    # Set a scale factor of 2.5 for elements 1, 2, and 3.
  wall, 2.5       # Specify a scale factor of 2.5 for the wall elset (which must consist entirely of spring elements).
@@ -3240,7 +3253,7 @@
 </ul>
 </div>
 <p>This command is valid only for elements that are Spring, EarthSpring, or PointMass. In the program, if there are two or more tokens in a line, it first checks whether the last token is a CS. If it is not, the given CS is recognized as non-existent. If no CS exists, any previously assigned CS to the target elements will be released. If you want to delete a CS for an elset with the same name, only the elset should be listed on one line. If the target elements do not exist or are not of type Spring, EarthSpring, or PointMass, they are simply ignored and do not trigger an error.</p>
-<h5 id="example_7">Example</h5>
+<h5 id="example_8">Example</h5>
 <div class="highlight"><pre><span></span><code>*CoordinateSystem, Type=UCS, Name=springCS
  1, 1, 0, 0, 1, 0
 
@@ -3264,7 +3277,7 @@
 </ul>
 </div>
 <p>The moving spring element (<code>*Element, Type=MovingSpring</code>) specifies its initial position (default is 0,0 if not specified). If the target elements do not exist or are not of type MovingSpring, they are simply ignored and do not trigger an error.</p>
-<h5 id="example_8">Example</h5>
+<h5 id="example_9">Example</h5>
 <div class="highlight"><pre><span></span><code>*Distribution, Type=MovingSpringIntialPosition
  100, -5, 0.    # Apply the initial position of (-5, 0) to element 100.
 </code></pre></div>
@@ -3285,6 +3298,7 @@
 <li><strong>Wall:</strong> Generates a rectangular mesh using shell elements</li>
 <li><strong>RectangularTank:</strong> Generates a rectangular tank mesh using shell elements</li>
 <li><strong>CylindericalTank:</strong> Generates a cylinderical tank mesh using shell elements</li>
+<li><strong>CurveExtrusion:</strong> Generate a shell-element mesh by extruding a 2D cross-section curve along a spline path</li>
 <li><strong>FarField2D:</strong> Generates a 2D mesh for SSI analysis and creates equivalent loads from the results of free field analysis</li>
 <li><strong>FarField3D:</strong> Generates a 3D mesh for SSI analysis and creates equivalent loads from the results of free field analysis</li>
 </ul>
@@ -3330,7 +3344,7 @@
 <p><img alt="Fig. 15.5-1. Block2D mesh generation" src="image/15.5-1.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-1.</span></strong> Block2D mesh generation</p>
 
-<h5 id="example_9">Example</h5>
+<h5 id="example_10">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=steel
  2E6, 0.2
 
@@ -3388,7 +3402,7 @@
 <p><img alt="Fig. 15.5-1. Block3D mesh generation" src="image/15.5-2.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-2.</span></strong> Block3D mesh generation</p>
 
-<h5 id="example_10">Example</h5>
+<h5 id="example_11">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=steel
  2E6, 0.2
 
@@ -3443,7 +3457,7 @@
 <li>Elset : name (all elements)</li>
 <li>Surface : name (all outer surfaces), name-Top(top surface), name-Bottom(bottom surface), name-Side(side surface)</li>
 </ul>
-<h5 id="example_11">Example</h5>
+<h5 id="example_12">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=Water
  2190.4E+6, 1000   # bulkModulus, density  ... compressible
 
@@ -3494,7 +3508,7 @@
 <li>Elset: <code>name</code> (all elements)</li>
 </ul>
 <p>When applying CS8 elements, a single layer of solid shell is created based on shell thickness. If no shell section is provided, a thickness of 1 is applied.</p>
-<h5 id="example_12">Example</h5>
+<h5 id="example_13">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=steel
  2E6, 0.2
 
@@ -3541,7 +3555,7 @@
 <p><img alt="Fig. 15.5-3 RectangularTank mesh generation" src="image/15.5-3.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-3.</span></strong> RectangularTank mesh generation</p>
 
-<h5 id="example_13">Example</h5>
+<h5 id="example_14">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material,Type=IsoElasticity,Name=mat
  30E9, 0.18, 0, 2000.    # E, nu, alpha, density
 
@@ -3597,7 +3611,7 @@
 <li>Elset : name (all elements)</li>
 <li>Surface : name (all outer surfaces), name-Bottom(bottom surface), name-Side(side surface)</li>
 </ul>
-<h5 id="example_14">Example</h5>
+<h5 id="example_15">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=Tank
  2.0776E+10, 0.17, 0, 2300   # E(MPa), nu, alpha, density
 
@@ -3608,6 +3622,90 @@
  Tank, auto, auto, S4F, Tank, Tank
  0,0,0,18.3,4  # x0, y0, z0, R, nseg
  12.2,1.8,5,2  # h1,...,nh1,...
+</code></pre></div>
+<h3 id="model-typecurveextrusion">*Model, Type=CurveExtrusion</h3>
+<p>Generate a shell-element mesh by extruding a 2D cross-section curve along a spline path.</p>
+<div class="highlight"><pre><span></span><code>*Model, Type=CurveExtrusion
+ name, spline, nseg, startNodeId, startElementId, elementType, section
+ x1,y1
+ x2,x2
+ ...
+</code></pre></div>
+<h5 id="first-dataline_5">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>name:</strong>  Base name that will be used for automatically generating node sets, element sets, surfaces, loads, etc. created by this command</li>
+<li><strong>spline:</strong> Reference spline curve used as the extrusion path</li>
+<li><strong>nseg:</strong> Number of elements to generate along the extrusion direction</li>
+<li><strong>startNodeId,</strong> Starting node and element IDs. If set to Auto, they are assigned automatically</li>
+<li><strong>elementType:</strong> Element type to be used, e.g., S4F (4-node quadrilateral shell element)</li>
+<li><strong>section:</strong> Optional. Section assigned to the generated elements (no assignment if omitted)</li>
+</ul>
+</div>
+<h5 id="second-dataline-and-subsequent-datalines">Second dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>xi, yi:</strong> Coordinates of the 2D cross-section</li>
+</ul>
+</div>
+<p>The input 2D cross-section points (xi, yi) are connected in order to form the section geometry. This section is then swept along the spline path, generating an S4/S4F shell mesh. If the last point is identical to the first point, the section is treated as a closed loop, and the extrusion produces a cylindrical or tube-like curved shell mesh along the given path.</p>
+<p>Each section point (xi, yi) is transformed into a 3D location using a local coordinate system defined at each point along the spline. The local basis is constructed as follows: the tangent vector of the spline defines ex; ey is computed from the cross product of ex and a predefined up vector; and ez = ex × ey, completing an orthogonal triad. The (ey, ez) plane becomes the placement plane for the 2D cross-section.</p>
+<p>The default up vector is (0, 0, 1). However, when the tangent ex becomes nearly parallel to the global z-axis—causing the cross product to approach zero—the up vector is automatically switched to (0, 1, 0) to avoid singularities and maintain a stable section coordinate frame.</p>
+<h5 id="example_16">Example</h5>
+<div class="highlight"><pre><span></span><code>*Construction, Type=Spline, Name=tunnelLine
+  0,   0,  0
+ 10,   2,  1
+ 20,   3,  2
+ 30,   5,  3
+ 40,   4,  2
+ 50,   1,  1
+ 60,   0,  0
+
+*Material, TYPE=IsoElasticity, Name=mat
+ 20E9
+
+*Section, Type=Shell, Name=wall
+ mat, 0.3
+
+*Model, Type=CurveExtrusion
+ testTunnel, tunnelLine, 100, Auto, Auto, S4F, wall
+-4.800, 0.000
+-4.900, 1.000
+-5.000, 2.000
+-5.000, 3.000
+-5.000, 4.000
+-4.924, 4.868
+-4.698, 5.710
+-4.330, 6.500
+-3.830, 7.214
+-3.213, 7.826
+-2.500, 8.320
+-1.710, 8.689
+-0.868, 8.915
+ 0.000, 9.000
+ 0.868, 8.915
+ 1.710, 8.689
+ 2.500, 8.320
+ 3.213, 7.826
+ 3.830, 7.214
+ 4.330, 6.500
+ 4.698, 5.710
+ 4.924, 4.868
+ 5.000, 4.000
+ 5.000, 3.000
+ 5.000, 2.000
+ 4.900, 1.000
+ 4.800, 0.000
+ 4.000,-0.100
+ 3.000,-0.200
+ 2.000,-0.300
+ 1.000,-0.400
+ 0.000,-0.500
+-1.000,-0.400
+-2.000,-0.300
+-3.000,-0.200
+-4.000,-0.100
+-4.800, 0.000
 </code></pre></div>
 <h3 id="model-typefarfield2d">*Model, TYPE=FarField2D</h3>
 <p>Generates a 2D mesh for SSI (Soil-Structure Interaction) analysis, performs free field analysis, and calculates equivalent loads.</p>
@@ -3622,7 +3720,7 @@
  En, nun, densityn, xin, hn, nyn
  {bottomNSet} | {EHalf, nuHalf, densityHalf, xiHalf, farMeshSizeY, farMeshCountY}
 </code></pre></div>
-<h5 id="first-dataline_5">First dataline</h5>
+<h5 id="first-dataline_6">First dataline</h5>
 <div class="admonition note">
 <ul>
 <li><strong>name:</strong> Representative name. This name serves as the basis for naming nsets, elsets, surfaces, loads, etc., created by this command.</li>
@@ -3696,7 +3794,7 @@
 <p><img alt="Fig. 15.5-6. Acceleration history input" src="image/15.5-6.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-6.</span></strong> Acceleration history input</p>
 
-<h5 id="example_15">Example</h5>
+<h5 id="example_17">Example</h5>
 <div class="highlight"><pre><span></span><code>*Function, TYPE=TimeSignal, Name=acc
  0.02, 4096
  ELCchopra.dat, 1, 0.31*9.81
@@ -3740,7 +3838,7 @@
  En, nun, densityn, xin, hn, nzn
  {bottomNSet} | {EHalf, nuHalf, densityHalf, xiHalf, farMeshSizeZ, farMeshCountZ}
 </code></pre></div>
-<h5 id="first-dataline_6">First dataline</h5>
+<h5 id="first-dataline_7">First dataline</h5>
 <div class="admonition note">
 <ul>
 <li><strong>name:</strong> Representative name. This name serves as the basis for naming nsets, elsets, surfaces, loads, etc., created by this command.</li>
@@ -3810,7 +3908,7 @@
 <li><code>&lt;DB&gt;-bottomNset-Motion.csv|npy</code>: Time history file storing prescribed motion in rigid conditions.</li>
 </ul>
 <p>Here, <code>&lt;DB&gt;</code> refers to the input file name without the extension.</p>
-<h5 id="example_16">Example</h5>
+<h5 id="example_18">Example</h5>
 <div class="highlight"><pre><span></span><code>*Function, TYPE=TimeSignal, Name=acc
  0.02, 1024
  ELCchopra.dat, 1, 0.31*9.81
