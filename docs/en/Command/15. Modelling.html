@@ -1,0 +1,4184 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="14.%20Step%20result.html">
+      
+      
+        <link rel="next" href="16.%20Etc.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+    
+    
+      
+        <title>15. Modelling convenience - Hyfeast-v1.0.0 Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#include" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast-v1.0.0 Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              15. Modelling convenience
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../Command/15.%20Modelling.html" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="15.%20Modelling.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Hyfeast-v1.0.0 Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Beam Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Solid Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Beam vs Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/5.%20hfVisualizer%20Basics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. hfVisualizer Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Selection and Visibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Postprocessing with Remote Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Scripts and Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Portal Frame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Command
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Command
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.%20Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.%20Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3.%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element libraries
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.1%20Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.2%20Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.3%20Truss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.4%20Cable.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.5%20Shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.6%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.7%20AcousticSolid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AcousticSolid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.8%20SeepageSolid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SeepageSolid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.9%20MCK.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.10%20MovingSpring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MovingSpring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.11%20Interface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4.%20Element%20Specification/4.12%20EmbeddedLine.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EmbeddedLine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5.%20Constraint.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6.%20Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7.%20Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8.%20Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9.%20Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10.%20Construction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11.%20CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate system
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12.%20Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="13.%20Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14.%20Step%20result.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    15. Modelling convenience
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="15.%20Modelling.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling convenience
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Include
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Parameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typesection" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=Section
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typebeamcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=BeamCS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typebeamendrelease" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=BeamEndRelease
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typeembeddedlinespline" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=EmbeddedLineSpline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typeembeddedlinehostelset" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=EmbeddedLineHostElset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typemckelementscalefactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=MCKElementScaleFactor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typemckelementcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=MCKElementCS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typemovingspringinitialposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=MovingSpringInitialPosition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-typeblock2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=Block2D
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typeblock3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=Block3D
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typecylinder" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=Cylinder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=Wall
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typerectangulartank" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=RectangularTank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typecylindericaltank" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=CylindericalTank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typecurveextrusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=CurveExtrusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typefarfield2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, TYPE=FarField2D
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typefarfield3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, TYPE=FarField3D
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="16.%20Etc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17.%20Special%20step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="18.%20HDB%20file%20structure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB file structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Section
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Section
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.%20Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.%20Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Command
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/4.%20Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Example
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Remote Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Remote Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfVisualizer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfVisualizer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.1%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.2%20Remote-only.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Remote-only
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.3%20View.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.4%20File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.5%20Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.6%20Selection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Selection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7" id="__nav_5_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7 Preprocessing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            2.7 Preprocessing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.1%20Environment.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.1 Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.2%20CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.2 CoordinateSystem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.3%20Construction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.3 Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7_4" id="__nav_5_2_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7.4 Node and NSet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2.7.4 Node and NSet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.4.1%20Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.4.1 Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.4.2%20NSet.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.4.2 NSet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7_5" id="__nav_5_2_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7.5 Element and Elset
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            2.7.5 Element and Elset
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.5.1%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.5.1 Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.5.2%20Elset.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.5.2 Elset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.6%20Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.6 Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.7%20Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.7 Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.8%20Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.8 Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.9%20NProp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.9 NProp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.10%20Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.10 Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.11%20Section.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.11 Section
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.12%20Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.12 Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.13%20Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.13 Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.14%20History.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.14 History
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.15%20Distribution.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.15 Distribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.16%20Model.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.16 Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.17%20Renumber.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.17 Renumber
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.18 Undo and Redo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.8%20Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfVisualizer/2.9%20Postprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.9 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfSectionVisualizer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfSectionVisualizer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfSectionVisualizer/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfSectionVisualizer/2.%20Window%20and%20File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Window and File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfSectionVisualizer/3.%20View.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfSectionVisualizer/4.%20Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfSectionVisualizer/5.%20Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/hfSectionVisualizer/6.%20Operation%20and%20Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Recipes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Recipes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/Recipes/1.%20hfVisualizer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 hfVisualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/Recipes/2.%20hfSectionVisualizer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 hfSectionVisualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Example
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.1%20Beam%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.1 Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.2%20Material%20Nonlinear%20Beam%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.2 Material Nonlinear Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.3%20Solid%20Element%20and%20In-Plane%20Behavior%20of%20Shell%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.3 Solid Element and In-Plane Behavior of Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.4%20Shell%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.4 Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.5%20Material%20Nonlinear%20Solid%20and%20Shell%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.5 Material Nonlinear Solid and Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.6%20Acoustic%20Solid%20Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.6 Acoustic Solid Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.7 Dynamic Analysis using Spring and Mass Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.8%20Interface%20Modeling%20using%20Spring%20and%20Interface%20Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.8 Interface Modeling using Spring and Interface Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.9%20Truss%20and%20Cable%20Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.9 Truss and Cable Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.10%20Simple%20Constraints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.10 Simple Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.11%20Advanced%20Constraints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.11 Advanced Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.12%20Rebar%20and%20Tendon%20Modeling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.12 Rebar and Tendon Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.13%20Moving%20Load%20Analysis%20in%20Simply%20Supported%20Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.13 Moving Load Analysis in Simply Supported Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.14%20Stability%20of%20Rail%20Track.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.14 Stability of Rail Track
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.15%20Temperature%20Load%20by%20Bimetal.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.15 Temperature Load by Bimetal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example/E.16%20ModelUpdating%20and%20ShapeEstimation%20Steps.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    E.16 ModelUpdating and ShapeEstimation Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Include
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Parameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typesection" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=Section
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typebeamcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=BeamCS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typebeamendrelease" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=BeamEndRelease
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typeembeddedlinespline" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=EmbeddedLineSpline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typeembeddedlinehostelset" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=EmbeddedLineHostElset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typemckelementscalefactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=MCKElementScaleFactor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typemckelementcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=MCKElementCS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution-typemovingspringinitialposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Distribution, Type=MovingSpringInitialPosition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-typeblock2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=Block2D
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typeblock3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=Block3D
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typecylinder" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=Cylinder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=Wall
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typerectangulartank" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=RectangularTank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typecylindericaltank" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=CylindericalTank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typecurveextrusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, Type=CurveExtrusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typefarfield2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, TYPE=FarField2D
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-typefarfield3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Model, TYPE=FarField3D
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>15. Modelling convenience</h1>
+
+<h2 id="include">*Include</h2>
+<p>The <code>*INCLUDE</code> command inserts an external text file. It is used to manage complexity in input files.</p>
+<div class="highlight"><pre><span></span><code>*Include, File=file, [P=parameters]
+</code></pre></div>
+<h5 id="keyword-line">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>File=file:</strong> file name</li>
+<li><strong>parameters:</strong> parameter expression. Must be enclosed in double quotes (<code>"</code>), but this is optional.</li>
+</ul>
+</div>
+<h5 id="example">Example</h5>
+<div class="highlight"><pre><span></span><code>*INCLUDE, File=concrete.inp
+
+*INCLUDE, File=model.inp, P=&quot;&lt;S&gt;=100. &lt;T&gt;=15.3, &lt;Solver&gt;={A,10}&quot;
+</code></pre></div>
+<h2 id="parameter">*Parameter</h2>
+<p>Defines a parameter expression.</p>
+<div class="highlight"><pre><span></span><code>*Parameter, Name=name, &quot;key=val, ...&quot; [,Default]
+</code></pre></div>
+<h5 id="keyword-line_1">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Name=name:</strong> Name of the parameter expression</li>
+<li><strong>"key=value, ...":</strong> Parameter expression, enclosed in double quotation marks (" ").</li>
+<li><strong>Default:</strong> If specified, designates this parameter expression as the default (optional).</li>
+</ul>
+</div>
+<p>The name of a <code>*Parameter</code> expression must be unique and cannot be duplicated.
+When multiple <code>*Parameter</code> statements are present, <code>Default</code> can be used only once.
+Additionally, the <code>*Parameter</code> statement can only appear in the top-level input file
+—it is not allowed within included files (e.g., those added via <code>*Include</code>).</p>
+<p>The parameter expression must be enclosed in double quotation marks ("") and written in the form <code>key=value, ....</code>. When applied, each key is replaced with the corresponding value.</p>
+<p>To avoid accidental replacement of unintended substrings, it is recommended to enclose the parameter key using characters that are not commonly used in normal text—such as <code>&lt;A&gt;</code> or <code>$A$</code>. For example, in <code>"&lt;E&gt;=20E9, &lt;B&gt;=7.3"</code>, <code>&lt;E&gt;</code> is replaced with <code>20E9</code>, and <code>&lt;B&gt;</code> with <code>7.3</code>. Also, tokens inside a parameter expression may be grouped using braces <code>{}</code>. For example, in <code>"&lt;K&gt;={R,12.3}, &lt;B&gt;=7.3"</code>, <code>&lt;K&gt;</code> is replaced with <code>R,12.3</code>.</p>
+<p>For more details on the use of parameter expressions, refer to the overview section.</p>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*Parameter, Name=VM, &quot;&lt;E&gt;=2E9, &lt;nu&gt;=0.18&quot;, Default
+*Parameter, Name=CM, &quot;&lt;E&gt;=2E9, &lt;nu&gt;=0.18&quot;
+
+*Material, TYPE=IsoElasticity, Name=myMat
+ &lt;E&gt;, &lt;nu&gt;
+</code></pre></div>
+<h2 id="distribution">*Distribution</h2>
+<p>Assigns properties to nodes or elements.</p>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=type
+  target, ...
+  ...
+</code></pre></div>
+<h5 id="keyword-line_2">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Type=type:</strong> Type of distribution (required)</p>
+<ul>
+<li><strong>Section:</strong> Specify or release the cross-section of elements</li>
+<li><strong>BeamCS:</strong> Specify or release ECS for beam elements</li>
+<li><strong>BeamEndRelease:</strong> Specify or release moment end release for beam elements</li>
+<li><strong>EmbeddedLineSpline:</strong> Specify or release the spline for EmbeddedLine elements</li>
+<li><strong>EmbeddedLineHostElset:</strong> Specify or release the parent elset for EmbeddedLine elements</li>
+<li><strong>MCKElementScaleFactor:</strong> Specifies or releases the ScaleFactor for Spring, EarthSpring, and PointMass elements</li>
+<li><strong>MCKElementCS:</strong> Specifies or releases the ECS (Element Coordinate System) for Spring, EarthSpring, and PointMass elements</li>
+<li><strong>MovingSpringInitialPosition:</strong> Specify or release the initial position of moving springs</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="distribution-typesection">*Distribution, Type=Section</h3>
+<p>Specifies or releases the cross-sectional material properties of elements.</p>
+<div class="highlight"><pre><span></span><code>*Distribution, TYPE=Section
+  target1,target2,..., section
+  ...
+</code></pre></div>
+<h5 id="first-data-line-and-subsequent-data-lines">First data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target1,target2,...:</strong> Element numbers, elsets, or element number patterns to specify the cross-sectional properties (required). Element number patterns follow the format <code>start:end:spacing</code>, where <code>spacing</code> can be omitted if it is 1.</li>
+<li><strong>section:</strong> Section name (required)</li>
+</ul>
+</div>
+<p>Cross-sectional properties can be specified in <code>*Element</code>, but if omitted, they can also be specified using <code>*Distribution, TYPE=Section</code>. This command also allows for the deletion of already specified sections.</p>
+<p>In the program, if there are two or more tokens in a line, it first checks whether the last token is a section; if not, it recognizes that the given section does not exist. If a section does not exist, the section already assigned to the target elements will be released. If you want to delete a section for an elset with the same name, only the elset should be listed on one line.</p>
+<p>When specifying the target using element number patterns, non-existent elements are simply ignored and do not trigger an error.</p>
+<h5 id="example_2">Example</h5>
+<div class="highlight"><pre><span></span><code>*Distribution, TYPE=Section
+ left, section1    # Assign section &quot;section1&quot; to elset &quot;left&quot;
+ right, middle, section2 # Assign section &quot;section2&quot; to elsets &quot;right&quot; and &quot;middle&quot;
+ 1,2,3,4, section3 # Assign section &quot;section3&quot; to elements 1, 2, 3, and 4
+ 2:10    # Remove the previously assigned section from elements 2 through 10
+</code></pre></div>
+<h3 id="distribution-typebeamcs">*Distribution, Type=BeamCS</h3>
+<p>Specifies or releases the ECS (Element Coordinate System) for three-dimensional beam elements.</p>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=BeamCS
+  target1,target2, ..., beamcs
+  ...
+</code></pre></div>
+<h5 id="first-data-line-and-subsequent-data-lines_1">First data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target1,target2,...:</strong> Element numbers, elsets, or element number patterns to which the element coordinate system (ECS) is applied (required). Element number patterns follow the format <code>start:end:spacing</code>, where <code>spacing</code> can be omitted if it is 1. This is only valid for three-dimensional beam elements.</li>
+<li><strong>beamcs:</strong> Beam's ECS (optional)</li>
+</ul>
+</div>
+<p>This command is only valid when the target elements are three-dimensional beam elements. In the program, if there are two or more tokens in a line, it first checks whether the last token is BeamCS. If it is not, the given beamcs is recognized as non-existent. If a beamcs does not exist, the beamcs already assigned to the target elements will be released. If you want to delete a beamcs for an elset with the same name, only the elset should be listed on one line.</p>
+<p>When specifying the target using element number patterns, non-existent elements are simply ignored and do not trigger an error.</p>
+<h5 id="example_3">Example</h5>
+<div class="highlight"><pre><span></span><code>*CoordinateSystem, Type=BeamCS, Name=beamcs
+ 90
+
+*Distribution, Type=BeamCS
+ 1, 2, 3, beamcs
+ beamSet, beamcs
+ beamSet2, beamSet3, beamcs
+ beamset1, 1:10      # release
+</code></pre></div>
+<h3 id="distribution-typebeamendrelease">*Distribution, Type=BeamEndRelease</h3>
+<p>Specifies or releases the end-release conditions for beam elements.</p>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=BeamEndRelease
+  target1,target2, ..., releaseCode
+  ...
+</code></pre></div>
+<h5 id="first-data-line-and-subsequent-data-lines_2">First data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target1,target2,...:</strong> Element numbers, elsets, or element number patterns to which the end-release conditions are applied (required). Element number patterns follow the format <code>start:end:spacing</code>, where <code>spacing</code> can be omitted if it is 1. This is only valid for beam elements.</li>
+<li><strong>releaseCode:</strong> End release code for the beam element (optional). This can be a combination of Rx1, Ry1, Rz1, Rx2, Ry2, Rz2. For example, Rz1|Rz2.</li>
+</ul>
+</div>
+<p>For two-dimensional beam elements, only Rz1 and Rz2 are valid. If no releaseCode is provided, any previously specified end release code will be released.</p>
+<p>When specifying the target using element number patterns, non-existent elements are simply ignored and do not trigger an error.</p>
+<h5 id="example_4">Example</h5>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=BeamEndRelease
+ 1, 2, 3, Rz1|Rz2
+ beamSet, Rx1|Ry1|Rz1
+ 1:10    # Releases all end release codes for elements 1 through 10.
+</code></pre></div>
+<h3 id="distribution-typeembeddedlinespline">*Distribution, Type=EmbeddedLineSpline</h3>
+<p>Specifies or releases the spline for EmbeddedLine elements.</p>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=EmbeddedLineSpline
+  target1,target2, ..., spline
+  ...
+</code></pre></div>
+<h5 id="first-data-line-and-subsequent-data-lines_3">First data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target:</strong> Element numbers, elsets, or element number patterns to which the host element is applied (required). Element number patterns follow the format <code>start:end:spacing</code>, where <code>spacing</code> can be omitted if it is 1. This is only valid for EmbeddedLine elements.</li>
+<li><strong>spline:</strong> Splie (optional).</li>
+</ul>
+</div>
+<p>If no spline is provided, the host is removed from the specified elements. In the program, if there are two or more tokens in a line, it first checks whether the last token is a spline. If it is not (i.e., based on whether it is an EmbeddedLine element), the given hostElset is recognized as non-existent. If no spline exists, any spline already assigned to the target elements will be released.</p>
+<p>When specifying the target using element number patterns, non-existent elements are simply ignored and do not trigger an error.</p>
+<h5 id="example_5">Example</h5>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=EmbeddedLineSpline
+ 1,2,3, curve1
+ tendonSet, curve2
+ tendonSet1,tendonSet2, curve3
+ tendonSet  # release
+</code></pre></div>
+<h3 id="distribution-typeembeddedlinehostelset">*Distribution, Type=EmbeddedLineHostElset</h3>
+<p>Specifies or releases the host elset for EmbeddedLine elements.</p>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=EmbeddedLineHostElset
+  target1,target2, ..., hostElset
+  ...
+</code></pre></div>
+<h5 id="first-data-line-and-subsequent-data-lines_4">First data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target:</strong> Element numbers, elsets, or element number patterns to which the host element is applied (required). Element number patterns follow the format <code>start:end:spacing</code>, where <code>spacing</code> can be omitted if it is 1. This is only valid for EmbeddedLine elements.</li>
+<li><strong>hostElset:</strong> Host elset (optional).</li>
+</ul>
+</div>
+<p>If no hostElset is provided, the host is removed from the specified elements. In the program, if there are two or more tokens in a line, it first checks whether the last token is a hostElset. If it is not (i.e., based on whether it is an EmbeddedLine element), the given hostElset is recognized as non-existent. If no hostElset exists, any hostElset already assigned to the target elements will be released.</p>
+<p>When specifying the target using element number patterns, non-existent elements are simply ignored and do not trigger an error.</p>
+<h5 id="example_6">Example</h5>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=EmbeddedLineHostElset
+ 1,2,3, girder
+ tendonSet, crossbeam
+ tendonSet1,tendonSet2, mainGirder
+ tendonSet  # release
+</code></pre></div>
+<h3 id="distribution-typemckelementscalefactor">*Distribution, Type=MCKElementScaleFactor</h3>
+<p>Specifies or releases the ScaleFactor for Spring, EarthSpring, and PointMass elements.</p>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=MCKElementScaleFactor
+  target1,target2, ..., sf
+  ...
+</code></pre></div>
+<h5 id="first-data-line-and-subsequent-data-lines_5">First data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target1,target2,...:</strong> Element numbers, elsets, or element number patterns to which the ScaleFactor will be applied (required). Element number patterns follow the format <code>start:end:spacing</code>, where <code>spacing</code> can be omitted if it is 1. This is only valid for Spring, EarthSpring, and PointMass elements.</li>
+<li><strong>sf:</strong> Scale factor</li>
+</ul>
+</div>
+<p>Specifies an additional scale factor for Spring, EarthSpring, and PointMass elements. If the target elements do not exist or are not of type Spring, EarthSpring, or PointMass, they are simply ignored and do not trigger an error.</p>
+<h5 id="example_7">Example</h5>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=MCKElementScaleFactor
+ 1, 2, 3, 2.5    # Set a scale factor of 2.5 for elements 1, 2, and 3.
+ wall, 2.5       # Specify a scale factor of 2.5 for the wall elset (which must consist entirely of spring elements).
+</code></pre></div>
+<h3 id="distribution-typemckelementcs">*Distribution, Type=MCKElementCS</h3>
+<p>Specifies or releases the ECS (Element Coordinate System) for Spring, EarthSpring, and PointMass elements.</p>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=MCKElementCS
+  target1,target2, ..., ucs
+  ...
+</code></pre></div>
+<h5 id="first-data-line-and-subsequent-data-lines_6">First data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target1,target2,...:</strong> Element numbers, elsets, or element number patterns to which the ECS will be applied (required). Element number patterns follow the format <code>start:end:spacing</code>, where <code>spacing</code> can be omitted if it is 1. This is only valid for Spring, EarthSpring, and PointMass elements.</li>
+<li><strong>ucs:</strong> User Coordinate System (UCS) to be used for the spring elements (optional).</li>
+</ul>
+</div>
+<p>This command is valid only for elements that are Spring, EarthSpring, or PointMass. In the program, if there are two or more tokens in a line, it first checks whether the last token is a CS. If it is not, the given CS is recognized as non-existent. If no CS exists, any previously assigned CS to the target elements will be released. If you want to delete a CS for an elset with the same name, only the elset should be listed on one line. If the target elements do not exist or are not of type Spring, EarthSpring, or PointMass, they are simply ignored and do not trigger an error.</p>
+<h5 id="example_8">Example</h5>
+<div class="highlight"><pre><span></span><code>*CoordinateSystem, Type=UCS, Name=springCS
+ 1, 1, 0, 0, 1, 0
+
+*Distribution, Type=MCKElementCS
+ 1, 2, 3, springCS
+ springSet, springCS
+ springSet2,  springSet3, springCS
+ springSet   # Release
+</code></pre></div>
+<h3 id="distribution-typemovingspringinitialposition">*Distribution, Type=MovingSpringInitialPosition</h3>
+<p>Specifies or releases the initial position of the moving spring.</p>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=MovingSpringIntialPosition
+  target, x, y
+  ...
+</code></pre></div>
+<h5 id="first-data-line-and-subsequent-data-lines_7">First data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target:</strong> Element numbers, elsets, or element number patterns to specify the initial position of the moving spring (required). Element number patterns follow the format <code>start:end:spacing</code>, where <code>spacing</code> can be omitted if it is 1. This is only valid for MovingSpring elements.</li>
+<li><strong>P=x,y:</strong> Initial position (optional; default: 0,0). For moving springs targeting beam elements, only the x value is referenced.</li>
+</ul>
+</div>
+<p>The moving spring element (<code>*Element, Type=MovingSpring</code>) specifies its initial position (default: 0,0 if not specified). If the target elements do not exist or are not of type MovingSpring, they are simply ignored and do not trigger an error.</p>
+<h5 id="example_9">Example</h5>
+<div class="highlight"><pre><span></span><code>*Distribution, Type=MovingSpringIntialPosition
+ 100, -5, 0.    # Apply the initial position of (-5, 0) to element 100.
+</code></pre></div>
+<h2 id="model">*Model</h2>
+<p>Generates a pre-defined template model.</p>
+<div class="highlight"><pre><span></span><code>*Model, Type=type
+  ...
+</code></pre></div>
+<h5 id="keyword-line_3">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Type=type:</strong> Type of model (required)</p>
+<ul>
+<li><strong>Block2D:</strong> Generates a rectangular mesh using 2D solid elements</li>
+<li><strong>Block3D:</strong> Generates a rectangular mesh using 3D solid elements</li>
+<li><strong>Cylinder:</strong> Generates a cylinder mesh using 3D solid elements</li>
+<li><strong>Wall:</strong> Generates a rectangular mesh using shell elements</li>
+<li><strong>RectangularTank:</strong> Generates a rectangular tank mesh using shell elements</li>
+<li><strong>CylindericalTank:</strong> Generates a cylinderical tank mesh using shell elements</li>
+<li><strong>CurveExtrusion:</strong> Generate a shell-element mesh by extruding a 2D cross-section curve along a spline path</li>
+<li><strong>FarField2D:</strong> Generates a 2D mesh for SSI analysis and creates equivalent loads from the results of free field analysis</li>
+<li><strong>FarField3D:</strong> Generates a 3D mesh for SSI analysis and creates equivalent loads from the results of free field analysis</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="model-typeblock2d">*Model, Type=Block2D</h3>
+<p>Generates a rectangular mesh using 2D solid elements.</p>
+<div class="highlight"><pre><span></span><code>*Model, Type=Block2D
+ name, startNodeId, startElementId, elementType, section
+ x1, x2, ..., x{n+1}, nx1, nx2, ..., nx{n}
+ y1, y2, ..., y{n+1}, ny1, ny2, ..., ny{n}
+ ix1, iy1, ...
+</code></pre></div>
+<h5 id="first-data-line">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>name:</strong> Representative name. This name serves as the basis for naming nsets, elsets, surfaces, loads, etc., created by this command.</li>
+<li><strong>startNodeId, startElementId:</strong> Starting node and element numbers. Use "Auto" for automatic calculation.</li>
+<li><strong>elementType:</strong> Type of element to apply, such as CPS4, AC2D4, etc., for 2D rectangular solid elements.</li>
+<li><strong>section:</strong> Section to apply (optional; if omitted, no section is applied to the elements).</li>
+</ul>
+</div>
+<h5 id="second-and-third-data-lines">Second and third data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>x1, x2, ..., x{n+1}, nx1, nx2, ..., nx{n}</strong>: x range and number of elements.</li>
+<li><strong>y1, y2, ..., y{n+1}, ny1, ny2, ..., ny{n}</strong>: y range and number of elements.</li>
+</ul>
+</div>
+<h5 id="fourth-data-line-optional">Fourth data line (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ix, iy, ...</strong>: Block numbers to be deleted (ix, iy).</li>
+</ul>
+</div>
+<p>This command generates entities such as nsets, elsets, and surfaces in addition to nodes and elements.</p>
+<ul>
+<li>Nset: <code>name</code> (all nodes)</li>
+<li>Elset: <code>name</code> (all elements)</li>
+<li>Surface: <code>name</code> (all outer surfaces), <code>name-NX</code> (surface where X=xmin), <code>name-PX</code> (surface where X=xmax), <code>name-NY</code> (surface where Y=ymin), <code>name-PY</code> (surface where Y=ymax). If there are blocks to be deleted, surfaces adjacent to the deleted regions are created as <code>name-i-j-PX</code>, <code>name-i-j-NX</code>, <code>name-i-j-PY</code>, <code>name-i-j-NY</code>, where i and j are the numbers of the deleted regions.</li>
+</ul>
+<p><img alt="Fig. 15.5-1. Block2D mesh generation" src="../../Command/image/15.5-1.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-1.</span></strong> Block2D mesh generation</p>
+
+<h5 id="example_10">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=steel
+ 2E6, 0.2
+
+*Section, Type=Solid, Name=solid
+ steel, 0.1
+
+*Model, TYPE=Block2D
+ Cant, 1, 1, CPS4, solid    # Generate elements with solid section
+ 0, 20, 10
+ 0, 4, 4
+
+*Model, TYPE=Block2D
+ CantX, Auto, Auto, CPS4    # Generate elements without section
+ 0, 20, 10
+ 0, 4, 4
+</code></pre></div>
+<h3 id="model-typeblock3d">*Model, Type=Block3D</h3>
+<p>Generates a rectangular mesh using 3D solid elements.</p>
+<div class="highlight"><pre><span></span><code>*Model, Type=Block3D
+ name, startNodeId, startElementId, elementType, section
+ x1, x2, ..., x{n+1}, nx1, nx2, ..., nx{n}
+ y1, y2, ..., y{n+1}, ny1, ny2, ..., ny{n}
+ z1, z2, ..., z{n+1}, nz1, nz2, ..., nz{n}
+ ix, iy, iz, ...
+</code></pre></div>
+<h5 id="first-data-line_1">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>name:</strong> Representative name. This name serves as the basis for naming nsets, elsets, surfaces, loads, etc., created by this command.</li>
+<li><strong>startNodeId, startElementId:</strong> Starting node and element numbers. Use "Auto" for automatic calculation.</li>
+<li><strong>elementType:</strong> Type of element to apply, such as C3D8, AC3D8, etc., for 3D hexahedral solid elements.</li>
+<li><strong>section:</strong> Section to apply (optional; if omitted, no section is applied to the elements).</li>
+</ul>
+</div>
+<h5 id="second-third-and-fourth-data-lines">Second, third, and fourth data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>x1, x2, ..., x{n+1}, nx1, nx2, ..., nx{n}</strong>: x range and number of elements.</li>
+<li><strong>y1, y2, ..., y{n+1}, ny1, ny2, ..., ny{n}</strong>: y range and number of elements.</li>
+<li><strong>z1, z2, ..., z{n+1}, nz1, nz2, ..., nz{n}</strong>: z range and number of elements.</li>
+</ul>
+</div>
+<h5 id="first-data-line-for-deletion">First data line for deletion</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ix, iy, iz, ...</strong>: Block numbers to be deleted (ix, iy, iz).</li>
+</ul>
+</div>
+<p>This command generates entities such as nsets, elsets, and surfaces in addition to nodes and elements.</p>
+<ul>
+<li>Nset: <code>name</code> (all nodes)</li>
+<li>Elset: <code>name</code> (all elements)</li>
+<li>Surface: <code>name</code> (all outer surfaces), <code>name-NX</code> (surface where X=-xmin), <code>name-PX</code> (surface where X=xmax), <code>name-NY</code> (surface where Y=ymin), <code>name-PY</code> (surface where Y=ymax), <code>name-NZ</code> (surface where Z=zmin), <code>name-PZ</code> (surface where Z=zmax), If there are blocks to be deleted, surfaces adjacent to the deleted regions are created as <code>name-i-j-k-PX</code>, <code>name-i-j-k-NX</code>, <code>name-i-j-k-PY</code>, <code>name-i-j-k-NY</code>, <code>name-i-j-k-NZ</code>, <code>name-i-j-k-PZ</code>, where i, j, and k are the numbers of the deleted regions.</li>
+</ul>
+<p><img alt="Fig. 15.5-1. Block3D mesh generation" src="../../Command/image/15.5-2.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-2.</span></strong> Block3D mesh generation</p>
+
+<h5 id="example_11">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=steel
+ 2E6, 0.2
+
+*Section, Type=Solid, Name=solid
+ steel, 1
+
+*Model, TYPE=Block3D
+ Cant, 1, 1, C3D8, solid  # Generate elements with solid section
+ 0, 20, 10
+ 0, 4, 4
+ 0, 2, 2
+
+*Model, TYPE=Block3D
+ Cant, Auto, Auto, C3D8    # Generate elements without section
+ 0, 20, 10
+ 0, 4, 4
+ 0, 2, 2
+</code></pre></div>
+<h3 id="model-typecylinder">*Model, Type=Cylinder</h3>
+<p>Creates a cylindrical mesh.</p>
+<div class="highlight"><pre><span></span><code>*Model, Type=Cylinder
+ name, startNodeId, startElementId, elementType, section
+ x0, y0, z0, R, nseg
+ h1, h2, ..., h{n}, nh1, nh2, ... nh{n}
+</code></pre></div>
+<h5 id="first-data-line_2">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>name</strong>:  Representative name used as the base name for entities like nsets, elsets, surfaces, and loads created by this command.</li>
+<li>__startNodeId, startElementId __: Starting node and element IDs. Use "Auto" for automatic calculation.</li>
+<li><strong>elementType</strong>: Type of the element to apply, such as 3D hexahedral solid elements like C3D8, AC3D8.</li>
+<li><strong>section</strong>: Section to be applied (optional; if omitted, no section is applied to the elements).</li>
+</ul>
+</div>
+<h5 id="second-data-line">Second data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>x0, x0, z0</strong>: Origin coordinates.</li>
+<li><strong>R</strong>: Radius in the xy-plane.</li>
+<li><strong>nseg</strong>: No. of segments in the perimeter of quarter outer circle. If nseg is less than 4, 4 is used.  (optional, default 0)</li>
+</ul>
+</div>
+<h5 id="third-data-line">Third data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>h1, h2, ... h{n}, nh1, nh2, ..., nh</strong>: Heights in the z-direction and the number of elements along each height.</li>
+</ul>
+</div>
+<p>In addition to nodes and elements, the command generates other entities like nsets, elsets, and surfaces:</p>
+<ul>
+<li>Nset : name (all nodes)</li>
+<li>Elset : name (all elements)</li>
+<li>Surface : name (all outer surfaces), name-Top(top surface), name-Bottom(bottom surface), name-Side(side surface)</li>
+</ul>
+<h5 id="example_12">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=Water
+ 2190.4E+6, 1000   # bulkModulus, density  ... compressible
+
+*Section, Type=Solid, Name=Water
+ Water, 1   # thickness
+
+
+*Model, TYPE=Cylinder
+ Water, auto, auto, AC3D8, Water
+ 0,0,0,18.3,4  # x0, y0, z0, R, nseg
+ 12.2,5         # h1,...,nh1,...
+</code></pre></div>
+<h3 id="model-typewall">*Model, Type=Wall</h3>
+<p>Generates a rectangular mesh using shell elements.</p>
+<p><div class="highlight"><pre><span></span><code>*Model, Type=Wall
+ name, startNodeId, startElementId, elementType, section
+ ox, oy, oz, x1, x2, x3, y1, y2, y3
+ lxmin, lxmax, nlx
+ lymin, lymax, nly
+</code></pre></div>
+ ##### First data line</p>
+<div class="admonition note">
+<ul>
+<li><strong>name:</strong> Representative name. This name serves as the basis for naming nsets, elsets, surfaces, loads, etc., created by this command.</li>
+<li><strong>startNodeId, startElementId:</strong> Starting node and element numbers. Use "Auto" for automatic calculation.</li>
+<li><strong>elementType:</strong> Type of element to apply, such as 4-node shell elements (S4, S4F, etc.) or 8-node solid shells (CS8).</li>
+<li><strong>section:</strong> Section to apply (optional; if omitted, no section is applied to the elements).</li>
+</ul>
+</div>
+<h5 id="second-data-line_1">Second data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ox, oy, oz:</strong> Reference point of the local coordinate system.</li>
+<li><strong>x1, x2, x3:</strong> Defines the x-axis of the local coordinate system.</li>
+<li><strong>y1, y2, y3:</strong> Another vector defining the plane of the local coordinate system. The y-axis is created as y = x × z.</li>
+</ul>
+</div>
+<h5 id="third-and-fourth-data-lines">Third and fourth data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>lx1min, lxmax, nlx:</strong> Range and number of elements for the first axis (local x) in the local coordinate system.</li>
+<li><strong>lymin, lymax, nly:</strong> Range and number of elements for the second axis (local y) in the local coordinate system.</li>
+</ul>
+</div>
+<p>This command generates entities such as nsets and elsets in addition to nodes and elements.</p>
+<ul>
+<li>Nset: <code>name</code> (all nodes)</li>
+<li>Elset: <code>name</code> (all elements)</li>
+</ul>
+<p>When applying CS8 elements, a single layer of solid shell is created based on shell thickness. If no shell section is provided, a thickness of 1 is applied.</p>
+<h5 id="example_13">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=steel
+ 2E6, 0.2
+
+*Section, Type=Shell, Name=beam
+ steel, 0.1
+
+*Model, Type=Wall
+ beam, Auto, Auto, S4, beam
+ 0,  0,  0, 1, 0, 0, 0, 1, 0
+ 0, 20, 20
+ 0, 4, 4
+</code></pre></div>
+<h3 id="model-typerectangulartank">*Model, Type=RectangularTank</h3>
+<p>Generates a rectangular tank mesh using shell elements with an open top surface.</p>
+<div class="highlight"><pre><span></span><code>*Model, Type=RectangularTank
+ name, startNodeId, startElementId, elementType, wallSection, bottomSection
+ x1, x2, ..., x{n+1}, nx1, nx2, ..., nx{n}
+ y1, y2, ..., y{n+1}, ny1, ny2, ..., ny{n}
+ z1, z2, ..., z{n+1}, nz1, nz2, ..., nz{n}
+</code></pre></div>
+<h5 id="first-data-line_3">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>name:</strong> Representative name. This name serves as the basis for naming nsets, elsets, surfaces, loads, etc., created by this command.</li>
+<li><strong>startNodeId, startElementId:</strong> Starting node and element numbers. Use "Auto" for automatic calculation.</li>
+<li><strong>elementType:</strong> Type of element to apply, such as S4F for rectangular shell elements.</li>
+<li><strong>wallSection, bottomSection:</strong> Sections for the wall and bottom surfaces (optional; if omitted, no section is applied to the elements).</li>
+</ul>
+</div>
+<h5 id="second-third-and-fourth-data-lines_1">Second, third, and fourth data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>x1, x2, ..., x{n+1}, nx1, nx2, ..., nx{n}:</strong> x range and number of elements.</li>
+<li><strong>y1, y2, ..., y{n+1}, ny1, ny2, ..., ny{n}:</strong> y range and number of elements.</li>
+<li><strong>z1, z2, ..., z{n+1}, nz1, nz2, ..., nz{n}:</strong> z range and number of elements.</li>
+</ul>
+</div>
+<p>This command generates entities such as nsets, elsets, and surfaces in addition to nodes and elements.</p>
+<ul>
+<li>Nset: <code>name</code> (all nodes)</li>
+<li>Elset: <code>name</code> (all elements)</li>
+<li>Surface: <code>name</code> (all outer surfaces), <code>name-NX</code> (surface where X=-xmin), <code>name-PX</code> (surface where X=xmax), <code>name-NY</code> (surface where Y=ymin), <code>name-PY</code> (surface where Y=ymax), <code>name-Bottom</code> (surface where Z=zmin)</li>
+</ul>
+<p><img alt="Fig. 15.5-3 RectangularTank mesh generation" src="../../Command/image/15.5-3.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-3.</span></strong> RectangularTank mesh generation</p>
+
+<h5 id="example_14">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material,Type=IsoElasticity,Name=mat
+ 30E9, 0.18, 0, 2000.    # E, nu, alpha, density
+
+*Section, Type=Shell, Name=shell
+ mat, 0.01     # h
+
+*Model, TYPE=RectangularTank
+ Cant, 1, 1, S4F, shell, shell
+ 0, 20, 10
+ 0, 4, 4
+ 0, 2, 2
+
+
+*Model, TYPE=RectangularTank
+ CantX, Auto, Auto, S4F      # Generate elements without section
+ 0, 20, 10
+ 0, 4, 4
+ 0, 2, 2
+</code></pre></div>
+<h3 id="model-typecylindericaltank">*Model, Type=CylindericalTank</h3>
+<p>Creates a cylindrical tank mesh with an open top using shell elements.</p>
+<div class="highlight"><pre><span></span><code>*Model, Type=CylindericalTank
+ name, startNodeId, startElementId, elementType, wallSection, bottomSection
+ x0, y0, z0, R, nseg
+ h1, h2, ..., h{n}, nh1, nh2, ... nh{n}
+</code></pre></div>
+<h5 id="first-data-line_4">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>name</strong>:  Representative name used as the base name for entities like nsets, elsets, surfaces, and loads created by this command.</li>
+<li>__startNodeId, startElementId __: Starting node and element IDs. Use "Auto" for automatic calculation.</li>
+<li><strong>elementType</strong>: Type of the element to apply, such as rectangular shell elements like S4F.</li>
+<li><strong>wallSection, bottomSection</strong>: Sections for the wall and bottom (optional; if omitted, no section is applied to the elements).</li>
+</ul>
+</div>
+<h5 id="second-data-line_2">Second data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>x0, x0, z0</strong>: Origin coordinates.</li>
+<li><strong>R</strong>: Radius in the xy-plane.</li>
+<li><strong>nseg</strong>: No. of segments in the perimeter of quarter outer circle. If nseg is less than 4, 4 is used.  (optional, default 0)</li>
+</ul>
+</div>
+<h5 id="third-data-line_1">Third data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>h1, h2, ... h{n}, nh1, nh2, ..., nh</strong>: Heights in the z-direction and the number of elements along each height.</li>
+</ul>
+</div>
+<p>In addition to nodes and elements, the command generates other entities like nsets, elsets, and surfaces:</p>
+<ul>
+<li>Nset : name (all nodes)</li>
+<li>Elset : name (all elements)</li>
+<li>Surface : name (all outer surfaces), name-Bottom(bottom surface), name-Side(side surface)</li>
+</ul>
+<h5 id="example_15">Example</h5>
+<div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=Tank
+ 2.0776E+10, 0.17, 0, 2300   # E(MPa), nu, alpha, density
+
+*Section, Type=Shell, Name=Tank
+ Tank, 1.2
+
+*Model, TYPE=CylindericalTank
+ Tank, auto, auto, S4F, Tank, Tank
+ 0,0,0,18.3,4  # x0, y0, z0, R, nseg
+ 12.2,1.8,5,2  # h1,...,nh1,...
+</code></pre></div>
+<h3 id="model-typecurveextrusion">*Model, Type=CurveExtrusion</h3>
+<p>Generate a shell-element mesh by extruding a 2D cross-section curve along a spline path.</p>
+<div class="highlight"><pre><span></span><code>*Model, Type=CurveExtrusion
+ name, spline, nseg, startNodeId, startElementId, elementType, section
+ x1,y1
+ x2,x2
+ ...
+</code></pre></div>
+<h5 id="first-data-line_5">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>name:</strong>  Base name that will be used for automatically generating node sets, element sets, surfaces, loads, etc. created by this command</li>
+<li><strong>spline:</strong> Reference spline curve used as the extrusion path</li>
+<li><strong>nseg:</strong> Number of elements to generate along the extrusion direction</li>
+<li><strong>startNodeId,</strong> Starting node and element IDs. If set to Auto, they are assigned automatically</li>
+<li><strong>elementType:</strong> Element type to be used, e.g., S4F (4-node quadrilateral shell element)</li>
+<li><strong>section:</strong> Optional. Section assigned to the generated elements (no assignment if omitted)</li>
+</ul>
+</div>
+<h5 id="second-data-line-and-subsequent-data-lines">Second data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>xi, yi:</strong> Coordinates of the 2D cross-section</li>
+</ul>
+</div>
+<p>The input 2D cross-section points (xi, yi) are connected in order to form the section geometry. This section is then swept along the spline path, generating an S4/S4F shell mesh. If the last point is identical to the first point, the section is treated as a closed loop, and the extrusion produces a cylindrical or tube-like curved shell mesh along the given path.</p>
+<p>Each section point (xi, yi) is transformed into a 3D location using a local coordinate system defined at each point along the spline. The local basis is constructed as follows: the tangent vector of the spline defines ex; ey is computed from the cross product of ex and a predefined up vector; and ez = ex × ey, completing an orthogonal triad. The (ey, ez) plane becomes the placement plane for the 2D cross-section.</p>
+<p>The default up vector is (0, 0, 1). However, when the tangent ex becomes nearly parallel to the global z-axis—causing the cross product to approach zero—the up vector is automatically switched to (0, 1, 0) to avoid singularities and maintain a stable section coordinate frame.</p>
+<h5 id="example_16">Example</h5>
+<div class="highlight"><pre><span></span><code>*Construction, Type=Spline, Name=tunnelLine
+  0,   0,  0
+ 10,   2,  1
+ 20,   3,  2
+ 30,   5,  3
+ 40,   4,  2
+ 50,   1,  1
+ 60,   0,  0
+
+*Material, TYPE=IsoElasticity, Name=mat
+ 20E9
+
+*Section, Type=Shell, Name=wall
+ mat, 0.3
+
+*Model, Type=CurveExtrusion
+ testTunnel, tunnelLine, 100, Auto, Auto, S4F, wall
+-4.800, 0.000
+-4.900, 1.000
+-5.000, 2.000
+-5.000, 3.000
+-5.000, 4.000
+-4.924, 4.868
+-4.698, 5.710
+-4.330, 6.500
+-3.830, 7.214
+-3.213, 7.826
+-2.500, 8.320
+-1.710, 8.689
+-0.868, 8.915
+ 0.000, 9.000
+ 0.868, 8.915
+ 1.710, 8.689
+ 2.500, 8.320
+ 3.213, 7.826
+ 3.830, 7.214
+ 4.330, 6.500
+ 4.698, 5.710
+ 4.924, 4.868
+ 5.000, 4.000
+ 5.000, 3.000
+ 5.000, 2.000
+ 4.900, 1.000
+ 4.800, 0.000
+ 4.000,-0.100
+ 3.000,-0.200
+ 2.000,-0.300
+ 1.000,-0.400
+ 0.000,-0.500
+-1.000,-0.400
+-2.000,-0.300
+-3.000,-0.200
+-4.000,-0.100
+-4.800, 0.000
+</code></pre></div>
+<h3 id="model-typefarfield2d">*Model, TYPE=FarField2D</h3>
+<p>Generates a 2D mesh for SSI (Soil-Structure Interaction) analysis, performs free field analysis, and calculates equivalent loads.</p>
+<div class="highlight"><pre><span></span><code>*Model, TYPE=FarField2D
+ name, startNodeId, startElementId, outputFormat
+ acceleration, iz, Direct|Outcrop, rcx, x0
+ nearMinX, nearMaxX, nearMeshCountX, farMeshSizeX, farMeshCountX
+ ytop
+ E1, nu1, density1, xi1, h1, ny1
+ E2, nu2, density2, xi2, h2, ny2
+ ...
+ En, nun, densityn, xin, hn, nyn
+ {bottomNSet} | {EHalf, nuHalf, densityHalf, xiHalf, farMeshSizeY, farMeshCountY}
+</code></pre></div>
+<h5 id="first-data-line_6">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>name:</strong> Representative name. This name serves as the basis for naming nsets, elsets, surfaces, loads, etc., created by this command.</li>
+<li><strong>startNodeId, startElementId:</strong> Starting node and element numbers. Use "Auto" for automatic calculation.</li>
+<li><strong>outputFormat:</strong> Output time history file format for equivalent loads and ground motion at the bottom surface. Options are auto, csv, or npy. If "csv" is chosen, output will be in CSV format only; if "npy" is chosen, output will be in NPY format only. If "auto" is selected, it checks the number of columns in the generated function file: if 16,364 or fewer, it outputs as CSV; otherwise, it outputs as NPY. The default: "auto".</li>
+</ul>
+</div>
+<h5 id="second-data-line_3">Second data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>acceleration:</strong> Acceleration time history function. Must be a TimeSeries function with two components, corresponding to the acceleration in the X and Y directions.</li>
+<li><strong>iz, Direct|Outcrop:</strong> Layer boundary number (1-based) where the time history is applied and the input method (if Direct, it treats the acceleration input as being at iz; if Outcrop, it treats it as outcrop motion). <code>iz</code> can be specified up to <code>(number of layers) + 1</code>. However, if the base condition is rigid (Rigid) and specified as Outcrop, it can be specified only up to <code>(number of layers)</code> (to specify Outcrop, there must be underlying layer information).</li>
+<li><strong>rcx:</strong> Inverse of the horizontal apparent velocity of the incoming seismic wave. Calculated as <code>rcx = 1/cx</code>, where <code>cx = cp/lx = cs/mx</code>, with <code>cp</code> and <code>cs</code> being the P-wave and S-wave velocities, and <code>(lx, ly, lz)</code> and <code>(mx, my, mz)</code> being the unit direction vectors for P-waves and S-waves, respectively. The use of <code>rcx</code> instead of <code>cx</code> is due to the fact that the direct cosine <code>lx</code> and <code>mx</code> are zero for vertically incident waves.</li>
+<li><strong>x0:</strong> Reference point for the incoming seismic wave.</li>
+</ul>
+</div>
+<h5 id="third-data-line_2">Third data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>nearMinX, nearMaxX, nearMeshCountX, farMeshSizeX, farMeshCountX:</strong> Range and number of elements for the near field in the X direction, size of the far field mesh, and number of elements.</li>
+</ul>
+</div>
+<h5 id="fourth-data-line">Fourth data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ytop:</strong> Position of the ground surface.</li>
+<li><strong>f0:</strong> Reference frequency (Hz). Applied when approximating using stiffness-proportional damping for effective load calculations (for single-layer ground, the first natural frequency is <code>vs/4H</code>; for multi-layer ground, the equivalent acceleration <code>vse = sum(Hi)/sum(Hi/Vsi)</code> is calculated and then applied to <code>vse/4H</code>; damping ratio is set to 5% based on material damping).</li>
+</ul>
+</div>
+<h5 id="fifth-data-line-and-subsequent-data-lines">Fifth data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E1, nu1, density1, xi1, h1, nz1:</strong> Material properties and height for the first layer of ground from the surface.</li>
+<li><strong>E2, nu2, density2, xi2, h2, nz2:</strong> Material properties and height for the second layer of ground from the surface (optional).</li>
+<li>...</li>
+<li><strong>En, nun, densityn, xin, hn, nzn:</strong> Material properties and height for the nth layer of ground from the surface (optional).</li>
+</ul>
+</div>
+<h5 id="last-data-line">Last data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>bottomNset:</strong> Name of the nset at the base if rigid conditions are applied.</li>
+<li><strong>EHalf, nuHalf, densityHalf, xiHalf, farMeshSizeY, farMeshCountY:</strong> Material properties for the bedrock under flexible conditions, and the size and number of elements for the far field in the Y direction.</li>
+</ul>
+</div>
+<p>The conditions can be set for either Rigid or Flexible based on whether the stiffness of the base is considered. The CPE4PMDL element is used for the SimplePMDL formulation to handle infinite regions, and a viscous boundary is set at the outer edge of the far field mesh. In addition to nodes and elements, entities such as the given name and bottomNset will generate:</p>
+<ul>
+<li>Materials: <code>name-1</code>, <code>name-2</code>, ... (materials corresponding to layers), <code>name-half</code> (material corresponding to the half space).</li>
+<li>Sections: <code>name-1</code>, <code>name-2</code>, ... (sections corresponding to layers), <code>name-half</code> (section corresponding to the half space).</li>
+<li>Elsets: <code>name</code> (all elements), <code>name-1</code>, <code>name-2</code>, ... (elements corresponding to layers), <code>name-half</code> (elements corresponding to the half space).</li>
+<li>Surfaces: <code>name-Boundary</code> (outer boundary of the far field), <code>name-NNX</code> (near field-boundary where X=nearXMin), <code>name-PX</code> (near field-boundary where X=nearXMax), <code>name-NY</code> (near field-boundary where Y=ymin), <code>name-PY</code> (near field-boundary where Y=ymax), <code>name-Bottom</code> (near field-boundary where Z=zmin for flexible conditions).</li>
+<li>Constraints: <code>name-Boundary</code> (viscous boundary).</li>
+<li>Loads: <code>name-Effective</code> (equivalent loads), <code>bottomNset-Motion</code> (prescribed motion load for rigid conditions).</li>
+<li>Functions: <code>name-Effective</code> (time function used for effective loads), <code>bottomNset-Motion</code> (time function used for node motion in rigid conditions).</li>
+</ul>
+<p>The generated time history files are:</p>
+<ul>
+<li><code>&lt;DB&gt;-name-Freefield.csv|npy</code>: Time history file for free field analysis results showing layer boundary responses in terms of displacement, velocity, and acceleration. This is for reference and not used in the analysis.</li>
+<li><code>&lt;DB&gt;-name-Effective.csv|npy</code>: Time history file for effective loads acting at the near-field-far-field boundary.</li>
+<li><code>&lt;DB&gt;-bottomNset-Motion.csv|npy</code>: Time history file storing prescribed motion in rigid conditions.</li>
+</ul>
+<p>Here, <code>&lt;DB&gt;</code> refers to the input file name without the extension.</p>
+<p><img alt="Fig. 15.5-4. Rigid case" src="../../Command/image/15.5-4.png" /></p>
+<p>Fig. 15.5-4. Rigid case</p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-4.</span></strong> Rigid case</p>
+
+<p><img alt="Fig. 15.5-5 Flexible case" src="../../Command/image/15.5-5.png" /></p>
+<p>Fig. 15.5-5. Flexible case</p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-5.</span></strong> Flexible case</p>
+
+<p><img alt="Fig. 15.5-6. Acceleration history input" src="../../Command/image/15.5-6.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 15.5-6.</span></strong> Acceleration history input</p>
+
+<h5 id="example_17">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, TYPE=TimeSignal, Name=acc
+ 0.02, 4096
+ ELCchopra.dat, 1, 0.31*9.81
+ ELCchopra.dat, 1, 0.31*9.81
+
+*Node, NSet=Bottom
+ 1, -10, -30
+ 2,  10, -30
+ 3,  10, -30
+ 4, -10, -30
+
+*Model, TYPE=FarField2D
+ RigidBase2D, Auto, Auto
+ acc, 3, Direct, 1/200, 0          # acc, iz, Direct|Outcrop, rcx, x0
+  -10, 10, 1, 16, 10  # nearMinX, nearMaxX, nearMeshCountX,  farMeshSizeX, farMeshCountX
+  0, 1.                    # ztop, f0
+  20E9,0.2, 2000, 0.02, 10, 5      # E, nu, density, xi, h, nz
+  25E9,0.2, 2000, 0.02, 20, 10      # E, nu, density, xi, h, nz
+  Bottom
+
+*Model, TYPE=FarField2D
+ FlexibleBase2D, Auto, Auto
+ acc, 3, Outcrop, 1/200, 0          # acc, iz, Direct|Outcrop, rcx, x0
+  -10, 10, 1, 16, 10  # nearMinX, nearMaxX, nearMeshCountX,  farMeshSizeX, farMeshCountX
+  0, 1.                    # ztop, f0
+ 20E9,0.2, 2000, 0.02, 10, 5      # E, nu, density, xi, h, nz
+ 25E9,0.2, 2000, 0.02, 20, 10      # E, nu, density, xi, h, nz
+ 30E9, 0.2, 2000, 0.02, 16, 10     # E, nu, density, xi, farMeshSizeZ, farMeshCountZ
+</code></pre></div>
+<h3 id="model-typefarfield3d">*Model, TYPE=FarField3D</h3>
+<p>Generates a 3D mesh for SSI (Soil-Structure Interaction) analysis, performs free field analysis, and calculates equivalent loads.</p>
+<div class="highlight"><pre><span></span><code>*Model, TYPE=FarField3D
+ name, startNodeId, startElementId, outputFormat
+ acceleration, iz, Direct|Outcrop, rcx, rcy, x0, y0
+ nearMinX, nearMaxX, nearMeshCountX, farMeshSizeX, farMeshCountX
+ nearMinY, nearMaxY, nearMeshCountY, farMeshSizeY, farMeshCountY
+ ztop
+ E1, nu1, density1, xi1, h1, nz1
+ E2, nu2, density2, xi2, h2, nz2
+ ...
+ En, nun, densityn, xin, hn, nzn
+ {bottomNSet} | {EHalf, nuHalf, densityHalf, xiHalf, farMeshSizeZ, farMeshCountZ}
+</code></pre></div>
+<h5 id="first-data-line_7">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>name:</strong> Representative name. This name serves as the basis for naming nsets, elsets, surfaces, loads, etc., created by this command.</li>
+<li><strong>startNodeId, startElementId:</strong> Starting node and element numbers. Use "Auto" for automatic calculation.</li>
+<li><strong>outputFormat:</strong> Output time history file format for equivalent loads and ground motion at the bottom surface. Options are auto, csv, or npy. If "csv" is chosen, output will be in CSV format only; if "npy" is chosen, output will be in NPY format only. If "auto" is selected, it checks the number of columns in the generated function file: if 16,364 or fewer, it outputs as CSV; otherwise, it outputs as NPY. The default: "auto".</li>
+</ul>
+</div>
+<h5 id="second-data-line_4">Second data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>acceleration:</strong> Acceleration time history function. Must be a TimeSeries function with three components, corresponding to the acceleration in the X, Y, and Z directions.</li>
+<li><strong>iz, Direct|Outcrop:</strong> Layer boundary number (1-based) where the time history is applied and the input method (if Direct, it treats the acceleration input as being at iz; if Outcrop, it treats it as outcrop motion). <code>iz</code> can be specified up to <code>(number of layers) + 1</code>. However, if the base condition is rigid (Rigid) and specified as Outcrop, it can be specified only up to <code>(number of layers)</code> (to specify Outcrop, there must be underlying layer information).</li>
+<li><strong>rcx, rcy:</strong> Inverse of the horizontal apparent velocity of the incoming seismic wave. Calculated as <code>rcx = 1/cx</code>, <code>rcy = 1/cy</code>, where <code>cx = cp/lx = cs/mx</code>, <code>cy = cp/ly = cs/my</code>. Here, <code>cp</code> and <code>cs</code> are the P-wave and S-wave velocities, and <code>(lx, ly, lz)</code> and <code>(mx, my, mz)</code> are the unit direction vectors for P-waves and S-waves, respectively. The use of <code>rcx</code> and <code>rcy</code> instead of <code>cx</code> and <code>cy</code> is to avoid cases where direct cosines <code>lx</code>, <code>mx</code>, <code>ly</code>, and <code>my</code> might be 0. If <code>rcx = rcy = 0</code>, it assumes vertical incidence.</li>
+<li><strong>x0, y0:</strong> Reference point for the incoming seismic wave.</li>
+</ul>
+</div>
+<h5 id="third-data-line_3">Third data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>nearMinX, nearMaxX, nearMeshCountX, farMeshSizeX, farMeshCountX:</strong> Range and number of elements for the near field in the X direction, size of the far field mesh, and number of elements.</li>
+<li><strong>nearMinY, nearMaxY, nearMeshCountY, farMeshSizeY, farMeshCountY:</strong> Range and number of elements for the near field in the Y direction, size of the far field mesh, and number of elements.</li>
+</ul>
+</div>
+<h5 id="fourth-data-line_1">Fourth data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ztop:</strong> Position of the ground surface.</li>
+<li><strong>f0:</strong> Reference frequency (Hz). Applied when approximating using stiffness-proportional damping for effective load calculations (for single-layer ground, the first natural frequency is <code>vs/4H</code>; for multi-layer ground, the equivalent acceleration <code>vse = sum(Hi)/sum(Hi/Vsi)</code> is calculated and then applied to <code>vse/4H</code>; damping ratio is set to 5% based on material damping).</li>
+</ul>
+</div>
+<h5 id="fifth-data-line-and-subsequent-data-lines_1">Fifth data line and subsequent data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E1, nu1, density1, xi1, h1, nz1:</strong> Material properties and height for the first layer of ground from the surface.</li>
+<li><strong>E2, nu2, density2, xi2, h2, nz2:</strong> Material properties and height for the second layer of ground from the surface (optional).</li>
+<li>...</li>
+<li><strong>En, nuN, densityN, xiN, hN, nzN:</strong> Material properties and height for the nth layer of ground from the surface (optional).</li>
+</ul>
+</div>
+<h5 id="last-data-line_1">Last data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>bottomNset:</strong> Name of the nset at the base if rigid conditions are applied.</li>
+<li><strong>EHalf, nuHalf, densityHalf, xiHalf, farMeshSizeZ, farMeshCountZ:</strong> Material properties for the bedrock under flexible conditions and the size and number of elements for the far field in the Z direction.</li>
+</ul>
+</div>
+<p>The conditions can be set for either Rigid or Flexible based on whether the stiffness of the base is considered. The C3D8PMDL element is used for the SimplePMDL formulation to handle infinite regions, and a viscous boundary is set at the outer edge of the far field mesh. In addition to nodes and elements, entities such as the given name and bottomNset will generate:</p>
+<ul>
+<li>Materials: <code>name-1</code>, <code>name-2</code>, ... (materials corresponding to layers), <code>name-half</code> (material corresponding to the half space).</li>
+<li>Sections: <code>name-1</code>, <code>name-2</code>, ... (sections corresponding to layers), <code>name-half</code> (section corresponding to the half space).</li>
+<li>Elsets: <code>name</code> (all elements), <code>name-1</code>, <code>name-2</code>, ... (elements corresponding to layers), <code>name-half</code> (elements corresponding to the half space).</li>
+<li>Surfaces:</li>
+<li><code>name-Boundary</code> (outer boundary of the far field),</li>
+<li><code>name-NNX</code> (near field-boundary where X=nearXMin),</li>
+<li><code>name-PX</code> (near field-boundary where X=nearXMax),</li>
+<li><code>name-NNY</code> (near field-boundary where Y=nearYMin),</li>
+<li><code>name-PY</code> (near field-boundary where Y=nearYMax),</li>
+<li><code>name-NBottom</code> (near field-boundary where Z=zmin for flexible conditions).</li>
+<li>Constraints: <code>name-Boundary</code> (viscous boundary).</li>
+<li>Loads: <code>name-Effective</code> (equivalent loads), <code>bottomNst-Motion</code> (prescribed motion load for rigid conditions).</li>
+<li>Functions: <code>name-Effective</code> (time function used for effective loads), <code>bottomNset-Motion</code> (time function used for node motion in rigid conditions).</li>
+</ul>
+<p>The generated time history files are:</p>
+<ul>
+<li><code>&lt;DB&gt;-name-Freefield.csv|npy</code>: Time history file for free field analysis results showing layer boundary responses in terms of displacement, velocity, and acceleration. This is for reference and not used in the analysis.</li>
+<li><code>&lt;DB&gt;-name-Effective.csv|npy</code>: Time history file for effective loads acting at the near-field-far-field boundary.</li>
+<li><code>&lt;DB&gt;-bottomNset-Motion.csv|npy</code>: Time history file storing prescribed motion in rigid conditions.</li>
+</ul>
+<p>Here, <code>&lt;DB&gt;</code> refers to the input file name without the extension.</p>
+<h5 id="example_18">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, TYPE=TimeSignal, Name=acc
+ 0.02, 1024
+ ELCchopra.dat, 1, 0.31*9.81
+ ELCchopra.dat, 1, 0.31*9.81
+ ELCchopra.dat, 1, 0.31*9.81
+
+*Node, NSet=Bottom
+ 1, -10, -20, -30
+ 2,  10, -20, -30
+ 3,  10,  20, -30
+ 4, -10,  20, -30
+
+*Model, TYPE=FarField3D
+ RigidBase3D, Auto, Auto
+ acc, 2, Direct, 1/200, 1/100, 0, 0   # acceleration, iz, Direct|Outcrop, rcx, rcy, x0, y0
+ -10, 10, 1, 16, 10  # nearMinX, nearMaxX, nearMeshCountX,  farMeshSizeX, farMeshCountX
+ -20, 20, 1, 16, 10  # nearMinY, nearMaxY, nearMeshCountY,  farMeshSizeY, farMeshCountY
+  0, 1.                # ztop, f0
+  20E9,0.2, 2000, 0.02, 10, 5      # E, nu, density, xi, h, nz
+  25E9,0.2, 2000, 0.02, 20, 10      # E, nu, density, xi, h, nz
+  Bottom
+
+
+*Model, TYPE=FarField3D
+ FlexibleBase3D, Auto, Auto
+ acc, 2, Outcrop, 1/200, 1/100, 0, 0   # acceleration, iz, Direct|Outcrop, rcx, rcy, x0, y0
+ -10, 10, 1, 16, 10  # nearMinX, nearMaxX, nearMeshCountX,  farMeshSizeX, farMeshCountX
+ -20, 20, 1, 16, 10  # nearMinY, nearMaxY, nearMeshCountY,  farMeshSizeY, farMeshCountY
+  0, 1.                    # ztop, f0
+ 20E9,0.2, 2000, 0.02, 10, 5      # E, nu, density, xi, h, nz
+ 25E9,0.2, 2000, 0.02, 20, 10      # E, nu, density, xi, h, nz
+ 30E9, 0.2, 2000, 0.02, 16, 10     # E, nu, density, xi, farMeshSizeZ, farMeshCountZ
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
