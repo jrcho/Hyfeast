@@ -59,6 +59,17 @@ Utilities
 - xlnt – Excel .xlsx I/O library for C++ (MIT License)
 - RapidJSON – JSON parser for C++ (MIT License)
 - JKQtPlotter – Qt-based scientific plotting widget (MIT License)
+- MathJax – JavaScript math rendering library for offline Help (Apache License 2.0)
+- OpenSSL – TLS/SSL encryption support (OpenSSL License and SSLeay License)
+
+  This product includes software developed by the OpenSSL Project
+  for use in the OpenSSL Toolkit (https://www.openssl.org/).
+
+  Copyright (c) 1998-2023 The OpenSSL Project.  All rights reserved.
+
+  This product includes cryptographic software written by Eric Young
+  (eay@cryptsoft.com). This product includes software written by Tim Hudson
+  (tjh@cryptsoft.com).
 
 -------------------------------------------------------------------------------
 Optional External Tools (Not Bundled)
@@ -70,6 +81,9 @@ to enable additional features in Hyfeast. Users must install them separately.
 - Python – Used for DXF import (via ezdxf) and modal identification scripts
 - ezdxf (Python) – Python library for DXF import in hfVisualizer (MIT License)
 - Pandoc – Document converter for report generation (GPL/MIT License)
+
+If Hyfeast offline Help is redistributed with bundled MathJax files, include
+the upstream MathJax LICENSE file together with the bundled MathJax assets.
 
 -------------------------------------------------------------------------------
 For detailed license terms of each library, please consult the corresponding
