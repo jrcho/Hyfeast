@@ -7,7 +7,8 @@ Hyfeast는 셸, 보, 솔리드 요소를 지원하며, 빠른 병렬 해석, 3D 
 - 다운로드: [최신 릴리스](https://github.com/jrcho/Hyfeast/releases/latest)  
 - 도움말: [온라인 문서](https://jrcho.github.io/Hyfeast/index.html)  
 - English version: [README.md](./README.md)
-
+- 관련 유틸리티: [hfDocBridge](https://github.com/jrcho/hfDocBridge) - Word, HWP, Markdown 사이의 클립보드 기반 문서 변환 도구.
+  
 ## 시스템 요구사항
 
 - 64비트 Windows 10 이상
