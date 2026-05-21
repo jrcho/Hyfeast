@@ -7,7 +7,8 @@ Hyfeast supports shell, beam, and solid elements, fast parallelized solving, 3D 
 - Download: [Latest release](https://github.com/jrcho/Hyfeast/releases/latest)  
 - Help: [Online documentation](https://jrcho.github.io/Hyfeast/index.html)  
 - Korean version: [README.ko.md](./README.ko.md)
-
+- Related utility: [hfDocBridge](https://github.com/jrcho/hfDocBridge) - clipboard-based document bridge for Word, HWP, and Markdown.
+ 
 ## System Requirements
 
 - 64-bit Windows 10 or higher
