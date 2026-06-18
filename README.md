@@ -7,14 +7,12 @@ Hyfeast supports shell, beam, and solid elements, fast parallelized solving, 3D 
 - Download: [Latest release](https://github.com/jrcho/Hyfeast/releases/latest)  
 - Help: [Online documentation](https://jrcho.github.io/Hyfeast/index.html)  
 - Korean version: [README.ko.md](./README.ko.md)
-- Related utility: [hfDocBridge](https://github.com/jrcho/hfDocBridge) - clipboard-based document bridge for Word, HWP, and Markdown.
- 
+
 ## System Requirements
 
 - 64-bit Windows 10 or higher
 - [Microsoft Visual C++ Redistributable for Visual Studio 2015–2022 (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)  
    ⚠️ **You must install this!** Many users report that *hfVisualizer* does not run, and in most cases this is because the runtime is missing.
-- (Optional) Python 3.8 or higher (for DXF import)
 
 ## Installation and Usage
 
@@ -23,9 +21,9 @@ Hyfeast supports shell, beam, and solid elements, fast parallelized solving, 3D 
 3. Open the `Hyfeast` folder and double-click `setpath.bat`, which sets the PATH environment variable and opens a command prompt.
 4. In the command prompt, you can run:
    ```
-   Hyfeast> hfVisualizer
+   Hyfeast> hfStudio
    Hyfeast> hfAnalyzer input.inp
-   Hyfeast> hfSectionVisualizer
+   Hyfeast> hfSectVisualizer
    Hyfeast> hfSectionAnalyzer input.sec
    ```
 
@@ -57,8 +55,7 @@ Hyfeast incorporates the following open-source and third-party libraries:
 
 ### External Tools (Optional)
 
-- Python – Use for running ezdxf, and modal identification scripts
-- ezdxf (Python) – DXF export for `hfVisualizer`
+- Python – Use for running Digital Twin/OMA analysis scripts
 - Pandoc – Document converter  
 
 

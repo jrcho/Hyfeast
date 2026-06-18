@@ -7,14 +7,12 @@ Hyfeast는 셸, 보, 솔리드 요소를 지원하며, 빠른 병렬 해석, 3D 
 - 다운로드: [최신 릴리스](https://github.com/jrcho/Hyfeast/releases/latest)  
 - 도움말: [온라인 문서](https://jrcho.github.io/Hyfeast/index.html)  
 - English version: [README.md](./README.md)
-- 관련 유틸리티: [hfDocBridge](https://github.com/jrcho/hfDocBridge) - Word, HWP, Markdown 사이의 클립보드 기반 문서 변환 도구.
-  
+
 ## 시스템 요구사항
 
 - 64비트 Windows 10 이상
 - **[Microsoft Visual C++ Redistributable for Visual Studio 2015–2022 (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)**  
   ⚠️ **반드시 설치해야 합니다!**. 많은 사용자가 *hfVisualizer*가 실행되지 않는다고 불평하는데, 대부분 이 런타임이 없어서 발생하는 문제입니다.
-- (선택 사항) Python 3.8 이상 (DXF 내보내기 기능에 필요)
 
 ## 설치 및 사용법
 
@@ -58,8 +56,7 @@ Hyfeast는 다음과 같은 오픈소스 및 서드파티 라이브러리를 포
 
 ### 외부 도구 (선택 사항)
 
-- Python – ezdxf 및 모드 해석 스크립트 실행에 사용
-- ezdxf (Python) – `hfVisualizer`의 DXF 임포트 기능에 사용됨
+- Python - Digital Twin/OMA 분석 스크립트 실행에 사용
 - Pandoc – 문서 변환기
 
 자세한 라이선스 및 출처 정보는 `LICENSE.txt`를 참고하세요.
