@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="1080" viewBox="0 0 980 1080" role="img" aria-labelledby="title desc">
+  <title id="title">KDS response spectrum schematics</title>
+  <desc id="desc">Three schematic response spectra in order: KDS17 rock site, KDS17 soil site, and KDS41 design spectrum.</desc>
+  <defs>
+    <style>
+      .panel { fill: #ffffff; stroke: #8f8f8f; stroke-width: 2; }
+      .axis { stroke: #222222; stroke-width: 2.2; }
+      .tick { stroke: #666666; stroke-width: 1.3; }
+      .guide { stroke: #555555; stroke-width: 1.5; stroke-dasharray: 7 5; }
+      .guide-light { stroke: #888888; stroke-width: 1.2; stroke-dasharray: 6 5; }
+      .curve { fill: none; stroke: #202020; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+      .curve-blue { fill: none; stroke: #0b6fa4; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+      .label { font-family: "Segoe UI", Arial, sans-serif; font-size: 23px; fill: #111111; }
+      .label-small { font-family: "Segoe UI", Arial, sans-serif; font-size: 19px; fill: #111111; }
+      .label-tiny { font-family: "Segoe UI", Arial, sans-serif; font-size: 16px; fill: #333333; }
+      .title { font-family: "Segoe UI", Arial, sans-serif; font-size: 28px; font-weight: 700; fill: #111111; }
+      .formula { font-family: "Cambria Math", "Times New Roman", serif; font-size: 25px; font-style: italic; fill: #000000; }
+      .formula-small { font-family: "Cambria Math", "Times New Roman", serif; font-size: 22px; font-style: italic; fill: #000000; }
+      .open-dot { fill: #ffffff; stroke: #111111; stroke-width: 4; }
+    </style>
+  </defs>
+
+  <rect width="980" height="1080" fill="#ffffff"/>
+
+  <!-- KDS17 rock site -->
+  <g transform="translate(40 30)">
+    <text class="title" x="450" y="30" text-anchor="middle">KDS17 Rock Site (S1)</text>
+    <rect class="panel" x="80" y="60" width="820" height="250"/>
+
+    <line class="axis" x1="110" y1="280" x2="880" y2="280"/>
+    <line class="axis" x1="110" y1="280" x2="110" y2="85"/>
+    <text class="label-small" x="845" y="305">Period, T (s)</text>
+    <text class="label-small" x="-6" y="178" transform="rotate(-90 -6 178)">Spectral acceleration, Sa (g)</text>
+
+    <line class="tick" x1="240" y1="280" x2="240" y2="272"/>
+    <line class="tick" x1="320" y1="280" x2="320" y2="272"/>
+    <line class="tick" x1="740" y1="280" x2="740" y2="272"/>
+    <line class="guide" x1="240" y1="280" x2="240" y2="142"/>
+    <line class="guide" x1="320" y1="280" x2="320" y2="142"/>
+    <line class="guide" x1="740" y1="280" x2="740" y2="226"/>
+    <text class="formula-small" x="238" y="306" text-anchor="middle">T0</text>
+    <text class="formula-small" x="320" y="306" text-anchor="middle">Ts</text>
+    <text class="formula-small" x="740" y="306" text-anchor="middle">TL</text>
+
+    <line class="tick" x1="110" y1="225" x2="119" y2="225"/>
+    <line class="tick" x1="110" y1="142" x2="119" y2="142"/>
+    <text class="formula-small" x="74" y="232" text-anchor="end">S</text>
+    <text class="formula-small" x="74" y="149" text-anchor="end">alphaA*S</text>
+
+    <path class="curve" d="M110,225 C132,170 170,145 240,142 L320,142 C385,170 470,190 610,210 C660,217 700,222 740,226 C790,238 834,244 880,248"/>
+    <text class="label-small" x="150" y="117">linear interpolation</text>
+    <text class="formula-small" x="468" y="185">proportional to 1/T</text>
+    <text class="formula-small" x="790" y="217">proportional to 1/T^2</text>
+  </g>
+
+  <!-- KDS17 soil sites -->
+  <g transform="translate(40 380)">
+    <text class="title" x="450" y="30" text-anchor="middle">KDS17 Soil Sites (S2-S5)</text>
+    <rect class="panel" x="80" y="60" width="820" height="250"/>
+
+    <line class="axis" x1="110" y1="280" x2="880" y2="280"/>
+    <line class="axis" x1="110" y1="280" x2="110" y2="85"/>
+    <text class="label-small" x="845" y="305">Period, T (s)</text>
+    <text class="label-small" x="-6" y="178" transform="rotate(-90 -6 178)">Spectral acceleration, Sa (g)</text>
+
+    <line class="tick" x1="210" y1="280" x2="210" y2="272"/>
+    <line class="tick" x1="300" y1="280" x2="300" y2="272"/>
+    <line class="tick" x1="685" y1="280" x2="685" y2="272"/>
+    <line class="guide" x1="210" y1="280" x2="210" y2="145"/>
+    <line class="guide" x1="300" y1="280" x2="300" y2="145"/>
+    <line class="guide" x1="685" y1="280" x2="685" y2="232"/>
+    <text class="formula-small" x="210" y="306" text-anchor="middle">T0</text>
+    <text class="formula-small" x="300" y="306" text-anchor="middle">Ts</text>
+    <text class="formula-small" x="685" y="306" text-anchor="middle">TL</text>
+
+    <line class="tick" x1="110" y1="220" x2="119" y2="220"/>
+    <line class="tick" x1="110" y1="145" x2="119" y2="145"/>
+    <text class="formula-small" x="98" y="226" text-anchor="end">Fa*S</text>
+    <text class="formula-small" x="98" y="151" text-anchor="end">2.5*Fa*S</text>
+
+    <path class="curve" d="M110,220 L210,145 L300,145 C360,175 440,198 555,217 C610,225 650,230 685,232 C755,250 820,257 880,262"/>
+    <text class="formula-small" x="250" y="110">Fa*S*(1 + 1.5*T/T0)</text>
+    <text class="formula-small" x="435" y="196">Fv*S/T</text>
+    <text class="formula-small" x="740" y="230">Fv*S*TL/T^2</text>
+    <text class="label-small" x="680" y="105">Transition periods</text>
+    <text class="formula-small" x="680" y="135">Ts = Fv / (2.5 Fa)</text>
+    <text class="formula-small" x="680" y="163">T0 = 0.2 Ts</text>
+    <text class="formula-small" x="680" y="191">TL = 3.0 s</text>
+  </g>
+
+  <!-- KDS41 design spectrum -->
+  <g transform="translate(40 730)">
+    <text class="title" x="450" y="30" text-anchor="middle">KDS41 Design Spectrum</text>
+    <rect class="panel" x="80" y="60" width="820" height="250"/>
+
+    <line class="axis" x1="110" y1="280" x2="880" y2="280"/>
+    <line class="axis" x1="110" y1="280" x2="110" y2="85"/>
+    <text class="label-small" x="845" y="305">Period, T (s)</text>
+    <text class="formula-small" x="76" y="91" text-anchor="end">Sa</text>
+
+    <line class="tick" x1="135" y1="280" x2="135" y2="272"/>
+    <line class="tick" x1="215" y1="280" x2="215" y2="272"/>
+    <line class="tick" x1="300" y1="280" x2="300" y2="272"/>
+    <line class="tick" x1="720" y1="280" x2="720" y2="272"/>
+    <line class="guide" x1="135" y1="280" x2="135" y2="118"/>
+    <line class="guide" x1="215" y1="280" x2="215" y2="118"/>
+    <line class="guide" x1="300" y1="280" x2="300" y2="178"/>
+    <line class="guide" x1="720" y1="280" x2="720" y2="230"/>
+    <line class="guide-light" x1="110" y1="178" x2="300" y2="178"/>
+    <text class="formula-small" x="135" y="306" text-anchor="middle">T0</text>
+    <text class="formula-small" x="215" y="306" text-anchor="middle">Ts</text>
+    <text class="formula-small" x="300" y="306" text-anchor="middle">1.0</text>
+    <text class="formula-small" x="720" y="306" text-anchor="middle">TL</text>
+
+    <line class="tick" x1="110" y1="118" x2="119" y2="118"/>
+    <line class="tick" x1="110" y1="178" x2="119" y2="178"/>
+    <line class="tick" x1="110" y1="225" x2="119" y2="225"/>
+    <text class="formula-small" x="86" y="124" text-anchor="end">SDS</text>
+    <text class="formula-small" x="86" y="184" text-anchor="end">SD1</text>
+    <text class="formula-small" x="86" y="231" text-anchor="end">SDS/2.5</text>
+
+    <path class="curve" d="M110,225 C116,158 124,128 135,118 L215,118 C240,142 265,162 300,178 C420,211 565,224 720,230 C790,244 840,250 880,253"/>
+    <circle class="open-dot" cx="110" cy="225" r="8"/>
+    <circle class="open-dot" cx="135" cy="118" r="8"/>
+    <circle class="open-dot" cx="215" cy="118" r="8"/>
+    <circle class="open-dot" cx="300" cy="178" r="8"/>
+    <circle class="open-dot" cx="720" cy="230" r="8"/>
+    <text class="formula-small" x="160" y="104">Sa = 0.6*SDS*T/T0 + 0.4*SDS</text>
+    <text class="formula-small" x="505" y="206">Sa = SD1/T</text>
+    <text class="formula-small" x="775" y="224">Sa = SD1*TL/T^2</text>
+  </g>
+</svg>

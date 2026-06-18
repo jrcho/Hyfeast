@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
     
     
       
-        <title>8. Function - Hyfeast-v1.0.0 Manual</title>
+        <title>8. Function - Hyfeast-v1.0.0-beta.3</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
       
 
@@ -32,20 +32,16 @@
     
     
       
-    
-    
+        <script src="../../javascripts/iframe-worker-shim.js"></script>
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+    
+    
       
     
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#function" class="md-skip">
+        <a href="#81-function" class="md-skip">
           Skip to content
         </a>
       
@@ -80,21 +76,21 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.3" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Hyfeast-v1.0.0 Manual
+            Hyfeast-v1.0.0-beta.3
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -108,14 +104,14 @@
     </div>
     
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
       <div class="md-header__option">
   <div class="md-select">
     
     <button class="md-header__button md-icon" aria-label="Select language">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
@@ -140,7 +136,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -149,17 +145,19 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -199,15 +197,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.3" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    Hyfeast-v1.0.0 Manual
+    Hyfeast-v1.0.0-beta.3
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -223,7 +223,7 @@
         
   
   <span class="md-ellipsis">
-    Home
+    Overview
   </span>
   
 
@@ -253,7 +253,7 @@
             
   
   <span class="md-ellipsis">
-    Tutorial
+    FE Tools
   </span>
   
 
@@ -263,7 +263,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Tutorial
+            FE Tools
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -274,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/1.%20Overview.html" class="md-nav__link">
+      <a href="../Finite%20Element%20Analysis/1.%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -294,12 +294,47 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+      <a href="../hfStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Beam Cantilever
+    2.1 Overview
   </span>
   
 
@@ -316,11 +351,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+      <a href="../hfStudio/2.2%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Solid Cantilever
+    2.2 File
   </span>
   
 
@@ -337,11 +372,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+      <a href="../hfStudio/2.3%20View%20and%20Display.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4. Beam vs Solid
+    2.3 View and Display
   </span>
   
 
@@ -358,11 +393,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/5.%20hfVisualizer%20Basics.html" class="md-nav__link">
+      <a href="../hfStudio/2.4%20Selection%20and%20Visibility.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    5. hfVisualizer Basics
+    2.4 Selection and Visibility
   </span>
   
 
@@ -379,11 +414,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+      <a href="../hfStudio/2.5%20Preprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6. Selection and Visibility
+    2.5 Preprocessing
   </span>
   
 
@@ -400,11 +435,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+      <a href="../hfStudio/2.6%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7. Postprocessing with Remote Control
+    2.6 Analysis
   </span>
   
 
@@ -421,11 +456,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+      <a href="../hfStudio/2.7%20Postprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8. Scripts and Automation
+    2.7 Postprocessing
   </span>
   
 
@@ -442,15 +477,108 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+      <a href="../hfStudio/2.8%20Workspace%20Panels.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9. Portal Frame
+    2.8 Workspace Panels
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.1%20Running.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Running
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.2%20Files%20and%20Results.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Files and Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -486,7 +614,7 @@
             
   
   <span class="md-ellipsis">
-    Command
+    FE Commands
   </span>
   
 
@@ -496,7 +624,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Command
+            FE Commands
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -511,7 +639,7 @@
         
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Introduction
   </span>
   
 
@@ -584,7 +712,7 @@
             
   
   <span class="md-ellipsis">
-    4. Element libraries
+    4. Element Library
   </span>
   
 
@@ -594,7 +722,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            4. Element libraries
+            4. Element Library
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -609,7 +737,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    4.1 Overview
   </span>
   
 
@@ -630,7 +758,7 @@
         
   
   <span class="md-ellipsis">
-    Beam
+    4.2 Beam
   </span>
   
 
@@ -651,7 +779,7 @@
         
   
   <span class="md-ellipsis">
-    Truss
+    4.3 Truss
   </span>
   
 
@@ -672,7 +800,7 @@
         
   
   <span class="md-ellipsis">
-    Cable
+    4.4 Cable
   </span>
   
 
@@ -693,7 +821,7 @@
         
   
   <span class="md-ellipsis">
-    Shell
+    4.5 Shell
   </span>
   
 
@@ -714,7 +842,7 @@
         
   
   <span class="md-ellipsis">
-    Solid
+    4.6 Solid
   </span>
   
 
@@ -735,7 +863,7 @@
         
   
   <span class="md-ellipsis">
-    AcousticSolid
+    4.7 AcousticSolid
   </span>
   
 
@@ -756,7 +884,7 @@
         
   
   <span class="md-ellipsis">
-    SeepageSolid
+    4.8 SeepageSolid
   </span>
   
 
@@ -777,7 +905,7 @@
         
   
   <span class="md-ellipsis">
-    MCK
+    4.9 MCK
   </span>
   
 
@@ -798,7 +926,7 @@
         
   
   <span class="md-ellipsis">
-    MovingSpring
+    4.10 MovingSpring
   </span>
   
 
@@ -819,7 +947,7 @@
         
   
   <span class="md-ellipsis">
-    Interface
+    4.11 Interface
   </span>
   
 
@@ -840,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    EmbeddedLine
+    4.12 EmbeddedLine
   </span>
   
 
@@ -970,91 +1098,109 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#function" class="md-nav__link">
+  <a href="#81-function" class="md-nav__link">
     <span class="md-ellipsis">
-      *Function
+      8.1 *Function
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="*Function">
+    <nav class="md-nav" aria-label="8.1 *Function">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-typemultilinear" class="md-nav__link">
+  <a href="#811-function-typemultilinear" class="md-nav__link">
     <span class="md-ellipsis">
-      *Function, Type=MultiLinear
+      8.1.1 *Function, Type=MultiLinear
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-typetimesignal" class="md-nav__link">
+  <a href="#812-function-typetimesignal" class="md-nav__link">
     <span class="md-ellipsis">
-      *Function, Type=TimeSignal
+      8.1.2 *Function, Type=TimeSignal
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-typestring" class="md-nav__link">
+  <a href="#813-function-typeresponsespectrum" class="md-nav__link">
     <span class="md-ellipsis">
-      *Function, Type=String
+      8.1.3 *Function, Type=ResponseSpectrum
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-typehognestadcenv" class="md-nav__link">
+  <a href="#814-function-typestring" class="md-nav__link">
     <span class="md-ellipsis">
-      *Function, Type=HognestadCEnv
+      8.1.4 *Function, Type=String
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-typeparabolacenv" class="md-nav__link">
+  <a href="#815-function-typeparabolacenv" class="md-nav__link">
     <span class="md-ellipsis">
-      *Function, Type=ParabolaCEnv
+      8.1.5 *Function, Type=ParabolaCEnv
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-typefibcenv" class="md-nav__link">
+  <a href="#816-function-typehognestadcenv" class="md-nav__link">
     <span class="md-ellipsis">
-      *Function, Type=FIBCEnv
+      8.1.6 *Function, Type=HognestadCEnv
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-typemppcenv" class="md-nav__link">
+  <a href="#817-function-typeec2cenv" class="md-nav__link">
     <span class="md-ellipsis">
-      *Function, Type=MPPCEnv
+      8.1.7 *Function, Type=EC2CEnv
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-typemppcie" class="md-nav__link">
+  <a href="#818-function-typemppcenv" class="md-nav__link">
     <span class="md-ellipsis">
-      *Function, Type=MPPCIE
+      8.1.8 *Function, Type=MPPCEnv
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-typemaekawatenv" class="md-nav__link">
+  <a href="#819-function-typemppcie" class="md-nav__link">
     <span class="md-ellipsis">
-      *Function, Type=MaekawaTEnv
+      8.1.9 *Function, Type=MPPCIE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8110-function-typemaekawatenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.10 *Function, Type=MaekawaTEnv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8111-function-typeconcretetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.11 *Function, Type=ConcreteTime
     </span>
   </a>
   
@@ -1127,7 +1273,7 @@
         
   
   <span class="md-ellipsis">
-    11. Coordinate system
+    11. Coordinate System
   </span>
   
 
@@ -1190,7 +1336,7 @@
         
   
   <span class="md-ellipsis">
-    14. Step result
+    14. Step Result
   </span>
   
 
@@ -1211,7 +1357,7 @@
         
   
   <span class="md-ellipsis">
-    15. Modelling convenience
+    15. Modelling Convenience
   </span>
   
 
@@ -1253,7 +1399,7 @@
         
   
   <span class="md-ellipsis">
-    17. Special step
+    17. Special Step
   </span>
   
 
@@ -1274,7 +1420,7 @@
         
   
   <span class="md-ellipsis">
-    18. HDB file structure
+    18. HDB File Structure
   </span>
   
 
@@ -1312,7 +1458,7 @@
             
   
   <span class="md-ellipsis">
-    Section
+    Section Tools/2D Modeling
   </span>
   
 
@@ -1322,7 +1468,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Section
+            Section Tools/2D Modeling
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1353,12 +1499,47 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../Section/2.%20Theory.html" class="md-nav__link">
+      <a href="../Section/hf2DStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Theory
+    2.1 Overview
   </span>
   
 
@@ -1375,15 +1556,213 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/3.%20Commands.html" class="md-nav__link">
+      <a href="../Section/hf2DStudio/2.2%20Window%20and%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Command
+    2.2 Window and File
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.3%20View%20and%20Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.4%20Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.5%20Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.6%20Operation%20and%20Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.7%20Mesh%20Generation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Mesh Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfSectAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfSectAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.1%20Help.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Help
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.2%20Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1400,7 +1779,28 @@
         
   
   <span class="md-ellipsis">
-    4. Example
+    4. Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/5.%20Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Theory
   </span>
   
 
@@ -1459,11 +1859,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/1.%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/1.%20Basics.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Basics
   </span>
   
 
@@ -1494,7 +1894,7 @@
             
   
   <span class="md-ellipsis">
-    2. hfVisualizer
+    2. hfStudio
   </span>
   
 
@@ -1504,7 +1904,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            2. hfVisualizer
+            2. hfStudio
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1515,7 +1915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.1%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1536,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.2%20Remote-only.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.2%20Remote-only.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1557,7 +1957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.3%20View.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.3%20View.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1578,7 +1978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.4%20File.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.4%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1599,7 +1999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.5%20Display.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.5%20Display.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1620,7 +2020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.6%20Selection.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.6%20Selection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.1%20Environment.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.1%20Environment.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1697,7 +2097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.2%20CoordinateSystem.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.2%20CoordinateSystem.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,7 +2118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.3%20Construction.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.3%20Construction.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1774,7 +2174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.4.1%20Node.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.4.1%20Node.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1795,7 +2195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.4.2%20NSet.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.4.2%20NSet.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1859,7 +2259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.5.1%20Element.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.5.1%20Element.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1880,7 +2280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.5.2%20Elset.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.5.2%20Elset.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1909,7 +2309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.6%20Load.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.6%20Load.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1930,7 +2330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.7%20Surface.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.7%20Surface.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1951,7 +2351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.8%20Sensor.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.8%20Sensor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1972,7 +2372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.9%20NProp.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.9%20NProp.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1993,7 +2393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.10%20Material.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.10%20Material.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2014,7 +2414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.11%20Section.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.11%20Section.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2035,7 +2435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.12%20Function.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.12%20Function.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2056,7 +2456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.13%20Step.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.13%20Step.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2077,7 +2477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.14%20History.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.14%20History.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2098,11 +2498,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.15%20Distribution.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.15%20Distribution.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.7.15 Distribution
+    2.7.15 Assign
   </span>
   
 
@@ -2119,7 +2519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.16%20Model.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.16%20Model.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2140,7 +2540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.17%20Renumber.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.17%20Renumber.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2161,7 +2561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2190,7 +2590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.8%20Analysis.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.8%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2211,11 +2611,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.9%20Postprocessing.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.9%20Postprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     2.9 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/Recipes/2.10%20hfStudio%20Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10 Recipes
   </span>
   
 
@@ -2254,7 +2675,7 @@
             
   
   <span class="md-ellipsis">
-    3. hfSectionVisualizer
+    3. hf2DStudio
   </span>
   
 
@@ -2264,7 +2685,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            3. hfSectionVisualizer
+            3. hf2DStudio
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2275,11 +2696,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/1.%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.1%202D%20Modeling%20Automation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.1 Overview
+    3.1 2D Modeling Automation
   </span>
   
 
@@ -2296,11 +2717,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/2.%20Window%20and%20File.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.2%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.2 Window and File
+    3.2 Overview
   </span>
   
 
@@ -2317,11 +2738,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/3.%20View.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.3%20Window%20and%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.3 View
+    3.3 Window and File
   </span>
   
 
@@ -2338,11 +2759,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/4.%20Geometry.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.4%20View.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.4 Geometry
+    3.4 View
   </span>
   
 
@@ -2359,11 +2780,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/5.%20Definition.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.5%20Geometry.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.5 Definition
+    3.5 Geometry
   </span>
   
 
@@ -2380,75 +2801,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/6.%20Operation%20and%20Analysis.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.6%20Definition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.6 Operation and Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    4. Recipes
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
-            <span class="md-nav__icon md-icon"></span>
-            4. Recipes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Remote%20Control/Recipes/1.%20hfVisualizer.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4.1 hfVisualizer
+    3.6 Definition
   </span>
   
 
@@ -2465,11 +2822,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/Recipes/2.%20hfSectionVisualizer.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.7%20Operation%20and%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.2 hfSectionVisualizer
+    3.7 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/Recipes/3.8%20hf2DStudio%20Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Recipes
   </span>
   
 
@@ -2515,7 +2893,7 @@
             
   
   <span class="md-ellipsis">
-    Example
+    Tutorials
   </span>
   
 
@@ -2525,7 +2903,238 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Example
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Beam Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Solid Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Beam vs Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/5.%20hfStudio%20Basics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. hfStudio Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Selection and Visibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Postprocessing with Remote Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Scripts and Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Portal Frame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2641,11 +3250,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.6%20Acoustic%20Solid%20Element.html" class="md-nav__link">
+      <a href="../Example/E.6%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.6 Acoustic Solid Element
+    E.6 Dynamic Analysis using Spring and Mass Elements
   </span>
   
 
@@ -2662,11 +3271,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
+      <a href="../Example/E.7%20Acoustic%20Solid%20Element%20and%20HydroStaticPressure%20Loads.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.7 Dynamic Analysis using Spring and Mass Elements
+    E.7 Acoustic Solid Element and HydroStaticPressure Loads
   </span>
   
 
@@ -2830,11 +3439,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.15%20Temperature%20Load%20by%20Bimetal.html" class="md-nav__link">
+      <a href="../Example/E.15%20Time%20Dependent%20Materials.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.15 Temperature Load by Bimetal
+    E.15 Time Dependent Materials
   </span>
   
 
@@ -2879,126 +3488,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#function" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Function
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="*Function">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#function-typemultilinear" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Function, Type=MultiLinear
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-typetimesignal" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Function, Type=TimeSignal
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-typestring" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Function, Type=String
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-typehognestadcenv" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Function, Type=HognestadCEnv
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-typeparabolacenv" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Function, Type=ParabolaCEnv
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-typefibcenv" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Function, Type=FIBCEnv
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-typemppcenv" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Function, Type=MPPCEnv
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-typemppcie" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Function, Type=MPPCIE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-typemaekawatenv" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Function, Type=MaekawaTEnv
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -3007,34 +3496,471 @@
                   
 
 
-  <h1>8. Function</h1>
+<h1 id="8-function">8. Function</h1>
+<p><code>*Function</code> defines a named function object. Defined functions are referenced by material-model envelopes, load time histories, and similar inputs. Names must be globally unique.</p>
+<p>Function-related commands define relationships such as <span class="arithmatex">\(y=f(x)\)</span> or <span class="arithmatex">\(y_1=f_1(x), y_2=f_2(x), ...\)</span>.</p>
+<p>Some function types support DB sources. <code>TimeSignal</code> reads time-history DB records, and concrete-related function types create compressive, tensile, and time-dependent properties from concrete DB items.</p>
+<ul>
+<li><code>*Function, Type=TimeSignal</code>: time-history DB</li>
+<li><code>*Function, Type=ParabolaCEnv|HognestadCEnv|EC2CEnv|MPPCEnv</code>: concrete DB for compressive behavior</li>
+<li><code>*Function, Type=MaekawaTEnv</code>: concrete DB for tensile behavior</li>
+<li><code>*Function, Type=ConcreteTime</code>: concrete DB for time-dependent properties</li>
+</ul>
+<p>See <code>*Function, Type=TimeSignal</code> for TimeSignal DB input. The following sections describe the common concrete DB rules.</p>
+<h5 id="concrete-db-overview">Concrete DB overview</h5>
+<p>Concrete DB items are not material names entered directly in a <code>Material</code> dataline. They are sources used in concrete <code>*Function</code> datalines to fill the parameters of the selected function model. The current built-in envelope DB item forms are <code>KDS-2026-C&lt;fck&gt;</code>, <code>ACI318-2025-C&lt;fck&gt;</code>, and <code>EC2-2004-C&lt;fck&gt;</code>; the built-in time-dependent DB item forms are <code>KDS-2026-C&lt;fck&gt;</code>, <code>EC2-2004-C&lt;fck&gt;</code>, and <code>ACI209-1992-C&lt;fc&gt;</code>. Each function type supports a specific subset of those DB standards, and a <code>UGeneric</code> material dataline references the generated function name instead of the DB item itself.</p>
+<p>The first distinction is <code>ParabolaCEnv</code>. Its DB input is a separate section-analysis parabolic compression input. It does not use the DB-derived concrete material-property recipe introduced below: <code>fcm</code>, <code>Ec</code>, <code>Eci</code>, <code>ft</code>, and the per-model recipe mapping. The DB supplies section-analysis <code>fck</code>, <code>n</code>, <code>eco</code>, and <code>ecu</code>; the optional <code>alpha</code> token applies the design reduction to <code>fck</code>. <code>ACI318-2025-C&lt;fck&gt;</code> is not accepted by <code>ParabolaCEnv</code>.</p>
+<p>By contrast, <code>HognestadCEnv</code>, <code>EC2CEnv</code>, <code>MPPCEnv</code>, and <code>MaekawaTEnv</code> use concrete mechanical properties derived from the DB item as inputs to Hyfeast's built-in recipes. <code>ConcreteTime</code> uses standard-dependent aging, creep, and shrinkage equations. The reference below is organized by standard so the mechanical properties and time-dependent properties are read together.</p>
+<p>For concrete envelope functions, <code>Type</code> means the function model to create. The same <code>Type</code> is used for both direct numeric input and DB item input. For example, with <code>Type=ParabolaCEnv</code>, a dataline of <code>fck, n, eco, ecu, alpha</code> is direct numeric input, while <code>KDS-2026-C30</code> or <code>EC2-2004-C30</code> fills the section-analysis parameters of the same Parabola model from the DB. TimeSignal DB records also keep <code>Type=TimeSignal</code>; they are referenced by source lines in the form <code>DB, recordName[, scaleFactor]</code>.</p>
+<p>Function inputs that use the concrete material DB require a prior global <code>*Environment, Type=UnitSystem</code>. DB source values are converted by the parser to the current global UnitSystem. These inputs do not allow <code>UnitSystem</code> on the keyword line; specifying it is an input error. TimeSignal DB source lines follow the unit metadata carried by each record; see the <code>Type=TimeSignal</code> section for details.</p>
+<p>For concrete envelope DB item datalines, append <code>ToDirectForm</code> as the last token when the saved/formatted input should show the resolved numeric parameters. With <code>ToDirectForm</code>, the saved/formatted direct numeric form is written in the current global UnitSystem. If that unit system is the same as the global UnitSystem, no local <code>UnitSystem</code> is attached to the keyword line. Without <code>ToDirectForm</code>, the DB item dataline is preserved and no local <code>UnitSystem</code> is attached to the keyword line. <code>HognestadCEnv</code>, <code>EC2CEnv</code>, and <code>MPPCEnv</code> also accept <code>EciCurve</code> before <code>ToDirectForm</code>; when omitted, <code>HognestadCEnv</code> and <code>EC2CEnv</code> are linearized from the origin to <code>0.4*fco</code> or <code>0.4*fcm</code> using <code>Ec</code>, while <code>MPPCEnv</code> derives the internal curve from the unconfined secant <code>Ec</code> and then linearizes to the current 0.4 strength point.</p>
+<p><img alt="Fig. 8.2-0. Concrete envelope initial curve option" src="../../Command/image/8.2-0.svg" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-0.</span></strong> Concrete envelope initial curve option</p>
 
-<p>Functions are specified using <code>*Function</code>. Each function must have a unique name, and duplicate names are not allowed. <code>*Function</code> is used for time functions or for functions such as failure envelopes in material models.</p>
-<h2 id="function">*Function</h2>
+<p>Function-type DB dataline syntax is documented in the later <code>Type=</code> subsections. This front reference is limited to standard-specific properties and unit systems.</p>
+<h5 id="common-rules-for-concrete-db">Common rules for concrete DB</h5>
+<p>Each standard subsection below uses the same order.</p>
+<ul>
+<li><strong>DB item forms and source units:</strong> the envelope DB item name, the <code>ConcreteTime</code> item name when available, and the units used by the standard equations.</li>
+<li><strong>Mechanical envelope properties:</strong> the 28-day properties and strain coefficients used by concrete envelope functions.</li>
+<li><strong>ConcreteTime properties:</strong> the aging, creep, and shrinkage series for the same standard. These subsections do not repeat mechanical properties already defined above; they only add coefficients required by the time-dependent equations.</li>
+</ul>
+<p><code>ConcreteTime</code> stores six function series in the following order:</p>
+<div class="arithmatex">\[
+\left[a_c(t),\;a_t(t),\;a_E(t),\;c_r(t-\tau),\;c_l(\tau),\;\varepsilon^{sh}(t)\right]
+\]</div>
+<p>For a user-defined function set, the intended material-level use is:</p>
+<div class="arithmatex">\[
+f_c(t)=a_c(t)f_c(28)
+\]</div>
+<div class="arithmatex">\[
+f_t(t)=a_t(t)f_t(28)
+\]</div>
+<div class="arithmatex">\[
+E_c(t)=a_E(t)E_c(28)
+\]</div>
+<div class="arithmatex">\[
+C(t,\tau)=c_r(t-\tau)c_l(\tau)
+\]</div>
+<div class="arithmatex">\[
+\varepsilon^{sh}(t)=-e_{sh}(t)
+\]</div>
+<p>Shrinkage distinguishes positive shrinkage magnitudes from the signed shrinkage/swelling strain stored by Hyfeast. For a user-defined <code>shrinkage</code> Function, <span class="arithmatex">\(e_{sh}(t)\)</span> is a positive shrinkage magnitude. In the EC2 equations, <span class="arithmatex">\(\varepsilon_{cd}\)</span> and <span class="arithmatex">\(\varepsilon_{ca}\)</span> are positive magnitudes; in the ACI equations, <span class="arithmatex">\(\varepsilon_{sh,u}\)</span> is a positive magnitude. The final series <span class="arithmatex">\(\varepsilon^{sh}(t)\)</span> is the signed value stored by Hyfeast: contraction is stored as negative, and swelling is stored as positive. In the KDS equations, the computed <span class="arithmatex">\(\varepsilon^{sh}(t)\)</span> itself is used as the signed stored value; it is negative shrinkage for <span class="arithmatex">\(RH&lt;99\%\)</span> and positive swelling for <span class="arithmatex">\(RH\ge99\%\)</span>.</p>
+<p>Here, <span class="arithmatex">\(t\)</span> is the concrete age, <span class="arithmatex">\(\tau\)</span> is the loading age, and <span class="arithmatex">\(t-\tau\)</span> is the creep duration. Standard and <code>User</code> <code>ConcreteTime</code> inputs evaluate these age variables in days, so a <code>Static, Quasi</code> step that uses them must specify <code>TUnit=day</code>. This does not imply changing the time field of the global <code>UnitSystem</code> to days. The function does not decide <span class="arithmatex">\(\tau\)</span>; the later concrete material implementation supplies it from the analysis state.</p>
+<p>Here <span class="arithmatex">\(C(t,\tau)\)</span> is creep compliance, not the dimensionless creep coefficient <span class="arithmatex">\(\phi(t,\tau)\)</span>. If <span class="arithmatex">\(c_r\)</span> is dimensionless, <span class="arithmatex">\(c_l\)</span> has inverse-stress units.</p>
+<p>The KDS and EC2 built-in creep equations use the same separated form. The duration part is dimensionless, and the loading-age part includes the elastic-modulus denominator. The standard-specific subsections give only <span class="arithmatex">\(E_{ci,28}\)</span>, <span class="arithmatex">\(\phi_{RH}\)</span>, and <span class="arithmatex">\(\beta_H\)</span>.</p>
+<div class="arithmatex">\[
+C(t,\tau)=c_r(\max(t-\tau,0))c_l(\tau)
+\]</div>
+<div class="arithmatex">\[
+\Delta t=\max(t-\tau,0)
+\]</div>
+<div class="arithmatex">\[
+c_r(\Delta t)=
+\begin{cases}
+0 &amp; (\Delta t=0) \\
+\left(\dfrac{\Delta t}{\beta_H+\Delta t}\right)^{0.3} &amp; (\Delta t&gt;0)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+c_l(\tau)=\dfrac{1}{E_{ci,28}}\phi_{RH}\dfrac{16.8}{\sqrt{f_{cm}}}\dfrac{1}{0.1+\tau^{0.2}}
+\]</div>
+<p><code>ConcreteTime</code> does not allow keyword-line <code>UnitSystem</code>. A <code>User</code> dataline references existing function names and does not require a global UnitSystem at input time. The six referenced Functions are evaluated with day-based <span class="arithmatex">\(x\)</span> values supplied by <code>ConcreteTime</code>; therefore, a referenced Function must not define keyword-line <code>UnitSystem=...</code>.</p>
+<p><code>ConcreteTime</code> standard datalines require a global <code>*Environment, Type=UnitSystem</code>, but the input units of the standard equations are fixed to the units specified by each standard. EC2/KDS strengths are entered in MPa, ACI strength is entered in psi, EC2/KDS <code>h0</code> is entered in mm, ACI 209 <code>V/S</code> and <code>slump</code> are entered in inch, and time variables are entered in days. The parser does not convert these length inputs from the global length unit. Elastic moduli in the creep-compliance denominator are converted to the current global stress unit before storage.</p>
+<h5 id="kds-2026-concrete-db">KDS-2026 concrete DB</h5>
+<p><strong>DB item forms and source units.</strong> KDS envelope functions use <code>KDS-2026-C&lt;fck&gt;</code>; <code>ConcreteTime</code> uses the same <code>KDS-2026-C&lt;fck&gt;</code> item form. Strengths and elastic moduli are evaluated in MPa, length parameters in mm, and time variables in days.</p>
+<p><strong>Mechanical envelope properties (<code>KDS-2026-C&lt;fck&gt;</code>).</strong></p>
+<div class="arithmatex">\[
+f_{cm}=f_{ck}+\Delta f
+\]</div>
+<div class="arithmatex">\[
+\Delta f=
+\begin{cases}
+4 &amp; (f_{ck} \le 40) \\
+4 + 0.1(f_{ck}-40) &amp; (40 &lt; f_{ck} &lt; 60) \\
+6 &amp; (f_{ck} \ge 60)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+E_c=8500\sqrt[3]{f_{cm}}\;[\mathrm{MPa}]
+\]</div>
+<div class="arithmatex">\[
+E_{ci}=E_c
+\]</div>
+<div class="arithmatex">\[
+f_t=f_{ctm}=0.30\,f_{cm}^{2/3}
+\]</div>
+<p>This <span class="arithmatex">\(E_c\)</span> expression applies the KDS normal-weight concrete assumption <span class="arithmatex">\(m_c=2300\,\mathrm{kg/m^3}\)</span>; material density does not recompute it. Use direct numeric input when <code>fck</code> exceeds 90 MPa.</p>
+<p><strong>EC2CEnv nonlinear-analysis strain coefficients.</strong> For KDS DB input, strengths are in MPa and strains are dimensionless:</p>
+<div class="arithmatex">\[
+\varepsilon_{co}=\min\left(0.7 f_{cm}^{0.31},\,2.8\right)/1000
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cu}=
+\begin{cases}
+0.0033 &amp; (f_{ck}\le 40) \\
+\left(3.3-0.1(f_{ck}-40)/10\right)/1000 &amp; (40&lt;f_{ck}\le 90)
+\end{cases}
+\]</div>
+<p><strong>ConcreteTime properties (<code>KDS-2026-C&lt;fck&gt;</code>).</strong></p>
+<p>The <code>KDS-2026-C&lt;fck&gt;</code> time-dependent equations use the <span class="arithmatex">\(f_{cm}\)</span> and <span class="arithmatex">\(E_c\)</span> defined above as the 28-day values. <span class="arithmatex">\(h_0\)</span> is evaluated in mm, and the time variables <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(\tau\)</span>, and <span class="arithmatex">\(t_s\)</span> are evaluated in days. The creep-compliance denominator uses the following initial modulus:</p>
+<div class="arithmatex">\[
+E_{ci,28}=1.18E_c
+\]</div>
+<p>The age factors are:</p>
+<div class="arithmatex">\[
+\beta_c(t)=\exp\left[\beta_{sc,a}\left(1-\sqrt{28/t}\right)\right] \quad (t&gt;0)
+\]</div>
+<div class="arithmatex">\[
+a_c(t)=\beta_c(t)
+\]</div>
+<div class="arithmatex">\[
+a_t(t)=\beta_c(t)^{2/3}
+\]</div>
+<div class="arithmatex">\[
+a_E(t)=\sqrt{\beta_c(t)}
+\]</div>
+<p>The aging coefficient <span class="arithmatex">\(\beta_{sc,a}\)</span> is 0.35 for <code>Moist</code> and 0.15 for <code>Steam</code> with <code>Type1</code>, 0.40 and 0.40 with <code>Type2</code>, 0.25 and 0.12 with <code>Type3</code>, and 0.35 and 0.15 with <code>Type5</code>.</p>
+<p>KDS creep uses the common KDS/EC2 separated form. Its humidity and size factors are:</p>
+<div class="arithmatex">\[
+\phi_{RH}=1+\dfrac{1-RH/100}{0.1h_0^{1/3}}
+\]</div>
+<div class="arithmatex">\[
+\beta_H=\min\left(1.5\left[1+(0.012RH)^{18}\right]h_0+250,\;1500\right)
+\]</div>
+<p>In the KDS expression, <span class="arithmatex">\(\varepsilon_s(f_{cm})\)</span> and <span class="arithmatex">\(\beta_s\)</span> are positive, with <span class="arithmatex">\(\beta_{RH}&lt;0\)</span> for <span class="arithmatex">\(RH&lt;99\%\)</span> and <span class="arithmatex">\(\beta_{RH}=0.25&gt;0\)</span> for <span class="arithmatex">\(RH\ge99\%\)</span>. Therefore <span class="arithmatex">\(\varepsilon^{sh}(t)\)</span> is computed as negative shrinkage under ordinary drying conditions and positive swelling under near-saturated conditions, and the computed value is stored directly as the signed Hyfeast shrinkage/swelling strain without adding another leading minus sign.</p>
+<div class="arithmatex">\[
+\varepsilon^{sh}(t)=
+\begin{cases}
+0 &amp; (t&lt;t_s) \\
+\varepsilon_{sho}\beta_s(t-t_s) &amp; (t\ge t_s)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{sho}=\varepsilon_s(f_{cm})\beta_{RH}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_s(f_{cm})=\left[160+10\beta_{sc,s}\left(9-f_{cm}/10\right)\right]10^{-6}
+\]</div>
+<div class="arithmatex">\[
+\beta_{RH}=
+\begin{cases}
+-1.55\left[1-\left(RH/100\right)^3\right] &amp; (RH&lt;99) \\
+0.25 &amp; (RH\ge 99)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\beta_s(t-t_s)=\sqrt{\dfrac{t-t_s}{0.035h_0^2+(t-t_s)}}
+\]</div>
+<p>The shrinkage coefficient <span class="arithmatex">\(\beta_{sc,s}\)</span> is 4 for <code>Type2</code>, 5 for <code>Type1</code> or <code>Type5</code>, and 8 for <code>Type3</code>.</p>
+<h5 id="ec2-2004-concrete-db">EC2-2004 concrete DB</h5>
+<p><strong>DB item forms and source units.</strong> EC2 envelope functions use <code>EC2-2004-C&lt;fck&gt;</code>; <code>ConcreteTime</code> uses the same <code>EC2-2004-C&lt;fck&gt;</code> item form. Strengths and elastic moduli are evaluated in MPa, length parameters in mm, and time variables in days.</p>
+<p><strong>Mechanical envelope properties (<code>EC2-2004-C&lt;fck&gt;</code>).</strong></p>
+<div class="arithmatex">\[
+f_{cm}=f_{ck}+8
+\]</div>
+<div class="arithmatex">\[
+E_c=E_{cm}=22000\left(f_{cm}/10\right)^{0.3}
+\]</div>
+<div class="arithmatex">\[
+E_{ci}=1.05\,E_c
+\]</div>
+<div class="arithmatex">\[
+f_t=
+\begin{cases}
+0.30\,f_{ck}^{2/3} &amp; (f_{ck} \le 50) \\
+2.12\ln(1+f_{cm}/10) &amp; (50 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<p>Here <code>&lt;fck&gt;</code> is the EC2 cylinder strength in MPa. Use direct numeric input when <code>fck</code> exceeds 90 MPa.</p>
+<p><strong>EC2CEnv nonlinear-analysis strain coefficients.</strong> For EC2 DB input, strengths are in MPa and strains are dimensionless:</p>
+<div class="arithmatex">\[
+\varepsilon_{co}=\min\left(0.7 f_{cm}^{0.31},\,2.8\right)/1000
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cu}=
+\begin{cases}
+0.0035 &amp; (f_{ck}\le 50) \\
+\left(2.8+27\left((98-f_{cm})/100\right)^4\right)/1000 &amp; (50&lt;f_{ck}\le 90)
+\end{cases}
+\]</div>
+<p><strong>ConcreteTime properties (<code>EC2-2004-C&lt;fck&gt;</code>).</strong></p>
+<p>The <code>EC2-2004-C&lt;fck&gt;</code> time-dependent equations use the <span class="arithmatex">\(f_{cm}\)</span> and <span class="arithmatex">\(E_c=E_{cm}\)</span> defined above as the 28-day values. <span class="arithmatex">\(h_0\)</span> is evaluated in mm, and the time variables <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(\tau\)</span>, and <span class="arithmatex">\(t_s\)</span> are evaluated in days. The creep-compliance denominator uses the following initial modulus:</p>
+<div class="arithmatex">\[
+E_{ci,28}=1.05E_c
+\]</div>
+<p>The age factors are:</p>
+<div class="arithmatex">\[
+\beta_{cc}(t)=\exp\left[s\left(1-\sqrt{28/t}\right)\right] \quad (t&gt;0)
+\]</div>
+<div class="arithmatex">\[
+a_c(t)=\beta_{cc}(t)
+\]</div>
+<div class="arithmatex">\[
+a_t(t)=
+\begin{cases}
+\beta_{cc}(t) &amp; (t&lt;28) \\
+\beta_{cc}(t)^{2/3} &amp; (t\ge 28)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+a_E(t)=\beta_{cc}(t)^{0.3}
+\]</div>
+<p>The cement-class coefficient <span class="arithmatex">\(s\)</span> is 0.38 for <code>S</code>, 0.25 for <code>N</code>, and 0.20 for <code>R</code>.</p>
+<p>EC2 creep uses the common KDS/EC2 separated form. Its humidity and size factors depend on the strength range.</p>
+<p>For <span class="arithmatex">\(f_{cm}\le 35\)</span>:</p>
+<div class="arithmatex">\[
+\phi_{RH}=1+\dfrac{1-RH/100}{0.1h_0^{1/3}}
+\]</div>
+<div class="arithmatex">\[
+\beta_H=\min\left(1.5\left[1+(0.012RH)^{18}\right]h_0+250,\;1500\right)
+\]</div>
+<p>For <span class="arithmatex">\(f_{cm}&gt;35\)</span>:</p>
+<div class="arithmatex">\[
+\alpha_1=\left(35/f_{cm}\right)^{0.7}
+\]</div>
+<div class="arithmatex">\[
+\alpha_2=\left(35/f_{cm}\right)^{0.2}
+\]</div>
+<div class="arithmatex">\[
+\alpha_3=\left(35/f_{cm}\right)^{0.5}
+\]</div>
+<div class="arithmatex">\[
+\phi_{RH}=\left(1+\dfrac{(1-RH/100)\alpha_1}{0.1h_0^{1/3}}\right)\alpha_2
+\]</div>
+<div class="arithmatex">\[
+\beta_H=\min\left(1.5\left[1+(0.012RH)^{18}\right]h_0+250\alpha_3,\;1500\alpha_3\right)
+\]</div>
+<p>The following <span class="arithmatex">\(\varepsilon_{cd}\)</span> and <span class="arithmatex">\(\varepsilon_{ca}\)</span> are positive shrinkage magnitudes from the EC2 equations. The shrinkage strain stored by Hyfeast is negative for contraction:</p>
+<div class="arithmatex">\[
+\varepsilon^{sh}(t)=-\left(\varepsilon_{cd}(t,t_s)+\varepsilon_{ca}(t)\right)
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cd}(t,t_s)=\beta_{ds}(t,t_s)\varepsilon_{cd,\infty}
+\]</div>
+<div class="arithmatex">\[
+\beta_{ds}(t,t_s)=
+\begin{cases}
+0 &amp; (t&lt;t_s) \\
+\dfrac{t-t_s}{(t-t_s)+0.04h_0^{3/2}} &amp; (t\ge t_s)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cd,\infty}=0.85k_h\left[(220+110\alpha_{ds1})
+\exp\left(-\alpha_{ds2}\dfrac{f_{cm}}{10}\right)\right]10^{-6}\beta_{RH}
+\]</div>
+<div class="arithmatex">\[
+\beta_{RH}=1.55\left[1-\left(RH/100\right)^3\right]
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{ca}(t)=\beta_{as}(t)\varepsilon_{ca,\infty}
+\]</div>
+<div class="arithmatex">\[
+\beta_{as}(t)=
+\begin{cases}
+0 &amp; (t\le 0) \\
+1-\exp(-0.2\sqrt{t}) &amp; (t&gt;0)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{ca,\infty}=2.5(f_{ck}-10)10^{-6}
+\]</div>
+<p>The drying shrinkage coefficients are <span class="arithmatex">\(\alpha_{ds1}=3\)</span> and <span class="arithmatex">\(\alpha_{ds2}=0.13\)</span> for <code>S</code>, <span class="arithmatex">\(\alpha_{ds1}=4\)</span> and <span class="arithmatex">\(\alpha_{ds2}=0.12\)</span> for <code>N</code>, and <span class="arithmatex">\(\alpha_{ds1}=6\)</span> and <span class="arithmatex">\(\alpha_{ds2}=0.11\)</span> for <code>R</code>.</p>
+<p>The size factor <span class="arithmatex">\(k_h\)</span> is 1.00, 0.85, and 0.75 at <span class="arithmatex">\(h_0=100\)</span>, 200, and 300 mm, respectively, and 0.70 for <span class="arithmatex">\(h_0\ge500\)</span> mm. Intermediate values are linearly interpolated.</p>
+<h5 id="aci-concrete-db">ACI concrete DB</h5>
+<p><strong>DB item forms and source units.</strong> ACI envelope functions use <code>ACI318-2025-C&lt;fck&gt;</code>, where <code>&lt;fck&gt;</code> represents the specified compressive strength <span class="arithmatex">\(f'_c\)</span> in psi. <code>ConcreteTime</code> uses <code>ACI209-1992-C&lt;fc&gt;</code>, also with <span class="arithmatex">\(f'_c\)</span> in psi. ACI 209 length correction equations are evaluated in inch, time variables are evaluated in days, and detailed <code>cementContent</code> is evaluated in <span class="arithmatex">\(\mathrm{lb/yd^3}\)</span>.</p>
+<p><strong>Mechanical envelope properties (<code>ACI318-2025-C&lt;fck&gt;</code>).</strong></p>
+<div class="arithmatex">\[
+f_{cm}=f'_c
+\]</div>
+<div class="arithmatex">\[
+E_c=57000\sqrt{f'_c}\;[\mathrm{psi}],\quad w_c\approx145\,\mathrm{lb/ft^3}
+\]</div>
+<div class="arithmatex">\[
+E_{ci}=E_c
+\]</div>
+<div class="arithmatex">\[
+f_t=7.5\sqrt{f'_c}\;[\mathrm{psi}]
+\]</div>
+<p>Here <code>&lt;fck&gt;</code> is the ACI specified compressive strength <span class="arithmatex">\(f'_c\)</span> in psi. ACI DB items are used by <code>HognestadCEnv</code>, <code>MPPCEnv</code>, and <code>MaekawaTEnv</code>; they are not accepted by <code>ParabolaCEnv</code> or <code>EC2CEnv</code>.</p>
+<p><strong>ConcreteTime properties (<code>ACI209-1992-C&lt;fc&gt;</code>).</strong></p>
+<p>For <code>ACI209-1992-C&lt;fc&gt;</code>, <span class="arithmatex">\(f'_c\)</span> is evaluated in psi, detailed <code>cementContent</code> is evaluated in <span class="arithmatex">\(\mathrm{lb/yd^3}\)</span>, and the time variables <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(\tau\)</span>, <span class="arithmatex">\(t_s\)</span>, and <code>moistCuringDuration</code> are evaluated in days. <code>V/S</code> and <code>slump</code> are entered in inch, the standard unit used by the ACI 209 length correction equations; the parser does not convert them from the global length unit. The 28-day modulus <span class="arithmatex">\(E_c(28)\)</span> is the ACI mechanical-property <span class="arithmatex">\(E_c\)</span> above. In the ACI 209 correction equations, <code>V/S</code> is the volume-to-surface ratio in inch. The implemented age factor is normalized by its 28-day value:</p>
+<div class="arithmatex">\[
+g(t)=\dfrac{t}{a+bt}
+\]</div>
+<div class="arithmatex">\[
+a_c(t)=\dfrac{g(t)}{g(28)}
+\]</div>
+<div class="arithmatex">\[
+a_t(t)=\sqrt{a_c(t)}
+\]</div>
+<div class="arithmatex">\[
+a_E(t)=\sqrt{a_c(t)}
+\]</div>
+<p>The ACI 209 coefficients are:</p>
+<table>
+<thead>
+<tr>
+<th>curingType</th>
+<th>cementType</th>
+<th style="text-align: right;"><span class="arithmatex">\(a\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(b\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(c\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(d\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(f\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Moist</code></td>
+<td><code>TypeI</code></td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">1.25</td>
+<td style="text-align: right;">0.118</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr>
+<td><code>Moist</code></td>
+<td><code>TypeIII</code></td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">1.25</td>
+<td style="text-align: right;">0.118</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr>
+<td><code>Steam</code></td>
+<td><code>TypeI</code></td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">1.13</td>
+<td style="text-align: right;">0.094</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr>
+<td><code>Steam</code></td>
+<td><code>TypeIII</code></td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">1.13</td>
+<td style="text-align: right;">0.094</td>
+<td style="text-align: right;">55</td>
+</tr>
+</tbody>
+</table>
+<p>The dimensionless ACI 209 creep coefficient is converted to creep compliance with the loading-age elastic modulus:</p>
+<div class="arithmatex">\[
+C(t,\tau)=c_r(\Delta t)c_l(\tau)
+\]</div>
+<div class="arithmatex">\[
+\Delta t=\max(t-\tau,0)
+\]</div>
+<div class="arithmatex">\[
+c_r(\Delta t)=
+\begin{cases}
+0 &amp; (\Delta t=0) \\
+\dfrac{\Delta t^{0.6}}{10+\Delta t^{0.6}} &amp; (\Delta t&gt;0)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+E_c(\tau)=a_E(\tau)E_c(28)
+\]</div>
+<div class="arithmatex">\[
+c_l(\tau)=\dfrac{2.35c\tau^{-d}\gamma_{RH,c}\gamma_{VS,c}\gamma_{add,c}}{E_c(\tau)}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{RH,c}=1.27-0.0067RH
+\]</div>
+<div class="arithmatex">\[
+\gamma_{VS,c}=\dfrac{2}{3}\left[1+1.13\exp\left(-0.54V/S\right)\right]
+\]</div>
+<p>For the compact ACI form, <span class="arithmatex">\(\gamma_{add,c}=\)</span> <code>creepUltimateScale</code>. For the detailed ACI form:</p>
+<div class="arithmatex">\[
+\gamma_{add,c}=\gamma_{sl,c}\gamma_{\psi,c}\gamma_{\alpha,c}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{sl,c}=0.82+0.067s_l
+\]</div>
+<div class="arithmatex">\[
+\gamma_{\psi,c}=0.88+0.0024\psi
+\]</div>
+<div class="arithmatex">\[
+\gamma_{\alpha,c}=\max(1.0,\;0.46+0.09\alpha)
+\]</div>
+<p>Here, <span class="arithmatex">\(V/S\)</span> and <span class="arithmatex">\(s_l\)</span> are in inch, <span class="arithmatex">\(\psi\)</span> is fine aggregate percentage, and <span class="arithmatex">\(\alpha\)</span> is air content percentage.</p>
+<p>In the ACI expression, <span class="arithmatex">\(\varepsilon_{sh,u}\)</span> is a positive ultimate shrinkage magnitude. The shrinkage strain stored by Hyfeast is negative for contraction, so the equation carries the leading minus sign.</p>
+<div class="arithmatex">\[
+\varepsilon^{sh}(t)=
+\begin{cases}
+0 &amp; (t&lt;t_s) \\
+-\dfrac{t-t_s}{f+(t-t_s)}\varepsilon_{sh,u} &amp; (t\ge t_s)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{sh,u}=780\times10^{-6}\gamma_{RH,s}\gamma_{VS,s}\gamma_{add,s}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{RH,s}=
+\begin{cases}
+1.4-0.01RH &amp; (RH\le 80) \\
+3.0-0.03RH &amp; (RH&gt;80)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{VS,s}=\max\left(0.2,\;1.2\exp(-0.12V/S)\right)
+\]</div>
+<p>For the compact ACI form, <span class="arithmatex">\(\gamma_{add,s}=\)</span> <code>shrinkageUltimateScale</code>. For the detailed ACI form:</p>
+<div class="arithmatex">\[
+\gamma_{add,s}=\gamma_{mc}\gamma_{sl,s}\gamma_{\psi,s}\gamma_{cc,s}\gamma_{\alpha,s}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{sl,s}=0.89+0.041s_l
+\]</div>
+<div class="arithmatex">\[
+\gamma_{\psi,s}=
+\begin{cases}
+0.30+0.014\psi &amp; (\psi\le 50) \\
+0.90+0.002\psi &amp; (\psi&gt;50)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{cc,s}=0.75+0.00036c_c
+\]</div>
+<div class="arithmatex">\[
+\gamma_{\alpha,s}=0.95+0.008\alpha
+\]</div>
+<p>Here, <span class="arithmatex">\(c_c\)</span> is cement content in <span class="arithmatex">\(\mathrm{lb/yd^3}\)</span>. For <code>Steam</code> curing, <span class="arithmatex">\(\gamma_{mc}=1.0\)</span>. For <code>Moist</code> curing, <span class="arithmatex">\(\gamma_{mc}\)</span> is 1.20, 1.10, 1.00, 0.93, 0.86, and 0.75 at <code>moistCuringDuration</code> values of 1, 3, 7, 14, 28, and 90 days, respectively; intermediate values are linearly interpolated.</p>
+<h2 id="81-function">8.1 *Function</h2>
 <p>Define function</p>
 <div class="highlight"><pre><span></span><code>*Function, Type=type, UnitSystem=unitSystem, Name=name
-  data line...
+  direct numeric dataline...
+
+*Function, Type=type, Name=name
+  DB item dataline...
 </code></pre></div>
 <h5 id="keyword-line">Keyword line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>TYPE=type:</strong> type of function<ul>
 <li><strong>MultiLinear:</strong> Multi-linear function</li>
-<li><strong>TimeSignal:</strong> Time signal. Multi-linear function with fixed step size</li>
+<li><strong>TimeSignal:</strong> Time signal. Multi-linear function with fixed step size. Supports both file source lines and <code>tools/db/timeSignal</code> DB source lines</li>
+<li><strong>ResponseSpectrum:</strong> Response spectrum function generated from a <code>TimeSignal</code>, <code>KDS17</code>, or <code>KDS41</code> source</li>
 <li><strong>String:</strong> function by mathematical expression</li>
+<li><strong>ParabolaCEnv:</strong> section-analysis parabola concrete compressive envelope</li>
 <li><strong>HognestadCEnv:</strong> Hognestad concrete compressive envelope</li>
-<li><strong>FIBCEnv:</strong> FIB concrete compressive envelope</li>
+<li><strong>EC2CEnv:</strong> EC2-family concrete compressive envelope</li>
 <li><strong>MPPCEnv:</strong> Mander-Priestley-Park concrete compressive envelope</li>
 <li><strong>MPPCIE:</strong> Mander-Priestley-Park concrete compressive inelastic strain</li>
 <li><strong>MaekawaTEnv:</strong> Maekawa concrete tensile envelope</li>
+<li><strong>ConcreteTime:</strong> concrete time-dependent function set for aging, creep, and shrinkage</li>
 </ul>
 </li>
-<li><strong>UnitSystem=unitSystem:</strong>  Local UnitSystem in which the function is defined. It shall be specified in the four-field format force-length-time-temperature. It may be used only when <code>*Environment, TYPE=UnitSystem</code> is defined. If omitted, it is taken to be the same as the global UnitSystem.</li>
+<li><strong>UnitSystem=unitSystem:</strong>  Local UnitSystem used for a function defined by direct numeric datalines. It shall be specified in the four-field format force-length-time-temperature. This value is preserved as local metadata and is not an input-time error even when <code>*Environment, Type=UnitSystem</code> is not currently defined. If a global UnitSystem is available, it is interpreted through the local-to-global relationship when needed. If omitted, it is taken to be the same as the global UnitSystem. <code>Type=MPPCIE</code>, <code>Type=ConcreteTime</code>, <code>Type=ResponseSpectrum</code>, and concrete envelope DB item datalines do not support <code>UnitSystem</code>. For <code>Type=TimeSignal</code>, file source lines are interpreted in this unit system, while DB source lines are read in the record UnitSystem and converted into the function UnitSystem.</li>
 <li><strong>Name=name:</strong> function name</li>
 </ul>
 </div>
-<p>Function-related commands define functions in the form of <span class="arithmatex">\(\small y=f(x)\)</span> or <span class="arithmatex">\(\small y1=f1(x), y2=f2(x), ...\)</span>. Functions are used to define envelopes when specifying material models or as time histories when defining loads.</p>
-<h3 id="function-typemultilinear">*Function, Type=MultiLinear</h3>
+<h3 id="811-function-typemultilinear">8.1.1 *Function, Type=MultiLinear</h3>
 <p>Multilinear function</p>
 <div class="highlight"><pre><span></span><code>*Function, Type=MultiLinear, Name=name
  x, y1, y2, ..., yn
@@ -3058,18 +3984,19 @@
  2.802903E-3, 86.4, 5.1
  7.26864E-5, 122.5, 3.1
 </code></pre></div>
-<h3 id="function-typetimesignal">*Function, Type=TimeSignal</h3>
+<h3 id="812-function-typetimesignal">8.1.2 *Function, Type=TimeSignal</h3>
 <p>Time signal. Multi-linear function with fixed step size</p>
 <div class="highlight"><pre><span></span><code>*Function, Type=TimeSignal, UnitSystem=unitSystem, Name=name
- dtime, ntime
- file, nseries, scaleFactor, skipRows
+ dtime|auto, ntime|auto
+ file, nseries, scaleFactor, skipRows[, quantity]
+ DB, recordName[, scaleFactor]
  ...
 </code></pre></div>
 <h5 id="first-data-line">First data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>dtime:</strong> time step (required).</li>
-<li><strong>ntime:</strong> number of time data (optional). If the number of rows in the read data exceeds ntime, the extra rows are ignored. If it is less than ntime, the remaining values are padded with zeros. If ntime is not specified, it is automatically set to the length of the longest time series. Other time series shorter than ntime are padded with zeros up to ntime.</li>
+<li><strong>dtime:</strong> Time step or <code>auto</code> (required). <code>auto</code> is allowed only when at least one DB source line is provided, and it is resolved from the DB record dtime. When multiple DB records are listed, all DB record dtime values shall match after conversion to the reference UnitSystem.</li>
+<li><strong>ntime:</strong> Number of time data or <code>auto</code> (required). With <code>auto</code>, ntime is set to the length of the longest loaded time series. If the number of rows in the read data exceeds ntime, the extra rows are ignored. If it is less than ntime, the remaining values are padded with zeros.</li>
 </ul>
 </div>
 <h5 id="second-data-line-and-subsequent-data-lines">Second data line and subsequent data lines</h5>
@@ -3079,20 +4006,218 @@
 <li><strong>nseries:</strong> Number of time series in the file (optional, default 1). For npy files, the number of columns must be the same.</li>
 <li><strong>scale:</strong> Scale factor (optional, default 1).</li>
 <li><strong>skipRows:</strong> Number of rows to skip at the beginning of the file (optional, default 0). Ignored for npy files.</li>
+<li><strong>quantity:</strong> Signal quantity class for the file source line (optional). Allowed values are <code>acc</code>/<code>acceleration</code>, <code>vel</code>/<code>velocity</code>, <code>disp</code>/<code>displacement</code>, and <code>other</code>/<code>others</code>/<code>dimensionless</code>. When omitted, Signal Analysis uses the common DB record quantity if the TimeSignal also contains DB source lines; otherwise it treats the file source as <code>acceleration</code>.</li>
+<li><strong>DB:</strong> Literal keyword that references a <code>tools/db/timeSignal</code> DB record.</li>
+<li><strong>recordName:</strong> DB record name defined in <code>tools/db/timeSignal</code> (required).</li>
+<li><strong>scaleFactor:</strong> Optional user multiplier applied to all Y-series from that record after DB normalization (optional, default 1).</li>
 </ul>
 </div>
-<p>The TimeSignal function, suitable for representing time histories, can be understood as a multi-linear function with fixed interval x values. The data from the file is read with values separated by whitespace (colon, space, tab, newline). Each file consists of nseries time series data. It reads ntime entries for each of the nseries data. If the file has fewer data entries, the missing values are filled with zeros. At time 0, the value is assumed to be 0, and the first value given in the data corresponds to the value at time dt. The final value corresponds to the value at time ntime*dt.</p>
+<p>The TimeSignal function, suitable for representing time histories, can be understood as a multi-linear function with fixed interval x values. File source line data is read with values separated by whitespace (colon, space, tab, newline). Each file consists of nseries time series data. It reads ntime entries for each of the nseries data. If the file has fewer data entries, the missing values are filled with zeros. At time 0, the value is assumed to be 0, and the first value given in the data corresponds to the value at time dt. The final value corresponds to the value at time ntime*dt.</p>
 <p><img alt="Fig. 8.2-1. TimeSignal function" src="../../Command/image/8.2-1.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-1.</span></strong> TimeSignal function</p>
 
+<p>A DB source line is written as <code>DB, recordName[, scaleFactor]</code>. The DB metadata defines the source file, quantity, local UnitSystem, <code>dtime</code>, <code>ntime</code>, <code>nseries</code>, <code>sourceScaleFactor</code>, and <code>skipRows</code>. When multiple DB records are listed in one TimeSignal, their quantities may differ, and dtime shall match after conversion to the reference UnitSystem. DB record UnitSystems may differ. The resulting series order follows the source-line order. The keyword-line <code>UnitSystem</code> is the interpretation basis for file source lines and the target function UnitSystem for DB source conversion. DB source lines are read in the record UnitSystem, then converted into the function UnitSystem according to each record quantity before storage. A pure DB TimeSignal with no keyword <code>UnitSystem</code> preserves the first DB record UnitSystem as function metadata. File source lines and DB source lines may be mixed in the same TimeSignal. The following rules apply to TimeSignal DB source-line UnitSystems.</p>
+<pre><code>- A `DB, recordName[, scaleFactor]` source line does not require a global `*Environment, Type=UnitSystem`.
+- If the keyword line has `UnitSystem=U`, file source lines are interpreted in `U`. DB source lines are read in the record UnitSystem, then converted into `U` according to the record quantity before being stored in the function.
+- If the keyword line has no `UnitSystem` and a global UnitSystem exists, file source lines are interpreted in the global UnitSystem. DB source lines are read in the record UnitSystem, then converted into the global/function UnitSystem before being stored.
+- If the keyword line has no `UnitSystem` and all source lines are DB lines, the function metadata is stored with the first DB record UnitSystem, and the remaining DB source lines are converted into that UnitSystem.
+- If the keyword line has no `UnitSystem`, no global UnitSystem exists, and file and DB source lines are mixed, the input is rejected because there is no reference UnitSystem.
+- It is not an input error for the keyword `UnitSystem` and DB record UnitSystem to differ. Multiple DB record UnitSystems and quantities may also differ, but their dtime shall match after conversion.
+- If source lines have different quantities, the TimeSignal definition is still valid. Signal Analysis and preview features may restrict operations that require a single physical quantity.
+</code></pre>
+<p>For example, the following input is valid without a global UnitSystem. The function metadata is stored with the UnitSystem of the <code>elcentro_chopra</code> record.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=TimeSignal, Name=EQ
+ auto, auto
+ DB, elcentro_chopra
+</code></pre></div>
+<p>In the following input, <code>my_acc.txt</code> is interpreted as a <code>kN-mm-s-K</code> file source, while the <code>elcentro_chopra</code> DB values are converted from the record UnitSystem into <code>kN-mm-s-K</code> before being stored in the same TimeSignal.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=TimeSignal, UnitSystem=kN-mm-s-K, Name=EQ
+ auto, auto
+ my_acc.txt
+ DB, elcentro_chopra
+</code></pre></div>
+<p>TimeSignal DB records are loaded from the built-in factory catalog at <code>tools/db/timeSignal/catalog.yml</code> and, when present, the user catalog at <code>tools/db/timeSignal/user/catalog.yml</code>. In hfStudio, the TimeSignal DB dialog can register a text or <code>.npy</code> time-history file as a user DB record with <code>Add Record...</code>; the source copy is stored under <code>tools/db/timeSignal/user/files/</code>. The user DB lives inside the installation folder rather than a separate <code>%APPDATA%</code> location, so before updating the program or replacing the folder, back up or copy the whole <code>tools/db/timeSignal/user/</code> folder if those user records should be kept. Separately, <code>KDS17</code> and <code>KDS41</code> in <code>Type=ResponseSpectrum</code> are built-in design-spectrum DB-style sources; they are formula sources and do not use an external DB file.</p>
 <p>In the time data file, any content after <code>#</code> is ignored (comment).</p>
 <h5 id="example_1">Example</h5>
-<div class="highlight"><pre><span></span><code>*Function, TYPE=TimeSignal, UnitSystem=N-m-s-K, Name=EqAcc
+<div class="highlight"><pre><span></span><code>*Function, Type=TimeSignal, UnitSystem=N-m-s-K, Name=EqAcc
  0.02, 1024              # dt, ntime
- elcenX.dat, 1, 3.01      # file, nseries, scaleFactor
- elcenYZ.dat, 2, 3.01, 4      # dataFile, nseries, scaleFactor, skipRows
+ elcenX.dat, 1, 3.01, 0, acc      # file, nseries, scaleFactor, skipRows, quantity
+ elcenYZ.dat, 2, 3.01, 4, acc      # dataFile, nseries, scaleFactor, skipRows, quantity
+
+*Function, Type=TimeSignal, Name=LomaPrietaMotion90
+ auto, auto
+ DB, RSN765_LOMAP_G01090.AT2
+ DB, RSN765_LOMAP_G01090.VT2
+ DB, RSN765_LOMAP_G01090.DT2
+
+*Function, Type=TimeSignal, Name=ScaledElCentro
+ auto, auto
+ DB, elcentro_chopra, 0.5
 </code></pre></div>
-<h3 id="function-typestring">*Function, Type=String</h3>
+<h3 id="813-function-typeresponsespectrum">8.1.3 *Function, Type=ResponseSpectrum</h3>
+<p>Response spectrum function generated as a single-series period function.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=ResponseSpectrum, Name=name
+ TimeSignal, timeSignalName, seriesIndex, dampingRatio
+ Linear|Log, Tmin, Tmax, nPeriod[, ToDirectForm]
+
+*Function, Type=ResponseSpectrum, Name=name
+ KDS17|KDS41, siteClass, effectiveGroundAcceleration[, dampingRatio]
+[ Linear|Log, Tmin, Tmax, nPeriod]
+</code></pre></div>
+<h5 id="first-dataline-for-timesignal">First dataline for TimeSignal</h5>
+<div class="admonition note">
+<ul>
+<li><strong>TimeSignal:</strong> Generates the response spectrum from an existing <code>*Function, Type=TimeSignal</code>.</li>
+<li><strong>timeSignalName:</strong> Existing <code>TimeSignal</code> function name. The selected signal is interpreted as acceleration, and the generated values are stored as <span class="arithmatex">\(S_a/g\)</span>.</li>
+<li><strong>seriesIndex:</strong> TimeSignal series index, 1-based.</li>
+<li><strong>dampingRatio:</strong> For <code>TimeSignal</code>, the required damping ratio used in the single-degree-of-freedom response calculation.</li>
+</ul>
+</div>
+<h5 id="second-dataline-for-timesignal">Second dataline for TimeSignal</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Linear|Log, Tmin, Tmax, nPeriod:</strong> <code>Linear|Log</code> selects the generated period-grid spacing; <code>Tmin</code> and <code>Tmax</code> define the generated period range in seconds; <code>nPeriod</code> is the number of generated period points.</li>
+<li><strong>ToDirectForm:</strong> Optional output flag that prints the generated curve as <code>Type=MultiLinear</code>. It does not change the analysis result.</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-kds17kds41">First dataline for KDS17|KDS41</h5>
+<div class="admonition note">
+<ul>
+<li><strong>KDS17:</strong> Generates the standard design response spectrum for design ground motions in KDS 17 10 00. <code>S1</code> uses the rock-site expression, while <code>S2</code> to <code>S5</code> use the soil-site amplification expression.</li>
+<li><strong>KDS41:</strong> Generates the building design response acceleration spectrum in KDS 41 17 00. <code>S1</code> to <code>S5</code> use the building-code <span class="arithmatex">\(F_a\)</span>, <span class="arithmatex">\(F_v\)</span> tables and the <span class="arithmatex">\(2/3\)</span> design-level factor.</li>
+<li><strong>siteClass:</strong> KDS site class. <code>S1</code>, <code>S2</code>, <code>S3</code>, <code>S4</code>, or <code>S5</code>. For <code>KDS17</code>, <code>S1</code> is the rock site and <code>S2</code> to <code>S5</code> are soil sites.</li>
+<li><strong>effectiveGroundAcceleration:</strong> The coefficient <span class="arithmatex">\(S\)</span> entered in g. For <code>KDS17</code>, this is the effective horizontal ground acceleration for the selected design ground-motion level. When it is determined by the administrative-zone method, use the seismic zone factor <span class="arithmatex">\(Z\)</span> and the risk factor <span class="arithmatex">\(I\)</span> for the selected mean return period, so <span class="arithmatex">\(S=Z\times I\)</span>. For <code>KDS41</code>, this is the effective ground acceleration of the 2400-year maximum considered earthquake.</li>
+<li><strong>dampingRatio:</strong> Optional only for <code>KDS17</code> with <code>siteClass=S1</code>; default is <code>0.05</code>. When specified, it must be at least <code>0.005</code>. Enter it as a ratio, so 5% is <code>0.05</code>. <code>KDS41</code> and <code>KDS17</code> with <code>S2</code> to <code>S5</code> use only the default 5% spectrum and do not accept this token.</li>
+</ul>
+</div>
+<h5 id="second-dataline-for-kds17kds41-optional">Second dataline for KDS17|KDS41 (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Linear|Log, Tmin, Tmax, nPeriod:</strong> <code>Linear|Log</code> selects the generated period-grid spacing; <code>Tmin</code> and <code>Tmax</code> define the generated period range in seconds; <code>nPeriod</code> is the number of generated period points. If this line is present, the generated curve is printed as <code>Type=MultiLinear</code>.</li>
+</ul>
+</div>
+<p>For <code>TimeSignal</code> sources, the period grid dataline is required because the response spectrum is generated on that period grid. For KDS sources, the period grid dataline is optional. If it is omitted, the function keeps the KDS closed-form expression and evaluates that expression during analysis. If it is present, the KDS expression is sampled on the given grid and stored as direct <code>MultiLinear</code> data; values outside the generated range use the nearest end value. Use <code>*Spectrum</code>'s <code>scaleFactor</code> for direction-specific scaling such as a vertical-to-horizontal ratio. For <code>KDS17</code> soil sites, however, do not treat any vertical-to-horizontal ratio as a fixed built-in rule; define a separate spectrum or scale according to the applicable standard and engineering judgment. Any <code>dampingRatio</code> in this function is separate from the <code>dampingRatio</code> of <code>*Spectrum</code>; the latter is used for CQC modal combination.</p>
+<p>For <code>KDS17</code> with <code>S1</code>, the rock-site standard design response spectrum is defined directly:</p>
+<div class="arithmatex">\[
+T_0=0.06,\quad T_s=0.3,\quad T_L=3.0
+\]</div>
+<div class="arithmatex">\[
+\frac{S_a}{g}=
+\begin{cases}
+(1+30T)S, &amp; 0 \le T \le T_0 \\
+2.8S, &amp; T_0 &lt; T \le T_s \\
+\frac{0.84S}{T}, &amp; T_s &lt; T \le T_L \\
+\frac{2.52S}{T^2}, &amp; T &gt; T_L
+\end{cases}
+\]</div>
+<p>When the optional <code>dampingRatio</code> is specified for <code>KDS17</code> with <code>S1</code>, the damping correction below is multiplied into the rock-site spectrum. Here <span class="arithmatex">\(\xi\)</span> is the ratio entered in the dataline.</p>
+<div class="arithmatex">\[
+C_\xi^\ast=\left(\frac{6.42}{1.42+100\xi}\right)^{0.48},\quad
+C_\xi(T)=
+\begin{cases}
+1+(C_\xi^\ast-1)\frac{T}{T_0}, &amp; 0 &lt; T &lt; T_0 \\
+C_\xi^\ast, &amp; T \ge T_0
+\end{cases}
+\]</div>
+<p>For <code>KDS17</code> with <code>S2</code> to <code>S5</code>, use the soil-site spectrum below for 5% damping. It starts from <span class="arithmatex">\(F_aS\)</span> at <span class="arithmatex">\(T=0\)</span> and reaches <span class="arithmatex">\(2.5F_aS\)</span> at <span class="arithmatex">\(T_0\)</span>. This function currently supports only <span class="arithmatex">\(\xi=0.05\)</span> for <code>KDS17</code> soil sites.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+T_s &amp;= \frac{F_v}{2.5F_a}, &amp;
+T_0 &amp;= 0.2T_s, &amp;
+T_L &amp;= 3.0
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\frac{S_a}{g}=
+\begin{cases}
+F_aS\left(1+1.5\frac{T}{T_0}\right), &amp; 0 \le T \le T_0 \\
+2.5F_aS, &amp; T_0 &lt; T \le T_s \\
+\frac{F_vS}{T}, &amp; T_s &lt; T \le T_L \\
+\frac{F_vST_L}{T^2}, &amp; T &gt; T_L
+\end{cases}
+\]</div>
+<p>For <code>KDS41</code>, use the design response acceleration spectrum below for 5% damping. Here <span class="arithmatex">\(S\)</span> is the effective ground acceleration of the 2400-year maximum considered earthquake, and the <span class="arithmatex">\(2/3\)</span> design-level factor is applied when forming <span class="arithmatex">\(S_{DS}\)</span> and <span class="arithmatex">\(S_{D1}\)</span>. This function currently supports only <span class="arithmatex">\(\xi=0.05\)</span> for <code>KDS41</code>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+S_{DS} &amp;= \frac{2}{3}(2.5F_aS), &amp;
+S_{D1} &amp;= \frac{2}{3}F_vS, &amp;
+T_0 &amp;= 0.2\frac{S_{D1}}{S_{DS}}, &amp;
+T_s &amp;= \frac{S_{D1}}{S_{DS}}, &amp;
+T_L &amp;= 5.0
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\frac{S_a}{g}=
+\begin{cases}
+S_{DS}\left(0.6\frac{T}{T_0}+0.4\right), &amp; 0 \le T \le T_0 \\
+S_{DS}, &amp; T_0 &lt; T \le T_s \\
+\frac{S_{D1}}{T}, &amp; T_s &lt; T \le T_L \\
+\frac{S_{D1}T_L}{T^2}, &amp; T &gt; T_L
+\end{cases}
+\]</div>
+<p>For <code>KDS17</code> soil sites and for <code>KDS41</code>, <span class="arithmatex">\(F_a\)</span> and <span class="arithmatex">\(F_v\)</span> are read from the site-class table below. Values between <span class="arithmatex">\(S=0.1\)</span>, <span class="arithmatex">\(0.2\)</span>, and <span class="arithmatex">\(0.3\)</span> are linearly interpolated; values outside this tabulated range use the nearest tabulated value. <code>KDS17</code> soil sites use only rows <code>S2</code> to <code>S5</code>; <code>KDS41</code> uses rows <code>S1</code> to <code>S5</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Site</th>
+<th><span class="arithmatex">\(F_a\)</span> at <span class="arithmatex">\(S=0.1,0.2,0.3\)</span></th>
+<th><span class="arithmatex">\(F_v\)</span> at <span class="arithmatex">\(S=0.1,0.2,0.3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>S1</code></td>
+<td>1.12, 1.12, 1.12</td>
+<td>0.84, 0.84, 0.84</td>
+</tr>
+<tr>
+<td><code>S2</code></td>
+<td>1.40, 1.40, 1.30</td>
+<td>1.50, 1.40, 1.30</td>
+</tr>
+<tr>
+<td><code>S3</code></td>
+<td>1.70, 1.50, 1.30</td>
+<td>1.70, 1.60, 1.50</td>
+</tr>
+<tr>
+<td><code>S4</code></td>
+<td>1.60, 1.40, 1.20</td>
+<td>2.20, 2.00, 1.80</td>
+</tr>
+<tr>
+<td><code>S5</code></td>
+<td>1.80, 1.30, 1.30</td>
+<td>3.00, 2.70, 2.40</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Fig. 8.2-1a. KDS response spectrum schematics" src="../../Command/image/8.2-2-kds-response-spectrum.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-1a.</span></strong> KDS17 rock-site, KDS17 soil-site, and KDS41 response spectrum schematics.</p>
+
+<h5 id="example_2">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=TimeSignal, Name=ELCEN
+ auto, auto
+ DB, elcentro_chopra
+
+*Function, Type=ResponseSpectrum, Name=ELCEN_RS
+ TimeSignal, ELCEN, 1, 0.05
+ Linear, 0.02, 5.0, 100, ToDirectForm
+
+*Function, Type=ResponseSpectrum, Name=KDS17_S3
+ KDS17, S3, 0.154
+
+*Function, Type=ResponseSpectrum, Name=KDS17_S1_D02
+ KDS17, S1, 0.154, 0.02
+
+*Function, Type=ResponseSpectrum, Name=KDS41_S1
+ KDS41, S1, 0.22
+
+*Function, Type=ResponseSpectrum, Name=KDS41_S1_DIRECT
+ KDS41, S1, 0.22
+ Linear, 0.02, 5.0, 100
+</code></pre></div>
+<h3 id="814-function-typestring">8.1.4 *Function, Type=String</h3>
 <p>Define function by mathematical expression</p>
 <div class="highlight"><pre><span></span><code>*Function, Type=STRING, UnitSystem=unitSystem, Name=name
   expression, min,max
@@ -3104,140 +4229,272 @@
 <li><strong>min,max:</strong> minimum and maximum range. Zero function value is assumed beyond the given range. If Range keyword is not given, no range check is performed</li>
 </ul>
 </div>
-<p>'*Function, TYPE=String' has the feature of parsing the expression. The internal parser supports typical mathematical functions, such as <code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code>, <code>acos(x)</code>, <code>atan(x)</code>, <code>cosh(x)</code>, <code>sinh(x)</code>, <code>tanh(x)</code>, <code>fabs(x)</code>, <code>exp(x)</code>, <code>log(x)</code>, <code>log10(x)</code>, <code>sqrt(x)</code>, <code>step(x)</code>, <code>sgn(x)</code>, and <code>pow(x,n)</code>.</p>
-<h5 id="example_2">Example</h5>
+<p>'*Function, Type=String' has the feature of parsing the expression. The internal parser supports typical mathematical functions, such as <code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code>, <code>acos(x)</code>, <code>atan(x)</code>, <code>cosh(x)</code>, <code>sinh(x)</code>, <code>tanh(x)</code>, <code>fabs(x)</code>, <code>exp(x)</code>, <code>log(x)</code>, <code>log10(x)</code>, <code>sqrt(x)</code>, <code>step(x)</code>, <code>sgn(x)</code>, and <code>pow(x,n)</code>.</p>
+<h5 id="example_3">Example</h5>
 <div class="highlight"><pre><span></span><code>*Function, Type=String, Name=Half-sine
  sin(2*pi/1.2*x), 0., 0.6
 </code></pre></div>
-<h3 id="function-typehognestadcenv">*Function, Type=HognestadCEnv</h3>
-<p>Define the compressive envelope of concrete based on Hognestad's curve.</p>
-<div class="highlight"><pre><span></span><code>*Function, Type=HognestadCEnv, Name=name
-  fco, Ec, ec20, ecu
+<h3 id="815-function-typeparabolacenv">8.1.5 *Function, Type=ParabolaCEnv</h3>
+<p>Define the stress-strain compressive envelope for cross-sectional design as specified by EC2 and KDS.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=ParabolaCEnv, UnitSystem=unitSystem, Name=name
+  fck, n, eco, ecu[, alpha]
+
+*Function, Type=ParabolaCEnv, Name=name
+  KDS-2026-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, alpha][, ToDirectForm]
 </code></pre></div>
 <h5 id="first-data-line_2">First data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>fco:</strong> compressive strength (required)</li>
-<li><strong>Ec:</strong> initial tangent modulus (required)</li>
-<li><strong>ec20:</strong> strain at 0.85fcm concrete stress of descending branch(optional, default 0.003)</li>
-<li><strong>ecu:</strong> ultimate strain (optional, always set to max(ec20, ecu) )</li>
-</ul>
-</div>
-<p>Hognestad’s compressive envelope of concrete  given as</p>
-<div class="arithmatex">\[
-\small
-\begin{aligned}
-&amp; f_c = f_{co} \left[ 2 \frac{\epsilon_c}{\epsilon_{co}} - (\frac{\epsilon_c}{\epsilon_{co}}) ^2 \right], ~~{\rm for}~ \epsilon \le \epsilon_{co}\\
-&amp; f_c = f_{co} -0.15 f_{co} \frac{\epsilon - \epsilon_{co}}{\epsilon_{20}-\epsilon_{co}}, ~~{\rm for}~ \epsilon_{co} \lt \epsilon_{c} \le \epsilon_{20} \\
-&amp; f_c =0.85 f_{co},~~{\rm for}~ \epsilon_{20} \lt \epsilon_{c} \le \epsilon_{cu} \\
-\end{aligned}
-\]</div>
-<p>where, <span class="arithmatex">\(\small\epsilon_{20}\)</span> corresponding to <span class="arithmatex">\(\small f_{co}\)</span> is given as</p>
-<div class="arithmatex">\[
-\small
-\epsilon_{co} = 2f_{co} / E_c
-\]</div>
-<p><img alt="Fig. 8.2-2. Compressive failure envelope of Hognestad model" src="../../Command/image/8.2-2.png" /></p>
-<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-2.</span></strong> Compressive failure envelope of Hognestad model</p>
-
-<h5 id="example_3">Example</h5>
-<div class="highlight"><pre><span></span><code>*Function, Type=HognestadCEnv, Name=HognestadTest1
- 25., 23500.
-
-*Function, Type=HognestadCEnv, UnitSystem=kN-mm-s-K, Name=HognestadTest2
- 25., 23500., 0.0031, 0.0032
-
-*Function, Type=HognestadCEnv, Name=HognestadTest3
- 25., 23500., 0.0032
-</code></pre></div>
-<h3 id="function-typeparabolacenv">*Function, Type=ParabolaCEnv</h3>
-<p>Define the stress-strain compressive envelope for cross-sectional design as specified by EC2 and KDS.</p>
-<div class="highlight"><pre><span></span><code>*Function, Type=ParabolaCEnv, UnitSystem=unitSystem, Name=name
-  fco, n, eco, ecu
-</code></pre></div>
-<h5 id="first-data-line_3">First data line</h5>
-<div class="admonition note">
-<ul>
-<li><strong>fco:</strong> design compressive strength,  (required)</li>
+<li><strong>fck:</strong> design compressive strength,  (required)</li>
 <li><strong>n:</strong> shape factor (required)</li>
 <li><strong>eco:</strong> peak strain (optional, 0.002)</li>
 <li><strong>ecu:</strong> ultimate strain (optional, always set to max(eco, ecu) )</li>
+<li><strong>alpha:</strong> reduction factor multiplied by <code>fck</code> (optional, default 1.0)</li>
+<li><strong>KDS-2026-C&lt;fck&gt; or EC2-2004-C&lt;fck&gt;:</strong> Concrete DB item accepted by <code>ParabolaCEnv</code>. It can be used instead of the numeric dataline when keyword <code>UnitSystem</code> is omitted and a global UnitSystem is defined. Both standards fill the direct numeric <code>fck</code> field; <code>n</code>, <code>eco</code>, and <code>ecu</code> follow the equations below; <code>alpha</code> is read from the dataline or defaults to 1.0. These values are section-analysis compression relation parameters and should not be mixed with general compressive envelope material properties.</li>
+<li><strong>ToDirectForm:</strong> Optional output option for DB item datalines. It must be the last token. When specified, saved/formatted output writes the resolved numeric dataline in the current global UnitSystem. If that unit system is the same as the global UnitSystem, no local <code>UnitSystem</code> is printed on the keyword line. If omitted, the DB item dataline is preserved.</li>
 </ul>
 </div>
 <p>The curve given as</p>
 <div class="arithmatex">\[
-\small
-\begin{aligned}
-&amp; f_c = f_{co} \left[ 1-(1- \frac{\epsilon_c}{\epsilon_{co}})^n \right], ~~{\textrm for}~ \epsilon \le \epsilon_{co}\\
-&amp; f_c = f_{co} ,~~{\textrm for}~ \epsilon_{co} \lt \epsilon_{c} \le \epsilon_{cu} \\
-\end{aligned}
+f_c=
+\begin{cases}
+\alpha f_{ck}\left[1-\left(1-\dfrac{\epsilon_c}{\epsilon_{co}}\right)^n\right] &amp; (\epsilon_c\le\epsilon_{co}) \\
+\alpha f_{ck} &amp; (\epsilon_{co}&lt;\epsilon_c\le\epsilon_{cu})
+\end{cases}
 \]</div>
-<p>where, <span class="arithmatex">\(\small f_{co} = \phi_c (0.85f_{ck})\)</span>, <span class="arithmatex">\(\small\phi_c = 0.65\)</span> for ultimate limit state. <span class="arithmatex">\(\small\phi_c = 1\)</span> for extreme limit state.</p>
-<p><img alt="Fig. 8.2-3. ParabolaCEnv function" src="../../Command/image/8.2-3.png" /></p>
-<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-3.</span></strong> ParabolaCEnv function</p>
-
-<p>The elastic modulus, which is the tangent slope, is calculated as follows.</p>
+<p>Hyfeast returns zero for <span class="arithmatex">\(\epsilon_c &gt; \epsilon_{cu}\)</span> and does not append a tail branch.</p>
+<p><code>ParabolaCEnv</code> does not use <code>Ec</code> or <code>Eci</code>. The curve is a section-design parabola-rectangle relation, and the peak stress is <span class="arithmatex">\(\alpha f_{ck}\)</span>.</p>
+<p>For DB input, the item strength is used as <code>fck</code> and <code>alpha</code> controls the design reduction. The DB item supplies the following section-design shape parameters, with <code>fck</code> in MPa:</p>
+<p>KDS-2026:</p>
 <div class="arithmatex">\[
-\small
-E_c = \frac{df}{d\epsilon_c} = f_{co} (1-\frac{\epsilon_c} {\epsilon_{co}})^{n-1} \frac{n}{\epsilon_{co}}
+n=
+\begin{cases}
+2.0 &amp; (f_{ck} \le 40) \\
+1.2 + 1.5\left((100-f_{ck})/60\right)^4 &amp; (40 &lt; f_{ck} \le 90)
+\end{cases}
 \]</div>
+<div class="arithmatex">\[
+\varepsilon_{co}=
+\begin{cases}
+0.002 &amp; (f_{ck} \le 40) \\
+0.002 + 0.0001(f_{ck}-40)/10 &amp; (40 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cu}=
+\begin{cases}
+0.0033 &amp; (f_{ck} \le 40) \\
+0.0033 - 0.0001(f_{ck}-40)/10 &amp; (40 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<p>EC2-2004:</p>
+<div class="arithmatex">\[
+n=
+\begin{cases}
+2.0 &amp; (f_{ck} \le 50) \\
+1.4 + 23.4\left((90-f_{ck})/100\right)^4 &amp; (50 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{co}=
+\begin{cases}
+0.002 &amp; (f_{ck} \le 50) \\
+\left(2.0 + 0.085(f_{ck}-50)^{0.53}\right)/1000 &amp; (50 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cu}=
+\begin{cases}
+0.0035 &amp; (f_{ck} \le 50) \\
+\left(2.6 + 35\left((90-f_{ck})/100\right)^4\right)/1000 &amp; (50 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<p>For KDS strength-design section checks, use <span class="arithmatex">\(\alpha=0.85\)</span>. For KDS limit-state design, use <span class="arithmatex">\(\alpha=0.85\phi_c\)</span>; <span class="arithmatex">\(\phi_c=0.65\)</span> for ultimate load combinations and <span class="arithmatex">\(\phi_c=1.0\)</span> for extreme-event, service, or fatigue load combinations. For EC2, use <span class="arithmatex">\(\alpha=\alpha_{cc}/\gamma_C\)</span>; <span class="arithmatex">\(\alpha_{cc}\)</span> is a national parameter, typically between 0.8 and 1.0, and <span class="arithmatex">\(\gamma_C\)</span> is 1.5 for persistent/transient situations or 1.2 for accidental situations.</p>
+<p><img alt="Fig. 8.2-2. ParabolaCEnv function" src="../../Command/image/8.2-2.svg" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-2.</span></strong> ParabolaCEnv function</p>
+
 <h5 id="example_4">Example</h5>
 <div class="highlight"><pre><span></span><code>*Function, Type=ParabolaCEnv, Name=ParabolaTest1
-  0.85*27, 1.8, 0.00203, 0.0033     #  fco, n, eco, ecu
+  27, 1.8, 0.00203, 0.0033, 0.85     #  fck, n, eco, ecu, alpha
+
+*Function, Type=ParabolaCEnv, Name=KDSC30Section
+  KDS-2026-C30, 0.85
 </code></pre></div>
-<h3 id="function-typefibcenv">*Function, Type=FIBCEnv</h3>
-<p>Define the compressive envelope of concrete according to CEB/FIB MC90.</p>
-<div class="highlight"><pre><span></span><code>*Function, Type=FIBCEnv, UnitSystem=unitSystem, Name=name
- fcm, Ec, eco
+<h3 id="816-function-typehognestadcenv">8.1.6 *Function, Type=HognestadCEnv</h3>
+<p>Define the compressive envelope of concrete based on Hognestad's curve.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=HognestadCEnv, Name=name
+  fco, Ec, ecu[, EciCurve]
+
+*Function, Type=HognestadCEnv, Name=name
+  KDS-2026-C&lt;fck&gt;|ACI318-2025-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, EciCurve][, ToDirectForm]
+</code></pre></div>
+<h5 id="first-data-line_3">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>fco:</strong> compressive strength (required)</li>
+<li><strong>Ec:</strong> secant modulus to <code>0.4*fco</code> (required)</li>
+<li><strong>ecu:</strong> ultimate strain (required for direct numeric input; DB input uses 0.003 for ACI and the standard <code>ecu</code> for KDS/EC2)</li>
+<li><strong>EciCurve:</strong> Optional curve-shape flag. If omitted, the curve is linear from the origin to <code>0.4*fco</code> with slope <code>Ec</code>; if specified, the original Hognestad parabola is used from the origin.</li>
+<li><strong>KDS-2026-C&lt;fck&gt;, ACI318-2025-C&lt;fck&gt;, or EC2-2004-C&lt;fck&gt;:</strong> Concrete DB item. It can be used instead of the numeric dataline when keyword <code>UnitSystem</code> is omitted and a global UnitSystem is defined. ACI fills direct numeric <code>fco</code> and <code>ecu</code> with <code>f'c</code> and <code>0.003</code>. KDS/EC2 fill <code>fco</code> and <code>ecu</code> with DB-derived <code>fcm</code> and the standard <code>ecu</code>. All standards use the DB-derived secant modulus for <code>Ec</code>.</li>
+<li><strong>ToDirectForm:</strong> Optional output option for DB item datalines. It must be the last token. When specified, saved/formatted output writes the resolved numeric dataline in the current global UnitSystem. If that unit system is the same as the global UnitSystem, no local <code>UnitSystem</code> is printed on the keyword line. If omitted, the DB item dataline is preserved.</li>
+</ul>
+</div>
+<p>Hognestad's compressive envelope of concrete is given as</p>
+<div class="arithmatex">\[
+f_c=
+\begin{cases}
+f_{co}\left[2\dfrac{\epsilon_c}{\epsilon_{co}}-\left(\dfrac{\epsilon_c}{\epsilon_{co}}\right)^2\right] &amp; (\epsilon_c\le\epsilon_{co}) \\
+f_{co}-0.15 f_{co}\dfrac{\epsilon_c-\epsilon_{co}}{\epsilon_{20}-\epsilon_{co}} &amp; (\epsilon_{co}&lt;\epsilon_c\le\epsilon_{20}) \\
+0.85 f_{co} &amp; (\epsilon_{20}&lt;\epsilon_c\le\epsilon_{cu})
+\end{cases}
+\]</div>
+<p>For the entered secant modulus <code>Ec</code>, Hyfeast derives the internal initial tangent and peak strain as</p>
+<div class="arithmatex">\[
+E_{ci}=5(1-\sqrt{0.6})E_c,\qquad
+\epsilon_{co}=2f_{co}/E_{ci}
+\]</div>
+<p>Hyfeast uses the internal value <code>epsilon20=0.003</code>; direct numeric input and DB output do not include <code>epsilon20</code>.
+By default, the curve segment from the origin to <code>0.4*fco</code> is replaced by a straight line with slope <code>Ec</code>. When <code>EciCurve</code> is specified, the original parabolic curve is used from the origin.</p>
+<p><img alt="Fig. 8.2-3. Hognestad concrete compressive envelope" src="../../Command/image/8.2-3.svg" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-3.</span></strong> Hognestad concrete compressive envelope</p>
+
+<h5 id="example_5">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=HognestadCEnv, Name=HognestadTest1
+ 25., 23500., 0.003
+
+*Function, Type=HognestadCEnv, UnitSystem=kN-mm-s-K, Name=HognestadTest2
+ 25., 23500., 0.0032, EciCurve
+
+*Function, Type=HognestadCEnv, Name=HognestadTest3
+ 25., 23500., 0.0032
+
+*Function, Type=HognestadCEnv, Name=KDSC30Hognestad
+ KDS-2026-C30, EciCurve, ToDirectForm
+</code></pre></div>
+<h3 id="817-function-typeec2cenv">8.1.7 *Function, Type=EC2CEnv</h3>
+<p>Defines an EC2-family concrete compressive envelope.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=EC2CEnv, UnitSystem=unitSystem, Name=name
+ fcm, Ec, eco, ecu[, EciCurve]
+
+*Function, Type=EC2CEnv, Name=name
+ KDS-2026-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, EciCurve][, ToDirectForm]
 </code></pre></div>
 <h5 id="first-data-line_4">First data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>fcm:</strong> compressive strength (required)</li>
-<li><strong>Ec:</strong> initial tangent modulus (required)</li>
-<li><strong>eco:</strong> strain at peak concrete strength (optional, default automatically computed)</li>
+<li><strong>Ec:</strong> secant modulus to <code>0.4*fcm</code> (required)</li>
+<li><strong>eco:</strong> strain at peak concrete strength (required)</li>
+<li><strong>ecu:</strong> ultimate strain (required)</li>
+<li><strong>EciCurve:</strong> Optional curve-shape flag. If omitted, the curve is linear from the origin to <code>0.4*fcm</code> with slope <code>Ec</code>; if specified, the EC2-family curve is used from the origin.</li>
+<li><strong>KDS-2026-C&lt;fck&gt; or EC2-2004-C&lt;fck&gt;:</strong> Concrete DB item accepted by <code>EC2CEnv</code>. It can be used instead of the numeric dataline when keyword <code>UnitSystem</code> is omitted and a global UnitSystem is defined. <code>&lt;fck&gt;</code> is the compressive strength in MPa. The DB item supplies <code>fcm</code>, <code>Ec</code>, and the nonlinear-analysis <code>eco</code> and <code>ecu</code> coefficients.</li>
+<li><strong>ToDirectForm:</strong> Optional output option for DB item datalines. It must be the last token. When specified, saved/formatted output writes the resolved numeric dataline in the current global UnitSystem. If that unit system is the same as the global UnitSystem, no local <code>UnitSystem</code> is printed on the keyword line. If omitted, the DB item dataline is preserved.</li>
 </ul>
 </div>
-<p><img alt="Fig. 8.2-4. Compressive Failure Envelope of EB-FIP MC90" src="../../Command/image/8.2-4.png" /></p>
-<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-4.</span></strong> Compressive Failure Envelope of EB-FIP MC90</p>
+<p>The EC2-family curve is</p>
+<div class="arithmatex">\[
+f_c=f_{cm}\frac{k\eta-\eta^2}{1+(k-2)\eta},
+\qquad
+\eta=\frac{\epsilon_c}{\epsilon_{co}},
+\qquad
+0\le\epsilon_c\le\epsilon_{cu}
+\]</div>
+<p>Hyfeast returns zero beyond <code>ecu</code>.</p>
+<p>For the entered secant modulus <code>Ec</code>, Hyfeast first computes the strain at the 0.4-strength point:</p>
+<div class="arithmatex">\[
+\epsilon_{0.4}=\frac{0.4 f_{cm}}{E_c}, \qquad
+x_{0.4}=\frac{\epsilon_{0.4}}{\epsilon_{co}}
+\]</div>
+<p>The internal initial tangent is then selected so that the EC2-family curve passes through <span class="arithmatex">\((\epsilon_{0.4},0.4f_{cm})\)</span>:</p>
+<div class="arithmatex">\[
+k=\frac{0.4-0.8x_{0.4}+x_{0.4}^2}{0.6x_{0.4}},
+\qquad
+E_{ci}=k\frac{f_{cm}}{\epsilon_{co}}
+\]</div>
+<p>Here <span class="arithmatex">\(k=E_{ci}\epsilon_{co}/f_{cm}\)</span>. When <code>EciCurve</code> is omitted, <span class="arithmatex">\(\epsilon_{0.4}\)</span> is the end of the initial straight segment with slope <code>Ec</code>; when <code>EciCurve</code> is specified, the curve uses the derived <span class="arithmatex">\(E_{ci}\)</span> from the origin.</p>
+<p><img alt="Fig. 8.2-4. EC2-family concrete compressive envelope" src="../../Command/image/8.2-4.svg" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-4.</span></strong> EC2-family concrete compressive envelope</p>
 
-<h5 id="example_5">Example</h5>
-<div class="highlight"><pre><span></span><code>*Function, Type=FIBCEnv, Name=FIBCEnvTest1
- 25., 23500.   #  fcm, Ec, eco
+<h5 id="example_6">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=EC2CEnv, Name=EC2CEnvTest1
+ 25., 23500., 0.002, 0.0035   #  fcm, Ec, eco, ecu
 
-*Function, Type=FIBCEnv, Name=FIBCEnvTest2
- 25., 23500., 0.002     #  fcm, Ec, eco
+*Function, Type=EC2CEnv, Name=EC2CEnvTest2
+ 25., 23500., 0.002, 0.0035, EciCurve     #  fcm, Ec, eco, ecu
+
+*Function, Type=EC2CEnv, Name=EC2C30C
+ EC2-2004-C30, EciCurve
 </code></pre></div>
-<h3 id="function-typemppcenv">*Function, Type=MPPCEnv</h3>
+<h3 id="818-function-typemppcenv">8.1.8 *Function, Type=MPPCEnv</h3>
 <p>Define the compressive envelope of concrete based on the Mander, Priestley, and Park model.</p>
-<div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv Name=name
-  fco, Ec, eco, ecu, fcc, esp
+<div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, Name=name
+  fco, Ec, eco, ecu, fcc, esp[, EciCurve]
+
+*Function, Type=MPPCEnv, Name=name
+  KDS-2026-C&lt;fck&gt;|ACI318-2025-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, EciCurve][, ToDirectForm]
 </code></pre></div>
 <h5 id="first-data-line_5">First data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>fco:</strong> unconfined compressive strength (required)</li>
-<li><strong>Ec:</strong> initial tangent modulus (required)</li>
+<li><strong>Ec:</strong> unconfined secant modulus to <code>0.4*fco</code> (required)</li>
 <li><strong>eco:</strong> strain at peak strength of unconfined concrete (optional, default 0.002)</li>
 <li><strong>ecu:</strong> ultimate strain  (optional, default 2*eco)</li>
 <li><strong>fcc:</strong> confined compressive strength. (optional, default fco)</li>
-<li><strong>esp:</strong> spalling strain  (optional, default ecu). A straight line is assumed if esp is greater than ecu.</li>
+<li><strong>esp:</strong> spalling strain  (optional, default ecu). A straight spalling branch from <code>ecu</code> to <code>esp</code> is used only when <code>esp</code> is greater than <code>ecu</code>; Hyfeast returns zero beyond <code>esp</code>.</li>
+<li><strong>EciCurve:</strong> Optional curve-shape flag. If omitted, the curve is linear from the origin to <code>0.4*fco</code> or <code>0.4*fcc</code> with the derived secant slope; if specified, the Mander-Priestley-Park curve is used from the origin.</li>
+<li><strong>KDS-2026-C&lt;fck&gt;, ACI318-2025-C&lt;fck&gt;, or EC2-2004-C&lt;fck&gt;:</strong> Concrete DB item. It can be used instead of the numeric dataline when keyword <code>UnitSystem</code> is omitted and a global UnitSystem is defined. DB input assumes unconfined concrete. ACI fills <code>fco=f'c</code>, <code>eco=0.002</code>, and <code>ecu=0.003</code>; KDS/EC2 fill <code>fco=fcm</code>, <code>eco=standard value</code>, and <code>ecu=standard value</code>. All standards use the DB-derived secant modulus for <code>Ec</code>, set <code>fcc=fco</code>, and set <code>esp=ecu</code>.</li>
+<li><strong>ToDirectForm:</strong> Optional output option for DB item datalines. It must be the last token. When specified, saved/formatted output writes the resolved numeric dataline in the current global UnitSystem. If that unit system is the same as the global UnitSystem, no local <code>UnitSystem</code> is printed on the keyword line. If omitted, the DB item dataline is preserved.</li>
 </ul>
 </div>
 <p>The Mander-Priestley-Park model can define both the confined and unconfined concrete model.</p>
-<p><img alt="Fig. 8.2-5. Compressive Failure Envelope of Mander, Priestley, Park’s Concrete Model" src="../../Command/image/8.2-5.png" /></p>
-<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-5.</span></strong> Compressive Failure Envelope of Mander, Priestley, Park’s Concrete Model</p>
+<p>For the unconfined input values, Hyfeast interprets <code>Ec</code> as the secant modulus to <code>0.4*fco</code>:</p>
+<div class="arithmatex">\[
+E_{sec,0}=\frac{f_{co}}{\epsilon_{co}}, \qquad
+\epsilon_{0.4,0}=\frac{0.4 f_{co}}{E_c}, \qquad
+x_{0.4,0}=\frac{\epsilon_{0.4,0}}{\epsilon_{co}}
+       =0.4\frac{E_{sec,0}}{E_c}
+\]</div>
+<p>The Mander-Priestley-Park stress ratio is</p>
+<div class="arithmatex">\[
+\frac{f_c}{f_{cc}}=
+\frac{x r}{r-1+x^r},
+\qquad
+r=\frac{E_{ci}}{E_{ci}-E_{sec}}
+\]</div>
+<p>Hyfeast solves the unconfined equation below for <span class="arithmatex">\(r_0\)</span>, then derives the internal initial tangent:</p>
+<div class="arithmatex">\[
+0.4=\frac{x_{0.4,0} r_0}{r_0-1+x_{0.4,0}^{r_0}},
+\qquad
+E_{ci}=\frac{r_0}{r_0-1}E_{sec,0}
+\]</div>
+<p>The direct input must satisfy <span class="arithmatex">\(E_c \ge E_{sec,0}\)</span>. If <code>fcc</code> differs from <code>fco</code>, the same <span class="arithmatex">\(E_{ci}\)</span> is used for the confined curve. Hyfeast computes</p>
+<div class="arithmatex">\[
+\epsilon_{cc}=\epsilon_{co}\left(1+5\left(\frac{f_{cc}}{f_{co}}-1\right)\right),
+\qquad
+E_{sec,c}=\frac{f_{cc}}{\epsilon_{cc}},
+\qquad
+r_c=\frac{E_{ci}}{E_{ci}-E_{sec,c}}
+\]</div>
+<p>and solves <span class="arithmatex">\(0.4=x_{0.4,c}r_c/(r_c-1+x_{0.4,c}^{r_c})\)</span>. The transition strain used by the default linearized branch is then</p>
+<div class="arithmatex">\[
+\epsilon_{0.4,c}=x_{0.4,c}\epsilon_{cc}, \qquad
+E_{c,\mathrm{linear}}=\frac{0.4f_{cc}}{\epsilon_{0.4,c}}
+\]</div>
+<p>When <code>EciCurve</code> is omitted, the curve is linear from the origin to this current 0.4-strength point. When <code>EciCurve</code> is specified, the Mander-Priestley-Park curve uses the derived <span class="arithmatex">\(E_{ci}\)</span> from the origin.</p>
+<p><img alt="Fig. 8.2-5. Mander-Priestley-Park concrete compressive envelope" src="../../Command/image/8.2-5.svg" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-5.</span></strong> Mander-Priestley-Park concrete compressive envelope</p>
 
-<h5 id="example_6">Example</h5>
+<h5 id="example_7">Example</h5>
 <div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, Name=MPPCEnvTest1
  25., 23500.   #   fco, Ec, eco, ecu, fcc, esp
 
 *Function, Type=MPPCEnv, Name=MPPCEnvTest2
- 25., 23500., 0.002, 0.004, 40., 0.006    #   fco, Ec, eco, ecu, fcc, esp
+ 25., 23500., 0.002, 0.004, 40., 0.006, EciCurve    #   fco, Ec, eco, ecu, fcc, esp
 </code></pre></div>
-<h3 id="function-typemppcie">*Function, Type=MPPCIE</h3>
+<h3 id="819-function-typemppcie">8.1.9 *Function, Type=MPPCIE</h3>
 <p>Define the inelastic strain of concrete based on the Mander, Priestley, and Park model.</p>
-<div class="highlight"><pre><span></span><code>*Function, Type=MPPCIE, UnitSystem=unitSystem, Name=cover
+<div class="highlight"><pre><span></span><code>*Function, Type=MPPCIE, Name=cover
   compressiveEnv, epeak
 </code></pre></div>
 <h5 id="first-data-line_6">First data line</h5>
@@ -3247,47 +4504,140 @@ E_c = \frac{df}{d\epsilon_c} = f_{co} (1-\frac{\epsilon_c} {\epsilon_{co}})^{n-1
 <li><strong>epeak:</strong> strain at peak concrete strength (optional, default 0.002). If the given compressiveEnv is a type of MPPCEnv, Hognestad, and CEBFIB, epeak is neglected (automatically computed).</li>
 </ul>
 </div>
+<p><code>MPPCIE</code> is a dimensionless strain function that computes inelastic strain from the referenced compressive envelope. Therefore <code>UnitSystem</code> is not allowed on the keyword line and is treated as an input error when specified.</p>
 <p>Although this function defines the inelastic strain by the Mander-Priestley-Park model, it can be used with the arbitrary compressive envelope function</p>
-<h5 id="example_7">Example</h5>
+<h5 id="example_8">Example</h5>
 <div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, Name=concC
  25., 23500.
 
 *Function, Type=MPPCIE, Name=concCI
  concC
 </code></pre></div>
-<h3 id="function-typemaekawatenv">*Function, Type=MaekawaTEnv</h3>
+<h3 id="8110-function-typemaekawatenv">8.1.10 *Function, Type=MaekawaTEnv</h3>
 <p>Maekawa concrete tensile envelope</p>
 <div class="highlight"><pre><span></span><code>*Function, Type=MaekawaTEnv, UnitSystem=unitSystem, Name=coverTension
-  compressiveEnv,ft, c
+  Ec, ft[, c]
+
+*Function, Type=MaekawaTEnv, Name=coverTension
+  KDS-2026-C&lt;fck&gt;|ACI318-2025-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, c][, ToDirectForm]
 </code></pre></div>
 <h5 id="first-data-line_7">First data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>compressiveEnv:</strong> Compressive envelope function(required)</li>
-<li><strong>ft:</strong> tensile strength(required)</li>
+<li><strong>Ec:</strong> secant elastic modulus (required for direct numeric input)</li>
+<li><strong>ft:</strong> tensile strength (required for direct numeric input)</li>
 <li><strong>c:</strong> parameter for Maekawa model (optional, default 0.4)</li>
+<li><strong>KDS-2026-C&lt;fck&gt;, ACI318-2025-C&lt;fck&gt;, or EC2-2004-C&lt;fck&gt;:</strong> Concrete DB item. It fills direct numeric <code>Ec</code> with the DB-derived secant modulus when keyword <code>UnitSystem</code> is omitted and a global UnitSystem is defined. It fills <code>ft</code> with <span class="arithmatex">\(7.5\sqrt{f'_c}\)</span> for ACI items and <span class="arithmatex">\(f_{ctm}\)</span> for KDS/EC2 items.</li>
+<li><strong>ToDirectForm:</strong> Optional output option for DB item datalines. It must be the last token. When specified, saved/formatted output writes the resolved numeric dataline in the current global UnitSystem. If that unit system is the same as the global UnitSystem, no local <code>UnitSystem</code> is printed on the keyword line. If omitted, the DB item dataline is preserved.</li>
 </ul>
 </div>
 <p>Maekawa et al. (2002) proposed the following tension softening curve for both normal concrete and reinforced concrete considering tensile hardening, using the same equation:</p>
 <div class="arithmatex">\[
-\small
 \sigma = f_t \left(\frac{\epsilon_{tu}} {\epsilon_t} \right)^c
 \]</div>
 <p>Here, <span class="arithmatex">\(c\)</span> is the factor that determines the shape of the curve. For normal concrete, it should be determined by the following equation based on fracture energy and the characteristic length of the element:</p>
 <div class="arithmatex">\[
-\small
 \int \sigma_t d \epsilon_t = \int f_t \left(\frac{\epsilon_{tu}} {\epsilon_t} \right)^c d \epsilon_t = \frac {G_F}{l_r}
 \]</div>
-<p>In reinforced concrete, parameter analysis suggests a value of 0.4 for deformed bars and 0.2 for welded wire mesh. Figure 8.2-5 shows a representative result.</p>
-<p><img alt="Fig. 8.2-6. Tensile Failure Envelope of Maekawa model" src="../../Command/image/8.2-6.png" /></p>
-<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-6.</span></strong> Tensile Failure Envelope of Maekawa model</p>
+<p>In reinforced concrete, parameter analysis suggests a value of 0.4 for deformed bars and 0.2 for welded wire mesh. Figure 8.2-6 shows a representative result.</p>
+<p><img alt="Fig. 8.2-6. Maekawa concrete tensile envelope" src="../../Command/image/8.2-6.png" /></p>
+<p style="text-align: center;"><strong><span style="color: blue;">Fig. 8.2-6.</span></strong> Maekawa concrete tensile envelope</p>
 
-<h5 id="example_8">Example</h5>
+<h5 id="example_9">Example</h5>
 <div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, Name=concC
  25, 23500.
 
 *Function, Type=MaekawaTEnv, Name=concT
- concC, 3
+ 23500, 3
+
+*Function, Type=EC2CEnv, Name=EC2C30C
+ EC2-2004-C30
+
+*Function, Type=MaekawaTEnv, Name=KDSC30T
+ KDS-2026-C30
+</code></pre></div>
+<h3 id="8111-function-typeconcretetime">8.1.11 *Function, Type=ConcreteTime</h3>
+<p>Concrete time-dependent function set</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=ConcreteTime, Name=name
+ User, Aging=fcAge, ftAge, EcAge, Creep=creepDuration, creepLoadAge, Shrinkage=shrinkage
+
+*Function, Type=ConcreteTime, Name=name
+ EC2-2004-C&lt;fck&gt;, RH, h0, ts, cementClass
+
+*Function, Type=ConcreteTime, Name=name
+ KDS-2026-C&lt;fck&gt;, RH, h0, ts, cementType, curingType
+
+*Function, Type=ConcreteTime, Name=name
+ ACI209-1992-C&lt;fc&gt;, RH, V/S, ts, cementType, curingType
+
+*Function, Type=ConcreteTime, Name=name
+ ACI209-1992-C&lt;fc&gt;, RH, V/S, ts, cementType, curingType, creepUltimateScale, shrinkageUltimateScale
+
+*Function, Type=ConcreteTime, Name=name
+ ACI209-1992-C&lt;fc&gt;, RH, V/S, ts, cementType, curingType, moistCuringDuration, slump, fineAggregatePercent, cementContent, airContent
+</code></pre></div>
+<h5 id="first-data-line_8">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>User:</strong> Uses existing functions as the user-defined time-dependent function set. The named-group form accepts one or more of <code>Aging</code>, <code>Creep</code>, and <code>Shrinkage</code>; omitted groups use neutral defaults.</li>
+<li><strong>Aging=fcAge, ftAge, EcAge:</strong> Function names for the compressive-strength, tensile-strength, and elastic-modulus age factors. The three functions must be specified together. They are evaluated with <span class="arithmatex">\(x=t\)</span>. If omitted, the three age factors are <code>1</code>.</li>
+<li><strong>Creep=creepDuration, creepLoadAge:</strong> Function names for the creep duration factor and creep loading-age factor. <code>creepDuration</code> is evaluated with <span class="arithmatex">\(x=t-\tau\)</span>, and <code>creepLoadAge</code> is evaluated with <span class="arithmatex">\(x=\tau\)</span>. The two functions must be specified together. If omitted, the creep contribution is <code>0</code>.</li>
+<li><strong>Shrinkage=shrinkage:</strong> Function name for the free shrinkage strain. It is evaluated with <span class="arithmatex">\(x=t\)</span>. For the User input function value, <code>+</code> means shrinkage and <code>-</code> means expansion; the sign is reversed when the value is used in the material. If omitted, the shrinkage contribution is <code>0</code>.</li>
+<li><strong>EC2-2004-C&lt;fck&gt;:</strong> EC2-2004 concrete time-dependent function. <code>&lt;fck&gt;</code> is in MPa. <code>cementClass</code> is <code>S</code>, <code>N</code>, or <code>R</code>.</li>
+<li><strong>KDS-2026-C&lt;fck&gt;:</strong> KDS-2026 concrete time-dependent function. <code>&lt;fck&gt;</code> is in MPa. <code>cementType</code> is <code>Type1</code>, <code>Type2</code>, <code>Type3</code>, or <code>Type5</code>; <code>curingType</code> is <code>Moist</code> or <code>Steam</code>.</li>
+<li><strong>ACI209-1992-C&lt;fc&gt;:</strong> ACI 209R-92 concrete time-dependent function. <code>&lt;fc&gt;</code> is <span class="arithmatex">\(f'_c\)</span> in psi. <code>cementType</code> is <code>TypeI</code> or <code>TypeIII</code>; <code>curingType</code> is <code>Moist</code> or <code>Steam</code>.</li>
+<li><strong>RH:</strong> Relative humidity in percent.</li>
+<li><strong>h0:</strong> EC2/KDS notional member size in mm.</li>
+<li><strong>V/S:</strong> ACI 209 volume-to-surface ratio in inch. It is used directly in the ACI 209 correction equations.</li>
+<li><strong>ts:</strong> Concrete age, in days, at the beginning of drying shrinkage.</li>
+<li><strong>creepUltimateScale, shrinkageUltimateScale:</strong> Optional ACI 209 additional scale factors. When these two tokens are omitted, both factors are <code>1.0</code>.</li>
+<li><strong>moistCuringDuration, slump, fineAggregatePercent, cementContent, airContent:</strong> Detailed ACI 209 correction parameters. <code>moistCuringDuration</code> is in days, <code>slump</code> is in inch, <code>fineAggregatePercent</code> and <code>airContent</code> are in percent, and <code>cementContent</code> is in <span class="arithmatex">\(\mathrm{lb/yd^3}\)</span>. <code>slump</code> and <code>cementContent</code> use fixed units and are not converted from the global unit system.</li>
+</ul>
+</div>
+<p><code>ConcreteTime</code> stores the six function series and evaluates EC2/KDS/ACI formulas according to the concrete DB common rules and standard-specific concrete DB descriptions above. It also provides an internal default first retardation time for material-side Kelvin-chain fitting. Built-in EC2/KDS <code>ConcreteTime</code> functions provide <code>1</code> day, while built-in ACI 209 and <code>User</code> <code>ConcreteTime</code> functions provide <code>5</code> days. If a different first retardation time is needed, specify <code>lambda1</code> in the material <code>LongTerm, Concrete</code> dataline that uses this function.</p>
+<p>In both standard EC2/KDS/ACI forms and the <code>User</code> form, the time variables <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(\tau\)</span>, <span class="arithmatex">\(t-\tau\)</span>, and <span class="arithmatex">\(t_s\)</span> are evaluated in days, regardless of the time unit specified by <code>*Environment, Type=UnitSystem</code>. A Function referenced by the <code>User</code> form must not define keyword-line <code>UnitSystem=...</code>. This section lists only the input syntax and examples.</p>
+<h5 id="example_10">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=MultiLinear, Name=fcAge
+ 0, 0
+ 28, 1
+ 365, 1.15
+
+*Function, Type=MultiLinear, Name=ftAge
+ 0, 0
+ 28, 1
+ 365, 1.1
+
+*Function, Type=MultiLinear, Name=EcAge
+ 0, 0
+ 28, 1
+ 365, 1.05
+
+*Function, Type=MultiLinear, Name=creepDuration
+ 0, 0
+ 30, 0.4
+ 365, 1
+
+*Function, Type=MultiLinear, Name=creepLoadAge
+ 1, 8.0e-5
+ 28, 3.3e-5
+ 365, 2.0e-5
+
+*Function, Type=MultiLinear, Name=shrinkage
+ 0, 0
+ 7, 0
+ 365, 450e-6
+
+*Function, Type=ConcreteTime, Name=timeUser
+ User, Aging=fcAge, ftAge, EcAge, Creep=creepDuration, creepLoadAge, Shrinkage=shrinkage
+
+*Function, Type=ConcreteTime, Name=timeEC2
+ EC2-2004-C30, 70, 200, 7, N
+
+*Function, Type=ConcreteTime, Name=timeKDS
+ KDS-2026-C30, 70, 200, 7, Type1, Moist
+
+*Function, Type=ConcreteTime, Name=timeACI
+ ACI209-1992-C4000, 70, 4, 7, TypeI, Moist, 1.0, 1.0
 </code></pre></div>
 
 
@@ -3308,6 +4658,12 @@ E_c = \frac{df}{d\epsilon_c} = f_{co} (1-\frac{\epsilon_c} {\epsilon_{co}})^{n-1
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -3335,16 +4691,14 @@ E_c = \frac{df}{d\epsilon_c} = f_{co} (1-\frac{\epsilon_c} {\epsilon_{co}})^{n-1
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
         <script src="../../javascripts/extra.js"></script>
       

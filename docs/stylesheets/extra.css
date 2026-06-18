@@ -1,15 +1,52 @@
 
-/* Global font size for all content */
+/* Global font and size for all content. Segoe UI matches the hfStudio
+   app's default UI font; on Windows the OS automatically falls back to
+   Malgun Gothic for Hangul. The remaining stack covers non-Windows
+   readers (macOS / Linux). Inline code keeps `font-family: inherit;`
+   below, so prose and inline tokens render in the same family. */
 .md-typeset {
-    font-size: 0.72rem;
+    --hy-doc-accent: var(--md-primary-fg-color, #4051b5);
+    --hy-doc-accent-muted: #315d93;
+    --hy-doc-accent-text: #2f4f7f;
+    --hy-doc-block-bg: var(--md-code-bg-color, #f5f5f5);
+    --hy-doc-block-border: var(--md-default-fg-color--lightest, #e5e7eb);
+    --hy-doc-block-radius: 6px;
+    --hy-doc-block-margin: 0.525rem 0 0.63rem;
+    --hy-doc-block-font-size: 0.7rem;
+    --hy-doc-block-line-height: 1.58;
+    --hy-doc-block-font-weight: 500;
+    --hy-doc-block-color: var(--md-code-fg-color, #334155);
+    font-family: "Segoe UI", "Malgun Gothic", -apple-system, BlinkMacSystemFont, system-ui, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.7rem;
     line-height: 1.62;
 }
 
-/* Hide H1 titles completely (used if page titles are handled by nav) */
-.md-typeset h1 {
-    display: none;
-    margin: -0.6em;
-    padding: -0.6em;
+/* Slightly tighten paragraph gaps without changing headings, lists, or
+   code block rhythm. */
+.md-typeset p {
+    margin: 0.6em 0;
+}
+
+/* Tighten the gap between the header bar and the body's first content
+   row, and align the side nav title with the body's first line.
+   Material defaults: .md-main__inner margin-top 1.5rem, .md-sidebar
+   padding-top 1.2rem, .md-content__inner padding-top 0.6rem — which
+   leaves the side nav 0.6rem lower than the body. We match the
+   sidebar's top padding to the body's so they share one alignment
+   line, and trim the main margin so the header-to-body gap drops
+   from ~2.1rem to 1.2rem. */
+.md-main__inner {
+    margin-top: 0.6rem;
+}
+.md-sidebar {
+    padding-top: 0.6rem;
+    /* Make sticky engage immediately. The sidebar's natural starting Y
+       equals header (2.4rem) + .md-main__inner margin-top (0.6rem) =
+       3.0rem; setting `top` to that same value means the sidebar is
+       already at its sticky-locked position on first paint, so it
+       does not visibly scroll with the body before locking. If the
+       main margin above changes, this `top` must change with it. */
+    top: 3rem;
 }
 
 /* Inline code style: `code` outside of <pre> */
@@ -35,6 +72,14 @@
     color: #1b4a90;
 }
 
+/* Markdown emphasis is mostly used for inline field labels in command
+   docs. Keep it distinct from block subheadings by using a quieter
+   color and moderate weight. */
+.md-typeset strong {
+    color: var(--hy-doc-accent-text);
+    font-weight: 600;
+}
+
 /* Inline code inside headings should follow the heading tone */
 .md-typeset h1 code,
 .md-typeset h2 code,
@@ -49,28 +94,47 @@
     border-color: rgba(148, 163, 184, 0.35);
 }
 
+/* H1 page title style */
+.md-typeset h1 {
+    color: var(--hy-doc-accent);
+    font-size: 1.62em;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.25;
+    margin: 0 0 1.05em;
+}
+
 /* H2 heading style */
 .md-typeset h2 {
-    color: var(--md-primary-fg-color, #4051b5);
+    color: var(--hy-doc-accent);
     font-size: 1.24em;
     font-weight: 700;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
     line-height: 1.35;
-    margin: 1.35em 0 0.8em;
-    padding-bottom: 0.22em;
-    border-bottom: 1px solid var(--md-default-fg-color--lightest, #d1d5db);
+    margin: 1.45em 0 0.75em;
 }
 
 /* H3 heading style */
 .md-typeset h3 {
-    color: var(--md-default-fg-color, #1f2937);
-    font-size: 1.04em;
+    color: var(--hy-doc-accent-muted);
+    font-size: 1.08em;
     font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.4;
-    margin: 1.2em 0 0.7em;
-    padding-left: 0.7em;
-    border-left: 3px solid var(--md-primary-fg-color, #4051b5);
+    letter-spacing: 0;
+    line-height: 1.35;
+    margin: 1.2em 0 0.65em;
+}
+
+/* Normalize legacy HTML figure captions that carry inline blue spans. */
+.md-typeset figcaption,
+.md-typeset p:has(> strong > span[style*="color: blue"]),
+.md-typeset p:has(> strong > span[style*="color:blue"]) {
+    color: var(--hy-doc-accent-text);
+}
+
+.md-typeset figcaption strong,
+.md-typeset p strong span[style*="color: blue"],
+.md-typeset p strong span[style*="color:blue"] {
+    color: var(--hy-doc-accent-muted) !important;
 }
 
 /* H4 and H5 heading styles */
@@ -87,7 +151,12 @@
 }
 
 .md-typeset h5 {
-    font-size: 0.88em;
+    color: #315d93;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 1.0em 0 0.28em;
+    padding: 0;
+    text-transform: none;
 }
 
 /* Admonition and details spacing */
@@ -96,12 +165,76 @@
     margin: 0.2em 0;
 }
 
+/* Title-less note admonitions are used as field-spec blocks in command
+   pages. Keep their structure, but make them quieter than real notes. */
+.md-typeset .admonition.note:not(:has(> .admonition-title)),
+.md-typeset .admonition.note:has(> .admonition-title:empty) {
+    background-color: var(--hy-doc-block-bg);
+    border: 1px solid var(--hy-doc-block-border);
+    border-radius: var(--hy-doc-block-radius);
+    box-shadow: none;
+    color: var(--hy-doc-block-color);
+    font-size: var(--hy-doc-block-font-size);
+    font-weight: var(--hy-doc-block-font-weight);
+    line-height: var(--hy-doc-block-line-height);
+    margin: var(--hy-doc-block-margin);
+    padding: 0.38em 0.68em;
+}
+
+.md-typeset .admonition.note:not(:has(> .admonition-title)) p,
+.md-typeset .admonition.note:not(:has(> .admonition-title)) ul,
+.md-typeset .admonition.note:not(:has(> .admonition-title)) ol,
+.md-typeset .admonition.note:not(:has(> .admonition-title)) li,
+.md-typeset .admonition.note:has(> .admonition-title:empty) p,
+.md-typeset .admonition.note:has(> .admonition-title:empty) ul,
+.md-typeset .admonition.note:has(> .admonition-title:empty) ol,
+.md-typeset .admonition.note:has(> .admonition-title:empty) li {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.md-typeset .admonition.note:has(> .admonition-title:empty) > .admonition-title {
+    display: none;
+}
+
+.md-typeset .admonition.note:not(:has(> .admonition-title)) > :first-child,
+.md-typeset .admonition.note:has(> .admonition-title:empty) > :first-child {
+    margin-top: 0;
+}
+
+.md-typeset .admonition.note:not(:has(> .admonition-title)) > :last-child,
+.md-typeset .admonition.note:has(> .admonition-title:empty) > :last-child {
+    margin-bottom: 0;
+}
+
 /* Code block style (fenced code or indented) */
+.md-typeset .highlight {
+    color: var(--hy-doc-block-color);
+    font-size: var(--hy-doc-block-font-size);
+    font-weight: var(--hy-doc-block-font-weight);
+    line-height: var(--hy-doc-block-line-height);
+}
+
 .md-typeset pre {
-    background-color: var(--md-code-bg-color, #f3f4f6);
-    border: 1px solid var(--md-default-fg-color--lightest, #e5e7eb);
-    border-radius: 8px;
-    font-family: "Fira Code", monospace;
+    background-color: var(--hy-doc-block-bg);
+    border: 1px solid var(--hy-doc-block-border);
+    border-radius: var(--hy-doc-block-radius);
+    color: var(--hy-doc-block-color);
+    font-family: "Cascadia Mono", "Consolas", "Fira Code", "Courier New", monospace;
+    font-size: var(--hy-doc-block-font-size);
+    font-weight: var(--hy-doc-block-font-weight);
+    line-height: var(--hy-doc-block-line-height);
+    margin: var(--hy-doc-block-margin);
+}
+
+.md-typeset pre code,
+.md-typeset .highlight pre,
+.md-typeset .highlight code {
+    font-family: "Cascadia Mono", "Consolas", "Fira Code", "Courier New", monospace;
+    font-size: 1em;
+    font-weight: inherit;
+    line-height: inherit;
+    font-variant-ligatures: none;
 }
 
 /* Font size for left sidebar navigation */
@@ -114,16 +247,82 @@
     font-size: 0.7rem;
 }
 
-/* Table container style (Material wraps table in .md-typeset__table) */
-.md-typeset__table {
-    width: 100%;
+/* Integrated TOC: keep the current page's heading tree collapsed by
+   default inside the left navigation. The page row still exposes the
+   Material toggle, so readers can expand the heading tree on demand. */
+.md-nav--integrated .md-nav__item--active > .md-nav__toggle[id="__toc"]:not(:checked) ~ .md-nav--secondary {
+    display: none;
+}
+
+.md-nav--integrated .md-nav__item--active > .md-nav__toggle[id="__toc"]:checked ~ .md-nav--secondary {
+    display: block;
+}
+
+.md-nav--integrated .md-nav__item--active > .md-nav__toggle[id="__toc"] ~ label.md-nav__link {
+    cursor: pointer;
+    display: flex;
+    pointer-events: auto;
+}
+
+.md-nav--integrated .md-nav__item--active > .md-nav__toggle[id="__toc"] ~ label.md-nav__link + .md-nav__link {
+    display: none;
+}
+
+/* Right-side TOC: hide entirely on pages that have no H2-and-below
+   headings (otherwise the "목차" label sits over an empty column).
+   Width itself stays at the Material default 12.1rem. */
+.md-sidebar--secondary:not(:has(.md-nav__link)) {
+    display: none;
+}
+
+/* Table wrapper. Material wraps tables in .md-typeset__table at
+   runtime and pairs `.md-typeset__scrollwrap { margin: 1em -.8rem }`
+   with `.md-typeset__table { padding: 0 .8rem }` so the wrapper
+   extends past the text on both sides while the inner table sits
+   back at the text width. We strip both the wrapper padding and the
+   negative horizontal margin so the wrapper aligns exactly with the
+   surrounding paragraph text edges; the inner table then takes the
+   full text-column width. */
+html .md-typeset__scrollwrap,
+html .md-typeset__table {
+    display: block !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
     overflow-x: auto;
 }
 
-/* Table actual content (fixed layout, full width) */
-.md-typeset__scrollwrap table {
+/* Inner table:
+   - display: table is required so the markdown extension's <col
+     width="N%"> is interpreted as a fraction of the table width;
+     material defaults the bare table to display: inline-block, which
+     makes <col> percentages compute against the content width and
+     leaves narrow tables collapsed on the left
+   - width: 100% lets text-heavy cells wrap inside the column width;
+     truly wide tables (many short numeric columns whose intrinsic
+     min-content exceeds the column) still grow past 100% on their
+     own and trigger horizontal scroll on the wrapper above
+   We deliberately do NOT set `min-width: max-content` here — that
+   would force every long text cell to render on a single line and
+   scroll instead of wrap, which is the wrong default for textual
+   tables in the GUI Guide and similar pages. */
+html .md-typeset table:not([class]),
+html .md-typeset__scrollwrap table,
+html .md-typeset__table table {
+    display: table !important;
     width: 100% !important;
-    table-layout: fixed !important;
+}
+
+/* Tighten the gap between a caption-like paragraph and the table that
+   immediately follows it. Common pattern: <p>Table X.Y caption</p>
+   right above the table body. Covers both the runtime-wrapped form
+   (<p> + .md-typeset__scrollwrap/.md-typeset__table) and the bare
+   form (<p> + table). */
+html .md-typeset p + .md-typeset__scrollwrap,
+html .md-typeset p + .md-typeset__table,
+html .md-typeset p + table {
+    margin-top: -0.6em !important;
 }
 
 /* Table cell styles */
@@ -143,11 +342,24 @@
     margin: 0 !important;
 }
 
-/* Table header background */
+/* Table header: muted background distinguishes the header row from
+   body rows. No thicker bottom border — the regular 1px cell border
+   takes over so the header line matches every other horizontal line. */
 .md-typeset table th {
-    background-color: var(--md-primary-fg-color, #4051b5) !important;
-    color: var(--md-primary-bg-color, #ffffff) !important;
-    font-weight: bold !important;
+    background-color: #f1f5f9 !important;
+    color: var(--md-default-fg-color, #1f2937) !important;
+    font-weight: 600 !important;
+}
+
+/* Math output (MathJax via pymdownx.arithmatex): render math at the
+   LaTeX `\small` proportion (~0.9-0.91x body, depending on body
+   size) so equations sit just slightly smaller than surrounding
+   prose. em-based, so it tracks body font-size automatically.
+   Single point of control — replaces the per-occurrence \small
+   that used to be sprinkled into every math block. */
+.md-typeset .arithmatex,
+.md-typeset mjx-container {
+    font-size: 0.92em;
 }
 
 /* Images: responsive and centered */

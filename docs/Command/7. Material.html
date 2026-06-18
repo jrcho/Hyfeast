@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
     
     
       
-        <title>7. Material - Hyfeast-v1.0.0 매뉴얼</title>
+        <title>7. Material - Hyfeast-v1.0.0-beta.3</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
       
       
 
@@ -32,20 +32,16 @@
     
     
       
-    
-    
+        <script src="../javascripts/iframe-worker-shim.js"></script>
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+    
+    
       
     
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#material" class="md-skip">
+        <a href="#71-material" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -80,21 +76,21 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="../index.html" title="Hyfeast-v1.0.0 매뉴얼" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 매뉴얼" data-md-component="logo">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.3" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Hyfeast-v1.0.0 매뉴얼
+            Hyfeast-v1.0.0-beta.3
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -108,14 +104,14 @@
     </div>
     
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
       <div class="md-header__option">
   <div class="md-select">
     
     <button class="md-header__button md-icon" aria-label="언어설정">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
@@ -140,7 +136,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -149,17 +145,19 @@
       <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="검색">
         
         <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -199,15 +197,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="Hyfeast-v1.0.0 매뉴얼" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 매뉴얼" data-md-component="logo">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.3" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    Hyfeast-v1.0.0 매뉴얼
+    Hyfeast-v1.0.0-beta.3
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -223,7 +223,7 @@
         
   
   <span class="md-ellipsis">
-    Home
+    Overview
   </span>
   
 
@@ -253,7 +253,7 @@
             
   
   <span class="md-ellipsis">
-    Tutorial
+    FE Tools
   </span>
   
 
@@ -263,7 +263,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Tutorial
+            FE Tools
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -274,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/1.%20Overview.html" class="md-nav__link">
+      <a href="../Finite%20Element%20Analysis/1.%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -294,12 +294,47 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+      <a href="../hfStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Beam Cantilever
+    2.1 Overview
   </span>
   
 
@@ -316,11 +351,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+      <a href="../hfStudio/2.2%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Solid Cantilever
+    2.2 File
   </span>
   
 
@@ -337,11 +372,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+      <a href="../hfStudio/2.3%20View%20and%20Display.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4. Beam vs Solid
+    2.3 View and Display
   </span>
   
 
@@ -358,11 +393,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/5.%20hfVisualizer%20Basics.html" class="md-nav__link">
+      <a href="../hfStudio/2.4%20Selection%20and%20Visibility.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    5. hfVisualizer Basics
+    2.4 Selection and Visibility
   </span>
   
 
@@ -379,11 +414,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+      <a href="../hfStudio/2.5%20Preprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6. Selection and Visibility
+    2.5 Preprocessing
   </span>
   
 
@@ -400,11 +435,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+      <a href="../hfStudio/2.6%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7. Postprocessing with Remote Control
+    2.6 Analysis
   </span>
   
 
@@ -421,11 +456,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+      <a href="../hfStudio/2.7%20Postprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8. Scripts and Automation
+    2.7 Postprocessing
   </span>
   
 
@@ -442,15 +477,108 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+      <a href="../hfStudio/2.8%20Workspace%20Panels.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9. Portal Frame
+    2.8 Workspace Panels
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.1%20Running.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Running
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.2%20Files%20and%20Results.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Files and Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -486,7 +614,7 @@
             
   
   <span class="md-ellipsis">
-    Command
+    FE Commands
   </span>
   
 
@@ -496,7 +624,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Command
+            FE Commands
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -511,7 +639,7 @@
         
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Introduction
   </span>
   
 
@@ -584,7 +712,7 @@
             
   
   <span class="md-ellipsis">
-    4. Element libraries
+    4. Element Library
   </span>
   
 
@@ -594,7 +722,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            4. Element libraries
+            4. Element Library
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -609,7 +737,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    4.1 Overview
   </span>
   
 
@@ -630,7 +758,7 @@
         
   
   <span class="md-ellipsis">
-    Beam
+    4.2 Beam
   </span>
   
 
@@ -651,7 +779,7 @@
         
   
   <span class="md-ellipsis">
-    Truss
+    4.3 Truss
   </span>
   
 
@@ -672,7 +800,7 @@
         
   
   <span class="md-ellipsis">
-    Cable
+    4.4 Cable
   </span>
   
 
@@ -693,7 +821,7 @@
         
   
   <span class="md-ellipsis">
-    Shell
+    4.5 Shell
   </span>
   
 
@@ -714,7 +842,7 @@
         
   
   <span class="md-ellipsis">
-    Solid
+    4.6 Solid
   </span>
   
 
@@ -735,7 +863,7 @@
         
   
   <span class="md-ellipsis">
-    AcousticSolid
+    4.7 AcousticSolid
   </span>
   
 
@@ -756,7 +884,7 @@
         
   
   <span class="md-ellipsis">
-    SeepageSolid
+    4.8 SeepageSolid
   </span>
   
 
@@ -777,7 +905,7 @@
         
   
   <span class="md-ellipsis">
-    MCK
+    4.9 MCK
   </span>
   
 
@@ -798,7 +926,7 @@
         
   
   <span class="md-ellipsis">
-    MovingSpring
+    4.10 MovingSpring
   </span>
   
 
@@ -819,7 +947,7 @@
         
   
   <span class="md-ellipsis">
-    Interface
+    4.11 Interface
   </span>
   
 
@@ -840,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    EmbeddedLine
+    4.12 EmbeddedLine
   </span>
   
 
@@ -949,118 +1077,127 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#material" class="md-nav__link">
+  <a href="#71-material" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material
+      7.1 *Material
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="*Material">
+    <nav class="md-nav" aria-label="7.1 *Material">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#material-typeisoelasticity" class="md-nav__link">
+  <a href="#711-material-typeisoelasticity" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=IsoElasticity
+      7.1.1 *Material, Type=IsoElasticity
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typeorthoelasticity" class="md-nav__link">
+  <a href="#712-material-typeorthoelasticity" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=OrthoElasticity
+      7.1.2 *Material, Type=OrthoElasticity
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typevonmises" class="md-nav__link">
+  <a href="#713-material-typevonmises" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=vonMises
+      7.1.3 *Material, Type=vonMises
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typetresca" class="md-nav__link">
+  <a href="#714-material-typetresca" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=Tresca
+      7.1.4 *Material, Type=Tresca
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typemohrcoulomb" class="md-nav__link">
+  <a href="#715-material-typemohrcoulomb" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=MohrCoulomb
+      7.1.5 *Material, Type=MohrCoulomb
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typedruckerprager" class="md-nav__link">
+  <a href="#716-material-typedruckerprager" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=DruckerPrager
+      7.1.6 *Material, Type=DruckerPrager
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typeugeneric" class="md-nav__link">
+  <a href="#717-material-typeconcretedamage-reserved" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=UGeneric
+      7.1.7 *Material, Type=ConcreteDamage [Reserved]
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typeusteel" class="md-nav__link">
+  <a href="#718-material-typeugeneric" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=USteel
+      7.1.8 *Material, Type=UGeneric
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typegaphook" class="md-nav__link">
+  <a href="#719-material-typeusteel" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=GapHook
+      7.1.9 *Material, Type=USteel
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typecohesive" class="md-nav__link">
+  <a href="#7110-material-typegaphook" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material, Type=Cohesive
+      7.1.10 *Material, Type=GapHook
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typeacoustic" class="md-nav__link">
+  <a href="#7111-material-typecohesive" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=Acoustic
+      7.1.11 *Material, Type=Cohesive
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typeseepage" class="md-nav__link">
+  <a href="#7112-material-typeacoustic" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=Seepage
+      7.1.12 *Material, Type=Acoustic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7113-material-typeseepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.13 *Material, Type=Seepage
     </span>
   </a>
   
@@ -1154,7 +1291,7 @@
         
   
   <span class="md-ellipsis">
-    11. Coordinate system
+    11. Coordinate System
   </span>
   
 
@@ -1217,7 +1354,7 @@
         
   
   <span class="md-ellipsis">
-    14. Step result
+    14. Step Result
   </span>
   
 
@@ -1238,7 +1375,7 @@
         
   
   <span class="md-ellipsis">
-    15. Modelling convenience
+    15. Modelling Convenience
   </span>
   
 
@@ -1280,7 +1417,7 @@
         
   
   <span class="md-ellipsis">
-    17. Special step
+    17. Special Step
   </span>
   
 
@@ -1301,7 +1438,7 @@
         
   
   <span class="md-ellipsis">
-    18. HDB file structure
+    18. HDB File Structure
   </span>
   
 
@@ -1339,7 +1476,7 @@
             
   
   <span class="md-ellipsis">
-    Section
+    Section Tools/2D Modeling
   </span>
   
 
@@ -1349,7 +1486,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Section
+            Section Tools/2D Modeling
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1380,12 +1517,47 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../Section/2.%20Theory.html" class="md-nav__link">
+      <a href="../Section/hf2DStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Theory
+    2.1 Overview
   </span>
   
 
@@ -1402,15 +1574,213 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/3.%20Commands.html" class="md-nav__link">
+      <a href="../Section/hf2DStudio/2.2%20Window%20and%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Command
+    2.2 Window and File
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.3%20View%20and%20Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.4%20Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.5%20Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.6%20Operation%20and%20Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.7%20Mesh%20Generation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Mesh Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfSectAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfSectAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.1%20Help.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Help
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.2%20Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1427,7 +1797,28 @@
         
   
   <span class="md-ellipsis">
-    4. Example
+    4. Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/5.%20Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Theory
   </span>
   
 
@@ -1486,11 +1877,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/1.%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/1.%20Basics.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Basics
   </span>
   
 
@@ -1521,7 +1912,7 @@
             
   
   <span class="md-ellipsis">
-    2. hfVisualizer
+    2. hfStudio
   </span>
   
 
@@ -1531,7 +1922,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            2. hfVisualizer
+            2. hfStudio
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1542,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.1%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1563,7 +1954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.2%20Remote-only.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.2%20Remote-only.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1584,7 +1975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.3%20View.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.3%20View.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1605,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.4%20File.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.4%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1626,7 +2017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.5%20Display.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.5%20Display.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1647,7 +2038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.6%20Selection.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.6%20Selection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1703,7 +2094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.1%20Environment.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.1%20Environment.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1724,7 +2115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.2%20CoordinateSystem.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.2%20CoordinateSystem.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1745,7 +2136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.3%20Construction.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.3%20Construction.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1801,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.4.1%20Node.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.4.1%20Node.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1822,7 +2213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.4.2%20NSet.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.4.2%20NSet.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1886,7 +2277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.5.1%20Element.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.5.1%20Element.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1907,7 +2298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.5.2%20Elset.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.5.2%20Elset.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1936,7 +2327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.6%20Load.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.6%20Load.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1957,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.7%20Surface.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.7%20Surface.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1978,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.8%20Sensor.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.8%20Sensor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1999,7 +2390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.9%20NProp.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.9%20NProp.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2020,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.10%20Material.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.10%20Material.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2041,7 +2432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.11%20Section.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.11%20Section.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2062,7 +2453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.12%20Function.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.12%20Function.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2083,7 +2474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.13%20Step.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.13%20Step.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2104,7 +2495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.14%20History.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.14%20History.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2125,11 +2516,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.15%20Distribution.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.15%20Distribution.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.7.15 Distribution
+    2.7.15 Assign
   </span>
   
 
@@ -2146,7 +2537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.16%20Model.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.16%20Model.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2167,7 +2558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.17%20Renumber.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.17%20Renumber.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2188,7 +2579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2217,7 +2608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.8%20Analysis.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.8%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2238,11 +2629,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.9%20Postprocessing.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.9%20Postprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     2.9 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/Recipes/2.10%20hfStudio%20Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10 Recipes
   </span>
   
 
@@ -2281,7 +2693,7 @@
             
   
   <span class="md-ellipsis">
-    3. hfSectionVisualizer
+    3. hf2DStudio
   </span>
   
 
@@ -2291,7 +2703,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            3. hfSectionVisualizer
+            3. hf2DStudio
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2302,11 +2714,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/1.%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.1%202D%20Modeling%20Automation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.1 Overview
+    3.1 2D Modeling Automation
   </span>
   
 
@@ -2323,11 +2735,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/2.%20Window%20and%20File.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.2%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.2 Window and File
+    3.2 Overview
   </span>
   
 
@@ -2344,11 +2756,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/3.%20View.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.3%20Window%20and%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.3 View
+    3.3 Window and File
   </span>
   
 
@@ -2365,11 +2777,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/4.%20Geometry.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.4%20View.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.4 Geometry
+    3.4 View
   </span>
   
 
@@ -2386,11 +2798,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/5.%20Definition.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.5%20Geometry.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.5 Definition
+    3.5 Geometry
   </span>
   
 
@@ -2407,75 +2819,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/6.%20Operation%20and%20Analysis.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.6%20Definition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.6 Operation and Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    4. Recipes
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
-            <span class="md-nav__icon md-icon"></span>
-            4. Recipes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Remote%20Control/Recipes/1.%20hfVisualizer.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4.1 hfVisualizer
+    3.6 Definition
   </span>
   
 
@@ -2492,11 +2840,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/Recipes/2.%20hfSectionVisualizer.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.7%20Operation%20and%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.2 hfSectionVisualizer
+    3.7 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/Recipes/3.8%20hf2DStudio%20Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Recipes
   </span>
   
 
@@ -2542,7 +2911,7 @@
             
   
   <span class="md-ellipsis">
-    Example
+    Tutorials
   </span>
   
 
@@ -2552,7 +2921,238 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Example
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Beam Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Solid Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Beam vs Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/5.%20hfStudio%20Basics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. hfStudio Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Selection and Visibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Postprocessing with Remote Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Scripts and Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Portal Frame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2668,11 +3268,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.6%20Acoustic%20Solid%20Element.html" class="md-nav__link">
+      <a href="../Example/E.6%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.6 Acoustic Solid Element
+    E.6 Dynamic Analysis using Spring and Mass Elements
   </span>
   
 
@@ -2689,11 +3289,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
+      <a href="../Example/E.7%20Acoustic%20Solid%20Element%20and%20HydroStaticPressure%20Loads.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.7 Dynamic Analysis using Spring and Mass Elements
+    E.7 Acoustic Solid Element and HydroStaticPressure Loads
   </span>
   
 
@@ -2857,11 +3457,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.15%20Temperature%20Load%20by%20Bimetal.html" class="md-nav__link">
+      <a href="../Example/E.15%20Time%20Dependent%20Materials.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.15 Temperature Load by Bimetal
+    E.15 Time Dependent Materials
   </span>
   
 
@@ -2906,153 +3506,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#material" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="*Material">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#material-typeisoelasticity" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=IsoElasticity
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typeorthoelasticity" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=OrthoElasticity
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typevonmises" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=vonMises
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typetresca" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=Tresca
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typemohrcoulomb" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=MohrCoulomb
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typedruckerprager" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=DruckerPrager
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typeugeneric" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=UGeneric
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typeusteel" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=USteel
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typegaphook" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=GapHook
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typecohesive" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material, Type=Cohesive
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typeacoustic" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=Acoustic
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typeseepage" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=Seepage
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -3061,13 +3514,12 @@
                   
 
 
-  <h1>7. Material</h1>
-
-<p>재료 모델은 <code>*Material</code>로 지정한다. 고유이름을 가지며 이름은 중복하여 지정할 수 없다. 재료모델은 응력-변형률 관계를 포함하여 요소에 따라 다양한 구성관계식을 정의하는데 사용된다. 다음은 지원하는 재료모델과 각 재료모델이 지원하는 구성관계식을 정리한 것이다. </p>
+<h1 id="7-material">7. Material</h1>
+<p>재료 모델은 <code>*Material</code>로 지정한다. 고유이름을 가지며 이름은 중복하여 지정할 수 없다. 재료모델은 응력-변형률 관계를 포함하여 요소에 따라 다양한 구성관계식을 정의하는데 사용된다. 다음은 지원하는 재료모델과 각 재료모델이 지원하는 구성관계식을 정리한 것이다.</p>
 <table>
 <thead>
 <tr>
-<th>TYPE</th>
+<th>Type</th>
 <th>Description</th>
 <th>Usage</th>
 </tr>
@@ -3076,7 +3528,7 @@
 <tr>
 <td>IsoElasticity</td>
 <td>Isotropic Elasticity</td>
-<td>Uniaxial and Multiaxial Stress-Strain Relation</td>
+<td>Uniaxial and Multiaxial Stress-Strain Relation; LongTerm Concrete and Tendon options</td>
 </tr>
 <tr>
 <td>OrthoElasticity</td>
@@ -3106,12 +3558,12 @@
 <tr>
 <td>UGeneric</td>
 <td>Uniaxial Generic</td>
-<td>Uniaxial Stress-Strain Relation</td>
+<td>Uniaxial Stress-Strain Relation; LongTerm Concrete option</td>
 </tr>
 <tr>
 <td>USteel</td>
 <td>Uniaxial Steel</td>
-<td>Uniaxial Stress-Strain Relation</td>
+<td>Uniaxial Stress-Strain Relation; LongTerm Tendon option</td>
 </tr>
 <tr>
 <td>GapHook</td>
@@ -3135,35 +3587,179 @@
 </tr>
 </tbody>
 </table>
-<p>응력-변형률 관계는 크게 일축 및 다축 응력-변형률 관계로 구분할 수 있으며, 다축 응력-변형률 관계는 평면응력, 평면변형, 축대칭, 쉘, 3차원(일반) 응력 조건으로 세분할 수 있다. 요소에 따라서 필요한 응력-변형률 관계가 다르다. 예를 들어 보요소는 일축, 쉘요소는 다축중 쉘조건을 지원하는 재료모델을 사용해야 한다. 예를 들어 vonMises 는 일축 및 다축 응력-변형률 관계를 모두 지원하지만 <code>Tresca</code>는 다축 응력-변형률만 지원한다. 따라서 보 요소의 재료모델로 <code>vonMises</code>는 사용할 수 있지만 <code>Tresca</code>는 사용할 수 없다. 반대로 <code>UGeneric</code>, <code>USteel</code>, <code>GapHook</code> 등은 일축재료모델이므로 솔리드 요소나 쉘 요소 등에서는 사용할 수 없다. </p>
-<p>한편, Spring, EarthSpring, MovingSpring 요소에서는 일축재료모델을 자신의 구성관계를 정의하는데 차용하여 쓸 수 있다. 여기에는 다음과 같은 4가지 존재할 수 있다. </p>
+<p>응력-변형률 관계는 크게 일축 및 다축 응력-변형률 관계로 구분할 수 있으며, 다축 응력-변형률 관계는 평면응력, 평면변형, 축대칭, 쉘, 3차원(일반) 응력 조건으로 세분할 수 있다. 요소에 따라서 필요한 응력-변형률 관계가 다르다. 예를 들어 보요소는 일축, 쉘요소는 다축중 쉘조건을 지원하는 재료모델을 사용해야 한다. 예를 들어 vonMises 는 일축 및 다축 응력-변형률 관계를 모두 지원하지만 <code>Tresca</code>는 다축 응력-변형률만 지원한다. 따라서 보 요소의 재료모델로 <code>vonMises</code>는 사용할 수 있지만 <code>Tresca</code>는 사용할 수 없다. 반대로 <code>UGeneric</code>, <code>USteel</code>, <code>GapHook</code> 등은 일축재료모델이므로 솔리드 요소나 쉘 요소 등에서는 사용할 수 없다.</p>
+<p>한편, Spring, EarthSpring, MovingSpring 요소에서는 일축재료모델을 자신의 구성관계를 정의하는데 차용하여 쓸 수 있다. 여기에는 다음과 같은 4가지 존재할 수 있다.</p>
 <ul>
 <li>Force-Displacement : Translational spring</li>
 <li>Moment-Rotation : Rotation spring</li>
 <li>Force-Velocity : Translational damper</li>
 <li>Moment-Angular Velocity : Rotational damper</li>
 </ul>
-<p>또한 Interface 요소이고 재료의 거동을 방향별로 독립적으로 지정하고자 하는 경우에도 일축재료모델을 적용할 수 있다. </p>
+<p>또한 Interface 요소이고 재료의 거동을 방향별로 독립적으로 지정하고자 하는 경우에도 일축재료모델을 적용할 수 있다.</p>
 <ul>
 <li>Traction-Displacement : Interface element</li>
 </ul>
-<p>또한 보요소에서 전단과 비틂 거동에 비선형성을 스프링처럼 고려하고자 할 때에도 일축 재료 모델을 적용할 수 있다. </p>
+<p>또한 보요소에서 전단과 비틂 거동에 비선형성을 스프링처럼 고려하고자 할 때에도 일축 재료 모델을 적용할 수 있다.</p>
 <ul>
 <li>Scaled shear force-shear strain : Beam element</li>
 <li>Scaled torsional moment-rotation : Beam element</li>
 </ul>
-<p>이와 같이 일축 재료 모델을 빌려와서 사용하는 경우, 응력-변형률 관계를 필요한 구성관계식으로 물리적 의미없이 변환하여 사용한다. 예를 들어 X방향 스프링의 경우 일축 재료모델의 응력-변형률 관계를 빌려 올 경우 하중-변위 관계로 취급한다. 이때 응력과 하중, 변형률과 변위는 물리적인 의미없이 1:1로 변환된다. </p>
-<p><code>*Environment, TYPE=UnitSystem</code>를 통해 모델에 대한 단위계가 도입되는 경우, hfVisualizer 등에서 전체 단위계를 일괄 변경하는 경우 일축 재료 모델을 빌려와 사용하는 경우 단위계 변환에  주의해야 한다. 이를 위해 빌려오는 경우 일축 재료 모델을 최초 차용할 당시의 단위계를 reference unit system으로 지정하여 내부적으로 변환을 수행한다. </p>
-<h2 id="material">*Material</h2>
+<p>이와 같이 일축 재료 모델을 빌려와서 사용하는 경우, 응력-변형률 관계를 필요한 구성관계식으로 물리적 의미없이 변환하여 사용한다. 예를 들어 X방향 스프링의 경우 일축 재료모델의 응력-변형률 관계를 빌려 올 경우 하중-변위 관계로 취급한다. 이때 응력과 하중, 변형률과 변위는 물리적인 의미없이 1:1로 변환된다.</p>
+<h5 id="material-db-input">Material DB Input</h5>
+<p>일부 재료모델은 직접 수치 대신 material DB item name을 dataline에 쓸 수 있다. 이때 <code>*Material</code>의 <code>Type</code>은 항상 Hyfeast 재료모델을 뜻하며, DB 참조 여부는 dataline의 첫 token으로 판단한다.</p>
+<p>Material DB는 재료 item별로 설계기준에서 온 기준값을 저장하며, DB가 제공하지 않는 모델 고유 비탄성 파라미터는 사용자가 기존 dataline으로 직접 입력해야 한다. Material DB 참조 입력은 <code>*Environment, Type=UnitSystem</code>으로 global UnitSystem이 먼저 정의되어 있어야 하고, DB 원천값은 parser가 현재 global UnitSystem으로 변환한 뒤 material 또는 recipe 값으로 사용한다. 현재 기본 제공 material DB는 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>DB</th>
+<th>item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KDS 콘크리트</td>
+<td><code>KDS-2026-C&lt;fck&gt;</code></td>
+</tr>
+<tr>
+<td>ACI 318 콘크리트</td>
+<td><code>ACI318-2025-C&lt;fck&gt;</code></td>
+</tr>
+<tr>
+<td>EC2 콘크리트</td>
+<td><code>EC2-2004-C&lt;fck&gt;</code></td>
+</tr>
+<tr>
+<td>KDS 구조용 강재 SS235</td>
+<td><code>KDS-2026-SS235-t16</code>, <code>KDS-2026-SS235-t40</code>, <code>KDS-2026-SS235-t100</code>, <code>KDS-2026-SS235-t100p</code></td>
+</tr>
+<tr>
+<td>KDS 구조용 강재 SS275</td>
+<td><code>KDS-2026-SS275-t16</code>, <code>KDS-2026-SS275-t40</code>, <code>KDS-2026-SS275-t100</code>, <code>KDS-2026-SS275-t100p</code></td>
+</tr>
+<tr>
+<td>KDS 구조용 강재 SS315</td>
+<td><code>KDS-2026-SS315-t16</code>, <code>KDS-2026-SS315-t40</code>, <code>KDS-2026-SS315-t100</code>, <code>KDS-2026-SS315-t100p</code></td>
+</tr>
+<tr>
+<td>KDS 구조용 강재 SS410</td>
+<td><code>KDS-2026-SS410-t16</code>, <code>KDS-2026-SS410-t40</code></td>
+</tr>
+<tr>
+<td>KDS 구조용 강재 SS450</td>
+<td><code>KDS-2026-SS450-t16</code>, <code>KDS-2026-SS450-t40</code></td>
+</tr>
+<tr>
+<td>KDS 구조용 강재 SS550</td>
+<td><code>KDS-2026-SS550-t16</code>, <code>KDS-2026-SS550-t40</code></td>
+</tr>
+<tr>
+<td>KDS 철근 일반</td>
+<td><code>KDS-2026-SD300</code>, <code>KDS-2026-SD400</code>, <code>KDS-2026-SD500</code>, <code>KDS-2026-SD600</code>, <code>KDS-2026-SD700</code></td>
+</tr>
+<tr>
+<td>KDS 철근 용접용</td>
+<td><code>KDS-2026-SD400W</code>, <code>KDS-2026-SD500W</code></td>
+</tr>
+<tr>
+<td>KDS 철근 특수내진</td>
+<td><code>KDS-2026-SD400S</code>, <code>KDS-2026-SD500S</code>, <code>KDS-2026-SD600S</code>, <code>KDS-2026-SD700S</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>KDS-2026-C&lt;fck&gt;</code>, <code>EC2-2004-C&lt;fck&gt;</code>에서 <code>&lt;fck&gt;</code>는 MPa 단위 압축강도다. <code>KDS-2026</code>의 연도는 그 해에 유효한 KDS 분책 조합을 뜻하며, 세부 분책의 제정·개정연도와 제품 규격 출처는 citation에 보존한다. <code>EC2-2004-C&lt;fck&gt;</code>는 EN 1992-1-1:2004 계열 cylinder strength 참조다. <code>ACI318-2025-C&lt;fck&gt;</code>에서 <code>&lt;fck&gt;</code>는 ACI의 명시 압축강도 <code>f'c</code>이며 단위는 psi다(예: <code>ACI318-2025-C4000</code>은 <code>f'c = 4000 psi</code>). <code>C</code> 접두는 외부 기준의 grade 기호가 아니라 Hyfeast의 콘크리트 강도 token이다. 구조용 강재의 <code>t16</code>, <code>t40</code>, <code>t100</code>, <code>t100p</code> suffix는 항복강도가 달라지는 두께 구간을 뜻하며, 사용자가 부재 두께에 맞는 item을 직접 선택한다.</p>
+<p>콘크리트 DB item을 <code>IsoElasticity</code>의 탄성계수로 전개할 때 KDS는 <span class="arithmatex">\(f_{cm}=f_{ck}+\Delta f\)</span>와 <span class="arithmatex">\(E_c=8500\sqrt[3]{f_{cm}}\;[\mathrm{MPa}]\)</span>를 사용한다. 이 식은 KDS의 보통중량콘크리트 <span class="arithmatex">\(m_c=2300\,\mathrm{kg/m^3}\)</span> 가정을 적용한 식이며, material density 값으로 <span class="arithmatex">\(E_c\)</span>를 다시 계산하지 않는다. <code>ACI318-2025-C&lt;fck&gt;</code>는 normalweight concrete 간편식 <span class="arithmatex">\(E_c=57000\sqrt{f'_c}\;[\mathrm{psi}]\)</span>를 사용하며, 이 계수는 <span class="arithmatex">\(w_c = 145\,\mathrm{lb/ft^3}\)</span>에 대응하는 일반식의 대표값이다. <code>EC2-2004-C&lt;fck&gt;</code>는 <span class="arithmatex">\(f_{cm}=f_{ck}+8\)</span> 및 <span class="arithmatex">\(E_c=E_{cm}=22000(f_{cm}/10)^{0.3}\;[\mathrm{MPa}]\)</span>를 사용한다.</p>
+<p>강재·철근 material DB item에서 DB field 또는 recipe로 사용하는 strength 값은 <code>Fy</code>이다. 긴장재 DB item을 <code>LongTerm, Tendon</code>에서 직접 참조할 때는 DB item의 기준 인장강도와 relaxation class를 사용한다. 철근 직경과 공칭단면적 같은 치수 정보는 Material DB가 아니라 section/size DB 영역이다.</p>
+<p>다음 density 값은 <code>*Material</code> DB 입력에서 <code>density</code>를 생략했을 때 사용하는 값이다. KDS, EC2, 강재 행은 mass density를 표시한다. ACI 행은 ACI에서 쓰는 weight density <span class="arithmatex">\(w_c\)</span>를 그대로 표시하고 괄호 안에 대응하는 mass density 근사값을 함께 적는다. Hyfeast는 ACI 값을 mass density로 변환한 뒤 현재 global UnitSystem에 맞게 사용한다. 콘크리트 탄성계수 식은 위에서 설명한 기준별 가정을 유지하며, 이 material density 값으로 다시 계산하지 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>DB</th>
+<th>재료 category</th>
+<th>density</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KDS-2026</code></td>
+<td>concrete</td>
+<td><span class="arithmatex">\(2300\,\mathrm{kg/m^3}\)</span></td>
+</tr>
+<tr>
+<td><code>ACI318-2025</code></td>
+<td>concrete</td>
+<td><span class="arithmatex">\(w_c = 145\,\mathrm{lb/ft^3}\)</span> <span class="arithmatex">\((\mathrm{approx.}\ 2323\,\mathrm{kg/m^3})\)</span></td>
+</tr>
+<tr>
+<td><code>EC2-2004</code></td>
+<td>concrete</td>
+<td><span class="arithmatex">\(2400\,\mathrm{kg/m^3}\)</span></td>
+</tr>
+<tr>
+<td><code>KDS-2026</code></td>
+<td>structural steel</td>
+<td><span class="arithmatex">\(7850\,\mathrm{kg/m^3}\)</span></td>
+</tr>
+<tr>
+<td><code>KDS-2026</code></td>
+<td>steel rebar</td>
+<td><span class="arithmatex">\(7850\,\mathrm{kg/m^3}\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>DB 참조 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsoElasticity</code></td>
+<td>DB item에서 탄성 물성치를 생성한다. 콘크리트 장기거동은 <code>LongTerm, Concrete</code> dataline에서 function을 참조하고, 긴장재 relaxation은 <code>LongTerm, Tendon</code> dataline에서 긴장재 DB item을 직접 지정할 수 있다.</td>
+</tr>
+<tr>
+<td><code>vonMises</code></td>
+<td>DB item에서 탄성 물성치를 가져오고, value dataline의 <code>yield</code> 자리에 <code>Fy</code> field-token을 사용할 수 있음</td>
+</tr>
+<tr>
+<td><code>UGeneric</code></td>
+<td>콘크리트 DB item은 concrete envelope function을 통해 간접적으로 사용하고, 장기거동은 <code>LongTerm, Concrete</code> dataline에서 <code>ConcreteTime</code> function으로 참조</td>
+</tr>
+<tr>
+<td><code>USteel</code></td>
+<td>철근·긴장재 DB item과 recipe token으로 Menegotto-Pinto 계열 입력을 생성하고, 긴장재 relaxation은 <code>LongTerm, Tendon</code> dataline에서 긴장재 DB item을 직접 지정할 수 있다.</td>
+</tr>
+<tr>
+<td><code>Tresca</code></td>
+<td>첫 dataline의 탄성 물성치만 DB item으로 대체</td>
+</tr>
+<tr>
+<td><code>MohrCoulomb</code></td>
+<td>첫 dataline의 탄성 물성치만 DB item으로 대체</td>
+</tr>
+<tr>
+<td><code>DruckerPrager</code></td>
+<td>첫 dataline의 탄성 물성치만 DB item으로 대체</td>
+</tr>
+<tr>
+<td><code>ConcreteDamage</code></td>
+<td>첫 dataline의 탄성 물성치만 DB item으로 대체</td>
+</tr>
+</tbody>
+</table>
+<p>DB 참조 입력에서 <code>density</code>를 생략하면 위 표의 기본값을 사용한다. 다른 밀도가 필요하면 DB dataline에서 <code>material-db-item[, density][, ToDirectForm]</code> 형식으로 <code>density</code>만 override할 수 있다. 이때 <code>E</code>, <code>nu</code>, <code>alpha</code>와 recipe 값은 DB 값을 그대로 사용하며, 지정한 <code>density</code>는 현재 global UnitSystem 기준 직접 수치다.</p>
+<p><code>UGeneric</code>은 콘크리트 DB item을 material dataline에서 직접 받지 않는다. 콘크리트 DB는 <code>ParabolaCEnv</code>, <code>HognestadCEnv</code>, <code>EC2CEnv</code>, <code>MPPCEnv</code>, <code>MaekawaTEnv</code> 같은 concrete envelope function에서 먼저 사용하고, material은 그 function 이름을 <code>EnvFunc</code>로 간접 참조한다. 콘크리트 장기거동은 <code>LongTerm, Concrete</code> dataline에서 별도 <code>ConcreteTime</code> function을 참조한다. 이 concrete function DB 입력도 선택한 function type이 요구하는 경우 global UnitSystem이 먼저 정의되어 있어야 한다. 현재 기본 제공 콘크리트 envelope DB item은 <code>KDS-2026-C&lt;fck&gt;</code>, <code>ACI318-2025-C&lt;fck&gt;</code>, <code>EC2-2004-C&lt;fck&gt;</code>이고, <code>ConcreteTime</code> DB item은 <code>KDS-2026-C&lt;fck&gt;</code>, <code>EC2-2004-C&lt;fck&gt;</code>, <code>ACI209-1992-C&lt;fc&gt;</code>이며, function type별 허용 기준은 <code>*Function</code> 매뉴얼을 따른다.</p>
+<h2 id="71-material">7.1 *Material</h2>
 <p>Define material</p>
-<div class="highlight"><pre><span></span><code>*Material, TYPE=type, Name=name
+<div class="highlight"><pre><span></span><code>*Material, Type=type, Name=name
  ...datalines depending on type
 </code></pre></div>
 <h5 id="keyword-line">Keyword line</h5>
 <div class="admonition note">
 <ul>
 <li>
-<p><strong>TYPE=type:</strong> type of materials. </p>
+<p><strong>TYPE=type:</strong> type of materials.</p>
 <ul>
 <li><strong>IsoElasticity:</strong> Isotropic Linear Elastic Material</li>
 <li><strong>OrthoElasticity:</strong> Orthotropic Linear Elastic Material</li>
@@ -3171,10 +3767,10 @@
 <li><strong>Tresca:</strong> Tresca plasticity</li>
 <li><strong>MohrCoulomb:</strong> Mohr-Coulomb plasticity</li>
 <li><strong>DruckerPrager:</strong> Drucker-Prager plasticity</li>
-<li><strong>UGeneric:</strong> Uniaxial generic </li>
+<li><strong>UGeneric:</strong> Uniaxial generic</li>
 <li><strong>USteel:</strong> Uniaxial steel</li>
 <li><strong>GapHook:</strong> Uniaxial gap-hook</li>
-<li><strong>Cohesive:</strong> Cohesive material       </li>
+<li><strong>Cohesive:</strong> Cohesive material</li>
 <li><strong>Acoustic:</strong> Material for acoustic solid elements</li>
 </ul>
 </li>
@@ -3183,26 +3779,173 @@
 </li>
 </ul>
 </div>
-<h3 id="material-typeisoelasticity">*Material Type=IsoElasticity</h3>
+<h3 id="711-material-typeisoelasticity">7.1.1 *Material, Type=IsoElasticity</h3>
 <p>Define isotropic elasticity material</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=name
  E, nu, alpha, density
+ [LongTerm, Concrete, timeFunction, nchain, lambda1, nsample]
+ [LongTerm, Tendon, standard, class, fp[, rho1000]]
+ [LongTerm, Tendon, material-db-item[, rho1000]]
+
+*Material, Type=IsoElasticity, Name=name
+ material-db-item[, density][, ToDirectForm]
+ [LongTerm, Concrete, timeFunction, nchain, lambda1, nsample]
+ [LongTerm, Tendon, standard, class, fp[, rho1000]]
+ [LongTerm, Tendon, material-db-item[, rho1000]]
 </code></pre></div>
+<p><code>LongTerm</code> dataline은 위 세 형식 중 하나만 선택한다.</p>
 <h5 id="first-dataline">First dataline</h5>
 <div class="admonition note">
 <ul>
 <li><strong>E:</strong> elastic modulus (required)</li>
 <li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
+<li><strong>density:</strong> 직접 수치 dataline의 density (optional, default 0.). DB dataline에서 생략한 <code>density</code>는 0이 아니라 DB density를 뜻한다.</li>
+<li><strong>material-db-item:</strong> material DB item name. 이 항목을 쓰면 <code>E</code>, <code>nu</code>, <code>alpha</code>, <code>density</code> 대신 DB 탄성 물성치를 사용한다. 뒤에 <code>density</code>를 지정하면 density만 직접 수치로 override하고, 생략하면 DB density를 사용한다.</li>
+<li><strong>ToDirectForm:</strong> DB dataline 마지막에 쓸 수 있는 optional token. 저장/재출력 시 DB 입력을 직접 수치 dataline으로 전개한다.</li>
 </ul>
 </div>
+<h5 id="longterm-concrete-dataline">LongTerm, Concrete dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>timeFunction:</strong> <code>*Function, Type=ConcreteTime</code> function 이름이다. 표준 <code>ConcreteTime</code> function은 콘크리트 재령 변수를 day 단위로 평가한다.</li>
+<li><strong>nchain:</strong> Kelvin chain 개수(optional, default 4)이다.</li>
+<li><strong>lambda1:</strong> 첫 retardation time <span class="arithmatex">\(\lambda_1\)</span>이다(optional). day 단위로 입력한다. 생략하면 참조한 <code>ConcreteTime</code> function이 가진 내부 기본값을 사용한다. 이 재료에서 Function 쪽 기본값을 바꾸려면 여기서 <code>lambda1</code>을 직접 지정한다.</li>
+<li><strong>nsample:</strong> creep compliance fitting sample 개수(optional, default <code>10*nchain</code>)이다. <code>nchain</code>보다 커야 한다.</li>
+</ul>
+</div>
+<p>장기거동 재료모델의 시간 변수 <span class="arithmatex">\(t\)</span>는 요소 활성화 이후 경과한 물리 시간 <code>ELTIME</code>에서 가져온다. <code>ELTIME</code>은 요소가 활성화될 때 0에서 시작하고, 물리 시간 step의 시간 증분으로 증가한다. 콘크리트 타설 후 재하 전 재령을 표현하려면 <code>LongTerm, Concrete</code>에 초기 재령을 쓰지 않고, 무하중 <code>Static, Quasi</code> step으로 해당 재령까지 진행한다.</p>
+<p><code>LongTerm, Concrete</code>와 <code>LongTerm, Tendon</code>은 같은 <code>IsoElasticity</code> material에 함께 둘 수 없다.</p>
+<h5 id="longterm-tendon-dataline">LongTerm, Tendon dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>standard:</strong> <code>KDS-2025</code> 또는 <code>EC2-2004</code>.</li>
+<li><strong>class:</strong> relaxation class이다. <code>Class1</code>, <code>Class2</code>, <code>Class3</code> 중 하나를 사용한다.</li>
+<li><strong>fp:</strong> 응력비 계산에 쓰는 기준 인장강도이다. <code>KDS-2025</code>에서는 <span class="arithmatex">\(f_{pu}\)</span>, <code>EC2-2004</code>에서는 <span class="arithmatex">\(f_{pk}\)</span>를 입력한다. 직접 수치 입력은 현재 global <code>UnitSystem</code>의 응력 단위를 따르며, <code>N-mm</code> 단위계에서는 MPa(<span class="arithmatex">\(N/mm^2\)</span>)이다.</li>
+<li><strong>material-db-item:</strong> 긴장재 material DB item name이다. DB item에서 기준, relaxation class, 기준 인장강도를 가져오며, DB source unit에서 현재 global <code>UnitSystem</code>의 응력 단위로 변환한다.</li>
+<li><strong>rho1000:</strong> 선택 입력이다. 1000시간 relaxation 손실률을 percent 값으로 입력한다. 생략하면 DB item 값 또는 class 기본값(<code>Class1</code> = 8, <code>Class2</code> = 2.5, <code>Class3</code> = 4)을 사용한다.</li>
+</ul>
+</div>
+<h5 id="theory-and-behavior">Theory and behavior</h5>
+<p><code>IsoElasticity + LongTerm, Concrete</code>는 등방 선형 aging viscoelasticity로 해석한다. 첫 dataline의 <code>E</code>는 기준 재령 탄성계수로 사용하고, <code>ConcreteTime</code>의 탄성계수 재령계수 <span class="arithmatex">\(a_E(t)\)</span>로 현재 재료시간 <span class="arithmatex">\(t\)</span>의 탄성계수를 만든다.</p>
+<div class="arithmatex">\[
+E(t)=a_E(t)E_{28},\qquad
+G(t)=\frac{E(t)}{2(1+\nu)}
+\]</div>
+<p>응력은 현재 재령 탄성행렬 <span class="arithmatex">\(\mathbf{D}_{\nu}(E(t))\)</span>와 장기 비역학 변형률을 뺀 탄성변형률로 계산한다.</p>
+<div class="arithmatex">\[
+\sigma(t)
+=
+\mathbf{D}_{\nu}(E(t))
+\left[
+\varepsilon(t)
+-\varepsilon^{cr}(t)
+-\varepsilon^{sh}(t)
+-\varepsilon^{ag}(t)
+-\varepsilon^{th}(t)
+\right]
+\]</div>
+<p>여기서 <span class="arithmatex">\(\nu\)</span>는 <code>IsoElasticity</code>의 Poisson's ratio이며, 별도의 creep Poisson ratio는 입력하지 않는다. <span class="arithmatex">\(\bar{\mathbf{S}}_{\nu}\)</span>는 <span class="arithmatex">\(E=1\)</span>로 둔 정규화 등방 compliance이다.</p>
+<div class="arithmatex">\[
+\varepsilon^{cr}(t)
+=
+\int_0^{t}
+C(t,\tau)\,\bar{\mathbf{S}}_{\nu}\,d\sigma_c(\tau)
+\]</div>
+<p><code>LongTerm, Concrete</code>에서 creep은 압축 주응력 경로에 대해서만 작동한다. 응력벡터를 먼저 대칭 응력텐서로 바꾸고, 주응력 공간에서 다음처럼 분할한다.</p>
+<div class="arithmatex">\[
+\boldsymbol{\sigma}^c
+=
+\sum_i \min(\sigma_i,0)\,\mathbf{n}_i\otimes\mathbf{n}_i
+\]</div>
+<p>creep을 구동하는 증분은 <span class="arithmatex">\(\Delta\boldsymbol{\sigma}^c_n=\boldsymbol{\sigma}^c_{n+1}-\boldsymbol{\sigma}^c_n\)</span>이고, 이를 다시 재료 응력벡터 순서로 바꾼 뒤 정규화 compliance에 넣는다. 이 분할은 주응력 방향별로 압축만 적용하고, 인장-압축 전환 때 0 응력점을 지나도록 처리한다. 주방향이 요소축과 어긋나 있으면 복원된 압축 텐서에는 shear 성분이 포함될 수 있다.</p>
+<p>이 정의는 다음 함의를 가진다. 인장 응력 이력은 creep history에 직접 기여하지 않으므로, prestress 도입 후 인장 영역이나 균열 직전 인장 응력 이력 같은 비압축 경로의 시간의존 변형은 표현되지 않으며, 결과의 보수성은 응력 상태에 따라 달라진다. 다축 상태에서는 압축 응력 텐서를 등방 정규화 compliance <span class="arithmatex">\(\bar{\mathbf{S}}_{\nu}\)</span>에 통과시키므로, 압축 주방향과 직교한 인장 주방향에도 <span class="arithmatex">\(-\nu\)</span> 배의 횡방향 creep 변형률이 동반된다. 압축에서 인장으로 넘어가는 step에서는 <span class="arithmatex">\(\Delta\boldsymbol{\sigma}^c_n\)</span>이 기존 압축 응력을 제거하는 unloading increment로 들어가 chain 이력을 일부 되돌리며, 이후 인장 구간 동안 chain 상태는 자연 감쇠 <span class="arithmatex">\(\exp(-\Delta t_n/\lambda_\alpha)\)</span>로 줄어든다.</p>
+<p><code>ConcreteTime</code>이 제공하는 <span class="arithmatex">\(C(t,\tau)\)</span>는 creep compliance이고, <span class="arithmatex">\(\tau\)</span>는 각 압축 응력 경로 증분의 재하재령이다. 증분해석에서는 이 이력적분을 Kelvin chain으로 근사한다. <code>nchain</code>을 <span class="arithmatex">\(m\)</span>으로 두면 retardation time은 다음과 같이 배치한다.</p>
+<div class="arithmatex">\[
+\lambda_\alpha=\lambda_1\,10^{\alpha-1},\qquad \alpha=1,\dots,m
+\]</div>
+<p>각 재하재령 <span class="arithmatex">\(\tau\)</span>에서 계수 <span class="arithmatex">\(c_\alpha(\tau)\)</span>는 <code>ConcreteTime</code>의 목표 creep compliance에 맞도록 로그 간격 sample time <span class="arithmatex">\(s_j\)</span>에서 최소제곱으로 결정한다. sample 구간은 <span class="arithmatex">\(\lambda_1/3\)</span>부터 <span class="arithmatex">\(2\lambda_m\)</span>까지이며, sample 수는 <code>nsample</code>이다.</p>
+<div class="arithmatex">\[
+C(\tau+s,\tau)
+\approx
+\sum_{\alpha=1}^{m}
+c_\alpha(\tau)
+\left(1-\exp\left[-\frac{s}{\lambda_\alpha}\right]\right)
+\]</div>
+<div class="arithmatex">\[
+\min_{c_\alpha}
+\sum_j
+\left[
+C(\tau+s_j,\tau)
+-
+\sum_{\alpha=1}^{m}
+c_\alpha(\tau)
+\left(1-\exp\left[-\frac{s_j}{\lambda_\alpha}\right]\right)
+\right]^2
+\]</div>
+<p>내부변수 <span class="arithmatex">\(\mathbf{q}^{\alpha}_n\)</span>를 저장해 전체 응력이력을 다시 적분하지 않는다. 시간증분 <span class="arithmatex">\(\Delta t_n=t_{n+1}-t_n\)</span>에서 기존 chain 이력은 creep strain 증가량을 만들고, 새 압축 응력 경로 증분은 다음 chain 이력으로 저장된다.</p>
+<div class="arithmatex">\[
+\Delta\varepsilon^{cr}_n
+=
+\sum_{\alpha=1}^{m}
+\left(1-\exp\left[-\frac{\Delta t_n}{\lambda_\alpha}\right]\right)
+\mathbf{q}^{\alpha}_{n}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{q}^{\alpha}_{n+1}
+=
+\mathbf{q}^{\alpha}_{n}\exp\left[-\frac{\Delta t_n}{\lambda_\alpha}\right]
++
+c_\alpha(t_{n+1})
+\bar{\mathbf{S}}_{\nu}\Delta\sigma^c_n
+\frac{\lambda_\alpha}{\Delta t_n}
+\left(1-\exp\left[-\frac{\Delta t_n}{\lambda_\alpha}\right]\right)
+\]</div>
+<p><span class="arithmatex">\(\Delta t_n=0\)</span>인 경우 마지막 시간적분 계수는 <code>1</code>로 취급한다. 수축은 <code>ConcreteTime</code>이 제공하는 응력 독립 시간변형률이다. 수축과 온도 변형률은 등방 normal 방향에만 적용한다.</p>
+<div class="arithmatex">\[
+\varepsilon^{sh}(t)
+=
+\varepsilon^{sh}(t)\mathbf{m},\qquad
+\varepsilon^{th}
+=
+\alpha\,\Delta T\,\mathbf{m}
+\]</div>
+<p><span class="arithmatex">\(\mathbf{m}\)</span>은 일축에서 <span class="arithmatex">\([1]\)</span>, plane 계열에서 <span class="arithmatex">\([1,1,0,1]\)</span>, 3D와 shell 계열에서 <span class="arithmatex">\([1,1,1,0,0,0]\)</span>이다. <code>EAG</code>는 재령에 따라 <span class="arithmatex">\(E(t)\)</span>가 바뀔 때 기존 응력이 불필요하게 튀지 않도록 저장하는 aging 보정 변형률이다. 새 시간 <span class="arithmatex">\(t_{n+1}\)</span>에서 기존 응력 <span class="arithmatex">\(\sigma_n\)</span>에 맞는 탄성변형률을 다시 계산하고, 그 차이를 <code>EAG</code>에 반영한다.</p>
+<div class="arithmatex">\[
+\varepsilon^{ag}_{n+1}
+=
+\varepsilon^{e}_{n}
++
+\varepsilon^{ag}_{n}
+-
+\frac{1}{E(t_{n+1})}
+\bar{\mathbf{S}}_{\nu}\sigma_{n}
+\]</div>
+<p>출력에서 <code>ELTIME</code>은 요소 활성화 이후 경과한 물리 시간이며, 장기거동 재료모델의 시간 변수 <span class="arithmatex">\(t\)</span>로 사용된다. <code>ECR</code>, <code>ESH</code>, <code>EAG</code>는 각각 creep, shrinkage, aging 보정 변형률이다. <code>ETH</code>는 온도 변형률이며, <code>ENM</code>은 다음 합으로 출력된다.</p>
+<div class="arithmatex">\[
+\varepsilon^{\mathrm{NM}}
+=
+\varepsilon^{\mathrm{CR}}
++\varepsilon^{\mathrm{SH}}
++\varepsilon^{\mathrm{AG}}
++\varepsilon^{\mathrm{TH}}
+\]</div>
+<p>plane 계열 출력 성분 순서는 <code>[11, 22, 12, 33]</code>, 3D와 shell 계열은 <code>[11, 22, 33, 12, 23, 31]</code>을 따른다.</p>
+<p><code>IsoElasticity + LongTerm, Tendon</code>은 일축 응력 조건에서만 지원한다. relaxation은 현재 긴장재 응력이 인장일 때만 평가한다. 시간 증분은 현재 <code>Static, Quasi</code> step의 <code>TUnit</code>에서 가져와 hour 단위로 변환한 뒤 기준식에 넣는다. 재긴장이나 응력 변경 이력은 기존 <code>*State</code> 명령 흐름으로 모델링하며, material 입력에는 별도 긴장 일정 데이터를 넣지 않는다.</p>
+<p>relaxation 손실은 단조 증가량으로 누적하고, 초기 탄성계수 <span class="arithmatex">\(E_0\)</span>로 비역학 변형률 증분으로 변환한다. 이 변형률은 <code>ENM</code>과 <code>E</code>에 포함되지만, 별도 relaxation field는 출력하지 않는다. 기준식과 증분 적용 방식은 <code>USteel</code>의 <code>LongTerm, Tendon</code> 이론 설명을 따른다.</p>
 <h5 id="example">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity Name=iso
  200., 0.2        # E, nu, alpha, density
+
+*Function, Type=ConcreteTime, Name=Conc30Time
+ KDS-2026-C30, 70, 200, 7, Type1, Moist
+
+*Material, Type=IsoElasticity Name=conc30
+ KDS-2026-C30
+ LongTerm, Concrete, Conc30Time, 4, 1, 40
 </code></pre></div>
-<h3 id="material-typeorthoelasticity">*Material Type=OrthoElasticity</h3>
-<p>Define orthotropic elasticity </p>
+<h3 id="712-material-typeorthoelasticity">7.1.2 *Material, Type=OrthoElasticity</h3>
+<p>Define orthotropic elasticity</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=OrthoElasticity, Name=name
   E1,E2,E3, G12,G23,G31, nu12,nu23,nu31, a1,a2,a3, density, angle, cs
 </code></pre></div>
@@ -3214,11 +3957,11 @@
 <li><strong>nu12, nu23, nu31:</strong> Poisson's ratios(required)</li>
 <li><strong>a1,a2,a3:</strong> thermal expansion coefficient (optional, default 0)</li>
 <li><strong>density:</strong> density(optional, default 0.)</li>
-<li><strong>angle:</strong> angle in laminar condition for *Section, TYPE=CompositeShell (optional, default 0.)</li>
+<li><strong>angle:</strong> angle in laminar condition for *Section, Type=CompositeShell (optional, default 0.)</li>
 <li><strong>cs:</strong> material coordinate system(optional). If not given, global coordinate system is used for material coordinates</li>
 </ul>
 </div>
-<p>angle은 <code>*Section, TYPE=CompositeShell</code>을 정의할 때 사용되는 laminar stress condition에서의 국부 좌표계 정의를 위한 각도이다. cs는 이를 제외한 모든 응력 조건에 사용된다. </p>
+<p>angle은 <code>*Section, Type=CompositeShell</code>을 정의할 때 사용되는 laminar stress condition에서의 국부 좌표계 정의를 위한 각도이다. cs는 이를 제외한 모든 응력 조건에 사용된다.</p>
 <h5 id="example_1">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=OrthoElasticity Name=ortho
  200.,100.,100., 50.,30.,30., 0.12, 0.12, 0.12, 1E-6, 1.2E-6, 1.4E-4, 7810., 0, cs
@@ -3228,14 +3971,14 @@
  200.,100.,100., 50.,30.,30., 0.12, 0.12, 0.12, 1E-6, 1.2E-6, 1.4E-4, 7810., 90
 # E1, E2, E3, G12, G23, G31, nu12, nu23, nu31, a1, a2, a3, density, angle, cs
 </code></pre></div>
-<h3 id="material-typevonmises">*Material Type=vonMises</h3>
+<h3 id="713-material-typevonmises">7.1.3 *Material, Type=vonMises</h3>
 <p>Define von Mises plasticity(J2 plasticity)</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=vonMises, Name=name
- E, nu, alpha, density
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
  yield, H, theta, Kinf, K0, delta
 
 *Material, Type=vonMises, Name=name
- E, nu, alpha, density
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
  isoHardFunc, kinHardFunc|H
 </code></pre></div>
 <h5 id="first-dataline_2">First dataline</h5>
@@ -3244,13 +3987,15 @@
 <li><strong>E:</strong> elastic modulus (required)</li>
 <li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
+<li><strong>density:</strong> 직접 수치 dataline의 density (optional, default 0.). DB dataline에서 생략한 <code>density</code>는 0이 아니라 DB density를 뜻한다.</li>
+<li><strong>material-db-item:</strong> material DB item name. 이 항목을 쓰면 <code>E</code>, <code>nu</code>, <code>alpha</code>, <code>density</code> 대신 DB 탄성 물성치를 사용한다. 뒤에 <code>density</code>를 지정하면 density만 직접 수치로 override하고, 생략하면 DB density를 사용한다.</li>
+<li><strong>ToDirectForm:</strong> DB dataline 마지막에 쓸 수 있는 optional token. 저장/재출력 시 DB 입력을 직접 수치 dataline으로 전개한다.</li>
 </ul>
 </div>
 <h5 id="second-dataline-for-value">Second dataline for value (첫 항이 함수명이 아닌 경우)</h5>
 <div class="admonition note">
 <ul>
-<li><strong>yield:</strong> Initial yield value (required)</li>
+<li><strong>yield:</strong> Initial yield value (required). 첫 dataline에 <code>material-db-item</code>을 쓴 경우 <code>Fy</code>를 입력해 DB 항복강도를 참조할 수 있다.</li>
 <li><strong>H:</strong> slope after initial yield (optional, default 0)</li>
 <li><strong>theta:</strong> Mixed hardening parameter (optional, default 0)</li>
 <li><strong>Kinf:</strong> Saturation hardening시의 파라미터(optional, default 0)</li>
@@ -3266,13 +4011,12 @@
 </ul>
 </div>
 <p><strong>Value로 지정하는 경우</strong></p>
-<p><code>Value</code>로 지정하는 경우 다음의 수식을 적용한다. </p>
+<p><code>Value</code>로 지정하는 경우 다음의 수식을 적용한다.</p>
 <ul>
 <li>Linear mixed hardening model</li>
 </ul>
 <div class="arithmatex">\[
-\small
-\begin{aligned} 
+\begin{aligned}
 &amp;K(\kappa) = \sigma_Y + \theta \bar{H} \kappa  \\
 &amp;H'(\kappa) = (1-\theta) \bar{H}, ~ {\rm where,~} 0 \le \theta \le 1  \\
 \end{aligned}
@@ -3281,19 +4025,18 @@
 <li>Saturation isotropic hardening and linear kinematic hardening model</li>
 </ul>
 <div class="arithmatex">\[
-\small
-\begin{aligned} 
+\begin{aligned}
 &amp;K(\kappa) = \sigma_Y + \theta \bar{H} \kappa + ( \bar{K}_\infty- \bar{K}_0 )(1-exp(-\delta \kappa)) \\
 &amp;H'(\kappa) = (1-\theta) \bar{H}, ~ {\rm where,~} 0 \le \theta \le 1  \\
 \end{aligned}
 \]</div>
-<p><span class="arithmatex">\(\small\bar{H}\)</span>는 상수이며, <span class="arithmatex">\(\small\theta = 0\)</span>이면 kinematic hardening만을, <span class="arithmatex">\(\small\theta = 1\)</span>이면 isotropic hardening만을 적용하는 것이다.  <span class="arithmatex">\(\small 0 \le \theta \le 1\)</span>의 조건을 만족해야 한다. Linear mixed hardening model에서  <span class="arithmatex">\(\small dK/d \kappa = (1-\theta)\bar{H}\)</span> 가  isotropic hardening molulus가 되고,  <span class="arithmatex">\(\small (1-\theta) \bar{H}\)</span>이 kinematic hardening modulus가 된다. </p>
-<p><span class="arithmatex">\(\small\bar{K}_\infty = \bar{K}_0\)</span>또는 <span class="arithmatex">\(\small\delta=0\)</span> 조건을 만족할 경우 linear mixed hardening에 해당한다. Linear mixed hardening에서  <span class="arithmatex">\(\bar{H}\)</span>는 음의 값을 가질 수 있으나, Saturation isotropic hardening and linear kinematic hardening model에서는 <span class="arithmatex">\(\small\bar{H} \ge 0\)</span>,  <span class="arithmatex">\(\small\bar{K}_\infty \ge \bar{K}_0 \gt 0\)</span>, <span class="arithmatex">\(\small\delta \ge 0\)</span> 조건을 만족해야 한다. </p>
+<p><span class="arithmatex">\(\bar{H}\)</span>는 상수이며, <span class="arithmatex">\(\theta = 0\)</span>이면 kinematic hardening만을, <span class="arithmatex">\(\theta = 1\)</span>이면 isotropic hardening만을 적용하는 것이다.  <span class="arithmatex">\(0 \le \theta \le 1\)</span>의 조건을 만족해야 한다. Linear mixed hardening model에서  <span class="arithmatex">\(dK/d \kappa = (1-\theta)\bar{H}\)</span> 가  isotropic hardening molulus가 되고,  <span class="arithmatex">\((1-\theta) \bar{H}\)</span>이 kinematic hardening modulus가 된다.</p>
+<p><span class="arithmatex">\(\bar{K}_\infty = \bar{K}_0\)</span>또는 <span class="arithmatex">\(\delta=0\)</span> 조건을 만족할 경우 linear mixed hardening에 해당한다. Linear mixed hardening에서  <span class="arithmatex">\(\bar{H}\)</span>는 음의 값을 가질 수 있으나, Saturation isotropic hardening and linear kinematic hardening model에서는 <span class="arithmatex">\(\bar{H} \ge 0\)</span>,  <span class="arithmatex">\(\bar{K}_\infty \ge \bar{K}_0 \gt 0\)</span>, <span class="arithmatex">\(\delta \ge 0\)</span> 조건을 만족해야 한다.</p>
 <p><img alt="Fig. 7.2-1. Linear hardening" src="image/7.2-1.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-1.</span></strong> Linear hardening</p>
 
 <p><strong>Function으로 지정하는 경우</strong></p>
-<p>재료에 대한 1축 인장 실험결과가 있다면, 이를 이용하여 적절히 calibration을 수행할 수 있다. 이 경우 Type=Function을 적절히 이용하면 된다. 주의할 점은 isotropic hardening과 kinematic hardening이 동시에 존재할 때 2차탄성계수가 그림 7.2-2에 제시된 것과 같은 식을 만족하도록 구성해야 한다는 점이다. </p>
+<p>재료에 대한 1축 인장 실험결과가 있다면, 이를 이용하여 적절히 calibration을 수행할 수 있다. 이 경우 Type=Function을 적절히 이용하면 된다. 주의할 점은 isotropic hardening과 kinematic hardening이 동시에 존재할 때 2차탄성계수가 그림 7.2-2에 제시된 것과 같은 식을 만족하도록 구성해야 한다는 점이다.</p>
 <p><img alt="Fig. 7.2-2. Nonlinear hardening" src="image/7.2-2.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-2.</span></strong> Nonlinear hardening</p>
 
@@ -3309,7 +4052,7 @@
  3000., 300.,    # yield, H, theta, Kinf, K0, delta
 
 # Nonlinear isotropic hardening case
-*Function, Type=MultiLinear, Name=isoFunc 
+*Function, Type=MultiLinear, Name=isoFunc
  0. 200.
  0.01 210.
 
@@ -3326,12 +4069,23 @@
 *Material, Type=vonMises, Name=steel5
  200000.    # E, nu, alpha, density
  isoFunc, kinFunc     # isoHardFunc, kinHardFunc|H
+
+# Perfectly plastic steel from material DB
+*Material, Type=vonMises, Name=SS275
+ KDS-2026-SS275-t16
+ Fy, 0, 1
+
+# Linear isotropic hardening from material DB yield
+*Material, Type=vonMises, Name=SS275-H
+ KDS-2026-SS275-t16
+ Fy, 2100, 1
 </code></pre></div>
-<h3 id="material-typetresca">*Material Type=Tresca</h3>
+<h3 id="714-material-typetresca">7.1.4 *Material, Type=Tresca</h3>
 <p>Define Tresca plasticity material model</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=Tresca, Name=name
- E, nu, alpha, density, StrainHardening|IsotropicHardening
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
  {yield,dyield}|yieldFunc
+ [StrainHardening|IsotropicHardening]
 </code></pre></div>
 <h5 id="first-dataline_3">First dataline</h5>
 <div class="admonition note">
@@ -3339,23 +4093,30 @@
 <li><strong>E:</strong> elastic modulus (required)</li>
 <li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
-<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+<li><strong>density:</strong> 직접 수치 dataline의 density (optional, default 0.). DB dataline에서 생략한 <code>density</code>는 0이 아니라 DB density를 뜻한다.</li>
+<li><strong>material-db-item:</strong> material DB item name. 이 항목을 쓰면 <code>E</code>, <code>nu</code>, <code>alpha</code>, <code>density</code> 대신 DB 탄성 물성치를 사용한다. 뒤에 <code>density</code>를 지정하면 density만 직접 수치로 override하고, 생략하면 DB density를 사용한다.</li>
+<li><strong>ToDirectForm:</strong> DB dataline 마지막에 쓸 수 있는 optional token. 저장/재출력 시 DB 입력을 직접 수치 dataline으로 전개한다.</li>
 </ul>
 </div>
 <h5 id="second-dataline">Second dataline</h5>
 <div class="admonition note">
 <ul>
-<li><strong>yield,dyield:</strong> initial yield value(required), and the derivative after initial yielding(optional, default 0.)</li>
+<li><strong>yield:</strong> initial yield value(required). 첫 dataline에 <code>material-db-item</code>을 쓴 경우 <code>Fy</code>를 입력해 DB 항복강도를 참조할 수 있다.</li>
+<li><strong>dyield:</strong> derivative after initial yielding(optional, default 0.)</li>
 <li><strong>yieldFunc:</strong> yield function(required)</li>
 </ul>
 </div>
-<p>Tresca 재료모델은 항복함수와 소성퍼텐셜(flow potential)이 다음과 같다. </p>
+<h5 id="optional-last-dataline">Optional last dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+</ul>
+</div>
+<p>Tresca 재료모델은 항복함수와 소성퍼텐셜(flow potential)이 다음과 같다.</p>
 <div class="arithmatex">\[
-\small
 F({\sigma}, \kappa) = | \sigma_1 - \sigma_3 | - \sigma_Y (\kappa)
 \]</div>
-<p>경화법칙(hardening rule)은 strain hardening, work hardening, isotropic associative hardening rule이 적용가능한데, Tresca 모델에서는 work hardening과 associative isotropic hardening이 동일하다. </p>
+<p>경화법칙(hardening rule)은 strain hardening, work hardening, isotropic associative hardening rule이 적용가능한데, Tresca 모델에서는 work hardening과 associative isotropic hardening이 동일하다.</p>
 <p><img alt="Fig. 7.2-3. Tresca yield criteria" src="image/7.2-3.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-3.</span></strong> Tresca yield criteria</p>
 
@@ -3365,33 +4126,40 @@ F({\sigma}, \kappa) = | \sigma_1 - \sigma_3 | - \sigma_Y (\kappa)
  0.01 10.
  0.02  15
 
-# no hardening case with sy = 20. 
+# no hardening case with sy = 20.
 *Material, Type=Tresca, Name=steelT1
  2E6, 0.18, 1E-5, 7850   # E, nu, alpha, density
  20                      # yield, dyield
 
-# linear hardening case with strain hardening 
+# linear hardening case with strain hardening
 *Material, Type=Tresca, Name=steelT2
  2E6, 0.18, 1E-5, 7850   # E, nu, alpha, density
  20, 0.1                 # yield, dyield
 
-# linear hardening case with work hardening
+# linear hardening case with isotropic hardening
 *Material, Type=Tresca, Name=steelT3
  2E6, 0.18, 1E-5, 7850                    # E, nu, alpha, density
- 20, 0.1, StrainHardening|WorkHardening   # yield, dyield, StrainHardening|WorkHardening
+ 20, 0.1                                  # yield, dyield
+ IsotropicHardening                       # StrainHardening|IsotropicHardening
 
-# nonlinear hardening case with work hardening
+# nonlinear hardening case
 *Material, Type=Tresca, Name=steelT4
  2E6, 0.18, 1E-5, 7850   # E, nu, alpha, density
  trYield                 # yieldFunc
+
+# elastic properties and yield from material DB
+*Material, Type=Tresca, Name=steelT5
+ KDS-2026-SS275-t16
+ Fy
 </code></pre></div>
-<h3 id="material-typemohrcoulomb">*Material Type=MohrCoulomb</h3>
+<h3 id="715-material-typemohrcoulomb">7.1.5 *Material, Type=MohrCoulomb</h3>
 <p>Define Mohr-Coulomb material</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=MohrCoulomb, Name=name
- E, nu, alpha, density, StrainHardening|IsotropicHardening
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
  {coh,dcoh}|cohFunc
- {fric,dfric}|fricFunc 
- {dila,ddila}|dilaFunc   
+ {fric,dfric}|fricFunc
+ {dila,ddila}|dilaFunc
+ [StrainHardening|IsotropicHardening]
 </code></pre></div>
 <h5 id="first-dataline_4">First dataline</h5>
 <div class="admonition note"></div>
@@ -3399,8 +4167,9 @@ F({\sigma}, \kappa) = | \sigma_1 - \sigma_3 | - \sigma_Y (\kappa)
 <li><strong>E:</strong> elastic modulus (required)</li>
 <li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
-<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+<li><strong>density:</strong> 직접 수치 dataline의 density (optional, default 0.). DB dataline에서 생략한 <code>density</code>는 0이 아니라 DB density를 뜻한다.</li>
+<li><strong>material-db-item:</strong> material DB item name. 이 항목을 쓰면 <code>E</code>, <code>nu</code>, <code>alpha</code>, <code>density</code> 대신 DB 탄성 물성치를 사용한다. 뒤에 <code>density</code>를 지정하면 density만 직접 수치로 override하고, 생략하면 DB density를 사용한다.</li>
+<li><strong>ToDirectForm:</strong> DB dataline 마지막에 쓸 수 있는 optional token. 저장/재출력 시 DB 입력을 직접 수치 dataline으로 전개한다.</li>
 </ul>
 <h5 id="second-dataline_1">Second dataline</h5>
 <div class="admonition note">
@@ -3423,14 +4192,18 @@ F({\sigma}, \kappa) = | \sigma_1 - \sigma_3 | - \sigma_Y (\kappa)
 <li><strong>dilaFunc:</strong> function name of dilatant function (optional)</li>
 </ul>
 </div>
-<p>마찰각(frictional angle) 및 팽창각(dilatant angle)의 단위는 라디안이 아닌 degree가 사용된다. 팽창각 관련 값이 마찰각과 같다면, 연관소성흐름 법칙(associative flow rule)이 적용된다. 그렇지 않으면 비연관소성흐름법칙(non-associative flow rule)이 적용된다. 초기 점착력(cohesion은 반드시 0이 아닌 값을 지정해야 한다. 경화법칙으로 associative isotropic hardening(즉, IsotropicHardening)을 적용할 때는 일정한 마찰각과 팽창각(constant frictional and dilatant angle)이 사용되어야 한다. </p>
-<p>Mohr-Coulomb 재료모델은 다음과 같은 항복함수와 소성퍼텐셜을 사용한다. </p>
+<h5 id="optional-last-dataline_1">Optional last dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+</ul>
+</div>
+<p>마찰각(frictional angle) 및 팽창각(dilatant angle)의 단위는 라디안이 아닌 degree가 사용된다. 팽창각 관련 값이 마찰각과 같다면, 연관소성흐름 법칙(associative flow rule)이 적용된다. 그렇지 않으면 비연관소성흐름법칙(non-associative flow rule)이 적용된다. 초기 점착력(cohesion은 반드시 0이 아닌 값을 지정해야 한다. 경화법칙으로 associative isotropic hardening(즉, IsotropicHardening)을 적용할 때는 일정한 마찰각과 팽창각(constant frictional and dilatant angle)이 사용되어야 한다.</p>
+<p>Mohr-Coulomb 재료모델은 다음과 같은 항복함수와 소성퍼텐셜을 사용한다.</p>
 <div class="arithmatex">\[
-\small
 F( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \phi - 2 c(\kappa) \cos(\phi(\kappa))
 \]</div>
 <div class="arithmatex">\[
-\small
 G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(\kappa) \cos(\psi(\kappa))
 \]</div>
 <p><img alt="Fig. 7.2-4. Mohr-Coulomb yield criteria" src="image/7.2-4.png" /></p>
@@ -3439,37 +4212,37 @@ G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(
 <p>The hardening rule includes strain hardening and isotropic hardening. In the Mohr-Coulomb model, work hardening does not exist.</p>
 <h5 id="example_4">Example</h5>
 <div class="highlight"><pre><span></span><code># associative flow rule, no hardening
-*Material, TYPE=MohrCoulomb, Name=soil1
+*Material, Type=MohrCoulomb, Name=soil1
  2E6, 0.18, 1E-5, 7850
- 20    # coh, dcoh 
+ 20    # coh, dcoh
  35    # fric, dfric
  35    # dila, ddila
 
 # associative flow rule, strain hardening
 # linear hardening of cohesion, constant friction and dilatency
-*Material, TYPE=MohrCoulomb, Name=soil2
+*Material, Type=MohrCoulomb, Name=soil2
  2E6, 0.18, 1E-5, 7850
- 20,3. 
- 35, 
- 30. 
+ 20,3.
+ 35,
+ 30.
 
 # associative flow rule, associative isotropic hardening
 # linear hardening of cohesion, constant friction and dilatancy
-*Material, TYPE=MohrCoulomb, Name=soil3
- 2E6, 0.18, 1E-5, 7850, IsotropicHardening
- 20,3. 
- 35, 
- 30. 
+*Material, Type=MohrCoulomb, Name=soil3
+ 2E6, 0.18, 1E-5, 7850
+ 20,3.
+ 35,
+ 30.
+ IsotropicHardening
 
 # associative flow rule, associative isotropic hardening,
 # linear hardening of cohesion, friction
-*Material, TYPE=MohrCoulomb, Name=soil4
+*Material, Type=MohrCoulomb, Name=soil4
  2E6, 0.18, 1E-5, 7850
- 20,3. 
- 35, 0.2 
- 35, 0.2 
+ 20,3.
+ 35, 0.2
 
-# non-associative flow rule, strain hardening, 
+# non-associative flow rule, strain hardening,
 # nonlinear hardening of cohesion, friction, dilatancy
 *Function, Name=cohFunc
  0., 20.
@@ -3486,20 +4259,28 @@ G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(
  0.001 35.
  0.002 40.
 
-*Material, TYPE=MohrCoulomb, Name=soil5
+*Material, Type=MohrCoulomb, Name=soil5
  2E6, 0.18, 1E-5, 7850
- cohFunc 
+ cohFunc
  fricFunc
  dilaFunc
+
+# elastic properties from material DB
+*Material, Type=MohrCoulomb, Name=soil6
+ KDS-2026-C30
+ 2.0
+ 35.0
+ 10.0
 </code></pre></div>
-<h3 id="material-typedruckerprager">*Material Type=DruckerPrager</h3>
-<p>Define Isotropic elasticity material</p>
+<h3 id="716-material-typedruckerprager">7.1.6 *Material, Type=DruckerPrager</h3>
+<p>Define Drucker-Prager material</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=DruckerPrager, Name=name
- E, nu, alpha, density, StrainHardening|IsotropicHardening
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
  beta
- coh,dcoh|cohFunc, 
- af,daf|afFunc 
- ap,dap|apFunc  
+ coh,dcoh|cohFunc
+ af,daf|afFunc
+ ap,dap|apFunc
+ [StrainHardening|IsotropicHardening]
 </code></pre></div>
 <h5 id="first-dataline_5">First dataline</h5>
 <div class="admonition note">
@@ -3507,8 +4288,9 @@ G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(
 <li><strong>E:</strong> elastic modulus (required)</li>
 <li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
-<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+<li><strong>density:</strong> 직접 수치 dataline의 density (optional, default 0.). DB dataline에서 생략한 <code>density</code>는 0이 아니라 DB density를 뜻한다.</li>
+<li><strong>material-db-item:</strong> material DB item name. 이 항목을 쓰면 <code>E</code>, <code>nu</code>, <code>alpha</code>, <code>density</code> 대신 DB 탄성 물성치를 사용한다. 뒤에 <code>density</code>를 지정하면 density만 직접 수치로 override하고, 생략하면 DB density를 사용한다.</li>
+<li><strong>ToDirectForm:</strong> DB dataline 마지막에 쓸 수 있는 optional token. 저장/재출력 시 DB 입력을 직접 수치 dataline으로 전개한다.</li>
 </ul>
 </div>
 <h5 id="second-dataline_2">Second dataline</h5>
@@ -3538,34 +4320,103 @@ G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(
 <li><strong>apFunc:</strong> function name of alphaP (required)</li>
 </ul>
 </div>
-<p>마찰각(frictional angle) 및 팽창각(dilatant angle)의 단위는 라디안이 아닌 degree가 사용된다. 팽창각 관련 값이 마찰각과 같다면, 연관소성흐름 법칙(associative flow rule)이 적용된다. 그렇지 않으면 비연관소성흐름법칙(non-associative flow rule)이 적용된다. 초기 점착력(cohesion은 반드시 0이 아닌 값을 지정해야 한다. 경화법칙으로 associative isotropic hardening(즉, IsotropicHardening)을 적용할 때는 일정한 마찰각과 팽창각(constant frictional and dilatant angle)이 사용되어야 한다. </p>
-<p>Drucker-Prager 재료모델에서 항복함수와 소성퍼텐셜은 다음과 같다. </p>
+<h5 id="optional-last-dataline_2">Optional last dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+</ul>
+</div>
+<p>마찰각(frictional angle) 및 팽창각(dilatant angle)의 단위는 라디안이 아닌 degree가 사용된다. 팽창각 관련 값이 마찰각과 같다면, 연관소성흐름 법칙(associative flow rule)이 적용된다. 그렇지 않으면 비연관소성흐름법칙(non-associative flow rule)이 적용된다. 초기 점착력(cohesion은 반드시 0이 아닌 값을 지정해야 한다. 경화법칙으로 associative isotropic hardening(즉, IsotropicHardening)을 적용할 때는 일정한 마찰각과 팽창각(constant frictional and dilatant angle)이 사용되어야 한다.</p>
+<p>Drucker-Prager 재료모델에서 항복함수와 소성퍼텐셜은 다음과 같다.</p>
 <div class="arithmatex">\[
-\small
 F( \sigma, \kappa) = ||  s || + \alpha (\kappa) I_1 - \beta c(\kappa)
 \]</div>
 <p>▪ Flow potential : same to yield function</p>
 <div class="arithmatex">\[
-\small
-G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1 
+G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1
 \]</div>
-<p>경화법칙은 strain hardening과 isotropic hardening이 존재한다. Drucker-Prager  모델에서는 work hardening이 존재하지 않는다. </p>
+<p>경화법칙은 strain hardening과 isotropic hardening이 존재한다. Drucker-Prager  모델에서는 work hardening이 존재하지 않는다.</p>
 <p><img alt="Fig. 7.2-5. Flow rule of Drucker-Prager model" src="image/7.2-5.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-5.</span></strong> Flow rule of Drucker-Prager model</p>
 
 <h5 id="example_5">Example</h5>
-<div class="highlight"><pre><span></span><code>*Material, TYPE=DruckerPrager, Name=concreteDP
- 2E6, 0.18, 1E-5, 7850, StrainHardening   # E, nu, alpha, density, StrainHardening|IsotropicHardening
+<div class="highlight"><pre><span></span><code>*Material, Type=DruckerPrager, Name=concreteDP
+ 2E6, 0.18, 1E-5, 7850   # E, nu, alpha, density
  4        # beta
- 12.3     # coh,dcoh|cohFunc, 
- 20       # af,daf|afFunc 
- 20       # ap,dap|apFunc  
+ 12.3     # coh,dcoh|cohFunc,
+ 20       # af,daf|afFunc
+ 20       # ap,dap|apFunc
+
+*Material, Type=DruckerPrager, Name=rockDP
+ KDS-2026-C30
+ 1.0
+ 2.0
+ 0.12
+ 0.08
+ IsotropicHardening
 </code></pre></div>
-<h3 id="material-typeugeneric">*Material Type=UGeneric</h3>
+<h3 id="717-material-typeconcretedamage-reserved">7.1.7 *Material, Type=ConcreteDamage  [Reserved]</h3>
+<p>콘크리트 손상소성 재료모델을 정의한다.</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=ConcreteDamage, Name=name
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
+ fc, Dc, wc
+ ft, Dt, wt
+ a, Kc, ap, ecc
+</code></pre></div>
+<h5 id="first-data-line">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E:</strong> elastic modulus. 직접 수치 입력에서 필요하다.</li>
+<li><strong>nu:</strong> Poisson's ratio (optional, default 0.)</li>
+<li><strong>alpha:</strong> thermal expansion coefficient (optional, default 0.)</li>
+<li><strong>density:</strong> 직접 수치 dataline의 density (optional, default 0.). DB dataline에서 생략한 <code>density</code>는 0이 아니라 DB density를 뜻한다.</li>
+<li><strong>material-db-item:</strong> material DB item name. 이 항목을 쓰면 <code>E</code>, <code>nu</code>, <code>alpha</code>, <code>density</code> 대신 DB 탄성 물성치를 사용한다. 뒤에 <code>density</code>를 지정하면 density만 직접 수치로 override하고, 생략하면 DB density를 사용한다.</li>
+<li><strong>ToDirectForm:</strong> DB 입력의 마지막 token으로 쓸 수 있는 선택 항목이다. 지정하면 저장/재출력 시 DB 입력을 현재 global UnitSystem 기준 직접 수치 dataline으로 전개한다.</li>
+</ul>
+</div>
+<h5 id="second-and-third-data-lines">Second and third data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>fc:</strong> compression hardening function (required)</li>
+<li><strong>Dc:</strong> compression damage function (optional)</li>
+<li><strong>wc:</strong> compression recovery parameter (optional, default 1.)</li>
+<li><strong>ft:</strong> tension hardening function (required)</li>
+<li><strong>Dt:</strong> tension damage function (optional)</li>
+<li><strong>wt:</strong> tension recovery parameter (optional, default 1.)</li>
+</ul>
+</div>
+<h5 id="fourth-data-line">Fourth data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>a:</strong> dilation angle (optional, default 0.14)</li>
+<li><strong>Kc:</strong> yield surface shape parameter (optional, default &#8532;)</li>
+<li><strong>ap:</strong> plastic potential eccentricity parameter (optional, default 0.2)</li>
+<li><strong>ecc:</strong> flow potential eccentricity (optional, default 0.1)</li>
+</ul>
+</div>
+<h5 id="example_6">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Name=chard
+ 0., 20.
+ 0.001, 25.
+ 0.002, 25.
+
+*Function, Name=thard
+ 0., 2.
+ 0.001, 1.
+ 0.002, 0.2
+
+*Material, Type=ConcreteDamage, Name=concreteCD
+ 29188.6, 0.18, 1e-05, 2300  # E, nu, alpha, density
+ chard,  , 1                 # fc, Dc, wc
+ thard,  , 1                 # ft, Dt, wt
+ 0.12, 0.666667, 0.2, 0.1    # a, Kc, ap, ecc
+</code></pre></div>
+<h3 id="718-material-typeugeneric">7.1.8 *Material, Type=UGeneric</h3>
 <p>Define uniaxial generic material</p>
-<div class="highlight"><pre><span></span><code>*Material, Type=UConrete, Name=name 
-  Compression|Tension, EnvFunc, Plastic|Secant|IEFunc, 
+<div class="highlight"><pre><span></span><code>*Material, Type=UGeneric, Name=name
+  Compression|Tension, EnvFunc, Plastic|Secant|IEFunc,
   ...
+  LongTerm, Concrete, timeFunction, nchain, lambda1, nsample
   alpha, density
 </code></pre></div>
 <h5 id="first-dataline-and-optional-second-dataline">First dataline and optional second dataline</h5>
@@ -3576,14 +4427,26 @@ G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1
 <li><strong>Plastic|Secant|CIEFunc:</strong> Plastic unloading, Secant unloading, 또는 damage plastic unloading 시의 함수를 지정 (optional, default Plastic)</li>
 </ul>
 </div>
+<h5 id="longterm-concrete-dataline_1">LongTerm, Concrete dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>timeFunction:</strong> <code>*Function, Type=ConcreteTime</code> function 이름이다. 표준 <code>ConcreteTime</code> function은 콘크리트 재령 변수를 day 단위로 평가한다.</li>
+<li><strong>nchain:</strong> Kelvin chain 개수 <span class="arithmatex">\(m\)</span>이다(optional, default <code>4</code>).</li>
+<li><strong>lambda1:</strong> 첫 retardation time <span class="arithmatex">\(\lambda_1\)</span>이다(optional). day 단위로 입력한다. 생략하면 참조한 <code>ConcreteTime</code> function이 가진 내부 기본값을 사용한다. 이 재료에서 Function 쪽 기본값을 바꾸려면 여기서 <code>lambda1</code>을 직접 지정한다.</li>
+<li><strong>nsample:</strong> Kelvin chain fitting에 사용하는 sampling point 개수이다(optional, default <code>10*nchain</code>). 직접 입력할 때는 <code>nsample &gt; nchain</code>이어야 한다.</li>
+</ul>
+</div>
+<p>장기거동 재료모델의 시간 변수 <span class="arithmatex">\(t\)</span>는 요소 활성화 이후 경과한 물리 시간 <code>ELTIME</code>에서 가져온다. <code>ELTIME</code>은 요소가 활성화될 때 0에서 시작하고, 물리 시간 step의 시간 증분으로 증가한다. 재하 전 재령은 무하중 <code>Static, Quasi</code> step으로 만든다.</p>
 <h5 id="optional-last-dataline-if-necessary">Optional Last dataline if necessary</h5>
 <div class="admonition note">
 <ul>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
+<li><strong>density:</strong> density (optional, default 0.). <code>UGeneric</code>은 material DB item dataline을 받지 않으므로, <code>density</code>는 여기에서 직접 입력해야 한다. <code>EnvFunc</code>가 DB로 만든 concrete function이어도 그 DB density가 <code>UGeneric</code>에 자동 적용되지는 않는다.</li>
 </ul>
 </div>
-<p>UGeneric 모델은 인장 및 압축을 자유롭게 정의할 수 있는 일축재료모델이다. 특히 콘크리트의 압축측 제하와 재재하에서 발생하는 에너지 소산을 무시하여 간략화한 소성손상모델로 사용할 수 있다. 압축 및 인장측에 대해 독립적으로 파괴포락선이 정의되어야 하며, 제하/재제하(unloading/reloading)시 손상이 없는 소성모델(이하 plastic), 소성손상모델(이하 damage plastic), 소성탄성모델(이하 damage elastic)을 선택할 수 참조한다. 만약 소성손상모델을 적용하는 경우 마지막으로 경험한 변형률(<span class="arithmatex">\(\small\epsilon_{cun}\)</span> 또는 <span class="arithmatex">\(\epsilon_{tun}\)</span>)에 대응하는 점 <span class="arithmatex">\(\small(\epsilon_{cun},\sigma_{cun})\)</span> 또는 <span class="arithmatex">\(\small(\epsilon_{tun},\sigma_{tun})\)</span>과 소성변형률함수에서 지정된 소성변형률(<span class="arithmatex">\(\small\epsilon_{cpl}\)</span> 또는 <span class="arithmatex">\(\epsilon_{tpl}\)</span>)에 대응하는 점을 잇는 선분을 따라 제하 및 재제하가 이루어지므로 <span class="arithmatex">\(\small(\epsilon_{cpl},\sigma_{cun})\)</span>, <span class="arithmatex">\(\small(\epsilon_{tpl},\sigma_{tun})\)</span>형태의 함수 지정이 필요하다. </p>
+<p>UGeneric 모델은 인장 및 압축을 자유롭게 정의할 수 있는 일축재료모델이다. 특히 콘크리트의 압축측 제하와 재재하에서 발생하는 에너지 소산을 무시하여 간략화한 소성손상모델로 사용할 수 있다. 압축 및 인장측에 대해 독립적으로 파괴포락선이 정의되어야 하며, 제하/재제하(unloading/reloading)시 손상이 없는 소성모델(이하 plastic), 소성손상모델(이하 damage plastic), 소성탄성모델(이하 damage elastic)을 선택할 수 참조한다. 만약 소성손상모델을 적용하는 경우 마지막으로 경험한 변형률(<span class="arithmatex">\(\epsilon_{cun}\)</span> 또는 <span class="arithmatex">\(\epsilon_{tun}\)</span>)에 대응하는 점 <span class="arithmatex">\((\epsilon_{cun},\sigma_{cun})\)</span> 또는 <span class="arithmatex">\((\epsilon_{tun},\sigma_{tun})\)</span>과 소성변형률함수에서 지정된 소성변형률(<span class="arithmatex">\(\epsilon_{cpl}\)</span> 또는 <span class="arithmatex">\(\epsilon_{tpl}\)</span>)에 대응하는 점을 잇는 선분을 따라 제하 및 재제하가 이루어지므로 <span class="arithmatex">\((\epsilon_{cpl},\sigma_{cun})\)</span>, <span class="arithmatex">\((\epsilon_{tpl},\sigma_{tun})\)</span>형태의 함수 지정이 필요하다.</p>
+<p>콘크리트 DB item인 <code>KDS-2026-C&lt;fck&gt;</code>, <code>ACI318-2025-C&lt;fck&gt;</code>, <code>EC2-2004-C&lt;fck&gt;</code>는 <code>UGeneric</code> material dataline에 직접 입력하지 않는다. <code>*Function, Type=ParabolaCEnv</code>, <code>*Function, Type=HognestadCEnv</code>, <code>*Function, Type=EC2CEnv</code>, <code>*Function, Type=MPPCEnv</code>, <code>*Function, Type=MaekawaTEnv</code>에서 concrete envelope function을 먼저 생성한 뒤, 그 function 이름을 <code>UGeneric</code>의 <code>EnvFunc</code> 자리에 사용한다. 이 Function DB 입력은 global UnitSystem이 필요하다. 예를 들어 단면해석용 포물선 압축 envelope는 <code>ParabolaCEnv</code>, 일반 비선형 압축 envelope는 <code>HognestadCEnv</code>, <code>EC2CEnv</code>, <code>MPPCEnv</code>, 인장 연화 envelope는 <code>MaekawaTEnv</code>에서 생성한다. <code>ParabolaCEnv</code>는 단면해석용 파라미터를 생성하므로 일반 압축 envelope 물성치와 혼용하지 않는다.</p>
+<p>압축 envelope와 인장 envelope는 독립적으로 지정한다. <code>MaekawaTEnv</code>는 더 이상 압축 envelope 이름을 dataline에서 받지 않고, 직접 입력에서는 <code>Ec, ft[, c]</code>, DB 입력에서는 <code>KDS-2026-C&lt;fck&gt;|ACI318-2025-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, c][, ToDirectForm]</code>으로 인장 envelope 자체를 정의한다.</p>
 <p><img alt="Fig. 7.2-6. Failure envelope, unloading/reloading of UGeneric" src="image/7.2-6.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-6.</span></strong> Failure envelope, unloading/reloading of UGeneric</p>
 
@@ -3597,28 +4460,123 @@ G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1
 <p><img alt="Fig. 7.2-9. Cyclic loading of UGeneric for tensile secant unloading" src="image/7.2-9.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-9.</span></strong> Cyclic loading of UGeneric for tensile secant unloading</p>
 
-<h5 id="example_6">Example</h5>
+<h5 id="longterm-concrete-option">LongTerm, Concrete option</h5>
+<p><code>LongTerm, Concrete</code>는 앞에서 정의한 압축·인장 envelope function에 별도 <code>ConcreteTime</code> function을 결합해 재령, 크리프, 수축 효과를 켠다. material dataline에는 <code>KDS-2026-C&lt;fck&gt;</code>, <code>ACI318-2025-C&lt;fck&gt;</code>, <code>EC2-2004-C&lt;fck&gt;</code>, <code>ACI209-1992-C&lt;fc&gt;</code> 같은 concrete DB item을 직접 쓰지 않는다. DB item은 알맞은 <code>*Function</code> dataline에서 function으로 만든 뒤, <code>UGeneric</code>에서는 생성된 function 이름만 참조한다.</p>
+<p>아래 식은 이 option이 사용하는 시간의존 성분의 요약이다. <code>ConcreteTime</code> function 자체의 DB 입력 형식과 허용 기준은 <code>*Function</code> 매뉴얼을 따른다.</p>
+<h5 id="longterm-concrete">LongTerm, Concrete 시간의존 거동</h5>
+<p><code>ConcreteTime</code> function은 재령계수, 크리프 컴플라이언스, 수축 변형률을 다음 series로 제공한다.</p>
+<div class="arithmatex">\[
+\left[a_c(t),\;a_t(t),\;a_E(t),\;c_r(t-\tau),\;c_l(\tau),\;\varepsilon^{sh}(t)\right]
+\]</div>
+<p>재령 효과는 기준 재령 28일의 envelope를 시간 <span class="arithmatex">\(t\)</span>의 재료 특성으로 스케일링하여 사용한다.</p>
+<div class="arithmatex">\[
+f_c(t)=a_c(t)f_c(28),\qquad
+f_t(t)=a_t(t)f_t(28),\qquad
+E_c(t)=a_E(t)E_c(28)
+\]</div>
+<p>재령 효과는 <code>EAG</code>로 저장되는 재령 변형률을 만든다. 일축 콘크리트 시간의존 재료의 비역학 변형률은 다음과 같이 분해한다.</p>
+<div class="arithmatex">\[
+\varepsilon^{\mathrm{NM}}
+=
+\varepsilon^{\mathrm{CR}}
++\varepsilon^{\mathrm{SH}}
++\varepsilon^{\mathrm{AG}}
++\varepsilon^{\mathrm{TH}}
+\]</div>
+<p>크리프 컴플라이언스는 재하 후 경과시간 <span class="arithmatex">\(t-\tau\)</span>와 재하재령 <span class="arithmatex">\(\tau\)</span>의 분리형으로 평가한다.</p>
+<div class="arithmatex">\[
+C(t,\tau)=c_r(t-\tau)c_l(\tau)
+\]</div>
+<p><code>UGeneric + LongTerm, Concrete</code>는 이 크리프 컴플라이언스를 Kelvin chain으로 근사한다. <code>nchain</code>을 <span class="arithmatex">\(m\)</span>으로 두면 retardation time은 다음과 같이 배치한다.</p>
+<div class="arithmatex">\[
+\lambda_\alpha=\lambda_1 10^{\alpha-1},\qquad \alpha=1,\dots,m
+\]</div>
+<p>목표 크리프 컴플라이언스는 다음 근사식에 맞도록 <span class="arithmatex">\(E_\alpha(\tau)\)</span>를 최소제곱법으로 결정한다.</p>
+<div class="arithmatex">\[
+C(t,\tau)\approx
+\sum_{\alpha=1}^{m}
+\frac{1}{E_\alpha(\tau)}
+\left(1-\exp\left(-\frac{t-\tau}{\lambda_\alpha}\right)\right)
+\]</div>
+<p><code>LongTerm, Concrete</code>에서 creep은 압축 응력 경로만 사용한다. 일축에서는 <span class="arithmatex">\(\Delta\sigma^c_n=\min(\sigma_{n+1},0)-\min(\sigma_n,0)\)</span>이고, 다축 <code>IsoElasticity</code>에서는 같은 생각을 주응력 공간에서 적용한 뒤 재료축으로 되돌린다.</p>
+<p>이 일축 압축 전용 정식화는 인장 응력 이력에 대해 작동하지 않으므로, prestressed concrete의 인장 영역이나 균열 직전 인장 응력 이력에서 발생하는 시간의존 변형은 표현되지 않으며, 결과의 보수성은 응력 상태에 따라 달라진다. 압축에서 인장으로 전이될 때 <span class="arithmatex">\(\Delta\sigma^c_n\)</span>은 기존 압축 응력을 제거하는 unloading increment로 들어가 chain 이력을 일부 되돌리며, 이후 인장 구간 동안 chain 상태는 자연 감쇠 <span class="arithmatex">\(\exp(-\Delta t_n/\lambda_\alpha)\)</span>로 줄어든다.</p>
+<p>증분해석에서는 내부변수 <span class="arithmatex">\(q^\alpha_n\)</span>를 저장하여 전체 응력이력을 직접 저장하지 않는다.</p>
+<div class="arithmatex">\[
+\Delta\varepsilon_n^c=
+\sum_{\alpha=1}^{m}
+\left(1-\exp\left(-\frac{\Delta t_n}{\lambda_\alpha}\right)\right)
+q_n^\alpha
+\]</div>
+<div class="arithmatex">\[
+q_{n+1}^{\alpha}=
+q_n^{\alpha}\exp\left(-\frac{\Delta t_n}{\lambda_\alpha}\right)
++\frac{\Delta\sigma^c_n}{E_\alpha(t_{n+1})}
+\frac{\lambda_\alpha}{\Delta t_n}
+\left(1-\exp\left(-\frac{\Delta t_n}{\lambda_\alpha}\right)\right)
+\]</div>
+<p>수축은 <code>ConcreteTime</code>에서 응력 독립 signed 값 <span class="arithmatex">\(\varepsilon^{sh}(t)\)</span>로 제공되며, 일반적인 수축은 Hyfeast 내부에서 음수 변형률로 저장된다.</p>
+<h5 id="examples">Examples</h5>
+<p>기본 <code>UGeneric</code> envelope 예제:</p>
 <div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, Name=MPP
  27, 25000, 0.002   # fco, Ec, eco, ecu, fcc, esp
 
 *Function, Type=MPPCIE, Name=MPPIE
- MPP   # compressiveEnv, epeak 
+ MPP   # compressiveEnv, epeak
 
 *Function, Type=MaekawaTEnv, Name=Maekawa
- MPP, 3, 0.4  # compressiveEnv,ft, c
+ 25000, 3, 0.4  # Ec, ft, c
 
 *Material, Type=UGeneric, Name=Mander
  Compression, MPP, MPPIE
- Tension, Maekawa,Secant   
+ Tension, Maekawa,Secant
 
 *Material, Type=UGeneric, Name=Mander
  Compression, MPP
  Tension, Maekawa, Secant
+
+*Function, Type=EC2CEnv, Name=Conc30C
+ EC2-2004-C30
+
+*Function, Type=MaekawaTEnv, Name=Conc30T
+ KDS-2026-C30
+
+*Material, Type=UGeneric, Name=Conc30
+ Compression, Conc30C, Secant
+ Tension, Conc30T, Secant
+
+*Function, Type=ParabolaCEnv, Name=Conc30SectionC
+ KDS-2026-C30, 0.85
+
+*Material, Type=UGeneric, Name=Conc30Section
+ Compression, Conc30SectionC, Secant
 </code></pre></div>
-<h3 id="material-typeusteel">*Material Type=USteel</h3>
+<p><code>LongTerm, Concrete</code> 예제:</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=EC2CEnv, Name=Conc30C
+ EC2-2004-C30
+
+*Function, Type=MaekawaTEnv, Name=Conc30T
+ KDS-2026-C30
+
+*Function, Type=ConcreteTime, Name=Conc30Time
+ EC2-2004-C30, 70, 200, 3, N
+
+*Material, Type=UGeneric, Name=Conc30TimeMat
+ Compression, Conc30C, Secant
+ Tension, Conc30T, Secant
+ LongTerm, Concrete, Conc30Time, 4, 1, 40
+ 0, 0
+</code></pre></div>
+<h3 id="719-material-typeusteel">7.1.9 *Material, Type=USteel</h3>
 <p>Define uniaxial steel model based on Menegotto-Pinto model</p>
-<div class="highlight"><pre><span></span><code>*Material, Type=USteel, Name=name 
+<div class="highlight"><pre><span></span><code>*Material, Type=USteel, Name=name
   E0, yield, E1,  R0,a1,a2, a3,a4, eu, alpha, density
+  [LongTerm, Tendon, standard, class, fp[, rho1000]]
+  [LongTerm, Tendon, material-db-item[, rho1000]]
+
+*Material, Type=USteel, Name=name
+  material-db-item, NoHardening|Hardening|Mattock-StressRelieved|Mattock-LowRelaxation[, density][, ToDirectForm]
+  [LongTerm, Tendon, standard, class, fp[, rho1000]]
+  [LongTerm, Tendon, material-db-item[, rho1000]]
 </code></pre></div>
 <h5 id="first-dataline_6">First dataline</h5>
 <div class="admonition note">
@@ -3633,7 +4591,30 @@ G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1
 <li><strong>density:</strong> density (optional, default 0.)</li>
 </ul>
 </div>
-<p>USteel uses Menegotto-Pinto model with some modifications of partial reloading problem. It can be used for modeling rebar or prestressing steel. </p>
+<h5 id="db-recipe-dataline">DB recipe dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>material-db-item:</strong> 일반/용접용 철근 또는 긴장재 material DB item name. 구조용 강재 DB item은 USteel recipe item이 아니며, 내진 철근 DB recipe는 v1.0.0에서 정의하지 않는다.</li>
+<li><strong>NoHardening:</strong> <code>E1 = 0</code>인 USteel 곡선. 완전소성은 아니며 Menegotto-Pinto 전이 파라미터의 영향을 받는다.</li>
+<li><strong>Hardening:</strong> 철근용 hardening recipe.</li>
+<li><strong>Mattock-StressRelieved:</strong> stress-relieved 7-wire strand용 Mattock recipe.</li>
+<li><strong>Mattock-LowRelaxation:</strong> low-relaxation 7-wire strand용 Mattock recipe.</li>
+<li><strong>density:</strong> DB recipe의 density만 override하는 선택 값. 생략하면 DB density를 사용한다.</li>
+<li><strong>ToDirectForm:</strong> DB recipe dataline 마지막에 쓸 수 있는 optional token. 저장/재출력 시 DB recipe를 직접 수치 dataline으로 전개한다.</li>
+</ul>
+</div>
+<h5 id="longterm-tendon-dataline_1">LongTerm, Tendon dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>standard:</strong> <code>KDS-2025</code> 또는 <code>EC2-2004</code>.</li>
+<li><strong>class:</strong> relaxation class이다. <code>Class1</code>, <code>Class2</code>, <code>Class3</code> 중 하나를 사용한다.</li>
+<li><strong>fp:</strong> 응력비 계산에 쓰는 기준 인장강도이다. <code>KDS-2025</code>에서는 <span class="arithmatex">\(f_{pu}\)</span>, <code>EC2-2004</code>에서는 <span class="arithmatex">\(f_{pk}\)</span>를 입력한다. 직접 수치 입력은 현재 global <code>UnitSystem</code>의 응력 단위를 따르며, <code>N-mm</code> 단위계에서는 MPa(<span class="arithmatex">\(N/mm^2\)</span>)이다.</li>
+<li><strong>material-db-item:</strong> 긴장재 material DB item name이다. DB recipe dataline의 item과 같아도 이 dataline에서 다시 명시한다. DB item에서 기준, relaxation class, 기준 인장강도를 가져오며, DB source unit에서 현재 global <code>UnitSystem</code>의 응력 단위로 변환한다.</li>
+<li><strong>rho1000:</strong> 선택 입력이다. 1000시간 relaxation 손실률을 percent 값으로 입력한다. 생략하면 DB item 값 또는 class 기본값(<code>Class1</code> = 8, <code>Class2</code> = 2.5, <code>Class3</code> = 4)을 사용한다.</li>
+</ul>
+</div>
+<h5 id="_1">역학적 거동</h5>
+<p>USteel uses Menegotto-Pinto model with some modifications of partial reloading problem. It can be used for modeling rebar or prestressing steel.</p>
 <p><img alt="Fig. 7.2-10. Menegotto-Pinto Model" src="image/7.2-10.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-10.</span></strong> Menegotto-Pinto Model</p>
 
@@ -3644,6 +4625,77 @@ G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1
 <p><img alt="Fig. 7.2-12. Stress-strain curve of 7-wire strand with ultimate strength 1860 MPa" src="image/7.2-12.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-12.</span></strong> Stress-strain curve of 7-wire strand with ultimate strength 1860 MPa</p>
 
+<h5 id="_2">장기거동</h5>
+<p><code>LongTerm, Tendon</code>은 일축 긴장재 relaxation에만 적용한다. <code>Static, Quasi</code> step의 <code>TUnit</code>을 사용해 시간 증분을 hour 단위로 바꾸고, 인장 상태에서만 작동하며, 단조 누적한 응력 손실을 초기 탄성계수 <code>E0</code>로 relaxation 변형률로 변환한다. 재긴장은 기존 <code>*State</code> 입력 흐름으로 처리한다.</p>
+<p>KDS와 EC2 입력은 다음 tendon prestress relaxation 기준식을 사용한다. 현재 인장 응력에 이미 누적된 relaxation 손실을 더한 기준 응력을 <span class="arithmatex">\(\sigma_p^*\)</span>, 기준 인장강도를 <span class="arithmatex">\(f_p\)</span>라 두면 응력비는 다음과 같다.</p>
+<div class="arithmatex">\[
+\mu=\frac{\sigma_p^*}{f_p}
+\]</div>
+<p>여기서 <code>KDS-2025</code>에서는 <span class="arithmatex">\(f_p=f_{pu}\)</span>, <code>EC2-2004</code>에서는 <span class="arithmatex">\(f_p=f_{pk}\)</span>이다. 시간 <span class="arithmatex">\(t\)</span>는 hour 단위이고, <code>rho1000</code>은 1000시간 relaxation 손실률을 percent 값으로 입력한다.</p>
+<div class="arithmatex">\[
+\Delta\sigma_{p,r}(t)
+=
+\sigma_p^*\,c_r\rho_{1000}\exp(a_r\mu)
+\left(\frac{t}{1000}\right)^q
+10^{-5},
+\qquad
+q=\max\left(0,0.75(1-\mu)\right)
+\]</div>
+<p>class별 계수는 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th style="text-align: right;"><span class="arithmatex">\(c_r\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(a_r\)</span></th>
+<th style="text-align: right;">기본 <span class="arithmatex">\(\rho_{1000}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Class1</code></td>
+<td style="text-align: right;">5.39</td>
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td><code>Class2</code></td>
+<td style="text-align: right;">0.66</td>
+<td style="text-align: right;">9.1</td>
+<td style="text-align: right;">2.5</td>
+</tr>
+<tr>
+<td><code>Class3</code></td>
+<td style="text-align: right;">1.98</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table>
+<p>증분해석에서는 이미 누적된 relaxation 손실 <span class="arithmatex">\(L_n\)</span>을 기준식의 등가 시간으로 환산한 뒤, 현재 step의 시간증분 <span class="arithmatex">\(\Delta t\)</span>를 더해 목표 누적 손실을 계산한다.</p>
+<div class="arithmatex">\[
+L_{1000}
+=
+\sigma_p^*\,c_r\rho_{1000}\exp(a_r\mu)10^{-5}
+\]</div>
+<div class="arithmatex">\[
+t_{\mathrm{eq}}
+=
+1000\left(\frac{L_n}{L_{1000}}\right)^{1/q}
+\quad (L_n&gt;0,\;L_{1000}&gt;0,\;q&gt;0)
+\]</div>
+<div class="arithmatex">\[
+L_{n+1}^{\mathrm{target}}
+=
+L_{1000}
+\left(\frac{t_{\mathrm{eq}}+\Delta t}{1000}\right)^q
+\]</div>
+<p>step에서 추가되는 손실은 <span class="arithmatex">\(\max(0,L_{n+1}^{\mathrm{target}}-L_n)\)</span>이고, 현재 남아 있는 인장 응력을 넘지 않도록 제한한다. 이 응력 손실은 접선강성이 아니라 초기 탄성계수 <span class="arithmatex">\(E_0\)</span>로 나누어 relaxation 변형률 증분으로 저장한다.</p>
+<div class="arithmatex">\[
+\Delta\varepsilon_{p,r}
+=
+\frac{\Delta L}{E_0}
+\]</div>
 <h5 id="example_7">Example</h5>
 <div class="highlight"><pre><span></span><code># 400 MPa rebar without hardening
 *Material, Type=USteel, Name=SD40
@@ -3663,17 +4715,28 @@ G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1
 *Material, Type=USteel, Name=SD40W-U
  200000, 400, 0.0586*200000, 20,18.5,0.15, 0.01, 7, 0.13
 
-# Stress-relieved 7-wire strand with ultimate strength 1860 MPa 
+# Stress-relieved 7-wire strand with ultimate strength 1860 MPa
 *Material, Type=USteel, Name=STendon
  200000,  1652.891, 200000*0.03, 6, 0., 0., 0, 1, 0.0428
 
-# Low relaxation 7-wire strand with ultimate strength 1860 MPa 
+# Low relaxation 7-wire strand with ultimate strength 1860 MPa
 *Material, Type=USteel, Name=RTendon
  200000,  1694.915, 200000*0.025, 10,0.,0., 0, 1, 0.0415
+ LongTerm, Tendon, KDS-2025, Class2, 1860
+
+# Rebar from material DB
+*Material, Type=USteel, Name=SD40DB
+ KDS-2026-SD400, NoHardening
+
+*Material, Type=USteel, Name=SD40DB-U
+ KDS-2026-SD400, Hardening
+
+*Material, Type=USteel, Name=SD40WDB-U
+ KDS-2026-SD400W, Hardening
 </code></pre></div>
-<h3 id="material-typegaphook">*Material Type=GapHook</h3>
+<h3 id="7110-material-typegaphook">7.1.10 *Material, Type=GapHook</h3>
 <p>1축 gap-hook 재료를 지정</p>
-<div class="highlight"><pre><span></span><code>*Material, Type=GapHook, Name=name 
+<div class="highlight"><pre><span></span><code>*Material, Type=GapHook, Name=name
   kg,g, kh,h
 </code></pre></div>
 <h5 id="first-dataline_7">First dataline</h5>
@@ -3699,12 +4762,12 @@ G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1
 *Material, Type=GapHook, Name=contactSpring
  5E5   # kg, g, kh, h
 </code></pre></div>
-<h3 id="material-typecohesive">*Material, Type=Cohesive</h3>
-<p>Define cohesive zone material </p>
+<h3 id="7111-material-typecohesive">7.1.11 *Material, Type=Cohesive</h3>
+<p>Define cohesive zone material</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=Cohesive, Name=name
  Eaa, Ebb, Enn, Eab, Ebn, Ena
  MaxStress|MaxRelativeDisplacement|QuadStress|QuadRelativeDisplacement, da0, db0, dn0
- {Linear, df, kappa} | {Exponential, alpha, df, kappa} 
+ {Linear, df, kappa} | {Exponential, alpha, df, kappa}
 </code></pre></div>
 <h5 id="first-dataline_8">First dataline</h5>
 <div class="admonition note">
@@ -3715,16 +4778,15 @@ G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1
 <h5 id="optional-two-datalines-if-damage-exists">Optional two datalines if damage exists</h5>
 <div class="admonition note">
 <ul>
-<li><strong>MaxStress|MaxSeparation|QuadStress|QuadRelativeDisplacement, da0, db0, dn0:</strong> MaxStress|MaxRelativedisplacement|QuadStress|QuadRelativeDisplacement indicate damage initiation criterion. da0, db0, and dn0 are directional relative displacements at damage initiation. </li>
+<li><strong>MaxStress|MaxSeparation|QuadStress|QuadRelativeDisplacement, da0, db0, dn0:</strong> MaxStress|MaxRelativedisplacement|QuadStress|QuadRelativeDisplacement indicate damage initiation criterion. da0, db0, and dn0 are directional relative displacements at damage initiation.</li>
 <li><strong>Linear:</strong> Linear softening curve for damage evolution</li>
 <li><strong>Exponential, alpha:</strong> Exponential softening curve and its parameter for damage evolution</li>
-<li><strong>df:</strong> Effective relative displacement at failure </li>
-<li><strong>kappa:</strong> Viscosity prameter. optional. defaut 0. </li>
+<li><strong>df:</strong> Effective relative displacement at failure</li>
+<li><strong>kappa:</strong> Viscosity prameter. optional. defaut 0.</li>
 </ul>
 </div>
-<p>첫 번째 데이터라인만 정의하면 다음과 같은 탄성 모델을 정의하게 된다. </p>
+<p>첫 번째 데이터라인만 정의하면 다음과 같은 탄성 모델을 정의하게 된다.</p>
 <div class="arithmatex">\[
-\small
 \begin{bmatrix}
 t_a \\
 t_b \\
@@ -3742,9 +4804,8 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 \delta_n
 \end{bmatrix}
 \]</div>
-<p>여기에서 아래첨자 a, b, n은 국부좌표계로 두 접선방향과 수직방향을 의미한다. 와 는 응력, 는상대변위이다. 나머지 세 데이터라인을 추가하면 다음과 같이 손상을 고려한 모델을 적용한다. </p>
+<p>여기에서 아래첨자 a, b, n은 국부좌표계로 두 접선방향과 수직방향을 의미한다. 와 는 응력, 는상대변위이다. 나머지 세 데이터라인을 추가하면 다음과 같이 손상을 고려한 모델을 적용한다.</p>
 <div class="arithmatex">\[
-\small
 \begin{bmatrix}
 t_a \\
 t_b \\
@@ -3767,35 +4828,34 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 \delta_n
 \end{bmatrix}
 \]</div>
-<p>여기에서 D는 내부 상태에 따라 결정되는 손상지수(damage evolution index)로, 손상 발생 전까지는 0, 파괴시 1, 그 사이는  0-1사이 값을 갖는다. 복합응력상태(combined stress state 또는 mixed fracture mode)를 고려하기 위해 다음과 같이 유효상대변위(effective relative displacement)을 정의한다. </p>
+<p>여기에서 D는 내부 상태에 따라 결정되는 손상지수(damage evolution index)로, 손상 발생 전까지는 0, 파괴시 1, 그 사이는  0-1사이 값을 갖는다. 복합응력상태(combined stress state 또는 mixed fracture mode)를 고려하기 위해 다음과 같이 유효상대변위(effective relative displacement)을 정의한다.</p>
 <div class="arithmatex">\[
-\small
 \delta = \sqrt{\delta_a^2 + \delta_b^2 + \langle \delta_n \rangle^2}
 \]</div>
-<p>여기에서 &lt;*&gt;는 양수이면 그값을, 아니면 0을 만드는 Macaulay 함수이다. </p>
-<p>손상을 정의하려면 손상발생시점과 손상발생 후 손상진전을 정의해야 한다. 손상발생시점은 다음 그림과 같은 네가지 기준을 선택적으로 적용할 수 있다. 손상 시작후 경계면응력은 softening 거동을 보인다. 이때 softening 함수는 선형(Linear) 또는 지수함수(Exponential) 함수를 적용할 수 있다. </p>
+<p>여기에서 &lt;*&gt;는 양수이면 그값을, 아니면 0을 만드는 Macaulay 함수이다.</p>
+<p>손상을 정의하려면 손상발생시점과 손상발생 후 손상진전을 정의해야 한다. 손상발생시점은 다음 그림과 같은 네가지 기준을 선택적으로 적용할 수 있다. 손상 시작후 경계면응력은 softening 거동을 보인다. 이때 softening 함수는 선형(Linear) 또는 지수함수(Exponential) 함수를 적용할 수 있다.</p>
 <p><img alt="Fig. 7.2-14. Cohesive Material" src="image/7.2-14.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-14.</span></strong>Cohesive Material</p>
 
 <h5 id="example_9">Example</h5>
 <div class="highlight"><pre><span></span><code># Unit N-mm
 
-*Material, TYPE=Cohesive, Name=Epoxy_Elastic
+*Material, Type=Cohesive, Name=Epoxy_Elastic
  100000, 100000, 50000
 
-*Material, TYPE=Cohesive, Name=Epoxy_Interface
+*Material, Type=Cohesive, Name=Epoxy_Interface
  100000, 100000, 50000
- QuadStrss, 0.02, 0.02, 0.05
+ QuadStress, 0.02, 0.02, 0.05
  Linear, 0.03
 
-*Material, TYPE=Cohesive, Name=Adhesive_Bond
+*Material, Type=Cohesive, Name=Adhesive_Bond
  80000, 80000, 40000
  MaxRelativeDisplacement, 0.015, 0.015, 0.01
  Exponential, 2, 0.03
 </code></pre></div>
-<h3 id="material-typeacoustic">*Material Type=Acoustic</h3>
+<h3 id="7112-material-typeacoustic">7.1.12 *Material, Type=Acoustic</h3>
 <p>Acoustic solid 요소용 acoustic material을 지정</p>
-<div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=name 
+<div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=name
   bulk, density
 </code></pre></div>
 <h5 id="first-dataline_9">First dataline</h5>
@@ -3809,25 +4869,26 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 <div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=water
  2190E6, 1000
 </code></pre></div>
-<h3 id="material-typeseepage">*Material Type=Seepage</h3>
+<h3 id="7113-material-typeseepage">7.1.13 *Material, Type=Seepage</h3>
 <p>Seepage solid 요소용 물성치</p>
-<div class="highlight"><pre><span></span><code>*Material, Type=Seepage, Name=name 
-  k | kx,ky | kx, ky, kz, CS
-  gamma, Sa
-  VGM, thetaR, thetaS, a, n[, m, l] | User, SWCC, RelHCF
+<div class="highlight"><pre><span></span><code>*Material, Type=Seepage, Name=name
+  k | kx, ky | kx, ky, kz[, CS][, TUnit=tUnit]
+  gamma|auto, Ss
+  VGM, thetaR, thetaS, air, n[, m, l] | User, SWCC, RelHCF
 </code></pre></div>
 <h5 id="first-dataline_10">First dataline</h5>
 <div class="admonition note">
 <ul>
-<li><strong>k | kx, ky | kx, ky, kz:</strong> Permeablity (required)</li>
-<li><strong>CS:</strong> Cooridinate system with type Orientation (optional)</li>
+<li><strong>k | kx, ky | kx, ky, kz:</strong> 투수계수 [L/T] (required). 시간 차원을 포함하는 seepage 입력의 시간 기준은 seepage step time과 일관되어야 한다.</li>
+<li><strong>CS:</strong> Coordinate system with type Orientation (optional)</li>
+<li><strong>TUnit=tUnit:</strong> 투수계수 값에 사용한 [T] 단위를 지정한다(optional). 지원하는 <code>tUnit</code> 값은 <code>s</code>, <code>min</code>, <code>hr</code>, <code>day</code>이다. 생략하면 투수계수는 관련 <code>Seepage, Transient</code> step의 <code>TUnit</code>과 이미 일관된 값으로 해석한다. material <code>TUnit</code>이 step <code>TUnit</code>과 다르면 투수계수 값만 step 시간 기준으로 변환한다.</li>
 </ul>
 </div>
 <h5 id="second-dataline_3">Second dataline</h5>
 <div class="admonition note">
 <ul>
-<li><strong>gamma:</strong> Water weight density (required)</li>
-<li><strong>Sa:</strong> Specific storage (required)</li>
+<li><strong>gamma|auto:</strong> Water weight density (required). <code>auto</code>를 입력하면 현재 global UnitSystem을 이용해 표준 물의 단위중량을 사용한다. 따라서 <code>auto</code>를 쓰기 위해서는 <code>*Environment, TYPE=UnitSystem</code>을 통해 global UnitSystem이 먼저 정의되어 있어야 한다.</li>
+<li><strong>Ss:</strong> Specific storage (required). 일반적으로 [1/L] 물리량이므로 별도 시간 단위를 지정하지 않는다.</li>
 </ul>
 </div>
 <h5 id="third-dataline-for-swcchcf-using-vgm-optional">Third dataline for SWCC/HCF using VGM (optional)</h5>
@@ -3844,9 +4905,12 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 </div>
 <p>세 번째 데이터 라인을 생략하면 해당 재료는 saturation-only로 처리된다. 이 경우 해석 중 음의 간극수압(= suction)이 발생하더라도 SWCC 및 상대 투수계수 감소를 적용하지 않으며, 투수계수는 포화 투수계수 Ks 를 유지한다. 따라서 불포화 영역이 발생할 수 있는 해석에서는 SWCC와 HCF(예: VGM 또는 User)를 반드시 지정해야 한다.</p>
 <h5 id="example_11">Example</h5>
-<div class="highlight"><pre><span></span><code>*Material, Type=Seepage, Name=SatIso
+<div class="highlight"><pre><span></span><code>*Environment, Type=UnitSystem
+  N-m-s-K
+
+*Material, Type=Seepage, Name=SatIso
   1.0e-6
-  9810, 1.0e-5
+  auto, 1.0e-5
 
 *Material, Type=Seepage, Name=UnsatIso1
   2.0e-6
@@ -3887,6 +4951,12 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  맨위로
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -3913,16 +4983,14 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
         <script src="../javascripts/extra.js"></script>
       

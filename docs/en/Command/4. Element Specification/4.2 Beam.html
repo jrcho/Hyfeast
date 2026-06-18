@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
     
     
       
-        <title>Beam - Hyfeast-v1.0.0 Manual</title>
+        <title>4.2 Beam - Hyfeast-v1.0.0-beta.3</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
       
       
 
@@ -32,20 +32,16 @@
     
     
       
-    
-    
+        <script src="../../../javascripts/iframe-worker-shim.js"></script>
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+    
+    
       
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#element-typeb2d2h" class="md-skip">
+        <a href="#421-element-typeb2d2h" class="md-skip">
           Skip to content
         </a>
       
@@ -80,27 +76,27 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+    <a href="../../index.html" title="Hyfeast-v1.0.0-beta.3" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Hyfeast-v1.0.0 Manual
+            Hyfeast-v1.0.0-beta.3
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Beam
+              4.2 Beam
             
           </span>
         </div>
@@ -108,14 +104,14 @@
     </div>
     
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
       <div class="md-header__option">
   <div class="md-select">
     
     <button class="md-header__button md-icon" aria-label="Select language">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
@@ -140,7 +136,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -149,17 +145,19 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -199,15 +197,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+    <a href="../../index.html" title="Hyfeast-v1.0.0-beta.3" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    Hyfeast-v1.0.0 Manual
+    Hyfeast-v1.0.0-beta.3
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -223,7 +223,7 @@
         
   
   <span class="md-ellipsis">
-    Home
+    Overview
   </span>
   
 
@@ -253,7 +253,7 @@
             
   
   <span class="md-ellipsis">
-    Tutorial
+    FE Tools
   </span>
   
 
@@ -263,7 +263,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Tutorial
+            FE Tools
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -274,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tutorial/1.%20Overview.html" class="md-nav__link">
+      <a href="../../Finite%20Element%20Analysis/1.%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -294,12 +294,47 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+      <a href="../../hfStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Beam Cantilever
+    2.1 Overview
   </span>
   
 
@@ -316,11 +351,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+      <a href="../../hfStudio/2.2%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Solid Cantilever
+    2.2 File
   </span>
   
 
@@ -337,11 +372,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+      <a href="../../hfStudio/2.3%20View%20and%20Display.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4. Beam vs Solid
+    2.3 View and Display
   </span>
   
 
@@ -358,11 +393,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tutorial/5.%20hfVisualizer%20Basics.html" class="md-nav__link">
+      <a href="../../hfStudio/2.4%20Selection%20and%20Visibility.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    5. hfVisualizer Basics
+    2.4 Selection and Visibility
   </span>
   
 
@@ -379,11 +414,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+      <a href="../../hfStudio/2.5%20Preprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6. Selection and Visibility
+    2.5 Preprocessing
   </span>
   
 
@@ -400,11 +435,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+      <a href="../../hfStudio/2.6%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7. Postprocessing with Remote Control
+    2.6 Analysis
   </span>
   
 
@@ -421,11 +456,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+      <a href="../../hfStudio/2.7%20Postprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8. Scripts and Automation
+    2.7 Postprocessing
   </span>
   
 
@@ -442,15 +477,108 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+      <a href="../../hfStudio/2.8%20Workspace%20Panels.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9. Portal Frame
+    2.8 Workspace Panels
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hfAnalyzer/3.1%20Running.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Running
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hfAnalyzer/3.2%20Files%20and%20Results.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Files and Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -486,7 +614,7 @@
             
   
   <span class="md-ellipsis">
-    Command
+    FE Commands
   </span>
   
 
@@ -496,7 +624,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Command
+            FE Commands
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -511,7 +639,7 @@
         
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Introduction
   </span>
   
 
@@ -586,7 +714,7 @@
             
   
   <span class="md-ellipsis">
-    4. Element libraries
+    4. Element Library
   </span>
   
 
@@ -596,7 +724,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            4. Element libraries
+            4. Element Library
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -611,7 +739,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    4.1 Overview
   </span>
   
 
@@ -639,7 +767,7 @@
           
   
   <span class="md-ellipsis">
-    Beam
+    4.2 Beam
   </span>
   
 
@@ -650,7 +778,7 @@
         
   
   <span class="md-ellipsis">
-    Beam
+    4.2 Beam
   </span>
   
 
@@ -670,190 +798,181 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#element-typeb2d2h" class="md-nav__link">
+  <a href="#421-element-typeb2d2h" class="md-nav__link">
     <span class="md-ellipsis">
-      *Element, TYPE=B2D2H
+      4.2.1 *Element, Type=B2D2H
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#element-typeb3d2h" class="md-nav__link">
+  <a href="#422-element-typeb3d2h" class="md-nav__link">
     <span class="md-ellipsis">
-      *Element, TYPE=B3D2H
+      4.2.2 *Element, Type=B3D2H
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#element-typeb2d2mh" class="md-nav__link">
+  <a href="#423-element-typeb2d2mh" class="md-nav__link">
     <span class="md-ellipsis">
-      *Element, TYPE=B2D2MH
+      4.2.3 *Element, Type=B2D2MH
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#element-typeb3d2mh" class="md-nav__link">
+  <a href="#424-element-typeb3d2mh" class="md-nav__link">
     <span class="md-ellipsis">
-      *Element, TYPE=B3D2MH
+      4.2.4 *Element, Type=B3D2MH
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#section-typebeam" class="md-nav__link">
+  <a href="#425-section-typebeam" class="md-nav__link">
     <span class="md-ellipsis">
-      *Section, TYPE=Beam
+      4.2.5 *Section, Type=Beam
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cellmeshpoint" class="md-nav__link">
+  <a href="#426-cellmeshpoint" class="md-nav__link">
     <span class="md-ellipsis">
-      *CellMeshPoint
+      4.2.6 *CellMeshPoint
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cell" class="md-nav__link">
+  <a href="#427-cell" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell
+      4.2.7 *Cell
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="*Cell">
+    <nav class="md-nav" aria-label="4.2.7 *Cell">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cell-typevalue" class="md-nav__link">
+  <a href="#4271-cell-typevalue" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Value
+      4.2.7.1 *Cell, Type=Value
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typerectangle" class="md-nav__link">
+  <a href="#4272-cell-typerectangle" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Rectangle
+      4.2.7.2 *Cell, Type=Rectangle
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typecircle" class="md-nav__link">
+  <a href="#4273-cell-typecircle" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Circle
+      4.2.7.3 *Cell, Type=Circle
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typewflange" class="md-nav__link">
+  <a href="#4274-cell-typehtcl2c2lhr-yup" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=WFlange
+      4.2.7.4 *Cell, Type=H/T/C/L/2C/2L/HR[-YUp]
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typewflangeyup" class="md-nav__link">
+  <a href="#4275-cell-typemesh" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=WFlangeYUp
+      4.2.7.5 *Cell, Type=Mesh
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typemesh" class="md-nav__link">
+  <a href="#4276-cell-typelayer" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Mesh
+      4.2.7.6 *Cell, Type=Layer
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typelayer" class="md-nav__link">
+  <a href="#4277-cell-typepoint" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Layer
+      4.2.7.7 *Cell, Type=Point
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typepoint" class="md-nav__link">
+  <a href="#4278-cell-typemesh-rectangle" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Point
+      4.2.7.8 *Cell, Type=Mesh, Rectangle
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typemesh-rectangle" class="md-nav__link">
+  <a href="#4279-cell-typemesh-circle" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Mesh, Rectangle
+      4.2.7.9 *Cell, Type=Mesh, Circle
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typemesh-circle" class="md-nav__link">
+  <a href="#42710-cell-typemesh-htcl2c2lhr-yup" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Mesh, Circle
+      4.2.7.10 *Cell, Type=Mesh, H/T/C/L/2C/2L/HR[-YUp]
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typemesh-wflange" class="md-nav__link">
+  <a href="#42711-cell-typelayer-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Mesh, WFlange
+      4.2.7.11 *Cell, Type=Layer, Stack
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typelayer-stack" class="md-nav__link">
+  <a href="#42712-cell-typelayer-circle" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Layer, Stack
+      4.2.7.12 *Cell, Type=Layer, Circle
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cell-typelayer-circle" class="md-nav__link">
+  <a href="#42713-cell-typepoint-circle" class="md-nav__link">
     <span class="md-ellipsis">
-      *Cell, Type=Layer, Circle
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typepoint-circle" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Point, Circle
+      4.2.7.13 *Cell, Type=Point, Circle
     </span>
   </a>
   
@@ -865,9 +984,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sheartorsionmaterial" class="md-nav__link">
+  <a href="#428-sheartorsionmaterial" class="md-nav__link">
     <span class="md-ellipsis">
-      *ShearTorsionMaterial
+      4.2.8 *ShearTorsionMaterial
     </span>
   </a>
   
@@ -893,7 +1012,7 @@
         
   
   <span class="md-ellipsis">
-    Truss
+    4.3 Truss
   </span>
   
 
@@ -914,7 +1033,7 @@
         
   
   <span class="md-ellipsis">
-    Cable
+    4.4 Cable
   </span>
   
 
@@ -935,7 +1054,7 @@
         
   
   <span class="md-ellipsis">
-    Shell
+    4.5 Shell
   </span>
   
 
@@ -956,7 +1075,7 @@
         
   
   <span class="md-ellipsis">
-    Solid
+    4.6 Solid
   </span>
   
 
@@ -977,7 +1096,7 @@
         
   
   <span class="md-ellipsis">
-    AcousticSolid
+    4.7 AcousticSolid
   </span>
   
 
@@ -998,7 +1117,7 @@
         
   
   <span class="md-ellipsis">
-    SeepageSolid
+    4.8 SeepageSolid
   </span>
   
 
@@ -1019,7 +1138,7 @@
         
   
   <span class="md-ellipsis">
-    MCK
+    4.9 MCK
   </span>
   
 
@@ -1040,7 +1159,7 @@
         
   
   <span class="md-ellipsis">
-    MovingSpring
+    4.10 MovingSpring
   </span>
   
 
@@ -1061,7 +1180,7 @@
         
   
   <span class="md-ellipsis">
-    Interface
+    4.11 Interface
   </span>
   
 
@@ -1082,7 +1201,7 @@
         
   
   <span class="md-ellipsis">
-    EmbeddedLine
+    4.12 EmbeddedLine
   </span>
   
 
@@ -1237,7 +1356,7 @@
         
   
   <span class="md-ellipsis">
-    11. Coordinate system
+    11. Coordinate System
   </span>
   
 
@@ -1300,7 +1419,7 @@
         
   
   <span class="md-ellipsis">
-    14. Step result
+    14. Step Result
   </span>
   
 
@@ -1321,7 +1440,7 @@
         
   
   <span class="md-ellipsis">
-    15. Modelling convenience
+    15. Modelling Convenience
   </span>
   
 
@@ -1363,7 +1482,7 @@
         
   
   <span class="md-ellipsis">
-    17. Special step
+    17. Special Step
   </span>
   
 
@@ -1384,7 +1503,7 @@
         
   
   <span class="md-ellipsis">
-    18. HDB file structure
+    18. HDB File Structure
   </span>
   
 
@@ -1422,7 +1541,7 @@
             
   
   <span class="md-ellipsis">
-    Section
+    Section Tools/2D Modeling
   </span>
   
 
@@ -1432,7 +1551,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Section
+            Section Tools/2D Modeling
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1463,12 +1582,47 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../Section/2.%20Theory.html" class="md-nav__link">
+      <a href="../../Section/hf2DStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Theory
+    2.1 Overview
   </span>
   
 
@@ -1485,15 +1639,213 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Section/3.%20Commands.html" class="md-nav__link">
+      <a href="../../Section/hf2DStudio/2.2%20Window%20and%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Command
+    2.2 Window and File
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/hf2DStudio/2.3%20View%20and%20Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/hf2DStudio/2.4%20Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/hf2DStudio/2.5%20Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/hf2DStudio/2.6%20Operation%20and%20Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/2.7%20Mesh%20Generation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Mesh Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfSectAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfSectAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/3.1%20Help.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Help
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/3.2%20Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1510,7 +1862,28 @@
         
   
   <span class="md-ellipsis">
-    4. Example
+    4. Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section/5.%20Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Theory
   </span>
   
 
@@ -1569,11 +1942,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/1.%20Overview.html" class="md-nav__link">
+      <a href="../../Remote%20Control/1.%20Basics.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Basics
   </span>
   
 
@@ -1604,7 +1977,7 @@
             
   
   <span class="md-ellipsis">
-    2. hfVisualizer
+    2. hfStudio
   </span>
   
 
@@ -1614,7 +1987,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            2. hfVisualizer
+            2. hfStudio
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1625,7 +1998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.1%20Overview.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1646,7 +2019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.2%20Remote-only.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.2%20Remote-only.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1667,7 +2040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.3%20View.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.3%20View.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1688,7 +2061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.4%20File.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.4%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1709,7 +2082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.5%20Display.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.5%20Display.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1730,7 +2103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.6%20Selection.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.6%20Selection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1786,7 +2159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.1%20Environment.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.1%20Environment.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1807,7 +2180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.2%20CoordinateSystem.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.2%20CoordinateSystem.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1828,7 +2201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.3%20Construction.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.3%20Construction.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1884,7 +2257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.4.1%20Node.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.4.1%20Node.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1905,7 +2278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.4.2%20NSet.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.4.2%20NSet.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1969,7 +2342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.5.1%20Element.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.5.1%20Element.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1990,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.5.2%20Elset.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.5.2%20Elset.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2019,7 +2392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.6%20Load.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.6%20Load.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2040,7 +2413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.7%20Surface.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.7%20Surface.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2061,7 +2434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.8%20Sensor.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.8%20Sensor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2082,7 +2455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.9%20NProp.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.9%20NProp.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2103,7 +2476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.10%20Material.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.10%20Material.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2124,7 +2497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.11%20Section.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.11%20Section.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2145,7 +2518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.12%20Function.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.12%20Function.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2166,7 +2539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.13%20Step.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.13%20Step.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2187,7 +2560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.14%20History.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.14%20History.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2208,11 +2581,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.15%20Distribution.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.15%20Distribution.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.7.15 Distribution
+    2.7.15 Assign
   </span>
   
 
@@ -2229,7 +2602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.16%20Model.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.16%20Model.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2250,7 +2623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.17%20Renumber.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.17%20Renumber.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2271,7 +2644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2300,7 +2673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.8%20Analysis.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.8%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2321,11 +2694,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfVisualizer/2.9%20Postprocessing.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hfStudio/2.9%20Postprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     2.9 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Remote%20Control/Recipes/2.10%20hfStudio%20Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10 Recipes
   </span>
   
 
@@ -2364,7 +2758,7 @@
             
   
   <span class="md-ellipsis">
-    3. hfSectionVisualizer
+    3. hf2DStudio
   </span>
   
 
@@ -2374,7 +2768,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            3. hfSectionVisualizer
+            3. hf2DStudio
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2385,11 +2779,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfSectionVisualizer/1.%20Overview.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hf2DStudio/3.1%202D%20Modeling%20Automation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.1 Overview
+    3.1 2D Modeling Automation
   </span>
   
 
@@ -2406,11 +2800,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfSectionVisualizer/2.%20Window%20and%20File.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hf2DStudio/3.2%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.2 Window and File
+    3.2 Overview
   </span>
   
 
@@ -2427,11 +2821,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfSectionVisualizer/3.%20View.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hf2DStudio/3.3%20Window%20and%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.3 View
+    3.3 Window and File
   </span>
   
 
@@ -2448,11 +2842,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfSectionVisualizer/4.%20Geometry.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hf2DStudio/3.4%20View.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.4 Geometry
+    3.4 View
   </span>
   
 
@@ -2469,11 +2863,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfSectionVisualizer/5.%20Definition.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hf2DStudio/3.5%20Geometry.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.5 Definition
+    3.5 Geometry
   </span>
   
 
@@ -2490,75 +2884,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/hfSectionVisualizer/6.%20Operation%20and%20Analysis.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hf2DStudio/3.6%20Definition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.6 Operation and Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    4. Recipes
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
-            <span class="md-nav__icon md-icon"></span>
-            4. Recipes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Remote%20Control/Recipes/1.%20hfVisualizer.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4.1 hfVisualizer
+    3.6 Definition
   </span>
   
 
@@ -2575,11 +2905,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Remote%20Control/Recipes/2.%20hfSectionVisualizer.html" class="md-nav__link">
+      <a href="../../Remote%20Control/hf2DStudio/3.7%20Operation%20and%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.2 hfSectionVisualizer
+    3.7 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Remote%20Control/Recipes/3.8%20hf2DStudio%20Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Recipes
   </span>
   
 
@@ -2625,7 +2976,7 @@
             
   
   <span class="md-ellipsis">
-    Example
+    Tutorials
   </span>
   
 
@@ -2635,7 +2986,238 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Example
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorial/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Beam Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Solid Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Beam vs Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorial/5.%20hfStudio%20Basics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. hfStudio Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Selection and Visibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Postprocessing with Remote Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Scripts and Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Portal Frame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2751,11 +3333,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.6%20Acoustic%20Solid%20Element.html" class="md-nav__link">
+      <a href="../../Example/E.6%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.6 Acoustic Solid Element
+    E.6 Dynamic Analysis using Spring and Mass Elements
   </span>
   
 
@@ -2772,11 +3354,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
+      <a href="../../Example/E.7%20Acoustic%20Solid%20Element%20and%20HydroStaticPressure%20Loads.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.7 Dynamic Analysis using Spring and Mass Elements
+    E.7 Acoustic Solid Element and HydroStaticPressure Loads
   </span>
   
 
@@ -2940,11 +3522,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Example/E.15%20Temperature%20Load%20by%20Bimetal.html" class="md-nav__link">
+      <a href="../../Example/E.15%20Time%20Dependent%20Materials.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.15 Temperature Load by Bimetal
+    E.15 Time Dependent Materials
   </span>
   
 
@@ -2989,234 +3571,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeb2d2h" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=B2D2H
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeb3d2h" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=B3D2H
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeb2d2mh" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=B2D2MH
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-typeb3d2mh" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Element, TYPE=B3D2MH
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#section-typebeam" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Section, TYPE=Beam
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cellmeshpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      *CellMeshPoint
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cell" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="*Cell">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cell-typevalue" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Value
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typerectangle" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Rectangle
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typecircle" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Circle
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typewflange" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=WFlange
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typewflangeyup" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=WFlangeYUp
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typemesh" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Mesh
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typelayer" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Layer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typepoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Point
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typemesh-rectangle" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Mesh, Rectangle
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typemesh-circle" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Mesh, Circle
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typemesh-wflange" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Mesh, WFlange
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typelayer-stack" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Layer, Stack
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typelayer-circle" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Layer, Circle
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell-typepoint-circle" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Cell, Type=Point, Circle
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sheartorsionmaterial" class="md-nav__link">
-    <span class="md-ellipsis">
-      *ShearTorsionMaterial
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -3225,8 +3579,7 @@
                   
 
 
-  <h1>Beam</h1>
-
+<h1 id="42-beam">4.2 Beam</h1>
 <p>The beam element is a structural element that transmits axial force, bending, and torsion, with its dimension along the longitudinal axis (x-axis in the ECS) being larger compared to other directions. The element type, cross-section, and distribution are as follows:</p>
 <p>■ Element Type</p>
 <ul>
@@ -3266,12 +3619,14 @@
 <ol>
 <li>If the cross-section consists of a single cell, it is a homogeneous beam cross-section. If it consists of two or more cells, it is a composite beam cross-section.</li>
 <li>When configuring a beam cross-section with two or more cells, there are restrictions depending on the type of cell used.</li>
-<li><strong>Value</strong>, <strong>Rectangle</strong>, <strong>Circle</strong>, <strong>WFlange</strong>, and <strong>WFlangeYUp</strong> cells only allow elastic material (IsoElasticity) and can only output stress (S), strain (E), and temperature (T) at a few predefined material points, as shown in Figure 4.2-6.</li>
+<li><strong>Value</strong>, <strong>Rectangle</strong>, <strong>Circle</strong>, and <strong>H/T/C/L/2C/2L/HR[-YUp]</strong> cells only allow elastic material (IsoElasticity) and can only output stress (<code>S</code>), total strain (<code>E</code>), mechanical strain (<code>EM</code>), elastic strain (<code>EE</code>), and other elastic-material field values at a few predefined material points, as shown in Figure 4.2-5.</li>
+<li>Direct <code>H/T/C/L/2C/2L/HR[-YUp]</code> standard-shape cells compute section constants using two-dimensional finite element analysis. The internally generated mesh uses quadratic elements such as <code>Q8</code> and <code>T6</code> to represent fillets and other curved boundaries accurately.</li>
+<li>For standard-shape cells, a shape token with <code>-YUp</code>, such as <code>H-YUp</code> or <code>Mesh,H-YUp</code>, aligns the section height with the local y-direction. It can be understood as a 90-degree rotation of the corresponding base shape cell and is useful for two-dimensional beams (<code>B2D2H</code>, <code>B2D2MH</code>) where the user cannot define the beam local coordinate system.</li>
 <li><strong>Point</strong>, <strong>Layer</strong>, and <strong>Mesh</strong> cells can be used with both elastic and inelastic materials.</li>
-<li><strong>Point</strong> cells can output the field values of the used materials, such as stress (S) and strain (E), at all material points that constitute the cell.</li>
-<li><strong>Layer</strong> cells can output the field values of the used materials, such as stress (S) and strain (E), at the top and bottom of each layer.</li>
-<li><strong>Mesh</strong> cells predefine the material points that form the mesh using *CellMeshPoints, and these material points can be used to output field values, such as stress (S) and strain (E), for the used materials.</li>
-<li><strong>Value</strong>, <strong>Rectangle</strong>, <strong>Circle</strong>, <strong>WFlange</strong>, and <strong>WFlangeYUp</strong> cells are allowed to exist independently or in combination with <strong>Point</strong> cells only. (e.g., Rectangle (OK), Rectangle+Point (OK), Rectangle+Rectangle (NG), Rectangle+Value (NG))</li>
+<li><strong>Point</strong> cells can output the field values of the used materials, such as stress (<code>S</code>) and strain (<code>E</code>, <code>EM</code>), at all material points that constitute the cell.</li>
+<li><strong>Layer</strong> cells can output the field values of the used materials, such as stress (<code>S</code>) and strain (<code>E</code>, <code>EM</code>), at the top and bottom of each layer.</li>
+<li><strong>Mesh</strong> cells predefine the material points that form the mesh using *CellMeshPoints, and these material points can be used to output field values, such as stress (<code>S</code>) and strain (<code>E</code>, <code>EM</code>), for the used materials.</li>
+<li><strong>Value</strong>, <strong>Rectangle</strong>, <strong>Circle</strong>, and <strong>H/T/C/L/2C/2L/HR[-YUp]</strong> cells are allowed to exist independently or in combination with <strong>Point</strong> cells only. (e.g., Rectangle (OK), Rectangle+Point (OK), Rectangle+Rectangle (NG), Rectangle+Value (NG))</li>
 <li><strong>Layer</strong> cells are allowed to be combined only with <strong>Layer</strong> and <strong>Point</strong> cells. (e.g., Layer (OK), Layer+Mesh (OK), Layer+Point (OK), Layer+Layer+Point (OK), Layer+Rectangle (NG))</li>
 <li><strong>Mesh</strong> cells are allowed to be combined only with <strong>Mesh</strong> and <strong>Point</strong> cells. (e.g., Mesh (OK), Mesh+Mesh (OK), Mesh+Point (OK), Mesh+Mesh+Point (OK), Mesh+Rectangle (NG))</li>
 <li><strong>Point</strong> cells should generally be combined with other types of cells, but they can also be used independently. (e.g., Value+Point (OK), Rectangle+Point (OK), Point (OK), Point+Point (OK))</li>
@@ -3282,48 +3637,48 @@
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 4.2-5.</span></strong> Output points in elastic cell (viewed from the local +z direction)</p>
 
 <h5 id="example">Example</h5>
-<div class="highlight"><pre><span></span><code>*Material, TYPE=IsoElasticity, Name=mat
+<div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=mat
  200E6, 0.3
 
 *Section, Type=Beam, Name=value1
 *Cell, Type=Value, Mat=mat
-   0.1, 0.442, 0.442, 0., 0.12, , 0.1, 0.1, 0.5,0.5  # a, Iy, Iz, Iyz, J, Asy, Asz, ys, zs, yc, zc
+   0.1, 0.442, 0.442, 0., 0.12, , 0.1, 0.1, C=0.5,0.5  # a, Iy, Iz, Iyz, J, Asy, Asz, ys, zs, C=yc, zc
 
 *Section, Type=Beam Name=value2, Taper=Group, Mass=Lumped
 *Cell, Type=Value, Mat=mat
-   0.1, 0.442, 0.442, 0., 0.12, , 0.1, 0.1, 0.5,0.5  # a, Iy, Iz, Iyz, J, Asy, Asz, ys, zs, yc, zc
-   0.2, 0.642, 0.442, 0., 0.12, , 0.1, 0.1, 0.5,0.5
+   0.1, 0.442, 0.442, 0., 0.12, , 0.1, 0.1, C=0.5,0.5  # a, Iy, Iz, Iyz, J, Asy, Asz, ys, zs, C=yc, zc
+   0.2, 0.642, 0.442, 0., 0.12, , 0.1, 0.1, C=0.5,0.5
 
 *Section, Type=Beam, Name=rect1
 *Cell, Type=Rectangle, Mat=mat
-   20, 30     # b, h, yc,zc
+   20, 30     # B, H
 
 *Section, Type=Beam, Name=rect2, Taper=Group
-*Cell, Type=Rectangle, Type=mat
-   20, 30   # b, h, yc,zc
-   20, 50   # b, h, yc,zc
+*Cell, Type=Rectangle, Mat=mat
+   20, 30   # B, H
+   20, 50   # B, H
 
 *Section, Type=Beam, Name=circle1
 *Cell, Type=Circle, Mat=mat
- 3     # outerR, innerR, yc, zc
+ 3     # outerR
 
 *Section, Type=Beam, Name=circle2
 *Cell, Type=Circle, Mat=mat
- 3, 2.5     # outerR, innerR, yc, zc
+ 3, 2.5     # outerR, innerR
 
 *Section, Type=Beam, Name=circle3, Taper=Group
 *Cell, Type=Circle, Mat=mat
- 3, 2.5     # outerR, innerR, yc, zc
+ 3, 2.5     # outerR, innerR
  4, 3.5
 
-*Section, Type=Beam, Name=wflagne1
-*Cell, Type=WFlange, Mat=mat
-   20, 30, 2, 1, 2,3    # b, h, tf, tw, yc, zc
+*Section, Type=Beam, Name=h1
+*Cell, Type=H, Mat=mat
+   20, 30, 2, 1, 20, 1, 0, 0, 0, 0, C=2, 3
 
-*Section, Type=Beam, Name=wflage2, Taper=Element
-*Cell, Type=WFlange, Mat=mat
-   20, 30, 2, 1, 2,3    # b, h, tf, tw, yc, zc
-   30, 40, 2, 1, 2,3
+*Section, Type=Beam, Name=h2, Taper=Element
+*Cell, Type=H, Mat=mat
+   20, 30, 2, 1, 20, 1, 0, 0, 0, 0, C=2, 3
+   30, 40, 2, 1, 30, 1, 0, 0, 0, 0, C=2, 3
 
 *Section, Type=Beam, Name=BoxGirder
 *CellMeshPoint
@@ -3389,13 +3744,13 @@
  10,10, 0
  11,10,1
 *Cell, Type=Layer,Circle, Mat=steel
- 10, 9, 0, 1, 9  # outerR, innerR, yc, nOuterR, nInnerR
+ 10, 9, 1, 9, C=0  # outerR, innerR, nOuterR, nInnerR, C=yc
 *Cell, Type=Point,Circle, Mat=steel, StartId=201, N=10
- 5, 1.6, 0, 0, 0, 10   # r, a, angle, yc, zc, npoints{, ToDirectForm}
+ 5, 1.6, 0, 10, C=0, 0   # r, a, angle, npoints, C=yc, zc{, ToDirectForm}
 </code></pre></div>
-<h2 id="element-typeb2d2h">*Element, TYPE=B2D2H</h2>
+<h2 id="421-element-typeb2d2h">4.2.1 *Element, Type=B2D2H</h2>
 <p>2D 2-Node Bernoulli Beam Element</p>
-<div class="highlight"><pre><span></span><code>*Element, Type=B2D2H, ELSet=elset
+<div class="highlight"><pre><span></span><code>*Element, Type=B2D2H, Elset=elset
  id, n1, n2, [, S=section, R=beamEndRelease]
  ...
 </code></pre></div>
@@ -3409,12 +3764,12 @@
 <li>Active DOFs:  X,Y,RZ</li>
 </ul>
 </div>
-<p>The Bernoulli beam element assumes zero shear deformation, meaning that shear forces are not defined as state variables and must be calculated using equilibrium conditions. In this formulation, the cross-sectional shear deformation is always zero, and <span class="arithmatex">\(\small V_y=–dM_z/dx\)</span> is used to calculate the shear force.</p>
-<p><span class="arithmatex">\(\small V_y\)</span> is computed by first interpolating <span class="arithmatex">\(\small M_z(x)\)</span> using a polynomial based on the moment response at the integration points, and then differentiating <span class="arithmatex">\(\small M_z(x)\)</span> to obtain <span class="arithmatex">\(\small V_y\)</span>.</p>
+<p>The Bernoulli beam element assumes zero shear deformation, meaning that shear forces are not defined as state variables and must be calculated using equilibrium conditions. In this formulation, the cross-sectional shear deformation is always zero, and <span class="arithmatex">\(V_y=–dM_z/dx\)</span> is used to calculate the shear force.</p>
+<p><span class="arithmatex">\(V_y\)</span> is computed by first interpolating <span class="arithmatex">\(M_z(x)\)</span> using a polynomial based on the moment response at the integration points, and then differentiating <span class="arithmatex">\(M_z(x)\)</span> to obtain <span class="arithmatex">\(V_y\)</span>.</p>
 <p>The <code>beamEndRelease</code> option allows combinations of <code>Rx1</code>, <code>Ry1</code>, <code>Rx2</code>, and <code>Ry2</code> (<code>Rx1</code> and <code>Ry1</code> correspond to the two rotations at the start node, and <code>Rx2</code> and <code>Ry2</code> correspond to the two rotations at the end node). For example, <code>Ry1|Ry2</code>.</p>
-<h2 id="element-typeb3d2h">*Element, TYPE=B3D2H</h2>
+<h2 id="422-element-typeb3d2h">4.2.2 *Element, Type=B3D2H</h2>
 <p>3D 2-Node Bernoulli Beam Element</p>
-<div class="highlight"><pre><span></span><code>*Element, Type=B3D2H, ELSet=elset
+<div class="highlight"><pre><span></span><code>*Element, Type=B3D2H, Elset=elset
  id, n1, n2, [, S=section, CS=beamCS, R=beamEndRelease]
  ...
 </code></pre></div>
@@ -3429,12 +3784,12 @@
 </ul>
 </div>
 <p>If the Bernoulli beam element assumes zero shear deformation, shear forces are not defined as state variables and must be calculated using equilibrium conditions. In this formulation, cross-sectional shear deformations <span class="arithmatex">\(\gamma_y\)</span> and <span class="arithmatex">\(\gamma_z\)</span> are always zero, and shear forces are calculated as follows:</p>
-<p><span class="arithmatex">\(\small V_y = –dM_z/dx, \quad V_z = dM_y/dx\)</span></p>
-<p><span class="arithmatex">\(\small V_y\)</span> is computed by first interpolating <span class="arithmatex">\(\small M_z(x)\)</span> using a polynomial based on the moment response at the integration points, and then differentiating <span class="arithmatex">\(\small M_z(x)\)</span> to obtain <span class="arithmatex">\(\small V_y\)</span>. <span class="arithmatex">\(Hx\)</span> represents <span class="arithmatex">\(\small d\theta / dx\)</span>.</p>
+<p><span class="arithmatex">\(V_y = –dM_z/dx, \quad V_z = dM_y/dx\)</span></p>
+<p><span class="arithmatex">\(V_y\)</span> is computed by first interpolating <span class="arithmatex">\(M_z(x)\)</span> using a polynomial based on the moment response at the integration points, and then differentiating <span class="arithmatex">\(M_z(x)\)</span> to obtain <span class="arithmatex">\(V_y\)</span>. <span class="arithmatex">\(Hx\)</span> represents <span class="arithmatex">\(d\theta / dx\)</span>.</p>
 <p>The <code>beamEndRelease</code> option allows combinations of <code>Rx1</code>, <code>Ry1</code>, <code>Rz1</code>, <code>Rx2</code>, <code>Ry2</code>, and <code>Rz2</code> (<code>Rx1</code>, <code>Ry1</code>, and <code>Rz1</code> correspond to the three rotations at the start node, and <code>Rx2</code>, <code>Ry2</code>, and <code>Rz2</code> correspond to the three rotations at the end node). For example, <code>Rz1|Rz2</code>.</p>
-<h2 id="element-typeb2d2mh">*Element, TYPE=B2D2MH</h2>
+<h2 id="423-element-typeb2d2mh">4.2.3 *Element, Type=B2D2MH</h2>
 <p>2D 2-Node Timoshenko Beam Element</p>
-<div class="highlight"><pre><span></span><code>*Element, Type=B2D2MH, ELSet=elset
+<div class="highlight"><pre><span></span><code>*Element, Type=B2D2MH, Elset=elset
  id, n1, n2, [, S=section, R=beamEndRelease]
  ...
 </code></pre></div>
@@ -3449,9 +3804,9 @@
 </ul>
 </div>
 <p>The <code>beamEndRelease</code> option allows combinations of <code>Rx1</code>, <code>Ry1</code>, <code>Rx2</code>, and <code>Ry2</code> (<code>Rx1</code> and <code>Ry1</code> correspond to the two rotations at the start node, and <code>Rx2</code> and <code>Ry2</code> correspond to the two rotations at the end node). For example, <code>Ry1|Ry2</code>.</p>
-<h2 id="element-typeb3d2mh">*Element, TYPE=B3D2MH</h2>
+<h2 id="424-element-typeb3d2mh">4.2.4 *Element, Type=B3D2MH</h2>
 <p>3D 2-Node Timoshenko Beam Element</p>
-<div class="highlight"><pre><span></span><code>*Element, Type=B3D2MH, ELSet=elset
+<div class="highlight"><pre><span></span><code>*Element, Type=B3D2MH, Elset=elset
  id, n1, n2, [, S=section, CS=beamCS, R=beamEndRelease]
  ...
 </code></pre></div>
@@ -3465,14 +3820,14 @@
 <li>Active DOFs: X, Y, Z, RX, RY, RZ</li>
 </ul>
 </div>
-<p><code>Hx</code> represents <span class="arithmatex">\(\small d\theta/dx\)</span>.</p>
+<p><code>Hx</code> represents <span class="arithmatex">\(d\theta/dx\)</span>.</p>
 <p>The <code>beamEndRelease</code> option allows combinations of <code>Rx1</code>, <code>Ry1</code>, <code>Rz1</code>, <code>Rx2</code>, <code>Ry2</code>, and <code>Rz2</code> (<code>Rx1</code>, <code>Ry1</code>, and <code>Rz1</code> correspond to the three rotations at the start node, and <code>Rx2</code>, <code>Ry2</code>, and <code>Rz2</code> correspond to the three rotations at the end node). For example, <code>Rz1|Rz2</code>.</p>
-<h2 id="section-typebeam">*Section, TYPE=Beam</h2>
+<h2 id="425-section-typebeam">4.2.5 *Section, Type=Beam</h2>
 <p>Defines a beam section.</p>
 <div class="highlight"><pre><span></span><code>*Section, Type=Beam,  Name=name, Taper=Group|Element, Mass=Consistent|Lumped
 *CellMeshPoint
  ...
-*Cell, Type=Rectangle|Circle|WFlage|WFlangeYUp|Mesh|Layer|Point, Mat=mat
+*Cell, Type=Rectangle|Circle|H/T/C/L/2C/2L/HR[-YUp]|Mesh|Mesh,Rectangle|Mesh,Circle|Mesh,H/T/C/L/2C/2L/HR[-YUp]|Layer|Point, Mat=mat
  ...
 *ShearTorsionMaterial
  ...
@@ -3489,13 +3844,15 @@
 <div class="admonition note">
 <ul>
 <li><strong>*CellMeshPoint:</strong> Specifies the coordinates of points used when defining <code>*Cell, Type=Mesh</code>.</li>
-<li><strong>*Cell, Type=..., Mat=mat:</strong> Defines a cell within the cross-section. <code>mat</code> indicates the material used.<ul>
+<li><strong>*Cell, Type=type, Mat=mat:</strong> Defines a cell within the cross-section. <code>mat</code> indicates the material used.<ul>
 <li><strong>Value:</strong> Specifies the cross-sectional constants as values; <code>mat</code> must be linearly elastic.</li>
 <li><strong>Rectangle:</strong> Rectangular cross-section; <code>mat</code> must be linearly elastic.</li>
 <li><strong>Circle:</strong> Circular or hollow circular cross-section; <code>mat</code> must be linearly elastic.</li>
-<li><strong>WFlange:</strong> WFlange cross-section; <code>mat</code> must be linearly elastic.</li>
-<li><strong>WFlangeYUp:</strong> WFlange cross-section with its height oriented along the local y-direction; <code>mat</code> must be linearly elastic.</li>
+<li><strong>H/T/C/L/2C/2L/HR[-YUp]:</strong> Standard steel shape cell; <code>mat</code> must be linearly elastic. These direct shape cells are treated as <code>ShapeSection</code>.</li>
 <li><strong>Mesh:</strong> Arbitrary cross-section given as a mesh. Cross-sectional constants are calculated using 2D finite element analysis.</li>
+<li><strong>Mesh,Rectangle:</strong> Generates a rectangular material point mesh.</li>
+<li><strong>Mesh,Circle:</strong> Generates a circular or hollow circular material point mesh.</li>
+<li><strong>Mesh,H/T/C/L/2C/2L/HR[-YUp]:</strong> Generates a material point mesh from a standard steel shape. These generated mesh cells are treated as <code>MeshedSection</code>.</li>
 <li><strong>Layer:</strong> Arbitrary cross-section given as a layer (only applicable to 2D beam elements).</li>
 <li><strong>Point:</strong> Point-shaped cell. Used for rebar modeling, etc.</li>
 </ul>
@@ -3503,7 +3860,8 @@
 <li><strong>*ShearTorsionMaterial:</strong> Specifies reference materials for shear and torsion behavior using uniaxial material model.</li>
 </ul>
 </div>
-<h2 id="cellmeshpoint">*CellMeshPoint</h2>
+<p>When a beam section is written in direct mesh form, the <code>*Cell, Type=Mesh</code> data lines are not limited to linear cells. The same <code>*CellMeshPoint</code> table can be referenced by T3, Q4, T6, or Q8 cells.</p>
+<h2 id="426-cellmeshpoint">4.2.6 *CellMeshPoint</h2>
 <p>Specifies the coordinates of points used when defining <code>*Cell, Type=Mesh</code>.</p>
 <div class="highlight"><pre><span></span><code>*CellMeshPoint
  pointId, y, z, {y, z}
@@ -3516,32 +3874,184 @@
 <li><strong>y, z, {y, z}:</strong> Point coordinates [L]. If two values are given, they define a constant cross-section; if four values are given, they define a tapered cross-section.</li>
 </ul>
 </div>
-<h2 id="cell">*Cell</h2>
+<p>The point table is shared by every direct mesh cell of the section, regardless of whether the mesh cell uses 3, 4, 6, or 8 point IDs.</p>
+<h2 id="427-cell">4.2.7 *Cell</h2>
 <p>Defines the geometry, materials, and related properties within a beam-element cross-section.</p>
-<div class="highlight"><pre><span></span><code>*Cell, Type=..., Mat=mat, ...
+<div class="highlight"><pre><span></span><code>*Cell, Type=type, Mat=mat
+  data line
   ...
 </code></pre></div>
 <h5 id="keyword-line_1">Keyword line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>Type=...:</strong> Type of the Cell<ul>
+<li><strong>Type=type:</strong> Type of the Cell<ul>
 <li><strong>Value:</strong> Specifies cross-sectional constants as values</li>
 <li><strong>Rectangle:</strong> Rectangular cross-section</li>
 <li><strong>Circle:</strong> Circular or hollow circular cross-section</li>
-<li><strong>WFlange:</strong> WFlange cross-section</li>
-<li><strong>WFlangeYUp:</strong> WFlange cross-section with its height oriented along the local y-direction; <code>mat</code> must be linearly elastic.</li>
+<li><strong>H/T/C/L/2C/2L/HR[-YUp]:</strong> Standard steel shape cell. Add <code>-YUp</code> to align the shape height with the local y-direction.</li>
 <li><strong>Mesh:</strong> Arbitrary cross-section given as a mesh. Cross-sectional constants are calculated using 2D finite element analysis.</li>
+<li><strong>Mesh,Rectangle:</strong> Generates a rectangular material point mesh.</li>
+<li><strong>Mesh,Circle:</strong> Generates a circular or hollow circular material point mesh.</li>
+<li><strong>Mesh,H/T/C/L/2C/2L/HR[-YUp]:</strong> Generates a material point mesh from a standard steel shape.</li>
 <li><strong>Layer:</strong> Layered cross-section that can be used only for 2D beams</li>
+<li><strong>Layer,Stack:</strong> Generates layers by subdividing stacked layer data.</li>
+<li><strong>Layer,Circle:</strong> Generates a circular or hollow circular layered section.</li>
 <li><strong>Point:</strong> Point-shaped cell. Used for rebar modeling, etc.</li>
+<li><strong>Point,Circle:</strong> Generates a circular point pattern.</li>
 </ul>
 </li>
 <li><strong>Mat=mat:</strong> Material used in the Cell</li>
 </ul>
 </div>
-<h3 id="cell-typevalue">*Cell, Type=Value</h3>
+<h5 id="data-line-forms">Data line forms</h5>
+<p><code>*Cell</code> data lines are divided into direct input forms and section DB reference forms.</p>
+<div class="admonition note">
+<ul>
+<li><strong>numeric/direct data line:</strong> Default form that directly lists the dimensions, mesh points, layer fields, or point fields for the selected <code>Type=</code>.</li>
+<li><strong>section DB reference data line:</strong> Catalog-reference form written as <code>DB, item</code>. In supported cells, this form replaces a numeric geometry data line.</li>
+</ul>
+</div>
+<p>In syntax blocks, <code>{A} | {B}</code> means choose one of the two data-line forms. Do not type the braces or the <code>|</code> character.</p>
+<h5 id="common-data-line-options">Common data-line options</h5>
+<p>The following options are appended to data lines; they are not keyword-line options.</p>
+<div class="admonition note">
+<ul>
+<li><strong>C=yc, zc:</strong> Specifies the centroid location of the cell for cell types other than direct <code>Mesh</code>, <code>Layer</code>, and <code>Point</code>.</li>
+<li><strong>ExtraArea=area</strong> or <strong>ExtraArea=area0, area1:</strong> Additional area [L^2] appended to a numeric/direct data line. It is used only for mass and self-weight, and does not affect structural section constants, stiffness, stress/strain recovery, or result output locations.</li>
+<li><strong>ToDirectForm:</strong> Expands a generated mesh cell to direct mesh data when the model is saved or formatted. It is used only on the first data line.</li>
+</ul>
+</div>
+<p><code>C</code> is an abbreviation for cell centroid coordinate. <code>yc</code> and <code>zc</code> are the centroid coordinates of that cell measured in the section reference axes, which are defined from the beam reference line connecting the beam element nodes. <code>yc</code> and <code>zc</code> are not the centroid of the assembled Beam section unless the section has only that one cell. The assembled section centroid is reported separately as <code>yc</code> and <code>zc</code> in section-property output.</p>
+<p>For direct <code>Value</code>, <code>Rectangle</code>, <code>Circle</code>, and <code>H/T/C/L/2C/2L/HR[-YUp]</code> cells, append <code>ExtraArea</code> to the corresponding geometry data line. For tapered sections, each start/end geometry data line may have its own value, and the value is interpolated along the member. For direct <code>Mesh</code>, <code>Layer</code>, and <code>Point</code> cells, specify <code>ExtraArea</code> only on the first cell data line. A single value is used for both ends; in a tapered section, <code>ExtraArea=area0, area1</code> gives the start and end values. When <code>ToDirectForm</code> is also used, write <code>ExtraArea=...</code> before <code>ToDirectForm</code>, and keep <code>ToDirectForm</code> as the last token on the data line.</p>
+<h5 id="section-db-reference-data-lines">Section DB reference data lines</h5>
+<p>A section DB reference is a data-line alternative, not a separate cell type or keyword option. The <code>Type=</code> keyword still selects the Hyfeast cell family, so the referenced DB item must match that family. Do not add a <code>DB</code> marker token.</p>
+<p>The following rules apply to section DB references.</p>
+<ul>
+<li>A global <code>*Environment, Type=UnitSystem</code> must already be defined.</li>
+<li>Runtime section DB files are loaded from <code>tools/db/sections/*.hfdb.json</code>.</li>
+<li>Each section DB file declares its source length unit; DB dimensions and DB-provided <code>ExtraArea</code> are converted to the current global UnitSystem.</li>
+<li><code>C=</code> remains user input in the current model units.</li>
+<li>User-authored <code>ExtraArea=</code> is not allowed on DB reference data lines. Only DB-provided <code>ExtraArea</code> is applied automatically.</li>
+<li>For tapered sections, the second data line may also be a DB reference and may name a different item for the end-section geometry.</li>
+</ul>
+<p>The DB data-line forms below include additional fields that may appear on the first data line.</p>
+<table>
+<thead>
+<tr>
+<th>Supported cell</th>
+<th>DB data-line form</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Circle</code></td>
+<td><code>DB, item, C=yc, zc</code></td>
+<td>Input shortcut for catalog radii. <code>C</code> is optional and defaults to <code>0, 0</code>; saved/formatted as numeric circle data.</td>
+</tr>
+<tr>
+<td><code>H/T/C/L/2C/2L/HR[-YUp]</code></td>
+<td><code>DB, item, C=yc, zc</code></td>
+<td><code>C</code> is optional and defaults to <code>0, 0</code>. Preserved as a standard-shape DB reference when saved/formatted. <code>-YUp</code> variants use the same <code>item</code> and only change the section orientation.</td>
+</tr>
+<tr>
+<td><code>Mesh,Circle</code></td>
+<td><code>DB, item, nS, C=yc, zc, ToDirectForm</code></td>
+<td><code>C</code>, <code>nS</code>, and <code>ToDirectForm</code> are optional fields used only on the first line. <code>C</code> defaults to <code>0, 0</code>. <code>nS</code> is the number of circular segments. Do not specify <code>nS</code> or <code>ToDirectForm</code> on the second line of a tapered section.</td>
+</tr>
+<tr>
+<td><code>Mesh,H/T/C/L/2C/2L/HR[-YUp]</code></td>
+<td><code>DB, item, C=yc, zc, ToDirectForm</code></td>
+<td><code>C</code> defaults to <code>0, 0</code>. <code>ToDirectForm</code> is an optional field used only on the first line. Do not specify it on the second line of a tapered section.</td>
+</tr>
+</tbody>
+</table>
+<p>The current built-in section DBs are <code>AISC16</code> and <code>KSD3502-2022</code>.</p>
+<p>The supported section DB <code>item</code> prefixes are as follows.</p>
+<table>
+<thead>
+<tr>
+<th>DB</th>
+<th><code>item</code> prefix</th>
+<th>Matching <code>Type=</code></th>
+<th>Meaning and examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AISC16</code></td>
+<td><code>W</code>, <code>M</code>, <code>S</code>, <code>HP</code></td>
+<td><code>H</code>, <code>Mesh,H</code></td>
+<td>Wide-flange, miscellaneous beam, standard beam, and bearing-pile shapes. Examples: <code>W14X90</code>, <code>M12.5X12.4</code>, <code>S24X90</code>, <code>HP18X204</code></td>
+</tr>
+<tr>
+<td><code>AISC16</code></td>
+<td><code>WT</code>, <code>MT</code>, <code>ST</code></td>
+<td><code>T</code>, <code>Mesh,T</code></td>
+<td>Tee shapes split from W/M/S shapes. Examples: <code>WT22X204</code>, <code>MT6.25X6.2</code>, <code>ST12X60.5</code></td>
+</tr>
+<tr>
+<td><code>AISC16</code></td>
+<td><code>C</code>, <code>MC</code></td>
+<td><code>C</code>, <code>2C</code>, <code>Mesh,C</code>, <code>Mesh,2C</code></td>
+<td>Channel shapes. The <code>Type=</code> value selects a single or paired channel. Examples: <code>C15X50</code>, <code>MC18X58</code></td>
+</tr>
+<tr>
+<td><code>AISC16</code></td>
+<td><code>L</code></td>
+<td><code>L</code>, <code>Mesh,L</code></td>
+<td>Single angle shapes. Example: <code>L12X12X1-3/8</code></td>
+</tr>
+<tr>
+<td><code>AISC16</code></td>
+<td><code>2L</code></td>
+<td><code>2L</code>, <code>Mesh,2L</code></td>
+<td>Paired angle shapes. Example: <code>2L12X12X1-3/8</code></td>
+</tr>
+<tr>
+<td><code>AISC16</code></td>
+<td><code>HSS</code></td>
+<td><code>Circle</code>, <code>HR</code>, <code>Mesh,HR</code></td>
+<td>Round HSS items use <code>Circle</code>; rectangular and square HSS items use <code>HR</code> or <code>Mesh,HR</code>. Examples: <code>HSS28X1.000</code>, <code>HSS20X12X.500</code></td>
+</tr>
+<tr>
+<td><code>AISC16</code></td>
+<td><code>Pipe</code></td>
+<td><code>Circle</code></td>
+<td>Pipe items. Examples: <code>Pipe8SCH40</code>, <code>Pipe26STD</code></td>
+</tr>
+<tr>
+<td><code>KSD3502-2022</code></td>
+<td><code>H-</code></td>
+<td><code>H</code>, <code>Mesh,H</code></td>
+<td>H shapes. Hyfeast cell-type prefix plus actual dimensions and thickness. Example: <code>H-198x99x4.5x7</code></td>
+</tr>
+<tr>
+<td><code>KSD3502-2022</code></td>
+<td><code>T-</code></td>
+<td><code>T</code>, <code>Mesh,T</code></td>
+<td>T shapes. Example: <code>T-150x150x7x10</code></td>
+</tr>
+<tr>
+<td><code>KSD3502-2022</code></td>
+<td><code>C-</code>, <code>2C-</code></td>
+<td><code>C</code>, <code>2C</code>, <code>Mesh,C</code>, <code>Mesh,2C</code></td>
+<td>Channel and paired-channel shapes. The <code>Type=</code> value selects a single or paired channel. Examples: <code>C-200x80x6.5x11.5</code>, <code>2C-200x80x6.5x11.5</code></td>
+</tr>
+<tr>
+<td><code>KSD3502-2022</code></td>
+<td><code>L-</code>, <code>2L-</code></td>
+<td><code>L</code>, <code>2L</code>, <code>Mesh,L</code>, <code>Mesh,2L</code></td>
+<td>Angle and paired-angle shapes. Examples: <code>L-100x75x7x7</code>, <code>2L-100x75x7x7</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>AISC16</code> round HSS and PIPE items are hollow circular sections, so the normal command form is <code>*Cell, Type=Circle</code>. No standard-shape template mesh generation is needed just to use the catalog dimensions. <code>Mesh,Circle</code> remains available only when a user explicitly wants a generated circular material-point mesh. <code>AISC16</code> rectangular and square HSS items use <code>HR</code> or <code>Mesh,HR</code>; the DB data line supplies <code>H, B, t, r</code> from the catalog item. For <code>AISC16</code> HSS and PIPE items, the DB-provided <code>ExtraArea</code> is applied automatically for mass and self-weight.</p>
+<p>Direct <code>H/T/C/L/2C/2L/HR[-YUp]</code> cells and generated <code>Mesh,H/T/C/L/2C/2L/HR[-YUp]</code> cells preserve standard-shape DB reference lines as <code>DB, item</code> when the model is saved or formatted. The exception is a generated standard-shape mesh cell whose first data line specifies <code>ToDirectForm</code>; in that case the DB reference is intentionally expanded and saved as generated <code>*CellMeshPoint</code> data plus a normal <code>*Cell, Type=Mesh</code> direct form. <code>Circle</code> and <code>Mesh,Circle</code> DB references are input shortcuts for catalog radii and are saved/formatted as numeric circle data, or as direct mesh data when <code>ToDirectForm</code> is used.</p>
+<h3 id="4271-cell-typevalue">4.2.7.1 *Cell, Type=Value</h3>
 <p>Defines the shape and material within the cross-section of the beam element.</p>
 <div class="highlight"><pre><span></span><code>*Cell, Type=Value, Mat=mat
-  A, Iy, Iz, Iyz, J, Asy, Asz, ys, zs, yc, zc
+  A, Iy, Iz, Iyz, J, Asy, Asz, ys, zs, C=yc, zc, ExtraArea=area
   ...add the above line if tapered section
 </code></pre></div>
 <h5 id="first-data-line">First data line</h5>
@@ -3554,7 +4064,8 @@
 <li><strong>J:</strong> torsional constant w.r.t centroid(optional, default 0.) [L^4]</li>
 <li><strong>Asy,Asz:</strong> Shear area [L^2]. If 0, it means use A. (optional, default 0.)</li>
 <li><strong>ys,zs:</strong> Shear centers w.r.t centroid(optional, default 0.) [L].</li>
-<li><strong>yc,zc:</strong> centroid w.r.t reference axes(optional, default 0.) [L].</li>
+<li><strong>C=yc,zc:</strong> Centroid coordinates of this value cell in the section reference axes (optional, default 0.) [L].</li>
+<li><strong>ExtraArea=area:</strong> Optional additional area used only for mass and self-weight [L^2].</li>
 </ul>
 </div>
 <h5 id="2nd-data-line">2<sup>nd</sup> data line</h5>
@@ -3563,10 +4074,9 @@
 <li>Repeat if tapered section</li>
 </ul>
 </div>
-<p>The material applied to <code>*Cell, Type=Value</code> must always be an elastic material defined as <code>*Material, TYPE=IsoElasticity</code>. <code>*Cell, Type=Value</code> is used either independently or in combination with <code>*Cell, TYPE=Point</code>. When combined with a Point cell, only the constants for bending are adjusted and used as the overall composite cross-sectional constants.</p>
+<p>The material applied to <code>*Cell, Type=Value</code> must always be an elastic material defined as <code>*Material, Type=IsoElasticity</code>. <code>*Cell, Type=Value</code> is used either independently or in combination with <code>*Cell, Type=Point</code>. When combined with a Point cell, only the constants for bending are adjusted and used as the overall composite cross-sectional constants.</p>
 <p>For variable cross-section beams, the cross-sectional constants are interpolated along the length as follows.</p>
 <div class="arithmatex">\[
-\small
 \begin{aligned}
 &amp;A(x) = A_0 + (A_1 - A_0) \frac{x}{L} \\
 &amp;J(x) = J_0 + (J_1 - J_0) \frac{x}{L} \\
@@ -3575,19 +4085,20 @@
 &amp;I_yz(x) = \left[ I_{yz0} ^{1/m_{yz}} + (I_{yz1} ^{1/m_{yz}} - I_{yz0} ^{1/m_{yz}} ) \frac{x}{L} \right] ^{m_{yz}}  \\
 \end{aligned}
 \]</div>
-<p>Here, the interpolation orders for <span class="arithmatex">\(\small I_y\)</span>, <span class="arithmatex">\(\small I_z\)</span>, and <span class="arithmatex">\(\small I_{yz}\)</span> are set as <span class="arithmatex">\(\small m_y=2, m_z=2, m_{yz}=1\)</span>. The remaining shapes are interpolated for the cross-sectional constants based on the given shapes.</p>
-<h3 id="cell-typerectangle">*Cell, Type=Rectangle</h3>
+<p>Here, the interpolation orders for <span class="arithmatex">\(I_y\)</span>, <span class="arithmatex">\(I_z\)</span>, and <span class="arithmatex">\(I_{yz}\)</span> are set as <span class="arithmatex">\(m_y=2, m_z=2, m_{yz}=1\)</span>. The remaining shapes are interpolated for the cross-sectional constants based on the given shapes.</p>
+<h3 id="4272-cell-typerectangle">4.2.7.2 *Cell, Type=Rectangle</h3>
 <p>Rectangular cross-section shape – Applicable to elastic materials only.</p>
 <div class="highlight"><pre><span></span><code>*Cell, Type=Rectangle, Mat=mat
- b, h, yc, zc
- {b, h, yc, zc}
+ B, H, C=yc, zc, ExtraArea=area
+ {B, H, C=yc, zc, ExtraArea=area}
 </code></pre></div>
 <h5 id="first-data-line_1">First data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>b:</strong> Width in the local y-direction (required) [L].</li>
-<li><strong>h:</strong> Height in the local z-direction (required) [L].</li>
-<li><strong>yc,zc:</strong> center w.r.t reference node (optional, default 0,0) [L].</li>
+<li><strong>B:</strong> Width in the local y-direction (required) [L].</li>
+<li><strong>H:</strong> Height in the local z-direction (required) [L].</li>
+<li><strong>yc,zc:</strong> Centroid coordinates of this rectangle cell in the section reference axes (optional, default 0,0) [L].</li>
+<li><strong>ExtraArea:</strong> Optional additional area used only for mass and self-weight [L^2].</li>
 </ul>
 </div>
 <h5 id="2nd-data-line_1">2<sup>nd</sup> data line</h5>
@@ -3596,40 +4107,40 @@
 <li>Repeat if tapered section</li>
 </ul>
 </div>
-<p>The material applied to <code>*Cell, Type=Rectangle</code> must always be an elastic material defined as <code>*Material, TYPE=IsoElasticity</code>. <code>*Cell, Type=Rectangle</code> is used either independently or in combination with <code>*Cell, TYPE=Point</code>. When combined with a Point cell, only the constants for bending are adjusted and used as the overall composite cross-sectional constants.</p>
+<p>The material applied to <code>*Cell, Type=Rectangle</code> must always be an elastic material defined as <code>*Material, Type=IsoElasticity</code>. <code>*Cell, Type=Rectangle</code> is used either independently or in combination with <code>*Cell, Type=Point</code>. When combined with a Point cell, only the constants for bending are adjusted and used as the overall composite cross-sectional constants.</p>
 <p>The cross-sectional constants for the centroid are calculated using the following equations.</p>
 <div class="arithmatex">\[
-\small
 \begin{aligned}
 &amp;A = bh, I_y = \frac{bh^3}{12}, I_z = \frac{hb^3}{12}, I_{yz} = 0, \\
 &amp;J = \beta bh^3, ~{\rm where,~} \beta \approx \frac{1}{3} - 0.21 \frac{b}{h} (1-\frac{b^4}{12h^4}) , ~~\textrm{*In torsion, h is long dim., and b is short} \\
 &amp;A_{sy} = A_{sz} = 5/6A, y_s = z_s = 0 \\
 \end{aligned}
 \]</div>
-<h3 id="cell-typecircle">*Cell, Type=Circle</h3>
+<h3 id="4273-cell-typecircle">4.2.7.3 *Cell, Type=Circle</h3>
 <p>Circular or hollow circular cross-section shape – Applicable to elastic materials only.</p>
 <div class="highlight"><pre><span></span><code>*Cell, Type=Circle, Mat=mat
-  outerR, innerR, yc, zc
- {outerR, innerR, yc, zc}
+  {outerR, innerR, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
 </code></pre></div>
 <h5 id="first-data-line_2">First data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>outerR:</strong> outer radious (required) [L].</li>
 <li><strong>innerR:</strong> inner radius (optional, default 0,0) [L].</li>
-<li><strong>yc,zc:</strong> center w.r.t reference node (optional, default 0,0) [L].</li>
+<li><strong>C=yc,zc:</strong> Centroid coordinates of this circle cell in the section reference axes (optional, default 0,0) [L].</li>
+<li><strong>DB,item:</strong> Section DB reference alternative to the numeric circle fields. Examples: <code>AISC16, Pipe8SCH40</code>, <code>AISC16, HSS28X1.000</code>.</li>
+<li><strong>ExtraArea=area:</strong> Optional additional area used only for mass and self-weight [L^2].</li>
 </ul>
 </div>
 <h5 id="2nd-data-line_2">2<sup>nd</sup> data line</h5>
 <div class="admonition note">
 <ul>
-<li>Repeat if tapered section</li>
+<li>Repeat either the numeric circle data line or the DB reference data line if tapered section. The second DB item may differ from the first item.</li>
 </ul>
 </div>
-<p>The material applied to <code>*Cell, Type=Circle</code> must always be an elastic material defined as <code>*Material, TYPE=IsoElasticity</code>. <code>*Cell, Type=Circle</code> is used either independently or in combination with <code>*Cell, TYPE=Point</code>. When combined with a Point cell, only the constants for bending are adjusted and used as the overall composite cross-sectional constants.</p>
+<p>The material applied to <code>*Cell, Type=Circle</code> must always be an elastic material defined as <code>*Material, Type=IsoElasticity</code>. <code>*Cell, Type=Circle</code> is used either independently or in combination with <code>*Cell, Type=Point</code>. When combined with a Point cell, only the constants for bending are adjusted and used as the overall composite cross-sectional constants.</p>
 <p>The cross-sectional constants are calculated using the following equations.</p>
 <div class="arithmatex">\[
-\small
 \begin{aligned}
 &amp;A = \pi (r_1^2-r_2^2), I_y = I_z = \frac{\pi (r_1^4 - r_2^4)}{4}, I_yz = 0,\\
 &amp;J = \frac{\pi (r_1^4 - r_2^4)}{2}, y_s = z_s = 0, \\
@@ -3637,73 +4148,173 @@
 \end{aligned}
 \]</div>
 <ul>
-<li>Centroid w.r.t reference axes should be given</li>
-<li>Note that typical value of solid circle, <span class="arithmatex">\(\small k_s = 0\)</span>, but  Cowper(1966)’s formula in case of <span class="arithmatex">\(\small \nu = 0\)</span> is used here.</li>
+<li><code>yc</code> and <code>zc</code> locate the circle-cell centroid in the section reference axes.</li>
+<li>Note that typical value of solid circle, <span class="arithmatex">\(k_s = 0\)</span>, but  Cowper(1966)’s formula in case of <span class="arithmatex">\(\nu = 0\)</span> is used here.</li>
 </ul>
-<h3 id="cell-typewflange">*Cell, Type=WFlange</h3>
-<p>WFlange cross-section shape – Applicable to elastic materials only.</p>
-<div class="highlight"><pre><span></span><code>*Cell, Type=WFlange, Mat=mat
-   b, h, tw, tf, yc, zc
-  ...add the above line if tapered section
+<h3 id="4274-cell-typehtcl2c2lhr-yup">4.2.7.4 *Cell, Type=H/T/C/L/2C/2L/HR[-YUp]</h3>
+<p>Creates a standard steel shape as a direct shape cell. These cell types are <code>ShapeSection</code> cells, like <code>Rectangle</code> and <code>Circle</code>. Elastic materials only.</p>
+<div class="highlight"><pre><span></span><code>*Cell, Type=H, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, r1, r2, r3, r4, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=H-YUp, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, r1, r2, r3, r4, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=T, Mat=mat
+  {B1, H, tw, tf1, r1, r2, r3, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=T-YUp, Mat=mat
+  {B1, H, tw, tf1, r1, r2, r3, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=C, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, r1, r2, r3, r4, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=C-YUp, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, r1, r2, r3, r4, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=L, Mat=mat
+  {B1, H, tw, tf1, r1, r2, r3, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=L-YUp, Mat=mat
+  {B1, H, tw, tf1, r1, r2, r3, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=2C, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, c, r1, r2, r3, r4, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=2C-YUp, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, c, r1, r2, r3, r4, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=2L, Mat=mat
+  {B1, H, tw, tf1, c, r1, r2, r3, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=2L-YUp, Mat=mat
+  {B1, H, tw, tf1, c, r1, r2, r3, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=HR, Mat=mat
+  {H, B, t, r, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
+
+*Cell, Type=HR-YUp, Mat=mat
+  {H, B, t, r, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc}
+  ...add one of the above data-line forms again if tapered section
 </code></pre></div>
 <h5 id="first-data-line_3">First data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>b:</strong> width(required)[L].</li>
-<li><strong>h:</strong> height(required) [L].</li>
-<li><strong>tw:</strong> thickness of web(required) [L].</li>
-<li><strong>tf:</strong> thickness of flagne(required) [L].</li>
-<li><strong>yc,zc:</strong> centroid w.r.t reference axes(optional, default 0.) [L].</li>
+<li><strong>B1:</strong> Top flange or leg width (required) [L].</li>
+<li><strong>H:</strong> Overall height (required) [L].</li>
+<li><strong>tw:</strong> Web or vertical leg thickness (required) [L].</li>
+<li><strong>tf1:</strong> Top flange or horizontal leg thickness (required) [L].</li>
+<li><strong>B2:</strong> Bottom flange width (optional, default <code>B1</code>) [L]. Used by <code>H</code>, <code>C</code>, and <code>2C</code>.</li>
+<li><strong>tf2:</strong> Bottom flange thickness (optional, default <code>tf1</code>) [L]. Used by <code>H</code>, <code>C</code>, and <code>2C</code>.</li>
+<li><strong>c:</strong> Gap between paired shapes for <code>2C</code> and <code>2L</code> (optional, default 0) [L].</li>
+<li><strong>r1,r2,r3,r4:</strong> Fillet/toe radii used by the standard-shape template mesh [L]. Their meanings depend on the shape as shown below.</li>
+<li><strong>B,t,r:</strong> <code>HR</code> hollow-rectangle fields. <code>H</code> and <code>B</code> are the outer height and width, <code>t</code> is the wall thickness, and <code>r</code> is the inner corner radius [L]. If <code>r=0</code>, both inner and outer corners are generated as sharp corners. If <code>r&gt;0</code>, the generated outer corner radius is <code>r + t</code>.</li>
+<li><strong>C=yc,zc:</strong> Centroid coordinates of this standard-shape cell in the section reference axes (optional, default 0,0) [L].</li>
+<li><strong>DB,item:</strong> Section DB reference alternative to the numeric shape fields. The <code>Type=</code> value still selects the Hyfeast cell family, for example <code>AISC16, W14X90</code> with <code>Type=H</code>, <code>AISC16, C15X50</code> with <code>Type=C</code> or <code>Type=2C</code>, and <code>KSD3502-2022, H-198x99x4.5x7</code> with <code>Type=H</code>.</li>
+<li><strong>ExtraArea=area:</strong> Optional additional area used only for mass and self-weight [L^2].</li>
 </ul>
 </div>
 <h5 id="2nd-data-line_3">2<sup>nd</sup> data line</h5>
 <div class="admonition note">
 <ul>
-<li>Repeat if tapered section</li>
+<li>Repeat either the numeric shape data line or the DB reference data line if tapered section. The second DB item may differ from the first item.</li>
 </ul>
 </div>
-<p>The material applied to <code>*Cell, Type=WFlange</code> must always be an elastic material defined as <code>*Material, TYPE=IsoElasticity</code>. <code>*Cell, Type=WFlange</code> is used either independently or in combination with <code>*Cell, TYPE=Point</code>. When combined with a Point cell, only the constants for bending are adjusted and used as the overall composite cross-sectional constants.</p>
-<p>The cross-sectional constants are calculated using the following equations. The cross-sectional constants are based on the thin-walled theory. Therefore, they may differ slightly from those of <code>*Cell, Type=Mesh, WFlange</code>, which is based on solid theory.</p>
+<p>The following table summarizes the fillet/toe radius conditions.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>r1</th>
+<th>r2</th>
+<th>r3</th>
+<th>r4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>H</code></td>
+<td>Top web-flange root</td>
+<td>Bottom web-flange root</td>
+<td>Top flange free toe</td>
+<td>Bottom flange free toe</td>
+</tr>
+<tr>
+<td><code>T</code></td>
+<td>Flange-web root</td>
+<td>Stem free toe</td>
+<td>Flange free toe</td>
+<td>Not used</td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td>Top web-flange root</td>
+<td>Bottom web-flange root</td>
+<td>Top flange free toe</td>
+<td>Bottom flange free toe</td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td>Inside leg root</td>
+<td>Horizontal-leg free toe</td>
+<td>Vertical-leg free toe</td>
+<td>Not used</td>
+</tr>
+<tr>
+<td><code>2C</code></td>
+<td>r1 of each C shape</td>
+<td>r2 of each C shape</td>
+<td>r3 of each C shape</td>
+<td>r4 of each C shape</td>
+</tr>
+<tr>
+<td><code>2L</code></td>
+<td>r1 of each L shape</td>
+<td>r2 of each L shape</td>
+<td>r3 of each L shape</td>
+<td>Not used</td>
+</tr>
+</tbody>
+</table>
+<p>For <code>HR</code>, use the separate <code>H, B, t, r</code> data line instead of <code>r1</code> through <code>r4</code>.</p>
+<p>The data line is positional. To specify a later optional field, fill the preceding optional fields in the same shape-specific form with their default values or <code>0</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Reference: Thin-walled H-shape</p>
+<p>For an H section without fillets, the following thin-walled approximation can be used.</p>
 <div class="arithmatex">\[
-\small
 \begin{aligned}
-&amp;A = h_c t_w + 2ht_f, I_y=\frac{h_c^2}{12}(ht_w+6bt_f), I_z = \frac{b^3t_f}6, I_yz = 0 \\
-&amp;J \approx \frac{1}{3}(h_c t_w^3+2bt_f^3), y_s=z_s=0\\
-&amp;A_sy = k_{sy}A, ~{\rm where,~} k_{sy} = \frac53 \frac{bt_f}A \\
-&amp;A_sz = k_{sz}A, ~{\rm where,~} k_{sz} = \frac{h_c t_w}A \\
-&amp;{\rm where,~} h_c = h - t_f \\
+&amp;A = h_c t_w + 2bt_f,\quad
+I_y=\frac{h_c^2}{12}(h_c t_w+6bt_f),\quad
+I_z = \frac{b^3t_f}{6},\quad I_{yz}=0 \\
+&amp;J \approx \frac{1}{3}(h_c t_w^3+2bt_f^3),\quad y_s=z_s=0 \\
+&amp;A_{sy}=k_{sy}A,\quad k_{sy}=\frac{5}{3}\frac{bt_f}{A} \\
+&amp;A_{sz}=k_{sz}A,\quad k_{sz}=\frac{h_ct_w}{A} \\
+&amp;\mathrm{where,}\quad h_c = h - t_f
 \end{aligned}
 \]</div>
-<h3 id="cell-typewflangeyup">*Cell, Type=WFlangeYUp</h3>
-<p>A WFlange section with its height oriented along the local y-direction. – Applicable to elastic materials only.</p>
-<div class="highlight"><pre><span></span><code>*Cell, Type=WFlangeYUp, Mat=mat
-   b, h, tw, tf, yc, zc
-  ...add the above line if tapered section
-</code></pre></div>
-<h5 id="first-data-line_4">First data line</h5>
-<div class="admonition note">
-<ul>
-<li><strong>b:</strong> width(required) [L].</li>
-<li><strong>h:</strong> height(required) [L].</li>
-<li><strong>tw:</strong> thickness of web(required) [L].</li>
-<li><strong>tf:</strong> thickness of flagne(required) [L].</li>
-<li><strong>yc,zc:</strong> centroid w.r.t reference axes(optional, default 0.) [L].</li>
-</ul>
+<p>Hyfeast computes the section constants using two-dimensional finite elements. For example, with <code>b=0.20</code>, <code>h=0.40</code>, <code>tw=0.008</code>, and <code>tf=0.013</code>, the thin-walled formula differs from the finite-element result by about 1.3% in area, 1.6% in major-axis bending inertia, 2.4% in torsional constant, and 2.5% in one shear area.</p>
 </div>
-<h5 id="2nd-data-line_4">2<sup>nd</sup> data line</h5>
-<div class="admonition note">
-<ul>
-<li>Repeat if tapered section</li>
-</ul>
-</div>
-<p><code>*Cell, Type=WFlangeYUp</code> defines a section whose height is aligned with the y-axis. It can be interpreted as a 90-degree rotated version of the <code>*Cell, Type=WFlange</code>. This is particularly useful for 2D beam elements (such as <code>B2D2H</code> and <code>B2D2MH</code>) where the user cannot define the local coordinate system.</p>
-<h3 id="cell-typemesh">*Cell, Type=Mesh</h3>
+<h3 id="4275-cell-typemesh">4.2.7.5 *Cell, Type=Mesh</h3>
 <p>Cell with an area divided into a mesh.</p>
 <div class="highlight"><pre><span></span><code>*Cell, Type=Mesh, Mat=mat
-  p1,p2,p3{,p4}   # If p4 is not given, T3 element used
+  p1,p2,p3, ExtraArea=area|{area0, area1}
+  p1,p2,p3,p4
+  p1,p2,p3,p4,p5,p6
+  p1,p2,p3,p4,p5,p6,p7,p8
   ...
 </code></pre></div>
-<p>Unlike <code>*Cell, Type=Layer</code> and <code>*Cell, Type=Point</code>, <code>*Cell, Type=Mesh</code> uses pointIds specified in <code>*CellMeshPoint</code>. These pointIds are used when assigning result values.</p>
 <h5 id="keyword-line_2">Keyword line</h5>
 <div class="admonition note">
 <ul>
@@ -3713,13 +4324,18 @@
 <h5 id="first-data-line-and-subsequent-data-lines_1">First data line and subsequent data lines</h5>
 <div class="admonition note">
 <ul>
-<li><strong>p1, p2, p3{, p4}:</strong> pointIds defined in *CellMeshPoint. If 3 points are given, it is used as T3, and if 4 points are given, it is used as Q4 for finite element analysis.</li>
+<li><strong>p1, p2, p3:</strong> pointIds defined in <code>*CellMeshPoint</code>. It is used as a T3 cell for finite element analysis.</li>
+<li><strong>p1, p2, p3, p4:</strong> pointIds defined in <code>*CellMeshPoint</code>. It is used as a Q4 cell for finite element analysis.</li>
+<li><strong>p1, p2, p3, p4, p5, p6:</strong> pointIds defined in <code>*CellMeshPoint</code>. It is used as a T6 cell for finite element analysis.</li>
+<li><strong>p1, p2, p3, p4, p5, p6, p7, p8:</strong> pointIds defined in <code>*CellMeshPoint</code>. It is used as a Q8 cell for finite element analysis.</li>
+<li><strong>ExtraArea=area or ExtraArea=area0, area1:</strong> Optional additional area used only for mass and self-weight [L^2]. Specify it only on the first data line. Use one value for both ends, or use <code>ExtraArea=area0, area1</code> in a tapered section.</li>
 </ul>
 </div>
-<h3 id="cell-typelayer">*Cell, Type=Layer</h3>
+<p>For T6 and Q8 cells, write corner nodes first and midside nodes after them. T6 uses the triangle corner ordering followed by its three edge midside nodes. Q8 uses the quadrilateral corner ordering followed by its four edge midside nodes.</p>
+<h3 id="4276-cell-typelayer">4.2.7.6 *Cell, Type=Layer</h3>
 <p>Divides the area into layers. Used for defining 2D beam cross-sections.</p>
 <div class="highlight"><pre><span></span><code>*Cell, Type=Layer, Mat=mat
- pointId, y, b, {y, b}
+ pointId, y, b, {y, b}, ExtraArea=area|{area0, area1}
  ...
 </code></pre></div>
 <h5 id="keyword-line_3">Keyword line</h5>
@@ -3734,14 +4350,15 @@
 <li><strong>pointId:</strong> point id (required)</li>
 <li><strong>y:</strong> y coordinate [L].</li>
 <li><strong>b:</strong> width [L].</li>
+<li><strong>ExtraArea=area or ExtraArea=area0, area1:</strong> Optional additional area used only for mass and self-weight [L^2]. Specify it only on the first data line. Use one value for both ends, or use <code>ExtraArea=area0, area1</code> in a tapered section.</li>
 </ul>
 </div>
 <p>The y values must increase continuously. If y1 and y2 are given in two consecutive rows, they must satisfy y1 &lt;= y2.</p>
 <p>On the other hand, pointId is used to specify the position of the result and does not need to be in consecutive order.</p>
-<h3 id="cell-typepoint">*Cell, Type=Point</h3>
+<h3 id="4277-cell-typepoint">4.2.7.7 *Cell, Type=Point</h3>
 <p>Defines an area as a set of points with an associated area.</p>
 <div class="highlight"><pre><span></span><code>*Cell, Type=Point, Mat=mat
- pointId, y, z, area, {y2, z2, area2}
+ pointId, y, z, area, {y2, z2, area2}, ExtraArea=area|{area0, area1}
  ...
 </code></pre></div>
 <h5 id="keyword-line_4">Keyword line</h5>
@@ -3758,151 +4375,210 @@
 <li><strong>area:</strong> area (required) [L^2].</li>
 <li><strong>y2,z2</strong>: y,z coordinates for right end in taper section (required if taper) [L].</li>
 <li><strong>area2</strong>: area for right end in taper section (required if taper) [L^2].</li>
+<li><strong>ExtraArea=area or ExtraArea=area0, area1:</strong> Optional additional area used only for mass and self-weight [L^2]. Specify it only on the first data line. Use one value for both ends, or use <code>ExtraArea=area0, area1</code> in a tapered section.</li>
 </ul>
 </div>
-<p>The pointId used when defining <code>*Cell, TYPE=Point</code> is used to specify the position of the result.</p>
-<h3 id="cell-typemesh-rectangle">*Cell, Type=Mesh, Rectangle</h3>
+<p>The pointId used when defining <code>*Cell, Type=Point</code> is used to specify the position of the result.</p>
+<h3 id="4278-cell-typemesh-rectangle">4.2.7.8 *Cell, Type=Mesh, Rectangle</h3>
 <p>Creates a rectangular mesh.</p>
 <div class="highlight"><pre><span></span><code>*Cell, Type=Mesh, Rectangle, Mat=mat
- b, h, yc, zc, nb, nh, ToDirectForm
- b, h, yc, zc
+ B, H, nB, nH, C=yc, zc, ExtraArea=area, ToDirectForm
+ B, H, C=yc, zc, ExtraArea=area
+</code></pre></div>
+<h5 id="first-data-line_4">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>B:</strong> Width in the local y-direction (required) [L].</li>
+<li><strong>H:</strong> Height in the local z-direction (required) [L].</li>
+<li><strong>nB,nH</strong>: Number of mesh divisions in width and height when used in Beam section.</li>
+<li><strong>C=yc,zc:</strong> Centroid coordinates used when generating the rectangular mesh points in the section reference axes (optional, default 0,0) [L].</li>
+<li><strong>ExtraArea=area:</strong> Optional additional area used only for mass and self-weight [L^2].</li>
+<li><strong>ToDirectForm</strong>: If it exists, the cell command is converted to the normal *Cell, Type=Mesh.</li>
+</ul>
+</div>
+<h5 id="2nd-data-line_4">2<sup>nd</sup> data line</h5>
+<div class="admonition note">
+<ul>
+<li>Repeat if tapered section for B, H, C=yc, zc</li>
+</ul>
+</div>
+<h3 id="4279-cell-typemesh-circle">4.2.7.9 *Cell, Type=Mesh, Circle</h3>
+<p>Creates a circular mesh.</p>
+<div class="highlight"><pre><span></span><code>*Cell, Type=Mesh, Circle, Mat=mat
+  {outerR, innerR, nS, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, nS, C=yc, zc, ToDirectForm}
+  ...if tapered section, add {outerR, innerR, C=yc, zc, ExtraArea=area} | {DB, item, C=yc, zc} as the second data line
 </code></pre></div>
 <h5 id="first-data-line_5">First data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>b:</strong> Width in the local y-direction (required) [L].</li>
-<li><strong>h:</strong> Height in the local z-direction (required) [L].</li>
-<li><strong>yc,zc:</strong> center w.r.t reference node (optional, default 0,0) [L].</li>
-<li><strong>nb,nh</strong>: No. of mesh divisions in width and height when used in Beam section</li>
-<li><strong>ToDirectForm</strong>: If it exists, the cell command is converted to the normal *Cell, TYPE=Mesh.</li>
+<li><strong>outerR:</strong> outer radious (required) [L].</li>
+<li><strong>innerR:</strong> inner radius (optional, default 0,0) [L].</li>
+<li><strong>nS:</strong> Number of circular segments. If nS is less than 4, 4 is used. (optional, default 0)</li>
+<li><strong>DB,item:</strong> Section DB reference alternative to the numeric circle fields. Examples: <code>AISC16, Pipe8SCH40</code>, <code>AISC16, HSS28X1.000</code>.</li>
+<li><strong>C=yc,zc:</strong> Centroid coordinates used when generating the circular mesh points in the section reference axes (optional, default 0,0) [L].</li>
+<li><strong>ExtraArea=area:</strong> Optional additional area used only for mass and self-weight [L^2].</li>
+<li><strong>ToDirectForm</strong>: If it exists, the cell command is converted to the normal *Cell, Type=Mesh.</li>
 </ul>
 </div>
 <h5 id="2nd-data-line_5">2<sup>nd</sup> data line</h5>
 <div class="admonition note">
 <ul>
-<li>Repeat if tapered section for b, h, yc, zc</li>
+<li>Repeat either the numeric circle data line or the DB reference data line if tapered section. The second DB item may differ from the first item. Do not specify <code>nS</code> or <code>ToDirectForm</code> on the second line.</li>
 </ul>
 </div>
-<h3 id="cell-typemesh-circle">*Cell, Type=Mesh, Circle</h3>
-<p>Creates a circular mesh.</p>
-<div class="highlight"><pre><span></span><code>*Cell, Type=Mesh, Circle, Mat=mat
-  outerR, innerR, yc, zc, nseg, ToDirectForm
-  outerR, innerR, yc, zc
+<h3 id="42710-cell-typemesh-htcl2c2lhr-yup">4.2.7.10 *Cell, Type=Mesh, H/T/C/L/2C/2L/HR[-YUp]</h3>
+<p>Creates a material point mesh from a standard steel shape. The generated mesh is analyzed and rendered through the <code>MeshedSection</code> path, unlike the direct <code>H/T/C/L/2C/2L/HR</code> shape cells.</p>
+<div class="highlight"><pre><span></span><code>*Cell, Type=Mesh,H, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, r1, r2, r3, r4, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,H-YUp, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, r1, r2, r3, r4, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,T, Mat=mat
+  {B1, H, tw, tf1, r1, r2, r3, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,T-YUp, Mat=mat
+  {B1, H, tw, tf1, r1, r2, r3, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,C, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, r1, r2, r3, r4, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,C-YUp, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, r1, r2, r3, r4, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,L, Mat=mat
+  {B1, H, tw, tf1, r1, r2, r3, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,L-YUp, Mat=mat
+  {B1, H, tw, tf1, r1, r2, r3, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,2C, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, c, r1, r2, r3, r4, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,2C-YUp, Mat=mat
+  {B1, H, tw, tf1, B2, tf2, c, r1, r2, r3, r4, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,2L, Mat=mat
+  {B1, H, tw, tf1, c, r1, r2, r3, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,2L-YUp, Mat=mat
+  {B1, H, tw, tf1, c, r1, r2, r3, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,HR, Mat=mat
+  {H, B, t, r, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
+
+*Cell, Type=Mesh,HR-YUp, Mat=mat
+  {H, B, t, r, C=yc, zc, ExtraArea=area, ToDirectForm} | {DB, item, C=yc, zc, ToDirectForm}
+  ...add one of the above data-line forms without ToDirectForm if tapered section
 </code></pre></div>
 <h5 id="first-data-line_6">First data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>outerR:</strong> outer radious (required) [L].</li>
-<li><strong>innerR:</strong> inner radius (optional, default 0,0) [L].</li>
-<li><strong>yc,zc:</strong> center w.r.t reference node (optional, default 0,0) [L].</li>
-<li><strong>nseg:</strong> No. of segments in the perimeter of quarter outer circle. If nseg is less than 4, 4 is used.  (optioanl, default 0)</li>
-<li><strong>ToDirectForm</strong>: If it exists, the cell command is converted to the normal *Cell, TYPE=Mesh.</li>
+<li><strong>B1,H,tw,tf1,B2,tf2,c,r1,r2,r3,r4,C=yc,zc:</strong> Same shape-specific fields as <code>*Cell, Type=H/T/C/L/2C/2L</code>. Here <code>yc</code> and <code>zc</code> are the centroid coordinates used when generating the mesh points.</li>
+<li><strong>H,B,t,r,C=yc,zc:</strong> <code>HR</code> fields. <code>H</code> and <code>B</code> are outer dimensions, <code>t</code> is the wall thickness, and <code>r</code> is the inner corner radius. If <code>r=0</code>, both inner and outer corners are generated as sharp corners. If <code>r&gt;0</code>, the generated outer corner radius is <code>r + t</code>.</li>
+<li><strong>DB,item:</strong> Section DB reference alternative to the numeric shape fields. The <code>Type=</code> value still selects the generated Hyfeast mesh family.</li>
+<li><strong>ExtraArea=area:</strong> Optional additional area used only for mass and self-weight [L^2].</li>
+<li><strong>ToDirectForm:</strong> Optional. If specified, the generated mesh command is converted to the normal <code>*CellMeshPoint</code> and <code>*Cell, Type=Mesh</code> direct form when saved.</li>
 </ul>
 </div>
 <h5 id="2nd-data-line_6">2<sup>nd</sup> data line</h5>
 <div class="admonition note">
 <ul>
-<li>_Repeat if tapered section for outerR, innerR, yc, zc</li>
+<li>Repeat either the numeric shape data line or the DB reference data line without <code>ToDirectForm</code> if tapered section. The second DB item may differ from the first item.</li>
 </ul>
 </div>
-<h3 id="cell-typemesh-wflange">*Cell, Type=Mesh, WFlange</h3>
-<p>Creates a WFlange-shaped mesh.</p>
-<div class="highlight"><pre><span></span><code>*Cell, Type=Mesh, WFlange, Mat=mat
-   b, h, tw, tf, yc, zc, ToDirectForm
-   b, h, tw, tf, yc, zc
-</code></pre></div>
-<h5 id="first-data-line_7">First data line</h5>
-<div class="admonition note">
-<ul>
-<li><strong>b:</strong> width(required) [L].</li>
-<li><strong>h:</strong> height(required) [L].</li>
-<li><strong>tw:</strong> thickness of web(required) [L].</li>
-<li><strong>tf:</strong> thickness of flagne(required) [L].</li>
-<li><strong>yc,zc:</strong> centroid w.r.t reference axes(optional, default 0.) [L].</li>
-<li><strong>ToDirectForm</strong>: If it exists, the cell command is converted to the normal *Cell, TYPE=Mesh.</li>
-</ul>
-</div>
-<h5 id="2nd-data-line_7">2<sup>nd</sup> data line</h5>
-<div class="admonition note">
-<ul>
-<li>Repeat if tapered section for b, h, tw, tf, yc, zc</li>
-</ul>
-</div>
-<h3 id="cell-typelayer-stack">*Cell, Type=Layer, Stack</h3>
+<h3 id="42711-cell-typelayer-stack">4.2.7.11 *Cell, Type=Layer, Stack</h3>
 <p>Creates a stacked Layer.</p>
 <div class="highlight"><pre><span></span><code># Pismatic seciton
 *Cell, Type=Layer,Stack, Mat=mat
-  y0, b0, ToDirectForm
+  y0, b0, ExtraArea=area, ToDirectForm
   y1, b1, n1
   ...
   yn, bn, nn
 
 # Taper section
 *Cell, Type=Layer,Stack, Mat=mat
-  y0, b0, y0, b0, ToDirectForm
+  y0, b0, y0, b0, ExtraArea=area0, area1, ToDirectForm
   y1, b1, y1, b1, n1
   ...
   yn, bn, yn, bn, nn
 </code></pre></div>
-<h5 id="first-data-line_8">First data line</h5>
+<h5 id="first-data-line_7">First data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>y0,b0{, ToDirectForm}:</strong> y coordinate and width for prismatic seciton [L]. If “ToDirectForm” exists, the cell command is converted to the normal *Cell, TYPE=Layer.</li>
-<li><strong>y0,b0, y0, b0{, ToDirectForm}:</strong> y coordinate and b width for taper seciton [L]. The first pair of y0, b0 indicates start section, and the second pair of y0, b0 indicated end section. If “ToDirectForm” exists, the cell command is converted to the normal *Cell, TYPE=Layer.</li>
+<li><strong>y0,b0:</strong> y coordinate and width for prismatic seciton [L].</li>
+<li><strong>y0,b0, y0, b0:</strong> y coordinate and b width for taper seciton [L]. The first pair of y0, b0 indicates start section, and the second pair of y0, b0 indicated end section.</li>
+<li><strong>ExtraArea=area or ExtraArea=area0, area1:</strong> Optional additional area used only for mass and self-weight [L^2]. Specify it only on the first data line. Use one value for both ends, or use <code>ExtraArea=area0, area1</code> in a tapered section.</li>
+<li><strong>ToDirectForm:</strong> Optional. If specified, the generated layer command is converted to the normal <code>*Cell, Type=Layer</code> direct form when saved.</li>
 </ul>
 </div>
-<h5 id="2nd-data-line_8">2<sup>nd</sup> data line</h5>
+<h5 id="2nd-data-line_7">2<sup>nd</sup> data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>yn,bn, yn, bn, nn:</strong> y coordinate and b width for taper seciton [L]. The first pair of y0, b0 indicates start section, and the second pair of y0, b0 indicated end section. nn is the number of layers from n-1 to n.</li>
 </ul>
 </div>
-<h3 id="cell-typelayer-circle">*Cell, Type=Layer, Circle</h3>
+<h3 id="42712-cell-typelayer-circle">4.2.7.12 *Cell, Type=Layer, Circle</h3>
 <p>Creates a Layer for a circle.</p>
 <div class="highlight"><pre><span></span><code>*Cell, Type=Layer,Circle, Mat=mat
-  outerR, innerR, yc, nOuterR, nInnerR, ToDirectForm
-  outerR, innerR, yc
+  outerR, innerR, nOuterR, nInnerR, C=yc, ExtraArea=area, ToDirectForm
+  outerR, innerR, C=yc, ExtraArea=area
 </code></pre></div>
-<h5 id="first-data-line_9">First data line</h5>
+<h5 id="first-data-line_8">First data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>outerR,innerR:</strong> outer and inner radius (outerR is required, but innerR is optional(default 0.)) [L].</li>
-<li><strong>yc:</strong> y coordinate of center w.r.t reference node (optional, default 0.) [L].</li>
 <li><strong>nOuterR,nInnerR:</strong> No. of layers for outer radius and inner radius. If innerR is zero, nInnerR is neglected. If innerR is nonzero, nOuterR is the number of layers for the shell,i.e. the portion of outerR-innerR. (optional. default 4,4)</li>
-<li><strong>ToDirectForm:</strong> If it exists, the cell command is converted to the normal *Cell, TYPE=Layer</li>
+<li><strong>C=yc:</strong> y coordinate of the generated layer-circle center in the section reference axes (optional, default 0.) [L].</li>
+<li><strong>ExtraArea=area:</strong> Optional additional area used only for mass and self-weight [L^2].</li>
+<li><strong>ToDirectForm:</strong> Optional. If specified, the generated layer command is converted to the normal <code>*Cell, Type=Layer</code> direct form when saved.</li>
 </ul>
 </div>
-<h5 id="2nd-data-line_9">2<sup>nd</sup> data line</h5>
+<h5 id="2nd-data-line_8">2<sup>nd</sup> data line</h5>
 <div class="admonition note">
 <ul>
-<li>Repeat if tapered section for outerR, innerR, yc</li>
+<li>Repeat if tapered section for outerR, innerR, C=yc</li>
 </ul>
 </div>
 <p>If the 3D MeshedBeam cross-section does not explicitly specify shear-related constants, a 2D finite element analysis for a potential problem is performed by default to determine the torsional constant, shear correction factor, and shear center.</p>
-<h3 id="cell-typepoint-circle">*Cell, Type=Point, Circle</h3>
+<h3 id="42713-cell-typepoint-circle">4.2.7.13 *Cell, Type=Point, Circle</h3>
 <p>Creates circular Point patterns.</p>
 <div class="highlight"><pre><span></span><code>*Cell, Type=Point,Circle, Mat=mat
-  r, a, angle, yc, zc, npoints{, ToDirectForm}
- {r, a, angle, yc, zc }
+  r, a, angle, npoints, C=yc, zc, ExtraArea=area, ToDirectForm
+ {r, a, angle, C=yc, zc, ExtraArea=area}
 </code></pre></div>
-<h5 id="first-data-line_10">First data line</h5>
+<h5 id="first-data-line_9">First data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>r:</strong> radius (required) [L].</li>
 <li><strong>a:</strong> area of each point (required)  [L^2].</li>
 <li><strong>angle:</strong> counter-clockwise angle from y-axis of the starting layer  (required)</li>
-<li><strong>yc, zc:</strong> center coordinate of circle w.r.t reference node  (required) [L]</li>
 <li><strong>npoints:</strong> No. of points (required)</li>
-<li><strong>ToDirectForm:</strong> If it exists, the cell command is converted to the normal *Cell, TYPE=Point</li>
+<li><strong>C=yc, zc:</strong> center coordinate of the generated point circle in the section reference axes (required) [L]</li>
+<li><strong>ExtraArea=area:</strong> Optional additional area used only for mass and self-weight [L^2].</li>
+<li><strong>ToDirectForm:</strong> Optional. If specified, the generated point command is converted to the normal <code>*Cell, Type=Point</code> direct form when saved.</li>
 </ul>
 </div>
-<h5 id="2nd-data-line_10">2<sup>nd</sup> data line</h5>
+<h5 id="2nd-data-line_9">2<sup>nd</sup> data line</h5>
 <div class="admonition note">
 <ul>
-<li>Repeat if tapered section for r, a, angle, yc, zc</li>
+<li>Repeat if tapered section for r, a, angle, C=yc, zc</li>
 </ul>
 </div>
-<h2 id="sheartorsionmaterial">*ShearTorsionMaterial</h2>
+<h2 id="428-sheartorsionmaterial">4.2.8 *ShearTorsionMaterial</h2>
 <p>Specifies reference materials for shear and torsion behavior using uniaxial material model.</p>
 <div class="highlight"><pre><span></span><code>*ShearTorsionMaterial
   ShearX|ShearY|Torsion, material, localUnitSystem
@@ -3917,7 +4593,7 @@
 </ul>
 </div>
 <p>Shear and torsional behavior in beam elements is linear by default. To enforce nonlinear behavior, a uniaxial material model can be referenced to define a scaled shear force–shear strain or scaled torsional moment–rotation relationship. The resulting actual shear force and torsional moment are obtained by multiplying the scaled response by the corresponding section constants (GAsy, GAsz, or GJ).</p>
-<p>When applied to shear behavior, if the local unit system is the same as the current unit system specified by <code>*Environment, TYPE=UnitSystem</code>, the scaled shear force and stress are converted on a 1:1 basis without any physical reinterpretation. If the unit systems differ, appropriate internal scaling is applied automatically. Likewise, when applied to torsional behavior, the scaled torsional moment and stress, as well as rotation and strain, are converted with the unit system taken into account, again without implying any direct physical equivalence.</p>
+<p>When applied to shear behavior, if the local unit system is the same as the current unit system specified by <code>*Environment, Type=UnitSystem</code>, the scaled shear force and stress are converted on a 1:1 basis without any physical reinterpretation. If the unit systems differ, appropriate internal scaling is applied automatically. Likewise, when applied to torsional behavior, the scaled torsional moment and stress, as well as rotation and strain, are converted with the unit system taken into account, again without implying any direct physical equivalence.</p>
 
 
 
@@ -3937,6 +4613,12 @@
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -3964,16 +4646,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.af256bd8.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
         <script src="../../../javascripts/extra.js"></script>
       

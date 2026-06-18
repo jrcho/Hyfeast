@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../Tutorial/9.%20Portal%20Frame.html">
+        <link rel="prev" href="../hfAnalyzer/3.2%20Files%20and%20Results.html">
       
       
         <link rel="next" href="2.%20Node.html">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
     
     
       
-        <title>1. Overview - Hyfeast-v1.0.0 Manual</title>
+        <title>1. Introduction - Hyfeast-v1.0.0-beta.3</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
       
 
@@ -32,20 +32,16 @@
     
     
       
-    
-    
+        <script src="../../javascripts/iframe-worker-shim.js"></script>
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+    
+    
       
     
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#input-file" class="md-skip">
+        <a href="#11-input-file-and-command-block-structure" class="md-skip">
           Skip to content
         </a>
       
@@ -80,27 +76,27 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.3" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Hyfeast-v1.0.0 Manual
+            Hyfeast-v1.0.0-beta.3
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Overview
+              1. Introduction
             
           </span>
         </div>
@@ -108,14 +104,14 @@
     </div>
     
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
       <div class="md-header__option">
   <div class="md-select">
     
     <button class="md-header__button md-icon" aria-label="Select language">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
@@ -140,7 +136,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -149,17 +145,19 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -199,15 +197,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.3" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    Hyfeast-v1.0.0 Manual
+    Hyfeast-v1.0.0-beta.3
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -223,7 +223,7 @@
         
   
   <span class="md-ellipsis">
-    Home
+    Overview
   </span>
   
 
@@ -253,7 +253,7 @@
             
   
   <span class="md-ellipsis">
-    Tutorial
+    FE Tools
   </span>
   
 
@@ -263,7 +263,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Tutorial
+            FE Tools
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -274,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/1.%20Overview.html" class="md-nav__link">
+      <a href="../Finite%20Element%20Analysis/1.%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -294,12 +294,47 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+      <a href="../hfStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Beam Cantilever
+    2.1 Overview
   </span>
   
 
@@ -316,11 +351,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+      <a href="../hfStudio/2.2%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Solid Cantilever
+    2.2 File
   </span>
   
 
@@ -337,11 +372,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+      <a href="../hfStudio/2.3%20View%20and%20Display.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4. Beam vs Solid
+    2.3 View and Display
   </span>
   
 
@@ -358,11 +393,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/5.%20hfVisualizer%20Basics.html" class="md-nav__link">
+      <a href="../hfStudio/2.4%20Selection%20and%20Visibility.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    5. hfVisualizer Basics
+    2.4 Selection and Visibility
   </span>
   
 
@@ -379,11 +414,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+      <a href="../hfStudio/2.5%20Preprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6. Selection and Visibility
+    2.5 Preprocessing
   </span>
   
 
@@ -400,11 +435,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+      <a href="../hfStudio/2.6%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7. Postprocessing with Remote Control
+    2.6 Analysis
   </span>
   
 
@@ -421,11 +456,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+      <a href="../hfStudio/2.7%20Postprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8. Scripts and Automation
+    2.7 Postprocessing
   </span>
   
 
@@ -442,15 +477,108 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+      <a href="../hfStudio/2.8%20Workspace%20Panels.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9. Portal Frame
+    2.8 Workspace Panels
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.1%20Running.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Running
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.2%20Files%20and%20Results.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Files and Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -486,7 +614,7 @@
             
   
   <span class="md-ellipsis">
-    Command
+    FE Commands
   </span>
   
 
@@ -496,7 +624,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Command
+            FE Commands
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -518,7 +646,7 @@
           
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Introduction
   </span>
   
 
@@ -529,7 +657,7 @@
         
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Introduction
   </span>
   
 
@@ -549,46 +677,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#input-file" class="md-nav__link">
+  <a href="#11-input-file-and-command-block-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Input file
+      1.1 Input File and Command Block Structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#execution-of-analysis" class="md-nav__link">
+  <a href="#12-execution-of-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      Execution of Analysis
+      1.2 Execution of Analysis
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameter-input-control" class="md-nav__link">
+  <a href="#13-parameter-input-control" class="md-nav__link">
     <span class="md-ellipsis">
-      Parameter Input Control
+      1.3 Parameter Input Control
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Parameter Input Control">
+    <nav class="md-nav" aria-label="1.3 Parameter Input Control">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-usage" class="md-nav__link">
+  <a href="#131-basic-usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Usage
+      1.3.1 Basic Usage
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#advanced-usage" class="md-nav__link">
+  <a href="#132-advanced-usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Advanced Usage
+      1.3.2 Advanced Usage
     </span>
   </a>
   
@@ -596,6 +724,24 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-unit-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Unit System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-db-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 DB Input
+    </span>
+  </a>
   
 </li>
       
@@ -671,7 +817,7 @@
             
   
   <span class="md-ellipsis">
-    4. Element libraries
+    4. Element Library
   </span>
   
 
@@ -681,7 +827,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            4. Element libraries
+            4. Element Library
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -696,7 +842,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    4.1 Overview
   </span>
   
 
@@ -717,7 +863,7 @@
         
   
   <span class="md-ellipsis">
-    Beam
+    4.2 Beam
   </span>
   
 
@@ -738,7 +884,7 @@
         
   
   <span class="md-ellipsis">
-    Truss
+    4.3 Truss
   </span>
   
 
@@ -759,7 +905,7 @@
         
   
   <span class="md-ellipsis">
-    Cable
+    4.4 Cable
   </span>
   
 
@@ -780,7 +926,7 @@
         
   
   <span class="md-ellipsis">
-    Shell
+    4.5 Shell
   </span>
   
 
@@ -801,7 +947,7 @@
         
   
   <span class="md-ellipsis">
-    Solid
+    4.6 Solid
   </span>
   
 
@@ -822,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    AcousticSolid
+    4.7 AcousticSolid
   </span>
   
 
@@ -843,7 +989,7 @@
         
   
   <span class="md-ellipsis">
-    SeepageSolid
+    4.8 SeepageSolid
   </span>
   
 
@@ -864,7 +1010,7 @@
         
   
   <span class="md-ellipsis">
-    MCK
+    4.9 MCK
   </span>
   
 
@@ -885,7 +1031,7 @@
         
   
   <span class="md-ellipsis">
-    MovingSpring
+    4.10 MovingSpring
   </span>
   
 
@@ -906,7 +1052,7 @@
         
   
   <span class="md-ellipsis">
-    Interface
+    4.11 Interface
   </span>
   
 
@@ -927,7 +1073,7 @@
         
   
   <span class="md-ellipsis">
-    EmbeddedLine
+    4.12 EmbeddedLine
   </span>
   
 
@@ -1082,7 +1228,7 @@
         
   
   <span class="md-ellipsis">
-    11. Coordinate system
+    11. Coordinate System
   </span>
   
 
@@ -1145,7 +1291,7 @@
         
   
   <span class="md-ellipsis">
-    14. Step result
+    14. Step Result
   </span>
   
 
@@ -1166,7 +1312,7 @@
         
   
   <span class="md-ellipsis">
-    15. Modelling convenience
+    15. Modelling Convenience
   </span>
   
 
@@ -1208,7 +1354,7 @@
         
   
   <span class="md-ellipsis">
-    17. Special step
+    17. Special Step
   </span>
   
 
@@ -1229,7 +1375,7 @@
         
   
   <span class="md-ellipsis">
-    18. HDB file structure
+    18. HDB File Structure
   </span>
   
 
@@ -1267,7 +1413,7 @@
             
   
   <span class="md-ellipsis">
-    Section
+    Section Tools/2D Modeling
   </span>
   
 
@@ -1277,7 +1423,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Section
+            Section Tools/2D Modeling
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1308,12 +1454,47 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../Section/2.%20Theory.html" class="md-nav__link">
+      <a href="../Section/hf2DStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Theory
+    2.1 Overview
   </span>
   
 
@@ -1330,15 +1511,213 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/3.%20Commands.html" class="md-nav__link">
+      <a href="../Section/hf2DStudio/2.2%20Window%20and%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Command
+    2.2 Window and File
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.3%20View%20and%20Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.4%20Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.5%20Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.6%20Operation%20and%20Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.7%20Mesh%20Generation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Mesh Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfSectAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfSectAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.1%20Help.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Help
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.2%20Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1355,7 +1734,28 @@
         
   
   <span class="md-ellipsis">
-    4. Example
+    4. Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/5.%20Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Theory
   </span>
   
 
@@ -1414,11 +1814,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/1.%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/1.%20Basics.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Basics
   </span>
   
 
@@ -1449,7 +1849,7 @@
             
   
   <span class="md-ellipsis">
-    2. hfVisualizer
+    2. hfStudio
   </span>
   
 
@@ -1459,7 +1859,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            2. hfVisualizer
+            2. hfStudio
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1470,7 +1870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.1%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1491,7 +1891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.2%20Remote-only.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.2%20Remote-only.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1512,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.3%20View.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.3%20View.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1533,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.4%20File.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.4%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1554,7 +1954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.5%20Display.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.5%20Display.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1575,7 +1975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.6%20Selection.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.6%20Selection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1631,7 +2031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.1%20Environment.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.1%20Environment.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1652,7 +2052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.2%20CoordinateSystem.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.2%20CoordinateSystem.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1673,7 +2073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.3%20Construction.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.3%20Construction.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1729,7 +2129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.4.1%20Node.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.4.1%20Node.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1750,7 +2150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.4.2%20NSet.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.4.2%20NSet.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1814,7 +2214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.5.1%20Element.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.5.1%20Element.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1835,7 +2235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.5.2%20Elset.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.5.2%20Elset.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1864,7 +2264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.6%20Load.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.6%20Load.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1885,7 +2285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.7%20Surface.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.7%20Surface.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1906,7 +2306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.8%20Sensor.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.8%20Sensor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1927,7 +2327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.9%20NProp.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.9%20NProp.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1948,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.10%20Material.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.10%20Material.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1969,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.11%20Section.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.11%20Section.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1990,7 +2390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.12%20Function.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.12%20Function.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2011,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.13%20Step.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.13%20Step.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2032,7 +2432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.14%20History.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.14%20History.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2053,11 +2453,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.15%20Distribution.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.15%20Distribution.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.7.15 Distribution
+    2.7.15 Assign
   </span>
   
 
@@ -2074,7 +2474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.16%20Model.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.16%20Model.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2095,7 +2495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.17%20Renumber.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.17%20Renumber.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2116,7 +2516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2145,7 +2545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.8%20Analysis.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.8%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2166,11 +2566,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.9%20Postprocessing.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.9%20Postprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     2.9 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/Recipes/2.10%20hfStudio%20Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10 Recipes
   </span>
   
 
@@ -2209,7 +2630,7 @@
             
   
   <span class="md-ellipsis">
-    3. hfSectionVisualizer
+    3. hf2DStudio
   </span>
   
 
@@ -2219,7 +2640,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            3. hfSectionVisualizer
+            3. hf2DStudio
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2230,11 +2651,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/1.%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.1%202D%20Modeling%20Automation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.1 Overview
+    3.1 2D Modeling Automation
   </span>
   
 
@@ -2251,11 +2672,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/2.%20Window%20and%20File.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.2%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.2 Window and File
+    3.2 Overview
   </span>
   
 
@@ -2272,11 +2693,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/3.%20View.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.3%20Window%20and%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.3 View
+    3.3 Window and File
   </span>
   
 
@@ -2293,11 +2714,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/4.%20Geometry.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.4%20View.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.4 Geometry
+    3.4 View
   </span>
   
 
@@ -2314,11 +2735,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/5.%20Definition.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.5%20Geometry.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.5 Definition
+    3.5 Geometry
   </span>
   
 
@@ -2335,75 +2756,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/6.%20Operation%20and%20Analysis.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.6%20Definition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.6 Operation and Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    4. Recipes
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
-            <span class="md-nav__icon md-icon"></span>
-            4. Recipes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Remote%20Control/Recipes/1.%20hfVisualizer.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4.1 hfVisualizer
+    3.6 Definition
   </span>
   
 
@@ -2420,11 +2777,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/Recipes/2.%20hfSectionVisualizer.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.7%20Operation%20and%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.2 hfSectionVisualizer
+    3.7 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/Recipes/3.8%20hf2DStudio%20Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Recipes
   </span>
   
 
@@ -2470,7 +2848,7 @@
             
   
   <span class="md-ellipsis">
-    Example
+    Tutorials
   </span>
   
 
@@ -2480,7 +2858,238 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Example
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Beam Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Solid Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Beam vs Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/5.%20hfStudio%20Basics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. hfStudio Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Selection and Visibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Postprocessing with Remote Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Scripts and Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Portal Frame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2596,11 +3205,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.6%20Acoustic%20Solid%20Element.html" class="md-nav__link">
+      <a href="../Example/E.6%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.6 Acoustic Solid Element
+    E.6 Dynamic Analysis using Spring and Mass Elements
   </span>
   
 
@@ -2617,11 +3226,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
+      <a href="../Example/E.7%20Acoustic%20Solid%20Element%20and%20HydroStaticPressure%20Loads.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.7 Dynamic Analysis using Spring and Mass Elements
+    E.7 Acoustic Solid Element and HydroStaticPressure Loads
   </span>
   
 
@@ -2785,11 +3394,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.15%20Temperature%20Load%20by%20Bimetal.html" class="md-nav__link">
+      <a href="../Example/E.15%20Time%20Dependent%20Materials.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.15 Temperature Load by Bimetal
+    E.15 Time Dependent Materials
   </span>
   
 
@@ -2834,81 +3443,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#input-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      Input file
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution-of-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execution of Analysis
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameter-input-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parameter Input Control
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parameter Input Control">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Usage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced Usage
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2917,8 +3451,8 @@
                   
 
 
-<h1 id="overview">Overview</h1>
-<h2 id="input-file">Input file</h2>
+<h1 id="1-introduction">1. Introduction</h1>
+<h2 id="11-input-file-and-command-block-structure">1.1 Input File and Command Block Structure</h2>
 <p>Hyfeast's command-line finite element analysis program, hfAnalyzer, reads a text input file to perform analysis. The input file is composed of command blocks that start with reserved keywords beginning with <code>*</code>, such as <code>*Node</code>, <code>*Element</code>. Below is an example input file for a simple frame analysis.</p>
 <div class="highlight"><pre><span></span><code># Portal Frame Example
 
@@ -2928,7 +3462,7 @@
  3,10.,10.
  4,10., 0.
 
-*Element, Type=B2D2H, ELSet=ALL
+*Element, Type=B2D2H, Elset=ALL
  1, 1, 2
  2, 2, 3
  3, 3, 4
@@ -2937,10 +3471,10 @@
  210E9, 0.3, 0, 7700   # E, nu, alpha, density
 
 *Section, Type=Beam, Name=BeamSection, Mass=Lumped
-*Cell, TYPE=Rectangle, MAT=beam
+*Cell, Type=Rectangle, MAT=beam
  0.4, 0.1
 
-*Distribution, TYPE=Section
+*Distribution, Type=Section
  ALL, BeamSection
 
 *Constraint, Type=Support, Name=BC
@@ -2950,10 +3484,10 @@
 *Load, Type=Concentric, Name=LC2
  2,X,100E3
 
-*NSet, Type=SELECT, Name=23
+*Nset, Type=Select, Name=23
  2, 3
 
-*NSet, Type=SELECT, Name=14
+*Nset, Type=Select, Name=14
  1, 4
 
 #---------- Static analysis for nodal concentric load
@@ -2980,20 +3514,16 @@
  D             # if frequency step, D means mode shape.
 *Print, File=Case2.prn
 </code></pre></div>
-<p>The following list summarizes the general rules for the input text file.</p>
 <ul>
 <li>If non-Ascii characters such as Korean are present, the file must be encoded in UTF-8.</li>
 <li>The input file is a text file and is parsed line by line in sequence.</li>
 <li>Blank lines are ignored, and explanations (comments) can be written using the <code>#</code> character.</li>
 <li>The backslash <code>\</code> character can be used to concatenate with the next line.</li>
 <li>Reserved keywords are case-insensitive, but user-defined strings (e.g., element set names) are case-sensitive.</li>
+<li>Each line follows a free format such as <code>n1, n2, n3</code> or <code>ID=id1</code>.</li>
+<li>Parsing tokens are mainly split by the equal sign (<code>=</code>) and comma (<code>,</code>) characters.</li>
 <li>
-<p>Each line follows a free format such as <code>n1, n2, n3</code> or <code>n1, ..., ID=id1, ...</code>. In this case, tokens used for parsing are separated by equal sign (<code>=</code>) and comma (<code>,</code>) characters. The program operates internally as follows:</p>
-<ul>
-<li>Find the equal sign (<code>=</code>) and recognize the keyword on the left</li>
-<li>Parse each item in free format by splitting them into tokens using a comma as a delimiter</li>
-<li>If enclosed in double quotes, treat it as a single token</li>
-</ul>
+<p>A string enclosed in double quotes is recognized as a single token.</p>
 </li>
 <li>
 <p>For parts that are input as floating-point or integer values, simple arithmetic expressions can be used. For example, <code>1+2*(10+2)</code> is valid. If spaces are present inside the expression, it will be split into tokens and thus spaces must not be included. If spaces are present and should be treated as a single token, the expression must be enclosed in double quotes (e.g., <code>"1 + 2*(10+2)"</code>).</p>
@@ -3003,37 +3533,29 @@
 <ul>
 <li>Functions of the form <code>f(x)</code>: <code>sin</code>, <code>cos</code>, <code>tan</code>, <code>acos</code>, <code>atan</code>, <code>cosh</code>, <code>sinh</code>, <code>tanh</code>, <code>abs</code>, <code>exp</code>, <code>log</code>, <code>log10</code>, <code>sqrt</code>, <code>step</code>, <code>sgn</code></li>
 <li>Functions of the form <code>f(x,y)</code>: <code>pow</code>, <code>max</code>, <code>min</code></li>
-<li>Constant: <code>pi</code>, <code>e</code>, <code>deg</code></li>
+<li>Constant: <code>pi</code>, <code>e</code>, <code>deg</code>, <code>g0</code> (<code>g0</code> is the standard gravity, <span class="arithmatex">\(9.80665\,\mathrm{m/s^2}\)</span>). <code>g0</code> is interpreted using the global <code>*Environment, TYPE=UnitSystem</code>; define a global UnitSystem before using it.</li>
 </ul>
 </li>
 <li>
-<p>If a string input contains spaces, it must be enclosed in double quotes. For example: <code>*Material, TYPE=IsoElasticity, Name="the material"</code></p>
+<p>If a string input contains spaces, it must be enclosed in double quotes. For example: <code>*Material, Type=IsoElasticity, Name="the material"</code></p>
 </li>
-<li>When a file name is provided as a string input, both relative and absolute paths are recognized. If the path contains spaces, it must be enclosed in double quotes. A relative path is resolved relative to the directory where the input file exists. For example:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>*Include, File=model1.inp
-*Include, File=templates/model1.inp
-*Include, File=&quot;templates folder/model 1.inp&quot; ← if spaces exist, use double quotes
-*Include, File=&quot;./templates/frame model.inp&quot; ← . means current directory
-*Include, File=&quot;../frame model.inp&quot; ← .. means parent directory
-*Include, File=&quot;D:/DevProg/HFC4.0/EXAMPLE/frame model.inp&quot; ← absolute path
-</code></pre></div>
 <p>Commands starting with an asterisk <code>*</code> can be broadly categorized into modeling commands, analysis commands, and miscellaneous commands. The following list summarizes the commands.</p>
 <h5 id="node-commands">Node Commands</h5>
 <ul>
 <li><code>*Node</code>: Define a node.</li>
-<li><code>*NSet</code>: Define an nset.</li>
-<li><code>*NGen</code>: Generate nodes with a line pattern and assign them to an nset.</li>
-<li><code>*NFill</code>: Generate nodes with a filling pattern and assign them to an nset.</li>
-<li><code>*NCopy</code>: Copy an nset.</li>
-<li><code>*NProp</code>: Define nodal properties.</li>
+<li><code>*Nset</code>: Define an nset.</li>
+<li><code>*Ngen</code>: Generate nodes with a line pattern and assign them to an nset.</li>
+<li><code>*Nfill</code>: Generate nodes with a filling pattern and assign them to an nset.</li>
+<li><code>*Ncopy</code>: Copy an nset.</li>
+<li><code>*Nprop</code>: Define nodal properties.</li>
 </ul>
 <h5 id="element-commands">Element Commands</h5>
 <ul>
 <li><code>*Element</code>: Define an element.</li>
-<li><code>*ELSet</code>: Define an elset.</li>
-<li><code>*ELGen</code>: Generate elements and assign them to an elset.</li>
-<li><code>*ELCopy</code>: Copy an elset.</li>
+<li><code>*Elset</code>: Define an elset.</li>
+<li><code>*Elgen</code>: Generate elements and assign them to an elset.</li>
+<li><code>*Elcopy</code>: Copy an elset.</li>
 <li><code>*Section</code>: Define a section.</li>
 </ul>
 <h5 id="load-and-constraint-commands">Load and Constraint Commands</h5>
@@ -3046,7 +3568,7 @@
 <li><code>*Material</code>: Define a material.</li>
 <li><code>*Function</code>: Define a function.</li>
 <li><code>*Surface</code>: Define a surface.</li>
-<li><code>*Construction</code>: Define auxiliary geometric entities – splines and construction lines.</li>
+<li><code>*Construction</code>: Define auxiliary geometric entities such as splines and guides.</li>
 <li><code>*CoordinateSystem</code>: Define a coordinate system.</li>
 </ul>
 <h5 id="analysis-commands">Analysis Commands</h5>
@@ -3075,16 +3597,31 @@
 <ul>
 <li><code>*Include</code>: Include an external file.</li>
 <li><code>*Parameter</code>: Assign a preset parameter expression.</li>
-<li><code>*Distribution</code>: Assign nodal and element properties.</li>
+<li><code>*Distribution</code>: Assign, clear, or reset element properties.</li>
 <li><code>*Model</code>: Generate a template model.</li>
 </ul>
 <h5 id="other-commands">Other Commands</h5>
 <ul>
 <li><code>*Environment</code>: Set up the environment.</li>
 <li><code>*Stop</code>: Set up stop conditions.</li>
-<li><code>*TestMaterial</code>: Test the material model for a given strain history.</li>
+<li>
+<p><code>*TestMaterial</code>: Test the material model for a given strain history.</p>
+</li>
+<li>
+<p>File names may be written as either relative paths or absolute paths.</p>
+</li>
+<li>If a path contains spaces, it must be enclosed in double quotes.</li>
+<li>A relative path is resolved relative to the directory where the input file exists.</li>
 </ul>
-<h2 id="execution-of-analysis">Execution of Analysis</h2>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>*Include, File=model1.inp
+*Include, File=templates/model1.inp
+*Include, File=&quot;templates folder/model 1.inp&quot; # if spaces exist, use double quotes
+*Include, File=&quot;./templates/frame model.inp&quot; # . means current directory
+*Include, File=&quot;../frame model.inp&quot; # .. means parent directory
+*Include, File=&quot;D:/DevProg/HFC4.0/EXAMPLE/frame model.inp&quot; # absolute path
+</code></pre></div>
+<h2 id="12-execution-of-analysis">1.2 Execution of Analysis</h2>
 <p>hfAnalyzer is a program that runs on the Command-Line Interface (CLI). You can perform an analysis by typing hfAnalyzer followed by the input file name in the command line.</p>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp
 </code></pre></div>
@@ -3095,7 +3632,7 @@
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer
   ... Type the required information interactively (e.g., input file)
 </code></pre></div>
-<p>When the analysis is executed, several output files are generated. For example, assuming the input file is frame.inp (i.e., you run <code>&gt; hfAnalyzer frame.inp</code>), the program creates an <code>.hdb</code> file that stores the analysis results. The <code>.hdb</code> file is a hfVisualizer-specific file and has two roles:</p>
+<p>When the analysis is executed, several output files are generated. For example, assuming the input file is frame.inp (i.e., you run <code>&gt; hfAnalyzer frame.inp</code>), the program creates an <code>.hdb</code> file that stores the analysis results. The <code>.hdb</code> file is a hfStudio-specific file and has two roles:</p>
 <ul>
 <li>In pre-processing mode, it contains only the input file information (no analysis results).</li>
 <li>In post-processing mode, it includes both the input file data and the analysis results.</li>
@@ -3104,7 +3641,7 @@
 <h5 id="when-using-hdf5-format-default">When using HDF5 format (default)</h5>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp
 
-- frame.h5.hdb     : hdb file with hdf5 format
+- frame.hdb     : hdb file with hdf5 format
 - frame.log        : log file
 - frame.chk        : chk file (reproduced inp file)
 - frame-step1.rst  : restart file for step
@@ -3133,9 +3670,9 @@
 - frame-step2.rst
 - ...
 </code></pre></div>
-<h2 id="parameter-input-control">Parameter Input Control</h2>
-<h3 id="basic-usage">Basic Usage</h3>
-<p>When running <code>hfAnalyzer</code> from the command line, parameter input can be controlled using the <code>-p</code> option.
+<h2 id="13-parameter-input-control">1.3 Parameter Input Control</h2>
+<h3 id="131-basic-usage">1.3.1 Basic Usage</h3>
+<p>When running hfAnalyzer from the command line, parameter input can be controlled using the <code>-p</code> option.
 The input file should be prepared in advance to use the expressions provided through this <code>-p</code> option.</p>
 <p>example.inp
 <div class="highlight"><pre><span></span><code>...
@@ -3149,8 +3686,7 @@ The input file should be prepared in advance to use the expressions provided thr
 <p>In this case</p>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp -p &quot;&lt;E&gt;=20E9, &lt;BaseN&gt;=1000&quot;
 </code></pre></div>
-<p>When executed, <code>&lt;E&gt;</code> and <code>&lt;BaseN&gt;</code> in the input file are replaced with the specified values,  and the base name of the output files is set to <code>example-20E9-1000</code>  (e.g., <code>example-20E9-1000.h5.hdb</code>, <code>example-20E9-1000.log</code>, etc.).</p>
-<p>The expression following <code>-p</code> must be written in the form <code>"key=value, ..."</code> and enclosed in double quotation marks (<code>""</code>).  In the input file, each <code>key</code> is replaced with its corresponding <code>value</code>.  To ensure that parameter keys are distinct from other text, it is recommended to surround them with uncommon symbols such as <code>&lt;A&gt;</code> or <code>$A$</code>.  For example, if you write <code>"&lt;E&gt;=20E9, &lt;B&gt;=7.3"</code>, then <code>&lt;E&gt;</code> will be replaced by <code>20E9</code> and <code>&lt;B&gt;</code> by <code>7.3</code>.  Tokens within a parameter expression can also be grouped using curly braces <code>{}</code>.  For instance, in <code>"&lt;K&gt;={R,12.3}, &lt;B&gt;=7.3"</code>, <code>&lt;K&gt;</code> is replaced by <code>R,12.3</code>.</p>
+<p>Running this command replaces <code>&lt;E&gt;</code> and <code>&lt;BaseN&gt;</code> in the input file with the specified values, and also sets the output file base name to <code>example-20E9-1000</code> (output files such as <code>example-20E9-1000.hdb</code>, <code>example-20E9-1000.log</code>, etc.). The expression after <code>-p</code> has the form <code>"key=value, ..."</code> and must be enclosed in <code>""</code>; in the input file, each key is replaced by its value. Because a key must be distinguishable from other strings, it is recommended to surround it with uncommon symbols such as <code>&lt;A&gt;</code> or <code>$A$</code>. For example, if you write <code>"&lt;E&gt;=20E9, &lt;B&gt;=7.3"</code>, <code>&lt;K&gt;</code> is replaced by 20E9 and <code>&lt;B&gt;</code> is replaced by <code>7.3</code>. Tokens inside a parameter expression can be grouped with <code>{}</code>. For example, if you write <code>"&lt;K&gt;={R,12.3}, &lt;B&gt;=7.3"</code>, <code>&lt;K&gt;</code> is replaced by <code>R,12.3</code>.</p>
 <p>Parameter expressions can also be used in the <code>*Include</code> command within the input file. For example:</p>
 <p>example.inp
 <div class="highlight"><pre><span></span><code>...
@@ -3161,7 +3697,7 @@ The input file should be prepared in advance to use the expressions provided thr
 <div class="highlight"><pre><span></span><code>*Material. Type=IsoElasticity, Name=concrete
  &lt;E&gt;, 0.18, ,&lt;DEN&gt;
 </code></pre></div></p>
-<h3 id="advanced-usage">Advanced Usage</h3>
+<h3 id="132-advanced-usage">1.3.2 Advanced Usage</h3>
 <p>In the top-level input file (not those included via <code>*Include</code>),  the <code>*Parameter</code> command allows for more advanced parameter handling.</p>
 <p>example.inp
 <div class="highlight"><pre><span></span><code>...
@@ -3173,26 +3709,26 @@ The input file should be prepared in advance to use the expressions provided thr
  &lt;E&gt;, &lt;nu&gt;, 0., &lt;den&gt;
 ...
 </code></pre></div></p>
-<p><code>*Parameter</code> can be understood as a predefined parameter expression.  The name of a <code>*Parameter</code> expression must be unique and cannot be duplicated.  The <code>Default</code> option specifies the expression used when <code>hfAnalyzer</code> is run without the <code>-p</code> option.  Therefore, if multiple <code>*Parameter</code> statements exist, only one may use <code>Default</code>. Example command executions:</p>
+<p><code>*Parameter</code> can be understood as a predefined parameter expression.  The name of a <code>*Parameter</code> expression must be unique and cannot be duplicated.  The <code>Default</code> option specifies the expression used when hfAnalyzer is run without the <code>-p</code> option.  Therefore, if multiple <code>*Parameter</code> statements exist, only one may use <code>Default</code>. Example command executions:</p>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp
-  → The parameter expression with the Default attribute is applied (here: Concrete)
-  → The output file base name is example (e.g., example-Concrete.h5.hdb, ...)
+  ??The parameter expression with the Default attribute is applied (here: Concrete)
+  ??The output file base name is example (e.g., example-Concrete.hdb, ...)
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp -p &quot;Concrete&quot;
-  → The parameter expression named &quot;Concrete&quot; is applied
-  → The output file base name is example-Concrete (e.g., example-Concrete.h5.hdb, ...)
+  ??The parameter expression named &quot;Concrete&quot; is applied
+  ??The output file base name is example-Concrete (e.g., example-Concrete.hdb, ...)
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp -p &quot;Steel&quot;
-  → The parameter expression named &quot;Steel&quot; is applied
-  → The output file base name is example-Steel (e.g., example-Steel.h5.hdb, ...)
+  ??The parameter expression named &quot;Steel&quot; is applied
+  ??The output file base name is example-Steel (e.g., example-Steel.hdb, ...)
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp -p &quot;&lt;E&gt;=20E9, &lt;nu&gt;=0.16, &lt;den&gt;=2300&quot;
-  → *Parameter statements are not used
-  → The output file base name is example-20E9-0.16-2300 (e.g., example-20E9-0.16-2300.h5.hdb, ...)
+  ??*Parameter statements are not used
+  ??The output file base name is example-20E9-0.16-2300 (e.g., example-20E9-0.16-2300.hdb, ...)
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp -p &quot;Concrete:&lt;E&gt;=30E9&quot;
-  → The parameter expression named &quot;Concrete&quot; is applied, but &lt;E&gt; is overridden with 30E9
-  → The output file base name is example-Concrete (e.g., example-Concrete.h5.hdb, ...)
+  ??The parameter expression named &quot;Concrete&quot; is applied, but &lt;E&gt; is overridden with 30E9
+  ??The output file base name is example-Concrete (e.g., example-Concrete.hdb, ...)
 </code></pre></div>
 <p>A special placeholder <code>&lt;PARAMETER&gt;</code> can also be used within the input file.</p>
 <p>example.inp
@@ -3205,7 +3741,7 @@ The input file should be prepared in advance to use the expressions provided thr
  &lt;E&gt;, &lt;nu&gt;, 0., &lt;den&gt;
 ...
 
-*Step, TYPE=Static, Name=SelfWeight
+*Step, Type=Static, Name=SelfWeight
 ...
 *Print, File=&lt;DB&gt;-&lt;PARAMETER&gt;-&lt;STEP&gt;.prn
 ...
@@ -3213,30 +3749,182 @@ The input file should be prepared in advance to use the expressions provided thr
 <p>Here, <code>&lt;DB&gt;</code> represents the input file name, <code>&lt;PARAMETER&gt;</code> represents the name of the parameter expression, and <code>&lt;STEP&gt;</code> represents the current analysis step name.  If the analysis is run with the Default parameter expression, the generated print file will be named <code>example-Concrete-SelfWeight.prn</code>.</p>
 <p>Note that even when the Default parameter expression is used (i.e., when <code>-p</code> is not specified), <code>&lt;PARAMETER&gt;</code> is still replaced accordingly.</p>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp
-  → The Default parameter expression is applied (here: Concrete)
-  → The output file base name is example (e.g., example-Concrete.h5.hdb, ...)
-  → The print file name is example-Concrete-SelfWeight.prn
+  ??The Default parameter expression is applied (here: Concrete)
+  ??The output file base name is example (e.g., example-Concrete.hdb, ...)
+  ??The print file name is example-Concrete-SelfWeight.prn
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp -p &quot;Concrete&quot;
-  → The parameter expression named &quot;Concrete&quot; is applied
-  → The output file base name is example-Concrete (e.g., example-Concrete.h5.hdb, ...)
-  → The print file name is example-Concrete-SelfWeight.prn
+  ??The parameter expression named &quot;Concrete&quot; is applied
+  ??The output file base name is example-Concrete (e.g., example-Concrete.hdb, ...)
+  ??The print file name is example-Concrete-SelfWeight.prn
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp -p &quot;Steel&quot;
-  → The parameter expression named &quot;Steel&quot; is applied
-  → The output file base name is example-Steel (e.g., example-Steel.h5.hdb, ...)
-  → The print file name is example-Steel-SelfWeight.prn
+  ??The parameter expression named &quot;Steel&quot; is applied
+  ??The output file base name is example-Steel (e.g., example-Steel.hdb, ...)
+  ??The print file name is example-Steel-SelfWeight.prn
 </code></pre></div>
-<p>When running <code>hfAnalyzer</code>, the output file name can also be overridden using the <code>-o</code> option.
+<p>When running hfAnalyzer, the output file name can also be overridden using the <code>-o</code> option.
 The following examples show how the output file name can be redefined:</p>
 <div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp -o output -p &quot;&lt;C&gt;=I, &lt;K&gt;=12.3, &lt;P&gt;=7&quot;
-  → output.h5.hdb, ...
+  ??output.hdb, ...
 &gt; hfAnalyzer example.inp -o &quot;output-&lt;PARAMETER&gt;&quot; -p &quot;WT&quot;
-  → output-WT.hdb, ...
+  ??output-WT.hdb, ...
 &gt; hfAnalyzer example.inp -o &quot;output-&lt;PARAMETER&gt;-&lt;K&gt;&quot; -p &quot;WT:&lt;K&gt;=12.3&quot;
-  → output-WT-12.3.h5.odb, ...
+  ??output-WT-12.3.h5.odb, ...
 &gt; hfAnalyzer example.inp -o &quot;output-&lt;K&gt;&quot; -p &quot;WT:&lt;K&gt;=12.3&quot;
-  → output-12.3.h5.odb
+  ??output-12.3.h5.odb
+</code></pre></div>
+<h2 id="14-unit-system">1.4 Unit System</h2>
+<p>In Hyfeast, the use of a unit system is optional, and when needed it can be specified through the <code>*Environment, Type=UnitSystem</code> command. Once a unit system is assigned, tools such as hfStudio can convert the model unit system in a batch, and objects that carry their own local unit systems can be integrated more easily. The following are the related general rules.</p>
+<ul>
+<li>The default unit system in Hyfeast is the global UnitSystem defined by <code>*Environment, Type=UnitSystem</code>.</li>
+<li>Some commands or section inputs support their own local UnitSystem or localUnitSystem. Typical examples are listed below.</li>
+<li><a href="8.%20Function.html"><code>*Function</code></a> with <code>UnitSystem=...</code></li>
+<li><a href="4.%20Element%20Specification/4.2%20Beam.html"><code>*Section, Type=Beam</code></a> with <code>ShearX|ShearY|Torsion, material, localUnitSystem</code></li>
+<li><a href="4.%20Element%20Specification/4.9%20MCK.html"><code>*Section, Type=MCK</code></a> with <code>localUnitSystem</code></li>
+<li><a href="4.%20Element%20Specification/4.10%20MovingSpring.html"><code>*Section, Type=MovingSpring</code></a> with <code>localUnitSystem</code></li>
+<li><a href="4.%20Element%20Specification/4.11%20Interface.html"><code>*Section, Type=Interface</code></a> with <code>localUnitSystem</code></li>
+<li>When a local UnitSystem is specified and a global UnitSystem is currently available, the input is interpreted through the local-to-global relationship. The exact internal conversion depends on the physical quantity handled by each command.</li>
+<li>When a local UnitSystem is specified but no global UnitSystem is currently defined, the value is preserved as local metadata and does not cause an input-time error.</li>
+<li>When no local UnitSystem is specified, the input follows the current global UnitSystem when one exists.</li>
+<li>Time values in <code>*Step</code> are classified on the <code>*Step</code> page. <code>Static, Standard/Arclength</code> uses pseudo-time and is independent of the global <code>UnitSystem</code>; <code>Dynamic</code> uses physical time in the global <code>UnitSystem</code> when one is defined; <code>Static, Quasi</code> and <code>Seepage, Transient</code> use physical time represented by <code>step-defined time</code>, whose unit is specified by <code>TUnit=tUnit</code> on the step data line. Standard <code>ConcreteTime</code> equations are day-based, and seepage permeability may use a separate material data-line <code>TUnit=tUnit</code>.</li>
+<li>When using a Design Code form such as KL-510, DB-24, DB-18, or DB-13.5 in <code>*Load, Type=LineMoving/SurfaceMoving</code>, a global UnitSystem defined through <code>*Environment, Type=UnitSystem</code> is required.</li>
+<li>When <code>*Section, Type=Beam</code> uses a section DB reference (<code>DB, item</code>), a global UnitSystem is required so DB units can be converted to model units. Numeric geometry data lines may still be read as raw values without a global UnitSystem.</li>
+<li>Content brought in by <code>*Include</code> and content imported by hfStudio through <code>File &gt; Import File</code>, <code>File &gt; From Clipboard</code>, and <code>Inp Text &gt; Apply</code> are interpreted using the same local/global UnitSystem rule.</li>
+<li>Detailed field formats such as force-length, force-length-time, and force-length-time-temperature, as well as the exact scaling behavior, are defined in each command page.</li>
+</ul>
+<h2 id="15-db-input">1.5 DB Input</h2>
+<p>DB input lets users load standard section dimensions, material values, concrete function parameters, and time-history records by name instead of writing every value directly. It does not create a separate analysis object or a new command. It is written in the data lines of existing <code>*Cell</code>, <code>*Material</code>, and <code>*Function</code> commands. Here, DB means input helper database entries, separate from <code>.hdb</code> files and the <code>*HDB</code> command.</p>
+<p>Hyfeast DB input has three main families: Section DB, Material DB, and TimeSignal DB source lines. Section DB loads standard section dimensions in <code>*Cell</code>. Material DB supplies material properties and recipes for <code>*Material</code>, and also supplies values used by concrete <code>*Function</code> input. TimeSignal DB source lines load earthquake or time-history records in <code>*Function, Type=TimeSignal</code>. Representative input locations are:</p>
+<table>
+<thead>
+<tr>
+<th>DB family</th>
+<th>Goal</th>
+<th>Used in</th>
+<th>Data-line form</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Section DB</td>
+<td>Load standard steel section dimensions</td>
+<td><code>*Cell</code></td>
+<td><code>DB, item</code></td>
+<td><code>KSD3502-2022, H-198x99x4.5x7</code></td>
+</tr>
+<tr>
+<td>Material DB</td>
+<td>Start material input from a material DB item</td>
+<td><code>*Material</code></td>
+<td><code>material-db-item</code></td>
+<td><code>KDS-2026-SD400</code></td>
+</tr>
+<tr>
+<td>Material DB</td>
+<td>Create a concrete envelope function</td>
+<td><code>*Function</code></td>
+<td>Function-specific DB item data line</td>
+<td><code>KDS-2026-C30</code></td>
+</tr>
+<tr>
+<td>Material DB</td>
+<td>Create a concrete time-dependent function</td>
+<td><code>*Function</code></td>
+<td>Function-specific DB item data line</td>
+<td><code>ACI209-1992-C4000</code></td>
+</tr>
+<tr>
+<td>TimeSignal DB</td>
+<td>Load an earthquake/time-history record</td>
+<td><code>*Function, Type=TimeSignal</code></td>
+<td><code>DB, record[, scale]</code></td>
+<td><code>DB, elcentro_1940, 1.0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Section DB and Material DB values are used in the current model unit system, so define the global UnitSystem first with <code>*Environment, Type=UnitSystem</code>. TimeSignal DB source lines follow the unit and time-step information carried by each record; see the <code>*Function</code> page for details. Using a DB does not change the meaning of <code>Type=</code> in <code>*Cell</code>, <code>*Material</code>, or <code>*Function</code>. In a Section DB data line, <code>DB</code> in <code>DB, item</code> is not a literal keyword. It is an actual DB name such as <code>KSD3502-2022</code> or <code>AISC16</code>. In a TimeSignal source line, <code>DB</code> in <code>DB, record</code> is a literal keyword.</p>
+<p>The next table lists representative DB names and item forms available from this Introduction. See each command page for detailed usage.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>DB or record</th>
+<th>Item form</th>
+<th>Used in</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KDS materials valid in 2026</td>
+<td><code>KDS-2026</code></td>
+<td><code>KDS-2026-C&lt;fck&gt;</code>, <code>KDS-2026-SS&lt;grade&gt;-t&lt;thickness-range&gt;</code>, <code>KDS-2026-SD&lt;grade&gt;...</code></td>
+<td><code>*Material</code> elastic input, steel/rebar material input, concrete envelope <code>*Function</code> input</td>
+<td><code>KDS-2026-SD400</code></td>
+</tr>
+<tr>
+<td>ACI 318 concrete</td>
+<td><code>ACI318-2025</code></td>
+<td><code>ACI318-2025-C&lt;fck&gt;</code></td>
+<td><code>*Material</code> elastic input, concrete envelope <code>*Function</code> input</td>
+<td><code>ACI318-2025-C4000</code></td>
+</tr>
+<tr>
+<td>ACI 209 concrete time-dependent properties</td>
+<td><code>ACI209-1992</code></td>
+<td><code>ACI209-1992-C&lt;fc&gt;</code></td>
+<td>Concrete time-dependent <code>*Function</code> input</td>
+<td><code>ACI209-1992-C4000</code></td>
+</tr>
+<tr>
+<td>EC2 concrete</td>
+<td><code>EC2-2004</code></td>
+<td><code>EC2-2004-C&lt;fck&gt;</code></td>
+<td><code>*Material</code> elastic input, concrete envelope <code>*Function</code> input</td>
+<td><code>EC2-2004-C30</code></td>
+</tr>
+<tr>
+<td>KS D 3502 steel sections</td>
+<td><code>KSD3502-2022</code></td>
+<td><code>H-...</code>, <code>T-...</code>, <code>C-...</code>, <code>2C-...</code>, <code>L-...</code>, <code>2L-...</code></td>
+<td><code>*Cell</code> section DB data line</td>
+<td><code>KSD3502-2022, H-198x99x4.5x7</code></td>
+</tr>
+<tr>
+<td>AISC Shapes Database</td>
+<td><code>AISC16</code></td>
+<td><code>W...</code>, <code>M...</code>, <code>S...</code>, <code>HP...</code>, <code>WT...</code>, <code>MT...</code>, <code>ST...</code>, <code>C...</code>, <code>MC...</code>, <code>L...</code>, <code>2L...</code>, <code>HSS...</code>, <code>Pipe...</code></td>
+<td><code>*Cell</code> section DB data line</td>
+<td><code>AISC16, W14X90</code></td>
+</tr>
+<tr>
+<td>TimeSignal DB record</td>
+<td><code>elcentro_1940</code>, <code>taft_1952</code>, <code>RSN765_LOMAP_...</code>, etc.</td>
+<td>Record name</td>
+<td><code>*Function, Type=TimeSignal</code> source line</td>
+<td><code>DB, elcentro_1940, 1.0</code></td>
+</tr>
+</tbody>
+</table>
+<p>The following example shows a minimal flow: define the unit system first, then load a section, a material, a concrete function, and a time-history record from DB input.</p>
+<div class="highlight"><pre><span></span><code>*Environment, Type=UnitSystem
+ kN-mm-s-K
+
+*Section, Type=Beam, Name=SteelSection
+*Cell, Type=H, Mat=Steel
+ KSD3502-2022, H-198x99x4.5x7
+
+*Material, Type=IsoElasticity, Name=Rebar
+ KDS-2026-SD400
+
+*Function, Type=ParabolaCEnv, Name=ConcComp
+ KDS-2026-C30, 0.85
+
+*Function, Type=TimeSignal, Name=EQ
+ auto, auto
+ DB, elcentro_1940, 1.0
 </code></pre></div>
 
 
@@ -3257,6 +3945,12 @@ The following examples show how the output file name can be redefined:</p>
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -3284,16 +3978,14 @@ The following examples show how the output file name can be redefined:</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
         <script src="../../javascripts/extra.js"></script>
       

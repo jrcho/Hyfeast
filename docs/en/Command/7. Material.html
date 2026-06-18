@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
     
     
       
-        <title>7. Material - Hyfeast-v1.0.0 Manual</title>
+        <title>7. Material - Hyfeast-v1.0.0-beta.3</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
       
 
@@ -32,20 +32,16 @@
     
     
       
-    
-    
+        <script src="../../javascripts/iframe-worker-shim.js"></script>
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+    
+    
       
     
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#material" class="md-skip">
+        <a href="#71-material" class="md-skip">
           Skip to content
         </a>
       
@@ -80,21 +76,21 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.3" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Hyfeast-v1.0.0 Manual
+            Hyfeast-v1.0.0-beta.3
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -108,14 +104,14 @@
     </div>
     
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
       <div class="md-header__option">
   <div class="md-select">
     
     <button class="md-header__button md-icon" aria-label="Select language">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
@@ -140,7 +136,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -149,17 +145,19 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -199,15 +197,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="Hyfeast-v1.0.0 Manual" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0 Manual" data-md-component="logo">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.3" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    Hyfeast-v1.0.0 Manual
+    Hyfeast-v1.0.0-beta.3
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -223,7 +223,7 @@
         
   
   <span class="md-ellipsis">
-    Home
+    Overview
   </span>
   
 
@@ -253,7 +253,7 @@
             
   
   <span class="md-ellipsis">
-    Tutorial
+    FE Tools
   </span>
   
 
@@ -263,7 +263,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Tutorial
+            FE Tools
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -274,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/1.%20Overview.html" class="md-nav__link">
+      <a href="../Finite%20Element%20Analysis/1.%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -294,12 +294,47 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+      <a href="../hfStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Beam Cantilever
+    2.1 Overview
   </span>
   
 
@@ -316,11 +351,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+      <a href="../hfStudio/2.2%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Solid Cantilever
+    2.2 File
   </span>
   
 
@@ -337,11 +372,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+      <a href="../hfStudio/2.3%20View%20and%20Display.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4. Beam vs Solid
+    2.3 View and Display
   </span>
   
 
@@ -358,11 +393,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/5.%20hfVisualizer%20Basics.html" class="md-nav__link">
+      <a href="../hfStudio/2.4%20Selection%20and%20Visibility.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    5. hfVisualizer Basics
+    2.4 Selection and Visibility
   </span>
   
 
@@ -379,11 +414,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+      <a href="../hfStudio/2.5%20Preprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    6. Selection and Visibility
+    2.5 Preprocessing
   </span>
   
 
@@ -400,11 +435,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+      <a href="../hfStudio/2.6%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7. Postprocessing with Remote Control
+    2.6 Analysis
   </span>
   
 
@@ -421,11 +456,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+      <a href="../hfStudio/2.7%20Postprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8. Scripts and Automation
+    2.7 Postprocessing
   </span>
   
 
@@ -442,15 +477,108 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+      <a href="../hfStudio/2.8%20Workspace%20Panels.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    9. Portal Frame
+    2.8 Workspace Panels
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.1%20Running.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Running
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.2%20Files%20and%20Results.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Files and Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -486,7 +614,7 @@
             
   
   <span class="md-ellipsis">
-    Command
+    FE Commands
   </span>
   
 
@@ -496,7 +624,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Command
+            FE Commands
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -511,7 +639,7 @@
         
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Introduction
   </span>
   
 
@@ -584,7 +712,7 @@
             
   
   <span class="md-ellipsis">
-    4. Element libraries
+    4. Element Library
   </span>
   
 
@@ -594,7 +722,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            4. Element libraries
+            4. Element Library
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -609,7 +737,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    4.1 Overview
   </span>
   
 
@@ -630,7 +758,7 @@
         
   
   <span class="md-ellipsis">
-    Beam
+    4.2 Beam
   </span>
   
 
@@ -651,7 +779,7 @@
         
   
   <span class="md-ellipsis">
-    Truss
+    4.3 Truss
   </span>
   
 
@@ -672,7 +800,7 @@
         
   
   <span class="md-ellipsis">
-    Cable
+    4.4 Cable
   </span>
   
 
@@ -693,7 +821,7 @@
         
   
   <span class="md-ellipsis">
-    Shell
+    4.5 Shell
   </span>
   
 
@@ -714,7 +842,7 @@
         
   
   <span class="md-ellipsis">
-    Solid
+    4.6 Solid
   </span>
   
 
@@ -735,7 +863,7 @@
         
   
   <span class="md-ellipsis">
-    AcousticSolid
+    4.7 AcousticSolid
   </span>
   
 
@@ -756,7 +884,7 @@
         
   
   <span class="md-ellipsis">
-    SeepageSolid
+    4.8 SeepageSolid
   </span>
   
 
@@ -777,7 +905,7 @@
         
   
   <span class="md-ellipsis">
-    MCK
+    4.9 MCK
   </span>
   
 
@@ -798,7 +926,7 @@
         
   
   <span class="md-ellipsis">
-    MovingSpring
+    4.10 MovingSpring
   </span>
   
 
@@ -819,7 +947,7 @@
         
   
   <span class="md-ellipsis">
-    Interface
+    4.11 Interface
   </span>
   
 
@@ -840,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    EmbeddedLine
+    4.12 EmbeddedLine
   </span>
   
 
@@ -949,118 +1077,127 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#material" class="md-nav__link">
+  <a href="#71-material" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material
+      7.1 *Material
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="*Material">
+    <nav class="md-nav" aria-label="7.1 *Material">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#material-typeisoelasticity" class="md-nav__link">
+  <a href="#711-material-typeisoelasticity" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=IsoElasticity
+      7.1.1 *Material, Type=IsoElasticity
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typeorthoelasticity" class="md-nav__link">
+  <a href="#712-material-typeorthoelasticity" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=OrthoElasticity
+      7.1.2 *Material, Type=OrthoElasticity
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typevonmises" class="md-nav__link">
+  <a href="#713-material-typevonmises" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=vonMises
+      7.1.3 *Material, Type=vonMises
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typetresca" class="md-nav__link">
+  <a href="#714-material-typetresca" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=Tresca
+      7.1.4 *Material, Type=Tresca
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typemohrcoulomb" class="md-nav__link">
+  <a href="#715-material-typemohrcoulomb" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=MohrCoulomb
+      7.1.5 *Material, Type=MohrCoulomb
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typedruckerprager" class="md-nav__link">
+  <a href="#716-material-typedruckerprager" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=DruckerPrager
+      7.1.6 *Material, Type=DruckerPrager
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typeugeneric" class="md-nav__link">
+  <a href="#717-material-typeconcretedamage-reserved" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=UGeneric
+      7.1.7 *Material, Type=ConcreteDamage [Reserved]
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typeusteel" class="md-nav__link">
+  <a href="#718-material-typeugeneric" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=USteel
+      7.1.8 *Material, Type=UGeneric
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typegaphook" class="md-nav__link">
+  <a href="#719-material-typeusteel" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=GapHook
+      7.1.9 *Material, Type=USteel
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typecohesive" class="md-nav__link">
+  <a href="#7110-material-typegaphook" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material, Type=Cohesive
+      7.1.10 *Material, Type=GapHook
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typeacoustic" class="md-nav__link">
+  <a href="#7111-material-typecohesive" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=Acoustic
+      7.1.11 *Material, Type=Cohesive
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#material-typeseepage" class="md-nav__link">
+  <a href="#7112-material-typeacoustic" class="md-nav__link">
     <span class="md-ellipsis">
-      *Material Type=Seepage
+      7.1.12 *Material, Type=Acoustic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7113-material-typeseepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.13 *Material, Type=Seepage
     </span>
   </a>
   
@@ -1154,7 +1291,7 @@
         
   
   <span class="md-ellipsis">
-    11. Coordinate system
+    11. Coordinate System
   </span>
   
 
@@ -1217,7 +1354,7 @@
         
   
   <span class="md-ellipsis">
-    14. Step result
+    14. Step Result
   </span>
   
 
@@ -1238,7 +1375,7 @@
         
   
   <span class="md-ellipsis">
-    15. Modelling convenience
+    15. Modelling Convenience
   </span>
   
 
@@ -1280,7 +1417,7 @@
         
   
   <span class="md-ellipsis">
-    17. Special step
+    17. Special Step
   </span>
   
 
@@ -1301,7 +1438,7 @@
         
   
   <span class="md-ellipsis">
-    18. HDB file structure
+    18. HDB File Structure
   </span>
   
 
@@ -1339,7 +1476,7 @@
             
   
   <span class="md-ellipsis">
-    Section
+    Section Tools/2D Modeling
   </span>
   
 
@@ -1349,7 +1486,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Section
+            Section Tools/2D Modeling
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1380,12 +1517,47 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../Section/2.%20Theory.html" class="md-nav__link">
+      <a href="../Section/hf2DStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Theory
+    2.1 Overview
   </span>
   
 
@@ -1402,15 +1574,213 @@
   
   
     <li class="md-nav__item">
-      <a href="../Section/3.%20Commands.html" class="md-nav__link">
+      <a href="../Section/hf2DStudio/2.2%20Window%20and%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Command
+    2.2 Window and File
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.3%20View%20and%20Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.4%20Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.5%20Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/hf2DStudio/2.6%20Operation%20and%20Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/2.7%20Mesh%20Generation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Mesh Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfSectAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfSectAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.1%20Help.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Help
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/3.2%20Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1427,7 +1797,28 @@
         
   
   <span class="md-ellipsis">
-    4. Example
+    4. Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Section/5.%20Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Theory
   </span>
   
 
@@ -1486,11 +1877,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/1.%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/1.%20Basics.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Overview
+    1. Basics
   </span>
   
 
@@ -1521,7 +1912,7 @@
             
   
   <span class="md-ellipsis">
-    2. hfVisualizer
+    2. hfStudio
   </span>
   
 
@@ -1531,7 +1922,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            2. hfVisualizer
+            2. hfStudio
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1542,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.1%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.1%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1563,7 +1954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.2%20Remote-only.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.2%20Remote-only.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1584,7 +1975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.3%20View.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.3%20View.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1605,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.4%20File.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.4%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1626,7 +2017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.5%20Display.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.5%20Display.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1647,7 +2038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.6%20Selection.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.6%20Selection.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1703,7 +2094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.1%20Environment.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.1%20Environment.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1724,7 +2115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.2%20CoordinateSystem.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.2%20CoordinateSystem.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1745,7 +2136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.3%20Construction.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.3%20Construction.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1801,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.4.1%20Node.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.4.1%20Node.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1822,7 +2213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.4.2%20NSet.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.4.2%20NSet.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1886,7 +2277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.5.1%20Element.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.5.1%20Element.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1907,7 +2298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.5.2%20Elset.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.5.2%20Elset.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1936,7 +2327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.6%20Load.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.6%20Load.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1957,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.7%20Surface.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.7%20Surface.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1978,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.8%20Sensor.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.8%20Sensor.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1999,7 +2390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.9%20NProp.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.9%20NProp.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2020,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.10%20Material.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.10%20Material.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2041,7 +2432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.11%20Section.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.11%20Section.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2062,7 +2453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.12%20Function.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.12%20Function.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2083,7 +2474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.13%20Step.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.13%20Step.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2104,7 +2495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.14%20History.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.14%20History.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2125,11 +2516,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.15%20Distribution.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.15%20Distribution.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2.7.15 Distribution
+    2.7.15 Assign
   </span>
   
 
@@ -2146,7 +2537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.16%20Model.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.16%20Model.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2167,7 +2558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.17%20Renumber.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.17%20Renumber.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2188,7 +2579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.7.18%20Undo%20and%20Redo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2217,7 +2608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.8%20Analysis.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.8%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2238,11 +2629,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfVisualizer/2.9%20Postprocessing.html" class="md-nav__link">
+      <a href="../Remote%20Control/hfStudio/2.9%20Postprocessing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     2.9 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/Recipes/2.10%20hfStudio%20Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10 Recipes
   </span>
   
 
@@ -2281,7 +2693,7 @@
             
   
   <span class="md-ellipsis">
-    3. hfSectionVisualizer
+    3. hf2DStudio
   </span>
   
 
@@ -2291,7 +2703,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            3. hfSectionVisualizer
+            3. hf2DStudio
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2302,11 +2714,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/1.%20Overview.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.1%202D%20Modeling%20Automation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.1 Overview
+    3.1 2D Modeling Automation
   </span>
   
 
@@ -2323,11 +2735,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/2.%20Window%20and%20File.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.2%20Overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.2 Window and File
+    3.2 Overview
   </span>
   
 
@@ -2344,11 +2756,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/3.%20View.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.3%20Window%20and%20File.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.3 View
+    3.3 Window and File
   </span>
   
 
@@ -2365,11 +2777,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/4.%20Geometry.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.4%20View.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.4 Geometry
+    3.4 View
   </span>
   
 
@@ -2386,11 +2798,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/5.%20Definition.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.5%20Geometry.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.5 Definition
+    3.5 Geometry
   </span>
   
 
@@ -2407,75 +2819,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/hfSectionVisualizer/6.%20Operation%20and%20Analysis.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.6%20Definition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3.6 Operation and Analysis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    4. Recipes
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
-            <span class="md-nav__icon md-icon"></span>
-            4. Recipes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Remote%20Control/Recipes/1.%20hfVisualizer.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4.1 hfVisualizer
+    3.6 Definition
   </span>
   
 
@@ -2492,11 +2840,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Remote%20Control/Recipes/2.%20hfSectionVisualizer.html" class="md-nav__link">
+      <a href="../Remote%20Control/hf2DStudio/3.7%20Operation%20and%20Analysis.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4.2 hfSectionVisualizer
+    3.7 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote%20Control/Recipes/3.8%20hf2DStudio%20Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Recipes
   </span>
   
 
@@ -2542,7 +2911,7 @@
             
   
   <span class="md-ellipsis">
-    Example
+    Tutorials
   </span>
   
 
@@ -2552,7 +2921,238 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Example
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/1.%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/2.%20Beam%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Beam Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/3.%20Solid%20Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Solid Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/4.%20Beam%20vs%20Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Beam vs Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/5.%20hfStudio%20Basics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. hfStudio Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/6.%20Selection%20and%20Visibility.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Selection and Visibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/7.%20Postprocessing%20with%20IPC.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Postprocessing with Remote Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/8.%20Scripts%20and%20Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Scripts and Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorial/9.%20Portal%20Frame.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Portal Frame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2668,11 +3268,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.6%20Acoustic%20Solid%20Element.html" class="md-nav__link">
+      <a href="../Example/E.6%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.6 Acoustic Solid Element
+    E.6 Dynamic Analysis using Spring and Mass Elements
   </span>
   
 
@@ -2689,11 +3289,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.7%20Dynamic%20Analysis%20using%20Spring%20and%20Mass%20Elements.html" class="md-nav__link">
+      <a href="../Example/E.7%20Acoustic%20Solid%20Element%20and%20HydroStaticPressure%20Loads.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.7 Dynamic Analysis using Spring and Mass Elements
+    E.7 Acoustic Solid Element and HydroStaticPressure Loads
   </span>
   
 
@@ -2857,11 +3457,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Example/E.15%20Temperature%20Load%20by%20Bimetal.html" class="md-nav__link">
+      <a href="../Example/E.15%20Time%20Dependent%20Materials.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    E.15 Temperature Load by Bimetal
+    E.15 Time Dependent Materials
   </span>
   
 
@@ -2906,153 +3506,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#material" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="*Material">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#material-typeisoelasticity" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=IsoElasticity
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typeorthoelasticity" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=OrthoElasticity
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typevonmises" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=vonMises
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typetresca" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=Tresca
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typemohrcoulomb" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=MohrCoulomb
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typedruckerprager" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=DruckerPrager
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typeugeneric" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=UGeneric
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typeusteel" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=USteel
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typegaphook" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=GapHook
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typecohesive" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material, Type=Cohesive
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typeacoustic" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=Acoustic
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-typeseepage" class="md-nav__link">
-    <span class="md-ellipsis">
-      *Material Type=Seepage
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -3061,13 +3514,12 @@
                   
 
 
-  <h1>7. Material</h1>
-
+<h1 id="7-material">7. Material</h1>
 <p>Material models are defined using the <code>*Material</code> keyword. Each material must have a unique name, and duplicate names are not allowed. A material model is used to define various constitutive relationships, including the stress-strain relation, depending on the type of element.</p>
 <table>
 <thead>
 <tr>
-<th>TYPE</th>
+<th>Type</th>
 <th>Description</th>
 <th>Usage</th>
 </tr>
@@ -3076,7 +3528,7 @@
 <tr>
 <td>IsoElasticity</td>
 <td>Isotropic Elasticity</td>
-<td>Uniaxial and Multiaxial Stress-Strain Relation</td>
+<td>Uniaxial and Multiaxial Stress-Strain Relation; LongTerm Concrete and Tendon options</td>
 </tr>
 <tr>
 <td>OrthoElasticity</td>
@@ -3106,12 +3558,12 @@
 <tr>
 <td>UGeneric</td>
 <td>Uniaxial Generic</td>
-<td>Uniaxial Stress-Strain Relation</td>
+<td>Uniaxial Stress-Strain Relation; LongTerm Concrete option</td>
 </tr>
 <tr>
 <td>USteel</td>
 <td>Uniaxial Steel</td>
-<td>Uniaxial Stress-Strain Relation</td>
+<td>Uniaxial Stress-Strain Relation; LongTerm Tendon option</td>
 </tr>
 <tr>
 <td>GapHook</td>
@@ -3153,10 +3605,154 @@
 <li>Scaled torsional moment–rotation: Beam element</li>
 </ul>
 <p>In such cases where uniaxial material models are borrowed, the stress-strain relationship is interpreted as the required form (e.g., force-displacement) without preserving the original physical meaning. For example, when a uniaxial material model is used for an X-direction spring, its stress-strain relation is treated as a force-displacement relation, with stress and force, strain and displacement converted in a one-to-one manner without physical equivalence.</p>
-<p>When a unit system is introduced to the model using the <code>*Environment, TYPE=UnitSystem</code> command, care must be taken when changing the unit system globally in tools like hfVisualizer. For cases where uniaxial material models are borrowed, the unit system at the time of borrowing is recorded as a reference unit system. This allows proper internal conversion when the global unit system changes.</p>
-<h2 id="material">*Material</h2>
+<h5 id="material-db-input">Material DB Input</h5>
+<p>Some material models can use a material DB item name in place of direct numeric values. <code>*Material</code> <code>Type</code> always names the Hyfeast material model; the DB reference is detected from the first token of the dataline.</p>
+<p>Material DB stores standard properties from design codes. Model-specific inelastic parameters that are not provided by the DB must still be entered directly using the existing datalines. Material DB reference input requires a prior global <code>*Environment, Type=UnitSystem</code>; the parser converts DB source values to the current global UnitSystem before using them as material or recipe values. Current built-in material DB items are listed below.</p>
+<table>
+<thead>
+<tr>
+<th>DB</th>
+<th>item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KDS concrete</td>
+<td><code>KDS-2026-C&lt;fck&gt;</code></td>
+</tr>
+<tr>
+<td>ACI 318 concrete</td>
+<td><code>ACI318-2025-C&lt;fck&gt;</code></td>
+</tr>
+<tr>
+<td>EC2 concrete</td>
+<td><code>EC2-2004-C&lt;fck&gt;</code></td>
+</tr>
+<tr>
+<td>KDS structural steel SS235</td>
+<td><code>KDS-2026-SS235-t16</code>, <code>KDS-2026-SS235-t40</code>, <code>KDS-2026-SS235-t100</code>, <code>KDS-2026-SS235-t100p</code></td>
+</tr>
+<tr>
+<td>KDS structural steel SS275</td>
+<td><code>KDS-2026-SS275-t16</code>, <code>KDS-2026-SS275-t40</code>, <code>KDS-2026-SS275-t100</code>, <code>KDS-2026-SS275-t100p</code></td>
+</tr>
+<tr>
+<td>KDS structural steel SS315</td>
+<td><code>KDS-2026-SS315-t16</code>, <code>KDS-2026-SS315-t40</code>, <code>KDS-2026-SS315-t100</code>, <code>KDS-2026-SS315-t100p</code></td>
+</tr>
+<tr>
+<td>KDS structural steel SS410</td>
+<td><code>KDS-2026-SS410-t16</code>, <code>KDS-2026-SS410-t40</code></td>
+</tr>
+<tr>
+<td>KDS structural steel SS450</td>
+<td><code>KDS-2026-SS450-t16</code>, <code>KDS-2026-SS450-t40</code></td>
+</tr>
+<tr>
+<td>KDS structural steel SS550</td>
+<td><code>KDS-2026-SS550-t16</code>, <code>KDS-2026-SS550-t40</code></td>
+</tr>
+<tr>
+<td>KDS general rebar</td>
+<td><code>KDS-2026-SD300</code>, <code>KDS-2026-SD400</code>, <code>KDS-2026-SD500</code>, <code>KDS-2026-SD600</code>, <code>KDS-2026-SD700</code></td>
+</tr>
+<tr>
+<td>KDS weldable rebar</td>
+<td><code>KDS-2026-SD400W</code>, <code>KDS-2026-SD500W</code></td>
+</tr>
+<tr>
+<td>KDS seismic rebar</td>
+<td><code>KDS-2026-SD400S</code>, <code>KDS-2026-SD500S</code>, <code>KDS-2026-SD600S</code>, <code>KDS-2026-SD700S</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>&lt;fck&gt;</code> in <code>KDS-2026-C&lt;fck&gt;</code> and <code>EC2-2004-C&lt;fck&gt;</code> is the compressive strength in MPa. The year in <code>KDS-2026</code> identifies the KDS component-document set valid in that year; individual component revision years and product-standard sources are preserved in citations. <code>EC2-2004-C&lt;fck&gt;</code> is the EN 1992-1-1:2004 cylinder-strength reference. <code>&lt;fck&gt;</code> in <code>ACI318-2025-C&lt;fck&gt;</code> is the specified compressive strength <code>f'c</code> in psi (for example, <code>ACI318-2025-C4000</code> means <code>f'c = 4000 psi</code>); the <code>C</code> prefix is the Hyfeast concrete-strength token, not the ACI grade letter. The <code>t16</code>, <code>t40</code>, <code>t100</code>, and <code>t100p</code> suffixes for structural steel indicate thickness ranges that affect yield strength. Users must choose the item that matches the member thickness.</p>
+<p>When a concrete DB item is expanded as the elastic modulus for <code>IsoElasticity</code>, KDS uses <span class="arithmatex">\(f_{cm}=f_{ck}+\Delta f\)</span> and <span class="arithmatex">\(E_c=8500\sqrt[3]{f_{cm}}\;[\mathrm{MPa}]\)</span>. This is the KDS normal-weight concrete expression with <span class="arithmatex">\(m_c=2300\,\mathrm{kg/m^3}\)</span>, and material density does not recompute <span class="arithmatex">\(E_c\)</span>. <code>ACI318-2025-C&lt;fck&gt;</code> uses the normalweight simplified expression <span class="arithmatex">\(E_c=57000\sqrt{f'_c}\;[\mathrm{psi}]\)</span>; the coefficient is the representative value corresponding to <span class="arithmatex">\(w_c = 145\,\mathrm{lb/ft^3}\)</span>. <code>EC2-2004-C&lt;fck&gt;</code> uses <span class="arithmatex">\(f_{cm}=f_{ck}+8\)</span> and <span class="arithmatex">\(E_c=E_{cm}=22000(f_{cm}/10)^{0.3}\;[\mathrm{MPa}]\)</span>.</p>
+<p>For steel and rebar material DB items, the strength value used by DB fields or recipes is <code>Fy</code>. When a prestressing DB item is referenced directly from <code>LongTerm, Tendon</code>, its characteristic tensile strength and relaxation class are used. Rebar diameter and nominal area are section/size DB information, not Material DB information.</p>
+<p>The following density values are used by <code>*Material</code> DB input when <code>density</code> is omitted. KDS, EC2, and steel rows list mass density. The ACI row lists the weight density <span class="arithmatex">\(w_c\)</span> as used in ACI, with its approximate mass-density equivalent in parentheses; Hyfeast converts it to mass density before applying the current global UnitSystem. Concrete elastic-modulus formulas keep the assumptions described above and are not recomputed from these material density values.</p>
+<table>
+<thead>
+<tr>
+<th>DB</th>
+<th>Material category</th>
+<th>density</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KDS-2026</code></td>
+<td>concrete</td>
+<td><span class="arithmatex">\(2300\,\mathrm{kg/m^3}\)</span></td>
+</tr>
+<tr>
+<td><code>ACI318-2025</code></td>
+<td>concrete</td>
+<td><span class="arithmatex">\(w_c = 145\,\mathrm{lb/ft^3}\)</span> <span class="arithmatex">\((\mathrm{approx.}\ 2323\,\mathrm{kg/m^3})\)</span></td>
+</tr>
+<tr>
+<td><code>EC2-2004</code></td>
+<td>concrete</td>
+<td><span class="arithmatex">\(2400\,\mathrm{kg/m^3}\)</span></td>
+</tr>
+<tr>
+<td><code>KDS-2026</code></td>
+<td>structural steel</td>
+<td><span class="arithmatex">\(7850\,\mathrm{kg/m^3}\)</span></td>
+</tr>
+<tr>
+<td><code>KDS-2026</code></td>
+<td>steel rebar</td>
+<td><span class="arithmatex">\(7850\,\mathrm{kg/m^3}\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>DB reference meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsoElasticity</code></td>
+<td>Creates elastic properties from the DB item. Long-term concrete behavior references a function through a <code>LongTerm, Concrete</code> dataline, while tendon relaxation may directly reference a prestressing DB item through a <code>LongTerm, Tendon</code> dataline.</td>
+</tr>
+<tr>
+<td><code>vonMises</code></td>
+<td>Uses DB elastic properties and allows the <code>Fy</code> field-token in the value hardening <code>yield</code> position.</td>
+</tr>
+<tr>
+<td><code>UGeneric</code></td>
+<td>Uses concrete DB items indirectly through concrete envelope functions, and references a <code>ConcreteTime</code> function through a <code>LongTerm, Concrete</code> dataline for long-term concrete behavior.</td>
+</tr>
+<tr>
+<td><code>USteel</code></td>
+<td>Creates a Menegotto-Pinto-family input from a rebar or prestressing DB item plus a recipe token. Tendon relaxation may directly reference a prestressing DB item through a <code>LongTerm, Tendon</code> dataline.</td>
+</tr>
+<tr>
+<td><code>Tresca</code></td>
+<td>Replaces only the elastic-property first dataline; <code>Fy</code> may be used in the <code>yield</code> position.</td>
+</tr>
+<tr>
+<td><code>MohrCoulomb</code></td>
+<td>Replaces only the elastic-property first dataline.</td>
+</tr>
+<tr>
+<td><code>DruckerPrager</code></td>
+<td>Replaces only the elastic-property first dataline.</td>
+</tr>
+<tr>
+<td><code>ConcreteDamage</code></td>
+<td>Replaces only the elastic-property first dataline.</td>
+</tr>
+</tbody>
+</table>
+<p>DB reference input uses the default density listed above. If a different density is needed, use <code>material-db-item[, density][, ToDirectForm]</code> and override only <code>density</code>. <code>E</code>, <code>nu</code>, <code>alpha</code>, and recipe values still come from the DB; the override <code>density</code> is a direct numeric value in the current global UnitSystem.</p>
+<p><code>UGeneric</code> does not accept concrete DB items directly in the material dataline. Use concrete DB items first in <code>ParabolaCEnv</code>, <code>HognestadCEnv</code>, <code>EC2CEnv</code>, <code>MPPCEnv</code>, or <code>MaekawaTEnv</code>, then reference the generated function name as <code>EnvFunc</code>. Concrete long-term behavior references a separate <code>ConcreteTime</code> function through a <code>LongTerm, Concrete</code> dataline. These concrete function DB inputs also require a prior global UnitSystem where the selected function type requires it. The current built-in concrete DB item forms are <code>KDS-2026-C&lt;fck&gt;</code>, <code>ACI318-2025-C&lt;fck&gt;</code>, and <code>EC2-2004-C&lt;fck&gt;</code> for envelope functions, and <code>KDS-2026-C&lt;fck&gt;</code>, <code>EC2-2004-C&lt;fck&gt;</code>, and <code>ACI209-1992-C&lt;fc&gt;</code> for <code>ConcreteTime</code>; the allowed standards depend on the selected function type as described in the <code>*Function</code> manual.</p>
+<h2 id="71-material">7.1 *Material</h2>
 <p>Define material</p>
-<div class="highlight"><pre><span></span><code>*Material, TYPE=type, Name=name
+<div class="highlight"><pre><span></span><code>*Material, Type=type, Name=name
  ...data lines depending on type
 </code></pre></div>
 <h5 id="keyword-line">Keyword line</h5>
@@ -3183,25 +3779,172 @@
 </li>
 </ul>
 </div>
-<h3 id="material-typeisoelasticity">*Material Type=IsoElasticity</h3>
+<h3 id="711-material-typeisoelasticity">7.1.1 *Material, Type=IsoElasticity</h3>
 <p>Define isotropic elasticity material</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity, Name=name
  E, nu, alpha, density
+ [LongTerm, Concrete, timeFunction, nchain, lambda1, nsample]
+ [LongTerm, Tendon, standard, class, fp[, rho1000]]
+ [LongTerm, Tendon, material-db-item[, rho1000]]
+
+*Material, Type=IsoElasticity, Name=name
+ material-db-item[, density][, ToDirectForm]
+ [LongTerm, Concrete, timeFunction, nchain, lambda1, nsample]
+ [LongTerm, Tendon, standard, class, fp[, rho1000]]
+ [LongTerm, Tendon, material-db-item[, rho1000]]
 </code></pre></div>
+<p>Choose only one of the three <code>LongTerm</code> dataline forms shown above.</p>
 <h5 id="first-data-line">First data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>E:</strong> elastic modulus (required)</li>
 <li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
 <li><strong>alpha:</strong> thermal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
+<li><strong>density:</strong> Density for the direct numeric dataline (optional, default 0.). In a DB dataline, omitted <code>density</code> means the DB density, not 0.</li>
+<li><strong>material-db-item:</strong> material DB item name. It replaces <code>E</code>, <code>nu</code>, <code>alpha</code>, and <code>density</code> with DB elastic properties. If <code>density</code> follows the DB item, that value overrides only density; otherwise, the DB density is used.</li>
+<li><strong>ToDirectForm:</strong> Optional final DB dataline token. It expands the DB input to direct numeric values when saved or reprinted.</li>
 </ul>
 </div>
+<h5 id="longterm-concrete-dataline">LongTerm, Concrete dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>timeFunction:</strong> Name of a <code>*Function, Type=ConcreteTime</code> function. Standard <code>ConcreteTime</code> functions evaluate concrete age variables in day units.</li>
+<li><strong>nchain:</strong> Number of Kelvin chains (optional, default 4).</li>
+<li><strong>lambda1:</strong> First retardation time <span class="arithmatex">\(\lambda_1\)</span> (optional). Enter this value in days. If omitted, the referenced <code>ConcreteTime</code> function supplies its internal default. Specify <code>lambda1</code> here to override that Function-side default for this material.</li>
+<li><strong>nsample:</strong> Number of creep compliance fitting samples (optional, default <code>10*nchain</code>). It must be larger than <code>nchain</code>.</li>
+</ul>
+</div>
+<p>The time variable <span class="arithmatex">\(t\)</span> for long-term material models comes from <code>ELTIME</code>, the element elapsed physical time after activation. <code>ELTIME</code> starts at 0 when the element is activated and advances by physical-time step increments. To represent concrete age before loading, use an unloaded <code>Static, Quasi</code> step instead of an initial-age field in <code>LongTerm, Concrete</code>.</p>
+<p>Do not combine <code>LongTerm, Concrete</code> and <code>LongTerm, Tendon</code> in the same <code>IsoElasticity</code> material.</p>
+<h5 id="longterm-tendon-dataline">LongTerm, Tendon dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>standard:</strong> <code>KDS-2025</code> or <code>EC2-2004</code>.</li>
+<li><strong>class:</strong> Relaxation class, one of <code>Class1</code>, <code>Class2</code>, or <code>Class3</code>.</li>
+<li><strong>fp:</strong> Characteristic tensile strength used in the stress ratio. Use <span class="arithmatex">\(f_{pu}\)</span> for <code>KDS-2025</code> and <span class="arithmatex">\(f_{pk}\)</span> for <code>EC2-2004</code>. Direct numeric input uses the stress unit of the current global <code>UnitSystem</code>; in an <code>N-mm</code> unit system this is MPa(<span class="arithmatex">\(N/mm^2\)</span>).</li>
+<li><strong>material-db-item:</strong> Prestressing material DB item name. The DB item supplies the standard, relaxation class, and characteristic tensile strength, converted from the DB source unit to the stress unit of the current global <code>UnitSystem</code>.</li>
+<li><strong>rho1000:</strong> Optional 1000-hour relaxation loss in percent. If omitted, the DB item value or class default is used; class defaults are 8 for <code>Class1</code>, 2.5 for <code>Class2</code>, and 4 for <code>Class3</code>.</li>
+</ul>
+</div>
+<h5 id="theory-and-behavior">Theory and behavior</h5>
+<p><code>IsoElasticity + LongTerm, Concrete</code> is interpreted as isotropic linear aging viscoelasticity. The <code>E</code> in the first dataline is used as the reference-age elastic modulus, and the elastic-modulus age factor <span class="arithmatex">\(a_E(t)\)</span> from <code>ConcreteTime</code> defines the modulus at the current element elapsed time <span class="arithmatex">\(t\)</span>.</p>
+<div class="arithmatex">\[
+E(t)=a_E(t)E_{28},\qquad
+G(t)=\frac{E(t)}{2(1+\nu)}
+\]</div>
+<p>Stress is computed from the current-age elastic matrix <span class="arithmatex">\(\mathbf{D}_{\nu}(E(t))\)</span> and the elastic strain obtained after subtracting long-term nonmechanical strains.</p>
+<div class="arithmatex">\[
+\sigma(t)
+=
+\mathbf{D}_{\nu}(E(t))
+\left[
+\varepsilon(t)
+-\varepsilon^{cr}(t)
+-\varepsilon^{sh}(t)
+-\varepsilon^{ag}(t)
+-\varepsilon^{th}(t)
+\right]
+\]</div>
+<p>Here, <span class="arithmatex">\(\nu\)</span> is the <code>IsoElasticity</code> Poisson's ratio; there is no separate creep Poisson ratio input. <span class="arithmatex">\(\bar{\mathbf{S}}_{\nu}\)</span> is the normalized isotropic compliance obtained by setting <span class="arithmatex">\(E=1\)</span>.</p>
+<div class="arithmatex">\[
+\varepsilon^{cr}(t)
+=
+\int_0^{t}
+C(t,\tau)\,\bar{\mathbf{S}}_{\nu}\,d\sigma_c(\tau)
+\]</div>
+<p>For <code>LongTerm, Concrete</code>, creep is driven by the compressive principal-stress path. The stress vector is first converted to a symmetric stress tensor, then split in principal space:</p>
+<div class="arithmatex">\[
+\boldsymbol{\sigma}^c
+=
+\sum_i \min(\sigma_i,0)\,\mathbf{n}_i\otimes\mathbf{n}_i
+\]</div>
+<p>The creep-driving increment is <span class="arithmatex">\(\Delta\boldsymbol{\sigma}^c_n=\boldsymbol{\sigma}^c_{n+1}-\boldsymbol{\sigma}^c_n\)</span>, converted back to the material stress-vector order before applying the normalized compliance. This split applies compression along each principal direction and handles tension-compression crossing at zero stress. If principal directions are rotated from the element axes, the reconstructed compressive tensor can contain shear components.</p>
+<p>This definition has the following implications. Because tensile stress history does not contribute directly to creep history, time-dependent deformation along non-compressive paths — such as the tensile region after prestressing or near-cracking tensile loading — is not represented, and how conservative the result is depends on the stress state. In multiaxial form the compressive stress tensor is passed through the isotropic normalized compliance <span class="arithmatex">\(\bar{\mathbf{S}}_{\nu}\)</span>, so a tensile principal direction orthogonal to a compressive one still receives a lateral creep strain scaled by <span class="arithmatex">\(-\nu\)</span>. When a step crosses from compression to tension, <span class="arithmatex">\(\Delta\boldsymbol{\sigma}^c_n\)</span> enters as an unloading increment that removes the existing compressive stress and partially recovers the chain history, and during a subsequent tensile interval the chain state still decays by <span class="arithmatex">\(\exp(-\Delta t_n/\lambda_\alpha)\)</span>.</p>
+<p>The <code>ConcreteTime</code> function supplies <span class="arithmatex">\(C(t,\tau)\)</span> as creep compliance, and <span class="arithmatex">\(\tau\)</span> is the loading age of each compressive stress-path increment. In incremental analysis, this history integral is approximated by a Kelvin chain. With <code>nchain</code> equal to <span class="arithmatex">\(m\)</span>, the retardation times are:</p>
+<div class="arithmatex">\[
+\lambda_\alpha=\lambda_1\,10^{\alpha-1},\qquad \alpha=1,\dots,m
+\]</div>
+<p>For each loading age <span class="arithmatex">\(\tau\)</span>, the coefficients <span class="arithmatex">\(c_\alpha(\tau)\)</span> are fitted to the target <code>ConcreteTime</code> creep compliance by least squares over logarithmically spaced sample times <span class="arithmatex">\(s_j\)</span>. The sample range is from <span class="arithmatex">\(\lambda_1/3\)</span> to <span class="arithmatex">\(2\lambda_m\)</span>, and the number of samples is <code>nsample</code>.</p>
+<div class="arithmatex">\[
+C(\tau+s,\tau)
+\approx
+\sum_{\alpha=1}^{m}
+c_\alpha(\tau)
+\left(1-\exp\left[-\frac{s}{\lambda_\alpha}\right]\right)
+\]</div>
+<div class="arithmatex">\[
+\min_{c_\alpha}
+\sum_j
+\left[
+C(\tau+s_j,\tau)
+-
+\sum_{\alpha=1}^{m}
+c_\alpha(\tau)
+\left(1-\exp\left[-\frac{s_j}{\lambda_\alpha}\right]\right)
+\right]^2
+\]</div>
+<p>The implementation stores internal variables <span class="arithmatex">\(\mathbf{q}^{\alpha}_n\)</span> instead of reintegrating the full stress history. For a time increment <span class="arithmatex">\(\Delta t_n=t_{n+1}-t_n\)</span>, the existing chain history produces the creep-strain increment, and the new compressive stress-path increment is stored as the next chain history.</p>
+<div class="arithmatex">\[
+\Delta\varepsilon^{cr}_n
+=
+\sum_{\alpha=1}^{m}
+\left(1-\exp\left[-\frac{\Delta t_n}{\lambda_\alpha}\right]\right)
+\mathbf{q}^{\alpha}_{n}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{q}^{\alpha}_{n+1}
+=
+\mathbf{q}^{\alpha}_{n}\exp\left[-\frac{\Delta t_n}{\lambda_\alpha}\right]
++
+c_\alpha(t_{n+1})
+\bar{\mathbf{S}}_{\nu}\Delta\sigma^c_n
+\frac{\lambda_\alpha}{\Delta t_n}
+\left(1-\exp\left[-\frac{\Delta t_n}{\lambda_\alpha}\right]\right)
+\]</div>
+<p>For <span class="arithmatex">\(\Delta t_n=0\)</span>, the final time-integration factor is treated as <code>1</code>. Shrinkage is a stress-independent time strain supplied by <code>ConcreteTime</code>. Shrinkage and thermal strains are applied only in isotropic normal directions.</p>
+<div class="arithmatex">\[
+\varepsilon^{sh}(t)
+=
+\varepsilon^{sh}(t)\mathbf{m},\qquad
+\varepsilon^{th}
+=
+\alpha\,\Delta T\,\mathbf{m}
+\]</div>
+<p><span class="arithmatex">\(\mathbf{m}\)</span> is <span class="arithmatex">\([1]\)</span> for uniaxial states, <code>[1,1,0,1]</code> for plane-family states, and <code>[1,1,1,0,0,0]</code> for 3D and shell-family states. <code>EAG</code> is the aging correction strain stored so that changing <span class="arithmatex">\(E(t)\)</span> with age does not create an artificial stress jump. At the new time <span class="arithmatex">\(t_{n+1}\)</span>, the elastic strain matching the previous stress <span class="arithmatex">\(\sigma_n\)</span> is recomputed, and the difference is stored in <code>EAG</code>.</p>
+<div class="arithmatex">\[
+\varepsilon^{ag}_{n+1}
+=
+\varepsilon^{e}_{n}
++
+\varepsilon^{ag}_{n}
+-
+\frac{1}{E(t_{n+1})}
+\bar{\mathbf{S}}_{\nu}\sigma_{n}
+\]</div>
+<p>In output, <code>ELTIME</code> is the element elapsed physical time after activation, and this value is used as the time variable <span class="arithmatex">\(t\)</span> for long-term material behavior. <code>ECR</code>, <code>ESH</code>, and <code>EAG</code> are the creep, shrinkage, and aging-correction strains. <code>ETH</code> is thermal strain, and <code>ENM</code> is reported as:</p>
+<div class="arithmatex">\[
+\varepsilon^{\mathrm{NM}}
+=
+\varepsilon^{\mathrm{CR}}
++\varepsilon^{\mathrm{SH}}
++\varepsilon^{\mathrm{AG}}
++\varepsilon^{\mathrm{TH}}
+\]</div>
+<p>Plane-family output components use <code>[11, 22, 12, 33]</code>; 3D and shell-family outputs use <code>[11, 22, 33, 12, 23, 31]</code>.</p>
+<p><code>IsoElasticity + LongTerm, Tendon</code> is supported only in uniaxial stress conditions. Relaxation is evaluated only when the current tendon stress is tensile. The time increment is taken from the <code>TUnit</code> of the active <code>Static, Quasi</code> step and converted to hours for the standard formula. Re-tensioning or stress changes are modeled by the existing <code>*State</code> commands; the material input itself does not carry a jacking schedule.</p>
+<p>The relaxation loss is accumulated monotonically and converted to a nonmechanical strain increment with the initial elastic modulus <span class="arithmatex">\(E_0\)</span>. This strain contributes to <code>ENM</code> and <code>E</code>, while no separate relaxation field is reported. See the <code>USteel</code> <code>LongTerm, Tendon</code> theory description for the standard equation and incremental update rule.</p>
 <h5 id="example">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=IsoElasticity Name=iso
  200., 0.2        # E, nu, alpha, density
+
+*Function, Type=ConcreteTime, Name=Conc30Time
+ KDS-2026-C30, 70, 200, 7, Type1, Moist
+
+*Material, Type=IsoElasticity Name=conc30
+ KDS-2026-C30
+ LongTerm, Concrete, Conc30Time, 4, 1, 40
 </code></pre></div>
-<h3 id="material-typeorthoelasticity">*Material Type=OrthoElasticity</h3>
+<h3 id="712-material-typeorthoelasticity">7.1.2 *Material, Type=OrthoElasticity</h3>
 <p>Define orthotropic elasticity</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=OrthoElasticity, Name=name
   E1,E2,E3, G12,G23,G31, nu12,nu23,nu31, a1,a2,a3, density, angle, cs
@@ -3214,11 +3957,11 @@
 <li><strong>nu12, nu23, nu31:</strong> Poisson's ratios(required)</li>
 <li><strong>a1,a2,a3:</strong> thermal expansion coefficient (optional, default 0)</li>
 <li><strong>density:</strong> density(optional, default 0.)</li>
-<li><strong>angle:</strong> angle in laminar condition for *Section, TYPE=CompositeShell (optional, default 0.)</li>
+<li><strong>angle:</strong> angle in laminar condition for *Section, Type=CompositeShell (optional, default 0.)</li>
 <li><strong>cs:</strong> material coordinate system(optional). If not given, global coordinate system is used for material coordinates</li>
 </ul>
 </div>
-<p>Angle is the angle used to define the local coordinate system in the laminar stress condition when defining <code>*Section, TYPE=CompositeShell</code>. CS is used for all other stress conditions.</p>
+<p>Angle is the angle used to define the local coordinate system in the laminar stress condition when defining <code>*Section, Type=CompositeShell</code>. CS is used for all other stress conditions.</p>
 <h5 id="example_1">Example</h5>
 <div class="highlight"><pre><span></span><code>*Material, Type=OrthoElasticity Name=ortho
  200.,100.,100., 50.,30.,30., 0.12, 0.12, 0.12, 1E-6, 1.2E-6, 1.4E-4, 7810., 0, cs
@@ -3228,14 +3971,14 @@
  200.,100.,100., 50.,30.,30., 0.12, 0.12, 0.12, 1E-6, 1.2E-6, 1.4E-4, 7810., 90
 # E1, E2, E3, G12, G23, G31, nu12, nu23, nu31, a1, a2, a3, density, angle, cs
 </code></pre></div>
-<h3 id="material-typevonmises">*Material Type=vonMises</h3>
+<h3 id="713-material-typevonmises">7.1.3 *Material, Type=vonMises</h3>
 <p>Define von Mises plasticity(J2 plasticity)</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=vonMises, Name=name
- E, nu, alpha, density
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
  yield, H, theta, Kinf, K0, delta
 
 *Material, Type=vonMises, Name=name
- E, nu, alpha, density
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
  isoHardFunc, kinHardFunc|H
 </code></pre></div>
 <h5 id="first-data-line_2">First data line</h5>
@@ -3244,13 +3987,15 @@
 <li><strong>E:</strong> elastic modulus (required)</li>
 <li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
+<li><strong>density:</strong> Density for the direct numeric dataline (optional, default 0.). In a DB dataline, omitted <code>density</code> means the DB density, not 0.</li>
+<li><strong>material-db-item:</strong> material DB item name. It replaces <code>E</code>, <code>nu</code>, <code>alpha</code>, and <code>density</code> with DB elastic properties. If <code>density</code> follows the DB item, that value overrides only density; otherwise, the DB density is used.</li>
+<li><strong>ToDirectForm:</strong> Optional final DB dataline token. It expands the DB input to direct numeric values when saved or reprinted.</li>
 </ul>
 </div>
 <h5 id="second-data-line-for-value-when-the-first-entry-is-not-a-function-name">Second data line for value (when the first entry is not a function name)</h5>
 <div class="admonition note">
 <ul>
-<li><strong>yield:</strong> Initial yield value (required)</li>
+<li><strong>yield:</strong> Initial yield value (required). If the first dataline used <code>material-db-item</code>, <code>Fy</code> may be used here to reference the DB yield strength.</li>
 <li><strong>H:</strong> slope after initial yield (optional, default 0)</li>
 <li><strong>theta:</strong> Mixed hardening parameter (optional, default 0)</li>
 <li><strong>Kinf:</strong> Saturation hardening parameter (optional, default 0)</li>
@@ -3271,7 +4016,6 @@
 <li>Linear mixed hardening model</li>
 </ul>
 <div class="arithmatex">\[
-\small
 \begin{aligned}
 &amp;K(\kappa) = \sigma_Y + \theta \bar{H} \kappa  \\
 &amp;H'(\kappa) = (1-\theta) \bar{H}, ~ {\rm where,~} 0 \le \theta \le 1  \\
@@ -3281,14 +4025,13 @@
 <li>Saturation isotropic hardening and linear kinematic hardening model</li>
 </ul>
 <div class="arithmatex">\[
-\small
 \begin{aligned}
 &amp;K(\kappa) = \sigma_Y + \theta \bar{H} \kappa + ( \bar{K}_\infty- \bar{K}_0 )(1-exp(-\delta \kappa)) \\
 &amp;H'(\kappa) = (1-\theta) \bar{H}, ~ {\rm where,~} 0 \le \theta \le 1  \\
 \end{aligned}
 \]</div>
-<p><span class="arithmatex">\(\small\bar{H}\)</span> is a constant, and when <span class="arithmatex">\(\small\theta = 0\)</span>, only kinematic hardening is applied, while when <span class="arithmatex">\(\small\theta = 1\)</span>, only isotropic hardening is applied. The condition <span class="arithmatex">\(\small 0 \le \theta \le 1\)</span> must be satisfied. In the linear mixed hardening model, <span class="arithmatex">\(\small dK/d \kappa = (1-\theta)\bar{H}\)</span> represents the isotropic hardening modulus, and <span class="arithmatex">\(\small (1-\theta) \bar{H}\)</span> is the kinematic hardening modulus.</p>
-<p>If the conditions <span class="arithmatex">\(\small\bar{K}_\infty = \bar{K}_0\)</span> or <span class="arithmatex">\(\small\delta = 0\)</span> are satisfied, it corresponds to linear mixed hardening. In linear mixed hardening, <span class="arithmatex">\(\bar{H}\)</span> can take negative values; however, in the saturation isotropic hardening and linear kinematic hardening model, the conditions <span class="arithmatex">\(\small\bar{H} \ge 0\)</span>, <span class="arithmatex">\(\small\bar{K}_\infty \ge \bar{K}_0 \gt 0\)</span>, and <span class="arithmatex">\(\small\delta \ge 0\)</span> must be satisfied.</p>
+<p><span class="arithmatex">\(\bar{H}\)</span> is a constant, and when <span class="arithmatex">\(\theta = 0\)</span>, only kinematic hardening is applied, while when <span class="arithmatex">\(\theta = 1\)</span>, only isotropic hardening is applied. The condition <span class="arithmatex">\(0 \le \theta \le 1\)</span> must be satisfied. In the linear mixed hardening model, <span class="arithmatex">\(dK/d \kappa = (1-\theta)\bar{H}\)</span> represents the isotropic hardening modulus, and <span class="arithmatex">\((1-\theta) \bar{H}\)</span> is the kinematic hardening modulus.</p>
+<p>If the conditions <span class="arithmatex">\(\bar{K}_\infty = \bar{K}_0\)</span> or <span class="arithmatex">\(\delta = 0\)</span> are satisfied, it corresponds to linear mixed hardening. In linear mixed hardening, <span class="arithmatex">\(\bar{H}\)</span> can take negative values; however, in the saturation isotropic hardening and linear kinematic hardening model, the conditions <span class="arithmatex">\(\bar{H} \ge 0\)</span>, <span class="arithmatex">\(\bar{K}_\infty \ge \bar{K}_0 \gt 0\)</span>, and <span class="arithmatex">\(\delta \ge 0\)</span> must be satisfied.</p>
 <p><img alt="Fig. 7.2-1. Linear hardening" src="../../Command/image/7.2-1.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-1.</span></strong> Linear hardening</p>
 
@@ -3326,12 +4069,18 @@
 *Material, Type=vonMises, Name=steel5
  200000.    # E, nu, alpha, density
  isoFunc, kinFunc     # isoHardFunc, kinHardFunc|H
+
+# Perfectly plastic steel from material DB
+*Material, Type=vonMises, Name=SS275
+ KDS-2026-SS275-t16
+ Fy, 0, 1
 </code></pre></div>
-<h3 id="material-typetresca">*Material Type=Tresca</h3>
+<h3 id="714-material-typetresca">7.1.4 *Material, Type=Tresca</h3>
 <p>Define Tresca plasticity material model</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=Tresca, Name=name
- E, nu, alpha, density, StrainHardening|IsotropicHardening
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
  {yield,dyield}|yieldFunc
+ [StrainHardening|IsotropicHardening]
 </code></pre></div>
 <h5 id="first-data-line_3">First data line</h5>
 <div class="admonition note">
@@ -3339,20 +4088,26 @@
 <li><strong>E:</strong> elastic modulus (required)</li>
 <li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
-<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+<li><strong>density:</strong> Density for the direct numeric dataline (optional, default 0.). In a DB dataline, omitted <code>density</code> means the DB density, not 0.</li>
+<li><strong>material-db-item:</strong> material DB item name. It replaces <code>E</code>, <code>nu</code>, <code>alpha</code>, and <code>density</code> with DB elastic properties. If <code>density</code> follows the DB item, that value overrides only density; otherwise, the DB density is used.</li>
+<li><strong>ToDirectForm:</strong> Optional final DB dataline token. It expands the DB input to direct numeric values when saved or reprinted.</li>
 </ul>
 </div>
 <h5 id="second-data-line">Second data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>yield,dyield:</strong> initial yield value(required), and the derivative after initial yielding(optional, default 0.)</li>
+<li><strong>yield,dyield:</strong> initial yield value(required), and the derivative after initial yielding(optional, default 0.). If the first dataline used <code>material-db-item</code>, <code>Fy</code> may be used in the <code>yield</code> position.</li>
 <li><strong>yieldFunc:</strong> yield function(required)</li>
+</ul>
+</div>
+<h5 id="optional-last-data-line">Optional last data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
 </ul>
 </div>
 <p>The Tresca material model has the following yield function and flow potential:</p>
 <div class="arithmatex">\[
-\small
 F({\sigma}, \kappa) = | \sigma_1 - \sigma_3 | - \sigma_Y (\kappa)
 \]</div>
 <p>The hardening rule can apply strain hardening, work hardening, or the isotropic associative hardening rule. In the Tresca model, work hardening and associative isotropic hardening are identical.</p>
@@ -3375,23 +4130,30 @@ F({\sigma}, \kappa) = | \sigma_1 - \sigma_3 | - \sigma_Y (\kappa)
  2E6, 0.18, 1E-5, 7850   # E, nu, alpha, density
  20, 0.1                 # yield, dyield
 
-# linear hardening case with work hardening
+# linear hardening case with isotropic hardening
 *Material, Type=Tresca, Name=steelT3
  2E6, 0.18, 1E-5, 7850                    # E, nu, alpha, density
- 20, 0.1, StrainHardening|WorkHardening   # yield, dyield, StrainHardening|WorkHardening
+ 20, 0.1                                  # yield, dyield
+ IsotropicHardening                       # StrainHardening|IsotropicHardening
 
-# nonlinear hardening case with work hardening
+# nonlinear hardening case
 *Material, Type=Tresca, Name=steelT4
  2E6, 0.18, 1E-5, 7850   # E, nu, alpha, density
  trYield                 # yieldFunc
+
+# elastic properties and yield from material DB
+*Material, Type=Tresca, Name=steelT5
+ KDS-2026-SS275-t16
+ Fy
 </code></pre></div>
-<h3 id="material-typemohrcoulomb">*Material Type=MohrCoulomb</h3>
+<h3 id="715-material-typemohrcoulomb">7.1.5 *Material, Type=MohrCoulomb</h3>
 <p>Define Mohr-Coulomb material</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=MohrCoulomb, Name=name
- E, nu, alpha, density, StrainHardening|IsotropicHardening
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
  {coh,dcoh}|cohFunc
  {fric,dfric}|fricFunc
  {dila,ddila}|dilaFunc
+ [StrainHardening|IsotropicHardening]
 </code></pre></div>
 <h5 id="first-data-line_4">First data line</h5>
 <div class="admonition note"></div>
@@ -3399,8 +4161,9 @@ F({\sigma}, \kappa) = | \sigma_1 - \sigma_3 | - \sigma_Y (\kappa)
 <li><strong>E:</strong> elastic modulus (required)</li>
 <li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
-<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+<li><strong>density:</strong> Density for the direct numeric dataline (optional, default 0.). In a DB dataline, omitted <code>density</code> means the DB density, not 0.</li>
+<li><strong>material-db-item:</strong> material DB item name. It replaces <code>E</code>, <code>nu</code>, <code>alpha</code>, and <code>density</code> with DB elastic properties. If <code>density</code> follows the DB item, that value overrides only density; otherwise, the DB density is used.</li>
+<li><strong>ToDirectForm:</strong> Optional final DB dataline token. It expands the DB input to direct numeric values when saved or reprinted.</li>
 </ul>
 <h5 id="second-data-line_1">Second data line</h5>
 <div class="admonition note">
@@ -3423,14 +4186,18 @@ F({\sigma}, \kappa) = | \sigma_1 - \sigma_3 | - \sigma_Y (\kappa)
 <li><strong>dilaFunc:</strong> function name of dilatant function (optional)</li>
 </ul>
 </div>
+<h5 id="optional-last-data-line_1">Optional last data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+</ul>
+</div>
 <p>The units for the frictional angle and dilatant angle are in degrees, not radians. If the value of the dilatant angle is equal to the frictional angle, the associative flow rule is applied. Otherwise, the non-associative flow rule is applied. The initial cohesion (cohesion0) must be specified as a non-zero value. When using the associative isotropic hardening (i.e., IsotropicHardening) as the hardening rule, constant frictional and dilatant angles must be used.</p>
 <p>The Mohr-Coulomb material model uses the following yield function and plastic potential.</p>
 <div class="arithmatex">\[
-\small
 F( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \phi - 2 c(\kappa) \cos(\phi(\kappa))
 \]</div>
 <div class="arithmatex">\[
-\small
 G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(\kappa) \cos(\psi(\kappa))
 \]</div>
 <p><img alt="Fig. 7.2-4. Mohr-Coulomb yield criteria" src="../../Command/image/7.2-4.png" /></p>
@@ -3439,7 +4206,7 @@ G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(
 <p>The hardening rules include strain hardening and isotropic hardening. The Mohr-Coulomb model does not include work hardening.</p>
 <h5 id="example_4">Example</h5>
 <div class="highlight"><pre><span></span><code># associative flow rule, no hardening
-*Material, TYPE=MohrCoulomb, Name=soil1
+*Material, Type=MohrCoulomb, Name=soil1
  2E6, 0.18, 1E-5, 7850
  20    # coh, dcoh
  35    # fric, dfric
@@ -3447,7 +4214,7 @@ G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(
 
 # associative flow rule, strain hardening
 # linear hardening of cohesion, constant friction and dilatency
-*Material, TYPE=MohrCoulomb, Name=soil2
+*Material, Type=MohrCoulomb, Name=soil2
  2E6, 0.18, 1E-5, 7850
  20,3.
  35,
@@ -3455,18 +4222,18 @@ G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(
 
 # associative flow rule, associative isotropic hardening
 # linear hardening of cohesion, constant friction and dilatency
-*Material, TYPE=MohrCoulomb, Name=soil3
- 2E6, 0.18, 1E-5, 7850, IsotropicHardening
+*Material, Type=MohrCoulomb, Name=soil3
+ 2E6, 0.18, 1E-5, 7850
  20,3.
  35,
  30.
+ IsotropicHardening
 
 # associative flow rule, associative isotropic hardening,
 # linear hardening of cohesion, friction
-*Material, TYPE=MohrCoulomb, Name=soil4
+*Material, Type=MohrCoulomb, Name=soil4
  2E6, 0.18, 1E-5, 7850
  20,3.
- 35, 0.2
  35, 0.2
 
 # non-associative flow rule, strain hardening,
@@ -3486,20 +4253,28 @@ G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(
  0.001 35.
  0.002 40.
 
-*Material, TYPE=MohrCoulomb, Name=soil5
+*Material, Type=MohrCoulomb, Name=soil5
  2E6, 0.18, 1E-5, 7850
  cohFunc
  fricFunc
  dilaFunc
+
+# elastic properties from material DB
+*Material, Type=MohrCoulomb, Name=soil6
+ KDS-2026-C30
+ 2.0
+ 35.0
+ 10.0
 </code></pre></div>
-<h3 id="material-typedruckerprager">*Material Type=DruckerPrager</h3>
+<h3 id="716-material-typedruckerprager">7.1.6 *Material, Type=DruckerPrager</h3>
 <p>Define Isotropic elasticity material</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=DruckerPrager, Name=name
- E, nu, alpha, density, StrainHardening|IsotropicHardening
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
  beta
  coh,dcoh|cohFunc,
  af,daf|afFunc
  ap,dap|apFunc
+ [StrainHardening|IsotropicHardening]
 </code></pre></div>
 <h5 id="first-data-line_5">First data line</h5>
 <div class="admonition note">
@@ -3507,8 +4282,9 @@ G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(
 <li><strong>E:</strong> elastic modulus (required)</li>
 <li><strong>nu:</strong> Poisson’s ratio (optional, default 0.)</li>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
-<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+<li><strong>density:</strong> Density for the direct numeric dataline (optional, default 0.). In a DB dataline, omitted <code>density</code> means the DB density, not 0.</li>
+<li><strong>material-db-item:</strong> material DB item name. It replaces <code>E</code>, <code>nu</code>, <code>alpha</code>, and <code>density</code> with DB elastic properties. If <code>density</code> follows the DB item, that value overrides only density; otherwise, the DB density is used.</li>
+<li><strong>ToDirectForm:</strong> Optional final DB dataline token. It expands the DB input to direct numeric values when saved or reprinted.</li>
 </ul>
 </div>
 <h5 id="second-data-line_2">Second data line</h5>
@@ -3538,15 +4314,19 @@ G( \sigma, \kappa) = (\sigma_1 - \sigma_3) +(\sigma_1+\sigma_3) \sin \psi - 2 c(
 <li><strong>apFunc:</strong> function name of alphaP (required)</li>
 </ul>
 </div>
+<h5 id="optional-last-data-line_2">Optional last data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>StrainHardening|IsotropicHardening:</strong> hardening type(optional, default “StrainHardening”)</li>
+</ul>
+</div>
 <p>The units for the frictional angle and dilatant angle are in degrees, not radians. If the value of the dilatant angle is equal to the frictional angle, the associative flow rule is applied. Otherwise, the non-associative flow rule is applied. The initial cohesion (cohesion0) must be specified as a non-zero value. When using the associative isotropic hardening (i.e., IsotropicHardening) as the hardening rule, constant frictional and dilatant angles must be used.</p>
 <p>In the Drucker-Prager material model, the yield function and plastic potential are as follows.</p>
 <div class="arithmatex">\[
-\small
 F( \sigma, \kappa) = ||  s || + \alpha (\kappa) I_1 - \beta c(\kappa)
 \]</div>
 <p>▪ Flow potential : same to yield function</p>
 <div class="arithmatex">\[
-\small
 G( \sigma, \kappa) = ||  s || + \alpha_p (\kappa) I_1
 \]</div>
 <p>There are two types of hardening laws: strain hardening and isotropic hardening.
@@ -3555,18 +4335,83 @@ In the Drucker–Prager model, work hardening does not exist.</p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-5.</span></strong> Flow rule of Drucker-Prager model</p>
 
 <h5 id="example_5">Example</h5>
-<div class="highlight"><pre><span></span><code>*Material, TYPE=DruckerPrager, Name=concreteDP
- 2E6, 0.18, 1E-5, 7850, StrainHardening   # E, nu, alpha, density, StrainHardening|IsotropicHardening
+<div class="highlight"><pre><span></span><code>*Material, Type=DruckerPrager, Name=concreteDP
+ 2E6, 0.18, 1E-5, 7850   # E, nu, alpha, density
  4        # beta
  12.3     # coh,dcoh|cohFunc,
  20       # af,daf|afFunc
  20       # ap,dap|apFunc
+
+*Material, Type=DruckerPrager, Name=rockDP
+ KDS-2026-C30
+ 1.0
+ 2.0
+ 0.12
+ 0.08
+ IsotropicHardening
 </code></pre></div>
-<h3 id="material-typeugeneric">*Material Type=UGeneric</h3>
+<h3 id="717-material-typeconcretedamage-reserved">7.1.7 *Material, Type=ConcreteDamage [Reserved]</h3>
+<p>Define concrete damage plasticity material model.</p>
+<div class="highlight"><pre><span></span><code>*Material, Type=ConcreteDamage, Name=name
+ E, nu, alpha, density | material-db-item[, density][, ToDirectForm]
+ fc, Dc, wc
+ ft, Dt, wt
+ a, Kc, ap, ecc
+</code></pre></div>
+<h5 id="first-data-line_6">First data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>E:</strong> elastic modulus (required for direct numeric input)</li>
+<li><strong>nu:</strong> Poisson's ratio (optional, default 0.)</li>
+<li><strong>alpha:</strong> thermal expansion coefficient (optional, default 0.)</li>
+<li><strong>density:</strong> Density for the direct numeric dataline (optional, default 0.). In a DB dataline, omitted <code>density</code> means the DB density, not 0.</li>
+<li><strong>material-db-item:</strong> material DB item name. It replaces only <code>E</code>, <code>nu</code>, <code>alpha</code>, and <code>density</code> with DB elastic properties. If <code>density</code> follows the DB item, that value overrides only density; otherwise, the DB density is used.</li>
+<li><strong>ToDirectForm:</strong> Optional last token for DB input. When used, save/reprint expands the DB input into direct numeric values in the current global UnitSystem.</li>
+</ul>
+</div>
+<h5 id="second-and-third-data-lines">Second and third data lines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>fc:</strong> compression hardening function (required)</li>
+<li><strong>Dc:</strong> compression damage function (optional)</li>
+<li><strong>wc:</strong> compression recovery parameter (optional, default 1.)</li>
+<li><strong>ft:</strong> tension hardening function (required)</li>
+<li><strong>Dt:</strong> tension damage function (optional)</li>
+<li><strong>wt:</strong> tension recovery parameter (optional, default 1.)</li>
+</ul>
+</div>
+<h5 id="fourth-data-line">Fourth data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>a:</strong> dilation angle (optional, default 0.14)</li>
+<li><strong>Kc:</strong> yield surface shape parameter (optional, default &#8532;)</li>
+<li><strong>ap:</strong> plastic potential eccentricity parameter (optional, default 0.2)</li>
+<li><strong>ecc:</strong> flow potential eccentricity (optional, default 0.1)</li>
+</ul>
+</div>
+<h5 id="example_6">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Name=chard
+ 0., 20.
+ 0.001, 25.
+ 0.002, 25.
+
+*Function, Name=thard
+ 0., 2.
+ 0.001, 1.
+ 0.002, 0.2
+
+*Material, Type=ConcreteDamage, Name=concreteCD
+ 29188.6, 0.18, 1e-05, 2300  # E, nu, alpha, density
+ chard,  , 1                 # fc, Dc, wc
+ thard,  , 1                 # ft, Dt, wt
+ 0.12, 0.666667, 0.2, 0.1    # a, Kc, ap, ecc
+</code></pre></div>
+<h3 id="718-material-typeugeneric">7.1.8 *Material, Type=UGeneric</h3>
 <p>Define uniaxial generic material</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=UGeneric, Name=name
   Compression|Tension, EnvFunc, Plastic|Secant|IEFunc,
   ...
+  LongTerm, Concrete, timeFunction, nchain, lambda1, nsample
   alpha, density
 </code></pre></div>
 <h5 id="first-data-line-and-optional-second-data-line">First data line and optional second data line</h5>
@@ -3577,14 +4422,26 @@ In the Drucker–Prager model, work hardening does not exist.</p>
 <li><strong>Plastic|Secant|IEFunc:</strong> Specify function for plastic unloading, secant unloading, or damage plastic unloading (optional, default Plastic)</li>
 </ul>
 </div>
+<h5 id="longterm-concrete-data-line">LongTerm, Concrete data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>timeFunction:</strong> Name of a <code>*Function, Type=ConcreteTime</code> function. Standard <code>ConcreteTime</code> functions evaluate concrete age variables in day units.</li>
+<li><strong>nchain:</strong> Number of Kelvin chains <span class="arithmatex">\(m\)</span> (optional, default <code>4</code>).</li>
+<li><strong>lambda1:</strong> First retardation time <span class="arithmatex">\(\lambda_1\)</span> (optional). Enter this value in days. If omitted, the referenced <code>ConcreteTime</code> function supplies its internal default. Specify <code>lambda1</code> here to override that Function-side default for this material.</li>
+<li><strong>nsample:</strong> Number of sampling points used for Kelvin chain fitting (optional, default <code>10*nchain</code>). When specified directly, <code>nsample &gt; nchain</code> is required.</li>
+</ul>
+</div>
+<p>Material time starts at 0 and advances by step time increments. Pre-loading concrete age is represented by an unloaded <code>Static, Quasi</code> step.</p>
 <h5 id="optional-last-data-line-if-necessary">Optional Last data line if necessary</h5>
 <div class="admonition note">
 <ul>
 <li><strong>alpha:</strong> themal expansion coefficient (optional, default 0.)</li>
-<li><strong>density:</strong> density (optional, default 0.)</li>
+<li><strong>density:</strong> density (optional, default 0.). <code>UGeneric</code> does not take a material DB item dataline, so enter <code>density</code> here directly. Even when <code>EnvFunc</code> names a concrete function created from DB input, that DB density is not applied automatically to <code>UGeneric</code>.</li>
 </ul>
 </div>
-<p>The UGeneric model is a uniaxial material model that allows independent definition of tension and compression behavior. In particular, it can be used as a simplified plastic-damage model for concrete by neglecting energy dissipation during unloading and reloading in compression. Independent failure envelopes must be defined for both compression and tension sides, and during unloading/reloading, one can choose between a plastic model without damage (hereafter referred to as plastic), a plastic-damage model (hereafter referred to as damage plastic), or a plastic-elastic model (hereafter referred to as damage elastic). If applying the plastic-damage model, unloading and reloading are carried out along the segment connecting the point corresponding to the most recent strain (<span class="arithmatex">\(\small\epsilon_{cun}\)</span> or <span class="arithmatex">\(\epsilon_{tun}\)</span> at point <span class="arithmatex">\(\small(\epsilon_{cun},\sigma_{cun})\)</span> or  <span class="arithmatex">\(\small(\epsilon_{tun},\sigma_{tun})\)</span>) and the plastic strain specified by the plastic strain function (corresponding to <span class="arithmatex">\(\small\epsilon_{cpl}\)</span> or <span class="arithmatex">\(\epsilon_{tpl}\)</span>). Therefore, it is necessary to specify the function in the form of <span class="arithmatex">\(\small(\epsilon_{cpl},\sigma_{cun})\)</span> or <span class="arithmatex">\(\small(\epsilon_{tpl},\sigma_{tun})\)</span>.</p>
+<p>The UGeneric model is a uniaxial material model that allows independent definition of tension and compression behavior. In particular, it can be used as a simplified plastic-damage model for concrete by neglecting energy dissipation during unloading and reloading in compression. Independent failure envelopes must be defined for both compression and tension sides, and during unloading/reloading, one can choose between a plastic model without damage (hereafter referred to as plastic), a plastic-damage model (hereafter referred to as damage plastic), or a plastic-elastic model (hereafter referred to as damage elastic). If applying the plastic-damage model, unloading and reloading are carried out along the segment connecting the point corresponding to the most recent strain (<span class="arithmatex">\(\epsilon_{cun}\)</span> or <span class="arithmatex">\(\epsilon_{tun}\)</span> at point <span class="arithmatex">\((\epsilon_{cun},\sigma_{cun})\)</span> or  <span class="arithmatex">\((\epsilon_{tun},\sigma_{tun})\)</span>) and the plastic strain specified by the plastic strain function (corresponding to <span class="arithmatex">\(\epsilon_{cpl}\)</span> or <span class="arithmatex">\(\epsilon_{tpl}\)</span>). Therefore, it is necessary to specify the function in the form of <span class="arithmatex">\((\epsilon_{cpl},\sigma_{cun})\)</span> or <span class="arithmatex">\((\epsilon_{tpl},\sigma_{tun})\)</span>.</p>
+<p>Concrete DB items such as <code>KDS-2026-C&lt;fck&gt;</code>, <code>ACI318-2025-C&lt;fck&gt;</code>, and <code>EC2-2004-C&lt;fck&gt;</code> are not entered directly in a <code>UGeneric</code> material dataline. Create envelope functions first with <code>*Function, Type=ParabolaCEnv</code>, <code>HognestadCEnv</code>, <code>EC2CEnv</code>, <code>MPPCEnv</code>, or <code>MaekawaTEnv</code>, then use those function names in the <code>EnvFunc</code> position. These Function DB inputs require a global UnitSystem. <code>ParabolaCEnv</code> generates section-analysis parameters, so do not mix it with general compressive envelope material properties.</p>
+<p>Compression and tension envelopes are independent. <code>MaekawaTEnv</code> does not take a compression envelope name in its dataline; direct input is <code>Ec, ft[, c]</code>, and DB input is <code>KDS-2026-C&lt;fck&gt;|ACI318-2025-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, c][, ToDirectForm]</code>.</p>
 <p><img alt="Fig. 7.2-6. Failure envelope, unloading/reloading of UGeneric" src="../../Command/image/7.2-6.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-6.</span></strong> Failure envelope, unloading/reloading of UGeneric</p>
 
@@ -3598,7 +4455,63 @@ In the Drucker–Prager model, work hardening does not exist.</p>
 <p><img alt="Fig. 7.2-9. Cyclic loading of UGeneric for tensile secant unloading" src="../../Command/image/7.2-9.png" /></p>
 <p style="text-align: center;"><strong><span style="color: blue;">Fig. 7.2-9.</span></strong> Cyclic loading of UGeneric for tensile secant unloading</p>
 
-<h5 id="example_6">Example</h5>
+<h5 id="longterm-concrete-option">LongTerm, Concrete option</h5>
+<p><code>LongTerm, Concrete</code> combines the compression and tension envelope functions defined above with a separate <code>ConcreteTime</code> function for aging, creep, and shrinkage. The material dataline itself does not accept concrete DB items such as <code>KDS-2026-C&lt;fck&gt;</code>, <code>ACI318-2025-C&lt;fck&gt;</code>, <code>EC2-2004-C&lt;fck&gt;</code>, or <code>ACI209-1992-C&lt;fc&gt;</code> directly. Put DB items in the appropriate <code>*Function</code> datalines, then reference the resulting function names from <code>UGeneric</code>.</p>
+<p>The equations below summarize the time-dependent components used by this option. See the <code>*Function</code> manual for <code>ConcreteTime</code> DB input formats and allowed standards.</p>
+<h5 id="longterm-concrete-time-dependent-behavior">LongTerm, Concrete time-dependent behavior</h5>
+<p>The <code>ConcreteTime</code> function provides age factors, creep compliance, and shrinkage strain through the following series.</p>
+<div class="arithmatex">\[
+\left[a_c(t),\;a_t(t),\;a_E(t),\;c_r(t-\tau),\;c_l(\tau),\;\varepsilon^{sh}(t)\right]
+\]</div>
+<p>The aging effect scales the 28-day envelope to the material properties at time <span class="arithmatex">\(t\)</span>.</p>
+<div class="arithmatex">\[
+f_c(t)=a_c(t)f_c(28),\qquad
+f_t(t)=a_t(t)f_t(28),\qquad
+E_c(t)=a_E(t)E_c(28)
+\]</div>
+<p>The aging effect creates an aging strain stored as <code>EAG</code>. For uniaxial concrete time-dependent material, the non-mechanical strain is split as follows.</p>
+<div class="arithmatex">\[
+\varepsilon^{\mathrm{NM}}
+=
+\varepsilon^{\mathrm{CR}}
++\varepsilon^{\mathrm{SH}}
++\varepsilon^{\mathrm{AG}}
++\varepsilon^{\mathrm{TH}}
+\]</div>
+<p>Creep compliance is evaluated as a separated function of elapsed time after loading <span class="arithmatex">\(t-\tau\)</span> and loading age <span class="arithmatex">\(\tau\)</span>.</p>
+<div class="arithmatex">\[
+C(t,\tau)=c_r(t-\tau)c_l(\tau)
+\]</div>
+<p><code>UGeneric + LongTerm, Concrete</code> approximates this creep compliance with a Kelvin chain. With <code>nchain</code> equal to <span class="arithmatex">\(m\)</span>, the retardation times are arranged as follows.</p>
+<div class="arithmatex">\[
+\lambda_\alpha=\lambda_1 10^{\alpha-1},\qquad \alpha=1,\dots,m
+\]</div>
+<p>The Kelvin moduli <span class="arithmatex">\(E_\alpha(\tau)\)</span> are identified by least-squares fitting to the target creep compliance.</p>
+<div class="arithmatex">\[
+C(t,\tau)\approx
+\sum_{\alpha=1}^{m}
+\frac{1}{E_\alpha(\tau)}
+\left(1-\exp\left(-\frac{t-\tau}{\lambda_\alpha}\right)\right)
+\]</div>
+<p>For <code>LongTerm, Concrete</code>, creep uses only the compressive stress path. In uniaxial form this is <span class="arithmatex">\(\Delta\sigma^c_n=\min(\sigma_{n+1},0)-\min(\sigma_n,0)\)</span>. In multiaxial <code>IsoElasticity</code>, the same idea is applied in principal-stress space and then transformed back to the material axes.</p>
+<p>This uniaxial compression-only formulation does not act on tensile stress history, so time-dependent deformation in prestressed-concrete tensile regions or near-cracking tensile loading is not represented, and how conservative the result is depends on the stress state. When a step crosses from compression to tension, <span class="arithmatex">\(\Delta\sigma^c_n\)</span> enters as an unloading increment that removes the existing compressive stress and partially recovers the chain history, and during a subsequent tensile interval the chain state still decays by <span class="arithmatex">\(\exp(-\Delta t_n/\lambda_\alpha)\)</span>.</p>
+<p>During incremental analysis, internal variables <span class="arithmatex">\(q^\alpha_n\)</span> are stored instead of the full stress history.</p>
+<div class="arithmatex">\[
+\Delta\varepsilon_n^c=
+\sum_{\alpha=1}^{m}
+\left(1-\exp\left(-\frac{\Delta t_n}{\lambda_\alpha}\right)\right)
+q_n^\alpha
+\]</div>
+<div class="arithmatex">\[
+q_{n+1}^{\alpha}=
+q_n^{\alpha}\exp\left(-\frac{\Delta t_n}{\lambda_\alpha}\right)
++\frac{\Delta\sigma^c_n}{E_\alpha(t_{n+1})}
+\frac{\lambda_\alpha}{\Delta t_n}
+\left(1-\exp\left(-\frac{\Delta t_n}{\lambda_\alpha}\right)\right)
+\]</div>
+<p>Shrinkage is supplied by <code>ConcreteTime</code> as the stress-independent signed value <span class="arithmatex">\(\varepsilon^{sh}(t)\)</span>; ordinary shrinkage is stored internally as a negative strain in Hyfeast.</p>
+<h5 id="examples">Examples</h5>
+<p>Basic <code>UGeneric</code> envelope example:</p>
 <div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, Name=MPP
  27, 25000, 0.002   # fco, Ec, eco, ecu, fcc, esp
 
@@ -3606,7 +4519,7 @@ In the Drucker–Prager model, work hardening does not exist.</p>
  MPP   # compressiveEnv, epeak
 
 *Function, Type=MaekawaTEnv, Name=Maekawa
- MPP, 3, 0.4  # compressiveEnv,ft, c
+ 25000, 3, 0.4  # Ec, ft, c
 
 *Material, Type=UGeneric, Name=Mander
  Compression, MPP, MPPIE
@@ -3615,13 +4528,46 @@ In the Drucker–Prager model, work hardening does not exist.</p>
 *Material, Type=UGeneric, Name=Mander
  Compression, MPP
  Tension, Maekawa, Secant
+
+*Function, Type=EC2CEnv, Name=Conc30C
+ EC2-2004-C30
+
+*Function, Type=MaekawaTEnv, Name=Conc30T
+ KDS-2026-C30
+
+*Material, Type=UGeneric, Name=Conc30
+ Compression, Conc30C, Secant
+ Tension, Conc30T, Secant
 </code></pre></div>
-<h3 id="material-typeusteel">*Material Type=USteel</h3>
+<p><code>LongTerm, Concrete</code> example:</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=EC2CEnv, Name=Conc30C
+ EC2-2004-C30
+
+*Function, Type=MaekawaTEnv, Name=Conc30T
+ KDS-2026-C30
+
+*Function, Type=ConcreteTime, Name=Conc30Time
+ EC2-2004-C30, 70, 200, 3, N
+
+*Material, Type=UGeneric, Name=Conc30TimeMat
+ Compression, Conc30C, Secant
+ Tension, Conc30T, Secant
+ LongTerm, Concrete, Conc30Time, 4, 1, 40
+ 0, 0
+</code></pre></div>
+<h3 id="719-material-typeusteel">7.1.9 *Material, Type=USteel</h3>
 <p>Define uniaxial steel model based on Menegotto-Pinto model</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=USteel, Name=name
   E0, yield, E1,  R0,a1,a2, a3,a4, eu, alpha, density
+  [LongTerm, Tendon, standard, class, fp[, rho1000]]
+  [LongTerm, Tendon, material-db-item[, rho1000]]
+
+*Material, Type=USteel, Name=name
+  material-db-item, NoHardening|Hardening|Mattock-StressRelieved|Mattock-LowRelaxation[, density][, ToDirectForm]
+  [LongTerm, Tendon, standard, class, fp[, rho1000]]
+  [LongTerm, Tendon, material-db-item[, rho1000]]
 </code></pre></div>
-<h5 id="first-data-line_6">First data line</h5>
+<h5 id="first-data-line_7">First data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>E0:</strong> Initial tangent modulus (required)</li>
@@ -3634,6 +4580,29 @@ In the Drucker–Prager model, work hardening does not exist.</p>
 <li><strong>density:</strong> density (optional, default 0.)</li>
 </ul>
 </div>
+<h5 id="db-recipe-data-line">DB recipe data line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>material-db-item:</strong> General/weldable rebar or prestressing material DB item name. Structural steel DB items are not USteel recipe items, and seismic rebar DB recipes are not defined in v1.0.0.</li>
+<li><strong>NoHardening:</strong> USteel curve with <code>E1 = 0</code>; this is not perfectly plastic because the Menegotto-Pinto transition parameters still apply.</li>
+<li><strong>Hardening:</strong> Hardening recipe for rebar.</li>
+<li><strong>Mattock-StressRelieved:</strong> Mattock recipe for stress-relieved 7-wire strand.</li>
+<li><strong>Mattock-LowRelaxation:</strong> Mattock recipe for low-relaxation 7-wire strand.</li>
+<li><strong>density:</strong> Optional override for the DB recipe density only. If omitted, the DB density is used.</li>
+<li><strong>ToDirectForm:</strong> Optional final DB recipe dataline token. It expands the DB recipe to direct numeric values when saved or reprinted.</li>
+</ul>
+</div>
+<h5 id="longterm-tendon-dataline_1">LongTerm, Tendon dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>standard:</strong> <code>KDS-2025</code> or <code>EC2-2004</code>.</li>
+<li><strong>class:</strong> Relaxation class, one of <code>Class1</code>, <code>Class2</code>, or <code>Class3</code>.</li>
+<li><strong>fp:</strong> Characteristic tensile strength used in the stress ratio. Use <span class="arithmatex">\(f_{pu}\)</span> for <code>KDS-2025</code> and <span class="arithmatex">\(f_{pk}\)</span> for <code>EC2-2004</code>. Direct numeric input uses the stress unit of the current global <code>UnitSystem</code>; in an <code>N-mm</code> unit system this is MPa(<span class="arithmatex">\(N/mm^2\)</span>).</li>
+<li><strong>material-db-item:</strong> Prestressing material DB item name. Specify it again in this dataline even when it is the same item used by the DB recipe dataline. The DB item supplies the standard, relaxation class, and characteristic tensile strength, converted from the DB source unit to the stress unit of the current global <code>UnitSystem</code>.</li>
+<li><strong>rho1000:</strong> Optional 1000-hour relaxation loss in percent. If omitted, the DB item value or class default is used; class defaults are 8 for <code>Class1</code>, 2.5 for <code>Class2</code>, and 4 for <code>Class3</code>.</li>
+</ul>
+</div>
+<h5 id="mechanical-behavior">Mechanical behavior</h5>
 <p>USteel uses Menegotto-Pinto model with some modifications of partial reloading problem. It can be used for modeling rebar or prestressing steel.</p>
 <p><img alt="Fig. 7.2-10 Menegotto-Pinto Model" src="../../Command/image/7.2-10.png" /></p>
 <p>Fig. 7.2-10 Menegotto-Pinto Model</p>
@@ -3642,6 +4611,77 @@ In the Drucker–Prager model, work hardening does not exist.</p>
 <p>Fig. 7.2-11 Stress-strain curve of a weldable rebar with 400 MPa yield strength</p>
 <p><img alt="Fig. 7.2-12 Stress-strain curve of 7-wire strand with ultimate strength 1860 MPa" src="../../Command/image/7.2-12.png" /></p>
 <p>Fig. 7.2-12 Stress-strain curve of 7-wire strand with ultimate strength 1860 MPa</p>
+<h5 id="long-term-behavior">Long-term behavior</h5>
+<p><code>LongTerm, Tendon</code> applies only to uniaxial tendon relaxation. It advances during <code>Static, Quasi</code> time increments using the step <code>TUnit</code>, acts only in tension, and converts the monotonic stress loss to relaxation strain with the initial elastic modulus <code>E0</code>. Re-tensioning is handled through the existing <code>*State</code> input flow.</p>
+<p>KDS and EC2 inputs use the following tendon prestress relaxation equation. Let <span class="arithmatex">\(\sigma_p^*\)</span> be the reference stress obtained by adding the already accumulated relaxation loss to the current tensile stress, and let <span class="arithmatex">\(f_p\)</span> be the characteristic tensile strength. The stress ratio is:</p>
+<div class="arithmatex">\[
+\mu=\frac{\sigma_p^*}{f_p}
+\]</div>
+<p>For <code>KDS-2025</code>, <span class="arithmatex">\(f_p=f_{pu}\)</span>. For <code>EC2-2004</code>, <span class="arithmatex">\(f_p=f_{pk}\)</span>. Time <span class="arithmatex">\(t\)</span> is in hours, and <code>rho1000</code> is the 1000-hour relaxation loss in percent.</p>
+<div class="arithmatex">\[
+\Delta\sigma_{p,r}(t)
+=
+\sigma_p^*\,c_r\rho_{1000}\exp(a_r\mu)
+\left(\frac{t}{1000}\right)^q
+10^{-5},
+\qquad
+q=\max\left(0,0.75(1-\mu)\right)
+\]</div>
+<p>The class coefficients are:</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th style="text-align: right;"><span class="arithmatex">\(c_r\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(a_r\)</span></th>
+<th style="text-align: right;">default <span class="arithmatex">\(\rho_{1000}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Class1</code></td>
+<td style="text-align: right;">5.39</td>
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td><code>Class2</code></td>
+<td style="text-align: right;">0.66</td>
+<td style="text-align: right;">9.1</td>
+<td style="text-align: right;">2.5</td>
+</tr>
+<tr>
+<td><code>Class3</code></td>
+<td style="text-align: right;">1.98</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table>
+<p>In incremental analysis, the accumulated relaxation loss <span class="arithmatex">\(L_n\)</span> is converted to an equivalent time of the standard equation, then the current step time increment <span class="arithmatex">\(\Delta t\)</span> is added to compute the target accumulated loss.</p>
+<div class="arithmatex">\[
+L_{1000}
+=
+\sigma_p^*\,c_r\rho_{1000}\exp(a_r\mu)10^{-5}
+\]</div>
+<div class="arithmatex">\[
+t_{\mathrm{eq}}
+=
+1000\left(\frac{L_n}{L_{1000}}\right)^{1/q}
+\quad (L_n&gt;0,\;L_{1000}&gt;0,\;q&gt;0)
+\]</div>
+<div class="arithmatex">\[
+L_{n+1}^{\mathrm{target}}
+=
+L_{1000}
+\left(\frac{t_{\mathrm{eq}}+\Delta t}{1000}\right)^q
+\]</div>
+<p>The added loss in the step is <span class="arithmatex">\(\max(0,L_{n+1}^{\mathrm{target}}-L_n)\)</span> and is capped by the remaining tensile stress. This stress loss is divided by the initial elastic modulus <span class="arithmatex">\(E_0\)</span>, not the tangent modulus, to store the relaxation strain increment.</p>
+<div class="arithmatex">\[
+\Delta\varepsilon_{p,r}
+=
+\frac{\Delta L}{E_0}
+\]</div>
 <h5 id="example_7">Example</h5>
 <div class="highlight"><pre><span></span><code># 400 MPa rebar without hardening
 *Material, Type=USteel, Name=SD40
@@ -3668,13 +4708,14 @@ In the Drucker–Prager model, work hardening does not exist.</p>
 # Low relaxation 7-wire strand with ultimate strength 1860 MPa
 *Material, Type=USteel, Name=RTendon
  200000,  1694.915, 200000*0.025, 10,0.,0., 0, 1, 0.0415
+ LongTerm, Tendon, KDS-2025, Class2, 1860
 </code></pre></div>
-<h3 id="material-typegaphook">*Material Type=GapHook</h3>
+<h3 id="7110-material-typegaphook">7.1.10 *Material, Type=GapHook</h3>
 <p>Specify uniaxial gap-hook material.</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=GapHook, Name=name
   kg,g, kh,h
 </code></pre></div>
-<h5 id="first-data-line_7">First data line</h5>
+<h5 id="first-data-line_8">First data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>kg,g:</strong> tangent and gap in compression part (optional, default 0.,0.)</li>
@@ -3697,14 +4738,14 @@ In the Drucker–Prager model, work hardening does not exist.</p>
 *Material, Type=GapHook, Name=contactSpring
  5E5   # kg, g, kh, h
 </code></pre></div>
-<h3 id="material-typecohesive">*Material, Type=Cohesive</h3>
+<h3 id="7111-material-typecohesive">7.1.11 *Material, Type=Cohesive</h3>
 <p>Define cohesive zone material</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=Cohesive, Name=name
  Eaa, Ebb, Enn, Eab, Ebn, Ena
  MaxStress|MaxRelativeDisplacement|QuadStress|QuadRelativeDisplacement, da0, db0, dn0
  {Linear, df, kappa} | {Exponential, alpha, df, kappa}
 </code></pre></div>
-<h5 id="first-data-line_8">First data line</h5>
+<h5 id="first-data-line_9">First data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>Eaa, Ebb, Enn, Eab, Ebn, Ena:</strong> Stiffness components in each local direction (aa, bb, nn, ab, bn, na). Each value may be a scalar (stiffness) or a material name representing a stress-displacement relationship. Eab, Ebn, and Ena are optional. If omitted, they default to zero.</li>
@@ -3722,7 +4763,6 @@ In the Drucker–Prager model, work hardening does not exist.</p>
 </div>
 <p>When only the first data line is defined, a purely elastic model is applied.</p>
 <div class="arithmatex">\[
-\small
 \begin{bmatrix}
 t_a \\
 t_b \\
@@ -3742,7 +4782,6 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 \]</div>
 <p>Here, the subscripts <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, and <span class="arithmatex">\(n\)</span> refer to the local coordinate system, representing the two tangential directions and the normal direction, respectively.</p>
 <div class="arithmatex">\[
-\small
 \begin{bmatrix}
 t_a \\
 t_b \\
@@ -3767,7 +4806,6 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 \]</div>
 <p>where, D is a damage evolution index, which is determined by internal state. D is zero before damage, one at failure. To considering combined stress state(mixed fracture mode), effective relative displacement is defined as follows:</p>
 <div class="arithmatex">\[
-\small
 \delta = \sqrt{\delta_a^2 + \delta_b^2 + \langle \delta_n \rangle^2}
 \]</div>
 <p>where <span class="arithmatex">\(&lt;∗&gt;\)</span> is the Macaulay bracket, which returns the value if it is positive, and zero otherwise.</p>
@@ -3778,25 +4816,25 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 <h5 id="example_9">Example</h5>
 <div class="highlight"><pre><span></span><code># Unit N-mm
 
-*Material, TYPE=Cohesive, Name=Epoxy_Elastic
+*Material, Type=Cohesive, Name=Epoxy_Elastic
  100000, 100000, 50000
 
- *Material, TYPE=Cohesive, Name=Epoxy_Interface
+ *Material, Type=Cohesive, Name=Epoxy_Interface
   100000, 100000, 50000
   QuadStress, 0.02, 0.02, 0.05
   Linear, 0.03
 
-*Material, TYPE=Cohesive, Name=Adhesive_Bond
+*Material, Type=Cohesive, Name=Adhesive_Bond
  80000, 80000, 40000
  MaxRelativeDisplacement, 0.015, 0.015, 0.01
  Exponential, 2, 0.03
 </code></pre></div>
-<h3 id="material-typeacoustic">*Material Type=Acoustic</h3>
+<h3 id="7112-material-typeacoustic">7.1.12 *Material, Type=Acoustic</h3>
 <p>Define properties for acoustic solid element</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=name
   bulk, density
 </code></pre></div>
-<h5 id="first-data-line_9">First data line</h5>
+<h5 id="first-data-line_10">First data line</h5>
 <div class="admonition note">
 <ul>
 <li><strong>bulk:</strong> Bulk modulus (required). If zero bulk modulus is given, the acoustic medium is assumed to be incompressible (Laplace equation is used)</li>
@@ -3807,25 +4845,26 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 <div class="highlight"><pre><span></span><code>*Material, Type=Acoustic, Name=water
  2190E6, 1000
 </code></pre></div>
-<h3 id="material-typeseepage">*Material Type=Seepage</h3>
+<h3 id="7113-material-typeseepage">7.1.13 *Material, Type=Seepage</h3>
 <p>Define properties for seepage solid element</p>
 <div class="highlight"><pre><span></span><code>*Material, Type=Seepage, Name=name
-  k | kx,ky | kx, ky, kz, CS
-  gamma, Sa
-  VGM, thetaR, thetaS, a, n[, m, l] | User, SWCC, RelHCF
+  k | kx, ky | kx, ky, kz[, CS][, TUnit=tUnit]
+  gamma|auto, Ss
+  VGM, thetaR, thetaS, air, n[, m, l] | User, SWCC, RelHCF
 </code></pre></div>
-<h5 id="first-data-line_10">First data line</h5>
+<h5 id="first-data-line_11">First data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>k | kx, ky | kx, ky, kz:</strong> Permeability (required)</li>
+<li><strong>k | kx, ky | kx, ky, kz:</strong> Permeability [L/T] (required). For seepage quantities whose dimensions include time, the time basis must be consistent with the seepage step time.</li>
 <li><strong>CS:</strong> Coordinate system with type Orientation (optional)</li>
+<li><strong>TUnit=tUnit:</strong> Specifies the [T] unit used by the permeability values (optional). Supported <code>tUnit</code> values are <code>s</code>, <code>min</code>, <code>hr</code>, and <code>day</code>. If omitted, the permeability values are interpreted as already consistent with the <code>TUnit</code> of the relevant <code>Seepage, Transient</code> step. If the material <code>TUnit</code> differs from the step <code>TUnit</code>, only the permeability values are converted to the step time basis.</li>
 </ul>
 </div>
 <h5 id="second-data-line_3">Second data line</h5>
 <div class="admonition note">
 <ul>
-<li><strong>gamma:</strong> Water weight density (required)</li>
-<li><strong>Sa:</strong> Specific storage (required)</li>
+<li><strong>gamma:</strong> Water weight density [F/L^3] (required). Use a numeric value or arithmetic expression. Use <code>auto</code> to set the standard water unit weight from the current global <code>*Environment, Type=UnitSystem</code>; <code>auto</code> uses <span class="arithmatex">\(g_0=9.80665\,\mathrm{m/s^2}\)</span> and <span class="arithmatex">\(\gamma_w=1000g_0\)</span>, converted to the current force-length unit system. Direct expressions using <code>g0</code>, such as <code>1000*g0</code>, also require a global <code>*Environment, TYPE=UnitSystem</code>. Numeric input is printed back as numeric input and is not inferred as <code>auto</code>.</li>
+<li><strong>Ss:</strong> Specific storage (required). It is usually a [1/L] quantity, so no separate time unit is specified.</li>
 </ul>
 </div>
 <h5 id="third-data-line-for-swcchcf-using-vgm-optional">Third data line for SWCC/HCF using VGM (optional)</h5>
@@ -3842,9 +4881,12 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 </div>
 <p>If the third data line is omitted, the material is treated as saturation-only. In this case, even if negative pore water pressure (= suction) occurs during the analysis, the SWCC and the reduction in relative hydraulic conductivity are not applied, and the hydraulic conductivity remains at the saturated value, Ks. Therefore, for analyses in which an unsaturated zone may develop, the SWCC and HCF (e.g., VGM or User) must be specified.</p>
 <h5 id="example_11">Example</h5>
-<div class="highlight"><pre><span></span><code>*Material, Type=Seepage, Name=SatIso
+<div class="highlight"><pre><span></span><code>*Environment, Type=UnitSystem
+  N-m-s-K
+
+*Material, Type=Seepage, Name=SatIso
   1.0e-6
-  9810, 1.0e-5
+  auto, 1.0e-5
 
 *Material, Type=Seepage, Name=UnsatIso1
   2.0e-6
@@ -3885,6 +4927,12 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -3911,16 +4959,14 @@ E_{an} &amp; E_{bn} &amp; E_{nn}
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
         <script src="../../javascripts/extra.js"></script>
       
