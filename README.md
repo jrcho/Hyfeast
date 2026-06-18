@@ -12,7 +12,7 @@ Hyfeast supports shell, beam, and solid elements, fast parallelized solving, 3D 
 
 - 64-bit Windows 10 or higher
 - [Microsoft Visual C++ Redistributable for Visual Studio 2015–2022 (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)  
-   ⚠️ **You must install this!** Many users report that *hfVisualizer* does not run, and in most cases this is because the runtime is missing.
+   ⚠️ **You must install this!** Many users report that *hfStudio* does not run, and in most cases this is because the runtime is missing.
 
 ## Installation and Usage
 
@@ -20,12 +20,13 @@ Hyfeast supports shell, beam, and solid elements, fast parallelized solving, 3D 
 2. Extract the ZIP file to any location (e.g., `Hyfeast/`).
 3. Open the `Hyfeast` folder and double-click `setpath.bat`, which sets the PATH environment variable and opens a command prompt.
 4. In the command prompt, you can run:
-   ```
-   Hyfeast> hfStudio
-   Hyfeast> hfAnalyzer input.inp
-   Hyfeast> hfSectVisualizer
-   Hyfeast> hfSectionAnalyzer input.sec
-   ```
+
+```
+Hyfeast> hfStudio
+Hyfeast> hfAnalyzer input.inp
+Hyfeast> hf2DStudio
+Hyfeast> hfSectAnalyzer input.hf2d
+```
 
 Refer to the manual or examples for usage details.
 
