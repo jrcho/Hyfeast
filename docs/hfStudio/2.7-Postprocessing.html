@@ -1,0 +1,3525 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="2.6-Analysis.html">
+      
+      
+        <link rel="next" href="2.8-Workspace-Panels.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>2.7 Postprocessing - Hyfeast-v1.0.0-beta.4</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../javascripts/iframe-worker-shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plot" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.4" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast-v1.0.0-beta.4
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.7 Postprocessing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="2.7-Postprocessing.html" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/hfStudio/2.7-Postprocessing.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.4" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hyfeast-v1.0.0-beta.4
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FE Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            FE Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Finite-Element-Analysis/1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.2-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.3-View-and-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.4-Selection-and-Visibility.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Selection and Visibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.5-Preprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Preprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.6-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2.7 Postprocessing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="2.7-Postprocessing.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Postprocessing
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.1 Plot 토글
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.2 Step과 Frame 이동
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalar-contour-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.3 Scalar (Contour Field)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-tensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.4 Vector / Tensor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contour" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.5 Contour 설정
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scale-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.6 Scale Factor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overlay-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.7 Overlay와 Display
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#play-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.8 Play (Animation)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.9 PostPlot
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.8-Workspace-Panels.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Workspace Panels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.1-Running.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Running
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.2-Files-and-Results.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Files and Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FE Commands
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FE Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/1-Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/2-Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/3-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element Library
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element Library
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.1-Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.2-Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.3-Truss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.4-Cable.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.5-Shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.6-Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6 Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.7-AcousticSolid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.7 AcousticSolid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.8-SeepageSolid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.8 SeepageSolid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.9-MCK.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.9 MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.10-MovingSpring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.10 MovingSpring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.11-Interface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.11 Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/4-Element-Specification/4.12-EmbeddedLine.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.12 EmbeddedLine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/5-Constraint.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/6-Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/7-Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/8-Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/9-Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/10-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/11-CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/12-Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/13-Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/14-Step-result.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step Result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/15-Modelling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling Convenience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/16-Etc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/17-Special-step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FE-Commands/18-HDB-file-structure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB File Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2D & Section Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2D & Section Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.2-Window-and-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Window and File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.3-View-and-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.4-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.5-Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.6-Operation-and-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/2.7-Mesh-Generation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Mesh Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/3.1-Help.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. hfSectAnalyzer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/3.2-Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/4-Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Section Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/5-Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Section Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Remote Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Remote Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/1-Basics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.2-Remote-only.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Remote-only
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.3-View.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.4-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.5-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.6-Selection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Selection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7" id="__nav_5_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7 Preprocessing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            2.7 Preprocessing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.1-Environment.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.1 Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.2-CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.2 CoordinateSystem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.3-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.3 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7_4" id="__nav_5_2_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7.4 Node and NSet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2.7.4 Node and NSet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.4.1-Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.4.1 Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.4.2-NSet.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.4.2 NSet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7_5" id="__nav_5_2_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7.5 Element and Elset
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            2.7.5 Element and Elset
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.5.1-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.5.1 Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.5.2-Elset.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.5.2 Elset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.6-Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.6 Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.7-Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.7 Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.8-Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.8 Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.9-NProp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.9 NProp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.10-Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.10 Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.11-Section.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.11 Section
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.12-Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.12 Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.13-Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.13 Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.14-History.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.14 History
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.15-Distribution.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.15 Assign
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.16-Model.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.16 Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.17-Renumber.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.17 Renumber
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.18-Undo-and-Redo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.18 Undo and Redo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.8-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.9 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/Recipes/2.10-hfStudio-Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10 Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.1-2D-Modeling-Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 2D Modeling Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.2-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.3-Window-and-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Window and File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.4-View.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.5-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.6-Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.7-Operation-and-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/Recipes/3.8-hf2DStudio-Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/1-Getting-Started.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/2-Beam-Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Beam Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/3-Solid-Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Solid Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/4-Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Verification
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Verification
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.1-Beam-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.1 Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.2-Material-Nonlinear-Beam-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.2 Material Nonlinear Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.3-Solid-Element-and-In-Plane-Behavior-of-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.3 Solid Element and In-Plane Behavior of Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.4-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.4 Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.5-Material-Nonlinear-Solid-and-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.5 Material Nonlinear Solid and Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.6-Dynamic-Analysis-using-Spring-and-Mass-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.6 Dynamic Analysis using Spring and Mass Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.7-Acoustic-Solid-Element-and-HydroStaticPressure-Loads.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.7 Acoustic Solid Element and HydroStaticPressure Loads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.8-Interface-Modeling-using-Spring-and-Interface-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.8 Interface Modeling using Spring and Interface Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.9-Truss-and-Cable-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.9 Truss and Cable Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.10-Simple-Constraints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.10 Simple Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.11-Advanced-Constraints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.11 Advanced Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.12-Rebar-and-Tendon-Modeling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.12 Rebar and Tendon Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.13-Moving-Load-Analysis-in-Simply-Supported-Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.13 Moving Load Analysis in Simply Supported Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.14-Stability-of-Rail-Track.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.14 Stability of Rail Track
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.15-Time-Dependent-Materials.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.15 Time Dependent Materials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.16-ModelUpdating-and-ShapeEstimation-Steps.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.16 ModelUpdating and ShapeEstimation Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.17-Seepage-Element-and-Boundary-Conditions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.17 Seepage Element and Boundary Conditions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.18-Seepage-Comparison-with-SEEPW.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.18 Seepage Comparison with SEEP/W
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="postprocessing">2.7 Postprocessing</h1>
+<p>해석 결과가 준비된 뒤 step과 frame을 이동하고, contour/vector/diagram/sensor/deformed 표시를 제어하고, animation을 다루는 작업을 정리한다.</p>
+<p>자동화: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html">Remote Control Postprocessing</a>.</p>
+<p>후처리 명령은 후처리 모드에서만 동작한다. <code>post-* get</code> 조회는 JSON을 반환하고 history에 tail을 기록하지 않는다. 설정형 명령은 같은 canonical <code>post-* ...</code> tail을 history와 <code>*.ipc.txt</code>에 기록한다.</p>
+<h2 id="plot">2.7.1 Plot 토글</h2>
+<p>자동화: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-plot"><code>post-plot &lt;type&gt; &lt;on|off&gt;</code></a>.</p>
+<ul>
+<li><strong>Contour</strong>: RC 값 <code>contour</code></li>
+<li><strong>Diagram</strong>: <code>diagram</code></li>
+<li><strong>Vector</strong>: <code>vector</code></li>
+<li><strong>Sensor Plot</strong>: <code>sensor</code></li>
+<li><strong>Deformed</strong>: <code>deformed</code></li>
+</ul>
+<p><code>Deformed on</code>은 현재 result step에 변위 출력 <code>D</code>가 없으면 실패한다.</p>
+<h2 id="step-frame">2.7.2 Step과 Frame 이동</h2>
+<ul>
+<li><strong>Step 선택</strong> (Step combobox) — RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-step"><code>post-step &lt;step-name&gt;</code></a>. frame은 <code>1</code>로 이동.</li>
+<li><strong>현재 step과 frame 조회</strong>: RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-step"><code>post-step get</code></a>, <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-frame"><code>post-frame get</code></a>.</li>
+<li><strong>Frame 직접 지정</strong>: RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-frame"><code>post-frame &lt;index&gt;</code></a> (1-based).</li>
+</ul>
+<p>Postprocessing 메뉴의 Play 하위 frame navigation:</p>
+<ul>
+<li><strong>Follow Step Model</strong>: step 변경 시 모델 형상도 따라 바뀌도록 토글</li>
+<li><strong>First</strong>: 현재 step의 첫 frame</li>
+<li><strong>Previous</strong>: 이전 frame</li>
+<li><strong>Next</strong>: 다음 frame</li>
+<li><strong>Last</strong>: 마지막 frame</li>
+</ul>
+<p>자동화에서는 위 buttons 대신 <code>post-frame &lt;index&gt;</code>로 직접 이동한다.</p>
+<h2 id="scalar-contour-field">2.7.3 Scalar (Contour Field)</h2>
+<ul>
+<li><strong>Scalar field 선택</strong>: RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-scalar"><code>post-scalar &lt;field&gt; [&lt;avg-threshold&gt;]</code></a></li>
+<li><strong>현재 scalar 상태 조회</strong>: RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-scalar"><code>post-scalar get</code></a></li>
+</ul>
+<p>GUI에서는 Field 영역을 펼친 뒤 scalar, vector/tensor, averaging 값을 고르고 Field 영역 하단의 **Apply Field**로 적용한다. Contour range, scale factor, PostPlot visibility 같은 다른 후처리 조작은 각 control에서 즉시 반영된다.</p>
+<p><code>&lt;field&gt;</code>는 현재 step과 frame에서 유효한 scalar field 이름이어야 한다. <code>[&lt;avg-threshold&gt;]</code>는 선택 사항이며 <code>0..100</code> 정수.</p>
+<p>GUI의 <strong>Averaging Threshold(%)</strong> 는 element scalar 값을 element node로 외삽한 뒤 공유 절점에서 평균할지 결정한다. <code>0</code>은 평균을 끄고, <code>1..100</code>은 같은 평균 그룹의 값이 아래 조건을 만족할 때만 평균한다.</p>
+<div class="arithmatex">\[
+\max(v_i)-\min(v_i)
+\le
+\frac{\mathrm{threshold}}{100}
+\left(\max(v_\mathrm{region})-\min(v_\mathrm{region})\right)
+\]</div>
+<p>평균 그룹은 같은 section 안에서 구성되며, <span class="arithmatex">\(v_\mathrm{region}\)</span>은 그 section 그룹의 scalar 값 범위이다. 연속체 요소는 공유 절점별로 평균한다. 쉘 요소는 bottom/top을 분리하고 shell element coordinate system이 같은 값끼리만 평균한다. 보 요소는 section/material point index와 beam element coordinate system이 같은 값끼리만 평균한다.</p>
+<h2 id="vector-tensor">2.7.4 Vector / Tensor</h2>
+<ul>
+<li><strong>Vector 또는 tensor field 선택</strong>: RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-vector"><code>post-vector &lt;field&gt;</code></a></li>
+<li><strong>현재 vector 상태 조회</strong>: RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-vector"><code>post-vector get</code></a></li>
+</ul>
+<h2 id="contour">2.7.5 Contour 설정</h2>
+<p>contour의 range, mode, level, overlay를 제어한다. 자동화는 <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-contour"><code>post-contour</code></a> 명령군:</p>
+<ul>
+<li><strong>Auto-range 토글</strong>: <code>post-contour auto-range &lt;on|off&gt;</code></li>
+<li><strong>Range 값</strong>: <code>post-contour range &lt;min&gt; &lt;max&gt;</code></li>
+<li><strong>Band 개수</strong>: <code>post-contour bands &lt;n&gt;</code></li>
+<li><strong>모드</strong>: <code>post-contour mode &lt;uniform|custom&gt;</code></li>
+<li><strong>Custom level</strong>: <code>post-contour levels &lt;v1,v2,...&gt;</code> (엄격히 증가, 2..31개)</li>
+<li><strong>Overlay 텍스트</strong>: <code>post-contour overlay &lt;text&gt;</code></li>
+<li><strong>Overlay 색</strong>: <code>post-contour overlay-color &lt;r,g,b[,a]&gt;</code> (0..255)</li>
+</ul>
+<p><code>auto-range</code>, <code>range</code>, <code>bands</code> 설정은 custom mode에서 거부된다. <code>mode custom</code> 전환은 필요하면 현재 uniform range/band 상태로 custom level을 초기화한다.</p>
+<h2 id="scale-factor">2.7.6 Scale Factor</h2>
+<p>deformed shape, diagram, vector, sensor scale을 제어한다. 자동화: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-scale"><code>post-scale</code></a>.</p>
+<ul>
+<li><strong>Deformed (auto on/off)</strong>: <code>post-scale deformed auto &lt;on|off&gt;</code></li>
+<li><strong>Deformed (값 직접)</strong>: <code>post-scale deformed value &lt;scale&gt;</code></li>
+<li><strong>Diagram</strong>: <code>post-scale diagram auto</code>, <code>post-scale diagram value</code></li>
+<li><strong>Vector</strong>: <code>post-scale vector auto</code>, <code>post-scale vector value</code></li>
+<li><strong>Sensor</strong>: <code>post-scale sensor auto</code>, <code>post-scale sensor &lt;e|d|v|a&gt; &lt;scale&gt;</code></li>
+</ul>
+<p>명시적 <code>value</code> 또는 <code>e|d|v|a</code> 입력은 대응되는 auto-scale을 먼저 끈다.</p>
+<h2 id="overlay-display">2.7.7 Overlay와 Display</h2>
+<p>자동화: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-display"><code>post-display &lt;item&gt; &lt;on|off&gt;</code></a>.</p>
+<ul>
+<li><strong>Information</strong> (좌상단 정보 텍스트) — RC <code>&lt;item&gt;</code> <code>information</code></li>
+<li><strong>Scalar bar</strong>: <code>scalarbar</code></li>
+<li><strong>Min/Max tag</strong> (caption) — <code>min-max-tag</code></li>
+</ul>
+<h2 id="play-animation">2.7.8 Play (Animation)</h2>
+<p>Postprocessing 메뉴 Play 하위 메뉴 또는 toolbar의 animation 컨트롤.</p>
+<ul>
+<li><strong>Time History Ani</strong>: frame을 따라 진행하는 animation. RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-animation-time-history"><code>post-animation-time-history &lt;on|off&gt;</code></a>.</li>
+<li><strong>Scale Factor Ani</strong>: scale을 따라 진행하는 animation. RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-animation-scale-factor"><code>post-animation-scale-factor &lt;on|off&gt;</code></a>.</li>
+<li><strong>Loop</strong>: animation 자동 반복 토글. RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-animation-loop"><code>post-animation-loop &lt;on|off&gt;</code></a>.</li>
+<li><strong>Record</strong>: animation을 <code>.avi</code>/<code>.mp4</code>로 녹화. RC: <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-animation-record"><code>post-animation-record &lt;on|off&gt; [&lt;file&gt;]</code></a>.</li>
+</ul>
+<p>Animation 규칙:</p>
+<ul>
+<li>Time History와 Scale Factor 두 모드는 동시에 켤 수 없다 (한쪽이 켜져 있으면 다른쪽은 거부됨).</li>
+<li><code>Record on</code>은 <code>.avi</code> 또는 <code>.mp4</code> 확장자를 가진 쓰기 가능한 출력 경로가 필요하다.</li>
+<li>Animation이 실행 중이 아닐 때만 Record 대상을 변경할 수 있다.</li>
+</ul>
+<h2 id="postplot">2.7.9 PostPlot</h2>
+<p>Postprocessing 모드에서는 command panel 아래의 XY Plot tool button이나 Postprocessing menu/toolbar의 **XY Plot**으로 별도 nonmodal **XY Plot Editor**를 연다. Postprocessing panel은 PostPlot curve 목록을 직접 표시하지 않고, series 후보 작성, curve 등록/표시 제어, plot 창 열기를 XY Plot Editor에 모은다. PostPlot은 후처리 전용이며, preprocessing의 미리보기와 signal analysis는 Function widget에 둔다.</p>
+<p>XY Plot Editor는 왼쪽 <strong>Series</strong> 후보와 <strong>Add Series from</strong> 탭, 오른쪽 <strong>Curves</strong> 목록으로 구성된다. History/Result/Path 탭에서 series 후보를 만들고, <strong>f(x)...</strong> 로 선택한 series에 점별 연산을 적용한 파생 series 후보를 만들 수 있다. 자세한 source 설명은 tooltip 또는 <strong>Details**에서 확인한다. History의 <code>(index)</code> column은 후보로 등록하지 않고, X series로 자동 **Index</strong> 축을 사용할 수 있다. 파생 series operand 길이가 다르면 curve 등록이나 export에서 오류로 처리한다. Series 후보가 기존 curve에서 쓰이고 있으면 먼저 해당 curve를 삭제해야 series를 삭제할 수 있다.</p>
+<p>Result의 <code>RTime</code> series 값은 해당 result step을 소유한 Step의 <code>TUnit</code>을 따르며, 후보명과 plot 축에는 <code>RTime [day]</code>처럼 단위를 함께 표시한다. 내부 source key는 단위 표시에 관계없이 <code>R1:RTime</code> 형식을 유지한다.</p>
+<p>PostPlot view는 중앙 RenderView, Node Table, Element Table 작업 영역과 분리된 modeless window이다. PostPlot data model은 series library와 PostPlot data cache를 단 하나만 소유하고, 각 PostPlot view는 자기 visible-curve composition만 따로 가진다. **Show Plot**은 새 PostPlot view와 새 composition을 연다. 새 창은 현재 active PostPlot view의 visible composition을 초기값으로 복사하지만, 이후 show/hide와 추가 curve는 창별로 독립된다. PostPlot view를 열기 전에도 XY Plot Editor에서 series 후보와 curve를 만들 수 있으며, 이 경우 default composition을 편집한다. 각 창은 <code>cN</code> view id로 activate 또는 close할 수 있다.</p>
+<p>자동화에서는 <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html#post-plot"><code>post-plot plot ...</code></a>으로 shared series library에 series를 등록하고 대상 composition에 표시한다. 데이터 등록에는 PostPlot view가 필수가 아니며, 화면 표시 창이 필요할 때 <a href="../Remote-Control/hfStudio/2.3-View.html#view"><code>view add post-plot</code></a>을 사용한다. 대상 composition의 visible PostPlot data는 <code>post-plot export ...</code> 또는 <code>post-plot copy</code>로 CSV에 저장하거나 clipboard로 복사할 수 있다. <code>post-plot plot</code>은 series 데이터를 필요할 때 계산하고 HDB 안에 PostPlot cache를 저장하지 않는다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

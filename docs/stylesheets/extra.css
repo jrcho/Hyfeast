@@ -370,3 +370,112 @@ img {
     margin: 1em auto;
 }
 
+/* Pure-Markdown figure and table captions (Help/authoring-workflow.ko.md):
+     ![](media/V.17.1.png)
+     **Figure V.17.1** Caption
+   and `**Table V.17.1** Caption` right above a table. The image line and
+   the caption line form one paragraph (no blank line between them); the
+   image is a block, so the caption wraps below it. A blank line between
+   them also works: the caption then becomes the following paragraph. The
+   height cap keeps tall figures from dominating the page; 52rem still
+   lets portrait figures (tall models, stacked algorithm listings) render
+   at their file's natural width instead of being squeezed. Figure files
+   are authored at display size (the Word-era figures were downscaled to
+   their original intended widths), so the caps rarely bind. */
+.md-typeset p:has(> img:first-child) {
+    text-align: center;
+    color: var(--hy-doc-accent-text);
+}
+
+.md-typeset p:has(> img:first-child) > img {
+    max-height: 52rem;
+    width: auto;
+    margin-bottom: 0.4em;
+}
+
+.md-typeset p:has(> img:only-child) + p {
+    text-align: center;
+    color: var(--hy-doc-accent-text);
+    margin-top: -0.4em;
+}
+
+.md-typeset p:has(> img:first-child) > strong:first-of-type,
+.md-typeset p:has(> img:only-child) + p > strong:first-child,
+.md-typeset p:has(+ table) > strong:first-child,
+.md-typeset p:has(+ .md-typeset__scrollwrap) > strong:first-child,
+.md-typeset p:has(+ .md-typeset__table) > strong:first-child {
+    color: var(--hy-doc-accent-muted);
+}
+
+/* Inline image: flows within a sentence, scaled to the text height.
+   Use via attr_list: ![alt](path){ .inline-img }. Height drives the size,
+   width follows the aspect ratio. Overrides the block img rule above.
+   NOTE: do not name this `.inline` -- Material ships a built-in `.inline`
+   class that floats the image (float:left), which conflicts. */
+.md-typeset img.inline-img {
+    display: inline-block;
+    float: none;
+    height: 1.2em;
+    width: auto;
+    margin: 0 0.2em;
+    vertical-align: middle;
+}
+
+/* Print / PDF (Help/build_pdf.py prints each page with headless Edge).
+   A4 with room for the page-number footer stamped by the script. Hide the
+   site chrome, let the content use the full width, and keep tables,
+   code blocks, figures, and equations from splitting across pages. */
+@media print {
+    @page {
+        size: A4;
+        margin: 16mm 14mm 20mm 14mm;
+    }
+    .md-header,
+    .md-tabs,
+    .md-sidebar,
+    .md-footer,
+    .md-top,
+    .md-content__button,
+    .md-source-file,
+    .md-feedback {
+        display: none !important;
+    }
+    .md-main__inner {
+        margin-top: 0;
+    }
+    .md-content,
+    .md-content__inner {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+    .md-typeset {
+        font-size: 10pt;
+    }
+    /* Variable fonts (Cascadia Mono/Code) embed as bitmap Type3 glyphs in Chromium
+       PDFs; Consolas and Courier New embed as outlines. */
+    .md-typeset pre,
+    .md-typeset pre code,
+    .md-typeset .highlight pre {
+        font-family: "Consolas", "Courier New", monospace !important;
+    }
+    .md-typeset a {
+        color: inherit;
+        text-decoration: none;
+    }
+    .md-typeset table,
+    .md-typeset p:has(> img),
+    .md-typeset .arithmatex {
+        break-inside: avoid;
+    }
+    .md-typeset h1,
+    .md-typeset h2,
+    .md-typeset h3,
+    .md-typeset h4,
+    .md-typeset h5 {
+        break-after: avoid;
+    }
+    .md-typeset p:has(> img:first-child) > img {
+        max-height: 22rem;
+    }
+}

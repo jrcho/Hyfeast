@@ -1,0 +1,3866 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../hfAnalyzer/3.2-Files-and-Results.html">
+      
+      
+        <link rel="next" href="2-Node.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>1. Introduction - Hyfeast-v1.0.0-beta.4</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../javascripts/iframe-worker-shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-command-block" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.4" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast-v1.0.0-beta.4
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="1-Introduction.html" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/FE-Commands/1-Introduction.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.4" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hyfeast-v1.0.0-beta.4
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FE Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            FE Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Finite-Element-Analysis/1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.2-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.3-View-and-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.4-Selection-and-Visibility.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Selection and Visibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.5-Preprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Preprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.6-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.7-Postprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.8-Workspace-Panels.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Workspace Panels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.1-Running.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Running
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.2-Files-and-Results.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Files and Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FE Commands
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FE Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. Introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="1-Introduction.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-command-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 입력 파일과 command block 구조
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 해석 실행
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. 파라미터 입력 제어
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. 파라미터 입력 제어">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1. 기본사용법
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.2. 고급사용법
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 단위계
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 DB 입력
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2-Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element Library
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element Library
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.1-Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.2-Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.3-Truss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.4-Cable.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.5-Shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.6-Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6 Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.7-AcousticSolid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.7 AcousticSolid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.8-SeepageSolid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.8 SeepageSolid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.9-MCK.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.9 MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.10-MovingSpring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.10 MovingSpring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.11-Interface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.11 Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.12-EmbeddedLine.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.12 EmbeddedLine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5-Constraint.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6-Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7-Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8-Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9-Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11-CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12-Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="13-Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14-Step-result.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step Result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="15-Modelling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling Convenience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="16-Etc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17-Special-step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="18-HDB-file-structure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB File Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2D & Section Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2D & Section Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.2-Window-and-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Window and File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.3-View-and-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.4-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.5-Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.6-Operation-and-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/2.7-Mesh-Generation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Mesh Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/3.1-Help.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. hfSectAnalyzer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/3.2-Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/4-Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Section Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/5-Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Section Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Remote Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Remote Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/1-Basics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.2-Remote-only.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Remote-only
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.3-View.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.4-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.5-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.6-Selection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Selection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7" id="__nav_5_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7 Preprocessing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            2.7 Preprocessing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.1-Environment.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.1 Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.2-CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.2 CoordinateSystem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.3-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.3 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7_4" id="__nav_5_2_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7.4 Node and NSet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2.7.4 Node and NSet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.4.1-Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.4.1 Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.4.2-NSet.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.4.2 NSet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7_5" id="__nav_5_2_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7.5 Element and Elset
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            2.7.5 Element and Elset
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.5.1-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.5.1 Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.5.2-Elset.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.5.2 Elset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.6-Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.6 Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.7-Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.7 Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.8-Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.8 Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.9-NProp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.9 NProp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.10-Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.10 Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.11-Section.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.11 Section
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.12-Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.12 Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.13-Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.13 Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.14-History.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.14 History
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.15-Distribution.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.15 Assign
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.16-Model.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.16 Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.17-Renumber.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.17 Renumber
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.18-Undo-and-Redo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.18 Undo and Redo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.8-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.9 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/Recipes/2.10-hfStudio-Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10 Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.1-2D-Modeling-Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 2D Modeling Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.2-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.3-Window-and-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Window and File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.4-View.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.5-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.6-Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.7-Operation-and-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/Recipes/3.8-hf2DStudio-Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/1-Getting-Started.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/2-Beam-Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Beam Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/3-Solid-Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Solid Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/4-Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Verification
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Verification
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.1-Beam-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.1 Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.2-Material-Nonlinear-Beam-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.2 Material Nonlinear Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.3-Solid-Element-and-In-Plane-Behavior-of-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.3 Solid Element and In-Plane Behavior of Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.4-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.4 Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.5-Material-Nonlinear-Solid-and-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.5 Material Nonlinear Solid and Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.6-Dynamic-Analysis-using-Spring-and-Mass-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.6 Dynamic Analysis using Spring and Mass Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.7-Acoustic-Solid-Element-and-HydroStaticPressure-Loads.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.7 Acoustic Solid Element and HydroStaticPressure Loads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.8-Interface-Modeling-using-Spring-and-Interface-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.8 Interface Modeling using Spring and Interface Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.9-Truss-and-Cable-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.9 Truss and Cable Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.10-Simple-Constraints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.10 Simple Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.11-Advanced-Constraints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.11 Advanced Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.12-Rebar-and-Tendon-Modeling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.12 Rebar and Tendon Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.13-Moving-Load-Analysis-in-Simply-Supported-Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.13 Moving Load Analysis in Simply Supported Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.14-Stability-of-Rail-Track.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.14 Stability of Rail Track
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.15-Time-Dependent-Materials.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.15 Time Dependent Materials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.16-ModelUpdating-and-ShapeEstimation-Steps.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.16 ModelUpdating and ShapeEstimation Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.17-Seepage-Element-and-Boundary-Conditions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.17 Seepage Element and Boundary Conditions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.18-Seepage-Comparison-with-SEEPW.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.18 Seepage Comparison with SEEP/W
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="1">1. 개요</h1>
+<h2 id="11-command-block">1.1 입력 파일과 command block 구조</h2>
+<p>Hyfeast의 커맨드라인 해석기 hfAnalyzer는 텍스트 입력 파일을 읽어 해석을 수행한다. 입력 파일은 <code>*Node</code>, <code>*Element</code>처럼 <code>*</code>로 시작하는 예약 키워드 블록으로 이루어진다. 다음은 간단한 프레임 해석 입력 파일 예시다.</p>
+<div class="highlight"><pre><span></span><code># Portal Frame Example
+
+*Node
+ 1, 0., 0.
+ 2, 0.,10.
+ 3,10.,10.
+ 4,10., 0.
+
+*Element, Type=B2D2H, Elset=ALL
+ 1, 1, 2
+ 2, 2, 3
+ 3, 3, 4
+
+*Material, Type=IsoElasticity, Name=beam
+ 210E9, 0.3, 0, 7700
+
+*Section, Type=Beam, Name=BeamSection, Mass=Lumped
+*Cell, Type=Rectangle, MAT=beam
+ 0.4, 0.1
+
+*Distribution, Type=Section
+ ALL, BeamSection
+
+*Constraint, Type=Support, Name=BC
+ 1, X|Y|RZ
+ 4, X|Y|RZ
+
+*Load, Type=Concentric, Name=LC2
+ 2, X, 100E3
+
+*Step, Type=Static, Name=Case1
+*Activate, Type=Element
+ ALL
+*Activate, Type=Constraint
+ BC
+*Activate, Type=Load
+ LC2
+*Output
+ D, FN, BSF
+</code></pre></div>
+<p>다음은 입력 텍스트 파일에서 사용되는 일반규칙을 나열한 것이다.</p>
+<ul>
+<li>한글과 같은 Non-Ascii 문자가 존재하는 경우 UTF-8로 인코딩되어야 한다.</li>
+<li>입력파일은 텍스트파일이며 한 줄씩 순차적으로 읽어 들여 파싱한다.</li>
+<li>공백라인은 무시하고, # 문자로 설명문(comment)을 작성할 수 있다.</li>
+<li> 문자를 사용하여 다음 줄과 연결(concatenation)할 수 있다.</li>
+<li>예약된 키워드(keyword)는 대소문자를 구분하지 않으나, 사용자 정의 문자열(예: 요소집합 이름 등)은 대소문자를 구분한다.</li>
+<li>
+<p>각 라인은 <code>n1, n2, n3</code> 또는 <code>n1, ..., ID=id1, ...</code> 등과 같은 형태를 가지는 프리포맷(free format)이다. 이때 파싱의 대상이 되는 토큰(token)은 등호(=), 쉼표(,)를 기준으로 구분된다. 프로그램 내부적으로 작동하는 방식은 다음과 같다.</p>
+<ul>
+<li>등호(<code>=</code>)를 찾아 등호의 왼쪽 키워드를 인식</li>
+<li>프리포맷(free format) 형태로 인식된 각각을 쉼표(,)를 구분자로 각 토큰으로 분할</li>
+<li>이중따옴표로 둘러싸인 경우 하나의 토큰으로 인식</li>
+</ul>
+</li>
+<li>
+<p>실수나 정수로 입력이 되는 부분은 간단한 산술 연산을 수행할 수 있다. 예를 들어 <code>1+2*(10+2)</code>와 같은 산술 연산을 수행한다. 연산식 내에 공백이 존재하는 경우 토큰으로 분리되므로 공백이 존재하면 안된다. 만약 공백이 존재하는 경우 하나의 토큰으로 인식하게 하려면 이중따옴표를 사용하여야 한다(예 <code>“1 + 2*(10+2)”</code>)</p>
+</li>
+<li>
+<p>산술식에서는 <code>20*sin(30*deg)</code> 등과 같이 다음에서 미리 정의된 함수, 상수 등을 사용할 수 있다.</p>
+<ul>
+<li>f(x) 형태의 함수: <code>sin</code>, <code>cos</code>, <code>tan</code>, <code>acos</code>, <code>atan</code>, <code>cosh</code>, <code>sinh</code>, <code>tanh</code>, <code>abs</code>, <code>exp</code>, <code>log</code>, <code>log10</code>, <code>sqrt</code>, <code>step</code>, <code>sgn</code></li>
+<li>f(x,y) 형태의 함수: <code>pow</code>, <code>max</code>, <code>min</code></li>
+<li>Constant: <code>pi</code>, <code>e</code>, <code>deg</code>, <code>g0</code> (<code>g0</code>는 표준중력가속도, <span class="arithmatex">\(9.80665\,\mathrm{m/s^2}\)</span>). <code>g0</code>를 사용하려면 <code>*Environment, TYPE=UnitSystem</code>을 통해 global UnitSystem이 정의되어 있어야 한다.</li>
+</ul>
+</li>
+<li>
+<p>문자열이 입력되는 부분에서 공백이 있는 경우 이중따옴표로 묶어주어야 한다. 예를 들어 *Material, TYPE=IsoElasticity, Name="the material")</p>
+</li>
+<li>파일명을 문자열로 입력받는 경우 상대경로, 절대경로를 모두 인식한다. 만약 경로상에 공백이 있는 경우 이중따옴표로 묶어주어야 한다. 상대경로는 입력파일이 존재하는 디렉토리를 기준으로 한다. 예를 들어 다음과 같다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>*Include, File=model1.inp
+*Include, File=templates/model1.inp
+*Include, File=&quot;templates folder/model 1.inp&quot; # if spaces exist, use double quotes
+*Include, File=&quot;./templates/frame model.inp&quot; # . means current directory
+*Include, File=&quot;../frame model.inp&quot; # .. means parent directory
+*Include, File=&quot;D:/DevProg/HFC4.0/EXAMPLE/frame model.inp&quot; # absolute path
+</code></pre></div>
+<p><code>*</code>로 시작하는 명령어(command)는 크게 모델링 명령, 해석 명령, 기타 명령로 구분할 수 있다. 다음은 명령어를 요약한 것이다.</p>
+<h5 id="_1">절점 명령</h5>
+<ul>
+<li><code>*Node</code></li>
+<li><code>*Nset</code></li>
+<li><code>*Ngen</code></li>
+<li><code>*Nfill</code></li>
+<li><code>*Ncopy</code></li>
+<li><code>*Nprop</code></li>
+</ul>
+<h5 id="_2">요소 명령</h5>
+<ul>
+<li><code>*Element</code></li>
+<li><code>*Elset</code></li>
+<li><code>*Elgen</code></li>
+<li><code>*Elcopy</code></li>
+<li><code>*Section</code></li>
+</ul>
+<h5 id="_3">하중과 구속조건 명령</h5>
+<ul>
+<li><code>*Load</code></li>
+<li><code>*Constraint</code></li>
+</ul>
+<h5 id="_4">프라퍼티 명령</h5>
+<ul>
+<li><code>*Material</code></li>
+<li><code>*Function</code></li>
+<li><code>*Surface</code></li>
+<li><code>*Geometry</code></li>
+<li><code>*CoordinateSystem</code></li>
+</ul>
+<h5 id="_5">해석 명령</h5>
+<ul>
+<li><code>*Step</code></li>
+<li><code>*Activate</code></li>
+<li><code>*Inactivate</code></li>
+<li><code>*Convergence</code></li>
+<li><code>*SolutionAlgorithm</code></li>
+<li><code>*TimeIntegration</code></li>
+<li><code>*RayleighDamping</code></li>
+<li><code>*Modal</code></li>
+<li><code>*State</code></li>
+<li><code>*Output</code></li>
+<li><code>*Print</code></li>
+<li><code>*Check</code></li>
+</ul>
+<h5 id="_6">해석 결과 관리 명령</h5>
+<ul>
+<li><code>*PostStep</code></li>
+<li><code>*History</code></li>
+<li><code>*PostHistory</code></li>
+<li><code>*HDB</code></li>
+</ul>
+<h5 id="_7">모델링 편의 명령</h5>
+<ul>
+<li><code>*Include</code></li>
+<li><code>*Parameter</code></li>
+<li><code>*Distribution</code></li>
+<li><code>*Model</code></li>
+</ul>
+<h5 id="_8">기타 명령</h5>
+<ul>
+<li><code>*Environment</code></li>
+<li><code>*Stop</code></li>
+<li><code>*TestMaterial</code></li>
+</ul>
+<h2 id="12">1.2 해석 실행</h2>
+<p>hfAnalyzer는 CLI(Command-Line Interface)에서 구동되는 프로그램이다. 명령행에 hfAnalyzer와 입력 파일을 타이핑하면 해석이 가능하다.</p>
+<p>CLI 셸은 실행 환경에 맞게 연다. 개발 트리에서는 저장소 루트의 <code>cmdQt6.bat</code> 또는 <code>cmdQt5.bat</code>를 실행해 빌드 출력 폴더와 개발 의존성 경로를 <code>PATH</code>에 추가한다. 배포판에서는 배포 루트의 <code>setpath.bat</code>를 실행한다. 이 배치파일은 자기 위치를 기준으로 <code>Bin</code> 폴더를 <code>PATH</code>에 추가한다.</p>
+<p>hfStudio와 hf2DStudio의 <code>Open Hyfeast CLI Here</code> 메뉴를 사용하면 현재 작업 파일이 있는 폴더에서 별도 <code>cmd.exe</code> 창이 열린다. 개발 실행에서는 <code>cmdQt6.bat</code> 또는 <code>cmdQt5.bat</code>로 환경을 잡고, 배포 실행에서는 실행 파일이 들어 있는 <code>Bin</code> 폴더를 직접 <code>PATH</code>에 추가한다. 이 메뉴는 현재 모델을 자동 저장하거나 export하지 않으며, Studio가 열고 있는 HDB 파일 핸들을 새 CLI 창에 상속하지 않는다.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.inp
+</code></pre></div>
+<p>또한 HDB family 파일(<code>.hdb</code>, <code>.text.hdb</code>, <code>.bin.hdb</code>)도 해석 입력으로 사용할 수 있다. 이 경우 HDB 안에 저장된 입력/모델 스냅샷을 먼저 꺼내 해석하며, 기본값으로 원본 HDB는 덮어쓰지 않는다.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.hdb
+&gt; hfAnalyzer frame.text.hdb
+&gt; hfAnalyzer frame.bin.hdb
+</code></pre></div>
+<p><code>-o</code> 옵션은 출력 HDB 이름을 직접 지정할 때 사용한다. <code>-o</code>가 없으면 원본 이름을 기준으로 <code>frame.rerun.hdb</code>, <code>frame.rerun.text.hdb</code>, <code>frame.rerun.bin.hdb</code>처럼 <code>rerun</code>을 붙인 파일을 만든다. 원본 HDB를 해석 결과로 교체하려면 HDB 입력에서만 <code>-r</code>을 사용한다.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer frame.hdb -o frame_cli
+&gt; hfAnalyzer frame.hdb -r
+</code></pre></div>
+<p>명령행 실행시의 입력파일 외에 다양한 추가 옵션이 있는데 이는 -h 옵션으로 알 수 있다.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer -h
+</code></pre></div>
+<p>단순히 hfAnalyzer를 타이핑하여 실행하면 interactive하게 구동할 수 있다.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer ... Input file 등 필요한 정보를 interactive하게 타이핑
+</code></pre></div>
+<p>해석을 실행하면 다양한 결과 파일이 만들어진다. 예를 들어 입력파일이 <code>frame.inp</code>라고 가정하면(즉, <code>&gt; hfAnalyzer frame.inp</code> 실행) 해석결과를 담고 있는 <code>hdb</code> 파일 생성한다. <code>hdb</code> 파일은 hfVisualizer 전용파일로서,</p>
+<ul>
+<li>hfVisualizer를 프리프로세싱 모드에서는 해석결과가 없이 입력파일 정보만 담고 있지만</li>
+<li>포스트포로세싱 모드에서는 입력파일 정보와 더불어 해석결과를 담고 있다.</li>
+</ul>
+<p><code>hdb</code> 파일은 hdf5(디폴트이고 확장자를 <code>.hdb</code>), text(확장자는 <code>.text.hdb</code>), binary(확장자는 <code>.bin.hdb</code>)의 세가지 형식으로 생성할 수 있다. 다음은 각각에서 생성되는 파일을 정리한 것이다.</p>
+<p>■ hdf5 인 경우 (<code>&gt; hfAnalyzer frame.inp</code>)</p>
+<div class="highlight"><pre><span></span><code>frame.hdb
+frame.log
+frame.chk
+frame-step1.rst
+frame-step2.rst
+...
+</code></pre></div>
+<p>■ text 인 경우 (<code>&gt; hfAnalyzer frame.inp -f text</code>)</p>
+<div class="highlight"><pre><span></span><code>frame.text.hdb
+frame.text.hdb.info
+frame.text.hdb.inp
+frame.log
+frame.chk
+frame-step1.rst
+frame-step2.rst
+...
+</code></pre></div>
+<p>■ binary 인 경우  (<code>&gt; hfAnalyzer frame.inp -f binary</code>)</p>
+<div class="highlight"><pre><span></span><code>frame.bin.hdb
+frame.log
+frame.chk
+frame-step1.rst
+frame-step2.rst
+...
+</code></pre></div>
+<h2 id="13">1.3. 파라미터 입력 제어</h2>
+<h3 id="131">1.3.1. 기본사용법</h3>
+<p>hfAnalyzer를 명령행에서 실행할 때 <code>-p</code> 옵션을 통해 파라미터 입력을 제어할 수 있다. 입력파일은 이 <code>-p</code> 옵션에서 주어지는 표현을 사용하여 미리 작성되어 있으면 된다.</p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+*Material. Type=IsoElasticity, Name=concrete
+ &lt;E&gt;, 0.18
+
+*Node, Offset=&lt;BaseN&gt;
+ 1, 10, 0, 1
+...
+</code></pre></div></p>
+<p>일 때</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp -p &quot;&lt;E&gt;=20E9, &lt;BaseN&gt;=1000&quot;
+</code></pre></div>
+<p>을 실행하면 입력파일에서 <code>&lt;E&gt;</code>와 <code>&lt;BaseN&gt;</code>이 주어진 값으로 치환되고, 출력 파일의 기본 이름(base name)도 <code>example-20E9-1000</code>으로 설정된다(출력 파일이 <code>example-20E9-1000.hdb</code>, <code>example-20E9-1000.log</code> 등). <code>-p</code> 이후의 표현식은 <code>"key=value, ..."</code> 형태이고 <code>""</code>로 둘러싸여야 하며, 입력 파일에서 key는 value로 치환되게 된다. 이때 key는 다른 문자열과 구분되어야 하기 때문에 <code>&lt;A&gt;</code>, <code>$A$</code> 등과 같이 일반적으로 잘 사용하지 않는 기호로 둘러싸는 것이 좋다. 예를 들어 예를 들어 <code>"&lt;E&gt;=20E9, &lt;B&gt;=7.3"</code> 와 같이 쓰면 <code>&lt;K&gt;</code>는 20E9로, <code>&lt;B&gt;</code>는 <code>7.3</code>으로 치환하게 된다. 한편 파라미터 표현식내부에서 토큰은 <code>{}</code>로 묶을 수 있다. 예를 들어 <code>"&lt;K&gt;={R,12.3}, &lt;B&gt;=7.3"</code> 등과 같이 쓰면  <code>&lt;K&gt;</code>는 <code>R,12.3</code>로 치환된다.</p>
+<p>이러한 파라미터 표현식은 입력 파일내에서 *Include 문을 사용할 때도 쓸 수 있다. 예를 들어</p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+*Include, File=Mat, P=&quot;&lt;E&gt;=20E9, &lt;DEN&gt;=2300&quot;
+...
+</code></pre></div></p>
+<p>mat.inp
+<div class="highlight"><pre><span></span><code>*Material. Type=IsoElasticity, Name=concrete
+ &lt;E&gt;, 0.18, ,&lt;DEN&gt;
+</code></pre></div></p>
+<h3 id="132">1.3.2. 고급사용법</h3>
+<p>최상위 입력파일(<code>*Include</code> 문으로 포함되는 입력파일이 아닌 입력파일)에서는 <code>*Parameter</code> 문을 적용하여 보다 세밀하게 파라미터 문을 쓸 수 있다.</p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+
+*Parameter, Name=Concrete, &quot;&lt;E&gt;=25E9, &lt;nu&gt;=0.16, &lt;den&gt;=2450&quot;, Default
+*Parameter, Name=Steel, &quot;&lt;E&gt;=200E9, &lt;nu&gt;=0.3, &lt;den&gt;=7850&quot;
+
+*Material. Type=IsoElasticity, Name=Wall
+ &lt;E&gt;, &lt;nu&gt;, 0., &lt;den&gt;
+...
+</code></pre></div></p>
+<p><code>*Parameter</code>는 미리 정의된 파라미터 표현식으로 이해할 수 있다. 따라서 <code>*Parameter</code> 표현식의 이름은 중복하여 지정할 수 없다. Default는 hfAnalyzer 실행시 <code>-p</code> 옵션을 사용하지 않을 때 사용하는 표현식을 의미한다. 따라서 여러개의 <code>*Parameter</code> 문이 있는 경우 Default 한번만 사용할 수 있다. 다음은 hfAnalyzer에서 사용한 예이다.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp
+  -&gt; Default 속성이 있는 파라미터 표현식이 적용(여기서는 Concrete)
+  -&gt; 출력 파일 기본 이름(file base name)은 ex (example-Concrete.hdb, ...)
+
+&gt; hfAnalyzer example.inp -p &quot;Concrete&quot;
+  -&gt; Concrete로 명명된 파라미터 표현식이 적용
+  -&gt; 출력 파일 기본 이름(file base name)은 example-Concrete (example-Concrete.hdb, ...)
+
+&gt; hfAnalyzer example.inp -p &quot;Steel&quot;
+  -&gt; Steel로 명명된 파라미터 표현식이 적용
+  -&gt; 출력 파일 기본 이름(file base name)은 example-Steel (example-Steel.hdb, ...)
+
+&gt; hfAnalyzer example.inp -p &quot;&lt;E&gt;=20E9, &lt;nu&gt;=0.16, &lt;den&gt;=2300&quot;
+  -&gt; *Parameter 문을 사용하지 않음.
+  -&gt; 출력 파일 기본 이름(file base name)은 example-20E9-0.16-2300 (example-20E9-0.16-2300.hdb, ...)
+
+&gt; hfAnalzyer example.inp -p &quot;Concrete:&lt;E&gt;=30E9&quot;
+  -&gt; Concrete로 명명된 파라미터 표현식이 적용하되, &lt;E&gt;는 30E9를 사용
+  -&gt; 출력 파일 기본 이름(file base name)은 example-Concrete (example-Concrete.hdb, ...)
+</code></pre></div>
+<p>한편 <PARAMETER>라는 특수문자열을 입력파일에 사용가능하다.</p>
+<p>example.inp
+<div class="highlight"><pre><span></span><code>...
+
+*Parameter, Name=Concrete, &quot;&lt;E&gt;=25E9, &lt;nu&gt;=0.16, &lt;den&gt;=2450&quot;, Default
+*Parameter, Name=Steel, &quot;&lt;E&gt;=200E9, &lt;nu&gt;=0.3, &lt;den&gt;=7850&quot;
+
+*Material. Type=IsoElasticity, Name=Wall
+ &lt;E&gt;, &lt;nu&gt;, 0., &lt;den&gt;
+...
+
+*Step, TYPE=Static, Name=SelfWeight
+...
+*Print, File=&lt;DB&gt;-&lt;PARAMETER&gt;-&lt;STEP&gt;.prn
+...
+</code></pre></div></p>
+<p><DB>는 입력파일, <PARAMETER>는 파라미터문의 이름, <STEP>은 현재 해석스텝 명이다. 따라서 위 해석에서 디폴트 파라미터문이 작동하도록 실행했다면, example-Concrete-SelfWeight.prn 이 <code>*Print</code> 문의 대상 파일이 된다. 주의할 점은  hfAnalyzer 실행에서 <code>-p</code> 문을 적용하지 않고 Default 파라미터문이 사용되는 경우에도 <PARAMTEER>가 치환된다는 점이다.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp
+  → Default 속성이 있는 파라미터 표현식이 적용(여기서는 Concrete)
+  → 출력 파일 기본 이름(file base name)은 input (example-Concrete.hdb, ...)이나
+  → Print 파일명은 example-Concrete-SelfWeight.prn
+
+&gt; hfAnalyzer example.inp -p &quot;Concrete&quot;
+  → Concrete로 명명된 파라미터 표현식이 적용
+  → 출력 파일 기본 이름(file base name)은 input-Concrete (example-Concrete.hdb, ...)
+  → Print 파일명은 example-Concrete-SelfWeight.prn
+
+&gt; hfAnalyzer example.inp -p &quot;Steel&quot;
+  → Steel로 명명된 파라미터 표현식이 적용
+  → 출력 파일 기본 이름(file base name)은 example-Steel (example-Steel.hdb, ...)
+  → Print 파일명은 example-Steel-SelfWeight.prn
+</code></pre></div>
+<p>hfAnalyzer 실행시 <code>-o</code> 옵션으로 출력파일을 재지정할 수 있다. 다음은 재지정된 출력파일명의 예이다.</p>
+<div class="highlight"><pre><span></span><code>&gt; hfAnalyzer example.inp -o output -p &quot;&lt;C&gt;=I, &lt;K&gt;=12.3, &lt;P&gt;=7&quot;
+  → output.hdb, ...
+&gt; hfAnalyzer example.inp -o &quot;output-&lt;PARAMETER&gt;&quot; -p &quot;WT&quot;
+  → output-WT.hdb, ...
+&gt; hfAnalyzer example.inp -o &quot;output-&lt;PARAMETER&gt;-&lt;K&gt;&quot; -p &quot;WT:&lt;K&gt;=12.3&quot;
+  → output-WT-12.3.h5.odb, ...
+&gt; hfAnalyzer example.inp -o &quot;output-&lt;K&gt;&quot; -p &quot;WT:&lt;K&gt;=12.3&quot;
+  → output-12.3.h5.odb
+</code></pre></div>
+<h2 id="14">1.4 단위계</h2>
+<p>Hyfeast에서 단위계는 사용은 옵션으로 필하요하면 *Enviroment, Type=UnitSystem 명령을 통해 지정할 수 있다. 단위계가 지정을 통해 hfStudio 등에서 단위계 변환을 일괄적으로 변환할 수 있으면 어떤 객체 자체 단위계가 존재하는 경우 쉽게 통합가능하다. 다음은 관련된 일반 규칙이다.</p>
+<ul>
+<li>Hyfeast의 기본 단위계는 <code>*Environment, Type=UnitSystem</code>으로 정의하는 global UnitSystem이다.</li>
+<li>일부 명령 또는 section 입력은 자기 단위를 별도로 가지는 local UnitSystem 또는 localUnitSystem을 지원한다. 대표적인 예는 다음과 같다.</li>
+<li><a href="8-Function.html"><code>*Function</code></a>의 <code>UnitSystem=...</code></li>
+<li><a href="4-Element-Specification/4.2-Beam.html"><code>*Section, Type=Beam</code></a>에서 <code>ShearX|ShearY|Torsion, material, localUnitSystem</code></li>
+<li><a href="4-Element-Specification/4.9-MCK.html"><code>*Section, Type=MCK</code></a>의 <code>localUnitSystem</code></li>
+<li><a href="4-Element-Specification/4.10-MovingSpring.html"><code>*Section, Type=MovingSpring</code></a>의 <code>localUnitSystem</code></li>
+<li><a href="4-Element-Specification/4.11-Interface.html"><code>*Section, Type=Interface</code></a>의 <code>localUnitSystem</code></li>
+<li>local UnitSystem을 지정하고 현재 global UnitSystem이 있으면, 해당 입력은 local-to-global 관계로 해석한다. 내부 변환의 의미는 각 명령이 다루는 물리량에 따라 달라진다.</li>
+<li>local UnitSystem을 지정했지만 현재 global UnitSystem이 없으면, 이 값은 local metadata로 보존되며 입력 시점 에러가 되지 않는다.</li>
+<li>local UnitSystem을 지정하지 않으면 현재 global UnitSystem이 정의되어 있는 경우 그 단위계를 따른다.</li>
+<li><code>*Step</code>의 시간값 분류는 <code>*Step</code> 문서를 따른다. <code>Static, Standard/Arclength</code>는 pseudo-time을 사용하므로 global <code>UnitSystem</code>과 무관하고, <code>Dynamic</code>은 global <code>UnitSystem</code>이 정의되어 있으면 그 time field를 따르는 물리 시간을 사용한다. <code>Static, Quasi</code>와 <code>Seepage, Transient</code>는 <code>step-defined time</code>으로 표현되는 물리 시간을 사용하며, 이 시간 단위는 step dataline의 <code>TUnit=tUnit</code>으로 지정한다. <code>ConcreteTime</code> 표준식은 day 기준이고, seepage 투수계수는 material dataline의 <code>TUnit=tUnit</code>으로 별도 시간 단위를 지정할 수 있다.</li>
+<li><code>*Load, Type=LineMoving/SurfaceMoving</code>에서   KL-510,  DB-24, DB-18, DB-13.5와 같은 Design Code form을 사용할 경우 <code>*Environment, Type=UnitSystem</code>을 통해 정의하는 global UnitSystem이 반드시 필요하다.</li>
+<li><code>*Section, Type=Beam</code>에서 section DB 참조(<code>DB, item</code>)를 사용할 경우 DB 단위를 모델 단위로 변환해야 하므로 global UnitSystem이 반드시 필요하다. 숫자 geometry data line은 global UnitSystem이 없어도 raw 숫자로 읽을 수 있다.</li>
+<li><code>*Include</code>로 불러온 내용과 hfStudio의 <code>File &gt; Import File</code>, <code>File &gt; From Clipboard</code>, <code>Inp Text &gt; Apply</code>도 같은 원칙으로 local/global UnitSystem을 해석한다.</li>
+<li>force-length, force-length-time, force-length-time-temperature와 같은 세부 형식과 실제 스케일링 규칙은 각 명령 문서를 따른다.</li>
+</ul>
+<h2 id="15-db">1.5 DB 입력</h2>
+<p>DB 입력은 표준 단면 치수, 재료값, concrete function parameter, 시간이력 record를 직접 숫자로 모두 쓰지 않고 이름으로 불러오는 입력 방식이다. 별도 해석 객체나 새 command를 만드는 기능은 아니며, 기존 <code>*Cell</code>, <code>*Material</code>, <code>*Function</code> 명령의 dataline에 DB 이름이나 DB item을 쓴다. 여기서 DB는 입력 보조 데이터베이스를 뜻하며, <code>.hdb</code> 파일이나 <code>*HDB</code> 명령과는 다르다.</p>
+<p>Hyfeast의 DB 입력은 크게 Section DB, Material DB, TimeSignal DB source line으로 구분된다. Section DB는 <code>*Cell</code>에서 표준 단면 치수를 불러오고, Material DB는 <code>*Material</code>의 재료 물성이나 recipe뿐 아니라 concrete <code>*Function</code> 입력에 필요한 값을 공급한다. TimeSignal DB source line은 <code>*Function, Type=TimeSignal</code>에서 지진파 또는 시간이력 record를 불러온다. 대표 입력 위치는 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>DB 종류</th>
+<th>하고 싶은 일</th>
+<th>쓰는 곳</th>
+<th>dataline 형식</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Section DB</td>
+<td>표준 강재 단면 치수 불러오기</td>
+<td><code>*Cell</code></td>
+<td><code>DB, item</code></td>
+<td><code>KSD3502-2022, H-198x99x4.5x7</code></td>
+</tr>
+<tr>
+<td>Material DB</td>
+<td>재료 DB item으로 재료 입력하기</td>
+<td><code>*Material</code></td>
+<td><code>material-db-item</code></td>
+<td><code>KDS-2026-SD400</code></td>
+</tr>
+<tr>
+<td>Material DB</td>
+<td>concrete envelope function 만들기</td>
+<td><code>*Function</code></td>
+<td>function별 DB item dataline</td>
+<td><code>KDS-2026-C30</code></td>
+</tr>
+<tr>
+<td>Material DB</td>
+<td>concrete time-dependent function 만들기</td>
+<td><code>*Function</code></td>
+<td>function별 DB item dataline</td>
+<td><code>ACI209-1992-C4000</code></td>
+</tr>
+<tr>
+<td>TimeSignal DB</td>
+<td>지진파·시간이력 record 불러오기</td>
+<td><code>*Function, Type=TimeSignal</code></td>
+<td><code>DB, record[, scale]</code></td>
+<td><code>DB, elcentro_1940, 1.0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Section DB와 Material DB는 DB 값을 현재 모델 단위계에 맞게 사용하므로, 먼저 <code>*Environment, Type=UnitSystem</code>으로 global UnitSystem을 정의한다. TimeSignal DB source line은 record가 가진 단위 정보와 시간 간격 정보를 따르며, 세부 내용은 <code>*Function</code> 문서를 따른다. DB를 사용해도 <code>*Cell</code>, <code>*Material</code>, <code>*Function</code>의 <code>Type=</code> 의미는 바뀌지 않는다. Section DB에서 <code>DB, item</code>의 <code>DB</code>는 literal keyword가 아니라 <code>KSD3502-2022</code>, <code>AISC16</code> 같은 실제 DB 이름이다. TimeSignal에서 <code>DB, record</code>의 <code>DB</code>는 DB source line을 뜻하는 literal keyword다.</p>
+<p>아래 표는 Introduction에서 확인할 수 있는 대표 DB 이름과 item 형식이다. 자세한 사용법은 각 command 문서를 따른다.</p>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>DB 또는 record</th>
+<th>item 형식</th>
+<th>쓰는 위치</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KDS 2026 유효 기준 재료</td>
+<td><code>KDS-2026</code></td>
+<td><code>KDS-2026-C&lt;fck&gt;</code>, <code>KDS-2026-SS&lt;grade&gt;-t&lt;thickness-range&gt;</code>, <code>KDS-2026-SD&lt;grade&gt;...</code></td>
+<td><code>*Material</code> elastic 입력, steel/rebar material 입력, concrete envelope <code>*Function</code> 입력</td>
+<td><code>KDS-2026-SD400</code></td>
+</tr>
+<tr>
+<td>ACI 318 콘크리트</td>
+<td><code>ACI318-2025</code></td>
+<td><code>ACI318-2025-C&lt;fck&gt;</code></td>
+<td><code>*Material</code> elastic 입력, concrete envelope <code>*Function</code> 입력</td>
+<td><code>ACI318-2025-C4000</code></td>
+</tr>
+<tr>
+<td>ACI 209 콘크리트 시간의존 특성</td>
+<td><code>ACI209-1992</code></td>
+<td><code>ACI209-1992-C&lt;fc&gt;</code></td>
+<td>concrete time-dependent <code>*Function</code> 입력</td>
+<td><code>ACI209-1992-C4000</code></td>
+</tr>
+<tr>
+<td>EC2 콘크리트</td>
+<td><code>EC2-2004</code></td>
+<td><code>EC2-2004-C&lt;fck&gt;</code></td>
+<td><code>*Material</code> elastic 입력, concrete envelope <code>*Function</code> 입력</td>
+<td><code>EC2-2004-C30</code></td>
+</tr>
+<tr>
+<td>KS D 3502 강재 단면</td>
+<td><code>KSD3502-2022</code></td>
+<td><code>H-...</code>, <code>T-...</code>, <code>C-...</code>, <code>2C-...</code>, <code>L-...</code>, <code>2L-...</code></td>
+<td><code>*Cell</code> section DB dataline</td>
+<td><code>KSD3502-2022, H-198x99x4.5x7</code></td>
+</tr>
+<tr>
+<td>AISC Shapes Database</td>
+<td><code>AISC16</code></td>
+<td><code>W...</code>, <code>M...</code>, <code>S...</code>, <code>HP...</code>, <code>WT...</code>, <code>MT...</code>, <code>ST...</code>, <code>C...</code>, <code>MC...</code>, <code>L...</code>, <code>2L...</code>, <code>HSS...</code>, <code>Pipe...</code></td>
+<td><code>*Cell</code> section DB dataline</td>
+<td><code>AISC16, W14X90</code></td>
+</tr>
+<tr>
+<td>TimeSignal DB record</td>
+<td><code>elcentro_1940</code>, <code>taft_1952</code>, <code>RSN765_LOMAP_...</code> 등</td>
+<td>record name</td>
+<td><code>*Function, Type=TimeSignal</code> source line</td>
+<td><code>DB, elcentro_1940, 1.0</code></td>
+</tr>
+</tbody>
+</table>
+<p>아래 예시는 한 입력 파일에서 단위계를 먼저 정하고, 단면·재료·concrete function·시간이력 record를 각각 DB에서 가져오는 최소 흐름이다.</p>
+<div class="highlight"><pre><span></span><code>*Environment, Type=UnitSystem
+ kN-mm-s-K
+
+*Section, Type=Beam, Name=SteelSection
+*Cell, Type=H, Mat=Steel
+ KSD3502-2022, H-198x99x4.5x7
+
+*Material, Type=IsoElasticity, Name=Rebar
+ KDS-2026-SD400
+
+*Function, Type=ParabolaCEnv, Name=ConcComp
+ KDS-2026-C30, 0.85
+
+*Function, Type=TimeSignal, Name=EQ
+ auto, auto
+ DB, elcentro_1940, 1.0
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

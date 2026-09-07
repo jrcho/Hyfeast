@@ -1,0 +1,4635 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="7-Material.html">
+      
+      
+        <link rel="next" href="9-Surface.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>8. Function - Hyfeast-v1.0.0-beta.4</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../javascripts/iframe-worker-shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#81-function" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.4" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast-v1.0.0-beta.4
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              8. Function
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="8-Function.html" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/FE-Commands/8-Function.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.4" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hyfeast-v1.0.0-beta.4
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FE Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            FE Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Finite-Element-Analysis/1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.2-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.3-View-and-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.4-Selection-and-Visibility.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Selection and Visibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.5-Preprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Preprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.6-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.7-Postprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.8-Workspace-Panels.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Workspace Panels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.1-Running.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Running
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.2-Files-and-Results.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Files and Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FE Commands
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FE Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1-Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2-Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element Library
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element Library
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.1-Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.2-Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.3-Truss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.4-Cable.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.5-Shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.6-Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6 Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.7-AcousticSolid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.7 AcousticSolid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.8-SeepageSolid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.8 SeepageSolid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.9-MCK.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.9 MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.10-MovingSpring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.10 MovingSpring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.11-Interface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.11 Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.12-EmbeddedLine.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.12 EmbeddedLine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5-Constraint.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6-Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7-Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="8-Function.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 *Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1 *Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#811-function-typemultilinear" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.1 *Function, Type=MultiLinear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#812-function-typedatacurve" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.2 *Function, Type=DataCurve
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#813-function-typetimesignal" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.3 *Function, Type=TimeSignal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#814-function-typeresponsespectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.4 *Function, Type=ResponseSpectrum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#815-function-typestring" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.5 *Function, Type=String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#816-function-typeparabolacenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.6 *Function, Type=ParabolaCEnv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#817-function-typehognestadcenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.7 *Function, Type=HognestadCEnv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#818-function-typeec2cenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.8 *Function, Type=EC2CEnv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#819-function-typemppcenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.9 *Function, Type=MPPCEnv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8110-function-typemppcie" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.10 *Function, Type=MPPCIE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8111-function-typemaekawatenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.11 *Function, Type=MaekawaTEnv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8112-function-typeconcretetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1.12 *Function, Type=ConcreteTime
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9-Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11-CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12-Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="13-Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14-Step-result.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step Result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="15-Modelling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling Convenience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="16-Etc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17-Special-step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="18-HDB-file-structure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB File Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2D & Section Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2D & Section Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.2-Window-and-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Window and File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.3-View-and-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.4-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.5-Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.6-Operation-and-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/2.7-Mesh-Generation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Mesh Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/3.1-Help.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. hfSectAnalyzer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/3.2-Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/4-Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Section Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/5-Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Section Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Remote Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Remote Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/1-Basics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.2-Remote-only.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Remote-only
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.3-View.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.4-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.5-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.6-Selection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Selection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7" id="__nav_5_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7 Preprocessing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            2.7 Preprocessing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.1-Environment.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.1 Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.2-CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.2 CoordinateSystem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.3-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.3 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7_4" id="__nav_5_2_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7.4 Node and NSet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2.7.4 Node and NSet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.4.1-Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.4.1 Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.4.2-NSet.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.4.2 NSet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7_5" id="__nav_5_2_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7.5 Element and Elset
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            2.7.5 Element and Elset
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.5.1-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.5.1 Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.5.2-Elset.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.5.2 Elset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.6-Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.6 Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.7-Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.7 Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.8-Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.8 Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.9-NProp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.9 NProp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.10-Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.10 Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.11-Section.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.11 Section
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.12-Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.12 Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.13-Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.13 Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.14-History.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.14 History
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.15-Distribution.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.15 Assign
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.16-Model.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.16 Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.17-Renumber.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.17 Renumber
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.18-Undo-and-Redo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.18 Undo and Redo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.8-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.9 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/Recipes/2.10-hfStudio-Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10 Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.1-2D-Modeling-Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 2D Modeling Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.2-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.3-Window-and-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Window and File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.4-View.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.5-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.6-Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.7-Operation-and-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/Recipes/3.8-hf2DStudio-Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/1-Getting-Started.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/2-Beam-Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Beam Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/3-Solid-Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Solid Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/4-Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Verification
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Verification
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.1-Beam-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.1 Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.2-Material-Nonlinear-Beam-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.2 Material Nonlinear Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.3-Solid-Element-and-In-Plane-Behavior-of-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.3 Solid Element and In-Plane Behavior of Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.4-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.4 Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.5-Material-Nonlinear-Solid-and-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.5 Material Nonlinear Solid and Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.6-Dynamic-Analysis-using-Spring-and-Mass-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.6 Dynamic Analysis using Spring and Mass Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.7-Acoustic-Solid-Element-and-HydroStaticPressure-Loads.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.7 Acoustic Solid Element and HydroStaticPressure Loads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.8-Interface-Modeling-using-Spring-and-Interface-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.8 Interface Modeling using Spring and Interface Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.9-Truss-and-Cable-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.9 Truss and Cable Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.10-Simple-Constraints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.10 Simple Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.11-Advanced-Constraints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.11 Advanced Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.12-Rebar-and-Tendon-Modeling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.12 Rebar and Tendon Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.13-Moving-Load-Analysis-in-Simply-Supported-Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.13 Moving Load Analysis in Simply Supported Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.14-Stability-of-Rail-Track.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.14 Stability of Rail Track
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.15-Time-Dependent-Materials.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.15 Time Dependent Materials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.16-ModelUpdating-and-ShapeEstimation-Steps.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.16 ModelUpdating and ShapeEstimation Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.17-Seepage-Element-and-Boundary-Conditions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.17 Seepage Element and Boundary Conditions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.18-Seepage-Comparison-with-SEEPW.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.18 Seepage Comparison with SEEP/W
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="8-function">8. Function</h1>
+<p><code>*Function</code>은 이름이 있는 함수 객체를 정의한다. 정의된 함수는 재료모델의 포락선이나 하중 시간이력 등에서 참조한다. 이름은 전역적으로 고유해야 하며 중복 지정할 수 없다.</p>
+<p>함수 관련 명령어는 <span class="arithmatex">\(y=f(x)\)</span> 또는 <span class="arithmatex">\(y_1=f_1(x), y_2=f_2(x), ...\)</span> 형태의 관계를 만든다. 일부 function type은 DB source를 지원한다. <code>TimeSignal</code>은 시간이력 DB record를 읽고, 콘크리트 관련 function type은 콘크리트 DB item에서 압축, 인장, 시간의존 물성치를 만든다.</p>
+<ul>
+<li><code>*Function, Type=TimeSignal</code>: 시간이력 DB</li>
+<li><code>*Function, Type=ParabolaCEnv|HognestadCEnv|EC2CEnv|MPPCEnv</code>: 콘크리트 DB 압축 거동</li>
+<li><code>*Function, Type=MaekawaTEnv</code>: 콘크리트 DB 인장 거동</li>
+<li><code>*Function, Type=ConcreteTime</code>: 콘크리트 DB 시간의존 물성</li>
+</ul>
+<p><code>TimeSignal</code> DB 입력은 <code>*Function, Type=TimeSignal</code> 절을 참고한다. 아래에서는 콘크리트 DB 공통사항을 먼저 설명한다.</p>
+<h5 id="db">콘크리트 DB 개요</h5>
+<p>콘크리트 DB item은 <code>Material</code> dataline에 직접 입력하는 재료 이름이 아니라, concrete <code>*Function</code> dataline에서 선택한 function model의 파라미터를 채우는 입력 source다. 현재 기본 제공 envelope DB item 형식은 <code>KDS-2026-C&lt;fck&gt;</code>, <code>ACI318-2025-C&lt;fck&gt;</code>, <code>EC2-2004-C&lt;fck&gt;</code>이고, 시간의존 DB item 형식은 <code>KDS-2026-C&lt;fck&gt;</code>, <code>EC2-2004-C&lt;fck&gt;</code>, <code>ACI209-1992-C&lt;fc&gt;</code>다. 각 function type마다 허용하는 DB 기준이 다르며, <code>UGeneric</code> 같은 material dataline에서는 DB item이 아니라 생성된 function 이름을 참조한다.</p>
+<p>가장 먼저 구분해야 할 대상은 <code>ParabolaCEnv</code>다. <code>ParabolaCEnv</code> DB 입력은 단면해석용 포물선 압축 관계를 만드는 별도 입력이다. 아래에서 소개하는 DB 파생 콘크리트 물성치 묶음, 즉 <code>fcm</code>, <code>Ec</code>, <code>Eci</code>, <code>ft</code>와 model별 recipe 매핑을 사용하지 않는다. DB에서 얻는 값은 단면해석용 <code>fck</code>, <code>n</code>, <code>eco</code>, <code>ecu</code>이며, 선택 token <code>alpha</code>는 <code>fck</code>에 설계 저감을 적용한다. <code>ACI318-2025-C&lt;fck&gt;</code>는 <code>ParabolaCEnv</code> DB 입력으로 받지 않는다.</p>
+<p>반대로 <code>HognestadCEnv</code>, <code>EC2CEnv</code>, <code>MPPCEnv</code>, <code>MaekawaTEnv</code>는 DB item에서 도출한 콘크리트 역학 물성치를 Hyfeast 기본 recipe의 입력값으로 사용한다. <code>ConcreteTime</code>은 기준별 재령, 크리프, 수축 식을 사용한다. 아래 reference는 각 기준마다 역학 물성치와 시간의존 물성치를 함께 읽을 수 있도록 기준별로 정리한다.</p>
+<p>콘크리트 envelope에서 <code>Type</code>은 생성할 함수 모델을 의미한다. 따라서 직접 수치로 파라미터를 입력할 때와 DB item으로 파라미터를 가져올 때 모두 같은 <code>Type</code>을 유지한다. 예를 들어 <code>Type=ParabolaCEnv</code>에서 dataline이 <code>fck, n, eco, ecu, alpha</code>이면 직접 수치 입력이고, <code>KDS-2026-C30</code>, <code>EC2-2004-C30</code>이면 같은 Parabola 모델의 단면해석용 파라미터를 DB에서 가져오는 입력이다. TimeSignal DB record도 별도 function type을 만들지 않고 <code>Type=TimeSignal</code>의 source line에서 <code>DB, recordName[, scaleFactor]</code> 형식으로 참조한다.</p>
+<p>콘크리트 물성 DB를 쓰는 Function 입력은 <code>*Environment, Type=UnitSystem</code>으로 global UnitSystem이 먼저 정의되어 있어야 한다. DB 원천값은 parser가 현재 global UnitSystem으로 변환한다. 이 입력에서는 keyword line의 <code>UnitSystem</code>을 지정할 수 없으며, 지정하면 입력 오류로 처리한다. TimeSignal DB source line은 record 자체의 unit metadata를 따르며, 세부 규칙은 <code>Type=TimeSignal</code> 절을 따른다.</p>
+<p>콘크리트 envelope DB item dataline의 마지막 token에 <code>ToDirectForm</code>을 붙이면 저장/재출력 시 DB item이 해석된 직접 수치 파라미터로 출력된다. 전개된 숫자는 현재 global UnitSystem 기준이며, 그 단위계가 global UnitSystem과 같으면 keyword line에 local <code>UnitSystem</code>을 붙이지 않는다. <code>ToDirectForm</code>이 없으면 저장/재출력 시 DB item dataline을 보존하고 keyword line에 local <code>UnitSystem</code>을 붙이지 않는다. <code>HognestadCEnv</code>, <code>EC2CEnv</code>, <code>MPPCEnv</code>에서는 <code>ToDirectForm</code> 앞에 <code>EciCurve</code>를 둘 수 있다. 생략하면 <code>HognestadCEnv</code>와 <code>EC2CEnv</code>는 원점부터 <code>0.4*fco</code> 또는 <code>0.4*fcm</code>까지를 <code>Ec</code> 기울기의 직선으로 사용하고, <code>MPPCEnv</code>는 비구속 할선 <code>Ec</code>에서 내부 곡선을 산정한 뒤 현재 0.4 강도점까지를 직선으로 사용한다.</p>
+<p><img alt="" src="media/8.2-0.svg" />
+<strong>Fig. 8.2-0.</strong> Concrete envelope initial curve option</p>
+<p>Function type별 DB dataline 문법은 뒤의 각 <code>Type=</code> 절에서 다룬다. 이 앞 reference는 기준별 물성치와 단위계만 정리한다.</p>
+<h5 id="db_1">콘크리트 DB 공통 규칙</h5>
+<p>아래 기준별 소절은 같은 순서로 읽는다.</p>
+<ul>
+<li><strong>DB item 형식과 원천 단위:</strong> envelope DB item 이름, 가능한 경우 <code>ConcreteTime</code> item 이름, 기준식 평가 단위를 먼저 밝힌다.</li>
+<li><strong>역학 envelope 물성치:</strong> concrete envelope function에서 사용하는 28일 기준 물성치와 strain 계수다.</li>
+<li><strong>ConcreteTime 시간의존 물성치:</strong> 같은 기준의 재령, 크리프, 수축 series다. 여기서는 앞의 역학 물성치를 다시 쓰지 않고, 시간의존식에 추가로 필요한 계수만 적는다.</li>
+</ul>
+<p><code>ConcreteTime</code>은 다음 여섯 series를 순서대로 저장한다.</p>
+<div class="arithmatex">\[
+\left[a_c(t),\;a_t(t),\;a_E(t),\;c_r(t-\tau),\;c_l(\tau),\;\varepsilon^{sh}(t)\right]
+\]</div>
+<p>사용자 정의 함수 묶음은 이후 콘크리트 재료에서 다음 형태로 사용하는 것을 의도한다.</p>
+<div class="arithmatex">\[
+f_c(t)=a_c(t)f_c(28)
+\]</div>
+<div class="arithmatex">\[
+f_t(t)=a_t(t)f_t(28)
+\]</div>
+<div class="arithmatex">\[
+E_c(t)=a_E(t)E_c(28)
+\]</div>
+<div class="arithmatex">\[
+C(t,\tau)=c_r(t-\tau)c_l(\tau)
+\]</div>
+<div class="arithmatex">\[
+\varepsilon^{sh}(t)=-e_{sh}(t)
+\]</div>
+<p>수축은 양의 수축 크기와 Hyfeast에 저장되는 signed 수축/팽창 변형률을 구분한다. 사용자 정의 <code>shrinkage</code> Function의 <span class="arithmatex">\(e_{sh}(t)\)</span>, EC2의 <span class="arithmatex">\(\varepsilon_{cd}\)</span>, <span class="arithmatex">\(\varepsilon_{ca}\)</span>, ACI의 <span class="arithmatex">\(\varepsilon_{sh,u}\)</span>는 양의 수축 크기이다. 최종 series <span class="arithmatex">\(\varepsilon^{sh}(t)\)</span>는 Hyfeast 저장값이며, 수축은 음수, 팽창은 양수로 저장한다. KDS 식에서는 계산된 <span class="arithmatex">\(\varepsilon^{sh}(t)\)</span> 자체를 signed 저장값으로 쓰며, <span class="arithmatex">\(RH&lt;99\%\)</span>에서는 음수 수축, <span class="arithmatex">\(RH\ge99\%\)</span>에서는 양수 팽창이 된다.</p>
+<p>여기서 <span class="arithmatex">\(t\)</span>는 콘크리트 재령, <span class="arithmatex">\(\tau\)</span>는 재하재령, <span class="arithmatex">\(t-\tau\)</span>는 크리프 지속기간이다. 표준 및 <code>User</code> <code>ConcreteTime</code> 입력은 이 재령 변수를 day 단위로 평가하므로, 이를 사용하는 <code>Static, Quasi</code> step은 <code>TUnit=day</code>여야 한다. global <code>UnitSystem</code>의 time field를 day로 바꾸라는 의미는 아니다. <code>ConcreteTime</code> 자체는 <span class="arithmatex">\(\tau\)</span>를 결정하지 않는다. 이후 콘크리트 재료 구현이 해석 상태에서 <span class="arithmatex">\(\tau\)</span>를 제공한다.</p>
+<p>여기서 <span class="arithmatex">\(C(t,\tau)\)</span>는 무차원 크리프 계수 <span class="arithmatex">\(\phi(t,\tau)\)</span>가 아니라 크리프 컴플라이언스이다. <span class="arithmatex">\(c_r\)</span>를 무차원으로 두면 <span class="arithmatex">\(c_l\)</span>은 응력의 역수 단위를 가진다.</p>
+<p>KDS와 EC2의 내장 크리프식은 같은 분리형을 사용한다. 지속기간 항은 무차원이고, 재하재령 항에는 탄성계수 분모가 포함된다. 기준별 절에서는 <span class="arithmatex">\(E_{ci,28}\)</span>, <span class="arithmatex">\(\phi_{RH}\)</span>, <span class="arithmatex">\(\beta_H\)</span>만 따로 제시한다.</p>
+<div class="arithmatex">\[
+C(t,\tau)=c_r(\max(t-\tau,0))c_l(\tau)
+\]</div>
+<div class="arithmatex">\[
+\Delta t=\max(t-\tau,0)
+\]</div>
+<div class="arithmatex">\[
+c_r(\Delta t)=
+\begin{cases}
+0 &amp; (\Delta t=0) \\
+\left(\dfrac{\Delta t}{\beta_H+\Delta t}\right)^{0.3} &amp; (\Delta t&gt;0)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+c_l(\tau)=\dfrac{1}{E_{ci,28}}\phi_{RH}\dfrac{16.8}{\sqrt{f_{cm}}}\dfrac{1}{0.1+\tau^{0.2}}
+\]</div>
+<p><code>ConcreteTime</code>에는 keyword line <code>UnitSystem</code>을 지정할 수 없다. <code>User</code> dataline은 기존 function 이름만 참조하므로 입력 시점에 global UnitSystem을 요구하지 않는다. 여섯 참조 Function은 <code>ConcreteTime</code>이 전달하는 day 기준 <span class="arithmatex">\(x\)</span> 값으로 평가하므로, 참조 Function에는 keyword line <code>UnitSystem=...</code>을 지정할 수 없다.</p>
+<p><code>ConcreteTime</code> 기준식 dataline은 global <code>*Environment, Type=UnitSystem</code>이 필요하지만, 기준식 자체의 입력 단위는 각 기준에서 정한 단위로 고정한다. EC2/KDS 강도는 MPa, ACI 강도는 psi, EC2/KDS <code>h0</code>는 mm, ACI 209 <code>V/S</code>와 <code>slump</code>는 inch, 시간 변수는 day 단위로 입력한다. parser는 이 길이 입력을 global 길이 단위에서 다시 변환하지 않는다. 크리프 컴플라이언스 분모의 탄성계수는 저장 전에 현재 global 응력 단위로 변환한다.</p>
+<h5 id="kds-2026-db">KDS-2026 콘크리트 DB</h5>
+<p><strong>DB item 형식과 원천 단위.</strong> KDS envelope function은 <code>KDS-2026-C&lt;fck&gt;</code>를 사용하고, <code>ConcreteTime</code>도 같은 <code>KDS-2026-C&lt;fck&gt;</code> item 형식을 사용한다. 강도와 탄성계수는 MPa, 길이 파라미터는 mm, 시간 변수는 day 단위로 평가한다.</p>
+<p><strong>역학 envelope 물성치 (<code>KDS-2026-C&lt;fck&gt;</code>).</strong></p>
+<div class="arithmatex">\[
+f_{cm}=f_{ck}+\Delta f
+\]</div>
+<div class="arithmatex">\[
+\Delta f=
+\begin{cases}
+4 &amp; (f_{ck} \le 40) \\
+4 + 0.1(f_{ck}-40) &amp; (40 &lt; f_{ck} &lt; 60) \\
+6 &amp; (f_{ck} \ge 60)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+E_c=8500\sqrt[3]{f_{cm}}\;[\mathrm{MPa}]
+\]</div>
+<div class="arithmatex">\[
+E_{ci}=E_c
+\]</div>
+<div class="arithmatex">\[
+f_t=f_{ctm}=0.30\,f_{cm}^{2/3}
+\]</div>
+<p>이 <span class="arithmatex">\(E_c\)</span> 식은 KDS의 보통중량콘크리트 <span class="arithmatex">\(m_c=2300\,\mathrm{kg/m^3}\)</span> 가정을 적용한 식이며, material density 값으로 다시 계산하지 않는다. fck가 90 MPa을 초과하면 직접 수치 입력을 사용해야 한다.</p>
+<p><strong>EC2CEnv 비선형해석용 변형률 계수.</strong> KDS DB 입력에서는 강도를 MPa 단위로 평가하고 변형률은 무차원 값이다.</p>
+<div class="arithmatex">\[
+\varepsilon_{co}=\min\left(0.7 f_{cm}^{0.31},\,2.8\right)/1000
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cu}=
+\begin{cases}
+0.0033 &amp; (f_{ck}\le 40) \\
+\left(3.3-0.1(f_{ck}-40)/10\right)/1000 &amp; (40&lt;f_{ck}\le 90)
+\end{cases}
+\]</div>
+<p><strong>ConcreteTime 시간의존 물성치 (<code>KDS-2026-C&lt;fck&gt;</code>).</strong></p>
+<p><code>KDS-2026-C&lt;fck&gt;</code>의 시간의존식은 위의 <span class="arithmatex">\(f_{cm}\)</span>과 <span class="arithmatex">\(E_c\)</span>를 28일 기준값으로 사용한다. <span class="arithmatex">\(h_0\)</span>는 mm 단위, 시간 변수 <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(\tau\)</span>, <span class="arithmatex">\(t_s\)</span>는 day 단위로 평가한다. 크리프 컴플라이언스 분모에는 다음 초기탄성계수를 사용한다.</p>
+<div class="arithmatex">\[
+E_{ci,28}=1.18E_c
+\]</div>
+<p>재령계수는 다음과 같다.</p>
+<div class="arithmatex">\[
+\beta_c(t)=\exp\left[\beta_{sc,a}\left(1-\sqrt{28/t}\right)\right] \quad (t&gt;0)
+\]</div>
+<div class="arithmatex">\[
+a_c(t)=\beta_c(t)
+\]</div>
+<div class="arithmatex">\[
+a_t(t)=\beta_c(t)^{2/3}
+\]</div>
+<div class="arithmatex">\[
+a_E(t)=\sqrt{\beta_c(t)}
+\]</div>
+<p>재령계수 산정용 <span class="arithmatex">\(\beta_{sc,a}\)</span>는 <code>Type1</code>에서 <code>Moist</code> 0.35와 <code>Steam</code> 0.15, <code>Type2</code>에서 0.40과 0.40, <code>Type3</code>에서 0.25와 0.12, <code>Type5</code>에서 0.35와 0.15이다.</p>
+<p>크리프는 공통 KDS/EC2 분리형을 사용하며, KDS의 습도 및 크기 계수는 다음과 같다.</p>
+<div class="arithmatex">\[
+\phi_{RH}=1+\dfrac{1-RH/100}{0.1h_0^{1/3}}
+\]</div>
+<div class="arithmatex">\[
+\beta_H=\min\left(1.5\left[1+(0.012RH)^{18}\right]h_0+250,\;1500\right)
+\]</div>
+<p>KDS 식에서는 <span class="arithmatex">\(\varepsilon_s(f_{cm})\)</span>와 <span class="arithmatex">\(\beta_s\)</span>가 양수이고, <span class="arithmatex">\(RH&lt;99\%\)</span>에서 <span class="arithmatex">\(\beta_{RH}&lt;0\)</span>, <span class="arithmatex">\(RH\ge99\%\)</span>에서 <span class="arithmatex">\(\beta_{RH}=0.25&gt;0\)</span>이다. 따라서 <span class="arithmatex">\(\varepsilon^{sh}(t)\)</span>는 일반 건조 조건에서는 음수 수축, 포화에 가까운 조건에서는 양수 팽창으로 계산되며, 별도의 앞쪽 음수 부호를 더 붙이지 않고 계산값을 Hyfeast의 signed 수축/팽창 변형률로 저장한다.</p>
+<div class="arithmatex">\[
+\varepsilon^{sh}(t)=
+\begin{cases}
+0 &amp; (t&lt;t_s) \\
+\varepsilon_{sho}\beta_s(t-t_s) &amp; (t\ge t_s)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{sho}=\varepsilon_s(f_{cm})\beta_{RH}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_s(f_{cm})=\left[160+10\beta_{sc,s}\left(9-f_{cm}/10\right)\right]10^{-6}
+\]</div>
+<div class="arithmatex">\[
+\beta_{RH}=
+\begin{cases}
+-1.55\left[1-\left(RH/100\right)^3\right] &amp; (RH&lt;99) \\
+0.25 &amp; (RH\ge 99)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\beta_s(t-t_s)=\sqrt{\dfrac{t-t_s}{0.035h_0^2+(t-t_s)}}
+\]</div>
+<p>수축식의 <span class="arithmatex">\(\beta_{sc,s}\)</span>는 <code>Type2</code>에서 4, <code>Type1</code> 또는 <code>Type5</code>에서 5, <code>Type3</code>에서 8이다.</p>
+<h5 id="ec2-2004-db">EC2-2004 콘크리트 DB</h5>
+<p><strong>DB item 형식과 원천 단위.</strong> EC2 envelope function은 <code>EC2-2004-C&lt;fck&gt;</code>를 사용하고, <code>ConcreteTime</code>도 같은 <code>EC2-2004-C&lt;fck&gt;</code> item 형식을 사용한다. 강도와 탄성계수는 MPa, 길이 파라미터는 mm, 시간 변수는 day 단위로 평가한다.</p>
+<p><strong>역학 envelope 물성치 (<code>EC2-2004-C&lt;fck&gt;</code>).</strong></p>
+<div class="arithmatex">\[
+f_{cm}=f_{ck}+8
+\]</div>
+<div class="arithmatex">\[
+E_c=E_{cm}=22000\left(f_{cm}/10\right)^{0.3}
+\]</div>
+<div class="arithmatex">\[
+E_{ci}=1.05\,E_c
+\]</div>
+<div class="arithmatex">\[
+f_t=
+\begin{cases}
+0.30\,f_{ck}^{2/3} &amp; (f_{ck} \le 50) \\
+2.12\ln(1+f_{cm}/10) &amp; (50 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<p><code>&lt;fck&gt;</code>는 MPa 단위의 EC2 cylinder strength다. fck가 90 MPa을 초과하면 직접 수치 입력을 사용해야 한다.</p>
+<p><strong>EC2CEnv 비선형해석용 변형률 계수.</strong> EC2 DB 입력에서는 강도를 MPa 단위로 평가하고 변형률은 무차원 값이다.</p>
+<div class="arithmatex">\[
+\varepsilon_{co}=\min\left(0.7 f_{cm}^{0.31},\,2.8\right)/1000
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cu}=
+\begin{cases}
+0.0035 &amp; (f_{ck}\le 50) \\
+\left(2.8+27\left((98-f_{cm})/100\right)^4\right)/1000 &amp; (50&lt;f_{ck}\le 90)
+\end{cases}
+\]</div>
+<p><strong>ConcreteTime 시간의존 물성치 (<code>EC2-2004-C&lt;fck&gt;</code>).</strong></p>
+<p><code>EC2-2004-C&lt;fck&gt;</code>의 시간의존식은 위의 <span class="arithmatex">\(f_{cm}\)</span>과 <span class="arithmatex">\(E_c=E_{cm}\)</span>을 28일 기준값으로 사용한다. <span class="arithmatex">\(h_0\)</span>는 mm 단위, 시간 변수 <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(\tau\)</span>, <span class="arithmatex">\(t_s\)</span>는 day 단위로 평가한다. 크리프 컴플라이언스 분모에는 다음 초기탄성계수를 사용한다.</p>
+<div class="arithmatex">\[
+E_{ci,28}=1.05E_c
+\]</div>
+<p>재령계수는 다음과 같다.</p>
+<div class="arithmatex">\[
+\beta_{cc}(t)=\exp\left[s\left(1-\sqrt{28/t}\right)\right] \quad (t&gt;0)
+\]</div>
+<div class="arithmatex">\[
+a_c(t)=\beta_{cc}(t)
+\]</div>
+<div class="arithmatex">\[
+a_t(t)=
+\begin{cases}
+\beta_{cc}(t) &amp; (t&lt;28) \\
+\beta_{cc}(t)^{2/3} &amp; (t\ge 28)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+a_E(t)=\beta_{cc}(t)^{0.3}
+\]</div>
+<p>시멘트 class 계수 <span class="arithmatex">\(s\)</span>는 <code>S</code>에서 0.38, <code>N</code>에서 0.25, <code>R</code>에서 0.20이다.</p>
+<p>크리프는 공통 KDS/EC2 분리형을 사용하며, EC2의 습도 및 크기 계수는 강도 구간에 따라 달라진다.</p>
+<p><span class="arithmatex">\(f_{cm}\le 35\)</span>이면 다음 식을 사용한다.</p>
+<div class="arithmatex">\[
+\phi_{RH}=1+\dfrac{1-RH/100}{0.1h_0^{1/3}}
+\]</div>
+<div class="arithmatex">\[
+\beta_H=\min\left(1.5\left[1+(0.012RH)^{18}\right]h_0+250,\;1500\right)
+\]</div>
+<p><span class="arithmatex">\(f_{cm}&gt;35\)</span>이면 다음 식을 사용한다.</p>
+<div class="arithmatex">\[
+\alpha_1=\left(35/f_{cm}\right)^{0.7}
+\]</div>
+<div class="arithmatex">\[
+\alpha_2=\left(35/f_{cm}\right)^{0.2}
+\]</div>
+<div class="arithmatex">\[
+\alpha_3=\left(35/f_{cm}\right)^{0.5}
+\]</div>
+<div class="arithmatex">\[
+\phi_{RH}=\left(1+\dfrac{(1-RH/100)\alpha_1}{0.1h_0^{1/3}}\right)\alpha_2
+\]</div>
+<div class="arithmatex">\[
+\beta_H=\min\left(1.5\left[1+(0.012RH)^{18}\right]h_0+250\alpha_3,\;1500\alpha_3\right)
+\]</div>
+<p>아래 <span class="arithmatex">\(\varepsilon_{cd}\)</span>와 <span class="arithmatex">\(\varepsilon_{ca}\)</span>는 EC2 기준식에서 계산한 양의 수축 크기이다. Hyfeast에 저장되는 수축 변형률은 수축을 음수로 둔다.</p>
+<div class="arithmatex">\[
+\varepsilon^{sh}(t)=-\left(\varepsilon_{cd}(t,t_s)+\varepsilon_{ca}(t)\right)
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cd}(t,t_s)=\beta_{ds}(t,t_s)\varepsilon_{cd,\infty}
+\]</div>
+<div class="arithmatex">\[
+\beta_{ds}(t,t_s)=
+\begin{cases}
+0 &amp; (t&lt;t_s) \\
+\dfrac{t-t_s}{(t-t_s)+0.04h_0^{3/2}} &amp; (t\ge t_s)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cd,\infty}=0.85k_h\left[(220+110\alpha_{ds1})
+\exp\left(-\alpha_{ds2}\dfrac{f_{cm}}{10}\right)\right]10^{-6}\beta_{RH}
+\]</div>
+<div class="arithmatex">\[
+\beta_{RH}=1.55\left[1-\left(RH/100\right)^3\right]
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{ca}(t)=\beta_{as}(t)\varepsilon_{ca,\infty}
+\]</div>
+<div class="arithmatex">\[
+\beta_{as}(t)=
+\begin{cases}
+0 &amp; (t\le 0) \\
+1-\exp(-0.2\sqrt{t}) &amp; (t&gt;0)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{ca,\infty}=2.5(f_{ck}-10)10^{-6}
+\]</div>
+<p>건조수축 시멘트 계수는 <code>S</code>에서 <span class="arithmatex">\(\alpha_{ds1}=3\)</span>, <span class="arithmatex">\(\alpha_{ds2}=0.13\)</span>, <code>N</code>에서 <span class="arithmatex">\(\alpha_{ds1}=4\)</span>, <span class="arithmatex">\(\alpha_{ds2}=0.12\)</span>, <code>R</code>에서 <span class="arithmatex">\(\alpha_{ds1}=6\)</span>, <span class="arithmatex">\(\alpha_{ds2}=0.11\)</span>이다.</p>
+<p>크기계수 <span class="arithmatex">\(k_h\)</span>는 <span class="arithmatex">\(h_0=100\)</span>, 200, 300 mm에서 각각 1.00, 0.85, 0.75이고, <span class="arithmatex">\(h_0\ge500\)</span> mm에서는 0.70이다. 중간값은 선형보간한다.</p>
+<h5 id="aci-db">ACI 콘크리트 DB</h5>
+<p><strong>DB item 형식과 원천 단위.</strong> ACI envelope function은 <code>ACI318-2025-C&lt;fck&gt;</code>를 사용하며, 여기서 <code>&lt;fck&gt;</code>는 psi 단위의 명시 압축강도 <span class="arithmatex">\(f'_c\)</span>를 뜻한다. <code>ConcreteTime</code>은 <code>ACI209-1992-C&lt;fc&gt;</code>를 사용하고, 이때도 <span class="arithmatex">\(f'_c\)</span>는 psi 단위다. ACI 209의 길이 보정식은 inch 단위로 평가하고, 시간 변수는 day, 상세 입력의 <code>cementContent</code>는 <span class="arithmatex">\(\mathrm{lb/yd^3}\)</span> 단위로 평가한다.</p>
+<p><strong>역학 envelope 물성치 (<code>ACI318-2025-C&lt;fck&gt;</code>).</strong></p>
+<div class="arithmatex">\[
+f_{cm}=f'_c
+\]</div>
+<div class="arithmatex">\[
+E_c=57000\sqrt{f'_c}\;[\mathrm{psi}],\quad w_c\approx145\,\mathrm{lb/ft^3}
+\]</div>
+<div class="arithmatex">\[
+E_{ci}=E_c
+\]</div>
+<div class="arithmatex">\[
+f_t=7.5\sqrt{f'_c}\;[\mathrm{psi}]
+\]</div>
+<p><code>&lt;fck&gt;</code>는 psi 단위의 ACI 명시 압축강도 <span class="arithmatex">\(f'_c\)</span>다. ACI DB item은 <code>HognestadCEnv</code>, <code>MPPCEnv</code>, <code>MaekawaTEnv</code>에서 사용하며, <code>ParabolaCEnv</code>와 <code>EC2CEnv</code>에는 사용하지 않는다.</p>
+<p><strong>ConcreteTime 시간의존 물성치 (<code>ACI209-1992-C&lt;fc&gt;</code>).</strong></p>
+<p><code>ACI209-1992-C&lt;fc&gt;</code>에서 <span class="arithmatex">\(f'_c\)</span>는 psi 단위, 상세 입력의 <code>cementContent</code>는 <span class="arithmatex">\(\mathrm{lb/yd^3}\)</span> 단위, 시간 변수 <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(\tau\)</span>, <span class="arithmatex">\(t_s\)</span>, <code>moistCuringDuration</code>은 day 단위로 평가한다. <code>V/S</code>와 <code>slump</code>는 ACI 209 길이 보정식의 기준 단위인 inch로 입력하며, parser는 이 값을 global 길이 단위에서 변환하지 않는다. 28일 탄성계수 <span class="arithmatex">\(E_c(28)\)</span>은 위의 ACI 역학 물성치 <span class="arithmatex">\(E_c\)</span>와 같다. ACI 209 보정식의 <code>V/S</code>는 inch 단위 volume-to-surface ratio이며, Hyfeast는 입력된 값을 그대로 ACI 보정식의 <code>V/S</code>로 사용한다. 구현된 재령계수는 28일 값을 기준으로 정규화한다.</p>
+<div class="arithmatex">\[
+g(t)=\dfrac{t}{a+bt}
+\]</div>
+<div class="arithmatex">\[
+a_c(t)=\dfrac{g(t)}{g(28)}
+\]</div>
+<div class="arithmatex">\[
+a_t(t)=\sqrt{a_c(t)}
+\]</div>
+<div class="arithmatex">\[
+a_E(t)=\sqrt{a_c(t)}
+\]</div>
+<p>ACI 209 계수는 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>curingType</th>
+<th>cementType</th>
+<th style="text-align: right;"><span class="arithmatex">\(a\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(b\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(c\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(d\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(f\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Moist</code></td>
+<td><code>TypeI</code></td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">1.25</td>
+<td style="text-align: right;">0.118</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr>
+<td><code>Moist</code></td>
+<td><code>TypeIII</code></td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">1.25</td>
+<td style="text-align: right;">0.118</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr>
+<td><code>Steam</code></td>
+<td><code>TypeI</code></td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">1.13</td>
+<td style="text-align: right;">0.094</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr>
+<td><code>Steam</code></td>
+<td><code>TypeIII</code></td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">1.13</td>
+<td style="text-align: right;">0.094</td>
+<td style="text-align: right;">55</td>
+</tr>
+</tbody>
+</table>
+<p>표준에서 제시하는 무차원 ACI 209 크리프 계수는 재하재령의 탄성계수로 나누어 크리프 컴플라이언스로 변환한다.</p>
+<div class="arithmatex">\[
+C(t,\tau)=c_r(\Delta t)c_l(\tau)
+\]</div>
+<div class="arithmatex">\[
+\Delta t=\max(t-\tau,0)
+\]</div>
+<div class="arithmatex">\[
+c_r(\Delta t)=
+\begin{cases}
+0 &amp; (\Delta t=0) \\
+\dfrac{\Delta t^{0.6}}{10+\Delta t^{0.6}} &amp; (\Delta t&gt;0)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+E_c(\tau)=a_E(\tau)E_c(28)
+\]</div>
+<div class="arithmatex">\[
+c_l(\tau)=\dfrac{2.35c\tau^{-d}\gamma_{RH,c}\gamma_{VS,c}\gamma_{add,c}}{E_c(\tau)}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{RH,c}=1.27-0.0067RH
+\]</div>
+<div class="arithmatex">\[
+\gamma_{VS,c}=\dfrac{2}{3}\left[1+1.13\exp\left(-0.54V/S\right)\right]
+\]</div>
+<p>ACI 간략 입력에서는 <span class="arithmatex">\(\gamma_{add,c}=\)</span> <code>creepUltimateScale</code>이다. ACI 상세 입력에서는 다음과 같다.</p>
+<div class="arithmatex">\[
+\gamma_{add,c}=\gamma_{sl,c}\gamma_{\psi,c}\gamma_{\alpha,c}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{sl,c}=0.82+0.067s_l
+\]</div>
+<div class="arithmatex">\[
+\gamma_{\psi,c}=0.88+0.0024\psi
+\]</div>
+<div class="arithmatex">\[
+\gamma_{\alpha,c}=\max(1.0,\;0.46+0.09\alpha)
+\]</div>
+<p>여기서 <span class="arithmatex">\(V/S\)</span>와 <span class="arithmatex">\(s_l\)</span>는 inch 단위이고, <span class="arithmatex">\(\psi\)</span>는 잔골재율(percent), <span class="arithmatex">\(\alpha\)</span>는 공기량(percent)이다.</p>
+<p>ACI 식의 <span class="arithmatex">\(\varepsilon_{sh,u}\)</span>는 양의 ultimate 수축 크기이다. Hyfeast에 저장되는 수축 변형률은 수축을 음수로 두므로 식 앞에 minus를 붙인다.</p>
+<div class="arithmatex">\[
+\varepsilon^{sh}(t)=
+\begin{cases}
+0 &amp; (t&lt;t_s) \\
+-\dfrac{t-t_s}{f+(t-t_s)}\varepsilon_{sh,u} &amp; (t\ge t_s)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{sh,u}=780\times10^{-6}\gamma_{RH,s}\gamma_{VS,s}\gamma_{add,s}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{RH,s}=
+\begin{cases}
+1.4-0.01RH &amp; (RH\le 80) \\
+3.0-0.03RH &amp; (RH&gt;80)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{VS,s}=\max\left(0.2,\;1.2\exp(-0.12V/S)\right)
+\]</div>
+<p>ACI 간략 입력에서는 <span class="arithmatex">\(\gamma_{add,s}=\)</span> <code>shrinkageUltimateScale</code>이다. ACI 상세 입력에서는 다음과 같다.</p>
+<div class="arithmatex">\[
+\gamma_{add,s}=\gamma_{mc}\gamma_{sl,s}\gamma_{\psi,s}\gamma_{cc,s}\gamma_{\alpha,s}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{sl,s}=0.89+0.041s_l
+\]</div>
+<div class="arithmatex">\[
+\gamma_{\psi,s}=
+\begin{cases}
+0.30+0.014\psi &amp; (\psi\le 50) \\
+0.90+0.002\psi &amp; (\psi&gt;50)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\gamma_{cc,s}=0.75+0.00036c_c
+\]</div>
+<div class="arithmatex">\[
+\gamma_{\alpha,s}=0.95+0.008\alpha
+\]</div>
+<p>여기서 <span class="arithmatex">\(c_c\)</span>는 <span class="arithmatex">\(\mathrm{lb/yd^3}\)</span> 단위의 시멘트량이다. <code>Steam</code> 양생이면 <span class="arithmatex">\(\gamma_{mc}=1.0\)</span>이다. <code>Moist</code> 양생이면 <span class="arithmatex">\(\gamma_{mc}\)</span>는 <code>moistCuringDuration</code> 1, 3, 7, 14, 28, 90 day에서 각각 1.20, 1.10, 1.00, 0.93, 0.86, 0.75이고, 중간값은 선형보간한다.</p>
+<h2 id="81-function">8.1 *Function</h2>
+<p>Define function</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=type, UnitSystem=unitSystem, Name=name
+  direct numeric dataline...
+
+*Function, Type=type, Name=name
+  DB item dataline...
+</code></pre></div>
+<h5 id="keyword-line">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>TYPE=type:</strong> type of function<ul>
+<li><strong>MultiLinear:</strong> Multi-linear function</li>
+<li><strong>DataCurve:</strong> 로그 축을 선택할 수 있는 단일 X-Y 데이터 곡선</li>
+<li><strong>TimeSignal:</strong> Time signal. Multi-linear function with fixed step size. File source line과 <code>tools/db/timeSignal</code> DB source line을 모두 지원</li>
+<li><strong>ResponseSpectrum:</strong> <code>TimeSignal</code>, <code>KDS17</code>, <code>KDS41</code> 소스에서 생성하는 응답스펙트럼 함수</li>
+<li><strong>String:</strong> function by mathematical expression</li>
+<li><strong>ParabolaCEnv:</strong> section-analysis parabola concrete compressive envelope</li>
+<li><strong>HognestadCEnv:</strong> Hognestad concrete compressive envelope</li>
+<li><strong>EC2CEnv:</strong> EC2-family concrete compressive envelope</li>
+<li><strong>MPPCEnv:</strong> Mander-Priestley-Park concrete compressive envelope</li>
+<li><strong>MPPCIE:</strong> Mander-Priestley-Park concrete compressive inelastic strain</li>
+<li><strong>MaekawaTEnv:</strong> Maekawa concrete tensile envelope</li>
+<li><strong>ConcreteTime:</strong> 재령, 크리프, 수축을 묶어 정의하는 콘크리트 시간의존 함수</li>
+</ul>
+</li>
+<li><strong>UnitSystem=unitSystem:</strong> Function을 직접 수치 dataline으로 정의할 때 사용하는 local UnitSystem. force-length-time-temperature의 4필드 형식으로 지정한다. 이 값은 function의 local metadata로 보존되며, 현재 <code>*Environment, Type=UnitSystem</code>이 정의되어 있지 않아도 입력 시점 에러가 되지 않는다. global UnitSystem이 있으면 필요할 때 local-to-global 관계로 해석한다. 생략하면 global UnitSystem과 동일한 것으로 간주한다. <code>Type=MPPCIE</code>, <code>Type=ConcreteTime</code>, <code>Type=ResponseSpectrum</code>, concrete envelope DB item dataline에서는 <code>UnitSystem</code>을 지정할 수 없다. <code>Type=TimeSignal</code>에서는 file source line을 이 단위계로 해석하고, DB source line은 record UnitSystem으로 읽은 뒤 function UnitSystem으로 변환한다.</li>
+<li><strong>Name=name:</strong> function name</li>
+</ul>
+</div>
+<h3 id="811-function-typemultilinear">8.1.1 *Function, Type=MultiLinear</h3>
+<p>Multilinear function</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=MultiLinear, UnitSystem=unitSystem, Name=name
+ x, y1, y2, ..., yn
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>x, y1, y2, ..., yn:</strong> (x,y1,y2,..., yn) 형태로 입력.</li>
+</ul>
+</div>
+<p>MultiLinear 함수는 y1(x), y2(x), ... 함수를  (x, y1(x), y2(x), ..., yn(x)) 형태로 정의한다.</p>
+<h5 id="example">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=MultiLinear, Name=func1
+ 0., 45.3
+ 2.802903E-3, 86.4
+ 7.26864E-5, 122.5
+
+*Function, Type=MultiLinear, UnitSystem=kN-mm-s-K, Name=func2
+ 0., 45.3, 12.3
+ 2.802903E-3, 86.4, 5.1
+ 7.26864E-5, 122.5, 3.1
+</code></pre></div>
+<h3 id="812-function-typedatacurve">8.1.2 *Function, Type=DataCurve</h3>
+<p>로그 축을 선택할 수 있는 단일 X-Y 데이터 곡선</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=DataCurve, UnitSystem=unitSystem, Name=name
+ Cubic, inputScale, outputScale, Constant
+ x, y
+ ...
+</code></pre></div>
+<h5 id="first-dataline">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Cubic:</strong> 형상 보존 구간별 3차 Hermite 보간을 사용한다. 현재 지원하는 유일한 보간 방법이다.</li>
+<li><strong>inputScale:</strong> <code>Linear</code>는 <span class="arithmatex">\(x\)</span>에서 직접 보간하고, <code>Log</code>는 <span class="arithmatex">\(u=\ln x\)</span>에서 보간한다.</li>
+<li><strong>outputScale:</strong> <code>Linear</code>는 <span class="arithmatex">\(y\)</span>에서 직접 보간하고, <code>Log</code>는 <span class="arithmatex">\(v=\ln y\)</span>에서 보간한다.</li>
+<li><strong>Constant:</strong> 데이터 범위를 벗어나면 가까운 끝값과 0인 미분값을 사용한다. 현재 지원하는 유일한 외삽 방법이다. 끝점 자체에서는 3차 곡선의 단측 미분값을 사용한다.</li>
+</ul>
+</div>
+<h5 id="second-dataline-and-subsequent-datalines">Second dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>x, y:</strong> 각 줄에 단일 X-Y 점을 입력한다. 점이 두 개 이상이어야 하고 모든 값이 유한해야 하며, X 값은 엄격하게 증가해야 한다. <code>Log</code> 입력 축은 <span class="arithmatex">\(x&gt;0\)</span>, <code>Log</code> 출력 축은 <span class="arithmatex">\(y&gt;0\)</span>이어야 한다.</li>
+</ul>
+</div>
+<p>선택한 축을 변환한 뒤 보간 곡선을 구성한다. 함수가 반환하는 미분값은 로그 축의 연쇄법칙을 포함하여 항상 물리 입력 <span class="arithmatex">\(x\)</span>에 대한 미분이다. 내부 Y scaling은 유한하지 않은 계수를 거부하고, <code>Log</code> 출력 곡선은 0 이하의 계수도 거부하여 기존 곡선을 유지한다. <code>DataCurve</code>의 출력 series는 하나이다. 하나의 X 열로 여러 Y series를 정의하려면 <code>MultiLinear</code>를 사용한다.</p>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=DataCurve, Name=relativeHCF
+ Cubic, Log, Log, Constant
+ 0.01, 1.0
+ 0.1, 0.3
+ 1.0, 0.002
+</code></pre></div>
+<h3 id="813-function-typetimesignal">8.1.3 *Function, Type=TimeSignal</h3>
+<p>Time signal. Multi-linear function with fixed step size</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=TimeSignal, UnitSystem=unitSystem, Name=name
+ dtime|auto, ntime|auto
+ file, nseries, scaleFactor, skipRows[, quantity]
+ DB, recordName[, scaleFactor]
+ ...
+</code></pre></div>
+<h5 id="first-dataline_1">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>dtime:</strong> time step 또는 <code>auto</code> (required). <code>auto</code>는 DB source line이 하나 이상 있을 때만 사용할 수 있으며, DB record의 dtime으로 결정된다. 여러 DB record를 나열할 경우 모든 DB record의 dtime은 기준 UnitSystem으로 환산했을 때 같아야 한다.</li>
+<li><strong>ntime:</strong> number of time data 또는 <code>auto</code> (required). <code>auto</code>이면 읽은 시계열 중 가장 긴 길이로 설정된다. 읽힌 데이터의 row 수가 ntime보다 많은 경우 무시되고, 작은 경우는 0으로 채워진다.</li>
+</ul>
+</div>
+<h5 id="second-dataline-and-subsequent-datalines_1">Second dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>file:</strong> 읽을 파일(required). 콤마, 공백 등으로 구분된 텍스트파일 또는 npy 파일</li>
+<li><strong>nseries:</strong> 파일 내의 시계열 개수(optional, default 1). npy 파일인 경우 column 개수가 동일해야 함.</li>
+<li><strong>scale:</strong> scale Factor(optional, default 1)</li>
+<li><strong>skipRows:</strong> 파일 앞부분 무시하는 줄 수(optional, default 0). npy 파일에서는 무시됨.</li>
+<li><strong>quantity:</strong> file source line의 signal quantity class(optional). <code>acc</code>/<code>acceleration</code>, <code>vel</code>/<code>velocity</code>, <code>disp</code>/<code>displacement</code>, <code>other</code>/<code>others</code>/<code>dimensionless</code>를 사용할 수 있다. 생략하면 같은 TimeSignal 안의 DB record들이 공통 quantity를 가질 때 그 quantity를 사용하고, 그렇지 않으면 Signal Analysis에서 <code>acceleration</code>으로 취급한다.</li>
+<li><strong>DB:</strong> <code>tools/db/timeSignal</code> DB record를 참조하는 literal keyword</li>
+<li><strong>recordName:</strong> <code>tools/db/timeSignal</code> DB에 정의된 record 이름(required)</li>
+<li><strong>scaleFactor:</strong> DB 정규화 이후 해당 record의 Y-series에 추가로 곱하는 사용자 배율(optional, default 1)</li>
+</ul>
+</div>
+<p>시간이력을 나타내는 데 적합한 TimeSignal 함수는 고정 간격의 x 값을 갖는 multi linear 함수로 이해할 수 있다. 파일 source line의 데이터는 공백문자(콜론, 스페이스, 탭, 줄바꿈)로 구분되어 읽힌다. 각 파일에서 nseries개의 시계열 데이터를 구성한다. nseries 개의 데이터를 ntime 개만큼 읽어 들인다. 만약 파일에서 데이터 수가 부족한 경우 0으로 채우게 된다. 시각 0에서는 값이 0으로 가정되며, 데이터로 주어진 첫 번째 값은 시각 dt에서의 값이다. 최종값은 시각 ntime*dt에서의 값이다.</p>
+<p><img alt="" src="media/8.2-1.png" />
+<strong>Fig. 8.2-1.</strong> TimeSignal function</p>
+<p>DB source line은 <code>DB, recordName[, scaleFactor]</code> 형식으로 쓴다. DB metadata가 source file, quantity, local UnitSystem, dtime, ntime, nseries, sourceScaleFactor, skipRows를 정의한다. 여러 DB record를 하나의 TimeSignal에 나열하는 경우 quantity는 서로 달라도 되며, dtime은 기준 UnitSystem으로 환산했을 때 같아야 한다. DB record들의 UnitSystem은 서로 달라도 된다. 최종 series 순서는 source line 순서를 따른다. keyword line의 <code>UnitSystem</code>은 file source line을 해석하는 기준이고, DB source line의 변환 대상 function UnitSystem이기도 하다. DB source line은 record UnitSystem으로 읽은 뒤 각 record quantity에 따라 function UnitSystem으로 변환되어 저장된다. keyword <code>UnitSystem</code>을 생략한 pure DB TimeSignal은 첫 번째 DB record의 UnitSystem을 function metadata로 보존한다. file source line과 DB source line은 같은 TimeSignal 안에 함께 쓸 수 있다. 다음은 TimeSignal DB source lines의 UnitSystem 규칙이다.</p>
+<pre><code>- `DB, recordName[, scaleFactor]` source line은 global `*Environment, Type=UnitSystem`을 요구하지 않는다.
+- keyword line에 `UnitSystem=U`가 있으면 file source line은 `U`로 해석한다. DB source line은 record UnitSystem으로 읽은 뒤, record quantity에 따라 `U`로 변환되어 function에 저장된다.
+- keyword line에 `UnitSystem`이 없고 global UnitSystem이 있으면 file source line은 global UnitSystem으로 해석한다. DB source line은 record UnitSystem으로 읽은 뒤 global/function UnitSystem으로 변환되어 저장된다.
+- keyword line에 `UnitSystem`이 없고 source line이 모두 DB이면, function metadata는 첫 번째 DB record UnitSystem으로 저장되고 나머지 DB source line은 이 단위계로 변환된다.
+- keyword line에 `UnitSystem`이 없고 global UnitSystem도 없는 mixed file+DB 입력은 기준 UnitSystem이 없으므로 입력 오류로 처리한다.
+- keyword `UnitSystem`과 DB record UnitSystem이 서로 달라도 입력 오류가 아니다. 여러 DB record의 UnitSystem과 quantity가 서로 달라도 되지만 dtime은 변환 후 같아야 한다.
+- source line들의 quantity가 서로 달라도 TimeSignal 정의는 유효하다. Signal Analysis와 preview 기능은 단일 물리량이 필요한 작업을 제한할 수 있다.
+</code></pre>
+<p>예를 들어 다음 입력은 global UnitSystem이 없어도 유효하다. function metadata는 <code>elcentro_chopra</code> record의 UnitSystem으로 저장된다.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=TimeSignal, Name=EQ
+ auto, auto
+ DB, elcentro_chopra
+</code></pre></div>
+<p>다음 입력에서는 <code>my_acc.txt</code>가 <code>kN-mm-s-K</code> 기준 file source로 해석되고, <code>elcentro_chopra</code> DB 값은 record UnitSystem에서 <code>kN-mm-s-K</code>로 변환되어 같은 TimeSignal에 저장된다.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=TimeSignal, UnitSystem=kN-mm-s-K, Name=EQ
+ auto, auto
+ my_acc.txt
+ DB, elcentro_chopra
+</code></pre></div>
+<p>TimeSignal DB record는 내장 factory catalog인 <code>tools/db/timeSignal/catalog.yml</code>과, 파일이 있으면 사용자 catalog인 <code>tools/db/timeSignal/user/catalog.yml</code>에서 읽는다. hfStudio의 TimeSignal DB 다이얼로그에서는 <code>Add Record...</code>로 텍스트 또는 <code>.npy</code> 시간이력 파일을 사용자 DB record로 등록할 수 있으며, 원본 복사본은 <code>tools/db/timeSignal/user/files/</code> 아래에 저장된다. 프로그램 업데이트나 폴더 교체 전에는 <code>tools/db/timeSignal/user/</code> 전체를 백업하거나 새 설치 폴더로 복사해야 한다. 별도로 <code>Type=ResponseSpectrum</code>의 <code>KDS17</code>, <code>KDS41</code>은 내장 설계스펙트럼 DB 성격의 source이다. 외부 DB 파일을 읽지 않고 코드에 들어 있는 기준식으로 값을 계산한다.</p>
+<p>한편, 시간데이터 파일에서 # 이후 내용은 무시한다(comment)</p>
+<h5 id="example_2">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=TimeSignal, UnitSystem=N-m-s-K, Name=EqAcc
+ 0.02, 1024              # dt, ntime
+ elcenX.dat, 1, 3.01, 0, acc      # file, nseries, scaleFactor, skipRows, quantity
+ elcenYZ.dat, 2, 3.01, 4, acc      # dataFile, nseries, scaleFactor, skipRows, quantity
+
+*Function, Type=TimeSignal, Name=LomaPrietaMotion90
+ auto, auto
+ DB, RSN765_LOMAP_G01090.AT2
+ DB, RSN765_LOMAP_G01090.VT2
+ DB, RSN765_LOMAP_G01090.DT2
+
+*Function, Type=TimeSignal, Name=ScaledElCentro
+ auto, auto
+ DB, elcentro_chopra, 0.5
+</code></pre></div>
+<h3 id="814-function-typeresponsespectrum">8.1.4 *Function, Type=ResponseSpectrum</h3>
+<p>단일 series의 주기 함수로 생성되는 응답스펙트럼 함수이다.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=ResponseSpectrum, Name=name
+ TimeSignal, timeSignalName, seriesIndex, dampingRatio
+ Linear|Log, Tmin, Tmax, nPeriod[, ToDirectForm]
+
+*Function, Type=ResponseSpectrum, Name=name
+ KDS17|KDS41, siteClass, effectiveGroundAcceleration[, dampingRatio]
+[ Linear|Log, Tmin, Tmax, nPeriod]
+</code></pre></div>
+<h5 id="first-dataline-for-timesignal">First dataline for TimeSignal</h5>
+<div class="admonition note">
+<ul>
+<li><strong>TimeSignal:</strong> 기존 <code>*Function, Type=TimeSignal</code>에서 응답스펙트럼을 생성한다.</li>
+<li><strong>timeSignalName:</strong> 기존 <code>TimeSignal</code> 함수 이름이다. 선택한 signal은 acceleration으로 해석하며, 생성값은 <span class="arithmatex">\(S_a/g\)</span>로 저장한다.</li>
+<li><strong>seriesIndex:</strong> TimeSignal series 인덱스이다. 1-based이다.</li>
+<li><strong>dampingRatio:</strong> <code>TimeSignal</code>에서는 단자유도 응답 계산에 사용하는 필수 감쇠비이다.</li>
+</ul>
+</div>
+<h5 id="second-dataline-for-timesignal">Second dataline for TimeSignal</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Linear|Log, Tmin, Tmax, nPeriod:</strong> <code>Linear|Log</code>는 생성할 주기 grid 간격이고, <code>Tmin</code>, <code>Tmax</code>는 생성 주기 범위이다. 단위는 second이다. <code>nPeriod</code>는 생성할 주기 점 개수이다.</li>
+<li><strong>ToDirectForm:</strong> 생성된 곡선을 <code>Type=MultiLinear</code> 직접형으로 출력하는 옵션이다. 해석 결과는 바꾸지 않는다.</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-kds17kds41">First dataline for KDS17|KDS41</h5>
+<div class="admonition note">
+<ul>
+<li><strong>KDS17:</strong> KDS 17 10 00의 설계지반운동 표준설계응답스펙트럼을 생성한다. <code>S1</code>은 암반지반 전용 식을 사용하고, <code>S2</code>~<code>S5</code>는 토사지반 증폭계수 식을 사용한다.</li>
+<li><strong>KDS41:</strong> KDS 41 17 00의 건축물 설계응답가속도스펙트럼을 생성한다. <code>S1</code>~<code>S5</code> 모두 건축물 기준의 <span class="arithmatex">\(F_a\)</span>, <span class="arithmatex">\(F_v\)</span> 표와 <span class="arithmatex">\(2/3\)</span> 계수를 사용한다.</li>
+<li><strong>siteClass:</strong> KDS 지반종류이다. <code>S1</code>, <code>S2</code>, <code>S3</code>, <code>S4</code>, <code>S5</code> 중 하나이다. <code>KDS17</code>에서 <code>S1</code>은 암반지반이고 <code>S2</code>~<code>S5</code>는 토사지반이다.</li>
+<li><strong>effectiveGroundAcceleration:</strong> g 단위 계수로 입력하는 <span class="arithmatex">\(S\)</span>이다. <code>KDS17</code>에서는 선택한 설계지반운동 수준의 유효수평지반가속도이다. 행정구역 방식으로 정할 때는 지진구역계수 <span class="arithmatex">\(Z\)</span>와 해당 평균재현주기의 위험도계수 <span class="arithmatex">\(I\)</span>를 사용하여 <span class="arithmatex">\(S=Z\times I\)</span>로 산정한다. <code>KDS41</code>에서는 재현주기 2400년 최대고려지진의 유효지반가속도이다.</li>
+<li><strong>dampingRatio:</strong> <code>KDS17</code>의 <code>siteClass=S1</code>에서만 선택적으로 쓸 수 있다. 생략하면 <code>0.05</code>이고, 지정할 때는 <code>0.005</code> 이상이어야 한다. 입력값은 5%를 <code>0.05</code>로 쓰는 비율 값이다. <code>KDS41</code>과 <code>KDS17</code>의 <code>S2</code>~<code>S5</code>는 기본 5% spectrum만 사용하며 이 token을 허용하지 않는다.</li>
+</ul>
+</div>
+<h5 id="second-dataline-for-kds17kds41-optional">Second dataline for KDS17|KDS41 (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Linear|Log, Tmin, Tmax, nPeriod:</strong> <code>Linear|Log</code>는 생성할 주기 grid 간격이고, <code>Tmin</code>, <code>Tmax</code>는 생성 주기 범위이다. 단위는 second이다. <code>nPeriod</code>는 생성할 주기 점 개수이다. 이 줄이 있으면 생성된 곡선을 <code>Type=MultiLinear</code> 직접형으로 출력한다.</li>
+</ul>
+</div>
+<p><code>TimeSignal</code> source는 응답스펙트럼을 해당 주기 grid에서 생성하므로 period grid dataline이 필요하다. KDS source에서 period grid dataline은 선택 사항이다. 생략하면 KDS 닫힌형 식을 유지하고 해석 중에도 그 식으로 값을 계산한다. period grid dataline을 쓰면 KDS 식을 해당 grid에서 sampling하여 직접 <code>MultiLinear</code> 데이터로 저장하며, 생성 범위를 벗어난 값은 가까운 끝값을 사용한다. 수직/수평 비처럼 방향별 배율이 필요하면 <code>*Spectrum</code>의 <code>scaleFactor</code>를 사용한다. 단, <code>KDS17</code>의 토사지반 수직 spectrum 비율은 고정 내장값으로 보지 않고 사용자가 기준과 공학적 판단에 따라 별도 spectrum 또는 배율로 지정해야 한다. 이 함수의 <code>dampingRatio</code>는 <code>*Spectrum</code>의 <code>dampingRatio</code>와 별개이다. <code>*Spectrum</code>의 감쇠비는 CQC 모드 조합에 사용한다. <code>Type=ResponseSpectrum</code>에는 keyword line <code>UnitSystem=...</code>을 지정할 수 없다.</p>
+<p><code>KDS17</code>의 <code>S1</code>은 암반지반 표준설계응답스펙트럼으로 직접 정의된다.</p>
+<div class="arithmatex">\[
+T_0=0.06,\quad T_s=0.3,\quad T_L=3.0
+\]</div>
+<div class="arithmatex">\[
+\frac{S_a}{g}=
+\begin{cases}
+(1+30T)S, &amp; 0 \le T \le T_0 \\
+2.8S, &amp; T_0 &lt; T \le T_s \\
+\frac{0.84S}{T}, &amp; T_s &lt; T \le T_L \\
+\frac{2.52S}{T^2}, &amp; T &gt; T_L
+\end{cases}
+\]</div>
+<p><code>KDS17</code>의 <code>S1</code>에서 선택 사항인 <code>dampingRatio</code>를 지정하면 위 암반지반 spectrum에 감쇠보정계수를 곱한다. 여기서 <span class="arithmatex">\(\xi\)</span>는 입력값과 같은 비율 값이다.</p>
+<div class="arithmatex">\[
+C_\xi^\ast=\left(\frac{6.42}{1.42+100\xi}\right)^{0.48},\quad
+C_\xi(T)=
+\begin{cases}
+1+(C_\xi^\ast-1)\frac{T}{T_0}, &amp; 0 &lt; T &lt; T_0 \\
+C_\xi^\ast, &amp; T \ge T_0
+\end{cases}
+\]</div>
+<p><code>KDS17</code>의 <code>S2</code>~<code>S5</code> 토사지반에서는 5% 감쇠비 스펙트럼으로 다음 식을 사용한다. 이 식은 <span class="arithmatex">\(T=0\)</span>에서 <span class="arithmatex">\(F_aS\)</span>로 시작하여 <span class="arithmatex">\(T_0\)</span>에서 <span class="arithmatex">\(2.5F_aS\)</span>에 도달한다. 현재 이 함수는 <code>KDS17</code> 토사지반에 대해 <span class="arithmatex">\(\xi=0.05\)</span>만 지원한다.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+T_s &amp;= \frac{F_v}{2.5F_a}, &amp;
+T_0 &amp;= 0.2T_s, &amp;
+T_L &amp;= 3.0
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\frac{S_a}{g}=
+\begin{cases}
+F_aS\left(1+1.5\frac{T}{T_0}\right), &amp; 0 \le T \le T_0 \\
+2.5F_aS, &amp; T_0 &lt; T \le T_s \\
+\frac{F_vS}{T}, &amp; T_s &lt; T \le T_L \\
+\frac{F_vST_L}{T^2}, &amp; T &gt; T_L
+\end{cases}
+\]</div>
+<p><code>KDS41</code>에서는 5% 감쇠비 설계응답가속도스펙트럼으로 다음 식을 사용한다. 여기서 <span class="arithmatex">\(S\)</span>는 재현주기 2400년 최대고려지진의 유효지반가속도이고, <span class="arithmatex">\(S_{DS}\)</span>와 <span class="arithmatex">\(S_{D1}\)</span>을 만들 때 <span class="arithmatex">\(2/3\)</span> 설계수준 계수를 적용한다. 현재 이 함수는 <code>KDS41</code>에 대해 <span class="arithmatex">\(\xi=0.05\)</span>만 지원한다.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+S_{DS} &amp;= \frac{2}{3}(2.5F_aS), &amp;
+S_{D1} &amp;= \frac{2}{3}F_vS, &amp;
+T_0 &amp;= 0.2\frac{S_{D1}}{S_{DS}}, &amp;
+T_s &amp;= \frac{S_{D1}}{S_{DS}}, &amp;
+T_L &amp;= 5.0
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\frac{S_a}{g}=
+\begin{cases}
+S_{DS}\left(0.6\frac{T}{T_0}+0.4\right), &amp; 0 \le T \le T_0 \\
+S_{DS}, &amp; T_0 &lt; T \le T_s \\
+\frac{S_{D1}}{T}, &amp; T_s &lt; T \le T_L \\
+\frac{S_{D1}T_L}{T^2}, &amp; T &gt; T_L
+\end{cases}
+\]</div>
+<p><code>KDS17</code> 토사지반과 <code>KDS41</code>에서 <span class="arithmatex">\(F_a\)</span>, <span class="arithmatex">\(F_v\)</span>는 아래 지반종류 표에서 읽는다. <span class="arithmatex">\(S=0.1\)</span>, <span class="arithmatex">\(0.2\)</span>, <span class="arithmatex">\(0.3\)</span> 사이 값은 선형보간하고, 표 범위를 벗어나면 가장 가까운 표 값을 사용한다. <code>KDS17</code> 토사지반에서는 <code>S2</code>~<code>S5</code> 행만 사용하고, <code>KDS41</code>에서는 <code>S1</code>~<code>S5</code> 행을 사용한다.</p>
+<table>
+<thead>
+<tr>
+<th>지반종류</th>
+<th><span class="arithmatex">\(S=0.1,0.2,0.3\)</span>에서 <span class="arithmatex">\(F_a\)</span></th>
+<th><span class="arithmatex">\(S=0.1,0.2,0.3\)</span>에서 <span class="arithmatex">\(F_v\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>S1</code></td>
+<td>1.12, 1.12, 1.12</td>
+<td>0.84, 0.84, 0.84</td>
+</tr>
+<tr>
+<td><code>S2</code></td>
+<td>1.40, 1.40, 1.30</td>
+<td>1.50, 1.40, 1.30</td>
+</tr>
+<tr>
+<td><code>S3</code></td>
+<td>1.70, 1.50, 1.30</td>
+<td>1.70, 1.60, 1.50</td>
+</tr>
+<tr>
+<td><code>S4</code></td>
+<td>1.60, 1.40, 1.20</td>
+<td>2.20, 2.00, 1.80</td>
+</tr>
+<tr>
+<td><code>S5</code></td>
+<td>1.80, 1.30, 1.30</td>
+<td>3.00, 2.70, 2.40</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="media/8.2-2-kds-response-spectrum.png" />
+<strong>Fig. 8.2-1a.</strong> KDS17 rock-site, KDS17 soil-site, and KDS41 response spectrum schematics.</p>
+<h5 id="example_3">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=TimeSignal, Name=ELCEN
+ auto, auto
+ DB, elcentro_chopra
+
+*Function, Type=ResponseSpectrum, Name=ELCEN_RS
+ TimeSignal, ELCEN, 1, 0.05
+ Linear, 0.02, 5.0, 100, ToDirectForm
+
+*Function, Type=ResponseSpectrum, Name=KDS17_S3
+ KDS17, S3, 0.154
+
+*Function, Type=ResponseSpectrum, Name=KDS17_S1_D02
+ KDS17, S1, 0.154, 0.02
+
+*Function, Type=ResponseSpectrum, Name=KDS41_S1
+ KDS41, S1, 0.22
+
+*Function, Type=ResponseSpectrum, Name=KDS41_S1_DIRECT
+ KDS41, S1, 0.22
+ Linear, 0.02, 5.0, 100
+</code></pre></div>
+<h3 id="815-function-typestring">8.1.5 *Function, Type=String</h3>
+<p>Define function by mathematical expression</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=STRING, UnitSystem=unitSystem, Name=name
+  expression, min,max
+</code></pre></div>
+<h5 id="first-dataline_2">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>expression:</strong> Expression with x independent variable, such as "sin(x)+1". Note that white space is not allowed.</li>
+<li><strong>min,max:</strong> minimum and maximum range. Zero function value is assumed beyond the given range. If Range keyword is not given, no range check is performed</li>
+</ul>
+</div>
+<p>지원되는 수학 함수: sin(x), cos(x), tan(x), acos(x), atan(x), cosh(x), sinh(x), tanh(x), fabs(x), exp(x), log(x), log10(x), sqrt(x), step(x), sgn(x), pow(x,n).</p>
+<h5 id="example_4">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=String Name=Half-sine
+ sin(2*pi/1.2*x), 0., 0.6
+</code></pre></div>
+<h3 id="816-function-typeparabolacenv">8.1.6 *Function, Type=ParabolaCEnv</h3>
+<p>EC2와 KDS에서 정의하고 있는 단면 설계를 위한 응력-변형률 재하곡선(compressive envelope)을 정의한다.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=ParabolaCEnv, UnitSystem=unitSystem, Name=name
+  fck, n, eco, ecu[, alpha]
+
+*Function, Type=ParabolaCEnv, Name=name
+  KDS-2026-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, alpha][, ToDirectForm]
+</code></pre></div>
+<h5 id="first-dataline_3">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>fck:</strong> design compressive strength,  (required for direct numeric input)</li>
+<li><strong>n:</strong> shape factor (required for direct numeric input)</li>
+<li><strong>eco:</strong> peak strain (optional, 0.002)</li>
+<li><strong>ecu:</strong> ultimate strain (optional, always set to max(eco, ecu) )</li>
+<li><strong>alpha:</strong> <code>fck</code>에 곱하는 강도 저감계수(optional, default 1.0)</li>
+<li><strong>KDS-2026-C&lt;fck&gt; 또는 EC2-2004-C&lt;fck&gt;:</strong> <code>ParabolaCEnv</code>에서 허용하는 콘크리트 DB item name. keyword <code>UnitSystem</code> 없이 사용하며 global UnitSystem이 필요하다. 두 기준 모두 직접 수치 dataline의 <code>fck</code> 자리를 채우고, <code>n</code>, <code>eco</code>, <code>ecu</code>는 아래 기준식을 따른다. <code>alpha</code>는 dataline에서 읽으며 생략하면 1.0을 사용한다. 이 값들은 단면해석용 압축 관계 파라미터이며, 일반 압축 envelope의 물성치와 혼용하지 않는다.</li>
+<li><strong>ToDirectForm:</strong> DB item dataline의 마지막 token에 붙일 수 있는 출력 옵션(optional). 지정하면 저장/재출력 시 DB item 대신 현재 global UnitSystem으로 변환된 직접 수치 dataline을 출력한다. 그 단위계가 global UnitSystem과 같으면 keyword line에 local <code>UnitSystem</code>을 출력하지 않는다. 생략하면 DB item dataline을 그대로 보존한다.</li>
+</ul>
+</div>
+<p>The curve given as</p>
+<div class="arithmatex">\[
+f_c=
+\begin{cases}
+\alpha f_{ck}\left[1-\left(1-\dfrac{\epsilon_c}{\epsilon_{co}}\right)^n\right] &amp; (\epsilon_c\le\epsilon_{co}) \\
+\alpha f_{ck} &amp; (\epsilon_{co}&lt;\epsilon_c\le\epsilon_{cu})
+\end{cases}
+\]</div>
+<p>Hyfeast는 <span class="arithmatex">\(\epsilon_c &gt; \epsilon_{cu}\)</span>에서 0을 반환하며, 별도의 꼬리 구간을 덧붙이지 않는다.</p>
+<p><code>ParabolaCEnv</code>는 <code>Ec</code>나 <code>Eci</code>를 사용하지 않는다. 이 곡선은 단면 설계용 포물선-직사각형 관계이며, 최대응력은 <span class="arithmatex">\(\alpha f_{ck}\)</span>다.</p>
+<p>DB 입력에서는 item 강도를 <code>fck</code>로 사용하고 <code>alpha</code>로 설계 저감을 조절한다. DB item은 다음 단면 설계용 형상 파라미터를 제공한다. 아래 식에서 <code>fck</code>는 MPa 단위다.</p>
+<p>KDS-2026:</p>
+<div class="arithmatex">\[
+n=
+\begin{cases}
+2.0 &amp; (f_{ck} \le 40) \\
+1.2 + 1.5\left((100-f_{ck})/60\right)^4 &amp; (40 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{co}=
+\begin{cases}
+0.002 &amp; (f_{ck} \le 40) \\
+0.002 + 0.0001(f_{ck}-40)/10 &amp; (40 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cu}=
+\begin{cases}
+0.0033 &amp; (f_{ck} \le 40) \\
+0.0033 - 0.0001(f_{ck}-40)/10 &amp; (40 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<p>EC2-2004:</p>
+<div class="arithmatex">\[
+n=
+\begin{cases}
+2.0 &amp; (f_{ck} \le 50) \\
+1.4 + 23.4\left((90-f_{ck})/100\right)^4 &amp; (50 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{co}=
+\begin{cases}
+0.002 &amp; (f_{ck} \le 50) \\
+\left(2.0 + 0.085(f_{ck}-50)^{0.53}\right)/1000 &amp; (50 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_{cu}=
+\begin{cases}
+0.0035 &amp; (f_{ck} \le 50) \\
+\left(2.6 + 35\left((90-f_{ck})/100\right)^4\right)/1000 &amp; (50 &lt; f_{ck} \le 90)
+\end{cases}
+\]</div>
+<p>KDS 강도설계법 단면 검토에는 <span class="arithmatex">\(\alpha=0.85\)</span>를 사용한다. KDS 한계상태설계법에서는 <span class="arithmatex">\(\alpha=0.85\phi_c\)</span>를 사용하며, <span class="arithmatex">\(\phi_c=0.65\)</span>는 극한하중조합, <span class="arithmatex">\(\phi_c=1.0\)</span>은 극단상황하중조합, 사용하중조합, 피로하중조합에 해당한다. EC2에서는 <span class="arithmatex">\(\alpha=\alpha_{cc}/\gamma_C\)</span>를 사용한다. <span class="arithmatex">\(\alpha_{cc}\)</span>는 장기 영향 등을 고려하는 국가별 계수로 보통 0.8에서 1.0 사이이고, <span class="arithmatex">\(\gamma_C\)</span>는 persistent/transient 상황에서 1.5, accidental 상황에서 1.2다.</p>
+<p><img alt="" src="media/8.2-2.svg" />
+<strong>Fig. 8.2-2.</strong> ParabolaCEnv function</p>
+<h5 id="example_5">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=ParabolaCEnv, Name=ParabolaTest1
+  27, 1.8, 0.00203, 0.0033, 0.85     #  fck, n, eco, ecu, alpha
+
+*Function, Type=ParabolaCEnv, Name=KDSC30Section
+  KDS-2026-C30, 0.85
+</code></pre></div>
+<h3 id="817-function-typehognestadcenv">8.1.7 *Function, Type=HognestadCEnv</h3>
+<p>Hognestad의 콘크리트 재하곡선(compressive envelope)을 정의한다.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=HognestadCEnv, UnitSystem=unitSystem, Name=name
+  fco, Ec, ecu[, EciCurve]
+
+*Function, Type=HognestadCEnv, Name=name
+  KDS-2026-C&lt;fck&gt;|ACI318-2025-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, EciCurve][, ToDirectForm]
+</code></pre></div>
+<h5 id="first-dataline_4">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>fco:</strong> compressive strength (required for direct numeric input)</li>
+<li><strong>Ec:</strong> <code>0.4*fco</code>까지의 할선탄성계수(required for direct numeric input)</li>
+<li><strong>ecu:</strong> ultimate strain (required for direct numeric input; DB 입력에서는 ACI가 0.003, KDS/EC2가 기준 <code>ecu</code>를 사용)</li>
+<li><strong>EciCurve:</strong> optional curve-shape flag. 생략하면 원점부터 <code>0.4*fco</code>까지를 <code>Ec</code> 기울기의 직선으로 사용하고, 지정하면 원래 Hognestad 포물선을 원점부터 사용한다.</li>
+<li><strong>KDS-2026-C&lt;fck&gt;, ACI318-2025-C&lt;fck&gt;, 또는 EC2-2004-C&lt;fck&gt;:</strong> 콘크리트 DB item name. keyword <code>UnitSystem</code> 없이 사용하며 global UnitSystem이 필요하다. ACI item은 직접 수치 dataline의 <code>fco</code>와 <code>ecu</code>를 각각 <code>f'c</code>, <code>0.003</code>으로 채운다. KDS/EC2 item은 <code>fco</code>와 <code>ecu</code>를 각각 DB에서 도출한 <code>fcm</code>, 기준 <code>ecu</code>로 채운다. <code>Ec</code>는 모든 기준에서 DB에서 도출한 할선탄성계수를 사용한다.</li>
+<li><strong>ToDirectForm:</strong> DB item dataline의 마지막 token에 붙일 수 있는 출력 옵션(optional). 지정하면 저장/재출력 시 DB item 대신 현재 global UnitSystem으로 변환된 직접 수치 dataline을 출력한다. 그 단위계가 global UnitSystem과 같으면 keyword line에 local <code>UnitSystem</code>을 출력하지 않는다. 생략하면 DB item dataline을 그대로 보존한다.</li>
+</ul>
+</div>
+<p>Hognestad’s compressive envelope of concrete  given as</p>
+<div class="arithmatex">\[
+f_c=
+\begin{cases}
+f_{co}\left[2\dfrac{\epsilon_c}{\epsilon_{co}}-\left(\dfrac{\epsilon_c}{\epsilon_{co}}\right)^2\right] &amp; (\epsilon_c\le\epsilon_{co}) \\
+f_{co}-0.15 f_{co}\dfrac{\epsilon_c-\epsilon_{co}}{\epsilon_{20}-\epsilon_{co}} &amp; (\epsilon_{co}&lt;\epsilon_c\le\epsilon_{20}) \\
+0.85 f_{co} &amp; (\epsilon_{20}&lt;\epsilon_c\le\epsilon_{cu})
+\end{cases}
+\]</div>
+<p>입력한 할선탄성계수 <code>Ec</code>에서 모델 내부 초기접선기울기와 peak strain은 다음처럼 산정한다.</p>
+<div class="arithmatex">\[
+E_{ci}=5(1-\sqrt{0.6})E_c,\qquad
+\epsilon_{co}=2f_{co}/E_{ci}
+\]</div>
+<p>Hyfeast는 내부값 <code>epsilon20=0.003</code>을 사용한다. 직접 수치 입력과 DB 전개 출력에는 <code>epsilon20</code>을 쓰지 않는다.
+기본값에서는 원점부터 <code>0.4*fco</code>까지를 <code>Ec</code> 기울기의 직선으로 바꾼다. <code>EciCurve</code>를 지정하면 원래 포물선 곡선을 원점부터 사용한다.</p>
+<p><img alt="" src="media/8.2-3.svg" />
+<strong>Fig. 8.2-3.</strong> Hognestad concrete compressive envelope</p>
+<h5 id="example_6">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=HognestadCEnv, Name=HognestadTest1
+ 25., 23500., 0.003
+
+*Function, Type=HognestadCEnv, UnitSystem=kN-mm-s-K, Name=HognestadTest2
+ 25., 23500., 0.0032, EciCurve
+
+*Function, Type=HognestadCEnv, Name=HognestadTest3
+ 25., 23500., 0.0032
+
+*Function, Type=HognestadCEnv, Name=KDSC30Hognestad
+ KDS-2026-C30, EciCurve, ToDirectForm
+</code></pre></div>
+<h3 id="818-function-typeec2cenv">8.1.8 *Function, Type=EC2CEnv</h3>
+<p>EC2 계열 콘크리트 재하곡선(compressive envelope)을 정의한다.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=EC2CEnv, UnitSystem=unitSystem, Name=name
+ fcm, Ec, eco, ecu[, EciCurve]
+
+*Function, Type=EC2CEnv, Name=name
+ KDS-2026-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, EciCurve][, ToDirectForm]
+</code></pre></div>
+<h5 id="first-dataline_5">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>fcm:</strong> compressive strength (required for direct numeric input)</li>
+<li><strong>Ec:</strong> <code>0.4*fcm</code>까지의 할선탄성계수(required for direct numeric input)</li>
+<li><strong>eco:</strong> strain at peak concrete strength (required for direct numeric input)</li>
+<li><strong>ecu:</strong> ultimate strain (required for direct numeric input)</li>
+<li><strong>EciCurve:</strong> optional curve-shape flag. 생략하면 원점부터 <code>0.4*fcm</code>까지를 <code>Ec</code> 기울기의 직선으로 사용하고, 지정하면 EC2 계열 곡선을 원점부터 사용한다.</li>
+<li><strong>KDS-2026-C&lt;fck&gt; 또는 EC2-2004-C&lt;fck&gt;:</strong> <code>EC2CEnv</code>에서 허용하는 콘크리트 DB item name. keyword <code>UnitSystem</code> 없이 사용하며 global UnitSystem이 필요하다. <code>&lt;fck&gt;</code>는 MPa 단위 압축강도다. DB item에서 <code>fcm</code>, <code>Ec</code>, 비선형해석용 <code>eco</code>와 <code>ecu</code>를 채운다.</li>
+<li><strong>ToDirectForm:</strong> DB item dataline의 마지막 token에 붙일 수 있는 출력 옵션(optional). 지정하면 저장/재출력 시 DB item 대신 현재 global UnitSystem으로 변환된 직접 수치 dataline을 출력한다. 그 단위계가 global UnitSystem과 같으면 keyword line에 local <code>UnitSystem</code>을 출력하지 않는다. 생략하면 DB item dataline을 그대로 보존한다.</li>
+</ul>
+</div>
+<p>EC2 계열 곡선은 다음 식으로 정의한다.</p>
+<div class="arithmatex">\[
+f_c=f_{cm}\frac{k\eta-\eta^2}{1+(k-2)\eta},
+\qquad
+\eta=\frac{\epsilon_c}{\epsilon_{co}},
+\qquad
+0\le\epsilon_c\le\epsilon_{cu}
+\]</div>
+<p>Hyfeast는 <code>ecu</code> 이후에는 0을 반환한다.</p>
+<p>입력한 할선탄성계수 <code>Ec</code>에서 먼저 0.4 강도점의 변형률을 계산한다.</p>
+<div class="arithmatex">\[
+\epsilon_{0.4}=\frac{0.4 f_{cm}}{E_c}, \qquad
+x_{0.4}=\frac{\epsilon_{0.4}}{\epsilon_{co}}
+\]</div>
+<p>그 다음 EC2 계열 곡선이 <span class="arithmatex">\((\epsilon_{0.4},0.4f_{cm})\)</span>을 지나도록 내부 초기접선기울기를 정한다.</p>
+<div class="arithmatex">\[
+k=\frac{0.4-0.8x_{0.4}+x_{0.4}^2}{0.6x_{0.4}},
+\qquad
+E_{ci}=k\frac{f_{cm}}{\epsilon_{co}}
+\]</div>
+<p>여기서 <span class="arithmatex">\(k=E_{ci}\epsilon_{co}/f_{cm}\)</span>이다. <code>EciCurve</code>를 생략하면 <span class="arithmatex">\(\epsilon_{0.4}\)</span>가 <code>Ec</code> 기울기 직선 구간의 끝점이고, <code>EciCurve</code>를 지정하면 이 <span class="arithmatex">\(E_{ci}\)</span>를 쓰는 EC2 계열 곡선을 원점부터 사용한다.</p>
+<p><img alt="" src="media/8.2-4.svg" />
+<strong>Fig. 8.2-4.</strong> EC2-family concrete compressive envelope</p>
+<h5 id="example_7">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=EC2CEnv, Name=EC2CEnvTest1
+ 25., 23500., 0.002, 0.0035   #  fcm, Ec, eco, ecu
+
+*Function, Type=EC2CEnv, Name=EC2CEnvTest2
+ 25., 23500., 0.002, 0.0035, EciCurve     #  fcm, Ec, eco, ecu
+
+*Function, Type=EC2CEnv, Name=EC2C30C
+ EC2-2004-C30, EciCurve
+</code></pre></div>
+<h3 id="819-function-typemppcenv">8.1.9 *Function, Type=MPPCEnv</h3>
+<p>Mander, Priestly, Park의 콘크리트 재하곡선(compressive envelope)을 정의한다.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, UnitSystem=unitSystem, Name=name
+  fco, Ec, eco, ecu, fcc, esp[, EciCurve]
+
+*Function, Type=MPPCEnv, Name=name
+  KDS-2026-C&lt;fck&gt;|ACI318-2025-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, EciCurve][, ToDirectForm]
+</code></pre></div>
+<h5 id="first-dataline_6">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>fco:</strong> unconfined compressive strength (required for direct numeric input)</li>
+<li><strong>Ec:</strong> 비구속 콘크리트의 <code>0.4*fco</code>까지의 할선탄성계수(required for direct numeric input)</li>
+<li><strong>eco:</strong> strain at peak strength of unconfined concrete (optional, default 0.002)</li>
+<li><strong>ecu:</strong> ultimate strain  (optional, default 2*eco)</li>
+<li><strong>fcc:</strong> confined compressive strength. (optional, default fco)</li>
+<li><strong>esp:</strong> spalling strain  (optional, default ecu). <code>esp</code>가 <code>ecu</code>보다 클 때만 <code>ecu</code>에서 <code>esp</code>까지 직선 spalling 구간을 사용하고, <code>esp</code> 이후에는 0을 반환한다.</li>
+<li><strong>EciCurve:</strong> optional curve-shape flag. 생략하면 원점부터 <code>0.4*fco</code> 또는 <code>0.4*fcc</code>까지를 산정된 할선기울기의 직선으로 사용하고, 지정하면 Mander-Priestley-Park 곡선을 원점부터 사용한다.</li>
+<li><strong>KDS-2026-C&lt;fck&gt;, ACI318-2025-C&lt;fck&gt;, 또는 EC2-2004-C&lt;fck&gt;:</strong> 콘크리트 DB item name. keyword <code>UnitSystem</code> 없이 사용하며 global UnitSystem이 필요하다. DB 입력은 비구속 콘크리트를 가정한다. ACI item은 <code>fco=f'c</code>, <code>eco=0.002</code>, <code>ecu=0.003</code>으로 채우고, KDS/EC2 item은 <code>fco=fcm</code>, <code>eco=기준값</code>, <code>ecu=기준값</code>으로 채운다. 모든 기준에서 <code>Ec</code>는 DB에서 도출한 할선탄성계수, <code>fcc</code>는 <code>fco</code>, <code>esp</code>는 <code>ecu</code>로 채운다.</li>
+<li><strong>ToDirectForm:</strong> DB item dataline의 마지막 token에 붙일 수 있는 출력 옵션(optional). 지정하면 저장/재출력 시 DB item 대신 현재 global UnitSystem으로 변환된 직접 수치 dataline을 출력한다. 그 단위계가 global UnitSystem과 같으면 keyword line에 local <code>UnitSystem</code>을 출력하지 않는다. 생략하면 DB item dataline을 그대로 보존한다.</li>
+</ul>
+</div>
+<p>The Mander-Priestly-Park model can define both the confined and unconfined concrete model.</p>
+<p>비구속 입력값에 대해 Hyfeast는 <code>Ec</code>를 <code>0.4*fco</code>까지의 할선탄성계수로 해석한다.</p>
+<div class="arithmatex">\[
+E_{sec,0}=\frac{f_{co}}{\epsilon_{co}}, \qquad
+\epsilon_{0.4,0}=\frac{0.4 f_{co}}{E_c}, \qquad
+x_{0.4,0}=\frac{\epsilon_{0.4,0}}{\epsilon_{co}}
+       =0.4\frac{E_{sec,0}}{E_c}
+\]</div>
+<p>Mander-Priestley-Park 곡선의 응력비는 다음과 같다.</p>
+<div class="arithmatex">\[
+\frac{f_c}{f_{cc}}=
+\frac{x r}{r-1+x^r},
+\qquad
+r=\frac{E_{ci}}{E_{ci}-E_{sec}}
+\]</div>
+<p>Hyfeast는 비구속 곡선에서 다음 식을 만족하는 <span class="arithmatex">\(r_0\)</span>을 구한 뒤 내부 초기접선기울기를 산정한다.</p>
+<div class="arithmatex">\[
+0.4=\frac{x_{0.4,0} r_0}{r_0-1+x_{0.4,0}^{r_0}},
+\qquad
+E_{ci}=\frac{r_0}{r_0-1}E_{sec,0}
+\]</div>
+<p>직접 입력은 <span class="arithmatex">\(E_c \ge E_{sec,0}\)</span>이어야 한다. <code>fcc</code>가 <code>fco</code>와 다르면 같은 <span class="arithmatex">\(E_{ci}\)</span>를 구속 곡선에도 사용한다. 이때</p>
+<div class="arithmatex">\[
+\epsilon_{cc}=\epsilon_{co}\left(1+5\left(\frac{f_{cc}}{f_{co}}-1\right)\right),
+\qquad
+E_{sec,c}=\frac{f_{cc}}{\epsilon_{cc}},
+\qquad
+r_c=\frac{E_{ci}}{E_{ci}-E_{sec,c}}
+\]</div>
+<p>를 계산하고 <span class="arithmatex">\(0.4=x_{0.4,c}r_c/(r_c-1+x_{0.4,c}^{r_c})\)</span>를 만족하는 <span class="arithmatex">\(x_{0.4,c}\)</span>를 구한다. 기본 직선화 구간의 끝점은 다음 값이다.</p>
+<div class="arithmatex">\[
+\epsilon_{0.4,c}=x_{0.4,c}\epsilon_{cc}, \qquad
+E_{c,\mathrm{linear}}=\frac{0.4f_{cc}}{\epsilon_{0.4,c}}
+\]</div>
+<p><code>EciCurve</code>를 생략하면 원점부터 이 현재 0.4 강도점까지를 직선으로 사용한다. <code>EciCurve</code>를 지정하면 산정된 <span class="arithmatex">\(E_{ci}\)</span>를 쓰는 Mander-Priestley-Park 곡선을 원점부터 사용한다.</p>
+<p><img alt="" src="media/8.2-5.svg" />
+<strong>Fig. 8.2-5.</strong> Mander-Priestley-Park concrete compressive envelope</p>
+<h5 id="example_8">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, Name=MPPCEnvTest1
+ 25., 23500.   #   fco, Ec, eco, ecu, fcc, esp
+
+*Function, Type=MPPCEnv, Name=MPPCEnvTest2
+ 25., 23500., 0.002, 0.004, 40., 0.006, EciCurve    #   fco, Ec, eco, ecu, fcc, esp
+
+*Function, Type=MPPCEnv, Name=KDSC30MPPC
+ KDS-2026-C30
+</code></pre></div>
+<h3 id="8110-function-typemppcie">8.1.10 *Function, Type=MPPCIE</h3>
+<p>Mander, Priestly, Park의 콘크리트 비탄성 변형률을 정의한다.</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=MPPCIE, Name=cover
+  compressiveEnv, epeak
+</code></pre></div>
+<h5 id="first-dataline_7">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>compressiveEnv:</strong> Compressive envelope function</li>
+<li><strong>epeak:</strong> strain at peak concrete stength(optional, default 0.002). If the given compressiveEnv is a type of MPPCEnv, Hognestad, and CEBFIB, epeak is neglected(automatically computed),.</li>
+</ul>
+</div>
+<p><code>MPPCIE</code>는 압축 envelope를 참조해 비탄성 변형률을 계산하는 무차원 strain function이다. 따라서 keyword line에 <code>UnitSystem</code>을 지정할 수 없으며, 지정하면 입력 오류로 처리한다.</p>
+<p>Although this function defines the inelastic strain by the Mander-Priestley-Park model, it can be used with the arbitrary compressive envelope function</p>
+<h5 id="example_9">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, Name=concC
+ 25., 23500.
+
+*Function, Type=MPPCIE, Name=concCI
+ concC
+</code></pre></div>
+<h3 id="8111-function-typemaekawatenv">8.1.11 *Function, Type=MaekawaTEnv</h3>
+<p>Maekawa’ concrete tensile envelope</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=MaekawaTEnv, UnitSystem=unitSystem,  Name=coverTension
+  Ec, ft[, c]
+
+*Function, Type=MaekawaTEnv, Name=name
+  KDS-2026-C&lt;fck&gt;|ACI318-2025-C&lt;fck&gt;|EC2-2004-C&lt;fck&gt;[, c][, ToDirectForm]
+</code></pre></div>
+<h5 id="first-dataline_8">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Ec:</strong> 할선탄성계수(required for direct numeric input)</li>
+<li><strong>ft:</strong> tensile strength(required for direct numeric input)</li>
+<li><strong>c:</strong> parameter for Maekawa model (optional, default 0.4)</li>
+<li><strong>KDS-2026-C&lt;fck&gt;, ACI318-2025-C&lt;fck&gt;, 또는 EC2-2004-C&lt;fck&gt;:</strong> 콘크리트 DB item name. keyword <code>UnitSystem</code> 없이 사용하며 global UnitSystem이 필요하다. 직접 수치 dataline의 <code>Ec</code>는 DB에서 도출한 할선탄성계수로 채운다. <code>ft</code>는 ACI item에서는 <span class="arithmatex">\(7.5\sqrt{f'_c}\)</span>, KDS/EC2 item에서는 <span class="arithmatex">\(f_{ctm}\)</span>으로 채운다.</li>
+<li><strong>ToDirectForm:</strong> DB item dataline의 마지막 token에 붙일 수 있는 출력 옵션(optional). 지정하면 저장/재출력 시 DB item 대신 현재 global UnitSystem으로 변환된 직접 수치 dataline을 출력한다. 그 단위계가 global UnitSystem과 같으면 keyword line에 local <code>UnitSystem</code>을 출력하지 않는다. 생략하면 DB item dataline을 그대로 보존한다.</li>
+</ul>
+</div>
+<p>Maekawa 등(2002)은 보통콘크리트와 인장경화를 고려한 철근콘크리트에 대한 모델에 대한 인장연화곡선을 다음과 같은 동일한 수식으로 제안하였다.</p>
+<div class="arithmatex">\[
+\sigma = f_t (\frac{\epsilon_{tu}} {\epsilon_t} )^c
+\]</div>
+<p>위에서 c는 곡선형상을 결정하는 인자이다.  보통콘크리트로 사용할 때는 파괴에너지와  요소특성길이에 따라 다음 식으로부터 결정해야 한다.</p>
+<div class="arithmatex">\[
+\int \sigma_t d \epsilon_t = \int f_t (\frac{\epsilon_{tu}} {\epsilon_t} )^c d \epsilon_t = \frac {G_F}{l_r}
+\]</div>
+<p>철근콘크리트에서는 매개변수 분석을 통해 이형철근의 경우 0.4, 용접강선망(welded wire mesh)의 경우 0.2를 제시하고 있다. 그림 8.2-6은 대표적인 결과를 나타낸 것이다.</p>
+<p><img alt="" src="media/8.2-6.png" />
+<strong>Fig. 8.2-6.</strong> Maekawa concrete tensile envelope</p>
+<h5 id="example_10">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=MPPCEnv, Name=concC
+ 25, 23500.
+
+*Function, Type=MaekawaTEnv, Name=concT
+ 23500, 3
+
+*Function, Type=EC2CEnv, Name=EC2C30C
+ EC2-2004-C30
+
+*Function, Type=MaekawaTEnv, Name=KDSC30T
+ KDS-2026-C30
+</code></pre></div>
+<h3 id="8112-function-typeconcretetime">8.1.12 *Function, Type=ConcreteTime</h3>
+<p>콘크리트 시간의존 함수 묶음</p>
+<div class="highlight"><pre><span></span><code>*Function, Type=ConcreteTime, Name=name
+ User, Aging=fcAge, ftAge, EcAge, Creep=creepDuration, creepLoadAge, Shrinkage=shrinkage
+
+*Function, Type=ConcreteTime, Name=name
+ EC2-2004-C&lt;fck&gt;, RH, h0, ts, cementClass
+
+*Function, Type=ConcreteTime, Name=name
+ KDS-2026-C&lt;fck&gt;, RH, h0, ts, cementType, curingType
+
+*Function, Type=ConcreteTime, Name=name
+ ACI209-1992-C&lt;fc&gt;, RH, V/S, ts, cementType, curingType
+
+*Function, Type=ConcreteTime, Name=name
+ ACI209-1992-C&lt;fc&gt;, RH, V/S, ts, cementType, curingType, creepUltimateScale, shrinkageUltimateScale
+
+*Function, Type=ConcreteTime, Name=name
+ ACI209-1992-C&lt;fc&gt;, RH, V/S, ts, cementType, curingType, moistCuringDuration, slump, fineAggregatePercent, cementContent, airContent
+</code></pre></div>
+<h5 id="first-dataline_9">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>User:</strong> 기존에 정의된 Function을 사용자 정의 시간의존 함수 묶음으로 사용한다. named-group 형식은 <code>Aging</code>, <code>Creep</code>, <code>Shrinkage</code> 중 하나 이상의 그룹을 받으며, 생략한 그룹은 중립 기본값을 사용한다.</li>
+<li><strong>Aging=fcAge, ftAge, EcAge:</strong> 압축강도, 인장강도, 탄성계수의 재령계수 Function 이름이다. 세 함수는 함께 지정해야 한다. <span class="arithmatex">\(x=t\)</span>로 평가한다. 생략하면 세 재령계수는 모두 <code>1</code>이다.</li>
+<li><strong>Creep=creepDuration, creepLoadAge:</strong> 크리프 지속기간 계수와 크리프 재하재령 계수 Function 이름이다. <code>creepDuration</code>은 <span class="arithmatex">\(x=t-\tau\)</span>로 평가하고, <code>creepLoadAge</code>는 <span class="arithmatex">\(x=\tau\)</span>로 평가한다. 두 함수는 함께 지정해야 한다. 생략하면 creep 기여는 <code>0</code>이다.</li>
+<li><strong>Shrinkage=shrinkage:</strong> 자유수축 변형률 Function 이름이다. <span class="arithmatex">\(x=t\)</span>로 평가한다. User 입력 함수값 기준으로 <code>+</code>가 수축이고, <code>-</code>가 팽창이며, 재료에서 사용할 때 부호가 반전된다. 생략하면 shrinkage 기여는 <code>0</code>이다.</li>
+<li><strong>EC2-2004-C&lt;fck&gt;:</strong> EC2-2004 콘크리트 시간의존 함수이다. <code>&lt;fck&gt;</code>는 MPa 단위이다. <code>cementClass</code>는 <code>S</code>, <code>N</code>, <code>R</code> 중 하나이다.</li>
+<li><strong>KDS-2026-C&lt;fck&gt;:</strong> KDS-2026 콘크리트 시간의존 함수이다. <code>&lt;fck&gt;</code>는 MPa 단위이다. <code>cementType</code>은 <code>Type1</code>, <code>Type2</code>, <code>Type3</code>, <code>Type5</code> 중 하나이고, <code>curingType</code>은 <code>Moist</code> 또는 <code>Steam</code>이다.</li>
+<li><strong>ACI209-1992-C&lt;fc&gt;:</strong> ACI 209R-92 콘크리트 시간의존 함수이다. <code>&lt;fc&gt;</code>는 psi 단위의 <span class="arithmatex">\(f'_c\)</span>이다. <code>cementType</code>은 <code>TypeI</code> 또는 <code>TypeIII</code>이고, <code>curingType</code>은 <code>Moist</code> 또는 <code>Steam</code>이다.</li>
+<li><strong>RH:</strong> 상대습도이며 percent 단위로 입력한다.</li>
+<li><strong>h0:</strong> EC2/KDS에서 사용하는 부재의 가상 두께이다. mm 단위로 입력한다.</li>
+<li><strong>V/S:</strong> ACI 209에서 사용하는 volume-to-surface ratio이다. inch 단위로 입력하며, ACI 209 보정식에 그대로 사용한다.</li>
+<li><strong>ts:</strong> 건조수축이 시작되는 콘크리트 재령이며 day 단위이다.</li>
+<li><strong>creepUltimateScale, shrinkageUltimateScale:</strong> ACI 209 추가 보정계수이다. 두 token을 생략하면 둘 다 <code>1.0</code>으로 둔다.</li>
+<li><strong>moistCuringDuration, slump, fineAggregatePercent, cementContent, airContent:</strong> ACI 209 상세 보정 입력이다. <code>moistCuringDuration</code>은 day 단위, <code>slump</code>는 inch 단위, <code>fineAggregatePercent</code>와 <code>airContent</code>는 percent 단위, <code>cementContent</code>는 <span class="arithmatex">\(\mathrm{lb/yd^3}\)</span> 단위이다. <code>slump</code>와 <code>cementContent</code>는 global 단위계에서 변환하지 않는 고정 단위 입력이다.</li>
+</ul>
+</div>
+<p><code>ConcreteTime</code>이 저장하는 여섯 series, 부호 규약, 단위계, EC2/KDS/ACI 기준식은 앞의 콘크리트 DB 공통 규칙과 기준별 콘크리트 DB 설명을 따른다. 또한 <code>ConcreteTime</code>은 재료 쪽 Kelvin chain fitting에 사용할 첫 retardation time의 내부 기본값을 제공한다. 기본 제공 EC2/KDS <code>ConcreteTime</code>은 <code>1</code> day를 제공하고, 기본 제공 ACI 209 및 <code>User</code> <code>ConcreteTime</code>은 <code>5</code> day를 제공한다. 다른 첫 retardation time이 필요하면 이 function을 사용하는 material의 <code>LongTerm, Concrete</code> dataline에서 <code>lambda1</code>을 직접 지정한다.</p>
+<p>표준 EC2/KDS/ACI 형식과 <code>User</code> 형식 모두에서 시간 변수 <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(\tau\)</span>, <span class="arithmatex">\(t-\tau\)</span>, <span class="arithmatex">\(t_s\)</span>는 <code>*Environment, Type=UnitSystem</code>에서 지정한 시간 단위와 무관하게 day 단위로 평가한다. <code>User</code> 형식에서 참조하는 Function에는 keyword line <code>UnitSystem=...</code>을 지정할 수 없다. 이 절은 입력 문법과 예제를 정리한다.</p>
+<h5 id="example_11">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=MultiLinear, Name=fcAge
+ 0, 0
+ 28, 1
+ 365, 1.15
+
+*Function, Type=MultiLinear, Name=ftAge
+ 0, 0
+ 28, 1
+ 365, 1.1
+
+*Function, Type=MultiLinear, Name=EcAge
+ 0, 0
+ 28, 1
+ 365, 1.05
+
+*Function, Type=MultiLinear, Name=creepDuration
+ 0, 0
+ 30, 0.4
+ 365, 1
+
+*Function, Type=MultiLinear, Name=creepLoadAge
+ 1, 8.0e-5
+ 28, 3.3e-5
+ 365, 2.0e-5
+
+*Function, Type=MultiLinear, Name=shrinkage
+ 0, 0
+ 7, 0
+ 365, 450e-6
+
+*Function, Type=ConcreteTime, Name=timeUser
+ User, Aging=fcAge, ftAge, EcAge, Creep=creepDuration, creepLoadAge, Shrinkage=shrinkage
+
+*Function, Type=ConcreteTime, Name=timeEC2
+ EC2-2004-C30, 70, 200, 7, N
+
+*Function, Type=ConcreteTime, Name=timeKDS
+ KDS-2026-C30, 70, 200, 7, Type1, Moist
+
+*Function, Type=ConcreteTime, Name=timeACI
+ ACI209-1992-C4000, 70, 4, 7, TypeI, Moist, 1.0, 1.0
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

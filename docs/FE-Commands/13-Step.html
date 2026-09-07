@@ -1,0 +1,4903 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="12-Sensor.html">
+      
+      
+        <link rel="next" href="14-Step-result.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>13. Step - Hyfeast-v1.0.0-beta.4</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../javascripts/iframe-worker-shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#131-step" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.4" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hyfeast-v1.0.0-beta.4
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              13. Step
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="13-Step.html" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/FE-Commands/13-Step.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Hyfeast-v1.0.0-beta.4" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hyfeast-v1.0.0-beta.4
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FE Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            FE Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Finite-Element-Analysis/1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.2-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.3-View-and-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.4-Selection-and-Visibility.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Selection and Visibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.5-Preprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Preprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.6-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.7-Postprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfStudio/2.8-Workspace-Panels.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Workspace Panels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hfAnalyzer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hfAnalyzer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.1-Running.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Running
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hfAnalyzer/3.2-Files-and-Results.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Files and Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FE Commands
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FE Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1-Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2-Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Element Library
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Element Library
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.1-Introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.2-Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.3-Truss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Truss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.4-Cable.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Cable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.5-Shell.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.6-Solid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6 Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.7-AcousticSolid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.7 AcousticSolid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.8-SeepageSolid.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.8 SeepageSolid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.9-MCK.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.9 MCK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.10-MovingSpring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.10 MovingSpring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.11-Interface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.11 Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4-Element-Specification/4.12-EmbeddedLine.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.12 EmbeddedLine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5-Constraint.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Constraint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6-Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7-Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8-Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9-Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11-CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Coordinate System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12-Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="13-Step.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    13. Step
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#131-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.1 *Step
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.1 *Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1311-step-typestatic" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.1.1 *Step, Type=Static
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1312-step-typedynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.1.2 *Step, Type=Dynamic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1313-step-typefrequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.1.3 *Step, Type=Frequency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1314-step-typeresponsespectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.1.4 *Step, Type=ResponseSpectrum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1315-step-typeseepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.1.5 *Step, Type=Seepage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-activate" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.2 *Activate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-inactivate" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.3 *Inactivate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#134-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.4 *Solver
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#135-nonlinearalgorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.5 *NonlinearAlgorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#136-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.6 *Convergence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#137-timeintegration" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.7 *TimeIntegration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#138-rayleighdamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.8 *RayleighDamping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#139-modal" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.9 *Modal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1310-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.10 *Spectrum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1311-interactioncontrol" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.11 *InteractionControl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1312-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.12 *State
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1313-initialcondition" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.13 *InitialCondition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1314-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.14 *Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1315-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.15 *Print
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14-Step-result.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Step Result
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="15-Modelling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Modelling Convenience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="16-Etc.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="17-Special-step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Special Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="18-HDB-file-structure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. HDB File Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2D & Section Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2D & Section Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.2-Window-and-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Window and File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.3-View-and-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View and Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.4-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.5-Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/hf2DStudio/2.6-Operation-and-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/2.7-Mesh-Generation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Mesh Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/3.1-Help.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. hfSectAnalyzer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/3.2-Commands.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/4-Examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Section Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Section-Tools/5-Theory.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Section Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Remote Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Remote Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/1-Basics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. hfStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. hfStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.1-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.2-Remote-only.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Remote-only
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.3-View.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.4-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.5-Display.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.6-Selection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Selection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7" id="__nav_5_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7 Preprocessing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            2.7 Preprocessing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.1-Environment.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.1 Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.2-CoordinateSystem.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.2 CoordinateSystem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.3-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.3 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7_4" id="__nav_5_2_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7.4 Node and NSet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2.7.4 Node and NSet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.4.1-Node.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.4.1 Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.4.2-NSet.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.4.2 NSet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7_5" id="__nav_5_2_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.7.5 Element and Elset
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            2.7.5 Element and Elset
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.5.1-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.5.1 Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.5.2-Elset.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.5.2 Elset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.6-Load.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.6 Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.7-Surface.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.7 Surface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.8-Sensor.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.8 Sensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.9-NProp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.9 NProp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.10-Material.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.10 Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.11-Section.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.11 Section
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.12-Function.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.12 Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.13-Step.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.13 Step
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.14-History.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.14 History
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.15-Distribution.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.15 Assign
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.16-Model.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.16 Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.17-Renumber.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.17 Renumber
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.7.18-Undo-and-Redo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7.18 Undo and Redo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.8-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hfStudio/2.9-Postprocessing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.9 Postprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/Recipes/2.10-hfStudio-Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10 Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. hf2DStudio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. hf2DStudio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.1-2D-Modeling-Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 2D Modeling Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.2-Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.3-Window-and-File.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Window and File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.4-View.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.5-Geometry.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.6-Definition.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/hf2DStudio/3.7-Operation-and-Analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Operation and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote-Control/Recipes/3.8-hf2DStudio-Recipes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/1-Getting-Started.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/2-Beam-Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Beam Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/3-Solid-Cantilever.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Solid Cantilever
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/4-Automation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Verification
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Verification
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.1-Beam-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.1 Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.2-Material-Nonlinear-Beam-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.2 Material Nonlinear Beam Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.3-Solid-Element-and-In-Plane-Behavior-of-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.3 Solid Element and In-Plane Behavior of Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.4-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.4 Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.5-Material-Nonlinear-Solid-and-Shell-Element.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.5 Material Nonlinear Solid and Shell Element
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.6-Dynamic-Analysis-using-Spring-and-Mass-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.6 Dynamic Analysis using Spring and Mass Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.7-Acoustic-Solid-Element-and-HydroStaticPressure-Loads.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.7 Acoustic Solid Element and HydroStaticPressure Loads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.8-Interface-Modeling-using-Spring-and-Interface-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.8 Interface Modeling using Spring and Interface Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.9-Truss-and-Cable-Elements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.9 Truss and Cable Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.10-Simple-Constraints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.10 Simple Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.11-Advanced-Constraints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.11 Advanced Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.12-Rebar-and-Tendon-Modeling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.12 Rebar and Tendon Modeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.13-Moving-Load-Analysis-in-Simply-Supported-Beam.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.13 Moving Load Analysis in Simply Supported Beam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.14-Stability-of-Rail-Track.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.14 Stability of Rail Track
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.15-Time-Dependent-Materials.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.15 Time Dependent Materials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.16-ModelUpdating-and-ShapeEstimation-Steps.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.16 ModelUpdating and ShapeEstimation Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.17-Seepage-Element-and-Boundary-Conditions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.17 Seepage Element and Boundary Conditions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verification/V.18-Seepage-Comparison-with-SEEPW.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V.18 Seepage Comparison with SEEP/W
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="13-step">13. Step</h1>
+<p>해석 관련 명령은 크게 <code>*Step</code>과 <code>*PostStep</code>이 있다. <code>*Step</code>은 실제 해석을 수행할 단계를 지정하며, <code>*PostStep</code>은 해석된 결과를 정리하는 데 사용한다.</p>
+<p><code>*Step</code> 명령에서 Static, Dynamic, Frequency, Buckling 등의 해석 유형을 지정할 수 있으며, <code>*Step</code>의 사전 단계를 지정하는 방식으로 여러 해석 단계로 구성된 시뮬레이션을 수행할 수 있다.   <code>*Step</code>의 하위명령어로는 요소, 하중, 구속조건을 지정하거나 변경하는  <code>*Activate</code>, <code>*Inactivate</code> 명령, 해석옵션을 지정하는 <code>*Solver</code>, <code>*SolutionAlgorithm</code>, <code>*Convergence</code>, <code>*RayleighDamping</code>, <code>*Modal</code> 명령, Step 시작 상태를 지정하는 <code>*InitialCondition</code>, <code>*State</code> 명령, 출력을 지정하는 <code>*Output</code>, <code>*Print</code>, <code>*History</code>, <code>*Check</code> 등이 있다.</p>
+<p><code>*Step</code> 명령이 수행되면 HDB 파일(<code>.hdb</code>)에 ResultStep이라는 출력 스텝이 생성되며 <code>*Output</code>에서 지정한 결과가 저장되게 된다. <code>*PostStep</code>은 이미 존재하는 ResultStep을 대상으로 결과값의 일부를 발췌하거나 최대/최소, 결과의 조합 등을 수행하여 새로운 ResultStep을 만드는 명령이다.</p>
+<p><code>*Step</code>과 <code>*PostStep</code>에 사용되는 이름은 자신만의 중복되지 않는 이름을 지정해야 한다.</p>
+<h2 id="131-step">13.1 *Step</h2>
+<p>해석 단계(analysis step)을 정의한다.</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=type,...  Name=name[, PREV=prevStep, ...]
+ ...
+</code></pre></div>
+<h5 id="keyword-line">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=step_type,...:</strong> 해석유형 및 부가옵션<ul>
+<li><strong>Static:</strong> 정적해석</li>
+<li><strong>Dynamic:</strong> 동해석</li>
+<li><strong>Frequency:</strong> 주파수해석</li>
+<li><strong>ResponseSpectrum:</strong> 응답스펙트럼해석</li>
+<li><strong>Seepage:</strong> 침투해석</li>
+</ul>
+</li>
+<li><strong>Name=name:</strong> 해석의 이름</li>
+<li><strong>PREV=prevStep:</strong> 이전 해석단계. 지정하지 않는 경우 초기상태에서 해석이 시작됨</li>
+</ul>
+</div>
+<p>다음 해석 유형에 따른 분류이다.</p>
+<p>▪표준 해석 단계(Standard analysis step)</p>
+<p>▪정적 해석 단계(Static analysis step)</p>
+<ul>
+<li>
+<p>표준 정적 해석(Standard load-displacement controlled static analysis step)</p>
+</li>
+<li>
+<p>Arclength 정적 해석(Arclength-controlled static analysis step)</p>
+</li>
+<li>
+<p>시간 의존 정적 해석(Quasi-static analysis step)</p>
+</li>
+</ul>
+<p>▪동적 해석 단계(Dynamic analysis step)</p>
+<ul>
+<li>시간 영역 동적 해석(Time-domain analysis step)</li>
+</ul>
+<p>▪고유치 해석 단계(Eigen analysis step)</p>
+<ul>
+<li>
+<p>고유진동수 추출 해석(Frequecny extraction analysis step)</p>
+</li>
+<li>
+<p>응답스펙트럼 해석(Response spectrum analysis step)</p>
+</li>
+</ul>
+<p>▪침투 해석 단계(Eigen analysis step)</p>
+<ul>
+<li>
+<p>정상 침투 해석 단계(Steady state seepage analysis step)</p>
+</li>
+<li>
+<p>과도 침투 해석 단계(Transient seepage analysis step)</p>
+</li>
+</ul>
+<p>해석 단계 유형에 따라 시간을 다루는 방식이 다르다.</p>
+<p>▪ 표준 정적 해석(Standard load-displacement controlled static analysis step)</p>
+<p>주어진 시간이 하중계수(load factor)인 유사시간(pseudo-time)이다.</p>
+<p>▪ Arclength 정적 해석(Arclength-controlled static analysis step)</p>
+<p>주어진 시간은 arclength를 선형거동시 하중계수가 1일 때 발생하는 arclength로 정규화된 유사시간(pseudo-time)이다. 따라서 Arclength control을 선형해석에 적용하면 표준 방법과 동일한 시간 증분을 주는 것과 같다.</p>
+<p>▪ 시간 의존 정적 해석(Quasi-static analysis step)</p>
+<p>질량효과를 고려하지 않지만 시간의존성을 고려하는 정적해석을 의미한다. 주어진 시간은 아래 시간 해석 표의 <code>Static, Quasi</code> 행을 따른다. 시간의존성은 시간함수를 부여한 하중과 시간의존 재료모델 등에서 발생하는데 정적 해석시 시간 의존 해석을 수행해야 시간의존성을 반영할 수 있다.</p>
+<p>▪ 동적 해석 단계(Dynamic analysis step)</p>
+<p>질량효과와 시간의존성을 모두 고려하는 동해석을 의미한다. 주어진 시간은 아래 시간 해석 표의 <code>Dynamic</code> 행을 따른다. 시간 적분을 수행하는 방법으로는 Newmark 법과 Hilbert-Hughes-Taylor 법(이하 HHT 법)을 지원하며, <code>*TimeIntegration</code>에서 지정할 수 있다. 디폴트 수치적분법은 <span class="arithmatex">\(\gamma=0.5\)</span>, <span class="arithmatex">\(\beta=0.25\)</span>의 계수를 갖는 Newmark 법(또는 평균가속도법)이다. HHT법은 적용할 경우 <span class="arithmatex">\(\alpha=-0.05\)</span>의 디폴트 값을 가진다.</p>
+<p>▪ 정상 침투 해석(Steady state seepage analysis type)</p>
+<p>주어진 시간이 하중계수(load factor)인 유사시간(pseudo-time)이다.</p>
+<p>▪ 과도 침투 해석 단계(Transient seepage analysis step)</p>
+<p>주어진 시간은 아래 시간 해석 표의 <code>Seepage, Transient</code> 행을 따른다.</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=Case2
+ Uniform, 0.1, 10
+*Activate, Type=Element
+ ALL
+*Activate, Type=Constraint
+ BC
+*Activate, Type=Load
+ LC2, SelfWeight
+*Output
+ D,FN,BSF,SSF
+
+
+*Step, Type=Frequency, Name=Case7
+ 10
+*Activate, Type=Element
+ ALL
+*Activate, Type=Constraint
+ BC
+</code></pre></div>
+<p>Static, Dynamic, Seepage 해석에서 해석시 시간 증분(Static에서 유사 시간 증분)은 Uniform, Given, Auto이라는 세가지 옵션으로 지정할 수 있다. 한편 결과가 <code>*Output</code>, <code>*Print</code>, <code>*History</code> 등을 통해 출력되는 시간은 OutFreq 또는 OutTime을 통해 지정할 수 있다. 입력형식은 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static|Dynamic|Seepage,...,  Name=name, PREV=prevStep, NLGeom=ON|OFF
+ Uniform, dt, ntime[, TUnit=tUnit], OutFreq=freq
+ Given, timeSpec[, TUnit=tUnit], OutFreq=freq|OutTime=timeSpec
+ Auto, t0, tmax, dtmin, dtmax, maxInc[, TUnit=tUnit], OutFreq=freq|OutTime=timeSpec
+</code></pre></div>
+<ul>
+<li><code>Uniform</code>는 등간격으로 해석시간을 지정하고, <code>Given</code>은 시간을 직접기입하고, <code>Auto</code>는 자동증분 제어이다.</li>
+<li><code>OutFreq</code>와 <code>OutTime</code>은 동시에 지정할 수 없고, <code>OutTime</code>은 <code>Given</code>과 <code>Auto</code>에서 사용할 수 있다.</li>
+<li><code>OutFreq=freq</code>는 “해석 increment 기준”으로 freq increments 마다 출력한다.</li>
+<li><code>OutFreq=0</code>과 같이 지정할 경우에는 최종 시간에서만 출력한다.</li>
+<li><code>Given</code>의 <code>OutTime=timeSpec</code>은 0 또는 <code>Given</code>에 포함된 해석 시각만 지정할 수 있다. 0을 지정하면 step 시작 상태도 출력한다.</li>
+<li><code>Auto</code>의 <code>OutTime=timeSpec</code>은 “출력 앵커 시간”이며, 해당 시간에 출력하도록 해석 시간 증분을 추가로 자동 조정한다.</li>
+<li><code>OutFreq</code>, <code>OutTime</code> 모두 최종 시간(마지막 해석시간 또는 수렴 실패시에도 최종 수렴 성공 시간)에서는 항상 출력한다.</li>
+<li><code>Given</code> 과 <code>OutTime</code> 지정시 timeSpec은 <code>tStart:tEnd:tSpacing</code> 형태의 범위식을 사용할 수 있다. 예를 들어 Given, 0.5, <code>2.5:7.5:2.5</code>, 10 등과 같은 표현이 가능하다. 이때 <code>2.5:7.5:2.5</code>는 2.5, 5.0, 7.5로 해석된다.</li>
+<li><code>tStart:tEnd:tSpacing</code> 범위식에 tEnd가 간격에 정확히 맞지 않는 경우, tEnd를 초과하지 않는 범위내에서 시간 값이 생성된다. 예를 들어 <code>1:10:2</code> 이면 1,3,...,9로 해석되며, 이는 <code>1:9:2</code>를 대입한 것과 같다.</li>
+<li><code>TUnit=tUnit</code>은 step에서 쓰는 시간 기준 단위를 지정한다. 지원하는 <code>tUnit</code> 값은 <code>s</code>, <code>min</code>, <code>hr</code>, <code>day</code>이다. 이 항목은 <code>Static, Quasi</code>와 <code>Seepage, Transient</code>에서 필수이다. <code>Seepage, Steady</code>를 포함한 그 밖의 pseudo-time 해석이나 global <code>UnitSystem</code>의 time field를 따르는 해석에서는 사용할 수 없다.</li>
+</ul>
+<h5 id="_1">시간 해석</h5>
+<p>다음 표는 <code>Uniform</code>, <code>Given</code>, <code>Auto</code>, <code>OutTime</code>의 시간값을 해석하는 중심 규칙이다.</p>
+<table>
+<thead>
+<tr>
+<th>Step 유형</th>
+<th>시간 분류</th>
+<th>의미와 일관성 규칙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Static, Standard/Arclength</code></td>
+<td>pseudo-time</td>
+<td>하중계수 또는 arc-length 진행 좌표이며 global <code>UnitSystem</code>과 무관하다.</td>
+</tr>
+<tr>
+<td><code>Dynamic</code></td>
+<td>global <code>UnitSystem</code>이 정의되어 있으면 그 time field를 따르는 physical time</td>
+<td>관성, 질량, 감쇠, 가속도 관련 물리량과 일관되어야 하는 물리 시간이다.</td>
+</tr>
+<tr>
+<td><code>Static, Quasi</code></td>
+<td>global <code>UnitSystem</code>과 무관한 <code>step-defined time</code>으로 표현되는 physical time</td>
+<td>관성항에는 쓰이지 않지만, 시간의존 하중과 재료가 참조하는 물리 시간이다. 첫 dataline의 <code>TUnit=tUnit</code>으로 시간 단위를 지정한다.</td>
+</tr>
+<tr>
+<td><code>Seepage, Steady</code></td>
+<td>무차원 진행 좌표</td>
+<td>하중ㆍPTCㆍ재료 경로의 진행값이다. 물리 시간을 나타내지 않으며 <code>rtime</code>을 증가시키지 않는다.</td>
+</tr>
+<tr>
+<td><code>Seepage, Transient</code></td>
+<td>global <code>UnitSystem</code>과 무관한 <code>step-defined time</code>으로 표현되는 physical time</td>
+<td>투수계수, flux, 저장항, 경계조건과 일관되어야 하는 침투 과도 시간이다. 첫 dataline의 <code>TUnit=tUnit</code>으로 시간 단위를 지정한다.</td>
+</tr>
+</tbody>
+</table>
+<p><code>step-defined time</code>은 특정 해석 step에서 정의하는 물리 시간 좌표를 뜻한다. 이 시간 단위는 global <code>UnitSystem</code>의 time field에서 가져오지 않고, 해당 step의 첫 dataline에 지정한 <code>TUnit</code>을 따른다. <code>Static, Quasi</code>에서 표준 <code>ConcreteTime</code> 함수를 사용하는 경우 콘크리트 시간 변수는 <code>day</code> 기준이므로 step <code>TUnit</code>도 <code>day</code>여야 한다.</p>
+<p>Hyfeast는 step 안에서 진행되는 시간 좌표를 <code>stime</code>, 여러 step을 관통하는 물리 시간을 <code>rtime</code>으로 구분한다. <code>rtime</code>은 내부적으로 초 단위로 누적되지만, 입력과 출력은 해당 step의 시간 단위를 따른다. <code>Dynamic</code> step에서는 global <code>UnitSystem</code>의 time field를 사용하고, <code>Static, Quasi</code>와 <code>Seepage, Transient</code>에서는 <code>TUnit</code>을 사용한다. <code>Seepage, Steady</code>와 <code>Static, Standard/Arclength</code>의 pseudo-time은 진행 좌표일 뿐 <code>rtime</code>을 증가시키지 않는다.</p>
+<p>요소가 활성화되면 현재 <code>rtime</code>이 그 요소의 <code>birthTime</code>으로 기록된다. 요소 경과시간 <code>ELTIME</code>은 저장 필드가 아니라 다음 식으로 계산되는 derived field이다.</p>
+<div class="arithmatex">\[
+\mathrm{ELTIME}=\mathrm{rtime}-\mathrm{birthTime}
+\]</div>
+<p><code>ELTIME</code> 출력 단위는 현재 step의 물리 시간 단위를 따른다. pseudo-time step에서는 <code>rtime</code>이 증가하지 않으므로 <code>ELTIME</code>도 직전 물리 시간 기준 값으로 출력된다. 직전에 물리 시간 step이 없으면 <code>s</code>를 사용한다.</p>
+<p><div class="highlight"><pre><span></span><code>*Step, Type=Static|Dynamic|Seepage,...,  Name=name, PREV=prevStep, NLGeom=ON|OFF
+ Uniform, 0.02, 100, OutFreq=2
+</code></pre></div>
+- 해석 시간: 0, 0.02, 0.04, ..., 2 (초기시간 0은 항상 포함)
+- 출력 시간 : 0, 0.04, 0.08, ..., 2 (마지막 해석 시간은 항상 포함)</p>
+<p><div class="highlight"><pre><span></span><code>*Step, Type=Static|Dynamic|Seepage,...,  Name=name, PREV=prevStep, NLGeom=ON|OFF
+ Uniform, 0.02, 100, OutFreq=0
+</code></pre></div>
+- 해석 시간: 0, 0.02, 0.04, ..., 2 (초기시간 0은 항상 포함)
+- 출력 시간 : 2 (OutFreq=0이므로 마지막 시간만 출력)</p>
+<p><div class="highlight"><pre><span></span><code>*Step, Type=Static|Dynamic|Seepage,...,  Name=name, PREV=prevStep, NLGeom=ON|OFF
+ Given, 0.02, 0.05, 1:5:2, OutFreq=2
+</code></pre></div>
+- 해석 시간: 0, 0.02, 0.05, 1, 3, 5 (초기시간 0은 항상 포함)
+- 출력 시간 : 0, 0.05, 3, 5 (마지막 해석 시간은 항상 포함)</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static|Dynamic|Seepage,...,  Name=name, PREV=prevStep, NLGeom=ON|OFF
+ Auto, 0.02, 1, 0.001, 0.02, OutFreq=2
+</code></pre></div>
+<ul>
+<li>해석 시간: 0.02부터 0.02 시간간격으로 1까지 풀지만, 수렴성에 따라 0.001, 0.02까지 시간간격을 조정 (초기시간 0은 항상 포함)</li>
+<li>출력 시간 : 초기시간(0)부터 빈도 2씩 증분되는 해석 시간 (마지막 해석 시간은 항상 포함)</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>*Step, Type=Static|Dynamic|Seepage,...,  Name=name, PREV=prevStep, NLGeom=ON|OFF
+ Auto, 0.02, 1.6, 0.01, 0.02, OutTime=0.03, 0.8:1.2:0.2
+</code></pre></div>
+- 해석 시간: 0.02부터 0.02 시간간격으로 1.6까지 풀지만, 수렴성에 따라 0.01, 0.02까지 시간간격을 조정 (초기시간 0은 항상 포함)
+- 출력 시간 : 0.03, 0.8, 1.0, 1.2, 1.6에 출력(해석 마지막 시간은 자동 추가)</p>
+<h3 id="1311-step-typestatic">13.1.1 *Step, Type=Static</h3>
+<p>정적 해석 단계를 지정</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static,Standard|Arclength|Quasi,  Name=name, PREV=prevStep, NLGeom=ON|OFF
+ Uniform, dt, ntime, OutFreq=freq
+ Uniform, dt, ntime, TUnit=tUnit, OutFreq=freq
+ Given, timeSpec, OutFreq=freq|OutTime=timeSpec
+ Given, timeSpec, TUnit=tUnit, OutFreq=freq|OutTime=timeSpec
+ Auto, t0, tmax, dtmin, dtmax, maxInc, OutFreq=freq|OutTime=timeSpec
+ Auto, t0, tmax, dtmin, dtmax, maxInc, TUnit=tUnit, OutFreq=freq|OutTime=timeSpec
+</code></pre></div>
+<h5 id="keyword-line_1">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Standard:</strong> 표준 정적 해석(Standard load-displacement controlled static analysis step). Standard는 생략 가능.</li>
+<li><strong>Arclength:</strong> Arclength 정적 해석(Arclength-controlled static analysis step).</li>
+<li><strong>Quasi:</strong> 시간 의존 정적 해석(Quasi-static analysis step). <code>Uniform</code>, <code>Given</code>, <code>Auto</code> dataline에 <code>TUnit=tUnit</code>을 지정해야 한다.</li>
+<li><strong>NLGeom=On|Off:</strong> 기하비선형 지정(optional, default Off).  [Reserved. Currently Unused]</li>
+</ul>
+</div>
+<h5 id="first-dataline-starting-with-uniform-optional">First dataline starting with Uniform (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Uniform,dtime,ntime:</strong> 등간격의 해석시간간격(time increment)을 지정한다. dtime, 2*dtime, ..., ntime*dtime의 시간을 지정하는 것과 같다. <code>dtime</code>의 의미와 단위는 시간 해석 표를 따른다. <code>ntime</code>은 무차원 정수이다.</li>
+<li><strong>TUnit=tUnit:</strong> <code>Static, Quasi</code>에서 step-defined time의 단위를 지정한다. <code>Static, Standard</code>와 <code>Static, Arclength</code>에서는 사용할 수 없다.</li>
+<li><strong>OutFreq=freq:</strong> 출력할 increment 빈도. 만약 0이면 최종 시간만 출력, (디폴트값은 1)</li>
+</ul>
+</div>
+<h5 id="first-dataline-starting-with-given-optional">First dataline starting with Given (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Given,timeSpec:</strong> 주어진 시간으로 해석시간을 지정한다. timeSpec은 t, tStart:tEnd:tSpacing 등을 연속하여 지정할 수 있다. 각 시간값의 의미와 단위는 시간 해석 표를 따른다.</li>
+<li><strong>TUnit=tUnit:</strong> <code>Static, Quasi</code>에서 step-defined time의 단위를 지정한다. <code>Static, Standard</code>와 <code>Static, Arclength</code>에서는 사용할 수 없다.</li>
+<li><strong>OutFreq=freq:</strong> 출력할 increment 빈도. 만약 0이면 최종 시간만 출력, (디폴트값은 1)</li>
+<li><strong>OutTime=timeSpec:</strong> 출력할 해석 시각을 직접 지정한다. 각 값은 0 또는 <code>Given</code>의 timeSpec에 포함된 시각과 일치해야 한다. 0을 지정하면 step 시작 상태도 출력하며, 최종 해석 시각은 지정 여부와 관계없이 출력한다.</li>
+</ul>
+</div>
+<h5 id="first-dataline-starting-with-auto-optional">First dataline starting with Auto (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Auto,t0,tmax,dtmin, dtmax,maxInc:</strong> 자동증분(automatic increment)으로 시간간격을 정의한다. <code>t0</code>, <code>tmax</code>, <code>dtmin</code>, <code>dtmax</code>의 의미와 단위는 시간 해석 표를 따른다. <code>maxInc</code>는 최대 increment 수를 의미하는 무차원 정수이다. 디폴트값은 1,1,0,1,1000이다.</li>
+<li><strong>TUnit=tUnit:</strong> <code>Static, Quasi</code>에서 step-defined time의 단위를 지정한다. <code>Static, Standard</code>와 <code>Static, Arclength</code>에서는 사용할 수 없다.</li>
+<li><strong>OutFreq=freq:</strong> 출력할 increment 빈도. 만약 0이면 최종 증분만 출력, (디폴트값은 1)</li>
+<li><strong>OutTime=timeSpec:</strong> 출력할 시간. timeSpec은 t, tStart:tEnd:tSpacing 등을 연속하여 지정할 수 있다. 각 출력 시간의 의미와 단위는 시간 해석 표를 따른다. 주어진 시간들은 정렬되고, 중복이 제거되며, 해석시간을 벗어나는 시간은 제거된다. 단, 마지막 최종 시간은 포함된다. 만약 해석이 수렴하지 않으면 마지막 수렴된 해석시간은 출력에 포함된다.</li>
+</ul>
+</div>
+<h3 id="1312-step-typedynamic">13.1.2 *Step, Type=Dynamic</h3>
+<p>동해석을 지정</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=Dynamic, Name=name, PREV=prevStep, NLGeom=ON|OFF
+ Uniform, dt, ntime, OutFreq=freq
+ Given, timeSpec, OutFreq=freq|OutTime=timeSpec
+ Auto, t0, tmax, dtmin, dtmax, maxInc, OutFreq=freq|OutTime=timeSpec
+</code></pre></div>
+<h5 id="keyword-line_2">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>NLGeom=On|Off:</strong> 기하비선형 지정(optional, default Off).  [Reserved. Currently Unused]</li>
+</ul>
+</div>
+<h5 id="first-dataline-starting-with-uniform-optional_1">First dataline starting with Uniform (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Uniform,dtime,ntime:</strong> 등간격의 해석시간간격(time increment)을 지정한다. dtime,2*dtime, ..., ntime*dtime의 시간을 지정하는 것과 같다. <code>dtime</code>의 의미와 단위는 시간 해석 표를 따른다.</li>
+<li><strong>OutFreq=freq:</strong> 출력할 increment 빈도. 만약 0이면 최종 시간만 출력, (디폴트값은 1)</li>
+</ul>
+</div>
+<h5 id="first-dataline-starting-with-given-optional_1">First dataline starting with Given (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Given,timeSpec:</strong> 주어진 시간으로 해석시간을 지정한다. timeSpec은 t, tStart:tEnd:tSpacing 등을 연속하여 지정할 있다. 각 시간값의 의미와 단위는 시간 해석 표를 따른다.</li>
+<li><strong>OutFreq=freq:</strong> 출력할 increment 빈도. 만약 0이면 최종 시간만 출력, (디폴트값은 1)</li>
+<li><strong>OutTime=timeSpec:</strong> 출력할 해석 시각을 직접 지정한다. 각 값은 0 또는 <code>Given</code>의 timeSpec에 포함된 시각과 일치해야 한다. 0을 지정하면 step 시작 상태도 출력하며, 최종 해석 시각은 지정 여부와 관계없이 출력한다.</li>
+</ul>
+</div>
+<h5 id="first-dataline-starting-with-auto-optional_1">First dataline starting with Auto (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Auto,t0,tmax,dtmin, dtmax,maxInc:</strong> 자동증분(automatic increment)으로 시간간격을 정의한다. <code>t0</code>, <code>tmax</code>, <code>dtmin</code>, <code>dtmax</code>의 의미와 단위는 시간 해석 표를 따른다. <code>maxInc</code>는 최대 increment 수이다(디폴트값은 1,1,0,1,1000).</li>
+<li><strong>OutFreq=freq:</strong> 출력할 increment 빈도. 만약 0이면 최종 증분만 출력, (디폴트값은 1)</li>
+<li><strong>OutTime=timeSpec:</strong> 출력할 시간. timeSpec은 t, tStart:tEnd:tSpacing 등을 연속하여 지정할 있다. 각 출력 시간의 의미와 단위는 시간 해석 표를 따른다. 주어진 시간들은 정렬되고, 중복이 제거되며, 해석시간을 벗어나는 시간은 제거된다. 단, 마지막 최종 시간은 포함된다. 만약 해석이 수렴하지 않으면 마지막 수렴된 해석시간은 출력에 포함된다.</li>
+</ul>
+</div>
+<h3 id="1313-step-typefrequency">13.1.3 *Step, Type=Frequency</h3>
+<p>주파수 해석을 지정</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=Frequency, Name=name[, PREV=prevStep]
+ nev
+</code></pre></div>
+<h5 id="first-dataline">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>nev:</strong> requested number of eigenpairs (default 20).</li>
+</ul>
+</div>
+<p><code>nev</code>는 <code>*Solver</code> 명령에 따라 다르게 해석된다.</p>
+<ul>
+<li><code>*Solver</code> 명령이 없거나 <code>Range=cutFreq</code>인 경우 nev는 요구 고유치수(requested number of eigenpairs). 이 경우 계산된 고유치 개수는 <code>nev</code>를 넘지 않는다.</li>
+<li><code>*Solver</code> 명령에서 <code>Range=lowFreq, highFreq[,maxnev]</code>인 경우, <code>nev</code>는 필터를 통과해 채택할 고유치의 요구 개수이다. solver는 채택 개수가 <code>nev</code>와 <code>maxnev</code> 중 작은 값에 도달하면 정지하며, 최종 결과 개수도 이 값을 상한으로 한다. 즉 <code>maxnev</code>는 <code>nev</code>보다 작을 때만 상한으로 작동한다. 단, 상한 경계가 같은 고유치의 다중도 묶음 내부에 걸리면 묶음 전체가 보존되어 결과가 상한을 약간 넘을 수 있다.</li>
+</ul>
+<h3 id="1314-step-typeresponsespectrum">13.1.4 *Step, Type=ResponseSpectrum</h3>
+<p>응답스펙트럼 해석을 지정</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=ResponseSpectrum, Name=name[, Prev=prevStep]
+ nmode, modeCombination
+</code></pre></div>
+<h5 id="first-dataline_1">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>nmode:</strong> 고유치 해석에 요청할 모드 수이다. 의미는 <code>*Step, Type=Frequency</code>의 <code>nev</code>와 같다.</li>
+<li><strong>modeCombination:</strong> 모드 조합법. <code>SRSS</code> 또는 <code>CQC</code>.</li>
+</ul>
+</div>
+<p><code>Prev</code>가 있으면 지정 step의 최종 상태를 기준으로 선형화된 시스템에서 해석한다. 지진 입력 방향과 설계스펙트럼은 하위 명령 <code>*Spectrum</code>(13.10 참조)으로 지정하며, 하나의 step에 하나 이상의 <code>*Spectrum</code>을 둘 수 있다. 시간증분 dataline과 <code>*Modal</code>, <code>*RayleighDamping</code>, <code>*TimeIntegration</code>, <code>*Convergence</code>는 허용하지 않는다.</p>
+<p>각 <code>*Spectrum</code>의 조합 결과는 응답스펙트럼 envelope으로 <code>*Frame</code>에 출력된다. 이 envelope은 절대값 포락 성격이므로 부호와 발생 시각은 정의되지 않는다.</p>
+<h5 id="example">Example</h5>
+<div class="highlight"><pre><span></span><code>*Function, Type=ResponseSpectrum, Name=KDS17_S3
+ KDS17, S3, 0.154
+*Function, Type=ResponseSpectrum, Name=KDS17_S1_D02
+ KDS17, S1, 0.154, 0.02
+
+*Step, Type=ResponseSpectrum, Name=RS, Prev=gravity
+ 20, SRSS
+*Activate, TYPE=Element
+ ALL
+*Activate, TYPE=Constraint
+ BC
+*Spectrum, ByFreq, Dir=1,0,0
+ 0.0, 10.0, 0.02, KDS17_S1_D02
+ 10.0, 50.0, 0.05, KDS17_S3
+*Spectrum, 0.05, Dir=0,1,0, Function=KDS17_S3
+*Output
+ D, SF
+</code></pre></div>
+<h3 id="1315-step-typeseepage">13.1.5 *Step, Type=Seepage</h3>
+<p>침투 해석 단계를 지정</p>
+<div class="highlight"><pre><span></span><code>*Step, Type=Seepage,Steady,  Name=name, PREV=prevStep
+ Uniform, dt, ntime[, Path=Load|PTC|Material][, OutFreq=freq]
+ Given, timeSpec[, Path=Load|PTC|Material][, OutFreq=freq|OutTime=timeSpec]
+ Auto, t0, tmax, dtmin, dtmax, maxInc[, Path=Load|PTC|Material][, OutFreq=freq|OutTime=timeSpec]
+
+*Step, Type=Seepage,Transient,  Name=name, PREV=prevStep
+ Uniform, dt, ntime, TUnit=tUnit[, LScheme=None|Auto|Fixed,value][, OutFreq=freq]
+ Given, timeSpec, TUnit=tUnit[, LScheme=None|Auto|Fixed,value][, OutFreq=freq|OutTime=timeSpec]
+ Auto, t0, tmax, dtmin, dtmax, maxInc, TUnit=tUnit[, LScheme=None|Auto|Fixed,value][, OutFreq=freq|OutTime=timeSpec]
+</code></pre></div>
+<h5 id="keyword-line_3">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Steady:</strong> 정상상태 해석. Steady는 생략 가능.</li>
+<li><strong>Transient:</strong> 과도상태 해석. <code>Uniform</code>, <code>Given</code>, <code>Auto</code> dataline에 <code>TUnit=tUnit</code>을 지정해야 한다.</li>
+</ul>
+</div>
+<h5 id="first-dataline-starting-with-uniform-optional_2">First dataline starting with Uniform (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Uniform,dtime,ntime:</strong> 등간격의 해석시간간격(time increment)을 지정한다. dtime,2*dtime, ..., ntime*dtime의 시간을 지정하는 것과 같다. <code>dtime</code>의 의미와 단위는 시간 해석 표를 따른다. <code>ntime</code>은 무차원 정수이다.</li>
+<li><strong>Path=Load|PTC|Material:</strong> <code>Seepage, Steady</code>의 경로를 지정한다(optional, default=<code>Material</code>). Transient에서는 사용할 수 없다.</li>
+<li><strong>TUnit=tUnit:</strong> <code>Seepage, Transient</code>의 물리 시간 단위를 지정한다. Steady에서는 사용할 수 없다.</li>
+<li><strong>OutFreq=freq:</strong> 출력할 increment 빈도. 0이면 최종 진행값만 출력한다. 디폴트값은 <code>Seepage, Steady</code>에서 0, <code>Seepage, Transient</code>에서 1이다.</li>
+</ul>
+</div>
+<h5 id="first-dataline-starting-with-given-optional_2">First dataline starting with Given (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Given,timeSpec:</strong> 주어진 시간으로 해석시간을 지정한다. timeSpec은 t, tStart:tEnd:tSpacing 등을 연속하여 지정할 있다. 각 시간값의 의미와 단위는 시간 해석 표를 따른다.</li>
+<li><strong>Path=Load|PTC|Material:</strong> <code>Seepage, Steady</code>의 경로를 지정한다(optional, default=<code>Material</code>). Transient에서는 사용할 수 없다.</li>
+<li><strong>TUnit=tUnit:</strong> <code>Seepage, Transient</code>의 물리 시간 단위를 지정한다. Steady에서는 사용할 수 없다.</li>
+<li><strong>OutFreq=freq:</strong> 출력할 increment 빈도. 0이면 최종 진행값만 출력한다. 디폴트값은 <code>Seepage, Steady</code>에서 0, <code>Seepage, Transient</code>에서 1이다.</li>
+<li><strong>OutTime=timeSpec:</strong> 출력할 해석 시각을 직접 지정한다. 각 값은 0 또는 <code>Given</code>의 timeSpec에 포함된 시각과 일치해야 한다. 0을 지정하면 step 시작 상태도 출력하며, 최종 해석 시각은 지정 여부와 관계없이 출력한다.</li>
+</ul>
+</div>
+<h5 id="first-dataline-starting-with-auto-optional_2">First dataline starting with Auto (optional)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Auto,t0,tmax,dtmin, dtmax,maxInc:</strong> 자동증분(automatic increment)으로 시간간격을 정의한다. <code>t0</code>, <code>tmax</code>, <code>dtmin</code>, <code>dtmax</code>의 의미와 단위는 시간 해석 표를 따른다. <code>maxInc</code>는 최대 increment 수를 의미하는 무차원 정수이다. 기본 수치는 1,1,0,1,1000이다. <code>Seepage, Steady</code>에서 비선형성이 큰 경우에는 <code>Auto,0.1,1,0.01,0.1,1000</code>과 같이 작은 초기 진행 증분과 증분 상한을 지정하여 처음부터 Material continuation으로 접근하는 것이 좋다.</li>
+<li><strong>Path=Load|PTC|Material:</strong> <code>Seepage, Steady</code>의 경로를 지정한다(optional, default=<code>Material</code>). Transient에서는 사용할 수 없다.</li>
+<li><strong>TUnit=tUnit:</strong> <code>Seepage, Transient</code>의 물리 시간 단위를 지정한다. Steady에서는 사용할 수 없다.</li>
+<li><strong>OutFreq=freq:</strong> 출력할 increment 빈도. 0이면 최종 진행값만 출력한다. 디폴트값은 <code>Seepage, Steady</code>에서 0, <code>Seepage, Transient</code>에서 1이다.</li>
+<li><strong>OutTime=timeSpec:</strong> 출력할 시간. timeSpec은 t, tStart:tEnd:tSpacing 등을 연속하여 지정할 있다. 각 출력 시간의 의미와 단위는 시간 해석 표를 따른다. 주어진 시간들은 정렬되고, 중복이 제거되며, 해석시간을 벗어나는 시간은 제거된다. 단, 마지막 최종 시간은 포함된다. 만약 해석이 수렴하지 않으면 마지막 수렴된 해석시간은 출력에 포함된다.</li>
+</ul>
+</div>
+<h5 id="algorithm-description">Algorithm description</h5>
+<p><code>Seepage, Steady</code>의 dataline에 입력하는 값은 물리시간이 아니라 최종 정상상태 문제에 접근하는 정도를 나타내는 무차원 진행값 <span class="arithmatex">\(s\)</span>이다. <code>Path</code>는 <span class="arithmatex">\(s\)</span>에 따라 풀어 가는 보조문제를 정한다. 세 경로 모두 <span class="arithmatex">\(s=1\)</span>에서 보조 과정이 끝나 원래의 정상상태 문제에 도달하므로 마지막 진행값은 정확히 1이어야 한다. Steady에는 <code>TUnit</code>을 지정하지 않는다. 투수계수의 시간 단위는 재료에 <code>TUnit</code>을 지정하면 그 값을 따르고, 생략하면 <code>*Environment, Type=UnitSystem</code>의 전역 시간 단위를 따른다. 전역 단위계가 없으면 모든 시간 차원 물리량에 서로 일관된 동일한 단위 <span class="arithmatex">\([T]\)</span>를 사용하며, 프로그램은 이를 초나 분 등의 특정 단위로 가정하거나 변환하지 않는다.</p>
+<p><code>Seepage, Transient</code>의 dataline에 입력하는 값은 실제 물리시간이며, <code>TUnit</code>으로 그 단위를 지정한다. 이 값은 투수계수의 입력 단위를 바꾸지 않는다. 투수계수는 재료의 <code>TUnit</code> 또는 전역 UnitSystem의 시간 단위에서 step의 <code>TUnit</code>으로 변환하여 사용한다.</p>
+<p>Steady에서 선택 가능한 경로는 다음과 같다. <code>Path</code>를 생략하면 <code>Material</code>이다.</p>
+<table>
+<thead>
+<tr>
+<th><code>Path</code></th>
+<th>공통 진행값 <span class="arithmatex">\(s\)</span>에 따른 변화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Load</code></td>
+<td>입력한 하중과 지정 수압을 <span class="arithmatex">\(s\)</span>에 따라 목표값까지 증가시킨다. 재료관계는 처음부터 입력값을 사용한다.</td>
+</tr>
+<tr>
+<td><code>PTC</code></td>
+<td>하중, 지정 수압 및 재료관계를 처음부터 모두 적용한다. 중간 진행점에서는 대각 안정화항을 사용하고 최종점에서 완전히 제거한다.</td>
+</tr>
+<tr>
+<td><code>Material</code></td>
+<td>하중과 지정 수압을 처음부터 모두 적용하고, VGM 상대투수계수만 포화값에서 입력한 재료값까지 변화시킨다.</td>
+</tr>
+</tbody>
+</table>
+<p><code>Seepage, Steady</code>의 dataline을 생략하면 <code>Auto,1,1,0,1,1000, Path=Material, OutFreq=0</code>과 같다. 첫 시도에서는 <span class="arithmatex">\(s=1\)</span>의 원래 정상상태 문제를 직접 풀고, 실패하여 <code>Auto</code>가 진행 증분을 줄이면 <span class="arithmatex">\(s&lt;1\)</span>에서 Material continuation이 활성화된다.</p>
+<p>Steady에서는 각 진행 증분에서 비선형 평형 반복과 PSF boundary interaction이 수렴한 뒤, 그 증분을 받아들이기 전에 전체 경계의 유량평형을 확인한다. 전체 유입량과 유출량의 상대 오차가 내부 허용값 <span class="arithmatex">\(10^{-4}\)</span> 이하일 때만 현재 증분을 수렴한 것으로 받아들인다. 일반 수렴 조건을 먼저 만족했더라도 유량평형이 부족하면 같은 증분의 평형 반복을 계속한다. 허용된 반복 횟수 안에 유량평형까지 만족하지 못하면 현재 증분을 실패로 처리하며, <code>Auto</code>에서는 진행간격을 줄여 다시 시도한다. <code>Uniform</code>과 <code>Given</code>에서는 자동 cutback을 수행하지 않는다.</p>
+<p><code>LScheme</code>은 <code>Seepage, Transient</code>의 각 물리 시간증분 안에서 저류 접선을 안정화한다. 정상상태 연속화 경로를 선택하는 <code>Path</code>와는 다른 기능이며, 시간증분을 정의하는 <code>Uniform</code>, <code>Given</code>, <code>Auto</code>와도 구별된다.</p>
+<table>
+<thead>
+<tr>
+<th><code>LScheme</code></th>
+<th>저류 접선</th>
+<th>적용 조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code></td>
+<td>현재 압력에서 계산한 재료의 저류 접선을 사용한다.</td>
+<td>기본값</td>
+</tr>
+<tr>
+<td><code>Auto</code></td>
+<td>각 재료의 압력 용량 상한으로 <span class="arithmatex">\(L\)</span>을 자동 산정한다. 포화 재료는 <span class="arithmatex">\(S_s/\gamma_w\)</span>를, VGM 재료는 air-entry 보정을 포함한 <span class="arithmatex">\(d\theta/dp\)</span>의 상한과 <span class="arithmatex">\(S_s/\gamma_w\)</span> 중 큰 값을 사용한다.</td>
+<td>포화 또는 VGM 재료</td>
+</tr>
+<tr>
+<td><code>Fixed,value</code></td>
+<td>모든 침투 재료에 사용자가 지정한 양의 <span class="arithmatex">\(L\)</span>을 적용한다. <code>value</code>의 단위는 현재 압력 단위의 역수이다.</td>
+<td>사용자 정의 SWCC에는 이 방법을 사용한다.</td>
+</tr>
+</tbody>
+</table>
+<p><code>LScheme=Auto|Fixed</code>에서는 보정방정식의 저류 접선행렬을 다음과 같이 구성한다.</p>
+<div class="arithmatex">\[
+\mathbf M_L=\int_\Omega \mathbf N^{\mathsf T}L\mathbf N\,d\Omega,
+\qquad
+\mathbf H_{\mathrm{eff}}=\mathbf H_{\mathrm{flow}}+\frac{1}{\Delta t}\mathbf M_L
+\]</div>
+<p>여기서 <span class="arithmatex">\(\mathbf N\)</span>은 압력 보간함수 행렬, <span class="arithmatex">\(\Delta t\)</span>는 물리 시간증분이며, <span class="arithmatex">\(\mathbf H_{\mathrm{flow}}\)</span>는 선택한 비선형 알고리즘에 따라 구성한 투수항의 접선행렬이다. 실제 저류 잔차 <span class="arithmatex">\((\theta(p_{n+1})-\theta(p_n))/\Delta t\)</span>는 바꾸지 않으므로 수렴한 해는 원래의 과도 이산방정식을 만족한다. <code>StepCtrl</code>도 그대로 함께 적용할 수 있다. <code>LScheme=Auto</code>는 <span class="arithmatex">\(L\)</span>의 자동 산정이며, 시간증분의 <code>Auto</code>를 뜻하지 않는다. 사용자 정의 SWCC는 전 압력 범위의 미분 상한을 프로그램이 보장할 수 없으므로 <code>LScheme=Auto</code>를 허용하지 않는다.</p>
+<h2 id="132-activate">13.2 *Activate</h2>
+<p>Step의 대상이 되는 요소, 하중, 구속조건을 활성화한다.</p>
+<div class="highlight"><pre><span></span><code>*Activate, Typ={Element|Load|Constraint}
+ target, ...
+ ...
+</code></pre></div>
+<h5 id="keyword-line-for-activate">Keyword line for *Activate</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=type</strong><ul>
+<li><strong>Element:</strong> 활성화 대상이 요소</li>
+<li><strong>Load:</strong> 활성화 대상이 하중</li>
+<li><strong>Constraint:</strong> 활성화 대상이 구속조건</li>
+</ul>
+</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target:</strong> type에 따라 결정되는 대상. Elset, Load, Constraint</li>
+</ul>
+</div>
+<p><code>Type=Element</code>에서 해석 단계에 사용할 요소는 요소집합 단위로 지정한다. 이때 같은 step 안에 활성화되는 각 요소집합은 공통 요소를 포함해서는 안 된다.</p>
+<p><code>Type=Element</code>로 활성화되는 요소는 현재 <code>rtime</code>을 <code>birthTime</code>으로 기록한다. 비활성화된 요소가 다시 활성화되면 재활성화 시점의 <code>rtime</code>으로 <code>birthTime</code>이 갱신되며, 이후 <code>ELTIME</code>은 새 활성화 시점부터의 경과시간으로 계산된다.</p>
+<h5 id="example_1">Example</h5>
+<div class="highlight"><pre><span></span><code>*STEP, Type=Static, Name=stage2 Prev=stage1
+*Inativate, Type=ELEMENT
+ slab
+*Activate, Type=Element
+ 10, new_slab
+*Inativate, Type=Load
+ pointLoad
+*Activate, Type=Load
+ lineload
+</code></pre></div>
+<h2 id="133-inactivate">13.3 *Inactivate</h2>
+<p>Step의 대상이 되는 요소, 하중, 구속조건을 비활성화한다.</p>
+<div class="highlight"><pre><span></span><code>*Inactivate, Type={Element|Load[,Ramp]|Constraint}
+ target, ...
+ ...
+</code></pre></div>
+<h5 id="keyword-line_4">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=type</strong><ul>
+<li><strong>Element:</strong> 비활성화 대상 요소</li>
+<li><strong>Load[, Ramp]:</strong> 비활성화 대상이 되는 요소. __Ramp__가 지정하면 Step 초기에 즉시 없어짐.</li>
+<li><strong>Constraint:</strong> 비활성화 대상이 구속조건</li>
+</ul>
+</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines_1">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target:</strong> type에 따라 결정되는 대상. Elset, Load, Constraint</li>
+</ul>
+</div>
+<h2 id="134-solver">13.4 *Solver</h2>
+<p>해석 단계에 적용할 솔버를 지정</p>
+<div class="highlight"><pre><span></span><code>*Solver, Type=Linear, Pardiso
+ IterativeOff|IterativeOn, TryPositiveDefinite|PositiveDefinite|Indefinite
+
+*Solver, Type=Linear, BiCG|BiCGStab|CGS
+ None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardisoD|PardisoDC, TryPositiveDefinite|PositiveDefinite|Indefinite
+
+*Solver, Type=Eigen, General
+ Range=lowFreq|lowFreq,highFreq,maxnev, Threshold=EMMR|MPR,value,\
+ ZeroEigTol=tol, Strategy=Expansion|Sweep
+
+*Solver, Type=Eigen, LDR
+ Dof, Dof@centerFreq, Load, Load@centerFreq, ...
+</code></pre></div>
+<h5 id="keyword-line_5">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=Linear, Pardiso|BiCG|BiCGStab|CGS:</strong> 선형 솔버를 지정. 디폴트 솔버는 Pardiso</li>
+<li><strong>Type=Eigen, General|LDR:</strong> 고유치솔버를 지정. 디폴트 솔버는 General</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-typelinear-pardiso">First dataline for Type=Linear, Pardiso</h5>
+<div class="admonition note">
+<ul>
+<li><strong>IterativeOff|IterativeOn:</strong> Iterative solver combination을 on/off (default IterativeOff)</li>
+<li><strong>TryPositiveDefinite|PositiveDefinite|Indefinite:</strong> Positive definite, indefinite 행렬 처리 방식을 지정(default TryPositiveDefinite)</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-typelinear-bicgbicgstabcgs">First dataline for Type=Linear, BiCG|BiCGStab|CGS</h5>
+<div class="admonition note">
+<ul>
+<li><strong>None|Jacobi|SSOR|ILU0|ILUT|PardisoS|PardisoD|PardisoDC:</strong> Preconditioner를 지정(default None)</li>
+<li><strong>TryPositiveDefinite|PositiveDefinite|Indefinite:</strong> Positive definite, indefinite 행렬 처리 방식을 지정(default TryPositiveDefinite)</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-typeeigen-general">First dataline for Type=Eigen, General</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Range=lowFreq:</strong> lowFreq 이상의 고유치를 선별. 단위는 [1/T]이다. (optional)</li>
+<li><strong>Range=lowFreq,highFreq,maxnev:</strong> <code>[lowFreq,highFreq]</code> 범위의 고유치를 선별. maxnev는 선별한 최대 고유치(디폴트는 200). (optional)</li>
+<li><strong>Threshold=EMMR|MPR, value:</strong> EMMR(Effective Modal Mass Ratio) 또는 MPR(Modal Participation Ratio)이 주어진 value 이상이면 그 모드를 채택(optional)</li>
+<li><strong>ZeroEigTol=tol:</strong> 고유치가 tol 이하이면 zero 고유치로 간주. 디폴트는 1E-8. (optional)</li>
+<li><strong>Strategy=Expansion|Sweep:</strong> 고유치 필터링 방식을 선택. <code>Expansion</code>은 후보 확장(candidate-expansion) 방식을 사용하고, <code>Sweep</code>은 filtered-sweep 알고리즘을 사용한다. 디폴트는 Sweep.</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-typeeigen-ldr">First dataline for Type=Eigen, LDR</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Dof:</strong> 자유도 X, Y, Z 방향 변위 벡터 시드</li>
+<li><strong>Dof@centerFreq:</strong> 자유도 방향 변위 벡터 시드와 대응하는 중심주파수. centerFreq의 단위는 [1/T]이다.</li>
+<li><strong>Load:</strong> 하중 시드</li>
+<li><strong>Load@centerFreq:</strong> 하중 시드와 대응하는 중심주파수. centerFreq의 단위는 [1/T]이다.</li>
+</ul>
+</div>
+<p>Linear solver는 <span class="arithmatex">\(Kx = f\)</span> 형태의 선형계에 대한 해를 구하는 데 사용되며, 이때 <span class="arithmatex">\(K\)</span>는 희소행렬이다. 직접 희소 솔버(direct sparse solver)인 Pardiso 솔버가 디폴트이고, BiCG, BiCGStab, CGS 등과 같은 반복 희소 솔버(iterative sparse solver)를 사용할 수 있다.</p>
+<p>Eigen solver는 <span class="arithmatex">\(Kx = \lambda Mx\)</span> 형태의 일반 고유치 문제를 풀기 위해 사용된다. 기본 설정은 <code>General</code>이며, 필요하면 <code>LDR</code>(Load-Dependent Ritz)과 같은 특수 솔버를 적용할 수 있다. General 고유치 솔버는 행렬 크기에 따라 <code>LAPACK</code> 또는 <code>ARPACK</code>을 사용한다.</p>
+<p><code>Solver, Type=Eigen, General</code>에서는 <code>Range</code>, <code>Threshold</code>, <code>ZeroEigTol</code>, <code>Strategy</code> 옵션을 사용할 수 있다. <code>Range=lowFreq</code>로 지정하면 <code>lowFreq</code> 이상의 고유치를 선별하며 단위는 <code>[1/T]</code>이다. <code>Range=lowFreq,highFreq,maxnev</code>로 지정하면 <code>[lowFreq, highFreq]</code> 범위의 고유치를 선별하고, <code>maxnev</code>는 선별 가능한 최대 고유치 수를 뜻하며 기본값은 <code>200</code>이다. <code>Threshold=EMMR,value</code> 또는 <code>Threshold=MPR,value</code>로 지정하면 <code>EMMR</code>(Effective Modal Mass Ratio) 또는 <code>MPR</code>(Modal Participation Ratio)이 주어진 값 이상인 모드만 채택한다. <code>ZeroEigTol=tol</code>로 지정하면 <code>tol</code> 이하의 고유치는 zero 고유치로 간주하며 기본값은 <code>1E-8</code>이다. <code>Strategy=Expansion</code> 또는 <code>Strategy=Sweep</code>으로 고유치 필터링 방식을 선택할 수 있고, <code>Expansion</code>은 candidate-expansion 방식을 사용하며 <code>Sweep</code>은 filtered-sweep 알고리즘을 사용한다. 기본값은 <code>Sweep</code>이다.</p>
+<p><code>Range</code> 또는 <code>Threshold</code> 조건이 주어지면 solver는 후보 고유치 수인 <code>nev</code>를 단계적으로 늘려 가며 조건을 만족하는 모드를 탐색한다. 이 과정에서 내부적으로 <code>nevLimit</code>가 자동 설정되어 후보 고유치 수의 상한을 제한하며, 이 값은 활성 질량 자유도, 사용 가능한 메모리, 그리고 solver 특성을 함께 고려해 결정된다. 따라서 필터 조건을 사용하더라도 계산 시간과 메모리 사용이 과도하게 증가하지 않도록 제어된다.</p>
+<p><code>Threshold=EMMR</code>은 누적 유효질량비를 기준으로 모드를 선별하는 방식에 대응하며, 주어진 하중패턴에 대해 충분한 모드 기여를 확보하는 데 유리하다. 반면 <code>Threshold=MPR</code>은 먼저 관심 주파수 대역의 후보 모드를 확보한 뒤, 그 대역 내부에서의 상대적인 modal participation을 기준으로 모드를 선별하는 방식에 대응한다. 따라서 <code>MPR</code> 기준은 주파수 대역 기반 선별과 함께 사용할 때 특히 유효하며, 비대칭계처럼 generalized <code>EMMR</code>의 누적값이 단조롭게 증가하지 않을 수 있는 경우에 더 적합하다. 실무적으로는 <code>EMMR</code> 또는 <code>MPR</code> 필터와 내부 <code>nevLimit</code> 제어를 함께 사용하여 탐색 범위를 관리한다. <code>Strategy=Expansion</code>에서 <code>nevLimit</code>에 도달한 경우 이는 오류가 아니라 정상적인 종료 사유(<code>stop reason</code>)로 처리되며, <code>Strategy=Sweep</code>에서 <code>nevLimit</code>는 종료 조건이 아니라 한 sweep 창에서 사용하는 후보 고유치 수의 상한으로만 작동한다.</p>
+<p>비대칭계에서는 고유치가 일반적으로 복소수가 될 수 있으므로, 특정 실수 구간을 기준으로 고유치를 제한하는 방식이 제대로 작동하지 않을 수 있다. 한편 대칭계에서는 고유치가 항상 실수이지만 음수로 계산될 수도 있으므로, 이 경우에도 단순한 주파수 범위 제한이 항상 유효한 것은 아니다. 따라서 대칭계와 비대칭계 모두에서 <code>Range</code> 기반 추출은 고유치가 0 이상인 실수로 계산되는 특별한 경우에만 안정적으로 유효하다.</p>
+<h5 id="example_2">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=1
+...
+*Solver, Type=Linear, Pardiso
+ IterativeOn
+...
+
+# Basic Frequency Extraction (maximum 20 eigenvalues)
+# Extract up to 20 eigenvalues without applying any additional filtering or sampling conditions.
+*Step, Type=Frequency, Name=name
+ 20
+
+# Frequency Extraction with General Eigen-solver (Range = 10 Hz)
+# From oneSideSampling × 20 trial eigenvalues, extract up to 20 eigenvalues
+# whose natural frequencies are higher than 10 Hz.
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, Type=Eigen,General
+ Range=10
+
+# Frequency Extraction with Increasing Trial Eigenvalues (Range = 10–20 Hz)
+# Increase the number of trial eigenvalues (e.g., 40, 60, 80, 100, …) and
+# extract up to 20 eigenvalues whose natural frequencies fall within the range 10 Hz – 20 Hz.
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, Type=Eigen,General
+ Range=10, 20
+
+# Frequency Extraction with EMMR Filtering (Range ≥ 10 Hz)
+# From oneSideSampling × 20 trial eigenvalues, extract up to 20 eigenvalues
+# that satisfy both  conditions of Range and EMMRThreshold
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, Type=Eigen,General
+ Range=10,  Threshold=EMMR,1E-4
+
+# Frequency Extraction with Range = 10–20 Hz and MPR Filtering
+# Increase the number of trial eigenvalues (e.g., 40, 60, 80, 100, …) and
+# extract up to 20 eigenvalues that satisfy both conditions of Range and MPR
+*Step, Type=Frequency, Name=name
+ 20
+*Solver, Type=Eigen,General
+ Range=10, 20,  Threshold=MPR,1E-4
+</code></pre></div>
+<h2 id="135-nonlinearalgorithm">13.5 *NonlinearAlgorithm</h2>
+<p>비선형 해석 관련 옵션을 지정</p>
+<div class="highlight"><pre><span></span><code>*NonlinearAlgorithm
+ algorithm-spec[, StepCtrl=step-control-spec]
+
+algorithm-spec:
+ Picard[, maxIter] | Newton[, maxIter] | \
+ MNewton[, maxIter[, kernelUpdate]] | \
+ HNewton, r[, maxIter] | \
+ HNewton, r0, grow, shrink, tolSwitch[, maxIter] | \
+ BFGS[, maxIter[, kernelUpdate]] | Secant[, maxIter[, kernelUpdate]]
+
+step-control-spec:
+ None | SchedRelax[, etamin[, beta[, frequency]]] | \
+ RelaxBack[, N[, etamin[, etas[, beta]]]] | \
+ ArmijoBack[, N[, etamin[, c1]]] | \
+ Bracketed[, N[, etamin[, rho[, etamax[, alpha]]]]]
+</code></pre></div>
+<p><code>algorithm-spec</code>과 <code>step-control-spec</code>은 구문을 설명하기 위한 자리표시자이며
+실제 입력에는 쓰지 않는다.</p>
+<h5 id="first-dataline_2">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Picard:</strong> Picard 접선행렬을 매 평형반복마다 다시 구성한다. <code>Seepage</code>에서만 사용할 수 있으며 <code>Seepage</code>의 기본 알고리즘이다.</li>
+<li><strong>Newton:</strong> Newton 접선행렬을 매 평형반복마다 다시 구성한다. Static/Dynamic의 기본 알고리즘이다.</li>
+<li><strong>MNewton:</strong> Newton 접선행렬을 <code>kernelUpdate</code> 간격으로 다시 구성하고 그 사이에는 기존 행렬과 분해 결과를 재사용한다.</li>
+<li><strong>HNewton,r:</strong> 기준 접선과 Newton 접선을 고정 비율로 혼합하는 Hybrid Newton 방법이다. <span class="arithmatex">\(0&lt;r&lt;1\)</span>이어야 하며 <code>Seepage</code>에서만 사용할 수 있다.</li>
+<li><strong>HNewton,r0,grow,shrink,tolSwitch:</strong> 혼합비를 압력 보정량에 따라 조절하는 적응형 Hybrid Newton 방법이다. <code>r0</code>, <code>grow</code>, <code>shrink</code>는 0 이상 1 이하이고 <code>tolSwitch</code>는 0보다 크고 1 이하이다. 권장 시작값은 각각 0, 0.2, 0.3, 0.1이다. 고정형과 적응형은 입력값의 개수로 구분한다.</li>
+<li><strong>BFGS|Secant:</strong> <code>kernelUpdate</code> 간격으로 기준 행렬을 다시 구성하고 그 사이에는 지정한 quasi-Newton 갱신식을 사용한다.</li>
+<li><strong>maxIter:</strong> 하나의 평형 반복 과정에서 허용하는 최대 반복 횟수이다. 해석별 기본값은 아래 표와 같다.</li>
+<li><strong>kernelUpdate:</strong> <code>MNewton</code>, <code>BFGS</code>, <code>Secant</code>에서 계수행렬을 다시 구성하는 반복 간격이다. 기본값은 Seepage <code>MNewton</code>에서 80이고, 나머지는 8이다.</li>
+<li><strong>StepCtrl=None:</strong> 계산된 보정량을 그대로 적용한다.</li>
+<li><strong>StepCtrl=SchedRelax[, etamin[, beta[, frequency]]]:</strong> 예정 완화를 적용한다. <code>etamin</code>은 최소 스텝 크기, <code>beta</code>는 단계별 감소계수, <code>frequency</code>는 스텝 크기를 한 단계 줄일 때까지의 반복 횟수이다. <span class="arithmatex">\(0&lt;beta&lt;1\)</span>이고 <code>frequency</code>는 양의 정수이며, 기본값은 각각 0.01, 0.65, 10이다.</li>
+<li><strong>StepCtrl=RelaxBack[, N[, etamin[, etas[, beta]]]]:</strong> 완화 backtracking 선탐색을 적용한다. <code>N</code>은 최대 선탐색 반복 횟수, <code>etamin</code>은 최소 스텝 크기, <code>etas</code>는 초기 스텝 크기, <code>beta</code>는 감소계수이다. <span class="arithmatex">\(0&lt;etamin&lt;etas\le1\)</span>, <span class="arithmatex">\(0&lt;beta&lt;1\)</span>이고, 기본값은 각각 20, 1E-4, 1, 0.5이다.</li>
+<li><strong>StepCtrl=ArmijoBack[, N[, etamin[, c1]]]:</strong> Armijo backtracking 선탐색을 적용한다. <code>N</code>은 최대 선탐색 반복 횟수, <code>etamin</code>은 최소 스텝 크기, <code>c1</code>은 충분 감소 조건의 계수이다. 기본값은 각각 20, 1E-5, 1E-4이다.</li>
+<li><strong>StepCtrl=Bracketed[, N[, etamin[, rho[, etamax[, alpha]]]]]:</strong> bracketed 선탐색을 적용한다. <code>N</code>은 최대 선탐색 반복 횟수, <code>etamin</code>은 최소 스텝 크기, <code>rho</code>는 방향잔차 허용값, <code>etamax</code>는 최대 스텝 크기, <code>alpha</code>는 위험한 외삽을 제한하는 확대계수이다. 기본값은 각각 6, 0.01, 0.8, 25, 5이다.</li>
+</ul>
+</div>
+<p>허용하는 조합과 기본값은 해석 종류에 따라 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Algorithm</th>
+<th style="text-align: right;"><code>maxIter</code> 기본값</th>
+<th style="text-align: right;"><code>kernelUpdate</code></th>
+<th>허용 <code>StepCtrl</code> (기본값)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Static</td>
+<td><code>Newton</code></td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">미사용</td>
+<td><code>None</code>, <code>RelaxBack</code>, <code>ArmijoBack</code>, <code>Bracketed</code> (<code>None</code>)</td>
+</tr>
+<tr>
+<td>Static</td>
+<td><code>MNewton</code></td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">8</td>
+<td><code>None</code>, <code>RelaxBack</code>, <code>ArmijoBack</code>, <code>Bracketed</code> (<code>ArmijoBack</code>)</td>
+</tr>
+<tr>
+<td>Static</td>
+<td><code>BFGS</code>, <code>Secant</code></td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">8</td>
+<td><code>None</code>, <code>RelaxBack</code>, <code>ArmijoBack</code>, <code>Bracketed</code> (<code>ArmijoBack</code>)</td>
+</tr>
+<tr>
+<td>Dynamic</td>
+<td><code>Newton</code></td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">미사용</td>
+<td><code>None</code>, <code>RelaxBack</code>, <code>ArmijoBack</code>, <code>Bracketed</code> (<code>None</code>)</td>
+</tr>
+<tr>
+<td>Dynamic</td>
+<td><code>MNewton</code></td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">8</td>
+<td><code>None</code>, <code>RelaxBack</code>, <code>ArmijoBack</code>, <code>Bracketed</code> (<code>ArmijoBack</code>)</td>
+</tr>
+<tr>
+<td>Seepage</td>
+<td><code>Picard</code></td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">미사용</td>
+<td><code>None</code>, <code>SchedRelax</code>, <code>RelaxBack</code> (<code>SchedRelax</code>)</td>
+</tr>
+<tr>
+<td>Seepage</td>
+<td><code>Newton</code></td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">미사용</td>
+<td><code>None</code>, <code>RelaxBack</code>, <code>ArmijoBack</code>, <code>Bracketed</code> (<code>ArmijoBack</code>)</td>
+</tr>
+<tr>
+<td>Seepage</td>
+<td><code>MNewton</code></td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">80</td>
+<td><code>None</code>, <code>RelaxBack</code>, <code>ArmijoBack</code>, <code>Bracketed</code> (<code>ArmijoBack</code>)</td>
+</tr>
+<tr>
+<td>Seepage</td>
+<td><code>HNewton</code></td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">미사용</td>
+<td><code>None</code>, <code>SchedRelax</code>, <code>RelaxBack</code> (<code>SchedRelax</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><code>Seepage</code>의 <code>maxIter</code> 기본값은 <code>Picard</code>와 <code>HNewton</code>에서 1000, <code>Newton</code>에서
+160, <code>MNewton</code>에서 250이다. 이 기본값은 Steady/Transient 및 <code>Uniform</code>, <code>Given</code>,
+<code>Auto</code> 시간설정에 공통으로 적용된다. <code>maxIter</code>는 각 평형 반복 과정의 반복 상한이며,
+<code>Auto</code> dataline의 <code>maxInc</code>와는 별개이다.</p>
+<p><code>Seepage</code>에서 <code>ArmijoBack</code>과 <code>Bracketed</code>는 Newton 접선을 사용하는 <code>Newton</code>과
+<code>MNewton</code>에서만 허용한다. <code>HNewton</code>의 혼합비가 반복 중 1에 도달하더라도
+<code>ArmijoBack</code>과 <code>Bracketed</code>를 사용할 수 없다.</p>
+<h5 id="algorithm-description_1">Algorithm description</h5>
+<p><code>*NonlinearAlgorithm</code>은 반복에 사용할 접선과 계수행렬 갱신 방법을 선택한다.
+<code>StepCtrl</code>은 선택한 알고리즘으로 계산한 보정량에 적용할 스텝 크기를 별도로 제어한다.</p>
+<p><strong>계수행렬 갱신</strong></p>
+<p><code>Picard</code>, <code>Newton</code>, <code>HNewton</code>은 현재 반복 상태에서 계수행렬을 매 평형반복마다
+재구성한다. <code>MNewton</code>은 증분 시작에서 구성한 Newton 접선행렬을 재사용하고
+<code>kernelUpdate</code>로 지정한 반복 간격마다 다시 구성한다. 이때 잔차와 현재 상태는
+매 반복 다시 계산하며, 접선행렬과 그 분해 결과만 재사용한다. Seepage에서는 새 증분,
+cutback 재시도 및 새 PSF 활성집합 반복을 시작할 때 항상 행렬을 다시 구성한다.
+<code>BFGS</code>와 <code>Secant</code>는 기준 계수행렬을 <code>kernelUpdate</code> 간격으로 재구성하고,
+그 사이에는 각각의 quasi-Newton 갱신식을 사용한다.</p>
+<p>다만 Static Arclength 해석은 선택한 알고리즘과 관계없이 계수행렬을 매 반복
+재구성한다.</p>
+<p><strong>Hybrid Newton</strong></p>
+<p><code>HNewton</code>은 기준 접선과 Newton 접선을 혼합한다. Seepage에서 기준 접선은 Picard
+접선이며, 혼합접선은 다음과 같다.</p>
+<div class="arithmatex">\[
+\mathbf K_H(r)=(1-r)\mathbf K_P+r\mathbf K_N
+\]</div>
+<p>여기서 <span class="arithmatex">\(\mathbf K_P\)</span>는 재료 미분항을 제외한 Picard 접선이고 <span class="arithmatex">\(\mathbf K_N\)</span>은
+사용 가능한 재료 미분항을 포함한 Newton 접선이다. 고정형 <code>HNewton</code>은
+<span class="arithmatex">\(0&lt;r&lt;1\)</span>을 사용한다. <span class="arithmatex">\(r=0\)</span>에 해당하는 방법은 <code>Picard</code>로, <span class="arithmatex">\(r=1\)</span>에 해당하는
+방법은 <code>Newton</code>으로 입력한다.</p>
+<p>적응형 <code>HNewton</code>에서 각 PSF 활성집합 평형해석의 첫 두 압력 보정 방향은 <code>r0</code>
+접선으로 계산한다. 두 번째 보정량을 적용한 상태부터 Picard 접선을 사용하며,
+이 보정량을 이후 상대 압력 보정량의 고정 기준으로 삼는다. 혼합비를 조절하는 지표는
+다음과 같다. 여기서
+<span class="arithmatex">\(p_{guard}\)</span>는 분모가 0이 되는 것을 막기 위한 프로그램 내부의 작은 양수이다.</p>
+<div class="arithmatex">\[
+q_k = \frac{\lVert \Delta p_k \rVert_\infty}{\max(\lVert \Delta p_2 \rVert_\infty,p_{guard})}
+\]</div>
+<p><span class="arithmatex">\(q_k\)</span>가 <code>tolSwitch</code>보다 작고 계속 개선되면 <span class="arithmatex">\(r\)</span>을 <code>grow</code>만큼 증가시키고, 그 밖에는
+<code>shrink</code>만큼 감소시킨다. PSF 활성집합이 바뀌면 <span class="arithmatex">\(r\)</span>과 기준값을 초기화한다. 과도
+Seepage에서는 각 물리 시간증분에서도 기준을 새로 설정한다. <code>grow=1</code>과
+<code>shrink=1</code>은 직접 전환을, 권장값 <code>grow=0.2</code>와 <code>shrink=0.3</code>은 연속 혼합을
+선택한다. 갱신된 <span class="arithmatex">\(r\)</span>은 다음 평형반복에서 재구성하는 혼합접선에 반영된다.</p>
+<p><code>Seepage</code>에서 <code>Picard</code>를 사용하면 <code>*Convergence</code>의 <code>Warmup</code> 기본값은 100이고,
+그 밖의 비선형 <code>Seepage</code> 해석에서는 20이다.</p>
+<p><strong>스텝 크기 제어</strong></p>
+<p><code>StepCtrl</code>은 선형계에서 계산한 보정량 <span class="arithmatex">\(\delta\mathbf x^i\)</span>에 스텝 크기 <span class="arithmatex">\(\eta_i\)</span>를
+적용하여 실제 반복해를 갱신하는 방법을 정한다.</p>
+<div class="arithmatex">\[
+\mathbf x^{i+1}=\mathbf x^i+\eta_i\,\delta\mathbf x^i
+\]</div>
+<p><code>StepCtrl</code>은 접선 종류나 행렬 재구성 주기를 바꾸지 않는다. <code>None</code>은
+<span class="arithmatex">\(\eta_i=1\)</span>을 사용하고, <code>SchedRelax</code>은 반복 횟수에 따라 미리 정한 규칙으로
+스텝 크기를 줄인다. <code>RelaxBack</code>, <code>ArmijoBack</code>, <code>Bracketed</code>는 반복 중 시험 상태를
+평가하여 허용할 스텝 크기를 찾는다.</p>
+<p>Seepage 해석에서 <code>Picard</code>와 <code>HNewton</code>은 <code>None</code>, <code>SchedRelax</code>, <code>RelaxBack</code>을
+허용하고, <code>Newton</code>과 <code>MNewton</code>은 <code>None</code>, <code>RelaxBack</code>, <code>ArmijoBack</code>,
+<code>Bracketed</code>를 허용한다.</p>
+<p><code>StepCtrl=None</code>은 명시적으로 선탐색을 사용하지 않는 것을 의미한다.
+<code>Seepage</code>의 <code>Picard</code>와 <code>HNewton</code>에는 <code>ArmijoBack</code>과 <code>Bracketed</code>를
+사용할 수 없다.</p>
+<h5 id="example_3">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=step2
+...
+*NonlinearAlgorithm
+ BFGS, 25, 8, StepCtrl=ArmijoBack
+
+*Step, Type=Static, Name=step2
+...
+*NonlinearAlgorithm
+ Secant, StepCtrl=Bracketed
+
+*Step, Type=Seepage, Name=step2
+...
+*NonlinearAlgorithm
+ Picard, 1000, StepCtrl=SchedRelax
+
+*Step, Type=Seepage, Name=step3
+...
+*NonlinearAlgorithm
+ Newton, 1000, StepCtrl=ArmijoBack
+
+*Step, Type=Seepage, Name=step4
+...
+*NonlinearAlgorithm
+ MNewton, 1000, 8, StepCtrl=Bracketed
+
+*Step, Type=Seepage, Name=step5
+...
+*NonlinearAlgorithm
+ HNewton, 0.5, 1000, StepCtrl=SchedRelax
+
+*Step, Type=Seepage, Name=step6
+...
+*NonlinearAlgorithm
+ HNewton, 0, 0.2, 0.3, 0.1, 1000, StepCtrl=SchedRelax
+</code></pre></div>
+<p>마지막 두 예는 각각 고정 혼합비와 적응형 혼합비를 사용하는 Hybrid Newton
+방법이다.</p>
+<h2 id="136-convergence">13.6 *Convergence</h2>
+<p>표준 해석 단계(standard analysis step)에 대한 수렴 조건 부과</p>
+<div class="highlight"><pre><span></span><code>*Convergence[, Monitor={On|Off}][, Warmup=n]
+ Force, ftol1, ftol2, fmin
+ Displacement, XYZ=dtol[,dmin[,dmax|None]], RXYZ=dtol[,dmin[,dmax|None]], P=dtol[,dmin[,dmax|None]], T=dtol[,dmin[,dmax|None]], General=dtol[,dmin[,dmax|None]]
+</code></pre></div>
+<h5 id="keyword-line_6">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>monitor:</strong> monitoring option. ON or OFF. Default OFF.</li>
+<li><strong>Warmup=n:</strong> 각 비선형 equilibrium loop에서 정체 및 추세 기반 발산 판정을 보류할 초기 반복 횟수. 0 이상의 정수이며, 명시한 값은 해석별 기본값보다 우선한다. 구조 비선형 해석의 기본값은 4, <code>Picard</code>를 사용하는 <code>Seepage</code>의 기본값은 100, 그 밖의 비선형 <code>Seepage</code> 해석의 기본값은 20이다.</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-force-criteria">First dataline for FORCE criteria</h5>
+<div class="admonition note">
+<ul>
+<li><strong>ftol1, ftol2:</strong> Primary and secondary tolerances for force criteria. Both values are dimensionless. (default 1E-5, 0.01)</li>
+<li><strong>fmin:</strong> Force/residual criterion에서 사용하는 최소 잔차 기준값 <code>Rmin</code>. 기본값은 1E-4이며, 병진 자유도(<code>XYZ</code>)에 대해서는 물리적으로 1E-4 N으로 해석한다. *Environment, Type=UnitSystem이 정의된 경우 이 1E-4 N을 현재 전역 힘 단위로 변환한다. 회전 자유도(<code>RXYZ</code>)에서는 같은 힘 기준값을 내부적으로 전역 대표 길이와 곱해 모멘트 잔차 기준값으로 사용한다. 압력(<code>P</code>), 온도(<code>T</code>), 미분류(<code>General</code>) 자유도에서는 1E-4를 각 방정식 잔차의 고유 단위에서 쓰는 raw 잔차 하한값으로 사용하며, UnitSystem 변환을 적용하지 않는다. <code>fmin</code>을 명시하면 입력한 수치는 모든 활성 잔차 그룹에 공통으로 적용되며, 이후 UnitSystem이 바뀌어도 그 공통값을 함께 변환해 그룹 간 동일성을 유지한다.</li>
+</ul>
+</div>
+<h5 id="first-dataline-for-displacement-criteria">First dataline for Displacement criteria</h5>
+<div class="admonition note">
+<ul>
+<li><strong>XYZ=dtol[, dmin[, dmax|None]]:</strong> X-, Y-, Z-변위의 상대 허용값, 허용값 하한, 허용값 상한이다. dtol은 무차원이고 dmin과 양의 dmax는 [L]이다. dmin을 생략하면 1E-6 m를 현재 전역 단위로 변환한다. dmax의 기본값은 <code>None</code>이며 상한을 적용하지 않는다. (default 0.01, 1E-6, None)</li>
+<li><strong>RXYZ=dtol[, dmin[, dmax|None]]:</strong> 회전의 상대 허용값, 허용값 하한, 허용값 상한이다. 수치로 입력하는 세 값은 모두 무차원이다. dmax의 기본값은 <code>None</code>이며 상한을 적용하지 않는다. (default 0.005, 2E-6, None)</li>
+<li><strong>P=dtol[, dmin[, dmax|None]]:</strong> 압력의 상대 허용값, 허용값 하한, 허용값 상한이다. dtol은 무차원이고 dmin과 양의 dmax는 [F/L^2]이다. 생략된 dmin과 dmax는 각각 1 Pa와 10 Pa를 현재 전역 단위로 변환한다. (default 1E-5, 1, 10)</li>
+<li><strong>T=dtol[, dmin[, dmax|None]]:</strong> 온도의 상대 허용값, 허용값 하한, 허용값 상한이다. dtol은 무차원이고 dmin과 양의 dmax는 [K]이다. 생략된 dmin은 1E-5 K로 해석한다. dmax의 기본값은 <code>None</code>이며 상한을 적용하지 않는다. (default 0.001, 1E-5, None)</li>
+<li><strong>General=dtol[, dmin[, dmax|None]]:</strong> 미분류 자유도의 상대 허용값, 허용값 하한, 허용값 상한이다. 공통 물리 단위가 없으므로 dmin과 양의 dmax는 raw 수치로 사용한다. dmax의 기본값은 <code>None</code>이며 상한을 적용하지 않는다. (default 0.01, 1E-6, None)</li>
+<li>dmax를 생략하면 해당 물리량의 기본값을 사용한다. <code>None</code>을 명시하면 상한을 적용하지 않는다. 수치로 입력하는 dmax는 양수이고 실제 적용되는 dmin보다 작지 않아야 한다.</li>
+</ul>
+</div>
+<p>비선형 해석에서의 수렴 조건(convergence criteria)을 지정한다. 선형해석이나 고유치해석에서는 무시된다. 다음과 같은 하중 및 변위 조건을 병진운동, 회전, 압력, 온도 등 물리량 별로 적용한다.</p>
+<p>** 하중/모멘트 조건</p>
+<div class="arithmatex">\[
+\left\lVert \mathbf r^i_{g,n+1} \right\rVert_2
+\le
+\max\left(\epsilon_F \left\lVert \mathbf r^1_{g,n+1} \right\rVert_2, R_{min,g}\right)
+\]</div>
+<p>** 변위/회전/압력 보정량 조건</p>
+<div class="arithmatex">\[
+D_{tol,g}^{i+1}
+=
+\max\left(
+\epsilon_{D,g}\left\lVert \Delta \mathbf u^{i+1}_{g,n+1} \right\rVert_\infty,
+D_{min,g}
+\right)
+\]</div>
+<p>양의 <span class="arithmatex">\(D_{max,g}\)</span>가 지정된 경우에만 다음과 같이 상한을 적용한다.</p>
+<div class="arithmatex">\[
+D_{tol,g}^{i+1}
+\leftarrow
+\min\left(D_{tol,g}^{i+1},D_{max,g}\right)
+\]</div>
+<div class="arithmatex">\[
+\left\lVert \delta \mathbf u^i_{g,n+1} \right\rVert_\infty
+\le D_{tol,g}^{i+1}
+\]</div>
+<p>아래첨자 <span class="arithmatex">\(g\)</span>는 물리량 그룹을 나타낸다. <span class="arithmatex">\(\Delta\mathbf u^{i+1}_{g,n+1}\)</span>은 이전 수렴 증분의 해로부터 현재 반복해까지 누적된 증분이고, <span class="arithmatex">\(\delta\mathbf u^i_{g,n+1}\)</span>은 현재 반복에서 적용한 보정량이다. 하중 조건에는 잔차의 L2 노름을 사용하고, 보정량 조건에는 이 두 증분의 infinite 노름을 사용한다. dmax가 <code>None</code>이면 상한 갱신을 적용하지 않는다.</p>
+<p>하중 조건에서는 모든 물리량에 동일한 <span class="arithmatex">\(\epsilon_F\)</span>를 사용하며, <span class="arithmatex">\(\epsilon_F\)</span>를 1차 허용치(primary tolerance)와 2차 허용치(secondary tolerance)로 구분한다. 1차 허용치는 반복단계 8까지, 2차 허용치는 반복단계 9부터 적용한다. 명시적으로 입력한 <code>fmin</code>의 수치는 활성 잔차 그룹에 공통으로 적용한다. 생략된 기본값은 <code>XYZ</code>와 <code>RXYZ</code>에서만 힘 단위를 따르며, <code>P</code>, <code>T</code>, <code>General</code>에서는 각 잔차의 고유 단위에 있는 raw 값으로 사용한다. 회전 자유도에는 <span class="arithmatex">\(R_{min}L_{global}\)</span>을 적용하며, <span class="arithmatex">\(L_{global}\)</span>은 요소 변 길이 중앙값으로 정한 모델의 전역 대표 길이이다.</p>
+<p>한편 보정량 조건에서는 물리량별로 서로 다른 <span class="arithmatex">\(\epsilon_D\)</span>, <span class="arithmatex">\(D_{min}\)</span>, <span class="arithmatex">\(D_{max}\)</span>를 적용한다. <span class="arithmatex">\(D_{min}\)</span>은 상대 허용값이 지나치게 작아지는 것을 막는 하한이고, 양의 <span class="arithmatex">\(D_{max}\)</span>는 상대 허용값이 지나치게 커지는 것을 막는 상한이다. dmax가 <code>None</code>이면 상한을 적용하지 않는다.</p>
+<p>수렴 조건의 디폴트값은 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>물리량</th>
+<th>Force/residual 기준 디폴트</th>
+<th>Displacement 기준 디폴트</th>
+<th>UnitSystem 적용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>XYZ</code></td>
+<td><span class="arithmatex">\(\epsilon_F=1E-5, 0.01\)</span>, <span class="arithmatex">\(R_{min}=1E-4\)</span> N</td>
+<td><span class="arithmatex">\(\epsilon_D=0.01\)</span>, <span class="arithmatex">\(D_{min}=1E-6\)</span> m, <code>dmax=None</code></td>
+<td><span class="arithmatex">\(R_{min}\)</span>은 힘 단위로 변환, <span class="arithmatex">\(D_{min}\)</span>은 길이 단위로 변환, 상한 없음</td>
+</tr>
+<tr>
+<td><code>RXYZ</code></td>
+<td><span class="arithmatex">\(\epsilon_F=1E-5, 0.01\)</span>, <span class="arithmatex">\(R_{min}=1E-4\)</span> N <span class="arithmatex">\(\times L_{global}\)</span></td>
+<td><span class="arithmatex">\(\epsilon_D=0.005\)</span>, <span class="arithmatex">\(D_{min}=2E-6\)</span>, <code>dmax=None</code></td>
+<td><span class="arithmatex">\(R_{min}\)</span>은 힘 단위 변환 후 <span class="arithmatex">\(L_{global}\)</span>을 곱함, <span class="arithmatex">\(D_{min}\)</span>은 무차원, 상한 없음</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td><span class="arithmatex">\(\epsilon_F=1E-5, 0.01\)</span>, <span class="arithmatex">\(R_{min}=1E-4\)</span> raw</td>
+<td><span class="arithmatex">\(\epsilon_D=1E-5\)</span>, <span class="arithmatex">\(D_{min}=1\)</span> Pa, <span class="arithmatex">\(D_{max}=10\)</span> Pa</td>
+<td>Force/residual의 <span class="arithmatex">\(R_{min}\)</span>은 변환하지 않음, <span class="arithmatex">\(D_{min}\)</span>과 <span class="arithmatex">\(D_{max}\)</span>는 압력 단위로 변환</td>
+</tr>
+<tr>
+<td><code>T</code></td>
+<td><span class="arithmatex">\(\epsilon_F=1E-5, 0.01\)</span>, <span class="arithmatex">\(R_{min}=1E-4\)</span> raw</td>
+<td><span class="arithmatex">\(\epsilon_D=0.001\)</span>, <span class="arithmatex">\(D_{min}=1E-5\)</span> K, <code>dmax=None</code></td>
+<td>Force/residual의 <span class="arithmatex">\(R_{min}\)</span>은 변환하지 않음, <span class="arithmatex">\(D_{min}\)</span>은 온도 기준값으로 해석, 상한 없음</td>
+</tr>
+<tr>
+<td><code>General</code></td>
+<td><span class="arithmatex">\(\epsilon_F=1E-5, 0.01\)</span>, <span class="arithmatex">\(R_{min}=1E-4\)</span> raw</td>
+<td><span class="arithmatex">\(\epsilon_D=0.01\)</span>, <span class="arithmatex">\(D_{min}=1E-6\)</span> raw, <code>dmax=None</code></td>
+<td>물리 단위가 없으므로 모두 raw 값으로 사용, 상한 없음</td>
+</tr>
+</tbody>
+</table>
+<p>비선형 equilibrium loop에서는 정상 수렴 여부와 함께 residual 이력에 따른 발산(<code>Divergent</code>)과 정체(<code>Stagnated</code>), 계산값의 수치 이상(<code>NumericalFailure</code>)을 검사한다. 이 판정을 통해 수렴 가능성이 낮거나 수치적으로 신뢰할 수 없는 반복을 <code>maxIter</code>에 도달하기 전에 종료할 수 있다.</p>
+<p>각 loop의 처음 <code>Warmup</code>회, 즉 반복 번호 1부터 <code>n</code>까지는 초기의 하중 재분배나 상태 전이로 인한 residual 변화를 추세로 오인하지 않도록 <code>Divergent</code>와 <code>Stagnated</code> 판정을 보류한다. <code>Warmup=0</code>이면 해당 loop의 최초 residual부터 추세 이력을 구성한다. Steady seepage active-set interaction처럼 반복 번호가 다시 시작되면 이전 이력을 버리고 새로운 warm-up과 추세 이력을 시작한다. Warm-up 중에도 정상 수렴 판정과 <code>maxIter</code> 제한은 그대로 적용하며, 수치 이상은 warm-up과 관계없이 검사한다.</p>
+<p>이 정책과 기본값은 <code>Seepage</code>의 Steady/Transient 및 <code>StepCtrl</code> 종류와 무관하다. Linear 해석에는 residual 추세에 따른 <code>Divergent</code>와 <code>Stagnated</code> 판정을 적용하지 않으며, Modal/Frequency 해석은 기존 동작을 유지한다.</p>
+<h5 id="example_4">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static Name=1
+...
+*Convergence, Monitor=ON
+
+*Step, Type=Static, Name=2
+...
+*Convergence, Monitor=On
+ Force,1E-5
+*NonlinearAlgorithm
+ BFGS, StepCtrl=Bracketed
+</code></pre></div>
+<h2 id="137-timeintegration">13.7 *TimeIntegration</h2>
+<p>동해석시 시간적분 방법을 정의</p>
+<div class="highlight"><pre><span></span><code>*TimeIntegration, Type=Newmark,gamma,beta
+
+*TimeIntegration, Type=HHT,alpha
+</code></pre></div>
+<h5 id="keyword-line-for-typenewmark">Keyword line for Type=Newmark</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=Newmark, gamma, beta:</strong> Newmark 시간 적분을 적용. gamma와 beta는 optional이며 디폴트는 0.5, 0.25.</li>
+</ul>
+</div>
+<h5 id="keyword-line-for-typehht">Keyword line for Type=HHT</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Type=HHT, alpha:</strong> HHT 시간 적분을 적용. alpha는 optional이며 디폴트는 –0.05</li>
+</ul>
+</div>
+<p><code>*TimeIntegration</code>을 별도로 지정하지 않을 경우 디폴트는 Newmark, 0.5, 0.25로 지정되어 있다.</p>
+<p>Newmark 법에서 <span class="arithmatex">\(\beta\)</span>, <span class="arithmatex">\(\gamma\)</span>는 수치안정성과 정확성에 따라 결정되는 계수이다.  <span class="arithmatex">\(\gamma=1/2\)</span>이면 수치감쇠를 도입하지 않으며, <span class="arithmatex">\(\gamma&gt;1/2\)</span>이면 수치감쇠를 도입한다. 보통 <span class="arithmatex">\(\gamma=1/2\)</span>, <span class="arithmatex">\(1/6 \le \beta \le 1/4\)</span> 를 선택하는데, <span class="arithmatex">\(\gamma=1/2\)</span>, <span class="arithmatex">\(\beta=1/4\)</span>인 경우는 시간간격내 가속도가 일정하다고 가정하는 것으로 평균가속도법 (average acceleration method)이라 하고,<span class="arithmatex">\(\gamma=1/2\)</span>, <span class="arithmatex">\(\beta=1/6\)</span>인 경우는 시간간격내 가속도가 선형적으로 변화한다고 가정하는 것으로 선형가속도법 (linear acceleration method)이라 한다. 다음 조건을 만족해야 수치적으로 안정이다.</p>
+<div class="arithmatex">\[
+\frac{\Delta t}{T_n} &lt;= \frac{1}{\pi \sqrt 2} \frac{1}{\sqrt {\gamma-2\beta}} , ~~ {\rm where ~} T_n {\rm ~is~natural~frequency}
+\]</div>
+<p>즉, 평균가속도법을 사용하면 무조건적으로 안정(unconditionally stable)이고, 선형가속도법을 사용하면 <span class="arithmatex">\(\frac{\Delta t}{T_n}\)</span>을 만족해야 안정하다. 다자유도로 구성되는 유한요소문제에서 고차의 낮은 고유주기(높은 고유진동수)까지 이러한 안정조건을 만족하도록 를 선택하는 것은 쉽지 않기 때문에 정밀도가 떨어지더라도 평균가속도법을 사용하는 것이 일반적이다.
+  Hibert-Hughes-Taylor 법(HHT 법, <span class="arithmatex">\(\alpha\)</span>-method)은 Newmark 법을 확장한 방법으로 해의 정확도를 유지하면서 제어가능한(controllable) 수치감쇠(numerical damping)을 도입한다. <span class="arithmatex">\(-1/3 \le \alpha \le 0\)</span>이고, 무조건적으로 안정(unconditionally stable)한 방법이다. <span class="arithmatex">\(\alpha=0\)</span>이면 평균가속도법을 적용한 Newmark 법과 동일하다. 일반적으로 <span class="arithmatex">\(\alpha=-0.05\)</span>를 사용하며, <span class="arithmatex">\(\alpha=0\)</span>는 수치감쇠가 없는 것을, <span class="arithmatex">\(\alpha=-1/3\)</span>은 수치감쇠가 가장 큰 것을 의미한다.  수치감쇠는 low-frequency 모델에서는 그 영향이 작고, high-frequency 모델에서는 영향이 크다.</p>
+<h5 id="example_5">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Dynamic, Name==analysis1
+ , 0.02, 24
+*TimeIntegration, Type=HHT, -0.05
+...
+</code></pre></div>
+<h2 id="138-rayleighdamping">13.8 *RayleighDamping</h2>
+<p>동해석(DynamicStep) 시 Rayleigh damping 값을 지정</p>
+<div class="highlight"><pre><span></span><code>*RayleighDamping
+ Direct, alpha,beta, targetElset
+ Equivalent, fm, fn, xim, xin, targetElset
+ ...
+</code></pre></div>
+<h5 id="first-dataline-and-subsequent-datalines_2">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Direct, alpha, beta:</strong> Specifies the Rayleigh damping coefficients alpha and beta. alpha and beta represent the mass-proportional and stiffness-proportional damping coefficients, respectively. The unit of alpha is [1/T], and the unit of beta is [T]. alpha and beta are optional, and their default values are 0 and 0, respectively.</li>
+<li><strong>Equivalent, fm, fn, xim, xin:</strong> 등가감쇠비 xim, xin와 이에 대응하는 구조물의 고유진동수 fm, fn(Hz), 보통 1차 및 2차 고유진동수를 지정. 보통 xim과 xin을 동일하게 설정(모두 required)</li>
+<li><strong>targetElset:</strong> 지정대상이 되는 요소집합으로 현 해석단계에서 활성화된 요소집합(optional). 생략하면 현 해석 단계의 활성화된 모든 요소집합에 지정됨.</li>
+</ul>
+</div>
+<p>등가감쇠비를 지정할 경우 Rayleigh damping coeficient alpha, beta를 다음과 같은 관계식을 통해 계산해서 설정한다.</p>
+<div class="arithmatex">\[
+\left[ \begin{matrix}
+\xi_m \\
+\xi_n \\
+\end{matrix} \right] =
+\frac{1}{2}
+\left[ \begin{matrix}
+1/\omega_m &amp; \omega_m\\
+1/\omega_n &amp; \omega_n\\
+\end{matrix} \right]
+\left[ \begin{matrix}
+\alpha \\
+\beta \\
+\end{matrix} \right]
+\]</div>
+<p>위에서, <span class="arithmatex">\(\omega_m = 2\pi f_m\)</span>,  <span class="arithmatex">\(\omega_n = 2\pi f_n\)</span>이고, 결정된 <span class="arithmatex">\(\alpha\)</span>, <span class="arithmatex">\(\beta\)</span>는 다음과 같이 구성되는 Rayleigh damping matrix(<span class="arithmatex">\(C^R = \alpha M + \beta K\)</span>)에  대한 상수들이다.</p>
+<h5 id="example_6">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Dynamic, Name=1
+*Activate, Type=Element
+ ELSET1, ELSET2
+*RayleighDamping
+ Direct, 0.5, 0.1    # Specifies all elsets in Step 1, such as ELSET1, ELSET2
+
+*Step, Type=Dynamic, Name=2
+*Activate, Type=Element
+ ELSET1, ELSET2
+*RayleighDamping
+ Direct, 0.5, 0.1, ELSET2    # Sets a damping ratio of 0.5, 0.1 for ELSET2
+ Equivalent,2.3, 5.7, 0.05, 0.05, ELSET2  # Specifies an equivalent damping ratio of 0.5 for ELSET2
+</code></pre></div>
+<h2 id="139-modal">13.9 *Modal</h2>
+<p>동해석(<code>*Step, Type=Dynamic</code>)에서 모달 해석과 모달 감쇠비 배정을 지정한다.</p>
+<div class="highlight"><pre><span></span><code>*MODAL, nmode, dampingRatio[, Elset=targetElset]
+
+*MODAL, nmode, ByIndex[, Elset=targetElset]
+ imode, dampingRatio
+ fromMode, toMode, dampingRatio
+ ...
+
+*MODAL, nmode, ByFreq[, Elset=targetElset]
+ fromFreq, toFreq, dampingRatio
+ ...
+</code></pre></div>
+<h5 id="keyword-line_7">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>nmode:</strong> 고유치 해석에 요청할 모드 수이다. 의미는 <code>*Step, Type=Frequency</code>의 <code>nev</code>와 같으며, 계산할 최고 모드 수이거나 고유치 솔버에 범위 필터가 있을 때는 초기 제안치이다.</li>
+<li><strong>dampingRatio:</strong> 균일 모달 감쇠비이다. 값의 범위는 <code>[0,1)</code>이다. <code>ByIndex</code>나 <code>ByFreq</code>를 생략하면 1번부터 <code>nmode</code>까지의 참여 모드 전체에 이 값이 적용된다.</li>
+<li><strong>ByIndex:</strong> 모드 번호 기준으로 참여 모드를 선택한다. dataline이 필수이다.</li>
+<li><strong>ByFreq:</strong> 고유진동수 구간 기준으로 참여 모드를 선택한다. dataline이 필수이다.</li>
+<li><strong>Elset=targetElset:</strong> 모달 해석에 참여하는 요소집합을 지정한다(optional). 생략하면 현재 해석 단계에 활성화된 전체 요소를 사용한다.</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines_3">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>imode, dampingRatio:</strong> <code>ByIndex</code>에서 특정 참여 모드 하나와 그 감쇠비를 지정한다.</li>
+<li><strong>fromMode, toMode, dampingRatio:</strong> <code>ByIndex</code>에서 참여 모드 구간과 그 감쇠비를 지정한다.</li>
+<li><strong>fromFreq, toFreq, dampingRatio:</strong> <code>ByFreq</code>에서 주파수 구간(Hz)에 해당하는 참여 모드들과 그 감쇠비를 지정한다.</li>
+</ul>
+</div>
+<p><code>ByIndex</code>에서는 dataline에 적힌 모드만 모달 해석에 참여한다. 같은 모드를 두 번 이상 지정하면 입력 오류로 처리한다.</p>
+<p><code>ByFreq</code>에서는 먼저 <code>nmode</code>까지 고유치 해석을 수행한 뒤, 지정한 주파수 구간 가운데 하나 이상에 해당하는 모드만 모달 해석에 참여한다. 즉 지정한 구간 밖의 모드는 참여하지 않는다. 하나의 모드가 여러 구간에 동시에 걸리면 아래쪽에 적은 dataline이 앞의 dataline을 덮어쓴다. 어떤 모드도 선택되지 않으면 오류가 발생한다.</p>
+<p>모달 해석은 선형계를 대상으로 동해석을 수행하는 특수 기법이다.</p>
+<ol>
+<li><code>*Modal</code>을 지정하면 <code>*RayleighDamping</code>은 무시된다.</li>
+<li><code>*Modal</code>에서는 시간적분법으로 Newmark만 허용된다. HHT나 FrequencyDomain을 지정하면 오류가 발생한다.</li>
+<li>균일 형식에서는 1번부터 <code>nmode</code>까지의 모드가 모달 해석에 참여한다. <code>ByIndex</code>와 <code>ByFreq</code>에서는 선택된 모드만 참여한다. 고유치 해석에 필요한 요청 모드를 구하지 못하면 오류가 발생한다.</li>
+<li>모달 해석에서는 <code>*Load, Type=Displacement</code>를 적용할 수 없다.</li>
+<li>모달 해석의 반력은 모달 감쇠의 영향은 고려하지 않는다.</li>
+<li>모달 해석은 선형 요소집합에만 적용할 수 있다.</li>
+<li><code>targetElset</code>를 생략하면 전체 모델을 대상으로 모달 해석을 수행하며, 이 경우 전체 모델이 선형이어야 한다.</li>
+<li><code>targetElset</code>를 지정하면 해당 요소집합에 대해서만 partial modal analysis를 수행한다. 이 경우 지정된 <code>targetElset</code>만 선형 조건을 만족하면 된다. 이 기능은 요소가 접촉점의 변경으로 인해 비선형성이 발생하는 차량-교량 상호작용해석에서 유용하게 사용될 수 있다.</li>
+<li><code>*Modal</code> 뒤에 <code>*Solver, Type=Eigen</code>을 둘 수 있으며, 이때 지정한 고유치 솔버 옵션이 모드 추출에 사용된다. <code>*Solver, Type=Eigen</code>을 생략하면 기본 고유치 솔버 설정이 사용된다.</li>
+</ol>
+<h5 id="example_7">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=DYNAMIC, Name=1
+ Uniform, 0.1, 2.5
+*Activate, Type=Element
+ Bridge
+*Activate, Type=Constraint
+ Boundary
+*Activate, Type=Load
+ ConcentricLoad
+*MODAL, 20, 0.01
+*Solver, Type=Eigen, General
+ Range=30
+
+*Step, Type=DYNAMIC, Name=2
+ Uniform, 0.1, 2.5
+*Activate, Type=Element
+ Bridge, Truck
+*Activate, Type=Constraint
+ Boundary
+*MODAL, 20, ByIndex, Elset=Bridge
+ 1, 0.005
+ 2, 5, 0.01
+ 10, 20, 0.02
+*Solver, Type=Eigen, General
+ Range=0, 30, 60
+
+*Step, Type=DYNAMIC, Name=3
+ 0.1, 2.5
+*MODAL, 30, ByFreq
+ 0, 3, 0.01
+ 3, 8, 0.03
+ 8, 20, 0.05
+</code></pre></div>
+<h2 id="1310-spectrum">13.10 *Spectrum</h2>
+<p>응답스펙트럼 해석(<code>*Step, Type=ResponseSpectrum</code>, 13.1.4)에서 지진 입력 방향과 설계스펙트럼 배정을 지정한다.</p>
+<div class="highlight"><pre><span></span><code>*Spectrum, dampingRatio, Dir=rx, ry, rz, Function=func[, scaleFactor]
+
+*Spectrum, ByIndex, Dir=rx, ry, rz
+ imode, dampingRatio, func[, scaleFactor]
+ fromMode, toMode, dampingRatio, func[, scaleFactor]
+ ...
+
+*Spectrum, ByFreq, Dir=rx, ry, rz
+ fromFreq, toFreq, dampingRatio, func[, scaleFactor]
+ ...
+</code></pre></div>
+<h5 id="keyword-line_8">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>dampingRatio:</strong> 모든 모드에 적용하는 균일 감쇠비. 값 범위는 <code>[0,1)</code>이다. <code>CQC</code> 상관계수 계산에 사용되고, <code>SRSS</code> 조합식에는 사용되지 않는다.</li>
+<li><strong>Dir=rx, ry, rz:</strong> 전역 좌표계 기준 지진 입력 방향 벡터. 내부에서 정규화된다.</li>
+<li><strong>Function=func:</strong> 모든 모드에 적용하는 설계스펙트럼 함수 이름이다. <code>*Function, Type=MultiLinear</code> 또는 <code>*Function, Type=ResponseSpectrum</code>으로 정의한다. x축은 주기 <span class="arithmatex">\(T\)</span> [s], y축은 스펙트럼가속도계수 <span class="arithmatex">\(S_a/g\)</span>이다.</li>
+<li><strong>scaleFactor:</strong> 스펙트럼 배율(optional, 디폴트 <span class="arithmatex">\(1.0\)</span>).</li>
+<li><strong>ByIndex:</strong> 모드 번호 기준으로 감쇠비와 spectrum을 배정한다. dataline이 필수이다.</li>
+<li><strong>ByFreq:</strong> 고유진동수 구간 기준으로 감쇠비와 spectrum을 배정한다. dataline이 필수이다.</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines_4">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>imode, dampingRatio, func[, scaleFactor]:</strong> <code>ByIndex</code>에서 모드 하나에 감쇠비와 spectrum 함수를 배정한다. 모드 번호는 1-based이다.</li>
+<li><strong>fromMode, toMode, dampingRatio, func[, scaleFactor]:</strong> <code>ByIndex</code>에서 모드 구간에 배정한다. 단일/구간 형식은 함수 이름 앞의 숫자 개수로 구분한다(숫자 2개 = 단일 모드, 숫자 3개 = 구간).</li>
+<li><strong>fromFreq, toFreq, dampingRatio, func[, scaleFactor]:</strong> <code>ByFreq</code>에서 고유진동수 구간(Hz)에 배정한다. 구간 판정은 <code>fromFreq &lt;= f &lt; toFreq</code>이다.</li>
+</ul>
+</div>
+<ol>
+<li><code>*Spectrum</code>은 <code>*Step, Type=ResponseSpectrum</code>의 하위 명령으로만 사용할 수 있다.</li>
+<li>각 <code>*Spectrum</code>은 독립된 가진 케이스이며 하나의 envelope frame을 만든다.</li>
+<li>계산에 사용된 모든 모드에 (감쇠비, spectrum) 쌍이 정확히 하나 배정되어야 한다. 누락이나 중복은 오류 처리한다.</li>
+<li>주기가 spectrum 정의 구간을 벗어나면 양 끝값으로 평탄 외삽한다.</li>
+<li>zero 고유치로 판정된 모드는 spectrum 평가에서 제외하고 경고를 출력한다.</li>
+<li>비대칭(예: 유체-구조 연성) 시스템은 left participation factor를 가진 크기로, 우고유벡터를 응답 회복에 사용한다. 모든 고유치가 실수여야 한다.</li>
+</ol>
+<h2 id="1311-interactioncontrol">13.11 *InteractionControl</h2>
+<p>해석도중 동적으로 변경되는 경계조건 및 접촉조건을 부과한다. 현재는 PSF만 지원한다.</p>
+<div class="highlight"><pre><span></span><code>*InteractionControl, Type=PSF, maxIter=maxIter
+ targetNode|targetNGroup, ...
+</code></pre></div>
+<h5 id="keyword-line_9">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>maxIter=maxIter:</strong> Maximum number of iterations used to identify changing boundary conditions and contact conditions. Optional; the default value is 20.</li>
+</ul>
+</div>
+<h5 id="first-dataline_3">First dataline</h5>
+<div class="admonition note">
+<ul>
+<li><strong>targetNode:</strong> PSF(Potential Seepage Face)로 지정할 target node (required)</li>
+<li><strong>targetNGroup:</strong> PSF(Potential Seepage Face)로 지정할 node group(required). targetNGroup은 nset, surface, 절점번호패턴(<code>start:end:spacing</code> 형태, spacing은 1일 때 생략 가능) 형식으로 지정하며, surface로 지정하는 경우 surface 내의 절점들을 의미.</li>
+</ul>
+</div>
+<p>PSF(Potential Seepage Face)는 <code>*Step, Type=Seepage</code> 해석에서만 유효하다. PSF는 해석 도중 Seepage Face로 지정될 수 있는 후보로 지정한다는 의미이다.</p>
+<p>PSF 절점은 무유량 상태와 대기압 상태를 active set으로 전환한다. 무유량 상태에서 계산된 간극수압이 양수가 되면 절점을 <span class="arithmatex">\(p=0\)</span>으로 고정하여 외향 유출을 허용한다. <span class="arithmatex">\(p=0\)</span>으로 고정된 절점에서 반력 flux가 유입을 요구하면 고정을 해제하고 무유량 상태로 되돌린다.</p>
+<p>정상 및 비정상 <code>Seepage</code>에서 active set이 A→B→A로 반복되면 직전 active set을 유지하고 interaction 수렴으로 수용한다. <span class="arithmatex">\(p=0\)</span>으로 고정된 절점의 release 판정에는 항상 비마스킹 잔차를 사용한다.</p>
+<p>따라서 PSF로 지정된 절점에 <code>*Constraint, Type=Support</code>나 <code>*Load, Type=Displacement</code>를 통해 간극수압이나 총수두를 지정하면 안 된다.</p>
+<h5 id="example_8">Example</h5>
+<div class="highlight"><pre><span></span><code>*STEP, Type=Seepage, Name=name
+...
+*InteractionControl, Type=PSF
+ downStream
+</code></pre></div>
+<h2 id="1312-state">13.12 *State</h2>
+<p>요소 내부상태를 지정한다. 절점 자유도 필드의 초기값은 <code>*InitialCondition</code>(13.13)으로 지정한다.</p>
+<div class="highlight"><pre><span></span><code>*State, Type=Pretension
+ target, value
+ ...
+
+*State, Type=Posttension
+ target, value
+ target, ByStartForce|ByStartIncrementalDelta|ByEndForce|ByEndIncrementalDelta, value
+ ...
+
+*State, Type=CableLength
+ target, value
+ ...
+
+*State, Type=MovingSpringSpeed
+ target, value
+ ...
+</code></pre></div>
+<h5 id="keyword-line_10">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Type=type:</strong> 지정할 필드의 유형(required)</p>
+<ul>
+<li><strong>Pretension:</strong> 텐던 긴장력 사전 도입</li>
+<li><strong>Posttension:</strong> 텐던 긴장력 도입(Force hold 조건)</li>
+<li><strong>CableLength:</strong> 케이블 길이</li>
+<li><strong>MovingSpringSpeed:</strong> 이동스프링의 속도</li>
+</ul>
+</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines_5">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>target:</strong> 요소 또는 요소집합(required). Pretension, Posttension는 Tendon 요소, CableLEngth는 Cable 요소, MovingSpringSpeed는 MovingSpring 요소에 적용하다.</li>
+<li><strong>ByStartForce:</strong> - Posttension으로 긴장력 부과시  시작단 긴장력 부과(긴장력 분포는 계산)</li>
+<li><strong>ByStartIncrementalDelta:</strong> - Posttension으로 긴장력 부과시  시작단에 변위 부과(긴장력 분포는 내부 계산)</li>
+<li><strong>ByEndForce:</strong> - Posttension으로 긴장력 부과시 끝단단 긴장력 부과(긴장력 분포는 계산)</li>
+<li><strong>ByEndIncrementalDelta:</strong> - Posttension으로 긴장력 부과시 끝단에 변위 부과(긴장력 분포는 내부 계산)</li>
+<li><strong>value:</strong> 지정할 값(required). 단위는 Pretention의 경우 [F], Posttension에서 ByStartForce, ByEndForce이면 [F], ByStartIncrementalDelta, ByEndIncrementalDelta이면 [L], CableLength는 [L], MovingSpringSpeed는 [L/T]이다.</li>
+</ul>
+</div>
+<p><code>Pretension</code>는 해당 해석 단계(<code>*Step</code>)에서 초기 긴장력 분포를 부여한다. 해석이 종료될 때 긴장력 분포는 평형상태를 만족되도록 변화된다. <code>Posttension</code>는 초기 긴장력 분포가 해석 단계내 일정하게 유지하는 것을 의미한다. <code>Pretension</code>와 <code>Posttension</code> 모두 일정한 긴장력을 부여할 수 있다. <code>Posttension</code>의 경우 추가로 Jacking 옵션(<code>ByStartForce</code>, <code>ByStartIncrementalDelta</code>, <code>ByEndForce</code>, <code>ByEndIncrementalDelta</code> 옵션)으로 시작단 및 양단을 jacking하여 초기긴장력을 부여할 수 있다. 이때 텐던의 곡률마찰계수(curvature fricition coefficient)와 파상마찰계수(wobble friction coefficient)를 이용하여 초기 분포를 계산하게 된다. 다음에 주의한다.</p>
+<ul>
+<li>Pretention을 가력한 요소에는 또 다른 Pretension이나 Posttension을 가력할 수 없다.</li>
+<li>Postension을 Value로 가력한 요소에는 또 다른 Pretension이나 Posttension을 가력할 수 없다.</li>
+<li>Postension을 Jacking 옵션(<code>ByStartForce</code>, <code>ByStartIncrementalDelta</code>, <code>ByEndForce</code>, <code>ByEndIncrementalDelta</code> 옵션)으로 가력하기 위해서는 그 요소의 물성치인 곡률마찰계수와 파상마찰계수가 둘다 0이어서는 안된다.</li>
+<li>Postension을 Jacking 옵션(<code>ByStartForce</code>, <code>ByStartIncrementalDelta</code>, <code>ByEndForce</code>, <code>ByEndIncrementalDelta</code> 옵션)으로 같은 요소에 가력하면 순차적으로 프리스트트레스가 가력된다.</li>
+</ul>
+<p>이외에도 <code>CableLength</code>와 <code>MovingSpringSpeed</code>는 각각 Cable 요소의 초기 길이, MovingSpring 요소의 이동속도를 지정한다.</p>
+<h5 id="example_9">Example</h5>
+<div class="highlight"><pre><span></span><code>*STEP, Type=Static, NAME=step1
+*Activate,Type=Element
+ tendon, conc
+*Activate,Type=Constraint
+ BC
+*State, Type=Pretension
+ 1001, 2000.
+*OUTPUT
+ D, FN, FK, FE, BSF
+*History, Name=pretension1
+ step1
+ BSE.Ex@1-1, BSF.Nx@1-1,  BSE.Ex@1-2, BSF.Nx@1-2
+ EM.11@1001-1, S.11@1001-1
+</code></pre></div>
+<h2 id="1313-initialcondition">13.13 *InitialCondition</h2>
+<p>Step 시작 시점의 절점 자유도 필드 초기값을 지정한다.</p>
+<div class="highlight"><pre><span></span><code>*InitialCondition, Type=WaterTable, Nset=nset, PMin=pressureLimit
+ z0
+ x1, z1, x2, z2, ...
+*InitialCondition, Type=Head
+ targetNode|targetNGroup, H
+ ...
+*InitialCondition, Type=Pressure
+ targetNode|targetNGroup, p
+ ...
+*InitialCondition, Type=Velocity
+ targetNode|targetNGroup, dof, value
+ ...
+</code></pre></div>
+<h5 id="keyword-line_11">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Type=type:</strong> 초기값의 종류(required)</p>
+<ul>
+<li><strong>WaterTable:</strong> 지하수위선 아래의 정수압과 위의 부압. <code>Seepage, Transient</code>에서만 사용</li>
+<li><strong>Head:</strong> 절점의 전수두 <span class="arithmatex">\(H\)</span> [L]. <code>Seepage, Transient</code>에서만 사용</li>
+<li><strong>Pressure:</strong> 절점의 간극수압 <span class="arithmatex">\(p\)</span> [F/L^2]. <code>Seepage, Transient</code>에서만 사용</li>
+<li><strong>Velocity:</strong> 절점 자유도의 속도 [L/T] 또는 [rad/T]. 직접 시간적분 <code>Dynamic</code>에서만 사용</li>
+</ul>
+</li>
+<li>
+<p><strong>Nset=nset:</strong> <code>WaterTable</code>을 적용할 절점집합(optional). 생략하면 현재 Step의 활성 요소에 속한 모든 압력 자유도 절점에 적용한다.</p>
+</li>
+<li><strong>PMin=pressureLimit:</strong> <code>WaterTable</code>의 수위선 위 압력 하한 [F/L^2] (optional). 생략하면 하한이 없다. <code>*Load, Type=SeepageFlux</code>의 <code>PMin</code>과 같은 이름ㆍ부호ㆍ단위이다.</li>
+</ul>
+</div>
+<h5 id="datalines">Datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>z0:</strong> 수평 지하수위의 표고 [L]. <code>WaterTable</code>은 데이터라인이 한 줄이다.</li>
+<li><strong>x1, z1, x2, z2, ...:</strong> 2차원 경사 지하수위선의 꼭짓점(표고축은 2차원에서 Y). 값의 개수는 짝수이고 2점 이상이어야 하며 <span class="arithmatex">\(x_i\)</span>는 엄격한 오름차순이다. 범위 밖은 끝 값으로 연장한다. 3차원에서는 수평 수위 <code>z0</code>만 사용할 수 있다.</li>
+<li><strong>targetNode|targetNGroup:</strong> 절점, 절점집합, surface 또는 절점번호 패턴(<code>*Load, Type=Displacement</code>와 같은 표기).</li>
+<li><strong>H, p:</strong> 절점의 전수두 또는 간극수압. 두 값은 <span class="arithmatex">\(p=\gamma_w(H-z)\)</span>로 등가이며 <span class="arithmatex">\(\gamma_w\)</span>는 절점에 연결된 Seepage 재료에서 가져온다.</li>
+<li><strong>dof, value:</strong> <code>Velocity</code>의 자유도(<code>X|Y|Z|RX|RY|RZ</code>)와 속도.</li>
+</ul>
+</div>
+<p><code>*InitialCondition</code>은 해당 Step의 시작에 <strong>한 번</strong> 적용되고 다음 Step으로 전파되지 않는다. 이후의 상태는 보통의 상태변수로 진화하며 <code>Prev=</code>로 이어진다. <code>*State</code>가 요소 내부상태(긴장력, 케이블 길이 등)를 지정하는 데 비해 <code>*InitialCondition</code>은 절점 자유도 필드의 값을 지정한다. 두 명령은 서로 다른 상태를 다루므로 함께 쓸 수 있다.</p>
+<p>Step 시작 상태는 다음 순서로 만들어진다. ① <code>Prev=</code>가 있으면 이전 Step의 끝 상태, 없으면 기본 초기상태 ② <code>*InitialCondition</code> ③ <code>*State</code> ④ 시각 0 상태결정(침투: 초기 압력에서 함수비ㆍ포화도 재계산, 동적: 초기 속도로 감쇠력 재조립) ⑤ 첫 증분. <code>STime=0</code> 프레임은 <code>OutFreq</code>ㆍ<code>OutTime</code>이 요청할 때만 기록되며 초기조건 적용 후의 값을 담는다.</p>
+<p><code>WaterTable</code>은 수위선 <span class="arithmatex">\(z_w(x)\)</span> 아래에 <span class="arithmatex">\(p=\gamma_w(z_w-z)\)</span>, 위에 같은 식의 부압을 주고 <code>PMin</code>이 있으면 <span class="arithmatex">\(p\ge p_{\min}\)</span>으로 자른다. <code>Head</code>ㆍ<code>Pressure</code>는 <code>WaterTable</code>보다 우선하며, 같은 절점에 <code>Head</code>와 <code>Pressure</code>를 함께 주거나 같은 종류를 다른 값으로 중복 지정하면 오류이다. 두 <code>WaterTable</code>이 절점을 공유하면 오류이므로 <code>Nset</code>으로 영역을 나눈다. prescribed 압력(<code>*Load, Type=Displacement</code>의 H/P, <code>Support</code>)과 겹치는 절점은 첫 증분부터 경계값이 우선하므로 두 값이 다르면 첫 증분에 점프가 생긴다. 과도 침투에서 P 필드 초기조건이 없고 <code>Prev=</code>도 없으면 기본 초기상태 <span class="arithmatex">\(H=0\)</span>(<span class="arithmatex">\(p=-\gamma_w z\)</span>)을 사용한다. 정상 침투에는 물리적 초기시간이 없으므로 <code>*InitialCondition</code>을 사용할 수 없고, 평형 초기장이 필요하면 정상 Step을 <code>Prev=</code>로 연결한다.</p>
+<p><code>Velocity</code>는 자유 자유도에만 지정할 수 있다. <code>Support</code>로 고정된 자유도, prescribed motion 자유도, MPCㆍ변환구속의 slave 자유도에 지정하면 오류이며, slave 속도는 master에서 복원된다. <code>*Modal</code>이 있는 Dynamic Step에서는 사용할 수 없다. 초기 변위는 <code>*InitialCondition</code>이 아니라 정적 Step을 <code>Prev=</code>로 연결해 만든다. 초기 가속도는 이전 Step의 값(없으면 0)을 유지하며 정합 가속도 <span class="arithmatex">\(a_0=M^{-1}(f_0-Cv_0-f_k(d_0))\)</span>를 따로 계산하지 않는다. 무감쇠ㆍ평형 시작이면 <span class="arithmatex">\(a_0=0\)</span>이 정확하고, 그 외에는 첫 증분에 <span class="arithmatex">\(O(\Delta t)\)</span> 초기자료 오차가 생긴다.</p>
+<h5 id="example_10">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Seepage, Transient, Name=Rain, Prev=Stress
+ Uniform, 0.1, 100, TUnit=day
+*InitialCondition, Type=WaterTable, PMin=-20000
+ 0, 8, 10, 4
+*InitialCondition, Type=Head
+ Reservoir, 16
+
+*Step, Type=Dynamic, Name=Impact, Prev=Dead
+ Uniform, 0.01, 200
+*InitialCondition, Type=Velocity
+ Deck, Y, -1.2
+</code></pre></div>
+<h2 id="1314-output">13.14 *Output</h2>
+<p>HDB 파일(<code>'hdb</code>)로 출력되는 결과값을 지정한다.</p>
+<div class="highlight"><pre><span></span><code>*Output[, Elset=elset1, elset2, ..., Constraint=constraint1, constraint2, ...]
+ field|sensorName,...
+ ...
+</code></pre></div>
+<h5 id="keyword-line_12">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>Elset=elset1, elset2, ...:</strong> HDB 파일(<code>'hdb</code>)의 결과값을 출력할 대상 요소집합. 없으면 <code>*Activate, Type=Element</code>에서 지정한 요소집합이 사용됨</li>
+<li><strong>Constraint=constraint1, constraint2, ...:</strong> HDB 파일(<code>'hdb</code>)의 결과값을 출력할 대상 구속조건, 없으면 <code>*Activate, Type=Constraint</code>에서 지정한 구속조건이 사용됩.</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines-optional-for-frequencystep">First dataline and subsequent datalines (optional for FrequencyStep)</h5>
+<div class="admonition note">
+<ul>
+<li><strong>field, ...:</strong> Name of field</li>
+<li><strong>sensorName:</strong> 출력한 센서 명칭</li>
+</ul>
+</div>
+<p><code>*Output</code>은 HDB 파일(<code>'hdb</code>)에 출력할 절점이나 요소의 필드값, 또는 센서값을 지정하는 명령이다. Element나 Constraint로 출력할 요소집합이나 구속조건을 지정할 수 있다. 만약이 대상 요소집합이나 구속조건을 지정하지 않으면 <code>*Activate, Type=Element/Constraint</code>에서 지정한 요소집합이나 구속조건이 사용된다. 대상 요소집합과 구속조건으로 대상 절점들이 결정되게 된다. 다시 말하면 대상 요소집합은 지정한 요소집합으로 결정하고, 대상 절점집합은 지정한 요소집합과 구속조건으로 결정된다. 데이터라인에 출력할 센서을 지정하는 것은 Element나 Constraint로 지정하는 출력대상에 무관하다.</p>
+<p>HDB 파일(<code>'hdb</code>)에서는 <code>*Step</code>에 대응하는 <code>*ResultStep</code>를 생성하며 <code>*TargetElements</code>, <code>*TargetConstraints</code>, <code>*TargetLoads</code> 등을 출력한다. 이때 <code>*TargetElements</code>, <code>*TargetConstraints</code>가 <code>*Output</code>에서 지정한 대상 요소집합과 구속조건이다. 만약 <code>*Output</code>에 대상 요소집합과 구속조건을 지정하지 않으면 이들은 <code>*Activate, Type=Element/Constraint</code>에서 지정한 요소집합이나 구속조건과 같다. <code>*TargetLoads</code>는 <code>*Activate, Type=Load</code>와 항상 같다.</p>
+<p>필드값은 절점 단위의 요소 단위로 필드값으로 구분할 수 있다.</p>
+<p>▪ 절점 단위 필드</p>
+<ul>
+<li><code>FN</code>, <code>FE</code>: Equivalent nodal loads for applied loads and element loads at nodes</li>
+<li><code>FK</code>, <code>FC</code>, <code>FM</code>: Internal forces including elastic, damping, and inertial forces</li>
+<li><code>D</code>: Degree of freedom field (displacements, temperature, etc., at nodes; represents modes in frequency analysis)</li>
+<li><code>V</code>: First time derivative of the degree of freedom field (e.g., velocity for displacement, temperature rate, etc.)</li>
+<li><code>A</code>: Second time derivative of the degree of freedom field (e.g., acceleration for displacement, temperature acceleration, etc.)</li>
+</ul>
+<p>절점의 하중은 FN+FE=FK+FC+FM의 관계를 만족하게 된다</p>
+<p>▪ 요소 단위 필드</p>
+<ul>
+<li><code>BSF</code>, <code>BSE</code>, <code>BST</code>: Cross-sectional force, strain, and temperature for beam elements (including truss/cable elements)</li>
+<li><code>SSF</code>, <code>SSE</code>, <code>SST</code>: Cross-sectional force, strain, and temperature for shell elements</li>
+<li><code>SF</code>, <code>SE</code>, <code>DF</code>, <code>DE</code>: Cross-sectional force and strain for spring elements, and force and strain for damper sections</li>
+<li><code>S</code>: Stress</li>
+<li><code>E</code>, <code>EM</code>, <code>EE</code>: Total, mechanical, and elastic strain</li>
+<li><code>EP</code>: Plastic strain</li>
+<li><code>ENM</code>, <code>ETH</code>: Non-mechanical strain and thermal strain</li>
+<li><code>SB</code>: Back stress</li>
+<li><code>IEC</code>, <code>IET</code>: Compressive and tensile inelastic strain</li>
+<li><code>ECUN</code>, <code>ETUN</code>: Last committed compressive/tensile unloading strain</li>
+<li><code>PEEQ</code>, <code>PEEQT</code>, <code>PEEQC</code>: Equivalent plastic strain, and tensile/compressive equivalent plastic strain</li>
+<li><code>MTEMP</code>: Material temperature</li>
+<li><code>ITR</code>, <code>IRD</code> : interfacial traction and relative displacement</li>
+<li><code>ELTIME</code>: Element elapsed physical time after activation. This is a derived field computed from <code>rtime - birthTime</code>.</li>
+<li><code>ECR</code>, <code>ESH</code>, <code>EAG</code>: Creep strain, shrinkage strain, and aging strain</li>
+<li><code>PEL</code>: Element pressure</li>
+<li><code>VOL</code>: Element volumetric strain</li>
+</ul>
+<p>요소 단위 필드는 요소점(element point)[요소 중심점, 요소 절점, 적분점 등 요소의 특성에 따라 정의되는 결과값이 정의되는 점]에 따라 순차적으로 출력된다. 예를 들어 8개의 적분점이 있는 C3D8에 대해 S를 출력하는 경우 다음과 같이 출력된다.</p>
+<p>(요소번호), (첫번째 적분점의 S), (두번째 적분점의 S), ... (8번째 적분점의 S)</p>
+<p>보요소, 스프링/댐퍼 요소, 경계면 요소 등에는 셀(cell)이라는 개념이 존재한다. 예를 들어 보요소의 단면을 2개의 서로 다른 재료를 갖는 셀(cell)로 구성하고, 각 셀은 재료점이 10개, 2개 라고 가정하기로 한다. 이때 S의 출력을 요청하면 다음과 같은 순서로 출력된다.</p>
+<p>(요소번호), [첫번째 셀 - 첫 번째 적분점 S[재료점 10개] -... - 4번째 적분점 S[재료점 10개] ] ,
+           [두번째 셀 - 첫 번째 적분점 S[재료점 2개] -... - 4번째 적분점 S[재료점 2개] ]</p>
+<p>이와 같은 출력 순서는 텍스트 HDB로 출력하거나 *Print 문으로 출력하면 확인가능하다. 바이너리나 hdf5 형태의 HDB 역시 내부적으로 이 순서에 따라 저장하게 된다.</p>
+<p>▪ 주의
+1. 주파수 해석 단계(<code>*Step, Type=Frequency</code>)에서는 HDB 파일(<code>'hdb</code>)에서 모드 별로 프레임이 출력된다. 이때 각 프레임은 하나의 모드에 대응하며, 모드 형상이 D에 출력된다. 나머지 필드값은 이때의 D에 의해 유발되는 값이다.
+2. 필드는 하위 성분을 가질 수 있다. 예를 들어 D는 D.X, D.Y, D.Z, .... 등의 하위 성분으로 구성된다. 자세한 하위 성분은 <code>*History</code>를 참조한다.</p>
+<h5 id="example_11">Example</h5>
+<div class="highlight"><pre><span></span><code>*Step, Type=Static, Name=Case1
+*Activate, Type=Element
+ dam, water, farField
+*Output
+ D, SF, S, mySensor
+*Print File=Case1.prn
+ D@Left, SF@Bearing
+
+*Step, Type=Frequency, Name=FRQ
+ 10
+*Output
+ D, SSF
+*Print, File=FRQMode.prn
+</code></pre></div>
+<h2 id="1315-print">13.15 *Print</h2>
+<p>별도 파일로 출력되는 결과값을 지정한다.</p>
+<div class="highlight"><pre><span></span><code>*Print, File=file
+ field[:orientation]@target|sensorName...
+ ...
+</code></pre></div>
+<h5 id="keyword-line_13">Keyword line</h5>
+<div class="admonition note">
+<ul>
+<li><strong>File=file:</strong> <code>*Print</code> 명령에서 출력 대상 파일 이름((optional). 지정하지 않는 경우 filename-stepname-P#.csv 형태로 자동 지정됨(filename은 확장자를 제외한 파일 이름, #은 연번). 파일이름에 <DB>, <STEP>이 포함되는 경우 현재의 DB 이름(입력파일에서 확장자를 뺀 이름)과 현재의 스텝 명칭으로 치환됨.</li>
+</ul>
+</div>
+<h5 id="first-dataline-and-subsequent-datalines_6">First dataline and subsequent datalines</h5>
+<div class="admonition note">
+<ul>
+<li><strong>field[:orientation]@target:</strong> 출력할 필드와 대상. 절점에서 정의되는 필드의 경우 target에는 절점번호, 절점번호패턴, 절점집합이 가능하며, 요소에서 정의되는 필드의 경우  target에는 요소번호, 요소번호패턴, 요소집합이 가능하다. orientation은 선택 항목이며 <code>*CoordinateSystem, Type=Orientation</code>의 명칭 또는 <code>GCS</code>를 지정한다.</li>
+<li><strong>sensorName:</strong> 출력한 센서 명칭</li>
+</ul>
+</div>
+<p><code>*Print</code> 명령은 <code>*Output</code>과 유사하나 지정한 절점 집합이나 요소 집합을 대상으로 그 결과값을 텍스트 값으로 출력한다.</p>
+<p>orientation을 지정하면 결과를 출력하기 전에 해당 orientation 좌표계의 성분으로 변환한다. 출력 heading에는 <code>field:orientation@target</code> 형태가 유지되므로 같은 필드를 전역좌표계와 orientation 좌표계로 함께 출력해도 구분할 수 있다.</p>
+<p>지원 범위는 다음과 같다.</p>
+<ul>
+<li>절점 벡터 필드 <code>D</code>, <code>V</code>, <code>A</code>, <code>FN</code>, <code>FE</code>, <code>FK</code>, <code>FC</code>, <code>FM</code></li>
+<li>연속체 요소의 텐서 필드 <code>S</code>, <code>E</code>, <code>EM</code>, <code>EE</code>, <code>EP</code>, <code>ENM</code>, <code>ETH</code>, <code>SB</code></li>
+<li>침투해석 연속체 요소의 벡터 필드 <code>GRADP</code>, <code>GRADH</code>, <code>FLX</code></li>
+</ul>
+<p>지원하지 않는 결과에는 orientation을 붙일 수 없다. 예를 들어 보/쉘/스프링/인터페이스의 고유 국부 결과(<code>BSF</code>, <code>BSE</code>, <code>BST</code>, <code>SSF</code>, <code>SSE</code>, <code>SST</code>, <code>SF</code>, <code>SE</code>, <code>DF</code>, <code>DE</code>, <code>ITR</code>, <code>IRD</code> 등)와 텐서의 주응력/불변량 성분(<code>P1</code>, <code>P2</code>, <code>P3</code>, <code>Mises</code>)은 orientation 변환 대상이 아니다. 2D 연속체 요소 결과는 면내 orientation만 지원한다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
