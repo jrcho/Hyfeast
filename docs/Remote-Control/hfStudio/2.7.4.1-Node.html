@@ -3327,7 +3327,7 @@
 <li><code>&lt;id&gt;</code>는 양의 정수여야 한다.</li>
 <li><code>&lt;x,y,z&gt;</code>는 유한한 수치 3개여야 한다.</li>
 <li><code>&lt;id&gt;</code>가 아직 없으면 새 node를 생성한다.</li>
-<li><code>&lt;id&gt;</code>가 이미 있으면 해당 node 좌표를 갱신한다.</li>
+<li><code>&lt;id&gt;</code>가 이미 있으면 해당 node 좌표를 갱신한다. 이때 <code>--nset</code>과 <code>--merge-node</code>는 생략한다.</li>
 <li><code>--nset</code>은 선택 사항이며, 새 node를 만들 때만 사용할 수 있다.</li>
 <li><code>--merge-node</code>는 선택 사항이고 기본값은 <code>off</code>이며, 새 node를 만들 때만 사용할 수 있다.</li>
 <li><code>--merge-node on</code>이면 현재 <code>merge-node-tolerance</code> 안의 coincident 기존 node를 재사용하고 새 node를 만들지 않는다.</li>
@@ -3337,7 +3337,7 @@
 <div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span>node<span class="w"> </span><span class="m">101</span><span class="w"> </span><span class="m">0</span>,0,0
 hfStudio<span class="w"> </span>--remote<span class="w"> </span>node<span class="w"> </span><span class="m">101</span><span class="w"> </span><span class="m">10</span>,20,30
 hfStudio<span class="w"> </span>--remote<span class="w"> </span>node<span class="w"> </span><span class="m">2001</span><span class="w"> </span><span class="m">10</span>,20,30<span class="w"> </span>--nset<span class="w"> </span>BASE
-hfStudio<span class="w"> </span>--remote<span class="w"> </span>node<span class="w"> </span><span class="m">2001</span><span class="w"> </span><span class="m">10</span>,20,30<span class="w"> </span>--merge-node<span class="w"> </span>on
+hfStudio<span class="w"> </span>--remote<span class="w"> </span>node<span class="w"> </span><span class="m">2002</span><span class="w"> </span><span class="m">10</span>,20,30<span class="w"> </span>--merge-node<span class="w"> </span>on
 </code></pre></div>
 <h2 id="merge-node-tolerance">2.7.4.1.2 merge-node-tolerance</h2>
 <div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">[</span>--target<span class="w"> </span>&lt;id&gt;<span class="o">]</span><span class="w"> </span>merge-node-tolerance<span class="w"> </span>get

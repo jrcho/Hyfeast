@@ -3327,7 +3327,7 @@
 <li><code>&lt;id&gt;</code> must be a positive integer.</li>
 <li><code>&lt;x,y,z&gt;</code> must be three finite numeric values.</li>
 <li>If <code>&lt;id&gt;</code> does not exist, the command creates a new node.</li>
-<li>If <code>&lt;id&gt;</code> already exists, the command updates that node coordinate.</li>
+<li>If <code>&lt;id&gt;</code> already exists, the command updates that node coordinate. Omit <code>--nset</code> and <code>--merge-node</code> for this operation.</li>
 <li><code>--nset</code> is optional and is supported only when creating a new node.</li>
 <li><code>--merge-node</code> is optional, defaults to <code>off</code>, and is supported only when creating a new node.</li>
 <li>With <code>--merge-node on</code>, an existing coincident node within the current <code>merge-node-tolerance</code> is reused instead of creating a new node.</li>
@@ -3337,7 +3337,7 @@
 <div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span>node<span class="w"> </span><span class="m">101</span><span class="w"> </span><span class="m">0</span>,0,0
 hfStudio<span class="w"> </span>--remote<span class="w"> </span>node<span class="w"> </span><span class="m">101</span><span class="w"> </span><span class="m">10</span>,20,30
 hfStudio<span class="w"> </span>--remote<span class="w"> </span>node<span class="w"> </span><span class="m">2001</span><span class="w"> </span><span class="m">10</span>,20,30<span class="w"> </span>--nset<span class="w"> </span>BASE
-hfStudio<span class="w"> </span>--remote<span class="w"> </span>node<span class="w"> </span><span class="m">2001</span><span class="w"> </span><span class="m">10</span>,20,30<span class="w"> </span>--merge-node<span class="w"> </span>on
+hfStudio<span class="w"> </span>--remote<span class="w"> </span>node<span class="w"> </span><span class="m">2002</span><span class="w"> </span><span class="m">10</span>,20,30<span class="w"> </span>--merge-node<span class="w"> </span>on
 </code></pre></div>
 <h2 id="merge-node-tolerance">2.7.4.1.2 merge-node-tolerance</h2>
 <div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">[</span>--target<span class="w"> </span>&lt;id&gt;<span class="o">]</span><span class="w"> </span>merge-node-tolerance<span class="w"> </span>get

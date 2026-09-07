@@ -3378,7 +3378,12 @@
 <ul>
 <li>Without <code>[file]</code>, saves to the current file.</li>
 <li>With <code>[file]</code>, saves there and updates the current file path.</li>
+<li>If writing the HDB model or the Text HDB <code>.inp</code> or <code>.info</code> file fails, the command reports a save failure and keeps the model marked as modified. Resolve the write-permission or disk-space issue, then retry with <code>save</code>.</li>
 </ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span>save<span class="w"> </span>D:<span class="se">\W</span>ork<span class="se">\m</span>odel.text.hdb
+hfStudio<span class="w"> </span>--remote<span class="w"> </span>save
+</code></pre></div>
 <h2 id="write-scene">2.4.4 write-scene</h2>
 <div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">[</span>--target<span class="w"> </span>&lt;id&gt;<span class="o">]</span><span class="w"> </span>write-scene<span class="w"> </span>&lt;file&gt;
 </code></pre></div>

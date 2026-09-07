@@ -3378,7 +3378,12 @@
 <ul>
 <li><code>[file]</code>이 없으면 현재 파일에 저장한다.</li>
 <li><code>[file]</code>이 있으면 그 경로로 저장하고 현재 파일 경로도 함께 갱신한다.</li>
+<li>HDB 모델이나 Text HDB의 <code>.inp</code>·<code>.info</code> 기록에 실패하면 저장 실패를 반환하고 수정 상태를 유지한다. 쓰기 권한이나 저장 공간 문제를 해결한 뒤 <code>save</code>로 다시 저장할 수 있다.</li>
 </ul>
+<p>예시:</p>
+<div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span>save<span class="w"> </span>D:<span class="se">\W</span>ork<span class="se">\m</span>odel.text.hdb
+hfStudio<span class="w"> </span>--remote<span class="w"> </span>save
+</code></pre></div>
 <h2 id="write-scene">2.4.4 write-scene</h2>
 <div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">[</span>--target<span class="w"> </span>&lt;id&gt;<span class="o">]</span><span class="w"> </span>write-scene<span class="w"> </span>&lt;file&gt;
 </code></pre></div>
