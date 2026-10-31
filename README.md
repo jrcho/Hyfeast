@@ -12,8 +12,6 @@ Hyfeast supports shell, beam, and solid elements, fast parallelized solving, 3D 
 ## System Requirements
 
 - 64-bit Windows 10 or higher
-- The Microsoft Visual C++ runtime is included in the `Bin` folder, so no separate installation is needed.  
-  If *hfStudio* still does not run, check that all files of the `Bin` folder were extracted, then try installing the [latest Microsoft Visual C++ Redistributable (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist).
 
 ## Installation and Usage
 

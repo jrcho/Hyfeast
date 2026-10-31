@@ -12,8 +12,6 @@ Hyfeast는 셸, 보, 솔리드 요소를 지원하며, 빠른 병렬 해석, 3D 
 ## 시스템 요구사항
 
 - 64비트 Windows 10 이상
-- Microsoft Visual C++ 런타임은 `Bin` 폴더에 포함되어 있어 따로 설치하지 않아도 됩니다.  
-  그래도 *hfStudio*가 실행되지 않으면 `Bin` 폴더의 파일이 빠짐없이 풀렸는지 확인하고, [최신 Microsoft Visual C++ Redistributable (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)을 설치해 보세요.
 
 ## 설치 및 사용법
 
