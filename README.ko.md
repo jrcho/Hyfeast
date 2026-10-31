@@ -7,6 +7,8 @@ Hyfeast는 셸, 보, 솔리드 요소를 지원하며, 빠른 병렬 해석, 3D 
 - 다운로드: [최신 릴리스](https://github.com/jrcho/Hyfeast/releases/latest)  
 - 도움말: [온라인 문서](https://jrcho.github.io/Hyfeast/index.html)  
 - 오프라인 도움말: `Bin\help\index.html`  
+- 질문: [Discussions](https://github.com/jrcho/Hyfeast/discussions)  
+- 버그 신고: [Issues](https://github.com/jrcho/Hyfeast/issues)  
 - English version: [README.md](./README.md)
 
 ## 시스템 요구사항

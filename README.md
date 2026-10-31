@@ -7,6 +7,8 @@ Hyfeast supports shell, beam, and solid elements, fast parallelized solving, 3D 
 - Download: [Latest release](https://github.com/jrcho/Hyfeast/releases/latest)  
 - Help: [Online documentation](https://jrcho.github.io/Hyfeast/index.html)  
 - Offline help: `Bin\help\index.html`  
+- Questions: [Discussions](https://github.com/jrcho/Hyfeast/discussions)  
+- Bug reports: [Issues](https://github.com/jrcho/Hyfeast/issues)  
 - Korean version: [README.ko.md](./README.ko.md)
 
 ## System Requirements
