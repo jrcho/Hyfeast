@@ -8,14 +8,24 @@ Copyright (C) 2025 HYFEAST Developers
 2. The executable files, documentation, and example files may be freely copied and distributed.
 
 3. However, the following actions require prior written permission:
-   - Analyzing, decompiling, modifying, or integrating the program into other systems as a solver engine.
+   - Analyzing, decompiling, disassembling, or modifying the program.
    - Modifying and redistributing the program in any form other than the official release.
-   - Commercial use of the DigitalTwin feature integrated into hfVisualizer.
+   - Embedding the program as the internal solver engine of other software or systems,
+     whether used or provided, paid or free, and including in-house systems. Scripts that
+     users write and run themselves for their own analyses are not covered, but tools or
+     systems made for use by others are.
+   - Use of the DigitalTwin feature integrated into hfStudio, which is enabled only with a separately supplied activation key.
 
-4. This software is provided "as-is" without any warranty, express or implied.
+4. In academic research, the program may be called as a solver engine from research code,
+   and that code may be published, without permission. In this case, Hyfeast must be cited
+   when the research results are published.
+   Citation example: Hyfeast, Korea Institute of Civil Engineering and Building Technology,
+                     https://github.com/jrcho/Hyfeast
+
+5. This software is provided "as-is" without any warranty, express or implied.
    The developers assume no responsibility for any issues arising from its use or performance.
 
-For inquiries or commercial licensing, contact: jrcho2012@gmail.com
+For permission to embed the program as a solver engine or for commercial licensing, contact: jrcho2012@gmail.com
 
 
 HYFEAST 라이선스 이용 약관
@@ -28,14 +38,23 @@ Copyright (C) 2025 HYFEAST Developers
 2. 본 프로그램의 실행 파일, 문서, 예제 파일은 자유롭게 복사 및 배포할 수 있습니다.
 
 3. 단, 다음의 행위를 위해서는 사전에 별도의 허가를 받아야 합니다:
-   - 본 프로그램을 분석, 분해, 변형하거나, 타 시스템에서 해석 엔진으로 통합하여 사용하는 행위
+   - 본 프로그램을 분석, 분해(디컴파일·디스어셈블)하거나 변형하는 행위
    - 본 프로그램을 변조하거나 수정하여, 공식 배포본이 아닌 형태로 재배포하는 행위
-   - hfVisualizer에 통합된 DigitalTwin 기능의 상업적 사용
+   - 본 프로그램을 다른 소프트웨어나 시스템의 내부 해석 엔진으로 내장하여 사용하거나
+     제공하는 행위(유료·무료, 회사 내부 시스템 여부와 관계없음). 사용자가 자신의 해석을
+     위해 직접 작성해 쓰는 스크립트는 여기에 해당하지 않지만, 다른 사람이 쓰도록 만든
+     도구나 시스템은 해당합니다.
+   - hfStudio에 통합된 DigitalTwin 기능의 사용(별도로 제공하는 활성화 키로만 켤 수 있음)
 
-4. 본 소프트웨어는 "있는 그대로(as-is)" 제공되며,
+4. 학술 연구에서는 허가 없이 연구 코드에서 본 프로그램을 해석 엔진으로 호출하고
+   그 코드를 공개할 수 있습니다. 이 경우 연구 결과를 발표할 때 Hyfeast를 인용해야 합니다.
+   인용 예: Hyfeast, Korea Institute of Civil Engineering and Building Technology,
+            https://github.com/jrcho/Hyfeast
+
+5. 본 소프트웨어는 "있는 그대로(as-is)" 제공되며,
    개발자는 사용 또는 성능에 대해 어떠한 책임도 지지 않습니다.
 
-문의 및 상업적 라이선스 관련 연락처: jrcho2012@gmail.com
+내부 해석 엔진 사용 허가 및 상업적 라이선스 문의: jrcho2012@gmail.com
 
 -------------------------------------------------------------------------------
 Third-Party Libraries and Licenses
@@ -60,16 +79,27 @@ Utilities
 - RapidJSON – JSON parser for C++ (MIT License)
 - JKQtPlotter – Qt-based scientific plotting widget (MIT License)
 - MathJax – JavaScript math rendering library for offline Help (Apache License 2.0)
-- OpenSSL – TLS/SSL encryption support (OpenSSL License and SSLeay License)
 
-  This product includes software developed by the OpenSSL Project
-  for use in the OpenSSL Toolkit (https://www.openssl.org/).
+Runtime Libraries
+- Microsoft Visual C++ Runtime (vcruntime140, vcruntime140_1, msvcp140, msvcp140_1,
+  msvcp140_2, msvcp140_codecvt_ids) – Redistributable files of Microsoft Visual Studio
+  (Microsoft Software License Terms)
 
-  Copyright (c) 1998-2023 The OpenSSL Project.  All rights reserved.
+MCP Server for AI Agents (Bin\mcp\hyfeast-mcp.exe)
+- Python 3.12 runtime – Embedded interpreter used only by hyfeast-mcp.exe (PSF License)
+- PyInstaller bootloader – Executable packaging (GPL 2.0 with the bootloader exception)
+- MCP Python SDK (mcp, mcp-types) – Model Context Protocol (MIT License)
+- pydantic, pydantic-core, annotated-types, typing-inspection – Data validation (MIT License)
+- anyio, h11, PyJWT, truststore, jsonschema, jsonschema-specifications, referencing,
+  rpds-py, attrs, cffi, setuptools, libffi – (MIT License)
+- starlette, sse-starlette, uvicorn, httpx2, httpcore2, idna, click, pycparser – (BSD-3-Clause License)
+- python-multipart, opentelemetry-api – (Apache License 2.0)
+- cryptography – (Apache License 2.0 or BSD-3-Clause License)
+- typing_extensions, pywin32 – (PSF License)
+- OpenSSL 3 (libssl-3, libcrypto-3) – TLS support for the embedded Python (Apache License 2.0)
 
-  This product includes cryptographic software written by Eric Young
-  (eay@cryptsoft.com). This product includes software written by Tim Hudson
-  (tjh@cryptsoft.com).
+  The license texts of these components are in Bin\mcp\licenses
+  (see THIRD-PARTY-NOTICES.txt there).
 
 -------------------------------------------------------------------------------
 Optional External Tools (Not Bundled)
@@ -78,8 +108,7 @@ Optional External Tools (Not Bundled)
 The following tools are not included in this software package but may be used
 to enable additional features in Hyfeast. Users must install them separately.
 
-- Python – Used for DXF import (via ezdxf) and modal identification scripts
-- ezdxf (Python) – Python library for DXF import in hfVisualizer (MIT License)
+- Python – Used for modal identification scripts
 - Pandoc – Document converter for report generation (GPL/MIT License)
 
 If Hyfeast offline Help is redistributed with bundled MathJax files, include

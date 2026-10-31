@@ -1,0 +1,3 @@
+case,start_mm,end_mm,rmse_vs_base_kN,max_abs_difference_kN
+solid2d-lc1-m2-ties-lowvisc,0,60.0,0.1616608091752134,0.3860716546416505
+solid2d-lc1-m2-ties-cutoff,0,60.0,0.7643337022358611,2.8386171347797458

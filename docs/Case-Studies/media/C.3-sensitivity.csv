@@ -1,0 +1,3 @@
+type,base,other,peak_change_percent,curve_difference_NRMSE_percent,area_change_percent,common_end_mm
+viscosity,u2-medium,u2-medium-stable,0.13895161010180068,0.25016119531176034,0.24262736140925334,27.5
+mesh,u2-medium-stable,u2-fine-stable,0.7388906233739112,1.0179794280831727,1.1010464457534175,27.5

@@ -15,16 +15,23 @@
         <link rel="next" href="../Recipes/2.10-hfStudio-Recipes.html">
       
       
+        
+          <link rel="alternate" href="2.9-Postprocessing.html" hreflang="ko">
+        
+          <link rel="alternate" href="../../en/Remote-Control/hfStudio/2.9-Postprocessing.html" hreflang="en">
+        
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>2.9 Postprocessing - Hyfeast-v1.0.0-beta.4</title>
+        <title>2.9 Postprocessing - Hyfeast-v1.0.0-beta.5</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -41,11 +48,10 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
-    
     
     
   </head>
@@ -76,21 +82,21 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="../../index.html" title="Hyfeast-v1.0.0-beta.4" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.4" data-md-component="logo">
+    <a href="../../index.html" title="Hyfeast-v1.0.0-beta.5" class="md-header__button md-logo" aria-label="Hyfeast-v1.0.0-beta.5" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Hyfeast-v1.0.0-beta.4
+            Hyfeast-v1.0.0-beta.5
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -104,14 +110,14 @@
     </div>
     
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
       <div class="md-header__option">
   <div class="md-select">
     
     <button class="md-header__button md-icon" aria-label="언어설정">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
@@ -134,26 +140,28 @@
 </div>
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="검색">
         
         <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
@@ -172,6 +180,7 @@
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -201,13 +210,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Hyfeast-v1.0.0-beta.4" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.4" data-md-component="logo">
+    <a href="../../index.html" title="Hyfeast-v1.0.0-beta.5" class="md-nav__button md-logo" aria-label="Hyfeast-v1.0.0-beta.5" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Hyfeast-v1.0.0-beta.4
+    Hyfeast-v1.0.0-beta.5
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -222,9 +231,16 @@
       <a href="../../index.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Overview
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -238,6 +254,7 @@
   
   
   
+    
     
     
     
@@ -252,9 +269,16 @@
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     FE Tools
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -263,7 +287,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            FE Tools
+            
+  
+    FE Tools
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -277,9 +305,16 @@
       <a href="../../Finite-Element-Analysis/1-Overview.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     1. Overview
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -298,6 +333,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -308,9 +344,16 @@
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     2. hfStudio
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -319,7 +362,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            2. hfStudio
+            
+  
+    2. hfStudio
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -333,9 +380,16 @@
       <a href="../../hfStudio/2.1-Overview.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.1 Overview
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -354,9 +408,16 @@
       <a href="../../hfStudio/2.2-File.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.2 File
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -375,9 +436,16 @@
       <a href="../../hfStudio/2.3-View-and-Display.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.3 View and Display
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -396,9 +464,16 @@
       <a href="../../hfStudio/2.4-Selection-and-Visibility.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.4 Selection and Visibility
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -417,9 +492,16 @@
       <a href="../../hfStudio/2.5-Preprocessing.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.5 Preprocessing
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -438,9 +520,16 @@
       <a href="../../hfStudio/2.6-Analysis.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.6 Analysis
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -459,9 +548,16 @@
       <a href="../../hfStudio/2.7-Postprocessing.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7 Postprocessing
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -480,9 +576,16 @@
       <a href="../../hfStudio/2.8-Workspace-Panels.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.8 Workspace Panels
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -509,6 +612,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -519,9 +623,16 @@
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     3. hfAnalyzer
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -530,7 +641,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
-            3. hfAnalyzer
+            
+  
+    3. hfAnalyzer
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -544,9 +659,16 @@
       <a href="../../hfAnalyzer/3.1-Running.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3.1 Running
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -565,9 +687,16 @@
       <a href="../../hfAnalyzer/3.2-Files-and-Results.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3.2 Files and Results
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -601,6 +730,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -611,9 +741,16 @@
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     FE Commands
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -622,7 +759,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            FE Commands
+            
+  
+    FE Commands
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -636,9 +777,16 @@
       <a href="../../FE-Commands/1-Introduction.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     1. Introduction
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -657,9 +805,16 @@
       <a href="../../FE-Commands/2-Node.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2. Node
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -678,9 +833,16 @@
       <a href="../../FE-Commands/3-Element.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3. Element
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -699,6 +861,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -709,9 +872,16 @@
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     4. Element Library
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -720,7 +890,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            4. Element Library
+            
+  
+    4. Element Library
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -734,9 +908,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.1-Introduction.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.1 Overview
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -755,9 +936,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.2-Beam.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.2 Beam
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -776,9 +964,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.3-Truss.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.3 Truss
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -797,9 +992,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.4-Cable.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.4 Cable
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -818,9 +1020,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.5-Shell.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.5 Shell
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -839,9 +1048,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.6-Solid.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.6 Solid
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -860,9 +1076,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.7-AcousticSolid.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.7 AcousticSolid
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -881,9 +1104,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.8-SeepageSolid.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.8 SeepageSolid
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -902,9 +1132,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.9-MCK.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.9 MCK
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -923,9 +1160,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.10-MovingSpring.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.10 MovingSpring
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -944,9 +1188,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.11-Interface.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.11 Interface
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -965,9 +1216,16 @@
       <a href="../../FE-Commands/4-Element-Specification/4.12-EmbeddedLine.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4.12 EmbeddedLine
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -994,9 +1252,16 @@
       <a href="../../FE-Commands/5-Constraint.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     5. Constraint
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1015,9 +1280,16 @@
       <a href="../../FE-Commands/6-Load.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     6. Load
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1036,9 +1308,16 @@
       <a href="../../FE-Commands/7-Material.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     7. Material
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1057,9 +1336,16 @@
       <a href="../../FE-Commands/8-Function.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     8. Function
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1078,9 +1364,16 @@
       <a href="../../FE-Commands/9-Surface.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     9. Surface
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1099,9 +1392,16 @@
       <a href="../../FE-Commands/10-Geometry.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     10. Geometry
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1120,9 +1420,16 @@
       <a href="../../FE-Commands/11-CoordinateSystem.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     11. Coordinate System
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1141,9 +1448,16 @@
       <a href="../../FE-Commands/12-Sensor.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     12. Sensor
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1162,9 +1476,16 @@
       <a href="../../FE-Commands/13-Step.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     13. Step
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1183,9 +1504,16 @@
       <a href="../../FE-Commands/14-Step-result.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     14. Step Result
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1204,9 +1532,16 @@
       <a href="../../FE-Commands/15-Modelling.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     15. Modelling Convenience
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1225,9 +1560,16 @@
       <a href="../../FE-Commands/16-Etc.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     16. Etc.
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1246,9 +1588,16 @@
       <a href="../../FE-Commands/17-Special-step.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     17. Special Step
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1267,9 +1616,16 @@
       <a href="../../FE-Commands/18-HDB-file-structure.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     18. HDB File Structure
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1295,6 +1651,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -1305,9 +1662,16 @@
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     2D & Section Tools
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1316,7 +1680,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            2D & Section Tools
+            
+  
+    2D & Section Tools
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1330,9 +1698,16 @@
       <a href="../../2D-Section-Tools/1-Overview.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     1. Overview
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1351,6 +1726,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -1361,9 +1737,16 @@
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     2. hf2DStudio
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1372,7 +1755,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
-            2. hf2DStudio
+            
+  
+    2. hf2DStudio
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1386,9 +1773,16 @@
       <a href="../../2D-Section-Tools/hf2DStudio/2.1-Overview.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.1 Overview
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1407,9 +1801,16 @@
       <a href="../../2D-Section-Tools/hf2DStudio/2.2-Window-and-File.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.2 Window and File
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1428,9 +1829,16 @@
       <a href="../../2D-Section-Tools/hf2DStudio/2.3-View-and-Display.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.3 View and Display
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1449,9 +1857,16 @@
       <a href="../../2D-Section-Tools/hf2DStudio/2.4-Geometry.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.4 Geometry
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1470,9 +1885,16 @@
       <a href="../../2D-Section-Tools/hf2DStudio/2.5-Definition.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.5 Definition
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1491,9 +1913,16 @@
       <a href="../../2D-Section-Tools/hf2DStudio/2.6-Operation-and-Analysis.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.6 Operation and Analysis
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1512,9 +1941,16 @@
       <a href="../../2D-Section-Tools/2.7-Mesh-Generation.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7 Mesh Generation
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1541,9 +1977,16 @@
       <a href="../../2D-Section-Tools/3.1-Help.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3. hfSectAnalyzer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1562,9 +2005,16 @@
       <a href="../../2D-Section-Tools/3.2-Commands.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4. Commands
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1583,9 +2033,16 @@
       <a href="../../2D-Section-Tools/4-Examples.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     5. Section Examples
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1604,9 +2061,16 @@
       <a href="../../2D-Section-Tools/5-Theory.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     6. Section Theory
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1634,6 +2098,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
@@ -1644,9 +2109,16 @@
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Remote Control
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1655,7 +2127,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Remote Control
+            
+  
+    Remote Control
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1669,9 +2145,16 @@
       <a href="../1-Basics.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     1. Basics
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1692,6 +2175,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
@@ -1702,9 +2186,16 @@
           <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     2. hfStudio
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1713,7 +2204,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            2. hfStudio
+            
+  
+    2. hfStudio
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1727,9 +2222,16 @@
       <a href="2.1-Overview.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.1 Overview
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1748,9 +2250,16 @@
       <a href="2.2-Remote-only.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.2 Remote-only
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1769,9 +2278,16 @@
       <a href="2.3-View.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.3 View
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1790,9 +2306,16 @@
       <a href="2.4-File.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.4 File
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1811,9 +2334,16 @@
       <a href="2.5-Display.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.5 Display
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1832,9 +2362,16 @@
       <a href="2.6-Selection.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.6 Selection
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1853,6 +2390,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -1863,9 +2401,16 @@
           <label class="md-nav__link" for="__nav_5_2_7" id="__nav_5_2_7_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7 Preprocessing
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1874,7 +2419,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2_7">
             <span class="md-nav__icon md-icon"></span>
-            2.7 Preprocessing
+            
+  
+    2.7 Preprocessing
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1888,9 +2437,16 @@
       <a href="2.7.1-Environment.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.1 Environment
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1909,9 +2465,16 @@
       <a href="2.7.2-CoordinateSystem.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.2 CoordinateSystem
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1930,9 +2493,16 @@
       <a href="2.7.3-Geometry.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.3 Geometry
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1951,6 +2521,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -1961,9 +2532,16 @@
           <label class="md-nav__link" for="__nav_5_2_7_4" id="__nav_5_2_7_4_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.4 Node and NSet
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1972,7 +2550,11 @@
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2_7_4">
             <span class="md-nav__icon md-icon"></span>
-            2.7.4 Node and NSet
+            
+  
+    2.7.4 Node and NSet
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1986,9 +2568,16 @@
       <a href="2.7.4.1-Node.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.4.1 Node
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2007,9 +2596,16 @@
       <a href="2.7.4.2-NSet.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.4.2 NSet
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2036,6 +2632,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -2046,9 +2643,16 @@
           <label class="md-nav__link" for="__nav_5_2_7_5" id="__nav_5_2_7_5_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.5 Element and Elset
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -2057,7 +2661,11 @@
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_7_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2_7_5">
             <span class="md-nav__icon md-icon"></span>
-            2.7.5 Element and Elset
+            
+  
+    2.7.5 Element and Elset
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2071,9 +2679,16 @@
       <a href="2.7.5.1-Element.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.5.1 Element
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2092,9 +2707,16 @@
       <a href="2.7.5.2-Elset.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.5.2 Elset
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2121,9 +2743,16 @@
       <a href="2.7.6-Load.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.6 Load
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2142,9 +2771,16 @@
       <a href="2.7.7-Surface.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.7 Surface
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2163,9 +2799,16 @@
       <a href="2.7.8-Sensor.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.8 Sensor
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2184,9 +2827,16 @@
       <a href="2.7.9-NProp.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.9 NProp
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2205,9 +2855,16 @@
       <a href="2.7.10-Material.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.10 Material
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2226,9 +2883,16 @@
       <a href="2.7.11-Section.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.11 Section
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2247,9 +2911,16 @@
       <a href="2.7.12-Function.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.12 Function
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2268,9 +2939,16 @@
       <a href="2.7.13-Step.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.13 Step
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2289,9 +2967,16 @@
       <a href="2.7.14-History.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.14 History
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2310,9 +2995,16 @@
       <a href="2.7.15-Distribution.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.15 Assign
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2331,9 +3023,16 @@
       <a href="2.7.16-Model.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.16 Model
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2352,9 +3051,16 @@
       <a href="2.7.17-Renumber.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.17 Renumber
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2373,9 +3079,44 @@
       <a href="2.7.18-Undo-and-Redo.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.7.18 Undo and Redo
+  
+
+    
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2.7.19-Constraint.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.7.19 Constraint
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -2402,9 +3143,16 @@
       <a href="2.8-Analysis.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.8 Analysis
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2430,9 +3178,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     2.9 Postprocessing
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -2441,9 +3196,16 @@
       <a href="2.9-Postprocessing.html" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.9 Postprocessing
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2464,7 +3226,9 @@
         <li class="md-nav__item">
   <a href="#post-plot" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.1 post-plot
+      
+        2.9.1 post-plot
+      
     </span>
   </a>
   
@@ -2473,7 +3237,9 @@
         <li class="md-nav__item">
   <a href="#post-step" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.2 post-step
+      
+        2.9.2 post-step
+      
     </span>
   </a>
   
@@ -2482,7 +3248,9 @@
         <li class="md-nav__item">
   <a href="#post-frame" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.3 post-frame
+      
+        2.9.3 post-frame
+      
     </span>
   </a>
   
@@ -2491,7 +3259,9 @@
         <li class="md-nav__item">
   <a href="#post-scalar" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.4 post-scalar
+      
+        2.9.4 post-scalar
+      
     </span>
   </a>
   
@@ -2500,7 +3270,9 @@
         <li class="md-nav__item">
   <a href="#post-vector" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.5 post-vector
+      
+        2.9.5 post-vector
+      
     </span>
   </a>
   
@@ -2509,7 +3281,9 @@
         <li class="md-nav__item">
   <a href="#post-contour" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.6 post-contour
+      
+        2.9.6 post-contour
+      
     </span>
   </a>
   
@@ -2518,7 +3292,9 @@
         <li class="md-nav__item">
   <a href="#post-scale" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.7 post-scale
+      
+        2.9.7 post-scale
+      
     </span>
   </a>
   
@@ -2527,7 +3303,9 @@
         <li class="md-nav__item">
   <a href="#post-display" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.8 post-display
+      
+        2.9.8 post-display
+      
     </span>
   </a>
   
@@ -2536,7 +3314,9 @@
         <li class="md-nav__item">
   <a href="#post-animation-time-history" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.9 post-animation-time-history
+      
+        2.9.9 post-animation-time-history
+      
     </span>
   </a>
   
@@ -2545,7 +3325,9 @@
         <li class="md-nav__item">
   <a href="#post-animation-scale-factor" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.10 post-animation-scale-factor
+      
+        2.9.10 post-animation-scale-factor
+      
     </span>
   </a>
   
@@ -2554,7 +3336,9 @@
         <li class="md-nav__item">
   <a href="#post-animation-loop" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.11 post-animation-loop
+      
+        2.9.11 post-animation-loop
+      
     </span>
   </a>
   
@@ -2563,7 +3347,9 @@
         <li class="md-nav__item">
   <a href="#post-animation-record" class="md-nav__link">
     <span class="md-ellipsis">
-      2.9.12 post-animation-record
+      
+        2.9.12 post-animation-record
+      
     </span>
   </a>
   
@@ -2588,9 +3374,16 @@
       <a href="../Recipes/2.10-hfStudio-Recipes.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2.10 Recipes
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2617,6 +3410,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -2627,9 +3421,16 @@
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     3. hf2DStudio
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -2638,7 +3439,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            3. hf2DStudio
+            
+  
+    3. hf2DStudio
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2652,9 +3457,16 @@
       <a href="../hf2DStudio/3.1-2D-Modeling-Automation.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3.1 2D Modeling Automation
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2673,9 +3485,16 @@
       <a href="../hf2DStudio/3.2-Overview.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3.2 Overview
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2694,9 +3513,16 @@
       <a href="../hf2DStudio/3.3-Window-and-File.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3.3 Window and File
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2715,9 +3541,16 @@
       <a href="../hf2DStudio/3.4-View.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3.4 View
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2736,9 +3569,16 @@
       <a href="../hf2DStudio/3.5-Geometry.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3.5 Geometry
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2757,9 +3597,16 @@
       <a href="../hf2DStudio/3.6-Definition.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3.6 Definition
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2778,9 +3625,16 @@
       <a href="../hf2DStudio/3.7-Operation-and-Analysis.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3.7 Operation and Analysis
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2799,9 +3653,16 @@
       <a href="../Recipes/3.8-hf2DStudio-Recipes.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3.8 Recipes
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2835,6 +3696,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -2845,9 +3707,16 @@
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
-    Tutorials
+    
+  
+    AI Agents (MCP)
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -2856,7 +3725,121 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Tutorials
+            
+  
+    AI Agents (MCP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI-Agents/1-Connection.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 연결
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI-Agents/2-Examples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 사용 예
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2870,9 +3853,16 @@
       <a href="../../Tutorials/1-Getting-Started.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     1. Getting Started
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2891,9 +3881,16 @@
       <a href="../../Tutorials/2-Beam-Cantilever.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2. Beam Cantilever
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2912,9 +3909,16 @@
       <a href="../../Tutorials/3-Solid-Cantilever.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3. Solid Cantilever
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2933,9 +3937,44 @@
       <a href="../../Tutorials/4-Automation.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4. Automation
+  
+
+    
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/5-AI-Agents.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. AI Agents
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -2961,30 +4000,70 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Verification
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Verification
+            
+  
+    Verification
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Verification/Overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2996,9 +4075,16 @@
       <a href="../../Verification/V.1-Beam-Element.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.1 Beam Element
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3017,9 +4103,16 @@
       <a href="../../Verification/V.2-Material-Nonlinear-Beam-Element.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.2 Material Nonlinear Beam Element
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3038,9 +4131,16 @@
       <a href="../../Verification/V.3-Solid-Element-and-In-Plane-Behavior-of-Shell-Element.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.3 Solid Element and In-Plane Behavior of Shell Element
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3059,9 +4159,16 @@
       <a href="../../Verification/V.4-Shell-Element.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.4 Shell Element
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3080,9 +4187,16 @@
       <a href="../../Verification/V.5-Material-Nonlinear-Solid-and-Shell-Element.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.5 Material Nonlinear Solid and Shell Element
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3101,9 +4215,16 @@
       <a href="../../Verification/V.6-Dynamic-Analysis-using-Spring-and-Mass-Elements.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.6 Dynamic Analysis using Spring and Mass Elements
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3122,9 +4243,16 @@
       <a href="../../Verification/V.7-Acoustic-Solid-Element-and-HydroStaticPressure-Loads.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.7 Acoustic Solid Element and HydroStaticPressure Loads
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3143,9 +4271,16 @@
       <a href="../../Verification/V.8-Interface-Modeling-using-Spring-and-Interface-Elements.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.8 Interface Modeling using Spring and Interface Elements
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3164,9 +4299,16 @@
       <a href="../../Verification/V.9-Truss-and-Cable-Elements.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.9 Truss and Cable Elements
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3185,9 +4327,16 @@
       <a href="../../Verification/V.10-Simple-Constraints.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.10 Simple Constraints
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3206,9 +4355,16 @@
       <a href="../../Verification/V.11-Advanced-Constraints.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.11 Advanced Constraints
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3227,9 +4383,16 @@
       <a href="../../Verification/V.12-Rebar-and-Tendon-Modeling.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.12 Rebar and Tendon Modeling
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3248,9 +4411,16 @@
       <a href="../../Verification/V.13-Moving-Load-Analysis-in-Simply-Supported-Beam.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.13 Moving Load Analysis in Simply Supported Beam
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3269,9 +4439,16 @@
       <a href="../../Verification/V.14-Stability-of-Rail-Track.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.14 Stability of Rail Track
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3290,9 +4467,16 @@
       <a href="../../Verification/V.15-Time-Dependent-Materials.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.15 Time Dependent Materials
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3311,9 +4495,16 @@
       <a href="../../Verification/V.16-ModelUpdating-and-ShapeEstimation-Steps.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.16 ModelUpdating and ShapeEstimation Steps
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3332,9 +4523,16 @@
       <a href="../../Verification/V.17-Seepage-Element-and-Boundary-Conditions.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.17 Seepage Element and Boundary Conditions
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3353,9 +4551,432 @@
       <a href="../../Verification/V.18-Seepage-Comparison-with-SEEPW.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     V.18 Seepage Comparison with SEEP/W
+  
+
+    
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Verification/V.19-Concrete-Damage-Plasticity.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V.19 Concrete Damage Plasticity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Case-Studies/Overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Case-Studies/C.1-Concrete-Beam-Fracture.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C.1 무근 콘크리트 노치 보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Case-Studies/C.2-RC-Beam-Model-Comparison.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C.2 RC 보 모델 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Case-Studies/C.3-RC-Beam-Earij-U2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C.3 Earij U2 RC 보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Case-Studies/C.4-Steady-Unsaturated-Seepage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C.4 정상 불포화 침투해석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Material (UMAT)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Material (UMAT)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User-Material/1-Overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User-Material/2-Input.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User-Material/3-Interface.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Plugin Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User-Material/4-Build.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Building Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User-Material/5-Examples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Examples
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -3381,15 +5002,17 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
 
+
 <h1 id="hfstudio">2.9 hfStudio 원격 제어 결과 보기</h1>
 <p>해석 결과가 준비된 뒤 step, frame, contour, vector, scale, overlay 표시를 제어할 때 이 명령들을 사용한다.</p>
 <p><code>get</code> 조회는 JSON을 반환하고 <code>scriptTail</code>을 추가하지 않는다. 설정형 명령은 canonical <code>post-* ...</code> tail을 Remote Control History와 <code>*.ipc.txt</code>에 기록한다.</p>
-<p>대부분의 definition 명령은 preprocessing 전용이지만, postprocessing mode에서도 현재 HDB를 직접 바꾸는 GUI 예외 경로인 <code>environment-info set</code>, <code>nset</code>, <code>elset</code>, <code>step Post ...</code>, <code>step-delete-from ...</code>, <code>history PostHistory ...</code>는 수정할 수 있다.</p>
+<p>대부분의 definition 명령은 preprocessing 전용이지만, postprocessing mode에서도 현재 HDB를 직접 바꾸는 GUI 예외 경로인 <code>environment-info set</code>, <code>nset</code>, <code>elset</code>, <code>step Post ...</code>, <code>step-delete-from ...</code>, <code>history PostHistory ...</code>는 수정할 수 있다. <a href="2.7.14-History.html#history">PostHistory 갱신</a>은 지정한 항목을 재생성하며, 성공한 새 정의에 맞춰 CSV와 그래프 데이터를 갱신한다. 재생성에 실패한 PostHistory가 남아 있으면 HDB를 즉시 변경하는 Post step 실행과 결과 step 삭제도 재생성을 다시 시도하고, 계속 실패하면 중단한다.</p>
 <h2 id="post-plot">2.9.1 post-plot</h2>
 <div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">[</span>--target<span class="w"> </span>&lt;id&gt;<span class="o">]</span><span class="w"> </span>post-plot<span class="w"> </span>&lt;contour<span class="p">|</span>diagram<span class="p">|</span>vector<span class="p">|</span>sensor<span class="p">|</span>deformed&gt;<span class="w"> </span>&lt;on<span class="p">|</span>off&gt;
 hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">[</span>--target<span class="w"> </span>&lt;id&gt;<span class="o">]</span><span class="w"> </span>post-plot<span class="w"> </span>plot<span class="w"> </span>&lt;x-tag&gt;<span class="w"> </span>&lt;y-tag&gt;<span class="w"> </span><span class="o">[</span>--id<span class="w"> </span>&lt;cN&gt;<span class="o">]</span>
@@ -3417,7 +5040,7 @@ hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">
 <li><code>series expr</code>은 MathExpression 기반 derived source tag를 만든다. <code>--var &lt;name=tag&gt;</code> 형식으로 변수를 매핑하며, 모든 operand는 같은 source group에 속하고 point count가 같아야 한다.</li>
 <li><code>curve</code> 명령은 오른쪽 Curves 목록을 관리한다. <code>curve add</code>는 기존 <code>plot</code>의 정식 형태이고, <code>curve show</code>는 선택한 PostPlot composition의 checkbox/visible 상태를 바꾼다. <code>curve remove</code>와 <code>curve clear</code>는 공유 등록 curve를 제거한다.</li>
 <li><code>view show</code>는 editor의 Show Plot 버튼과 같이 floating PostPlot 표시 창을 연다.</li>
-<li><code>&lt;x-tag&gt;</code>와 <code>&lt;y-tag&gt;</code>는 XY Plot Editor와 같은 source key를 쓴다. 예를 들어 <code>header:history-name.H</code>, <code>(index):history-name.H</code>, <code>N:0:53:D.Z.R</code> 같은 result field tag, <code>R1:STime</code>, <code>R1:RTime</code>, <code>R1:LF</code> 같은 result frame-axis tag를 사용할 수 있다.</li>
+<li><code>&lt;x-tag&gt;</code>와 <code>&lt;y-tag&gt;</code>는 XY Plot Editor와 같은 source key를 쓴다. 예를 들어 <code>header:history-name.H</code>, <code>(index):history-name.H</code>, <code>N:0:53:D.Z.R</code> 같은 절점 result tag, <code>E:0:12:ESE.1.R</code> 같은 요소 result tag, <code>G:0:ALLESE.R</code> 같은 전체 모델 스칼라 tag, <code>R1:STime</code>, <code>R1:RTime</code>, <code>R1:LF</code> 같은 result frame-axis tag를 사용할 수 있다. <code>G:&lt;step-index&gt;:&lt;field&gt;.R</code> 형식에는 대상 번호가 없다.</li>
 <li><code>R1:RTime</code> 값은 해당 result step을 소유한 Step의 <code>TUnit</code>을 따른다. XY Plot Editor와 plot 축에는 <code>RTime [day]</code>처럼 단위를 표시하지만, 명령의 source key는 <code>R1:RTime</code> 형식을 유지한다. <code>export</code>와 <code>copy</code>도 이 단위로 변환된 숫자 값을 사용한다.</li>
 <li><code>export &lt;file&gt;</code>은 대상 composition에서 현재 visible 상태인 PostPlot series를 CSV 파일로 저장한다.</li>
 <li><code>copy</code>는 같은 CSV 내용을 clipboard에 복사한다. <code>script-save</code>로 기록한 뒤 재실행하면 clipboard 내용도 다시 바뀐다.</li>
@@ -3457,6 +5080,8 @@ hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">
 <li><code>get</code>은 현재 scalar field 상태를 JSON으로 반환한다.</li>
 <li>postprocessing 모드에서만 사용할 수 있다.</li>
 <li><code>&lt;field&gt;</code>는 현재 step과 frame에서 유효한 scalar field 이름이어야 한다.</li>
+<li>쉘·솔리드쉘의 면에 표시하는 재료 응력·변형률은 최하·최상 두께방향 적분점의 대표값이다. <code>Legendre</code> 적분점 값은 실제 표면값이 아니며 두께방향으로 외삽하지 않는다.</li>
+<li><code>CompositePlate</code>의 tensor 성분·주값·Mises 등고선은 첫·마지막 층 중앙값을 아래·위 면 대표값으로 표시한다. 1층이면 양면이 같다. 실제 최외곽 표면값과의 차이는 <a href="../../hfStudio/2.7-Postprocessing.html#scalar-contour-field">Scalar 표시 규칙</a>을 참고한다.</li>
 <li><code>[&lt;average-threshold&gt;]</code>는 선택 사항이며 <code>0..100</code> 정수여야 한다.</li>
 <li><code>&lt;average-threshold&gt;</code>는 element scalar 값을 element node로 외삽한 뒤 공유 절점에서 평균할지 결정한다. <code>0</code>은 평균을 끄고, <code>1..100</code>은 같은 평균 그룹의 값이 아래 조건을 만족할 때만 평균한다.</li>
 </ul>
@@ -3478,6 +5103,7 @@ hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">
 <li><code>get</code>은 현재 vector field 상태를 JSON으로 반환한다.</li>
 <li>postprocessing 모드에서만 사용할 수 있다.</li>
 <li><code>&lt;field&gt;</code>는 현재 step과 frame에서 유효한 vector 또는 tensor field 이름이어야 한다.</li>
+<li>쉘·솔리드쉘의 재료 텐서 glyph는 실제 두께방향 적분점 위치와 그 위치의 변위를 사용한다. <code>CompositePlate</code>는 층 중앙을 사용한다. <a href="../../hfStudio/2.7-Postprocessing.html#vector-tensor">Tensor 표시 규칙</a>을 참고한다.</li>
 </ul>
 <h2 id="post-contour">2.9.6 post-contour</h2>
 <div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">[</span>--target<span class="w"> </span>&lt;id&gt;<span class="o">]</span><span class="w"> </span>post-contour<span class="w"> </span>auto-range<span class="w"> </span>&lt;on<span class="p">|</span>off&gt;
@@ -3501,6 +5127,7 @@ hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">
 <li><code>auto-range</code>, <code>range</code>, <code>bands</code>의 설정형 명령은 custom contour mode에서 거부된다.</li>
 <li><code>mode custom</code>은 필요하면 현재 uniform range와 band 상태로 custom boundary level을 초기화한다.</li>
 <li><code>levels</code> 설정은 엄격히 증가하는 <code>2..31</code>개의 경계값을 요구한다.</li>
+<li><code>overlay</code>의 <code>&lt;text&gt;</code>는 contour 위에 겹쳐 그릴 등치선 식이다. <code>TAG=v1, v2</code>처럼 쓰거나 <code>v1@TAG, v2@TAG</code>처럼 쓰며, 두 형식을 한 식에 섞을 수 없다. <code>TAG=</code> 뒤에 이어지는 값은 같은 tag에 적용된다. tag는 현재 result step에 있는 scalar여야 하고, 빈 문자열 <code>""</code>은 overlay를 지운다. 예: <code>post-contour overlay "D.MAG=0.002, 0.004"</code></li>
 <li><code>overlay-color</code>는 <code>0..255</code> 정수 채널 값을 사용한다.</li>
 <li><code>get</code>은 전체 contour 상태와 함께 <code>enabled</code>, <code>min</code>, <code>max</code>, <code>text</code>, <code>color</code> 같은 action별 별칭도 반환한다.</li>
 </ul>
@@ -3573,18 +5200,18 @@ hfStudio<span class="w"> </span>--remote<span class="w"> </span><span class="o">
 <li>animation이 실행 중이 아닐 때만 변경할 수 있다.</li>
 </ul>
 <p>예시:</p>
-<div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-step<span class="w"> </span><span class="s2">&quot;LC1-DeadLoad&quot;</span>
+<div class="highlight"><pre><span></span><code>hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-step<span class="w"> </span><span class="s2">"LC1-DeadLoad"</span>
 hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-frame<span class="w"> </span><span class="m">7</span>
-hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-scalar<span class="w"> </span><span class="s2">&quot;S.Mises&quot;</span><span class="w"> </span><span class="m">85</span>
+hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-scalar<span class="w"> </span><span class="s2">"S.Mises"</span><span class="w"> </span><span class="m">85</span>
 hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-contour<span class="w"> </span>mode<span class="w"> </span>get
-hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span>plot<span class="w"> </span><span class="s2">&quot;(index):result-history.H&quot;</span><span class="w"> </span><span class="s2">&quot;D.X@2:result-history.H&quot;</span>
-hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span>plot<span class="w"> </span><span class="s2">&quot;R1:STime&quot;</span><span class="w"> </span><span class="s2">&quot;R1:LF&quot;</span>
-hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span>series<span class="w"> </span>expr<span class="w"> </span><span class="s2">&quot;A-B&quot;</span><span class="w"> </span>--var<span class="w"> </span><span class="s2">&quot;A=R1:STime&quot;</span><span class="w"> </span>--var<span class="w"> </span><span class="s2">&quot;B=R1:RTime&quot;</span>
+hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span>plot<span class="w"> </span><span class="s2">"(index):result-history.H"</span><span class="w"> </span><span class="s2">"D.X@2:result-history.H"</span>
+hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span>plot<span class="w"> </span><span class="s2">"R1:STime"</span><span class="w"> </span><span class="s2">"R1:LF"</span>
+hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span>series<span class="w"> </span>expr<span class="w"> </span><span class="s2">"A-B"</span><span class="w"> </span>--var<span class="w"> </span><span class="s2">"A=R1:STime"</span><span class="w"> </span>--var<span class="w"> </span><span class="s2">"B=R1:RTime"</span>
 hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span>series<span class="w"> </span>list
-hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="s2">&quot;tmp/postplot-result.csv&quot;</span>
+hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="s2">"tmp/postplot-result.csv"</span>
 hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span>view<span class="w"> </span>show
 hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-plot<span class="w"> </span>copy
-hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-animation-record<span class="w"> </span>on<span class="w"> </span><span class="s2">&quot;D:/work/result.avi&quot;</span>
+hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-animation-record<span class="w"> </span>on<span class="w"> </span><span class="s2">"D:/work/result.avi"</span>
 </code></pre></div>
 
 
@@ -3608,7 +5235,7 @@ hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-animation-r
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
   맨위로
 </button>
         
@@ -3638,10 +5265,13 @@ hfStudio<span class="w"> </span>--remote<span class="w"> </span>post-animation-r
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

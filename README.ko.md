@@ -6,29 +6,60 @@ Hyfeast는 셸, 보, 솔리드 요소를 지원하며, 빠른 병렬 해석, 3D 
 
 - 다운로드: [최신 릴리스](https://github.com/jrcho/Hyfeast/releases/latest)  
 - 도움말: [온라인 문서](https://jrcho.github.io/Hyfeast/index.html)  
+- 오프라인 도움말: `Bin\help\index.html`  
 - English version: [README.md](./README.md)
 
 ## 시스템 요구사항
 
 - 64비트 Windows 10 이상
-- **[Microsoft Visual C++ Redistributable for Visual Studio 2015–2022 (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)**  
-  ⚠️ **반드시 설치해야 합니다!**. 많은 사용자가 *hfStudio*가 실행되지 않는다고 불평하는데, 대부분 이 런타임이 없어서 발생하는 문제입니다.
+- Microsoft Visual C++ 런타임은 `Bin` 폴더에 포함되어 있어 따로 설치하지 않아도 됩니다.  
+  그래도 *hfStudio*가 실행되지 않으면 `Bin` 폴더의 파일이 빠짐없이 풀렸는지 확인하고, [최신 Microsoft Visual C++ Redistributable (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)을 설치해 보세요.
 
 ## 설치 및 사용법
 
+Hyfeast는 압축을 풀면 바로 쓸 수 있습니다. `install.bat`을 한 번 실행하면 시작 메뉴와 명령이 등록되어 더 편하게 쓸 수 있습니다.
+
+### 1. 압축 해제
+
 1. [Releases](https://github.com/jrcho/Hyfeast/releases/latest) 페이지에서 최신 릴리스를 다운로드합니다.
-2. ZIP 파일을 원하는 위치(예: `Hyfeast/`)에 압축 해제합니다.
-3. `Hyfeast` 폴더를 열고 `setpath.bat`을 더블 클릭하면 환경 변수가 설정되고 명령 프롬프트가 열립니다.
-4. 명령 프롬프트에서 다음과 같이 실행할 수 있습니다:
+2. ZIP 파일을 원하는 위치(예: `D:\Apps\Hyfeast-v1.0.0`)에 압축 해제합니다. 아래에서는 이 폴더를 **배포 폴더**라고 부릅니다.
+
+### 2. 설치 (권장)
+
+배포 폴더의 `install.bat`을 더블 클릭합니다. 관리자 권한은 필요 없고, 파일을 다른 곳으로 복사하지도 않습니다.
+
+- 시작 메뉴에 배포 폴더 이름(예: `Hyfeast-v1.0.0`)으로 폴더가 생기고 hfStudio, hf2DStudio, Hyfeast Command Prompt, Hyfeast Help, Examples, Uninstall이 등록됩니다.
+- 바탕화면 바로가기는 설치 중에 만들지 묻습니다.
+- `hfAnalyzer`, `hfSectAnalyzer`, `hfStudio`, `hf2DStudio` 명령이 등록되어, 설치 후 **새로 연** 명령 프롬프트나 PowerShell 창이면 어느 폴더에서나 바로 실행됩니다.
 
 ```
-Hyfeast> hfStudio
-Hyfeast> hfAnalyzer input.inp
-Hyfeast> hf2DStudio
-Hyfeast> hfSectAnalyzer input.hf2d
+D:\Work\proj> hfAnalyzer frame.inp
+D:\Work\proj> hfStudio
 ```
 
-자세한 사용법은 매뉴얼이나 예제 파일을 참고하세요.
+배포 폴더를 다른 곳으로 옮기면 바로가기가 끊어지므로 옮긴 위치에서 `install.bat`을 다시 실행합니다.
+
+### 3. 설치하지 않고 쓰기
+
+배포 폴더의 `HyfeastCmd.bat`을 더블 클릭하면 Hyfeast 실행 환경이 설정된 명령 프롬프트가 열립니다. 이미 열어 둔 명령 프롬프트에서 환경만 설정하려면 다음과 같이 입력합니다.
+
+```
+D:\Work\proj> D:\Apps\Hyfeast-v1.0.0\HyfeastCmd.bat --no-shell
+D:\Work\proj> hfAnalyzer frame.inp
+```
+
+### 4. 여러 버전을 함께 쓸 때
+
+- 버전마다 `install.bat`을 실행하면 시작 메뉴에는 버전별 폴더가 따로 생깁니다.
+- `hfAnalyzer` 같은 명령은 **마지막에 설치한 버전**을 실행합니다.
+- 어떤 창에서만 다른 버전을 쓰려면 그 버전의 `HyfeastCmd.bat --no-shell`을 실행합니다. 그 창에서는 그 버전이 먼저 실행됩니다.
+- 어느 프로그램이 실행되는지는 `where hfAnalyzer`로 확인합니다.
+
+### 5. 제거
+
+시작 메뉴의 **Uninstall** 또는 배포 폴더의 `uninstall.bat`을 실행하면 바로가기와 명령이 제거되고, hfStudio·hf2DStudio 설정(`Bin`의 `*.ini`)이 초기화되며, 배포 폴더와 `Bin`에 생긴 작업 폴더 `.hyfeast`(자동 저장 백업 등)도 지워집니다. 명령은 이 버전을 가리키고 있을 때만 제거됩니다. DigitalTwin 활성화는 모든 버전이 함께 쓰므로 유지됩니다. 설정을 초기화하려면 실행 전에 hfStudio와 hf2DStudio를 닫습니다. 그다음 배포 폴더를 지우면 됩니다.
+
+자세한 사용법은 도움말이나 예제 파일을 참고하세요.
 
 ## Hyfeast에 사용된 외부 라이브러리
 
